@@ -4,7 +4,7 @@ Mario Party while remaining free and open-source.
 
 ## Engine
 SuperTuxParty is built with the [Godot Engine](https://godotengine.org/). The
-latest stable version, 3.0.6 currently, is used.
+latest stable version, 3.0.6, is used.
 
 ## Issues
 If you have ideas for mini-games, design improvements or have found a bug then
