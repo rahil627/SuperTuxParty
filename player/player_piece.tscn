@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/player_piece.gd" type="Script" id=1]
 [ext_resource path="res://characters/tux/tux.escn" type="PackedScene" id=2]
 [ext_resource path="res://characters/tux/tux_material.tres" type="Material" id=3]
 

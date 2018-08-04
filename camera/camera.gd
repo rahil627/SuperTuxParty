@@ -18,4 +18,4 @@ func _on_Roll_pressed():
 		player_turn += 1;
 	else:
 		player_turn = 1;
-		# Start mini-game
+		get_tree().change_scene("res://levels/knock_off.tscn");
