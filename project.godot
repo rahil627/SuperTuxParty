@@ -10,8 +10,8 @@ config_version=3
 
 [application]
 
-config/name="SuperTuxParty"
-run/main_scene="res://levels/board/board.tscn"
+config/name="Super Tux Party"
+run/main_scene="res://menu/main_menu.tscn"
 config/icon="res://icon.png"
 
 [display]

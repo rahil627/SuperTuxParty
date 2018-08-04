@@ -2,9 +2,12 @@ extends Spatial
 
 var losses = 0;
 var placement = [0, 0, 0, 0];
+var timer_end = 5;
+var timer_end_start = false;
 
 func _ready():
 	var i = 1;
+	$Screen/Message.hide();
 	
 	for p in get_tree().get_nodes_in_group("Players"):
 		p.player_id = i;
@@ -20,7 +23,12 @@ func _process(delta):
 	
 	if players.size() == 1:
 		placement[0] = players[0].player_id;
+		timer_end_start = true;
 		
-		print(placement);
-		
-		get_tree().change_scene("res://levels/board/board.tscn");
+		$Screen/Message.text = "Player " + var2str(players[0].player_id) + " wins!";
+		$Screen/Message.show();
+	
+	if timer_end_start:
+		timer_end -= delta;
+		if timer_end <= 0:
+			get_tree().change_scene("res://levels/board/board.tscn");
