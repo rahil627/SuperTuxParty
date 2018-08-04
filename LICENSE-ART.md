@@ -38,3 +38,8 @@ Copyright © 2018 StruffelProductions
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## levels/Background_knock_off.png
+Copyright © 2018 Kuba Jankowski
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
