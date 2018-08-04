@@ -5,6 +5,8 @@ const GRAVITY_DIR = Vector3(0, -1, 0);
 
 var gravity = 0;
 var space = 1;
+var fish = 0;
+var squid = 0;
 
 func _physics_process(delta):
 	gravity += GRAVITY * delta;

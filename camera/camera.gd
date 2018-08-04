@@ -1,6 +1,15 @@
 extends Spatial
 
 var player_turn = 1;
+var turn = 1;
+
+func _ready():
+	if get_parent().has_node("Player" + var2str(player_turn)):
+		var player = get_node("../Player" + var2str(player_turn));
+		$Screen/PlayerInfo/Player.text = "Player " + var2str(player_turn) + "'s turn"
+		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str(turn);
+		$Screen/PlayerInfo/Fish.text = "Fish: " + var2str(player.fish);
+		$Screen/PlayerInfo/Squid.text = "Squid: " + var2str(player.squid);
 
 func _on_Roll_pressed():
 	if get_parent().has_node("Player" + var2str(player_turn)):
@@ -15,7 +24,12 @@ func _on_Roll_pressed():
 		else:
 			$Screen/Dice.text = "Tux Wins!"
 		
-		player_turn += 1;
+		$Screen/PlayerInfo/Player.text = "Player " + var2str(player_turn) + "'s turn"
+		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str(turn);
+		$Screen/PlayerInfo/Fish.text = "Fish: " + var2str(player.fish);
+		$Screen/PlayerInfo/Squid.text = "Squid: " + var2str(player.squid);
 	else:
 		player_turn = 1;
+		turn += 1;
 		get_tree().change_scene("res://levels/knock_off.tscn");
+	player_turn += 1;
