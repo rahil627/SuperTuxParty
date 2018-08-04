@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player_knock_off.gd" type="Script" id=1]
-[ext_resource path="res://characters/tux/tux.escn" type="PackedScene" id=2]
-[ext_resource path="res://characters/tux/tux_material.tres" type="Material" id=3]
+[ext_resource path="res://player/player_knock_off_ball_material.tres" type="Material" id=2]
+[ext_resource path="res://characters/tux/tux.escn" type="PackedScene" id=3]
+[ext_resource path="res://characters/tux/tux_material.tres" type="Material" id=4]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -17,7 +18,7 @@ is_hemisphere = false
 
 radius = 0.5
 
-[node name="Player" type="RigidBody"]
+[node name="Player" type="RigidBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -59,16 +60,17 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
 skeleton = NodePath("..")
-material/0 = null
+material/0 = ExtResource( 2 )
+_sections_unfolded = [ "material" ]
 
-[node name="Model" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Model" parent="." index="1" instance=ExtResource( 3 )]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="tux" parent="Model" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.927734, 0 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Sphere" type="CollisionShape" parent="." index="2"]
