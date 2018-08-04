@@ -7,7 +7,7 @@ var timer_end_start = false;
 
 func _ready():
 	var i = 1;
-	$Screen/Message.hide();
+	$WorldEnvironment/Control/Screen/Message.hide();
 	
 	for p in get_tree().get_nodes_in_group("Players"):
 		p.player_id = i;
@@ -25,8 +25,8 @@ func _process(delta):
 		placement[0] = players[0].player_id;
 		timer_end_start = true;
 		
-		$Screen/Message.text = "Player " + var2str(players[0].player_id) + " wins!";
-		$Screen/Message.show();
+		$WorldEnvironment/Control/Screen/Message.text = "Player " + var2str(players[0].player_id) + " wins!";
+		$WorldEnvironment/Control/Screen/Message.show();
 	
 	if timer_end_start:
 		timer_end -= delta;
