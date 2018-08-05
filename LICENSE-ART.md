@@ -39,7 +39,11 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## levels/Background_knock_off.png
-Copyright © 2018 Kuba Jankowski
+## levels/knock_off/
+water_diffuse.png
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+Copyright © 2018 Bastiaan Olij
+
+Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
