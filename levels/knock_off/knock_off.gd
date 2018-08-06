@@ -9,12 +9,12 @@ func _ready():
 	var i = 1;
 	$Environment/Control/Screen/Message.hide();
 	
-	for p in get_tree().get_nodes_in_group("Players"):
+	for p in get_tree().get_nodes_in_group("players"):
 		p.player_id = i;
 		i += 1;
 
 func _process(delta):
-	var players = get_tree().get_nodes_in_group("Players");
+	var players = get_tree().get_nodes_in_group("players");
 	for p in players:
 		if p.translation.y < -10:
 			losses += 1;
@@ -31,4 +31,4 @@ func _process(delta):
 	if timer_end_start:
 		timer_end -= delta;
 		if timer_end <= 0:
-			get_tree().change_scene("res://levels/board/board.tscn");
+			$"/root/Global".goto_board(placement);

@@ -3,10 +3,14 @@ extends KinematicBody
 const GRAVITY = 9.8;
 const GRAVITY_DIR = Vector3(0, -1, 0);
 
+var player_id = 0;
 var gravity = 0;
 var space = 1;
 var cookies = 0;
 var cakes = 0;
+
+func _ready():
+	add_to_group("players");
 
 func _physics_process(delta):
 	gravity += GRAVITY * delta;

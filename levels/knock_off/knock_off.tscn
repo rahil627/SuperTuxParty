@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/knock_off/knock_off.gd" type="Script" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://player/player_knock_off.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/knock_off/water_material.tres" type="Material" id=5]
+[ext_resource path="res://levels/knock_off/ice_material.tres" type="Material" id=4]
+[ext_resource path="res://player/player_knock_off.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/knock_off/water_material.tres" type="Material" id=6]
 
 [sub_resource type="CylinderMesh" id=1]
 
@@ -22,11 +23,11 @@ data = PoolVector3Array( 0, 1, 2.5, 0.245, 1, 2.4863, 0, 0.5996, 2.5996, 0.245, 
 [sub_resource type="PlaneMesh" id=3]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector2( 70, 70 )
-subdivide_width = 100
-subdivide_depth = 100
+size = Vector2( 30, 30 )
+subdivide_width = 70
+subdivide_depth = 70
 
-[node name="Root" type="Spatial"]
+[node name="Root" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -121,8 +122,8 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
 skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
+material/0 = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
 
 [node name="StaticBody" type="StaticBody" parent="Ground" index="0"]
 
@@ -140,22 +141,22 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 shape = SubResource( 2 )
 disabled = false
 
-[node name="Player1" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Player1" parent="." index="2" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.53316, -2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player2" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Player2" parent="." index="3" instance=ExtResource( 5 )]
 
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.53316, 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player3" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Player3" parent="." index="4" instance=ExtResource( 5 )]
 
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2.53316, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player4" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Player4" parent="." index="5" instance=ExtResource( 5 )]
 
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2.53316, 0 )
 _sections_unfolded = [ "Transform" ]
@@ -190,7 +191,7 @@ _sections_unfolded = [ "Directional Shadow", "Light" ]
 
 [node name="Water" type="MeshInstance" parent="." index="7"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -202,7 +203,7 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 5 )
+material/0 = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "material" ]
 
 

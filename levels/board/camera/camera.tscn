@@ -3,7 +3,7 @@
 [ext_resource path="res://levels/board/camera/camera.gd" type="Script" id=1]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=2]
 
-[node name="Camera" type="Spatial" index="0"]
+[node name="Camera" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -128,7 +128,7 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
-text = "Cakes: 0"
+text = "Cake: 0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

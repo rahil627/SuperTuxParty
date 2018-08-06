@@ -1,15 +1,21 @@
 extends Spatial
 
 var player_turn = 1;
-var turn = 1;
 
 func _ready():
+	var i = 1;
+	
+	for p in get_tree().get_nodes_in_group("players"):
+		p.player_id = i;
+		i += 1;
+	
 	if get_parent().has_node("Player" + var2str(player_turn)):
 		var player = get_node("../Player" + var2str(player_turn));
 		$Screen/PlayerInfo/Player.text = "Player " + var2str(player_turn) + "'s turn"
-		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str(turn);
+		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str($"/root/Global".turn);
 		$Screen/PlayerInfo/Cookies.text = "Cookies: " + var2str(player.cookies);
-		$Screen/PlayerInfo/Cakes.text = "Cakes: " + var2str(player.cakes);
+		$Screen/PlayerInfo/Cakes.text = "Cake: " + var2str(player.cakes);
+	$"/root/Global".load_board_state();
 
 func _on_Roll_pressed():
 	if get_parent().has_node("Player" + var2str(player_turn)):
@@ -22,14 +28,15 @@ func _on_Roll_pressed():
 			$Screen/Panel/Dice.text = "Rolled: " + var2str(dice);
 			player.space += dice;
 		else:
-			$Screen/Dice.text = "Tux Wins!"
+			$Screen/Panel/Dice.text = "Tux Wins!"
 		
 		$Screen/PlayerInfo/Player.text = "Player " + var2str(player_turn) + "'s turn"
-		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str(turn);
+		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str($"/root/Global".turn);
 		$Screen/PlayerInfo/Cookies.text = "Cookies: " + var2str(player.cookies);
 		$Screen/PlayerInfo/Cakes.text = "Cake: " + var2str(player.cakes);
 	else:
 		player_turn = 1;
-		turn += 1;
-		get_tree().change_scene("res://levels/knock_off/knock_off.tscn");
+		
+		$"/root/Global".turn += 1;
+		$"/root/Global".goto_minigame();
 	player_turn += 1;
