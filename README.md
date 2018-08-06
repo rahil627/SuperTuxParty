@@ -15,3 +15,5 @@ All code is licensed under the GNU GPL V3.0, see LICENSE file for more
 information. All other data such as art, sound, music etc. is usually
 released under the [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 though it should always be specified which license it falls under.
+## Reddit
+We also have [subreddit] (https://www.reddit.com/r/SuperTuxParty/) for discussion about project. 
