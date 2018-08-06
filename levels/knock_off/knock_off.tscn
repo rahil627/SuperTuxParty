@@ -27,7 +27,7 @@ size = Vector2( 30, 30 )
 subdivide_width = 70
 subdivide_depth = 70
 
-[node name="Root" type="Spatial" index="0"]
+[node name="Root" type="Spatial"]
 
 script = ExtResource( 1 )
 

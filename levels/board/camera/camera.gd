@@ -1,8 +1,11 @@
 extends Spatial
 
 var player_turn = 1;
+var nodes = null;
 
 func _ready():
+	randomize();
+	nodes = get_tree().get_nodes_in_group("nodes");
 	var i = 1;
 	
 	for p in get_tree().get_nodes_in_group("players"):
@@ -22,13 +25,17 @@ func _on_Roll_pressed():
 		var dice = (randi() % 6) + 1;
 		var player = get_node("../Player" + var2str(player_turn));
 		
-		if get_parent().has_node("Node" + var2str(player.space + dice)):
-			player.translation = get_node("../Node" + var2str(player.space + dice)).translation + Vector3(0, 3, 0);
-			self.translation = get_node("../Node" + var2str(player.space + dice)).translation;
+		if (player.space + dice - 1) < nodes.size():
+			player.translation = nodes[player.space + dice - 1].translation + Vector3(0, 3, 0);
+			self.translation = player.translation - Vector3(0, 3, 0);
 			$Screen/Panel/Dice.text = "Rolled: " + var2str(dice);
 			player.space += dice;
 		else:
-			$Screen/Panel/Dice.text = "Tux Wins!"
+			var space = (player.space + dice) - nodes.size();
+			player.translation = nodes[space].translation + Vector3(0, 3, 0);
+			self.translation = player.translation - Vector3(0, 3, 0);
+			$Screen/Panel/Dice.text = "Rolled: " + var2str(dice);
+			player.space = space;
 		
 		$Screen/PlayerInfo/Player.text = "Player " + var2str(player_turn) + "'s turn"
 		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str($"/root/Global".turn);
