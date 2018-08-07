@@ -53,7 +53,7 @@ func goto_board(placement):
 	for i in range(amount_of_players):
 		players[placement[i] - 1].cookies += 15 - (i * 5);
 	
-	goto_scene("res://levels/board/board.tscn");
+	goto_scene("res://boards/board.tscn");
 
 func load_board_state():
 	if !new_game:

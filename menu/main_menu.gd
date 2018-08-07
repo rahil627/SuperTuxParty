@@ -1,7 +1,7 @@
 extends Container
 
 func _on_Play_pressed():
-	$"/root/Global".goto_scene("res://levels/board/board.tscn");
+	$"/root/Global".goto_scene("res://boards/board.tscn");
 
 func _on_Options_pressed():
 	print("Not implemented!");

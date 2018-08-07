@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://levels/global.gd"
+Global="*res://boards/global.gd"
 
 [display]
 
