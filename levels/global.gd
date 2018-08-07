@@ -8,6 +8,8 @@ class PlayerState:
 	var cakes = 0;
 	var space = 1; # Which space on the board the player is standing on
 
+var MinigameLoader = preload("res://minigames/minigameloader.gd")
+var minigame_loader = MinigameLoader.new(self)
 
 var current_scene = null; # Pointer to top-level node in current scene
 var amount_of_players = 4;
@@ -44,8 +46,8 @@ func goto_minigame():
 		players[i].cookies = r_players[i].cookies;
 		players[i].cakes = r_players[i].cakes;
 		players[i].space = r_players[i].space;
-	goto_scene("res://levels/minigames/knock_off/knock_off.tscn");
-
+	minigame_loader.goto_random_ffa()
+	
 # Go back to board from mini-game, placement is an array with the players' id:s
 func goto_board(placement):
 	for i in range(amount_of_players):
