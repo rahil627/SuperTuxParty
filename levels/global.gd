@@ -39,7 +39,7 @@ func goto_minigame():
 		players[i].cookies = r_players[i].cookies;
 		players[i].cakes = r_players[i].cakes;
 		players[i].space = r_players[i].space;
-	goto_scene("res://levels/knock_off/knock_off.tscn");
+	goto_scene("res://levels/minigames/knock_off/knock_off.tscn");
 
 func goto_board(placement):
 	for i in range(amount_of_players):
@@ -59,6 +59,6 @@ func load_board_state():
 			r_players[i].space = players[i].space;
 			r_players[i].translation = current_scene.get_node("Node" + var2str(r_players[i].space)).translation + Vector3(0, 1 + i, 0);
 			if i == 0:
-				current_scene.get_node("Camera").translation = r_players[i].translation;
+				current_scene.get_node("Controller").translation = r_players[i].translation;
 	else:
 		load_previous_state = true;
