@@ -1,9 +1,9 @@
 extends Spatial
 
-var losses = 0;
-var placement = [0, 0, 0, 0];
-var timer_end = 5;
-var timer_end_start = false;
+var losses = 0; # Number of players that have been knocked-out
+var placement = [0, 0, 0, 0]; # Placements, is filled with player id in order. Index 0 is first place
+var timer_end = 4; # How long the winning message will be shown before exiting
+var timer_end_start = false; # When to start the end timer
 
 func _ready():
 	var i = 1;
@@ -18,7 +18,7 @@ func _process(delta):
 	for p in players:
 		if p.translation.y < -10:
 			losses += 1;
-			placement[4 - losses] = p.player_id;
+			placement[4 - losses] = p.player_id; # Assign placement before deleting player
 			p.queue_free();
 	
 	if players.size() == 1:

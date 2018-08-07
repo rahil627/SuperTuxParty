@@ -4,7 +4,7 @@
 [ext_resource path="res://levels/board/controller/controller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://node/node.tscn" type="PackedScene" id=3]
 
-[node name="Board" type="Spatial" index="0"]
+[node name="Board" type="Spatial"]
 
 [node name="Player1" parent="." index="0" instance=ExtResource( 1 )]
 
