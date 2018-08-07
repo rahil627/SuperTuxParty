@@ -1,5 +1,6 @@
 extends Spatial
 
+var players = null;
 var player_turn = 1;
 var nodes = null;
 
@@ -8,9 +9,12 @@ func _ready():
 	nodes = get_tree().get_nodes_in_group("nodes");
 	var i = 1;
 	
-	for p in get_tree().get_nodes_in_group("players"):
+	players = get_tree().get_nodes_in_group("players");
+	for p in players:
 		p.player_id = i;
 		i += 1;
+	
+	$"/root/Global".load_board_state();
 	
 	if get_parent().has_node("Player" + var2str(player_turn)):
 		var player = get_node("../Player" + var2str(player_turn));
@@ -18,12 +22,11 @@ func _ready():
 		$Screen/PlayerInfo/Turn.text = "Turn: " + var2str($"/root/Global".turn);
 		$Screen/PlayerInfo/Cookies.text = "Cookies: " + var2str(player.cookies);
 		$Screen/PlayerInfo/Cakes.text = "Cake: " + var2str(player.cakes);
-	$"/root/Global".load_board_state();
 
 func _on_Roll_pressed():
-	if get_parent().has_node("Player" + var2str(player_turn)):
+	if player_turn <= players.size():
 		var dice = (randi() % 6) + 1;
-		var player = get_node("../Player" + var2str(player_turn));
+		var player = players[player_turn - 1];
 		
 		if (player.space + dice - 1) < nodes.size():
 			player.translation = nodes[player.space + dice - 1].translation + Vector3(0, 3, 0);
