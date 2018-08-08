@@ -39,7 +39,7 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## levels/knock_off/
+## minigames/FFA/knock_off
 water_diffuse.png
 
 Copyright © 2018 Bastiaan Olij
