@@ -42,7 +42,7 @@ func goto_minigame():
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
 		players[i].player_id = r_players[i].player_id;
-		players[i].player_name = r_players[i].name;
+		players[i].player_name = r_players[i].player_name;
 		players[i].cookies = r_players[i].cookies;
 		players[i].cakes = r_players[i].cakes;
 		players[i].space = r_players[i].space;
@@ -62,7 +62,7 @@ func load_board_state():
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id;
-			r_players[i].name = players[i].player_name;
+			r_players[i].player_name = players[i].player_name;
 			r_players[i].cookies = players[i].cookies;
 			r_players[i].cakes = players[i].cakes;
 			r_players[i].space = players[i].space;
