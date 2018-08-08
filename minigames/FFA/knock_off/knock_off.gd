@@ -17,6 +17,8 @@ func _process(delta):
 	var players = get_tree().get_nodes_in_group("players")
 	for p in players:
 		if p.translation.y < -10:
+			if players.size() == 1:
+				break;
 			losses += 1
 			placement[4 - losses] = p.player_id # Assign placement before deleting player
 			p.queue_free()
