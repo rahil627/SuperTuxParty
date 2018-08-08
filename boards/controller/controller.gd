@@ -3,7 +3,8 @@ extends Spatial
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
 var nodes = null # Array containing the node nodes
-var has_rolled = false;
+var has_rolled = false
+var winner = null
 
 func _ready():
 	randomize()
@@ -33,8 +34,35 @@ func _ready():
 		i += 1
 	
 	$Screen/Dice.text = "Roll " + players[0].player_name + "!"
+	
+	if $"/root/Global".turn > $"/root/Global".max_turns:
+		var message = ""
+		
+		for p in players:
+			if winner == null:
+				winner = p
+			else:
+				if p.cakes > winner.cakes:
+					winner = p
+					message = winner.player_name
+				elif p.cakes == winner.cakes:
+					if p.cookies > winner.cookies:
+						winner = p
+						message = winner.player_name
+					elif p.cookies == winner.cookies:
+						message = "Draw!"
+		
+		if message != "Draw!":
+			message = "The winner is " + winner.player_name
+		
+		$Screen/Turn.text = message
+		$Screen/Roll.disabled = true
+		$Screen/Dice.text = "Game over!"
 
 func _on_Roll_pressed():
+	if winner != null:
+		return
+	
 	if player_turn <= players.size():
 		var player = players[player_turn - 1]
 		

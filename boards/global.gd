@@ -14,7 +14,7 @@ var minigame_loader = MinigameLoader.new(self)
 var current_scene = null # Pointer to top-level node in current scene
 var amount_of_players = 4
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
-var max_turns = 20
+var max_turns = 10
 var new_game = true # Stops the controller from loading information when starting a new game
 var turn = 1
 

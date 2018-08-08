@@ -17,17 +17,20 @@ func _process(delta):
 	var players = get_tree().get_nodes_in_group("players")
 	for p in players:
 		if p.translation.y < -10:
-			if players.size() == 1:
-				break;
 			losses += 1
 			placement[4 - losses] = p.player_id # Assign placement before deleting player
 			p.queue_free()
 	
-	if players.size() == 1:
-		placement[0] = players[0].player_id
+	if players.size() <= 1:
+		# If the last player has not died yet, put him as the winner
+		if players.size() == 1:
+			placement[0] = players[0].player_id
 		timer_end_start = true
 		
-		$Environment/Screen/Message.text = "Player " + var2str(players[0].player_id) + " wins!"
+		for p in $"/root/Global".players:
+			if p.player_id == placement[0]:
+				$Environment/Screen/Message.text = p.player_name + " wins!"
+		
 		$Environment/Screen/Message.show()
 	
 	if timer_end_start:
