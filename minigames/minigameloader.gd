@@ -1,5 +1,9 @@
 var global
 
+# The directory from which plugins are loaded. Plugins have to be either in .zip or .pck file format
+const PLUGIN_DIRECTORY = "plugins"
+
+# This is the entry point filename to every minigame
 const MINIGAME_BOARD_FILENAME = "minigame.tscn"
 const MINIGAME_1v3_PATH  = "res://minigames/1v3"
 const MINIGAME_2v2_PATH  = "res://minigames/2v2"
@@ -12,23 +16,42 @@ var minigames_1v3  = []
 var minigames_2v2  = []
 var minigames_ffa  = []
 
-func read_directory(filename, output):
+# loads all .pck and .zip files into the res:// file system
+# Maybe if we add other types of plugins, we should move this out of here in a more general place
+func read_content_packs():
 	var dir = Directory.new()
-	dir.open(filename)
-	dir.list_dir_begin()
+	dir.open(PLUGIN_DIRECTORY)
+	dir.list_dir_begin(true) # Parameter indicates to skip . and ..
 	
 	while true:
 		var file = dir.get_next()
 		
-		if file == "." or file == "..":
-			continue
+		if file == "":
+			break
+		elif not dir.current_is_dir() and (file.ends_with(".pck") or file.ends_with(".zip")):
+			if(ProjectSettings.load_resource_pack(PLUGIN_DIRECTORY + "/" + file)):
+				print("Successfully loaded plugin: " + file)
+			else:
+				print("Error while loading plugin: " + file)
+		elif not dir.current_is_dir():
+			print("Failed to load plugin: " + file + " is neither a .pck nor a .zip file")
+	dir.list_dir_end()
+
+# checks every file in the directory given by filename and adds every path to a MINIGAME_BOARD_FILENAME file of each directory into the output array
+func read_directory(filename, output):
+	var dir = Directory.new()
+	dir.open(filename)
+	dir.list_dir_begin(true) # Parameter indicates to skip . and ..
+	
+	while true:
+		var file = dir.get_next()
 		
 		if file == "":
 			break
 		elif dir.current_is_dir():
-			var newDir = Directory.new()
-			newDir.open(filename + "/" + file)
-			if newDir.file_exists(MINIGAME_BOARD_FILENAME):
+			var new_dir = Directory.new()
+			new_dir.open(filename + "/" + file)
+			if new_dir.file_exists(MINIGAME_BOARD_FILENAME):
 				output.append(filename + "/" + file + "/" + MINIGAME_BOARD_FILENAME)
 			else:
 				print("Error: No '" + MINIGAME_BOARD_FILENAME + "' file found for: " + file)
@@ -37,11 +60,16 @@ func read_directory(filename, output):
 
 func _init(g):
 	global = g
+	read_content_packs()
+	
 	read_directory(MINIGAME_1v3_PATH,  minigames_1v3)
 	read_directory(MINIGAME_2v2_PATH,  minigames_2v2)
 	read_directory(MINIGAME_DUEL_PATH, minigames_duel)
 	read_directory(MINIGAME_FFA_PATH,  minigames_ffa)
+	
+	print_loaded_minigames()
 
+# TODO: make output pretty
 func print_loaded_minigames():
 	print("Loaded minigames:")
 	print("1v3:")
