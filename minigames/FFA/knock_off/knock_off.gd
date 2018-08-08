@@ -7,7 +7,7 @@ var timer_end_start = false # When to start the end timer
 
 func _ready():
 	var i = 1
-	$Environment/CScreen/Message.hide()
+	$Environment/Screen/Message.hide()
 	
 	for p in get_tree().get_nodes_in_group("players"):
 		p.player_id = i

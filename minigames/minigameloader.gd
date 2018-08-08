@@ -6,7 +6,7 @@ const MINIGAME_2v2_PATH  = "res://minigames/2v2"
 const MINIGAME_DUEL_PATH = "res://minigames/Duel"
 const MINIGAME_FFA_PATH  = "res://minigames/FFA"
 
-# stores the full path to found minigames of each type
+# Stores the full path to found minigames of each type
 var minigames_duel = []
 var minigames_1v3  = []
 var minigames_2v2  = []
@@ -19,6 +19,7 @@ func read_directory(filename, output):
 	
 	while true:
 		var file = dir.get_next()
+		
 		if file == "." or file == "..":
 			continue
 		
@@ -31,6 +32,7 @@ func read_directory(filename, output):
 				output.append(filename + "/" + file + "/" + MINIGAME_BOARD_FILENAME)
 			else:
 				print("Error: No '" + MINIGAME_BOARD_FILENAME + "' file found for: " + file)
+	
 	dir.list_dir_end()
 
 func _init(g):
@@ -51,7 +53,7 @@ func print_loaded_minigames():
 	print("FFA:")
 	print(minigames_ffa)
 
-# utility function that should not be called use
+# Utility function that should not be called use
 # goto_random_1v3/goto_random_2v2/goto_random_duel/goto_random_ffa
 func _goto_random_element(list):
 	# Should a minigame be removed if it was already played?
