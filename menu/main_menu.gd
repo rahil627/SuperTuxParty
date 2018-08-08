@@ -1,7 +1,7 @@
 extends Container
 
-var board = "";
-var current_player = 1;
+var board = ""
+var current_player = 1
 
 func _on_Play_pressed():
 	$"Main menu".hide()
@@ -24,7 +24,7 @@ func _on_Selection_Back_pressed():
 
 func _on_Standard_pressed():
 	$"/root/Global".new_game = true
-	board = "res://boards/board.tscn";
+	board = "res://boards/board.tscn"
 	$"Selection board".hide()
 	$"Selection char".show()
 	$"PlayerInfo1".show()
@@ -50,6 +50,6 @@ func _on_Tux_pressed():
 	current_player += 1
 	
 	if current_player > $"/root/Global".amount_of_players:
-		$"/root/Global".goto_scene(board);
+		$"/root/Global".goto_scene(board)
 	
-	$"Selection char/Title".text = "Select character for Player " + var2str(current_player);
+	$"Selection char/Title".text = "Select character for Player " + var2str(current_player)
