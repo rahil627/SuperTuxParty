@@ -3,6 +3,21 @@ extends Container
 var board = ""
 var current_player = 1
 
+var PluginSystem = preload("res://pluginsystem.gd")
+var plugin_system = PluginSystem.new()
+
+var BoardLoader = preload("res://boards/boardloader.gd")
+var board_loader = BoardLoader.new()
+
+func _ready():
+	var selection_board_list = get_node("Selection board/ScrollContainer/Buttons")
+	for board in board_loader.get_loaded_boards():
+		var button_template = preload("res://menu/board_selection_button.tscn")
+		var board_list_entry = button_template.instance()
+		board_list_entry.set_text(board)
+		board_list_entry.connect("pressed", self, "_on_board_select", [board_list_entry])
+		selection_board_list.add_child(board_list_entry)
+
 func _on_Play_pressed():
 	$"Main menu".hide()
 	$"Selection board".show()
@@ -22,9 +37,9 @@ func _on_Selection_Back_pressed():
 	$"Main menu".show()
 	$"Selection board".hide()
 
-func _on_Standard_pressed():
+func _on_board_select(target):
 	$"/root/Global".new_game = true
-	board = "res://boards/board.tscn"
+	board = board_loader.get_board_path(target.get_text())
 	$"Selection board".hide()
 	$"Selection char".show()
 	$"PlayerInfo1".show()
@@ -50,6 +65,6 @@ func _on_Tux_pressed():
 	current_player += 1
 	
 	if current_player > $"/root/Global".amount_of_players:
-		$"/root/Global".goto_scene(board)
+		$"/root/Global".load_board(board)
 	
 	$"Selection char/Title".text = "Select character for Player " + var2str(current_player)

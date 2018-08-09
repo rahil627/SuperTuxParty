@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://boards/controller/controller.gd" type="Script" id=1]
+[ext_resource path="res://boards/test/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=2]
+
 
 [node name="Controller" type="Spatial" index="0"]
 
