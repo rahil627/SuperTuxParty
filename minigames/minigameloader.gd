@@ -3,6 +3,9 @@ var global
 # The directory from which plugins are loaded. Plugins have to be either in .zip or .pck file format
 const PLUGIN_DIRECTORY = "plugins"
 
+# Only use files present in the project, no external files. Useful for testing
+const NATIVE = true;
+
 # This is the entry point filename to every minigame
 const MINIGAME_BOARD_FILENAME = "minigame.tscn"
 const MINIGAME_1v3_PATH  = "res://minigames/1v3"
@@ -62,7 +65,8 @@ func read_directory(filename, output):
 func _init(g):
 	global = g
 	
-	read_content_packs()
+	if !NATIVE:
+		read_content_packs()
 	
 	read_directory(MINIGAME_1v3_PATH,  minigames_1v3)
 	read_directory(MINIGAME_2v2_PATH,  minigames_2v2)
