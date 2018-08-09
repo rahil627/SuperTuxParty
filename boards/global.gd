@@ -9,8 +9,9 @@ class PlayerState:
 	var space = 1 # Which space on the board the player is standing on
 
 var MinigameLoader = preload("res://minigames/minigameloader.gd")
-var minigame_loader = MinigameLoader.new(self)
+var minigame_loader
 
+var current_board # Resource location of the current board
 var current_scene = null # Pointer to top-level node in current scene
 var amount_of_players = 4
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
@@ -21,6 +22,11 @@ var turn = 1
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
+	minigame_loader =  MinigameLoader.new(self)
+
+func load_board(board):
+	current_board = board;
+	goto_scene(board)
 
 func goto_scene(path):
 	call_deferred("_goto_scene", path)
@@ -53,7 +59,7 @@ func goto_board(placement):
 	for i in range(amount_of_players):
 		players[placement[i] - 1].cookies += 15 - (i * 5)
 	
-	goto_scene("res://boards/board.tscn")
+	goto_scene(current_board)
 
 func load_board_state():
 	if !new_game:
