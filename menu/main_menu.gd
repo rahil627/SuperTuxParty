@@ -53,6 +53,15 @@ func _on_Fullscreen_toggled(button_pressed):
 func _on_Selection_Char_Back_pressed():
 	$"Selection board".show()
 	$"Selection char".hide()
+	
+	current_player = 1
+	
+	$"Selection char/Title".text = "Select character for Player 1"
+	
+	for i in range(1, 4):
+		get_node("PlayerInfo" + var2str(i)).get_node("Character").text = "Character:"
+		get_node("PlayerInfo" + var2str(i)).get_node("Ready").text = "Not ready..."
+	
 	$"PlayerInfo1".hide()
 	$"PlayerInfo2".hide()
 	$"PlayerInfo3".hide()
