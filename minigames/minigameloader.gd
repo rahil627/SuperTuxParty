@@ -35,6 +35,7 @@ func read_content_packs():
 				print("Error while loading plugin: " + file)
 		elif not dir.current_is_dir():
 			print("Failed to load plugin: " + file + " is neither a .pck nor a .zip file")
+	
 	dir.list_dir_end()
 
 # checks every file in the directory given by filename and adds every path to a MINIGAME_BOARD_FILENAME file of each directory into the output array
@@ -60,6 +61,7 @@ func read_directory(filename, output):
 
 func _init(g):
 	global = g
+	
 	read_content_packs()
 	
 	read_directory(MINIGAME_1v3_PATH,  minigames_1v3)
