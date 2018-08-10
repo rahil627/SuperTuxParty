@@ -80,7 +80,7 @@ func _on_Roll_pressed():
 			self.translation = player.translation - Vector3(0, 3, 0)
 			player.space += dice # Keep track of which space the player is standing on
 		else:
-			var space = (player.space + dice) - nodes.size()
+			var space = (player.space + dice - 1) - nodes.size()
 			player.translation = nodes[space].translation + Vector3(0, 3, 0)
 			self.translation = player.translation - Vector3(0, 3, 0)
 			player.space = space # Keep track of which space the player is standing on
