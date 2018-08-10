@@ -46,4 +46,21 @@ Copyright © 2018 Bastiaan Olij
 
 Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
+License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## images
+cake.png
+
+Copyright © 2016 maruki
+
+Retrived from [Open Game Art](https://opengameart.org/content/foodies)
+
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+cookie.png
+
+Copyright © 2017 InkMammoth
+
+Retrived from [Open Game Art](https://opengameart.org/content/pixel-art-food-pack-by-inkmammoth)
+
+License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)

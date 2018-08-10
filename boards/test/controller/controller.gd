@@ -29,8 +29,8 @@ func _ready():
 	for p in players:
 		var info = get_node("Screen/PlayerInfo" + var2str(i))
 		info.get_node("Player").text = p.player_name
-		info.get_node("Cookies").text = "Cookies: " + var2str(p.cookies)
-		info.get_node("Cakes").text = "Cake: " + var2str(p.cakes)
+		info.get_node("Cookies/Amount").text = var2str(p.cookies)
+		info.get_node("Cakes/Amount").text = var2str(p.cakes)
 		i += 1
 	
 	$Screen/Dice.text = "Roll " + players[0].player_name + "!"
