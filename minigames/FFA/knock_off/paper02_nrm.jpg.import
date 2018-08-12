@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paper02_nrm.jpg-5ff0fc00ac3859a08b8c896ce49124d9.stex"
+path="res://.import/paper02_nrm.jpg-3a15d8731c6772edd1770a4d23acda7d.stex"
 
 [deps]
 
-source_file="res://player/paper02_nrm.jpg"
-dest_files=[ "res://.import/paper02_nrm.jpg-5ff0fc00ac3859a08b8c896ce49124d9.stex" ]
+source_file="res://minigames/FFA/knock_off/paper02_nrm.jpg"
+dest_files=[ "res://.import/paper02_nrm.jpg-3a15d8731c6772edd1770a4d23acda7d.stex" ]
 
 [params]
 

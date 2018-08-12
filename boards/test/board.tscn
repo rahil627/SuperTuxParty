@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://player/player_piece.tscn" type="PackedScene" id=1]
+[ext_resource path="res://boards/player_board/player_board.tscn" type="PackedScene" id=1]
 [ext_resource path="res://boards/controller/controller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://boards/node/node.tscn" type="PackedScene" id=3]
+
+
+
 
 
 
