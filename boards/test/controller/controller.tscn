@@ -143,7 +143,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="TextureRect" type="TextureRect" parent="Screen/PlayerInfo1/Cakes" index="0"]
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo1/Cakes" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -245,34 +245,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 2
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cookies" index="0"]
+[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cookies" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 80.0
-margin_right = 112.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cookies" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 116.0
 margin_top = 1.0
-margin_right = 128.0
+margin_right = 92.0
 margin_bottom = 30.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -288,6 +269,25 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cookies" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 96.0
+margin_right = 128.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo2" index="2"]
 
@@ -306,33 +306,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="Screen/PlayerInfo2/Cakes" index="0"]
+[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cakes" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 82.0
-margin_right = 112.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 4 )
-stretch_mode = 0
-
-[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cakes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 116.0
 margin_top = 1.0
-margin_right = 128.0
+margin_right = 94.0
 margin_bottom = 30.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -349,9 +331,26 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
 
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cakes" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 98.0
+margin_right = 128.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+
 [node name="PlayerInfo3" type="VBoxContainer" parent="Screen" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
@@ -375,9 +374,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 66.0
+margin_top = 27.0
 margin_right = 128.0
-margin_bottom = 95.0
+margin_bottom = 56.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -399,9 +398,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 99.0
+margin_top = 60.0
 margin_right = 128.0
-margin_bottom = 131.0
+margin_bottom = 92.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -459,9 +458,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 135.0
+margin_top = 96.0
 margin_right = 128.0
-margin_bottom = 167.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -470,7 +469,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="TextureRect" type="TextureRect" parent="Screen/PlayerInfo3/Cakes" index="0"]
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo3/Cakes" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -573,34 +572,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 2
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cookies" index="0"]
+[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cookies" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 80.0
-margin_right = 112.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cookies" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 116.0
 margin_top = 1.0
-margin_right = 128.0
+margin_right = 92.0
 margin_bottom = 30.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -616,6 +596,25 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cookies" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 96.0
+margin_right = 128.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo4" index="2"]
 
@@ -634,33 +633,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="Screen/PlayerInfo4/Cakes" index="0"]
+[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cakes" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 82.0
-margin_right = 112.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 4 )
-stretch_mode = 0
-
-[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cakes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 116.0
 margin_top = 1.0
-margin_right = 128.0
+margin_right = 94.0
 margin_bottom = 30.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -676,6 +657,24 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cakes" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 98.0
+margin_right = 128.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
 
 [node name="Dice" type="Label" parent="Screen" index="4"]
 
