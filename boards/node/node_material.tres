@@ -1,8 +1,9 @@
 [gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
-[ext_resource path="res://node/Tiles20_col.jpg" type="Texture" id=1]
-[ext_resource path="res://node/Tiles20_rgh.jpg" type="Texture" id=2]
-[ext_resource path="res://node/Tiles20_nrm.jpg" type="Texture" id=3]
+[ext_resource path="res://boards/node/Tiles20_col.jpg" type="Texture" id=1]
+[ext_resource path="res://boards/node/Tiles20_rgh.jpg" type="Texture" id=2]
+[ext_resource path="res://boards/node/Tiles20_nrm.jpg" type="Texture" id=3]
+
 
 [resource]
 

@@ -2,13 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Tiles20_rgh.jpg-92a19b4066fe30c29e63f16ff3e4e9e0.s3tc.stex"
-path.etc2="res://.import/Tiles20_rgh.jpg-92a19b4066fe30c29e63f16ff3e4e9e0.etc2.stex"
+path.s3tc="res://.import/Tiles20_rgh.jpg-b8ae559c8ebe603d1aacf0b0096a48cd.s3tc.stex"
+path.etc2="res://.import/Tiles20_rgh.jpg-b8ae559c8ebe603d1aacf0b0096a48cd.etc2.stex"
 
 [deps]
 
-source_file="res://node/Tiles20_rgh.jpg"
-dest_files=[ "res://.import/Tiles20_rgh.jpg-92a19b4066fe30c29e63f16ff3e4e9e0.s3tc.stex", "res://.import/Tiles20_rgh.jpg-92a19b4066fe30c29e63f16ff3e4e9e0.etc2.stex" ]
+source_file="res://boards/node/Tiles20_rgh.jpg"
+dest_files=[ "res://.import/Tiles20_rgh.jpg-b8ae559c8ebe603d1aacf0b0096a48cd.s3tc.stex", "res://.import/Tiles20_rgh.jpg-b8ae559c8ebe603d1aacf0b0096a48cd.etc2.stex" ]
 
 [params]
 
