@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://boards/test/controller/controller.gd" type="Script" id=1]
+[ext_resource path="res://boards/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://images/cookie.png" type="Texture" id=3]
 [ext_resource path="res://images/cake.png" type="Texture" id=4]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=5]
+
 
 [node name="Controller" type="Spatial" index="0"]
 
