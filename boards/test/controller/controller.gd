@@ -59,6 +59,10 @@ func _ready():
 		$Screen/Roll.disabled = true
 		$Screen/Dice.text = "Game over!"
 
+func _unhandled_input(event):
+	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")):
+		_on_Roll_pressed()
+
 func _on_Roll_pressed():
 	if winner != null:
 		return
