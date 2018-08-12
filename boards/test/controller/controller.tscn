@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://boards/test/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://images/cookie.png" type="Texture" id=3]
 [ext_resource path="res://images/cake.png" type="Texture" id=4]
+[ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=5]
 
 [node name="Controller" type="Spatial" index="0"]
 
@@ -744,7 +745,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Turn: 1"
@@ -752,7 +753,7 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants", "custom_fonts" ]
 
 [node name="Camera" type="Camera" parent="." index="1"]
 

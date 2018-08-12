@@ -15,11 +15,14 @@ var control_remapper = ControlRemapper.new(self)
 
 func load_boards():
 	var selection_board_list = get_node("Selection board/ScrollContainer/Buttons")
+	
 	for board in board_loader.get_loaded_boards():
 		var button_template = preload("res://menu/board_selection_button.tscn")
 		var board_list_entry = button_template.instance()
+		
 		board_list_entry.set_text(board)
 		board_list_entry.connect("pressed", self, "_on_board_select", [board_list_entry])
+		
 		selection_board_list.add_child(board_list_entry)
 
 func _ready():
