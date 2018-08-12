@@ -86,9 +86,9 @@ func controls_remapping_setup():
 		# Every child's name should be the event, e.g. up for event player1_up
 		# and it must have a Button named child
 		for child in instance.get_children():
-			var button = child.get_node("Button")
-			if(button != null):
-				var event_name = "player" + var2str(player_id+1) + "_" + child.get_name()
+			if child.has_node("Button"):
+				var button = child.get_node("Button")
+				var event_name = "player" + var2str(player_id + 1) + "_" + child.get_name()
 				var input_event = InputMap.get_action_list(event_name)[0]
 				if(input_event != null):
 					button.text = event_to_str(input_event)
@@ -162,6 +162,7 @@ func _input(event):
 	var valid_type = event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadMotion or event is InputEventJoypadButton
 	var mousebutton_pressed_check = ((not event is InputEventMouseButton) or event.pressed)
 	var joypad_deadzone_check = ((not event is InputEventJoypadMotion) or abs(event.axis_value) >= JOYPAD_DEADZONE_REMAP)
+	
 	if valid_type and control_remap_event != null and mousebutton_pressed_check and joypad_deadzone_check:
 		main_menu.get_tree().set_input_as_handled()
 		control_remap_button.text = event_to_str(event)
