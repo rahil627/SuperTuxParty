@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cookie.png-00b10a5b8d9899c53cc907df1a988457.stex"
+path="res://.import/cake.png-b9c9835d94d70831329de35b2fc47598.stex"
 
 [deps]
 
-source_file="res://images/cookie.png"
-dest_files=[ "res://.import/cookie.png-00b10a5b8d9899c53cc907df1a988457.stex" ]
+source_file="res://boards/controller/cake.png"
+dest_files=[ "res://.import/cake.png-b9c9835d94d70831329de35b2fc47598.stex" ]
 
 [params]
 
