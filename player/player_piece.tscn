@@ -3,13 +3,9 @@
 [ext_resource path="res://player/player_piece.gd" type="Script" id=1]
 [ext_resource path="res://characters/tux/tux.escn" type="PackedScene" id=2]
 [ext_resource path="res://characters/tux/tux_material.tres" type="Material" id=3]
+[ext_resource path="res://characters/tux/tux_col_shape.tres" type="Shape" id=4]
 
-[sub_resource type="CapsuleShape" id=1]
-
-radius = 0.35
-height = 0.1
-
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -37,7 +33,7 @@ _sections_unfolded = [ "material" ]
 [node name="Capsule" type="CollisionShape" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.4, 0 )
-shape = SubResource( 1 )
+shape = ExtResource( 4 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
