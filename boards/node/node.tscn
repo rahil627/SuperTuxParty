@@ -2,8 +2,7 @@
 
 [ext_resource path="res://boards/node/node.gd" type="Script" id=1]
 [ext_resource path="res://boards/node/node.escn" type="PackedScene" id=2]
-[ext_resource path="res://boards/node/node_material.tres" type="Material" id=3]
-
+[ext_resource path="res://boards/node/node_red_material.tres" type="Material" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -20,6 +19,7 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script = ExtResource( 1 )
+red = false
 
 [node name="Model" parent="." index="0" instance=ExtResource( 2 )]
 

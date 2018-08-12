@@ -22,18 +22,9 @@ func _ready():
 	
 	# Initialize GUI
 	$Screen/Turn.text = "Turn: " + var2str($"/root/Global".turn)
-	
-	i = 1
-	
-	# Retrieve all information that will be displayed for players
-	for p in players:
-		var info = get_node("Screen/PlayerInfo" + var2str(i))
-		info.get_node("Player").text = p.player_name
-		info.get_node("Cookies/Amount").text = var2str(p.cookies)
-		info.get_node("Cakes/Amount").text = var2str(p.cakes)
-		i += 1
-	
 	$Screen/Dice.text = "Roll " + players[0].player_name + "!"
+	
+	_update_player_info()
 	
 	if $"/root/Global".turn > $"/root/Global".max_turns:
 		var message = ""
@@ -81,11 +72,27 @@ func _on_Roll_pressed():
 		# If the player will exceed the number of spaces on the board then loop
 		if (player.space + dice) <= nodes.size():
 			player.translation = nodes[player.space + dice - 1].translation + Vector3(0, 3, 0)
+			
+			# Lose cookies if you land on red space
+			if nodes[player.space + dice - 1].red:
+				player.cookies -= 3
+				if player.cookies < 0:
+					player.cookies = 0
+				_update_player_info()
+			
 			self.translation = player.translation - Vector3(0, 3, 0)
 			player.space += dice # Keep track of which space the player is standing on
 		else:
 			var space = (player.space + dice - 1) - nodes.size()
 			player.translation = nodes[space].translation + Vector3(0, 3, 0)
+			
+			# Lose cookies if you land on red space
+			if nodes[space].red:
+				player.cookies -= 3
+				if player.cookies < 0:
+					player.cookies = 0
+				_update_player_info()
+			
 			self.translation = player.translation - Vector3(0, 3, 0)
 			player.space = space # Keep track of which space the player is standing on
 		
@@ -96,3 +103,14 @@ func _on_Roll_pressed():
 		$"/root/Global".turn += 1
 		$"/root/Global".goto_minigame()
 	player_turn += 1
+
+# Function that updates the player info shown in the GUI
+func _update_player_info():
+	var i = 1
+	
+	for p in players:
+		var info = get_node("Screen/PlayerInfo" + var2str(i))
+		info.get_node("Player").text = p.player_name
+		info.get_node("Cookies/Amount").text = var2str(p.cookies)
+		info.get_node("Cakes/Amount").text = var2str(p.cakes)
+		i += 1
