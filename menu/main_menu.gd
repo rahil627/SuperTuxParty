@@ -26,6 +26,8 @@ func load_boards():
 		selection_board_list.add_child(board_list_entry)
 
 func _ready():
+	$"Selection board/AwardType".add_item("Linear", 0);
+	$"Selection board/AwardType".add_item("Winner takes all", 1);
 	load_boards()
 	control_remapper.controls_remapping_setup()
 
@@ -91,3 +93,9 @@ func _on_Tux_pressed():
 		$"/root/Global".load_board(board)
 	
 	$"Selection char/Title".text = "Select character for Player " + var2str(current_player)
+
+func _on_AwardType_item_selected(ID):
+	if ID == 0: # Linear
+		$"/root/Global".award = $"/root/Global".AWARD_T.linear
+	elif ID == 1: # Winner takes all
+		$"/root/Global".award = $"/root/Global".AWARD_T.winner_only

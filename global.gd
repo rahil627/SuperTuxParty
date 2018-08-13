@@ -11,6 +11,14 @@ class PlayerState:
 var MinigameLoader = preload("res://minigames/minigameloader.gd")
 var minigame_loader
 
+# linear, 1st: 15, 2nd: 10, 3rd: 5, 4th: 0
+# winner_only, 1st: 10, 2nd-4th: 0
+enum AWARD_T {
+	linear,
+	winner_only
+}
+
+var award = AWARD_T.linear # Option to choose how players are awarded after completing a mini-game
 var current_board # Resource location of the current board
 var current_scene = null # Pointer to top-level node in current scene
 var amount_of_players = 4
@@ -56,8 +64,12 @@ func goto_minigame():
 	
 # Go back to board from mini-game, placement is an array with the players' id:s
 func goto_board(placement):
-	for i in range(amount_of_players):
-		players[placement[i] - 1].cookies += 15 - (i * 5)
+	if award == AWARD_T.linear:
+		for i in range(amount_of_players):
+			players[placement[i] - 1].cookies += 15 - (i * 5)
+		
+	elif award == AWARD_T.winner_only:
+		players[placement[0] - 1].cookies += 10
 	
 	goto_scene(current_board)
 
