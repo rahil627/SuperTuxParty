@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=3]
 
-[node name="Menus" type="Container"]
+[node name="Menus" type="Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -225,7 +225,55 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
-[node name="Back" type="Button" parent="Selection board" index="2"]
+[node name="LabelAward" type="Label" parent="Selection board" index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -105.0
+margin_bottom = -70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Reward system:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
+
+[node name="AwardType" type="OptionButton" parent="Selection board" index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -70.0
+margin_bottom = -35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+items = [  ]
+selected = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Back" type="Button" parent="Selection board" index="4"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -454,6 +502,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Options menu" type="Container" parent="." index="3"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -1011,6 +1060,8 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [connection signal="pressed" from="Main menu/Buttons/Options" to="." method="_on_Options_pressed"]
 
 [connection signal="pressed" from="Main menu/Buttons/Quit" to="." method="_on_Quit_pressed"]
+
+[connection signal="item_selected" from="Selection board/AwardType" to="." method="_on_AwardType_item_selected"]
 
 [connection signal="pressed" from="Selection board/Back" to="." method="_on_Selection_Back_pressed"]
 
