@@ -107,7 +107,9 @@ func _on_Roll_pressed():
 		
 		#self.translation = player.translation - Vector3(0, 3, 0)
 		var previous_space = player.space
-		player.space = (player.space + dice) % nodes.size() # Keep track of which space the player is standing on
+		player.space = (player.space + dice) # Keep track of which space the player is standing on
+		if(player.space > nodes.size()):
+			player.space = player.space % (nodes.size() + 1) + 1
 		
 		# Lose cookies if you land on red space
 		if nodes[player.space -1].red:
