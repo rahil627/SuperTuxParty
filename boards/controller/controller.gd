@@ -1,10 +1,16 @@
 extends Spatial
 
+# If multiple players get on one space, this array decides the translation of each
+const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vector3(0, 0.25, 0.75), Vector3(-0.75, 0.25, 0)]
+const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
+
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
 var nodes = null # Array containing the node nodes
 var has_rolled = false
 var winner = null
+
+var camera_focus = null
 
 func _ready():
 	randomize()
@@ -18,6 +24,7 @@ func _ready():
 		p.player_id = i
 		i += 1
 	
+	camera_focus = players[0]
 	$"/root/Global".load_board_state()
 	
 	# Initialize GUI
@@ -54,12 +61,32 @@ func _unhandled_input(event):
 	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")):
 		_on_Roll_pressed()
 
+func get_players_on_space(space):
+	var num = 0
+	for player in players:
+		if(player.space == space):
+			num += 1
+	
+	return num
+
+func update_space(space):
+	var num  = 0
+	var max_num = get_players_on_space(space)
+	for player in players:
+		if(player.space == space):
+			var translation = EMPTY_SPACE_PLAYER_TRANSLATION
+			if max_num > 1:
+				translation = PLAYER_TRANSLATION[num]
+			player.destination.append(nodes[player.space - 1].translation + translation)
+			num += 1
+
 func _on_Roll_pressed():
 	if winner != null:
 		return
 	
 	if player_turn <= players.size():
 		var player = players[player_turn - 1]
+		camera_focus = player
 		
 		if has_rolled:
 			has_rolled = false
@@ -69,33 +96,29 @@ func _on_Roll_pressed():
 		
 		var dice = (randi() % 6) + 1 # Random number between 1 & 6
 		
-		# If the player will exceed the number of spaces on the board then loop
-		if (player.space + dice) <= nodes.size():
-			player.translation = nodes[player.space + dice - 1].translation + Vector3(0, 3, 0)
-			
-			# Lose cookies if you land on red space
-			if nodes[player.space + dice - 1].red:
-				player.cookies -= 3
-				if player.cookies < 0:
-					player.cookies = 0
-				_update_player_info()
-			
-			self.translation = player.translation - Vector3(0, 3, 0)
-			player.space += dice # Keep track of which space the player is standing on
-		else:
-			var space = (player.space + dice - 1) - nodes.size()
-			player.translation = nodes[space].translation + Vector3(0, 3, 0)
-			
-			# Lose cookies if you land on red space
-			if nodes[space].red:
-				player.cookies -= 3
-				if player.cookies < 0:
-					player.cookies = 0
-				_update_player_info()
-			
-			self.translation = player.translation - Vector3(0, 3, 0)
-			player.space = space # Keep track of which space the player is standing on
+		# Adds each animation step to the player_board.gd script
+		# The step to the last space is added during update_space(player.spce)
+		for i in range(dice - 1):
+			var players_on_space = get_players_on_space(player.space + i + 1)
+			translation = EMPTY_SPACE_PLAYER_TRANSLATION
+			if players_on_space > 0:
+				translation = PLAYER_TRANSLATION[players_on_space]
+			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + translation)
 		
+		#self.translation = player.translation - Vector3(0, 3, 0)
+		var previous_space = player.space
+		player.space = (player.space + dice) % nodes.size() # Keep track of which space the player is standing on
+		
+		# Lose cookies if you land on red space
+		if nodes[player.space -1].red:
+			player.cookies -= 3
+			if player.cookies < 0:
+				player.cookies = 0
+			_update_player_info()
+			
+		# Reposition figures
+		update_space(previous_space)
+		update_space(player.space)
 		$Screen/Dice.text = player.name + " rolled: " + var2str(dice) # Show which number was rolled
 		has_rolled = true
 	else:
@@ -103,6 +126,10 @@ func _on_Roll_pressed():
 		$"/root/Global".turn += 1
 		$"/root/Global".goto_minigame()
 	player_turn += 1
+
+func _process(delta):
+	if(camera_focus != null):
+		self.translation = camera_focus.translation
 
 # Function that updates the player info shown in the GUI
 func _update_player_info():

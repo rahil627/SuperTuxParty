@@ -4,26 +4,26 @@
 [ext_resource path="res://boards/controller/controller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://boards/node/node.tscn" type="PackedScene" id=3]
 
-[node name="Board" type="Spatial"]
+[node name="Board" type="Spatial" index="0"]
 
 [node name="Player1" parent="." index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.75 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.75 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Player2" parent="." index="1" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.25, 0 )
 _sections_unfolded = [ "Transform", "collision" ]
 
 [node name="Player3" parent="." index="2" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.75 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.75 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Player4" parent="." index="3" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.25, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Controller" parent="." index="4" instance=ExtResource( 2 )]
