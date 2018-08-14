@@ -1,11 +1,12 @@
 extends KinematicBody
 
-const GRAVITY = 9.8 # Acceleration of gravity
-const GRAVITY_DIR = Vector3(0, -1, 0) # Direction of gravity
+const MOVEMENT_SPEED = 0.25 # The speed used for walking to destination
+
+# The position this node is walking to, used for animation
+var destination = []
 
 var player_id = 0
 var player_name = "" # Name that player has chosen
-var gravity = 0 # Accumulated speed
 var space = 1 # Space on the board the player is on
 var cookies = 0
 var cakes = 0
@@ -15,7 +16,10 @@ func _ready():
 	add_to_group("players")
 
 func _physics_process(delta):
-	gravity += GRAVITY * delta
-	move_and_slide(gravity * GRAVITY_DIR, Vector3(0, 1, 0))
-	if is_on_floor():
-		gravity = 0
+	if(destination.size() > 0):
+		var direction = (destination[0] - translation)
+		translation +=  min(MOVEMENT_SPEED, direction.length()) * direction.normalized();
+		
+		if(direction.length() < 0.01):
+			destination.pop_front()
+			

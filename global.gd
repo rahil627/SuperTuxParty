@@ -86,7 +86,12 @@ func load_board_state():
 			r_players[i].space = players[i].space
 			
 			# Move piece to the right space, increase y-axis so two players are not placed inside each other
-			r_players[i].translation = current_scene.get_node("Node" + var2str(r_players[i].space)).translation + Vector3(0, 1 + i, 0)
+			var controller = current_scene.get_node("Controller")
+			var num = controller.get_players_on_space(r_players[i].space)
+			var translation = controller.EMPTY_SPACE_PLAYER_TRANSLATION
+			if num > 1:
+				translation = controller.PLAYER_TRANSLATION[num - 1]
+			r_players[i].translation = current_scene.get_node("Node" + var2str(r_players[i].space)).translation + translation
 			
 			if i == 0:
 				current_scene.get_node("Controller").translation = r_players[i].translation # Move camera to player 1
