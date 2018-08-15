@@ -1,6 +1,7 @@
 extends Spatial
 
-const MOVEMENT_SPEED = 0.25 # The speed used for walking to destination
+const MOVEMENT_SPEED = 5 # The speed used for walking to destination
+const MIN_MOVEMENT_SPEED = 2
 
 # The position this node is walking to, used for animation
 var destination = []
@@ -18,8 +19,10 @@ func _ready():
 func _physics_process(delta):
 	if(destination.size() > 0):
 		var direction = (destination[0] - translation)
-		translation +=  min(MOVEMENT_SPEED, direction.length()) * direction.normalized();
+		translation +=  (MOVEMENT_SPEED * direction.length()) * direction.normalized() * delta;
 		
-		if(direction.length() < 0.01):
+		if (destination.size() > 1):
+			if(direction.length() < 0.3):
+				destination.pop_front()
+		elif(direction.length() < 0.01):
 			destination.pop_front()
-			
