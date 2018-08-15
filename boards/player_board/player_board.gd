@@ -1,4 +1,4 @@
-extends KinematicBody
+extends Spatial
 
 const MOVEMENT_SPEED = 0.25 # The speed used for walking to destination
 
