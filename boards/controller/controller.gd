@@ -7,7 +7,6 @@ const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
 var nodes = null # Array containing the node nodes
-var has_rolled = false
 var winner = null
 
 var camera_focus = null
@@ -88,12 +87,6 @@ func _on_Roll_pressed():
 		var player = players[player_turn - 1]
 		camera_focus = player
 		
-		if has_rolled:
-			has_rolled = false
-			$Screen/Dice.text = "Roll " + player.player_name + "!"
-			self.translation = player.translation
-			return
-		
 		var dice = (randi() % 6) + 1 # Random number between 1 & 6
 		
 		# Adds each animation step to the player_board.gd script
@@ -122,7 +115,6 @@ func _on_Roll_pressed():
 		update_space(previous_space)
 		update_space(player.space)
 		$Screen/Dice.text = player.name + " rolled: " + var2str(dice) # Show which number was rolled
-		has_rolled = true
 	else:
 		# All players have had their turn, goto mini-game
 		$"/root/Global".turn += 1

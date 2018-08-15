@@ -11,7 +11,7 @@ func read_content_packs():
 	var err = dir.open(PLUGIN_DIRECTORY)
 	if(err != OK):
 		# TODO convert error code to error string
-		print("Unable to open directory '" + filename + "'. Debug error code: " + String(err))
+		print("Unable to open directory '" + PLUGIN_DIRECTORY + "'. Debug error code: " + String(err))
 		return
 	dir.list_dir_begin(true) # Parameter indicates to skip . and ..
 	
