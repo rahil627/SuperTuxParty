@@ -10,9 +10,8 @@ func read_content_packs():
 	var dir = Directory.new()
 	var err = dir.open(PLUGIN_DIRECTORY)
 	if(err != OK):
-		# I don't know how to convert an error code to a string and can't find anything online...
-		# FIXME
-		print("Unable to open directory '" + PLUGIN_DIRECTORY + "'. Reason: " + err)
+		# TODO convert error code to error string
+		print("Unable to open directory '" + filename + "'. Debug error code: " + String(err))
 		return
 	dir.list_dir_begin(true) # Parameter indicates to skip . and ..
 	

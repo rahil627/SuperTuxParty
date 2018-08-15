@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=3]
 
-[node name="Menus" type="Container" index="0"]
+[node name="Menus" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -152,6 +152,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Selection board" type="Container" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -299,7 +300,6 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" 
 
 [node name="Selection char" type="Container" parent="." index="2"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -351,14 +351,34 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
-[node name="Grid" type="GridContainer" parent="Selection char/Buttons" index="0"]
+[node name="VScrollBar" type="ScrollContainer" parent="Selection char/Buttons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 512.0
-margin_bottom = 74.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 512, 105 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+scroll_horizontal_enabled = false
+scroll_horizontal = 0
+scroll_vertical_enabled = true
+scroll_vertical = 0
+scroll_deadzone = 0
+_sections_unfolded = [ "Rect", "Scroll" ]
+
+[node name="Grid" type="GridContainer" parent="Selection char/Buttons/VScrollBar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -366,113 +386,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 2
-
-[node name="Tux" type="Button" parent="Selection char/Buttons/Grid" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 254.0
-margin_bottom = 35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Tux"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
-
-[node name="GreenTux" type="Button" parent="Selection char/Buttons/Grid" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 258.0
-margin_right = 512.0
-margin_bottom = 35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Green Tux"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
-
-[node name="GNU" type="Button" parent="Selection char/Buttons/Grid" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 39.0
-margin_right = 254.0
-margin_bottom = 74.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "GNU"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
-
-[node name="Sara" type="Button" parent="Selection char/Buttons/Grid" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 258.0
-margin_top = 39.0
-margin_right = 512.0
-margin_bottom = 74.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Sara"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+_sections_unfolded = [ "Rect" ]
 
 [node name="Back" type="Button" parent="Selection char/Buttons" index="1"]
 
@@ -1064,8 +978,6 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [connection signal="item_selected" from="Selection board/AwardType" to="." method="_on_AwardType_item_selected"]
 
 [connection signal="pressed" from="Selection board/Back" to="." method="_on_Selection_Back_pressed"]
-
-[connection signal="pressed" from="Selection char/Buttons/Grid/Tux" to="." method="_on_Tux_pressed"]
 
 [connection signal="pressed" from="Selection char/Buttons/Back" to="." method="_on_Selection_Char_Back_pressed"]
 

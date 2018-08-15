@@ -4,12 +4,22 @@ extends Node
 class PlayerState:
 	var player_id = 0 # Used to identify the player
 	var player_name = ""
+	var character = ""
 	var cookies = 0
 	var cakes = 0
 	var space = 1 # Which space on the board the player is standing on
 
+var PluginSystem = preload("res://pluginsystem.gd")
+var plugin_system = PluginSystem.new()
+
+var BoardLoader = preload("res://boards/boardloader.gd")
+var board_loader = BoardLoader.new()
+
 var MinigameLoader = preload("res://minigames/minigameloader.gd")
-var minigame_loader
+var minigame_loader = MinigameLoader.new(self)
+
+var CharacterLoader = preload("res://characters/characterloader.gd")
+var character_loader = CharacterLoader.new()
 
 # linear, 1st: 15, 2nd: 10, 3rd: 5, 4th: 0
 # winner_only, 1st: 10, 2nd-4th: 0
@@ -30,9 +40,10 @@ var turn = 1
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
-	minigame_loader =  MinigameLoader.new(self)
 
-func load_board(board):
+func load_board(board, characters):
+	for i in range(characters.size()):
+		players[i].character = characters[i]
 	current_board = board;
 	goto_scene(board)
 
@@ -44,10 +55,25 @@ func _goto_scene(path):
 	current_scene.free()
 	
 	var s = ResourceLoader.load(path)
+	
 	current_scene = s.instance()
 	
+	for i in range(players.size()):
+		var new_model = ResourceLoader.load(character_loader.get_character_path(players[i].character)).instance()
+		new_model.get_children()[0].set_surface_material(0, ResourceLoader.load(character_loader.get_material_path(players[i].character)))
+		new_model.set_name("Model")
+		
+		var old_model = current_scene.get_node("Player" + var2str(i+1) + "/Model")
+		new_model.translation = old_model.translation
+		old_model.replace_by(new_model, true)
+		
+		var collision_shape = current_scene.get_node("Player" + var2str(i+1) + "/Shape")
+		if(collision_shape != null):
+			collision_shape.shape = ResourceLoader.load(character_loader.get_collision_shape_path(players[i].character))
+
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
+	
 
 # Change scene to one of the mini-games
 func goto_minigame():
