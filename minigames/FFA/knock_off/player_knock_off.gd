@@ -8,12 +8,20 @@ func _ready():
 	add_to_group("players")
 
 func _process(delta):
-	$Model.translation = self.translation + Vector3(0, 1, 0);
-	if (Input.is_action_pressed("player" + var2str(player_id) + "_up") && angular_velocity.x > -4):
-		angular_velocity += Vector3(-accel * delta, 0, 0)
-	if (Input.is_action_pressed("player" + var2str(player_id) + "_down") && angular_velocity.x < 4):
-		angular_velocity += Vector3(accel * delta, 0, 0)
-	if (Input.is_action_pressed("player" + var2str(player_id) + "_left") && angular_velocity.z < 4):
-		angular_velocity += Vector3(0, 0, accel * delta)
-	if (Input.is_action_pressed("player" + var2str(player_id) + "_right") && angular_velocity.z > -4):
-		angular_velocity += Vector3(0, 0, -accel * delta)
+	var dir = Vector3()
+	
+	$Model.translation = self.translation + Vector3(0, 1, 0)
+	
+	if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
+		dir.x -= accel * delta
+	if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
+		dir.x += accel * delta
+	if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
+		dir.z += accel * delta
+	if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
+		dir.z -= accel * delta
+	
+	dir = dir.normalized()
+	
+	if angular_velocity.length() < 6 && dir.length() > 0:
+		angular_velocity += dir * accel * delta

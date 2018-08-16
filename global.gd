@@ -39,6 +39,7 @@ var new_game = true # Stops the controller from loading information when startin
 var turn = 1
 
 func _ready():
+	randomize()
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
 

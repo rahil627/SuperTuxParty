@@ -13,7 +13,6 @@ var winner = null
 var camera_focus = null
 
 func _ready():
-	randomize()
 	nodes = get_tree().get_nodes_in_group("nodes")
 	
 	# Give each player a unique id
