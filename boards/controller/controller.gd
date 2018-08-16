@@ -3,7 +3,7 @@ extends Spatial
 # If multiple players get on one space, this array decides the translation of each
 const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vector3(0, 0.25, 0.75), Vector3(-0.75, 0.25, 0)]
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
-const CAMERA_SPEED = 5
+const CAMERA_SPEED = 6
 
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
@@ -126,10 +126,17 @@ func _on_Roll_pressed():
 	player_turn += 1
 
 func _process(delta):
-	if(camera_focus != null):
+	if camera_focus != null:
 		var dir = camera_focus.translation - self.translation
 		if(dir.length() > 0.01):
 			self.translation += (CAMERA_SPEED * dir.length()) * dir.normalized() * delta
+	
+	# Automatically switch to next player when current player has finished moving
+	if player_turn - 2 >= 0 && player_turn - 1 < $"/root/Global".amount_of_players:
+		var player = players[player_turn - 2]
+		if camera_focus == player:
+			if player.destination.size() == 0:
+				camera_focus = players[player_turn - 1]
 
 # Function that updates the player info shown in the GUI
 func _update_player_info():

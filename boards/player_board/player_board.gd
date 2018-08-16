@@ -16,12 +16,12 @@ func _ready():
 	add_to_group("players")
 
 func _physics_process(delta):
-	if(destination.size() > 0):
+	if destination.size() > 0:
 		var dir = (destination[0] - translation)
 		translation +=  (MOVEMENT_SPEED * dir.length()) * dir.normalized() * delta;
 		
-		if (destination.size() > 1):
-			if(dir.length() < 0.3):
+		if destination.size() > 1:
+			if dir.length() < 0.3:
 				destination.pop_front()
-		elif(dir.length() < 0.01):
+		elif dir.length() < 0.01:
 			destination.pop_front()
