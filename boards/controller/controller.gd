@@ -3,6 +3,7 @@ extends Spatial
 # If multiple players get on one space, this array decides the translation of each
 const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vector3(0, 0.25, 0.75), Vector3(-0.75, 0.25, 0)]
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
+const CAMERA_SPEED = 5
 
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
@@ -73,10 +74,10 @@ func update_space(space):
 	var max_num = get_players_on_space(space)
 	for player in players:
 		if(player.space == space):
-			var translation = EMPTY_SPACE_PLAYER_TRANSLATION
+			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
 			if max_num > 1:
-				translation = PLAYER_TRANSLATION[num]
-			player.destination.append(nodes[player.space - 1].translation + translation)
+				offset = PLAYER_TRANSLATION[num]
+			player.destination.append(nodes[player.space - 1].translation + offset)
 			num += 1
 
 func _on_Roll_pressed():
@@ -93,14 +94,15 @@ func _on_Roll_pressed():
 		# The step to the last space is added during update_space(player.spce)
 		for i in range(dice - 1):
 			var players_on_space = get_players_on_space(player.space + i + 1)
-			translation = EMPTY_SPACE_PLAYER_TRANSLATION
+			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
 			if players_on_space > 0:
-				translation = PLAYER_TRANSLATION[players_on_space]
-			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + translation)
+				offset = PLAYER_TRANSLATION[players_on_space]
+			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + offset)
 		
-		#self.translation = player.translation - Vector3(0, 3, 0)
 		var previous_space = player.space
-		player.space = (player.space + dice) # Keep track of which space the player is standing on
+		
+		# Keep track of which space the player is standing on
+		player.space = (player.space + dice) 
 		if(player.space > nodes.size()):
 			player.space = player.space % (nodes.size() + 1) + 1
 		
@@ -114,7 +116,9 @@ func _on_Roll_pressed():
 		# Reposition figures
 		update_space(previous_space)
 		update_space(player.space)
-		$Screen/Dice.text = player.name + " rolled: " + var2str(dice) # Show which number was rolled
+		
+		# Show which number was rolled
+		$Screen/Dice.text = player.name + " rolled: " + var2str(dice) 
 	else:
 		# All players have had their turn, goto mini-game
 		$"/root/Global".turn += 1
@@ -123,7 +127,9 @@ func _on_Roll_pressed():
 
 func _process(delta):
 	if(camera_focus != null):
-		self.translation = camera_focus.translation
+		var dir = camera_focus.translation - self.translation
+		if(dir.length() > 0.01):
+			self.translation += (CAMERA_SPEED * dir.length()) * dir.normalized() * delta
 
 # Function that updates the player info shown in the GUI
 func _update_player_info():
