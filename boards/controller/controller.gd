@@ -117,6 +117,8 @@ func _on_Roll_pressed():
 		else:
 			player.cookies += 3
 		
+		_update_player_info()
+		
 		# Reposition figures
 		update_space(previous_space)
 		update_space(player.space)
