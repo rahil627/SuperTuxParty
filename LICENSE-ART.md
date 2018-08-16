@@ -1,7 +1,18 @@
-## characters/tux
+## characters/Tux
 Tux model and texture
 
 Copyright © 2010 durmieu 
+
+Retrived from [Open Game Art](https://opengameart.org/content/tux)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## characters/Green Tux
+Tux model and texture
+
+Copyright © 2010 durmieu
+
+Texture modified by Florian Kothmeier
 
 Retrived from [Open Game Art](https://opengameart.org/content/tux)
 
@@ -17,47 +28,42 @@ http://scripts.sil.org/OFL
 
 See fonts/OFL for full license.
 
-## node/
-Tiles20_col.jpg
-Tiles20_nrm.jpg
-Tiles20_rgh.jpg
+## boards/node/
+### tile_blue_col.jpg | tile_red_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
 
-Copyright © 2018 StruffelProductions
-
-Retrived from [CC0 Textures](https://cc0textures.com/home)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-## player/
-paper02_col.jpg
-paper02_nrm.jpg
-paper02_rgh.jpg
-
-Copyright © 2018 StruffelProductions
+Public Domain by StruffelProductions
 
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## minigames/FFA/knock_off
-water_diffuse.png
+### water_diffuse.png
 
-Copyright © 2018 Bastiaan Olij
+Public Domain by Bastiaan Olij
 
 Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
 License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## images
-cake.png
+### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
 
-Copyright © 2016 maruki
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## boards/controller
+### cake.png
+
+Public Domain by maruki
 
 Retrived from [Open Game Art](https://opengameart.org/content/foodies)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-cookie.png
+### cookie.png
 
 Copyright © 2017 InkMammoth
 
