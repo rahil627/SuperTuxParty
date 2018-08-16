@@ -111,7 +111,12 @@ func _on_character_select(target):
 	current_player += 1
 	
 	if current_player > $"/root/Global".amount_of_players:
-		$"/root/Global".load_board(board, characters)
+		var names = []
+		
+		for i in range(1, current_player):
+			names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
+		
+		$"/root/Global".load_board(board, names, characters)
 	
 	$"Selection char/Title".text = "Select character for Player " + var2str(current_player)
 

@@ -42,8 +42,9 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
 
-func load_board(board, characters):
+func load_board(board, names, characters):
 	for i in range(characters.size()):
+		players[i].player_name = names[i]
 		players[i].character = characters[i]
 	current_board = board;
 	goto_scene(board)
@@ -102,9 +103,9 @@ func goto_board(placement):
 	goto_scene(current_board)
 
 func load_board_state():
+	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
+	
 	if !new_game:
-		var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
-		
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id
@@ -125,4 +126,7 @@ func load_board_state():
 			if i == 0:
 				current_scene.get_node("Controller").translation = r_players[i].translation # Move camera to player 1
 	else:
+		for i in range(r_players.size()):
+			r_players[i].player_name = players[i].player_name
+		
 		new_game = false

@@ -121,7 +121,7 @@ func _on_Roll_pressed():
 		update_space(player.space)
 		
 		# Show which number was rolled
-		$Screen/Dice.text = player.name + " rolled: " + var2str(dice) 
+		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
 	else:
 		# All players have had their turn, goto mini-game
 		$"/root/Global".turn += 1

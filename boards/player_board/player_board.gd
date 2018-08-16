@@ -15,7 +15,6 @@ var cookies_gui = 0
 var gui_timer = GUI_TIMER
 
 func _ready():
-	player_name = name
 	add_to_group("players")
 
 func _physics_process(delta):
