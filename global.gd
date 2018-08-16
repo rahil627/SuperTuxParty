@@ -6,6 +6,7 @@ class PlayerState:
 	var player_name = ""
 	var character = ""
 	var cookies = 0
+	var cookies_gui = 0
 	var cakes = 0
 	var space = 1 # Which space on the board the player is standing on
 
@@ -84,6 +85,7 @@ func goto_minigame():
 		players[i].player_id = r_players[i].player_id
 		players[i].player_name = r_players[i].player_name
 		players[i].cookies = r_players[i].cookies
+		players[i].cookies_gui = r_players[i].cookies_gui
 		players[i].cakes = r_players[i].cakes
 		players[i].space = r_players[i].space
 	minigame_loader.goto_random_ffa()
@@ -108,6 +110,7 @@ func load_board_state():
 			r_players[i].player_id = players[i].player_id
 			r_players[i].player_name = players[i].player_name
 			r_players[i].cookies = players[i].cookies
+			r_players[i].cookies_gui = players[i].cookies_gui
 			r_players[i].cakes = players[i].cakes
 			r_players[i].space = players[i].space
 			

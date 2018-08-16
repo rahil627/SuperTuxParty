@@ -31,7 +31,7 @@ func _ready():
 	$Screen/Turn.text = "Turn: " + var2str($"/root/Global".turn)
 	$Screen/Dice.text = "Roll " + players[0].player_name + "!"
 	
-	_update_player_info()
+	update_player_info()
 	
 	if $"/root/Global".turn > $"/root/Global".max_turns:
 		var message = ""
@@ -111,13 +111,10 @@ func _on_Roll_pressed():
 			player.cookies -= 3
 			if player.cookies < 0:
 				player.cookies = 0
-			_update_player_info()
 		elif nodes[player.space -1].green:
 			pass
 		else:
 			player.cookies += 3
-		
-		_update_player_info()
 		
 		# Reposition figures
 		update_space(previous_space)
@@ -149,12 +146,21 @@ func _process(delta):
 				camera_focus = players[player_turn - 1]
 
 # Function that updates the player info shown in the GUI
-func _update_player_info():
+func update_player_info():
 	var i = 1
 	
 	for p in players:
 		var info = get_node("Screen/PlayerInfo" + var2str(i))
 		info.get_node("Player").text = p.player_name
-		info.get_node("Cookies/Amount").text = var2str(p.cookies)
+		
+		if p.cookies_gui == p.cookies:
+			info.get_node("Cookies/Amount").text = var2str(p.cookies)
+		elif p.destination.size() > 0:
+			info.get_node("Cookies/Amount").text = var2str(p.cookies_gui)
+		elif p.cookies_gui > p.cookies:
+			info.get_node("Cookies/Amount").text = "-" + var2str(p.cookies_gui - p.cookies) + "  " + var2str(p.cookies_gui)
+		else:
+			info.get_node("Cookies/Amount").text = "+" + var2str(p.cookies - p.cookies_gui) + "  " + var2str(p.cookies_gui)
+		
 		info.get_node("Cakes/Amount").text = var2str(p.cakes)
 		i += 1
