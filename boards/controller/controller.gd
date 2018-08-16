@@ -112,7 +112,11 @@ func _on_Roll_pressed():
 			if player.cookies < 0:
 				player.cookies = 0
 			_update_player_info()
-			
+		elif nodes[player.space -1].green:
+			pass
+		else:
+			player.cookies += 3
+		
 		# Reposition figures
 		update_space(previous_space)
 		update_space(player.space)
