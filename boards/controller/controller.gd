@@ -133,7 +133,7 @@ func _on_Roll_pressed():
 	player_turn += 1
 	
 	if player_turn > players.size():
-		$Screen/Roll.text = "Mini-game"
+		$Screen/Roll.text = "Minigame"
 
 func _process(delta):
 	if camera_focus != null:
