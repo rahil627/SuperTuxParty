@@ -129,7 +129,11 @@ func _on_Roll_pressed():
 		# All players have had their turn, goto mini-game
 		$"/root/Global".turn += 1
 		$"/root/Global".goto_minigame()
+	
 	player_turn += 1
+	
+	if player_turn > players.size():
+		$Screen/Roll.text = "Mini-game"
 
 func _process(delta):
 	if camera_focus != null:
