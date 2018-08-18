@@ -10,7 +10,7 @@
 
 extents = Vector3( 2, 1, 10 )
 
-[node name="Root" type="Spatial" index="0"]
+[node name="Root" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -75,19 +75,19 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", 
 
 [node name="Player1" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1 )
 
 [node name="Player2" parent="." index="2" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1 )
 
 [node name="Player3" parent="." index="3" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1 )
 
 [node name="Player4" parent="." index="4" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, -1 )
 
 [node name="Ground" type="StaticBody" parent="." index="5"]
 

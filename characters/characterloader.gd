@@ -1,4 +1,4 @@
-const CHARACTER_FILENAME = "character.escn"
+const CHARACTER_FILENAME = "character.tscn"
 const CHARACTER_SPLASHNAME = "splash.png"
 const MATERIAL_FILENAME = "material.tres"
 const COLLISION_SHAPE_FILENAME = "collision.tres"

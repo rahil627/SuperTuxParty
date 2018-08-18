@@ -68,10 +68,16 @@ func _goto_scene(path):
 		
 		var old_model = current_scene.get_node("Player" + var2str(i+1) + "/Model")
 		new_model.translation = old_model.translation
+		new_model.translation = old_model.scale
+		new_model.translation = old_model.rotation
 		old_model.replace_by(new_model, true)
 		
-		var collision_shape = current_scene.get_node("Player" + var2str(i+1) + "/Shape")
-		if(collision_shape != null):
+		if current_scene.has_node("Player" + var2str(i+1) + "/Shape"):
+			var collision_shape = current_scene.get_node("Player" + var2str(i+1) + "/Shape")
+			collision_shape.translation = new_model.translation
+			collision_shape.translation.y += new_model.get_child(0).translation.y
+			collision_shape.scale = new_model.scale
+			collision_shape.rotation = new_model.rotation + Vector3(deg2rad(90), 0, 0)
 			collision_shape.shape = ResourceLoader.load(character_loader.get_collision_shape_path(players[i].character))
 
 	get_tree().get_root().add_child(current_scene)
