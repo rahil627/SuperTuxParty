@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	var dir = Vector3()
 	
-	$Model.translation = self.translation + Vector3(0, 1, 0)
+	$Model.translation = self.translation + Vector3(0, 0.5, 0)
 	
 	if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
 		dir.x -= accel * delta
