@@ -110,7 +110,7 @@ func _on_Roll_pressed():
 			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + offset)
 			
 			# If player passes a cake-spot
-			if nodes[(player.space + i)].cake && player.cookies >= 30:
+			if nodes[(player.space + i) % nodes.size()].cake && player.cookies >= 30:
 				$Screen/GetCake.show()
 				end_turn = false
 		
