@@ -111,7 +111,8 @@ func _on_Roll_pressed():
 			if player.cookies < 0:
 				player.cookies = 0
 		elif nodes[player.space -1].green:
-			pass
+			if get_parent().has_method("fire_event"):
+				get_parent().fire_event()
 		else:
 			player.cookies += 3
 		
