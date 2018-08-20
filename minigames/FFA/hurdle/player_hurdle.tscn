@@ -2,7 +2,7 @@
 
 [ext_resource path="res://minigames/FFA/hurdle/player_hurdle.gd" type="Script" id=1]
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
