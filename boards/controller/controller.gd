@@ -11,9 +11,17 @@ var nodes = null # Array containing the node nodes
 var winner = null
 
 var camera_focus = null
+var end_turn = true
 
 func _ready():
 	nodes = get_tree().get_nodes_in_group("nodes")
+	var cake_nodes = get_tree().get_nodes_in_group("cake_nodes")
+	
+	# Randomly place cake spot on board
+	if cake_nodes.size() > 0:
+		var cake_node = cake_nodes[randi() % cake_nodes.size()]
+		cake_node.cake = true
+		cake_node.get_node("Cake").visible = true
 	
 	# Give each player a unique id
 	var i = 1
@@ -80,6 +88,9 @@ func update_space(space):
 			num += 1
 
 func _on_Roll_pressed():
+	$Screen/GetCake.hide()
+	end_turn = true
+	
 	if winner != null:
 		return
 	
@@ -97,6 +108,11 @@ func _on_Roll_pressed():
 			if players_on_space > 0:
 				offset = PLAYER_TRANSLATION[players_on_space]
 			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + offset)
+			
+			# If player passes a cake-spot
+			if nodes[(player.space + i)].cake && player.cookies >= 30:
+				$Screen/GetCake.show()
+				end_turn = false
 		
 		var previous_space = player.space
 		
@@ -142,7 +158,7 @@ func _process(delta):
 	if player_turn - 2 >= 0 && player_turn - 1 < $"/root/Global".amount_of_players:
 		var player = players[player_turn - 2]
 		if camera_focus == player:
-			if player.destination.size() == 0:
+			if player.destination.size() == 0 && end_turn:
 				camera_focus = players[player_turn - 1]
 
 # Function that updates the player info shown in the GUI
@@ -164,3 +180,11 @@ func update_player_info():
 		
 		info.get_node("Cakes/Amount").text = var2str(p.cakes)
 		i += 1
+
+func _on_GetCake_pressed():
+	var player = players[player_turn - 2]
+	player.cookies -= 30
+	player.cakes += 1
+	
+	if player.cookies < 30:
+		$Screen/GetCake.hide()
