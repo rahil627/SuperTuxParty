@@ -143,7 +143,7 @@ subsurf_scatter_enabled = false
 transmission_enabled = false
 refraction_enabled = false
 detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
+uv1_scale = Vector3( 2, 0.5, 1 )
 uv1_offset = Vector3( 0, 0, 0 )
 uv1_triplanar = false
 uv1_triplanar_sharpness = 1.0
@@ -153,6 +153,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
+_sections_unfolded = [ "UV1" ]
 
 [node name="Root" type="Spatial" index="0"]
 
@@ -164,7 +165,7 @@ environment = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Environment" index="0"]
 
-transform = Transform( -4.37114e-008, 0.499999, -0.866025, 0, 0.866024, 0.5, 0.999999, 2.18557e-008, -3.78552e-008, -3.4, 3, 4.3 )
+transform = Transform( -4.37114e-008, 0.499999, -0.866025, 0, 0.866024, 0.5, 0.999999, 2.18557e-008, -3.78552e-008, -3.4, 3, 4.4 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -177,7 +178,7 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Screen" type="Control" parent="Environment" index="1"]
 
@@ -212,6 +213,31 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Player wins!"
 align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Timer" type="Label" parent="Environment/Screen" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -110.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "Timer: 50.0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
