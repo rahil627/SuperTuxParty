@@ -2,8 +2,9 @@ extends Spatial
 
 var losses = 0 # Number of players that have been knocked-out
 var placement = [0, 0, 0, 0] # Placements, is filled with player id in order. Index 0 is first place
-var timer_end = 4 # How long the winning message will be shown before exiting
-var timer_end_start = false # When to start the end timer
+var timer = 17.0 # Timer of minigame
+var end_timer = 4 # How long the winning message will be shown before exiting
+var end_timer_start = false # When to start the end timer
 var spawn_timer = 5
 var max_spawn = 5
 
@@ -46,7 +47,7 @@ func _process(delta):
 		# If the last player has not died yet, put him as the winner
 		if players.size() == 1:
 			placement[0] = players[0].player_id
-		timer_end_start = true
+		end_timer_start = true
 		
 		for p in $"/root/Global".players:
 			if p.player_id == placement[0]:
@@ -54,7 +55,35 @@ func _process(delta):
 		
 		$Environment/Screen/Message.show()
 	
-	if timer_end_start:
-		timer_end -= delta
-		if timer_end <= 0:
+	if end_timer_start:
+		end_timer -= delta
+		if end_timer <= 0:
 			$"/root/Global".goto_board(placement)
+	else:
+		timer -= delta
+		
+		if timer <= 0.0:
+			end_timer_start = true
+			timer = 0.0
+			
+			# Store the winners based on the z-coordinate
+			var winner = [null, null, null, null]
+			var winner_index = 0
+			
+			for p in players:
+				if winner[0] == null:
+					winner[0] = p
+				elif (p.translation.z + p.player_id) > (winner[winner_index].translation.z + winner[winner_index].player_id):
+					winner[winner_index + 1] = winner[winner_index]
+					winner[winner_index] = p
+					
+					winner_index += 1
+			
+			winner_index = 0
+			
+			for w in winner:
+				if placement[winner_index] == 0 && w != null:
+					placement[winner_index] = winner[winner_index].player_id
+					winner_index += 1
+		
+		$Environment/Screen/Timer.text = "Timer: " + var2str(stepify(timer, 0.01))
