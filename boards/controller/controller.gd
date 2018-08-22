@@ -5,6 +5,8 @@ const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vec
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
+const COOKIES_FOR_CAKE = 30
+
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
 var nodes = null # Array containing the node nodes
@@ -12,6 +14,43 @@ var winner = null
 
 var camera_focus = null
 var end_turn = true
+
+# Stores the amount of steps the current player still needs to take, to complete his roll
+# Used when the player movement is interrupted because of a cake spot
+var steps_remaining = 0
+# Stores the value of steps that still need to be performed after a dice roll
+# Used for display
+var step_count = 0
+
+# Store if the splash for a character was already shown
+var splash_ended = false
+# Flag that indicates if the input needs to wait for the animation to finish
+var wait_for_animation = false
+
+func check_winner():
+	if $"/root/Global".turn > $"/root/Global".max_turns:
+		var message = ""
+		
+		for p in players:
+			if winner == null:
+				winner = p
+			else:
+				if p.cakes > winner.cakes:
+					winner = p
+					message = winner.player_name
+				elif p.cakes == winner.cakes:
+					if p.cookies > winner.cookies:
+						winner = p
+						message = winner.player_name
+					elif p.cookies == winner.cookies:
+						message = "Draw!"
+		
+		if message != "Draw!":
+			message = "The winner is " + winner.player_name
+		
+		$Screen/Turn.text = message
+		$Screen/Roll.disabled = true
+		$Screen/Dice.text = "Game over!"
 
 func _ready():
 	nodes = get_tree().get_nodes_in_group("nodes")
@@ -40,29 +79,11 @@ func _ready():
 	
 	update_player_info()
 	
-	if $"/root/Global".turn > $"/root/Global".max_turns:
-		var message = ""
-		
-		for p in players:
-			if winner == null:
-				winner = p
-			else:
-				if p.cakes > winner.cakes:
-					winner = p
-					message = winner.player_name
-				elif p.cakes == winner.cakes:
-					if p.cookies > winner.cookies:
-						winner = p
-						message = winner.player_name
-					elif p.cookies == winner.cookies:
-						message = "Draw!"
-		
-		if message != "Draw!":
-			message = "The winner is " + winner.player_name
-		
-		$Screen/Turn.text = message
-		$Screen/Roll.disabled = true
-		$Screen/Dice.text = "Game over!"
+	
+	check_winner()
+	
+	# Show "your turn screen" for first player
+	_on_Roll_pressed()
 
 func _unhandled_input(event):
 	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")):
@@ -87,8 +108,104 @@ func update_space(space):
 			player.destination.append(nodes[player.space - 1].translation + offset)
 			num += 1
 
+func animation_ended(player_id):
+	if player_id != player_turn - 1:
+		return
+	
+	if end_turn:
+		wait_for_animation = false
+		_on_Roll_pressed()
+	else:
+		wait_for_animation = true
+		$Screen/GetCake.show()
+
+func animation_step(player_id):
+	if player_id != player_turn - 1:
+		return
+	
+	step_count -= 1
+	if step_count > 0:
+		$Screen/Stepcounter.text = var2str(step_count)
+	else:
+		$Screen/Stepcounter.text = ""
+
 func _on_Roll_pressed():
+	if wait_for_animation:
+		return
+	
 	$Screen/GetCake.hide()
+	
+	if winner != null:
+		return
+	
+	if splash_ended or player_turn > players.size():
+		splash_ended = false
+		roll()
+	else:
+		splash_ended = true
+		var image = ResourceLoader.load($"/root/Global".character_loader.get_character_splash($"/root/Global".players[player_turn - 1].character)).get_data()
+		image.resize(256, 256)
+		
+		$Screen/Splash/Background/Player.texture = ImageTexture.new()
+		$Screen/Splash/Background/Player.texture.create_from_image(image)
+		$Screen/Splash.play("show")
+
+# Moves a player num spaces forward and stops when a cake spot is encoutered
+func do_step(player, num):
+	if num <= 0:
+		animation_ended(player.player_id)
+		return
+	
+	# Adds each animation step to the player_board.gd script
+	# The step to the last space is added during update_space(player.space)
+	for i in range(num - 1):
+		# If player passes a cake-spot
+		if nodes[(player.space + i) % nodes.size()].cake && player.cookies >= COOKIES_FOR_CAKE:
+			end_turn = false
+			
+			var previous_space = player.space
+			player.space = player.space + i + 1
+			steps_remaining = num - (i + 1)
+			update_space(previous_space)
+			update_space(player.space)
+			return
+		else:
+			var players_on_space = get_players_on_space(player.space + i + 1)
+			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
+			if players_on_space > 0:
+				offset = PLAYER_TRANSLATION[players_on_space]
+			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + offset)
+
+	
+	var previous_space = player.space
+	
+	# Keep track of which space the player is standing on
+	player.space = (player.space + num) 
+	if(player.space > nodes.size()):
+		player.space = player.space % (nodes.size() + 1) + 1
+	
+	if nodes[player.space -1].cake && player.cookies >= COOKIES_FOR_CAKE:
+		end_turn = false
+		steps_remaining = 0
+	
+	# Lose cookies if you land on red space
+	if nodes[player.space -1].red:
+		player.cookies -= 3
+		if player.cookies < 0:
+			player.cookies = 0
+	elif nodes[player.space -1].green:
+		if get_parent().has_method("fire_event"):
+			get_parent().fire_event()
+	else:
+		player.cookies += 3
+	
+	# Reposition figures
+	update_space(previous_space)
+	update_space(player.space)
+
+func roll():
+	$Screen/Splash.play("hide")
+	wait_for_animation = true
 	end_turn = true
 	
 	if winner != null:
@@ -100,41 +217,10 @@ func _on_Roll_pressed():
 		
 		var dice = (randi() % 6) + 1 # Random number between 1 & 6
 		
-		# Adds each animation step to the player_board.gd script
-		# The step to the last space is added during update_space(player.spce)
-		for i in range(dice - 1):
-			var players_on_space = get_players_on_space(player.space + i + 1)
-			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
-			if players_on_space > 0:
-				offset = PLAYER_TRANSLATION[players_on_space]
-			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + offset)
-			
-			# If player passes a cake-spot
-			if nodes[(player.space + i) % nodes.size()].cake && player.cookies >= 30:
-				$Screen/GetCake.show()
-				end_turn = false
+		$Screen/Stepcounter.text = var2str(dice)
+		step_count = dice
 		
-		var previous_space = player.space
-		
-		# Keep track of which space the player is standing on
-		player.space = (player.space + dice) 
-		if(player.space > nodes.size()):
-			player.space = player.space % (nodes.size() + 1) + 1
-		
-		# Lose cookies if you land on red space
-		if nodes[player.space -1].red:
-			player.cookies -= 3
-			if player.cookies < 0:
-				player.cookies = 0
-		elif nodes[player.space -1].green:
-			if get_parent().has_method("fire_event"):
-				get_parent().fire_event()
-		else:
-			player.cookies += 3
-		
-		# Reposition figures
-		update_space(previous_space)
-		update_space(player.space)
+		do_step(player, dice)
 		
 		# Show which number was rolled
 		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
@@ -182,9 +268,35 @@ func update_player_info():
 		i += 1
 
 func _on_GetCake_pressed():
-	var player = players[player_turn - 2]
-	player.cookies -= 30
-	player.cakes += 1
+	$Screen/GetCake.hide()
+	$Screen/BuyCake.show()
 	
-	if player.cookies < 30:
-		$Screen/GetCake.hide()
+	$Screen/BuyCake/HSlider.max_value = int(players[player_turn-2].cookies / COOKIES_FOR_CAKE)
+	$Screen/BuyCake/HSlider.value = $Screen/BuyCake/HSlider.max_value
+
+func _on_GetCake_abort():
+	var player = players[player_turn - 2]
+	
+	$Screen/GetCake.hide()
+	end_turn = true
+	do_step(player, steps_remaining)
+
+func _on_Buy_pressed():
+	var amount = int($Screen/BuyCake/HSlider.value)
+	
+	var player = players[player_turn - 2]
+	player.cookies -= COOKIES_FOR_CAKE * amount
+	player.cakes += amount
+	
+	$Screen/BuyCake.hide()
+	end_turn = true
+	do_step(player, steps_remaining)
+
+
+func _on_Abort_pressed():
+	$Screen/BuyCake.hide()
+	$Screen/GetCake.show()
+
+
+func _on_HSlider_value_changed(value):
+	$Screen/BuyCake/Amount.text = "x" + var2str(int(value))
