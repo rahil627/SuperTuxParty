@@ -2,7 +2,7 @@ extends Spatial
 
 var losses = 0 # Number of players that have been knocked-out
 var placement = [0, 0, 0, 0] # Placements, is filled with player id in order. Index 0 is first place
-var timer = 17.0 # Timer of minigame
+var timer = 50.0 # Timer of minigame
 var end_timer = 4 # How long the winning message will be shown before exiting
 var end_timer_start = false # When to start the end timer
 var spawn_timer = 5

@@ -1,6 +1,6 @@
 extends StaticBody
 
-var speed = 1
+var speed = 6
 
 func _ready():
 	constant_linear_velocity = Vector3(0, 0, -speed)
