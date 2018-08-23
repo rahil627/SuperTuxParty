@@ -25,11 +25,14 @@ func _physics_process(delta):
 		if destination.size() > 1:
 			if dir.length() < 0.3:
 				destination.pop_front()
+				$"../Controller".animation_step(player_id)
 		elif dir.length() < 0.01:
 			destination.pop_front()
+			$"../Controller".animation_step(player_id)
 		
 		if destination.size() == 0:
 			$"../Controller".update_player_info()
+			$"../Controller".animation_ended(player_id)
 	else:
 		if cookies_gui < cookies:
 			gui_timer -= delta
