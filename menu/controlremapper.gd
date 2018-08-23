@@ -22,7 +22,12 @@ func load_controls():
 	else: # ConfigFile was properly loaded, initialize InputMap
 		for action_name in InputMap.get_actions():
 			# Get the key scancode corresponding to the saved human-readable string
-			var entry = config.get_value("input", action_name).split(" ", false)
+			var entry = config.get_value("input", action_name)
+			
+			if entry == null:
+				continue
+			
+			entry = entry.split(" ", false)
 			var event
 			# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
 			if(entry[1] == "Keyboard"):
