@@ -79,6 +79,7 @@ func _ready():
 	
 	update_player_info()
 	
+	$Screen/Debug.setup()
 	
 	check_winner()
 	
@@ -86,8 +87,10 @@ func _ready():
 	_on_Roll_pressed()
 
 func _unhandled_input(event):
-	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")):
+	if event.is_action_pressed("player"+var2str(player_turn)+"_ok"):
 		_on_Roll_pressed()
+	elif event.is_action_pressed("debug"):
+		$Screen/Debug.popup()
 
 func get_players_on_space(space):
 	var num = 0

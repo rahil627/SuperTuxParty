@@ -85,7 +85,7 @@ func _goto_scene(path):
 	
 
 # Change scene to one of the mini-games
-func goto_minigame():
+func goto_minigame(minigame = ""):
 	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
 	
 	# Save player states in the array 'players'
@@ -96,8 +96,12 @@ func goto_minigame():
 		players[i].cookies_gui = r_players[i].cookies_gui
 		players[i].cakes = r_players[i].cakes
 		players[i].space = r_players[i].space
-	minigame_loader.goto_random_ffa()
 	
+	if minigame == "":
+		minigame_loader.goto_random_ffa()
+	else:
+		goto_scene(minigame)
+
 # Go back to board from mini-game, placement is an array with the players' id:s
 func goto_board(placement):
 	if award == AWARD_T.linear:
