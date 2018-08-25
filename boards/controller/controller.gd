@@ -6,7 +6,7 @@ const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vec
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
-const COOKIES_FOR_CAKE = 30
+var COOKIES_FOR_CAKE = 30
 
 const NODE = preload("res://boards/node/node.gd")
 
@@ -88,6 +88,10 @@ func _ready():
 	
 	camera_focus = players[0]
 	$"/root/Global".load_board_state()
+	
+	if $"/root/Global".award == $"/root/Global".AWARD_T.winner_only:
+		COOKIES_FOR_CAKE = 20
+		$Screen/GetCake/Label.text = "Buy a cake for 20 cookies"
 	
 	# Initialize GUI
 	$Screen/Turn.text = "Turn: " + var2str($"/root/Global".turn)
@@ -292,7 +296,7 @@ func _on_GetCake_pressed():
 	$Screen/GetCake.hide()
 	$Screen/BuyCake.show()
 	
-	$Screen/BuyCake/HSlider.max_value = int(players[player_turn-2].cookies / COOKIES_FOR_CAKE)
+	$Screen/BuyCake/HSlider.max_value = int(players[player_turn - 2].cookies / COOKIES_FOR_CAKE)
 	$Screen/BuyCake/HSlider.value = $Screen/BuyCake/HSlider.max_value
 
 func _on_GetCake_abort():
