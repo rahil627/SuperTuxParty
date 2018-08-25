@@ -1,3 +1,4 @@
+tool
 extends Spatial
 
 # If multiple players get on one space, this array decides the translation of each
@@ -7,13 +8,20 @@ const CAMERA_SPEED = 6
 
 const COOKIES_FOR_CAKE = 30
 
+const NODE = preload("res://boards/node/node.gd")
+
 var players = null # Array containing the player nodes
 var player_turn = 1 # Keeps track of whose turn it is
-var nodes = null # Array containing the node nodes
 var winner = null
 
 var camera_focus = null
 var end_turn = true
+
+enum EDITOR_NODE_LINKING_DISPLAY { DISABLED = 0, NEXT_NODES = 1, PREV_NODES = 2, ALL = 3 }
+
+# Path to the node, where Players start
+export(NodePath) var start_node
+export(EDITOR_NODE_LINKING_DISPLAY) var show_linking_type = ALL
 
 # Stores the amount of steps the current player still needs to take, to complete his roll
 # Used when the player movement is interrupted because of a cake spot
@@ -53,7 +61,12 @@ func check_winner():
 		$Screen/Dice.text = "Game over!"
 
 func _ready():
-	nodes = get_tree().get_nodes_in_group("nodes")
+	# Make it easier for nodes to find the controller
+	add_to_group("Controller")
+	
+	if Engine.editor_hint:
+		return
+	
 	var cake_nodes = get_tree().get_nodes_in_group("cake_nodes")
 	
 	# Randomly place cake spot on board
@@ -69,6 +82,9 @@ func _ready():
 	for p in players:
 		p.player_id = i
 		i += 1
+		if p.space == null:
+			p.space = get_node(start_node)
+			p.translation = p.space.translation
 	
 	camera_focus = players[0]
 	$"/root/Global".load_board_state()
@@ -87,7 +103,10 @@ func _ready():
 	_on_Roll_pressed()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("player"+var2str(player_turn)+"_ok"):
+	if Engine.editor_hint:
+		return
+	
+	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")):
 		_on_Roll_pressed()
 	elif event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -108,7 +127,7 @@ func update_space(space):
 			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
 			if max_num > 1:
 				offset = PLAYER_TRANSLATION[num]
-			player.destination.append(nodes[player.space - 1].translation + offset)
+			player.destination.append(player.space.translation + offset)
 			num += 1
 
 func animation_ended(player_id):
@@ -161,50 +180,46 @@ func do_step(player, num):
 	
 	# Adds each animation step to the player_board.gd script
 	# The step to the last space is added during update_space(player.space)
+	var previous_space = player.space
 	for i in range(num - 1):
+		# TODO: enable multiple branches later on
+		player.space = player.space.next[0]
 		# If player passes a cake-spot
-		if nodes[(player.space + i) % nodes.size()].cake && player.cookies >= COOKIES_FOR_CAKE:
+		if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
 			end_turn = false
 			
-			var previous_space = player.space
-			player.space = player.space + i + 1
 			steps_remaining = num - (i + 1)
 			update_space(previous_space)
 			update_space(player.space)
 			return
 		else:
-			var players_on_space = get_players_on_space(player.space + i + 1)
+			var players_on_space = get_players_on_space(player.space) - 1
 			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
 			if players_on_space > 0:
 				offset = PLAYER_TRANSLATION[players_on_space]
-			player.destination.append(nodes[(player.space + i) % nodes.size()].translation + offset)
-
+			player.destination.append(player.space.translation + offset)
 	
-	var previous_space = player.space
-	
-	# Keep track of which space the player is standing on
-	player.space = (player.space + num) 
-	if(player.space > nodes.size()):
-		player.space = player.space % (nodes.size() + 1) + 1
-	
-	if nodes[player.space -1].cake && player.cookies >= COOKIES_FOR_CAKE:
+	# TODO: enable multiple branches later on
+	player.space = player.space.next[0]
+	if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
 		end_turn = false
 		steps_remaining = 0
-	
-	# Lose cookies if you land on red space
-	if nodes[player.space -1].red:
-		player.cookies -= 3
-		if player.cookies < 0:
-			player.cookies = 0
-	elif nodes[player.space -1].green:
-		if get_parent().has_method("fire_event"):
-			get_parent().fire_event()
-	else:
-		player.cookies += 3
 	
 	# Reposition figures
 	update_space(previous_space)
 	update_space(player.space)
+	
+	# Lose cookies if you land on red space
+	match player.space.type:
+		NODE.RED:
+			player.cookies -= 3
+			if player.cookies < 0:
+				player.cookies = 0
+		NODE.GREEN:
+			if get_parent().has_method("fire_event"):
+				get_parent().fire_event(player, player.space)
+		NODE.BLUE:
+			player.cookies += 3
 
 func roll():
 	$Screen/Splash.play("hide")
@@ -238,6 +253,9 @@ func roll():
 		$Screen/Roll.text = "Minigame"
 
 func _process(delta):
+	if Engine.editor_hint:
+		return
+	
 	if camera_focus != null:
 		var dir = camera_focus.translation - self.translation
 		if(dir.length() > 0.01):

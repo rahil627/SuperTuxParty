@@ -8,7 +8,7 @@ class PlayerState:
 	var cookies = 0
 	var cookies_gui = 0
 	var cakes = 0
-	var space = 1 # Which space on the board the player is standing on
+	var space = null # Which space on the board the player is standing on
 
 var PluginSystem = preload("res://pluginsystem.gd")
 var plugin_system = PluginSystem.new()
@@ -95,7 +95,7 @@ func goto_minigame(minigame = ""):
 		players[i].cookies = r_players[i].cookies
 		players[i].cookies_gui = r_players[i].cookies_gui
 		players[i].cakes = r_players[i].cakes
-		players[i].space = r_players[i].space
+		players[i].space = r_players[i].space.get_path()
 	
 	if minigame == "":
 		minigame_loader.goto_random_ffa()
@@ -124,7 +124,7 @@ func load_board_state():
 			r_players[i].cookies = players[i].cookies
 			r_players[i].cookies_gui = players[i].cookies_gui
 			r_players[i].cakes = players[i].cakes
-			r_players[i].space = players[i].space
+			r_players[i].space = current_scene.get_node(players[i].space)
 			
 			# Move piece to the right space, increase y-axis so two players are not placed inside each other
 			var controller = current_scene.get_node("Controller")
@@ -132,7 +132,7 @@ func load_board_state():
 			var translation = controller.EMPTY_SPACE_PLAYER_TRANSLATION
 			if num > 1:
 				translation = controller.PLAYER_TRANSLATION[num - 1]
-			r_players[i].translation = current_scene.get_node("Node" + var2str(r_players[i].space)).translation + translation
+			r_players[i].translation = r_players[i].space.translation + translation
 			
 			if i == 0:
 				current_scene.get_node("Controller").translation = r_players[i].translation # Move camera to player 1
