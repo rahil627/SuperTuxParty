@@ -8,7 +8,7 @@ var destination = []
 
 var player_id = 0
 var player_name = "" # Name that player has chosen
-var space = 1 # Space on the board the player is on
+var space = null # Space on the board the player is on
 var cookies = 0
 var cakes = 0
 var cookies_gui = 0
