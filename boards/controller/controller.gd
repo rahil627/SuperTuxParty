@@ -84,7 +84,7 @@ func _ready():
 		i += 1
 		if p.space == null:
 			p.space = get_node(start_node)
-			p.translation = p.space.translation
+			p.translation = p.space.translation + PLAYER_TRANSLATION[i-2]
 	
 	camera_focus = players[0]
 	$"/root/Global".load_board_state()
