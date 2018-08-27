@@ -2,7 +2,7 @@ extends Node
 
 # Information about a player that needs to be saved when a scene change occurs
 class PlayerState:
-	var player_id = 0 # Used to identify the player
+	var player_id = 0
 	var player_name = ""
 	var character = ""
 	var cookies = 0
@@ -29,14 +29,16 @@ enum AWARD_T {
 	winner_only
 }
 
+
+var amount_of_players = 4
 var award = AWARD_T.linear # Option to choose how players are awarded after completing a mini-game
 var current_board # Resource location of the current board
 var current_scene = null # Pointer to top-level node in current scene
-var amount_of_players = 4
-var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var max_turns = 10
 var new_game = true # Stops the controller from loading information when starting a new game
+var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var turn = 1
+
 
 func _ready():
 	randomize()
@@ -48,13 +50,25 @@ func load_board(board, names, characters):
 		players[i].player_name = names[i]
 		players[i].character = characters[i]
 	current_board = board;
-	goto_scene(board)
+	call_deferred("_goto_scene_ingame", board)
 
+# Goto a specific scene without saving player states
 func goto_scene(path):
 	call_deferred("_goto_scene", path)
 
-# Internal function for actually changing scene, should not be used directly: see goto_scene(path)
+# Internal function for actually changing scene without saving any game state
 func _goto_scene(path):
+	current_scene.free()
+	
+	var s = ResourceLoader.load(path)
+	
+	current_scene = s.instance()
+	
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+
+# Internal function for actually changing scene while handling player objects
+func _goto_scene_ingame(path):
 	current_scene.free()
 	
 	var s = ResourceLoader.load(path)
@@ -79,7 +93,7 @@ func _goto_scene(path):
 			collision_shape.scale = new_model.scale
 			collision_shape.rotation = new_model.rotation + Vector3(deg2rad(90), 0, 0)
 			collision_shape.shape = ResourceLoader.load(character_loader.get_collision_shape_path(players[i].character))
-
+	
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
 	
@@ -100,7 +114,7 @@ func goto_minigame(minigame = ""):
 	if minigame == "":
 		minigame_loader.goto_random_ffa()
 	else:
-		goto_scene(minigame)
+		call_deferred("_goto_scene_ingame", minigame)
 
 # Go back to board from mini-game, placement is an array with the players' id:s
 func goto_board(placement):
@@ -111,7 +125,7 @@ func goto_board(placement):
 	elif award == AWARD_T.winner_only:
 		players[placement[0] - 1].cookies += 10
 	
-	goto_scene(current_board)
+	call_deferred("_goto_scene_ingame", current_board)
 
 func load_board_state():
 	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
@@ -141,3 +155,9 @@ func load_board_state():
 			r_players[i].player_name = players[i].player_name
 		
 		new_game = false
+
+func reset_state():
+	new_game = true
+	current_board = ""
+	players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
+	turn = 1

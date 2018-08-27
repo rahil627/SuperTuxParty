@@ -114,6 +114,13 @@ func _unhandled_input(event):
 		_on_Roll_pressed()
 	elif event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
+	elif event.is_action_pressed("pause"):
+		if $Screen/PauseMenu.visible:
+			$Screen/PauseMenu.hide()
+			get_tree().paused = false
+		else:
+			$Screen/PauseMenu.popup()
+			get_tree().paused = true
 
 func get_players_on_space(space):
 	var num = 0
@@ -317,11 +324,9 @@ func _on_Buy_pressed():
 	end_turn = true
 	do_step(player, steps_remaining)
 
-
 func _on_Abort_pressed():
 	$Screen/BuyCake.hide()
 	$Screen/GetCake.show()
-
 
 func _on_HSlider_value_changed(value):
 	$Screen/BuyCake/Amount.text = "x" + var2str(int(value))

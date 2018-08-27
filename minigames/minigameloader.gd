@@ -69,7 +69,7 @@ func print_loaded_minigames():
 # goto_random_1v3/goto_random_2v2/goto_random_duel/goto_random_ffa
 func _goto_random_element(list):
 	# Should a minigame be removed if it was already played?
-	global.goto_scene(list[randi()%list.size()])
+	global.call_deferred("_goto_scene_ingame", list[randi()%list.size()])
 
 func goto_random_1v3():
 	_goto_random_element(minigames_1v3)
