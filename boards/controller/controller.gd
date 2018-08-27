@@ -67,14 +67,6 @@ func _ready():
 	if Engine.editor_hint:
 		return
 	
-	var cake_nodes = get_tree().get_nodes_in_group("cake_nodes")
-	
-	# Randomly place cake spot on board
-	if cake_nodes.size() > 0:
-		var cake_node = cake_nodes[randi() % cake_nodes.size()]
-		cake_node.cake = true
-		cake_node.get_node("Cake").visible = true
-	
 	# Give each player a unique id
 	var i = 1
 	

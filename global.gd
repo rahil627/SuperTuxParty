@@ -47,6 +47,7 @@ var max_turns = 10
 
 # Stops the controller from loading information when starting a new game
 var new_game = true
+var cookie_space = 0
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var turn = 1
 
@@ -145,6 +146,13 @@ func load_board_state():
 	
 	if !new_game:
 		
+		# Place cake spot back on the board
+		var cake_nodes = get_tree().get_nodes_in_group("cake_nodes")
+		var cake_node = cake_nodes[cookie_space]
+		
+		cake_node.cake = true
+		cake_node.get_node("Cake").visible = true
+		
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id
@@ -168,11 +176,22 @@ func load_board_state():
 		for i in range(r_players.size()):
 			r_players[i].player_name = players[i].player_name
 		
+		# Randomly place cake spot on board
+		var cake_nodes = get_tree().get_nodes_in_group("cake_nodes")
+		
+		if cake_nodes.size() > 0:
+			cookie_space = randi() % cake_nodes.size()
+			var cake_node = cake_nodes[cookie_space]
+			cake_node.cake = true
+			cake_node.get_node("Cake").visible = true
+		
+		
 		new_game = false
 
 # Reset game state, used for starting a new game
 func reset_state():
 	new_game = true
+	cookie_space = 0
 	current_board = ""
 	players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 	turn = 1
