@@ -1,5 +1,6 @@
 extends Node
 
+
 # Information about a player that needs to be saved when a scene change occurs
 class PlayerState:
 	var player_id = 0
@@ -8,7 +9,9 @@ class PlayerState:
 	var cookies = 0
 	var cookies_gui = 0
 	var cakes = 0
-	var space = null # Which space on the board the player is standing on
+	
+	# Which space on the board the player is standing on
+	var space = null
 
 var PluginSystem = preload("res://pluginsystem.gd")
 var plugin_system = PluginSystem.new()
@@ -31,11 +34,19 @@ enum AWARD_T {
 
 
 var amount_of_players = 4
-var award = AWARD_T.linear # Option to choose how players are awarded after completing a mini-game
-var current_board # Resource location of the current board
-var current_scene = null # Pointer to top-level node in current scene
+
+# Option to choose how players are awarded after completing a mini-game
+var award = AWARD_T.linear
+
+# Resource location of the current board
+var current_board
+
+# Pointer to top-level node in current scene
+var current_scene = null
 var max_turns = 10
-var new_game = true # Stops the controller from loading information when starting a new game
+
+# Stops the controller from loading information when starting a new game
+var new_game = true
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var turn = 1
 
@@ -100,7 +111,9 @@ func _goto_scene_ingame(path):
 
 # Change scene to one of the mini-games
 func goto_minigame(minigame = ""):
-	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
+	
+	# Current player nodes
+	var r_players = get_tree().get_nodes_in_group("players")
 	
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
@@ -131,6 +144,7 @@ func load_board_state():
 	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
 	
 	if !new_game:
+		
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id
@@ -156,6 +170,7 @@ func load_board_state():
 		
 		new_game = false
 
+# Reset game state, used for starting a new game
 func reset_state():
 	new_game = true
 	current_board = ""
