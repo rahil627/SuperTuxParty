@@ -22,6 +22,9 @@ func _physics_process(delta):
 		var dir = (destination[0] - translation)
 		translation +=  (MOVEMENT_SPEED * dir.length()) * dir.normalized() * delta;
 		
+		# Don't know why it's - instead of +, but otherwise the character looks in the wrong direction
+		rotation.y = atan2(dir.normalized().x, dir.normalized().z)
+		
 		if destination.size() > 1:
 			if dir.length() < 0.3:
 				destination.pop_front()
@@ -31,6 +34,7 @@ func _physics_process(delta):
 			$"../Controller".animation_step(player_id)
 		
 		if destination.size() == 0:
+			rotation.y = 0
 			$"../Controller".update_player_info()
 			$"../Controller".animation_ended(player_id)
 	else:
