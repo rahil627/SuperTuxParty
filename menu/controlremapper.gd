@@ -21,31 +21,32 @@ func load_controls():
 		save_controls()
 	else: # ConfigFile was properly loaded, initialize InputMap
 		for action_name in InputMap.get_actions():
+			if not config.has_section_key("input", action_name):
+				continue
+			
 			# Get the key scancode corresponding to the saved human-readable string
 			var entry = config.get_value("input", action_name)
-			
-			if entry == null:
-				continue
 			
 			entry = entry.split(" ", false)
 			var event
 			# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
-			if(entry[1] == "Keyboard"):
-				event = InputEventKey.new()
-				event.scancode = int(entry[2])
-				event.pressed = true
-			elif(entry[1] == "Mouse"):
-				event = InputEventMouseButton.new()
-				event.button_index = int(entry[2])
-				event.pressed = true
-			elif(entry[1] == "JoypadAxis"):
-				event = InputEventJoypadMotion.new()
-				event.axis = int(entry[2])
-				event.axis_value = int(entry[3])
-			elif(entry[1] == "JoypadButton"):
-				event = InputEventJoypadButton.new()
-				event.button_index = int(entry[2])
-				event.pressed = true
+			match entry[1]:
+				"Keyboard":
+					event = InputEventKey.new()
+					event.scancode = int(entry[2])
+					event.pressed = true
+				"Mouse":
+					event = InputEventMouseButton.new()
+					event.button_index = int(entry[2])
+					event.pressed = true
+				"JoypadAxis":
+					event = InputEventJoypadMotion.new()
+					event.axis = int(entry[2])
+					event.axis_value = int(entry[3])
+				"JoypadButton":
+					event = InputEventJoypadButton.new()
+					event.button_index = int(entry[2])
+					event.pressed = true
 			
 			event.device = int(entry[0])
 			
@@ -65,13 +66,13 @@ func save_controls():
 		
 		# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
 		var value = var2str(event.device)
-		if(event is InputEventKey):
+		if event is InputEventKey:
 			value += " Keyboard " + var2str(event.scancode)
-		elif(event is InputEventMouseButton):
+		elif event is InputEventMouseButton:
 			value += " Mouse " + var2str(event.button_index)
-		elif(event is InputEventJoypadMotion):
+		elif event is InputEventJoypadMotion:
 			value += " JoypadAxis " + var2str(event.axis) + " " + var2str(event.axis_value)
-		elif(event is InputEventJoypadButton):
+		elif event is InputEventJoypadButton:
 			value += " JoypadButton " + var2str(event.button_index)
 		
 		config.set_value("input", action_name, value)
@@ -95,7 +96,7 @@ func controls_remapping_setup():
 				var button = child.get_node("Button")
 				var event_name = "player" + var2str(player_id + 1) + "_" + child.get_name()
 				var input_event = InputMap.get_action_list(event_name)[0]
-				if(input_event != null):
+				if input_event != null:
 					button.text = event_to_str(input_event)
 					button.connect("pressed", self, "_control_remap_pressed", [event_name, button])
 
@@ -105,42 +106,44 @@ func _control_remap_pressed(event, button):
 	button.set_text("Press a key")
 
 func get_mousebutton_name(index):
-	if index == BUTTON_LEFT:
-		return "Left mouse button"
-	elif index == BUTTON_RIGHT:
-		return "Right mouse button"
-	elif index == BUTTON_MIDDLE:
-		return "Middle mouse button"
-	elif index == BUTTON_WHEEL_UP:
-		return "Button wheel up"
-	elif index == BUTTON_WHEEL_DOWN:
-		return "Button wheel down"
-	elif index == BUTTON_WHEEL_LEFT:
-		return "Button wheel left"
-	elif index == BUTTON_WHEEL_RIGHT:
-		return "Button wheel right"
-	else:
-		return "Mouse button " + var2str(index)
+	match index:
+		BUTTON_LEFT:
+			return "Left mouse button"
+		BUTTON_RIGHT:
+			return "Right mouse button"
+		BUTTON_MIDDLE:
+			return "Middle mouse button"
+		BUTTON_WHEEL_UP:
+			return "Button wheel up"
+		BUTTON_WHEEL_DOWN:
+			return "Button wheel down"
+		BUTTON_WHEEL_LEFT:
+			return "Button wheel left"
+		BUTTON_WHEEL_RIGHT:
+			return "Button wheel right"
+		_:
+			return "Mouse button " + var2str(index)
 
 func get_joypad_axis_name(axis, axis_value):
 	var axis_name = "+"
 	if axis_value < 0:
 		axis_name = "-"
 	
-	if axis == JOY_ANALOG_LX:
-		axis_name += "X Left"
-	elif axis == JOY_ANALOG_LY:
-		axis_name += "Y Left"
-	elif axis == JOY_ANALOG_RX:
-		axis_name += "X Right"
-	elif axis == JOY_ANALOG_RY:
-		axis_name += "Y Right"
-	elif axis == JOY_ANALOG_L2:
-		return "Trigger Left"
-	elif axis == JOY_ANALOG_R2:
-		return "Trigger Right"
-	else:
-		axis_name += "Unknown Axis " + var2str(axis)
+	match axis:
+		JOY_ANALOG_LX:
+			axis_name += "X Left"
+		JOY_ANALOG_LY:
+			axis_name += "Y Left"
+		JOY_ANALOG_RX:
+			axis_name += "X Right"
+		JOY_ANALOG_RY:
+			axis_name += "Y Right"
+		JOY_ANALOG_L2:
+			return "Trigger Left"
+		JOY_ANALOG_R2:
+			return "Trigger Right"
+		_:
+			axis_name += "Unknown Axis " + var2str(axis)
 	
 	return axis_name
 
