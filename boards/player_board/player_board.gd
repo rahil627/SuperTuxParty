@@ -22,7 +22,6 @@ func _physics_process(delta):
 		var dir = (destination[0] - translation)
 		translation +=  (MOVEMENT_SPEED * dir.length()) * dir.normalized() * delta;
 		
-		# Don't know why it's - instead of +, but otherwise the character looks in the wrong direction
 		rotation.y = atan2(dir.normalized().x, dir.normalized().z)
 		
 		if destination.size() > 1:
