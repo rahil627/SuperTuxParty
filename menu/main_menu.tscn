@@ -19,7 +19,7 @@ size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Main menu" type="Container" parent="." index="0"]
+[node name="MainMenu" type="Container" parent="." index="0"]
 
 editor/display_folded = true
 anchor_left = 0.3
@@ -34,7 +34,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Title" type="Label" parent="Main menu" index="0"]
+[node name="Title" type="Label" parent="MainMenu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -55,7 +55,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
-[node name="Buttons" type="VBoxContainer" parent="Main menu" index="1"]
+[node name="Buttons" type="VBoxContainer" parent="MainMenu" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -72,7 +72,7 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
-[node name="Play" type="Button" parent="Main menu/Buttons" index="0"]
+[node name="Play" type="Button" parent="MainMenu/Buttons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -97,7 +97,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Options" type="Button" parent="Main menu/Buttons" index="1"]
+[node name="Options" type="Button" parent="MainMenu/Buttons" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -123,7 +123,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Quit" type="Button" parent="Main menu/Buttons" index="2"]
+[node name="Quit" type="Button" parent="MainMenu/Buttons" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -149,7 +149,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Selection board" type="Container" parent="." index="1"]
+[node name="SelectionBoard" type="Container" parent="." index="1"]
 
 editor/display_folded = true
 visible = false
@@ -165,7 +165,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Title" type="Label" parent="Selection board" index="0"]
+[node name="Title" type="Label" parent="SelectionBoard" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -186,7 +186,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Selection board" index="1"]
+[node name="ScrollContainer" type="ScrollContainer" parent="SelectionBoard" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -208,7 +208,7 @@ scroll_vertical = 0
 scroll_deadzone = 0
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Scroll" ]
 
-[node name="Buttons" type="VBoxContainer" parent="Selection board/ScrollContainer" index="0"]
+[node name="Buttons" type="VBoxContainer" parent="SelectionBoard/ScrollContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -225,7 +225,7 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
-[node name="LabelAward" type="Label" parent="Selection board" index="2"]
+[node name="LabelAward" type="Label" parent="SelectionBoard" index="2"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -246,7 +246,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
-[node name="AwardType" type="OptionButton" parent="Selection board" index="3"]
+[node name="AwardType" type="OptionButton" parent="SelectionBoard" index="3"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -273,7 +273,7 @@ items = [  ]
 selected = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="Back" type="Button" parent="Selection board" index="4"]
+[node name="Back" type="Button" parent="SelectionBoard" index="4"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -297,7 +297,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="Selection char" type="Container" parent="." index="2"]
+[node name="SelectionChar" type="Container" parent="." index="2"]
 
 editor/display_folded = true
 visible = false
@@ -313,7 +313,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Title" type="Label" parent="Selection char" index="0"]
+[node name="Title" type="Label" parent="SelectionChar" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -334,7 +334,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
-[node name="Buttons" type="VBoxContainer" parent="Selection char" index="1"]
+[node name="Buttons" type="VBoxContainer" parent="SelectionChar" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -351,7 +351,7 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
-[node name="VScrollBar" type="ScrollContainer" parent="Selection char/Buttons" index="0"]
+[node name="VScrollBar" type="ScrollContainer" parent="SelectionChar/Buttons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -373,7 +373,7 @@ scroll_vertical = 0
 scroll_deadzone = 0
 _sections_unfolded = [ "Anchor", "Margin", "Scroll", "Size Flags" ]
 
-[node name="Grid" type="GridContainer" parent="Selection char/Buttons/VScrollBar" index="0"]
+[node name="Grid" type="GridContainer" parent="SelectionChar/Buttons/VScrollBar" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -389,7 +389,7 @@ size_flags_vertical = 1
 columns = 2
 _sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
-[node name="Back" type="Button" parent="Selection char/Buttons" index="1"]
+[node name="Back" type="Button" parent="SelectionChar/Buttons" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -415,7 +415,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Options menu" type="Container" parent="." index="3"]
+[node name="OptionsMenu" type="Container" parent="." index="3"]
 
 editor/display_folded = true
 visible = false
@@ -431,7 +431,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Title" type="Label" parent="Options menu" index="0"]
+[node name="Title" type="Label" parent="OptionsMenu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -452,7 +452,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
-[node name="Buttons" type="VBoxContainer" parent="Options menu" index="1"]
+[node name="Buttons" type="VBoxContainer" parent="OptionsMenu" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -469,7 +469,7 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
-[node name="TabContainer" type="TabContainer" parent="Options menu/Buttons" index="0"]
+[node name="TabContainer" type="TabContainer" parent="OptionsMenu/Buttons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -488,7 +488,7 @@ tab_align = 0
 tabs_visible = true
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Visual" type="VBoxContainer" parent="Options menu/Buttons/TabContainer" index="0"]
+[node name="Visual" type="VBoxContainer" parent="OptionsMenu/Buttons/TabContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -506,7 +506,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Fullscreen" type="CheckButton" parent="Options menu/Buttons/TabContainer/Visual" index="0"]
+[node name="Fullscreen" type="CheckButton" parent="OptionsMenu/Buttons/TabContainer/Visual" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -531,7 +531,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Controls" type="VBoxContainer" parent="Options menu/Buttons/TabContainer" index="1"]
+[node name="Controls" type="VBoxContainer" parent="OptionsMenu/Buttons/TabContainer" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -550,7 +550,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="TabContainer" type="TabContainer" parent="Options menu/Buttons/TabContainer/Controls" index="0"]
+[node name="TabContainer" type="TabContainer" parent="OptionsMenu/Buttons/TabContainer/Controls" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -568,7 +568,7 @@ custom_fonts/font = ExtResource( 3 )
 tab_align = 0
 tabs_visible = true
 
-[node name="Back" type="Button" parent="Options menu/Buttons" index="1"]
+[node name="Back" type="Button" parent="OptionsMenu/Buttons" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -978,20 +978,20 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[connection signal="pressed" from="Main menu/Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 
-[connection signal="pressed" from="Main menu/Buttons/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
 
-[connection signal="pressed" from="Main menu/Buttons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Buttons/Quit" to="." method="_on_Quit_pressed"]
 
-[connection signal="item_selected" from="Selection board/AwardType" to="." method="_on_AwardType_item_selected"]
+[connection signal="item_selected" from="SelectionBoard/AwardType" to="." method="_on_AwardType_item_selected"]
 
-[connection signal="pressed" from="Selection board/Back" to="." method="_on_Selection_Back_pressed"]
+[connection signal="pressed" from="SelectionBoard/Back" to="." method="_on_Selection_Back_pressed"]
 
-[connection signal="pressed" from="Selection char/Buttons/Back" to="." method="_on_Selection_Char_Back_pressed"]
+[connection signal="pressed" from="SelectionChar/Buttons/Back" to="." method="_on_SelectionChar_Back_pressed"]
 
-[connection signal="toggled" from="Options menu/Buttons/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
+[connection signal="toggled" from="OptionsMenu/Buttons/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
 
-[connection signal="pressed" from="Options menu/Buttons/Back" to="." method="_on_Options_Back_pressed"]
+[connection signal="pressed" from="OptionsMenu/Buttons/Back" to="." method="_on_Options_Back_pressed"]
 
 
