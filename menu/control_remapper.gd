@@ -21,7 +21,7 @@ func load_controls():
 		save_controls()
 	else: # ConfigFile was properly loaded, initialize InputMap
 		for action_name in InputMap.get_actions():
-			if not config.has_section_key("input", action_name):
+			if action_name.substr(0, 3) == "ui_" or not config.has_section_key("input", action_name):
 				continue
 			
 			# Get the key scancode corresponding to the saved human-readable string
@@ -61,8 +61,10 @@ func save_controls():
 	var config = ConfigFile.new()
 
 	for action_name in InputMap.get_actions():
-		var action_list = InputMap.get_action_list(action_name)
-		var event = action_list[0]
+		if action_name.substr(0, 3) == "ui_":
+			continue
+		
+		var event = InputMap.get_action_list(action_name)[0]
 		
 		# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
 		var value = var2str(event.device)
@@ -81,7 +83,7 @@ func save_controls():
 # loads for every player an instance of player_controls_template.tscn and assigns a click handler to every button
 func controls_remapping_setup():
 	load_controls()
-	var controls_tab = main_menu.get_node("Options menu/Buttons/TabContainer/Controls/TabContainer")
+	var controls_tab = main_menu.get_node("OptionsMenu/Buttons/TabContainer/Controls/TabContainer")
 	for player_id in range(4):
 		var template = preload("player_controls_template.tscn")
 		var instance = template.instance()
