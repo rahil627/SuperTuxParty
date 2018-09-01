@@ -57,6 +57,7 @@ _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -151,7 +152,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionBoard" type="Container" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -188,12 +188,13 @@ _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SelectionBoard" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 120.0
-margin_bottom = -35.0
+margin_bottom = -158.0
 rect_min_size = Vector2( 512, 140 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -225,13 +226,69 @@ custom_constants/separation = 0
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
-[node name="LabelAward" type="Label" parent="SelectionBoard" index="2"]
+[node name="HumanPlayerLabel" type="Label" parent="SelectionBoard" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 273.0
+margin_right = 512.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 512, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Amount of human players: 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="HumanPlayerSlider" type="HSlider" parent="SelectionBoard" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2.0
+margin_top = 307.0
+margin_right = 510.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 512, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 1.0
+max_value = 4.0
+step = 1.0
+page = 0.0
+value = 4.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Rect" ]
+
+[node name="LabelAward" type="Label" parent="SelectionBoard" index="4"]
 
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.0
 margin_top = -105.0
+margin_right = -2.0
 margin_bottom = -70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -246,7 +303,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
-[node name="AwardType" type="OptionButton" parent="SelectionBoard" index="3"]
+[node name="AwardType" type="OptionButton" parent="SelectionBoard" index="5"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -273,7 +330,7 @@ items = [  ]
 selected = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="Back" type="Button" parent="SelectionBoard" index="4"]
+[node name="Back" type="Button" parent="SelectionBoard" index="6"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -983,6 +1040,8 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 [connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
 
 [connection signal="pressed" from="MainMenu/Buttons/Quit" to="." method="_on_Quit_pressed"]
+
+[connection signal="value_changed" from="SelectionBoard/HumanPlayerSlider" to="." method="_on_NumPlayers_value_changed"]
 
 [connection signal="item_selected" from="SelectionBoard/AwardType" to="." method="_on_AwardType_item_selected"]
 

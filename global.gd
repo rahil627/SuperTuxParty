@@ -5,6 +5,7 @@ extends Node
 class PlayerState:
 	var player_id = 0
 	var player_name = ""
+	var is_ai = false
 	var character = ""
 	var cookies = 0
 	var cookies_gui = 0
@@ -57,10 +58,12 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
 
-func load_board(board, names, characters):
+func load_board(board, names, characters, human_players):
 	for i in range(characters.size()):
 		players[i].player_name = names[i]
 		players[i].character = characters[i]
+		if i >= human_players:
+			players[i].is_ai = true
 	current_board = board;
 	call_deferred("_goto_scene_ingame", board)
 
@@ -161,6 +164,7 @@ func load_board_state():
 			r_players[i].cookies_gui = players[i].cookies_gui
 			r_players[i].cakes = players[i].cakes
 			r_players[i].space = current_scene.get_node(players[i].space)
+			r_players[i].is_ai = players[i].is_ai
 			
 			# Move piece to the right space, increase y-axis so two players are not placed inside each other
 			var controller = current_scene.get_node("Controller")
@@ -175,6 +179,7 @@ func load_board_state():
 	else:
 		for i in range(r_players.size()):
 			r_players[i].player_name = players[i].player_name
+			r_players[i].is_ai = players[i].is_ai
 		
 		# Randomly place cake spot on board
 		var cake_nodes = get_tree().get_nodes_in_group("cake_nodes")

@@ -96,13 +96,14 @@ func _ready():
 	check_winner()
 	
 	# Show "your turn screen" for first player
+	
 	_on_Roll_pressed()
 
 func _unhandled_input(event):
 	if Engine.editor_hint:
 		return
 	
-	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")):
+	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")) and not players[player_turn-1].is_ai:
 		_on_Roll_pressed()
 	elif event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -137,12 +138,24 @@ func animation_ended(player_id):
 	if player_id != player_turn - 1:
 		return
 	
+	var player = players[player_id - 1]
+	
 	if end_turn:
 		wait_for_animation = false
 		_on_Roll_pressed()
 	else:
-		wait_for_animation = true
-		$Screen/GetCake.show()
+		if not player.is_ai:
+			wait_for_animation = true
+			$Screen/GetCake.show()
+		else:
+			var cakes = int(player.cookies / COOKIES_FOR_CAKE)
+			player.cakes += cakes
+			player.cookies -= COOKIES_FOR_CAKE * cakes
+			var timer = Timer.new()
+			timer.set_wait_time(1)
+			timer.connect("timeout", self, "_ai_continue_callback", [timer])
+			timer.start()
+			add_child(timer)
 
 func animation_step(player_id):
 	if player_id != player_turn - 1:
@@ -153,6 +166,16 @@ func animation_step(player_id):
 		$Screen/Stepcounter.text = var2str(step_count)
 	else:
 		$Screen/Stepcounter.text = ""
+
+func _ai_continue_callback(timer):
+	remove_child(timer)
+	wait_for_animation = false
+	end_turn = true
+	do_step(players[player_turn - 2], steps_remaining)
+
+func _ai_timer_callback(timer):
+	remove_child(timer)
+	_on_Roll_pressed()
 
 func _on_Roll_pressed():
 	if wait_for_animation:
@@ -174,43 +197,53 @@ func _on_Roll_pressed():
 		$Screen/Splash/Background/Player.texture = ImageTexture.new()
 		$Screen/Splash/Background/Player.texture.create_from_image(image)
 		$Screen/Splash.play("show")
+		
+		if players[player_turn - 1].is_ai:
+			var timer = Timer.new()
+			timer.set_wait_time(1)
+			timer.connect("timeout", self, "_ai_timer_callback", [timer])
+			timer.start()
+			add_child(timer)
 
 # Moves a player num spaces forward and stops when a cake spot is encoutered
 func do_step(player, num):
 	if num <= 0:
 		animation_ended(player.player_id)
-		return
-	
-	# Adds each animation step to the player_board.gd script
-	# The step to the last space is added during update_space(player.space)
-	var previous_space = player.space
-	for i in range(num - 1):
+	else:
+		# Adds each animation step to the player_board.gd script
+		# The step to the last space is added during update_space(player.space)
+		var previous_space = player.space
+		for i in range(num - 1):
+			# TODO: enable multiple branches later on
+			player.space = player.space.next[0]
+			# If player passes a cake-spot
+			if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
+				end_turn = false
+				
+				steps_remaining = num - (i + 1)
+				update_space(previous_space)
+				update_space(player.space)
+				return
+			else:
+				var players_on_space = get_players_on_space(player.space) - 1
+				var offset = EMPTY_SPACE_PLAYER_TRANSLATION
+				if players_on_space > 0:
+					offset = PLAYER_TRANSLATION[players_on_space]
+				player.destination.append(player.space.translation + offset)
+		
 		# TODO: enable multiple branches later on
 		player.space = player.space.next[0]
-		# If player passes a cake-spot
 		if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
 			end_turn = false
-			
-			steps_remaining = num - (i + 1)
+			steps_remaining = 0
 			update_space(previous_space)
 			update_space(player.space)
 			return
-		else:
-			var players_on_space = get_players_on_space(player.space) - 1
-			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
-			if players_on_space > 0:
-				offset = PLAYER_TRANSLATION[players_on_space]
-			player.destination.append(player.space.translation + offset)
-	
-	# TODO: enable multiple branches later on
-	player.space = player.space.next[0]
-	if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
-		end_turn = false
-		steps_remaining = 0
-	
-	# Reposition figures
-	update_space(previous_space)
-	update_space(player.space)
+		
+		# Reposition figures
+		update_space(previous_space)
+		update_space(player.space)
+		
 	
 	# Lose cookies if you land on red space
 	match player.space.type:
