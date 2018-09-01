@@ -36,7 +36,7 @@ var splash_ended = false
 var wait_for_animation = false
 
 func check_winner():
-	if $"/root/Global".turn > $"/root/Global".max_turns:
+	if Global.turn > Global.max_turns:
 		var message = ""
 		
 		for p in players:
@@ -79,14 +79,14 @@ func _ready():
 			p.translation = p.space.translation + PLAYER_TRANSLATION[i-2]
 	
 	camera_focus = players[0]
-	$"/root/Global".load_board_state()
+	Global.load_board_state()
 	
-	if $"/root/Global".award == $"/root/Global".AWARD_T.winner_only:
+	if Global.award == Global.AWARD_T.winner_only:
 		COOKIES_FOR_CAKE = 20
 		$Screen/GetCake/Label.text = "Buy a cake for 20 cookies"
 	
 	# Initialize GUI
-	$Screen/Turn.text = "Turn: " + var2str($"/root/Global".turn)
+	$Screen/Turn.text = "Turn: " + var2str(Global.turn)
 	$Screen/Dice.text = "Roll " + players[0].player_name + "!"
 	
 	update_player_info()
@@ -96,14 +96,13 @@ func _ready():
 	check_winner()
 	
 	# Show "your turn screen" for first player
-	
 	_on_Roll_pressed()
 
 func _unhandled_input(event):
 	if Engine.editor_hint:
 		return
 	
-	if(event.is_action_pressed("player"+var2str(player_turn)+"_ok")) and not players[player_turn-1].is_ai:
+	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn-1].is_ai:
 		_on_Roll_pressed()
 	elif event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -191,7 +190,7 @@ func _on_Roll_pressed():
 		roll()
 	else:
 		splash_ended = true
-		var image = ResourceLoader.load($"/root/Global".character_loader.get_character_splash($"/root/Global".players[player_turn - 1].character)).get_data()
+		var image = ResourceLoader.load(Global.character_loader.get_character_splash(Global.players[player_turn - 1].character)).get_data()
 		image.resize(256, 256)
 		
 		$Screen/Splash/Background/Player.texture = ImageTexture.new()
@@ -280,8 +279,8 @@ func roll():
 		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
 	else:
 		# All players have had their turn, goto mini-game
-		$"/root/Global".turn += 1
-		$"/root/Global".goto_minigame()
+		Global.turn += 1
+		Global.goto_minigame()
 	
 	player_turn += 1
 	
@@ -298,7 +297,7 @@ func _process(delta):
 			self.translation += (CAMERA_SPEED * dir.length()) * dir.normalized() * delta
 	
 	# Automatically switch to next player when current player has finished moving
-	if player_turn - 2 >= 0 && player_turn - 1 < $"/root/Global".amount_of_players:
+	if player_turn - 2 >= 0 && player_turn - 1 < Global.amount_of_players:
 		var player = players[player_turn - 2]
 		if camera_focus == player:
 			if player.destination.size() == 0 && end_turn:

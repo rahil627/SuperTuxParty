@@ -1,11 +1,12 @@
 extends RigidBody
 
-var player_id = 0
-var accel = 15
-
 const ICE_RADIUS = 3
 const MAX_SPEED = 4
 const PLAYER_RADIUS = 0.5
+
+var player_id = 0
+var accel = 15
+var is_ai = false
 
 func _ready():
 	$Model.set_as_toplevel(true)
@@ -16,7 +17,6 @@ func _process(delta):
 	
 	$Model.translation = self.translation + Vector3(0, 0.5, 0)
 	
-	var is_ai = $"/root/Global".players[player_id - 1].is_ai
 	var players = get_tree().get_nodes_in_group("players")
 	
 	if not is_ai:

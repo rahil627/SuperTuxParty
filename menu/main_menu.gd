@@ -12,7 +12,7 @@ var character_loader
 
 var control_remapper = preload("res://menu/control_remapper.gd").new(self)
 
-onready var human_players = $"/root/Global".amount_of_players
+onready var human_players = Global.amount_of_players
 
 func load_boards():
 	board_loader = Global.board_loader
@@ -78,7 +78,7 @@ func _on_board_select(target):
 	$SelectionBoard.hide()
 	$SelectionChar.show()
 	
-	for i in range(1, 4):
+	for i in range(1, 5):
 		get_node("PlayerInfo" + var2str(i)).show()
 
 func _on_Fullscreen_toggled(button_pressed):
@@ -95,7 +95,7 @@ func _on_SelectionChar_Back_pressed():
 	
 	$SelectionChar/Title.text = "Select character for Player 1"
 	
-	for i in range(1, 4):
+	for i in range(1, 5):
 		get_node("PlayerInfo" + var2str(i) + "/Character").text = "Character:"
 		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
 		get_node("PlayerInfo" + var2str(i)).hide()
@@ -110,7 +110,7 @@ func _on_character_select(target):
 	if current_player > human_players:
 		var names = []
 		
-		for i in range(1, $"/root/Global".amount_of_players+1):
+		for i in range(1, Global.amount_of_players + 1):
 			if i < current_player:
 				names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
 			else:
@@ -118,7 +118,7 @@ func _on_character_select(target):
 				characters[i - 1] = possible_characters[randi() % possible_characters.size()]
 				names.push_back("%s Bot" % characters[i - 1])
 		
-		$"/root/Global".load_board(board, names, characters, human_players)
+		Global.load_board(board, names, characters, human_players)
 	
 	$SelectionChar/Title.text = "Select character for Player " + var2str(current_player)
 
@@ -132,4 +132,5 @@ func _on_AwardType_item_selected(ID):
 
 func _on_NumPlayers_value_changed(value):
 	human_players = int(value)
+	
 	$SelectionBoard/HumanPlayerLabel.text = "Amount of human players: %d" % int(value)
