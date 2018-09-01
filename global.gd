@@ -44,7 +44,7 @@ var current_board
 
 # Pointer to top-level node in current scene
 var current_scene = null
-var max_turns = 10
+var max_turns = 5
 
 # Stops the controller from loading information when starting a new game
 var new_game = true
@@ -75,7 +75,7 @@ func goto_scene(path):
 func _goto_scene(path):
 	current_scene.free()
 	
-	var s = ResourceLoader.load(path)
+	var s = load(path)
 	
 	current_scene = s.instance()
 	
@@ -86,14 +86,21 @@ func _goto_scene(path):
 func _goto_scene_ingame(path):
 	current_scene.free()
 	
-	var s = ResourceLoader.load(path)
+	var loader = ResourceLoader.load_interactive(path)
+	
+	if loader == null:
+		print("Error")
+	else:
+		loader.wait()
+	
+	var s = loader.get_resource()
 	
 	current_scene = s.instance()
 	
 	for i in range(players.size()):
 		var player = current_scene.get_node("Player" + var2str(i+1))
-		var new_model = ResourceLoader.load(character_loader.get_character_path(players[i].character)).instance()
-		new_model.get_children()[0].set_surface_material(0, ResourceLoader.load(character_loader.get_material_path(players[i].character)))
+		var new_model = load(character_loader.get_character_path(players[i].character)).instance()
+		new_model.get_children()[0].set_surface_material(0, load(character_loader.get_material_path(players[i].character)))
 		new_model.set_name("Model")
 		
 		var old_model = player.get_node("Model")
@@ -110,7 +117,7 @@ func _goto_scene_ingame(path):
 			collision_shape.translation.y += new_model.get_child(0).translation.y
 			collision_shape.scale = new_model.scale
 			collision_shape.rotation = new_model.rotation + Vector3(deg2rad(90), 0, 0)
-			collision_shape.shape = ResourceLoader.load(character_loader.get_collision_shape_path(players[i].character))
+			collision_shape.shape = load(character_loader.get_collision_shape_path(players[i].character))
 	
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)

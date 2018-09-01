@@ -35,7 +35,7 @@ func load_characters():
 	for character in character_loader.get_loaded_characters():
 		var character_list_entry = button_template.instance()
 		
-		var image = ResourceLoader.load(character_loader.get_character_splash(character)).get_data()
+		var image = load(character_loader.get_character_splash(character)).get_data()
 		image.resize(32, 32)
 		character_list_entry.set_text(character)
 		character_list_entry.icon = ImageTexture.new()

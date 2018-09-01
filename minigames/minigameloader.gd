@@ -2,10 +2,10 @@ var global
 
 # This is the entry point filename to every minigame
 const MINIGAME_BOARD_FILENAME = "minigame.tscn"
-const MINIGAME_1v3_PATH  = "res:///minigames/1v3"
-const MINIGAME_2v2_PATH  = "res:///minigames/2v2"
-const MINIGAME_DUEL_PATH = "res:///minigames/Duel"
-const MINIGAME_FFA_PATH  = "res:///minigames/FFA"
+const MINIGAME_1v3_PATH  = "res://minigames/1v3"
+const MINIGAME_2v2_PATH  = "res://minigames/2v2"
+const MINIGAME_DUEL_PATH = "res://minigames/Duel"
+const MINIGAME_FFA_PATH  = "res://minigames/FFA"
 
 # Stores the full path to found minigames of each type
 var minigames_duel = []
@@ -34,6 +34,7 @@ func read_directory(filename, output):
 		elif dir.current_is_dir():
 			var new_dir = Directory.new()
 			new_dir.open(filename + "/" + file)
+			
 			if new_dir.file_exists(MINIGAME_BOARD_FILENAME):
 				output.append(filename + "/" + file + "/" + MINIGAME_BOARD_FILENAME)
 			else:

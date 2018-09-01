@@ -3,7 +3,7 @@ const CHARACTER_SPLASHNAME = "splash.png"
 const MATERIAL_FILENAME = "material.tres"
 const COLLISION_SHAPE_FILENAME = "collision.tres"
 
-const NEEDED_FILES = [CHARACTER_FILENAME, CHARACTER_SPLASHNAME]
+const NEEDED_FILES = [CHARACTER_FILENAME]
 const CHARACTER_PATH = "res://characters"
 
 # Stores the name of each subdirectory of CHARACTER_PATH

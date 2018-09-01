@@ -190,7 +190,7 @@ func _on_Roll_pressed():
 		roll()
 	else:
 		splash_ended = true
-		var image = ResourceLoader.load(Global.character_loader.get_character_splash(Global.players[player_turn - 1].character)).get_data()
+		var image = load(Global.character_loader.get_character_splash(Global.players[player_turn - 1].character)).get_data()
 		image.resize(256, 256)
 		
 		$Screen/Splash/Background/Player.texture = ImageTexture.new()

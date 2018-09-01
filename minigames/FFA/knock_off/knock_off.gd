@@ -27,7 +27,7 @@ func _process(delta):
 			placement[0] = players[0].player_id
 		timer_end_start = true
 		
-		for p in $"/root/Global".players:
+		for p in Global.players:
 			if p.player_id == placement[0]:
 				$Environment/Screen/Message.text = p.player_name + " wins!"
 		
@@ -36,4 +36,4 @@ func _process(delta):
 	if timer_end_start:
 		timer_end -= delta
 		if timer_end <= 0:
-			$"/root/Global".goto_board(placement)
+			Global.goto_board(placement)

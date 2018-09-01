@@ -21,13 +21,13 @@ func _process(delta):
 	
 	if not is_ai:
 		if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
-			dir.x -= accel * delta
+			dir.x -= 1
 		if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
-			dir.x += accel * delta
+			dir.x += 1
 		if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
-			dir.z += accel * delta
+			dir.z += 1
 		if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
-			dir.z -= accel * delta
+			dir.z -= 1
 	else:
 		# Try to knock off the player, that is the farthest away from the center, yet still on the ice
 		var farthest_player
@@ -44,7 +44,8 @@ func _process(delta):
 	
 	dir = dir.normalized()
 	
-	angular_velocity += dir * accel * delta
+	if dir.length() > 0:
+		angular_velocity += dir * accel * delta
 	
 	if angular_velocity.length() > MAX_SPEED:
 		angular_velocity = MAX_SPEED * angular_velocity.normalized()
