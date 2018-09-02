@@ -1,6 +1,10 @@
 # SuperTuxParty
+![](icon-smallest.png)
+
 An open-source party game that is meant to replicate the feel of games like
 Mario Party while remaining free and open-source.
+
+![](screenshot.png)
 
 ## Engine
 SuperTuxParty is built with the [Godot Engine](https://godotengine.org/). The
