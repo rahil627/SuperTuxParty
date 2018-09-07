@@ -1,5 +1,5 @@
 tool
-extends StaticBody
+extends Spatial
 
 enum NODE_TYPES {BLUE, RED, GREEN}
 
