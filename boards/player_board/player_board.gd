@@ -15,11 +15,20 @@ var cakes = 0
 var cookies_gui = 0
 var gui_timer = GUI_TIMER
 
+var is_walking = false
+
 func _ready():
 	add_to_group("players")
+	
+	if has_node("Model/AnimationPlayer"):
+		$Model/AnimationPlayer.play("idle")
 
 func _physics_process(delta):
 	if destination.size() > 0:
+		if not is_walking and has_node("Model/AnimationPlayer"):
+			$Model/AnimationPlayer.play("walk")
+			is_walking = true
+		
 		var dir = (destination[0] - translation)
 		translation +=  (MOVEMENT_SPEED * dir.length()) * dir.normalized() * delta;
 		
@@ -35,6 +44,9 @@ func _physics_process(delta):
 		
 		if destination.size() == 0:
 			rotation.y = 0
+			if has_node("Model/AnimationPlayer"):
+				$Model/AnimationPlayer.play("idle")
+				is_walking = false
 			$"../Controller".update_player_info()
 			$"../Controller".animation_ended(player_id)
 	else:

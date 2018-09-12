@@ -1,6 +1,5 @@
 const CHARACTER_FILENAME = "character.tscn"
 const CHARACTER_SPLASHNAME = "splash.png"
-const MATERIAL_FILENAME = "material.tres"
 const COLLISION_SHAPE_FILENAME = "collision.tres"
 
 const NEEDED_FILES = [CHARACTER_FILENAME]
@@ -61,8 +60,6 @@ func get_loaded_characters():
 func get_character_path(name):
 	return CHARACTER_PATH + "/" + name + "/" + CHARACTER_FILENAME
 
-func get_material_path(name):
-	return CHARACTER_PATH + "/" + name + "/" + MATERIAL_FILENAME
 
 func get_character_splash(name):
 	return CHARACTER_PATH + "/" + name + "/" + CHARACTER_SPLASHNAME
