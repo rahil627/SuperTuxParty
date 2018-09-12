@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=3]
 
-[node name="Menus" type="Container"]
+[node name="Menus" type="Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -230,12 +230,11 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constan
 [node name="HumanPlayerLabel" type="Label" parent="SelectionBoard" index="2"]
 
 anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 273.0
-margin_right = 512.0
-margin_bottom = 302.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -159.0
+margin_bottom = -130.0
 rect_min_size = Vector2( 512, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -248,18 +247,16 @@ text = "Amount of human players: 4"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="HumanPlayerSlider" type="HSlider" parent="SelectionBoard" index="3"]
 
 anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -2.0
-margin_top = 307.0
-margin_right = 510.0
-margin_bottom = 323.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -125.0
+margin_bottom = -109.0
 rect_min_size = Vector2( 512, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -279,7 +276,7 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="LabelAward" type="Label" parent="SelectionBoard" index="4"]
 
