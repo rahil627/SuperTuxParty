@@ -152,6 +152,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionBoard" type="Container" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2

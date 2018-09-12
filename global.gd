@@ -89,7 +89,7 @@ func _goto_scene_ingame(path):
 	var loader = ResourceLoader.load_interactive(path)
 	
 	if loader == null:
-		print("Error")
+		print("Error: could not load scene " + path)
 	else:
 		loader.wait()
 	
