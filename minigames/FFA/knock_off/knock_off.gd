@@ -21,10 +21,11 @@ func _process(delta):
 			placement[4 - losses] = p.player_id # Assign placement before deleting player
 			p.queue_free()
 	
-	if players.size() <= 1:
+	if players.size() <= 1 and not timer_end_start:
 		# If the last player has not died yet, put him as the winner
 		if players.size() == 1:
 			placement[0] = players[0].player_id
+			players[0].winner = true
 		timer_end_start = true
 		
 		for p in Global.players:

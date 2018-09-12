@@ -8,8 +8,22 @@ var player_id = 0
 var accel = 15
 var is_ai = false
 
+var winner = false setget set_winner
+
+var is_walking = false
+
+func set_winner(win):
+	winner = win
+	
+	if not is_walking and win and has_node("Model/AnimationPlayer"):
+		$Model/AnimationPlayer.play("happy")
+
 func _ready():
 	$Model.set_as_toplevel(true)
+	
+	if has_node("Model/AnimationPlayer"):
+		$Model/AnimationPlayer.play("idle")
+	
 	add_to_group("players")
 
 func _process(delta):
@@ -46,6 +60,16 @@ func _process(delta):
 	
 	if dir.length() > 0:
 		angular_velocity += dir * accel * delta
+		if not is_walking and has_node("Model/AnimationPlayer"):
+			$Model/AnimationPlayer.play("walk")
+			is_walking = true
+	else:
+		if is_walking and has_node("Model/AnimationPlayer"):
+			if winner:
+				$Model/AnimationPlayer.play("happy")
+			else:
+				$Model/AnimationPlayer.play("idle")
+			is_walking = false
 	
 	if angular_velocity.length() > MAX_SPEED:
 		angular_velocity = MAX_SPEED * angular_velocity.normalized()

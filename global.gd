@@ -100,23 +100,19 @@ func _goto_scene_ingame(path):
 	for i in range(players.size()):
 		var player = current_scene.get_node("Player" + var2str(i+1))
 		var new_model = load(character_loader.get_character_path(players[i].character)).instance()
-		new_model.get_children()[0].set_surface_material(0, load(character_loader.get_material_path(players[i].character)))
 		new_model.set_name("Model")
 		
 		var old_model = player.get_node("Model")
 		new_model.translation = old_model.translation
-		new_model.translation = old_model.scale
-		new_model.translation = old_model.rotation
+		new_model.scale = old_model.scale
+		new_model.rotation = old_model.rotation
 		old_model.replace_by(new_model, true)
 		
 		player.is_ai = players[i].is_ai
 		
 		if player.has_node("Shape"):
 			var collision_shape = player.get_node("Shape")
-			collision_shape.translation = new_model.translation
-			collision_shape.translation.y += new_model.get_child(0).translation.y
-			collision_shape.scale = new_model.scale
-			collision_shape.rotation = new_model.rotation + Vector3(deg2rad(90), 0, 0)
+			collision_shape.translation += new_model.translation
 			collision_shape.shape = load(character_loader.get_collision_shape_path(players[i].character))
 	
 	get_tree().get_root().add_child(current_scene)
