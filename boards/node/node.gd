@@ -50,7 +50,7 @@ func _ready():
 					nodes[pos - 1].next.append(self)
 				prev = [nodes[pos - 1]]
 	else:
-		$"EditorLines".queue_free()
+		$EditorLines.queue_free()
 
 # Updates the changes in the editor when potential_cake is changes
 func set_cake(enabled):
@@ -173,11 +173,11 @@ func set_type(t):
 func set_material():
 	match type:
 		RED:
-			$"Model/Cylinder".set_surface_material(0, preload("res://boards/node/node_red_material.tres"))
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/node_red_material.tres"))
 		GREEN:
-			$"Model/Cylinder".set_surface_material(0, preload("res://boards/node/node_green_material.tres"))
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/node_green_material.tres"))
 		BLUE:
-			$"Model/Cylinder".set_surface_material(0, preload("res://boards/node/node_blue_material.tres"))
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/node_blue_material.tres"))
 
 func _exit_tree():
 	for p in next:
@@ -212,7 +212,7 @@ func _enter_tree():
 		material.flags_use_point_size = true
 		material.vertex_color_use_as_albedo = true
 		material.flags_vertex_lighting = true
-		$"EditorLines".set_material_override(material)
+		$EditorLines.set_material_override(material)
 
 const SHOW_NEXT_NODES = 1
 const SHOW_PREV_NODES = 2
@@ -226,42 +226,42 @@ func _process(delta):
 		if controllers.size() > 0:
 			show_linking_type = controllers[0].show_linking_type
 		
-		$"EditorLines".clear()
-		$"EditorLines".begin(Mesh.PRIMITIVE_LINES)
+		$EditorLines.clear()
+		$EditorLines.begin(Mesh.PRIMITIVE_LINES)
 		if (show_linking_type & SHOW_NEXT_NODES) != 0 and next != null:
 			for node in next:
 				if node == null:
 					continue
 				
-				$"EditorLines".set_color(Color(0.0, 1.0, 1.0, 1.0))
+				$EditorLines.set_color(Color(0.0, 1.0, 1.0, 1.0))
 				var dir = node.translation - self.translation
 				if dir.length() == 0:
 					continue
 				
 				dir *= (dir.length() - NODE_RADIUS) / dir.length()
 				var offset = 0.25 * Vector3(0, 1, 0).cross(dir.normalized())
-				$"EditorLines".add_vertex(offset)
-				$"EditorLines".add_vertex(dir + offset)
-				$"EditorLines".add_vertex(dir + offset)
-				$"EditorLines".add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), 0.2617994))
-				$"EditorLines".add_vertex(dir + offset)
-				$"EditorLines".add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), -0.2617994))
+				$EditorLines.add_vertex(offset)
+				$EditorLines.add_vertex(dir + offset)
+				$EditorLines.add_vertex(dir + offset)
+				$EditorLines.add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), 0.2617994))
+				$EditorLines.add_vertex(dir + offset)
+				$EditorLines.add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), -0.2617994))
 		if (show_linking_type & SHOW_PREV_NODES) != 0 and prev != null:
 			for node in prev:
 				if node == null:
 					continue
 				
-				$"EditorLines".set_color(Color(1.0, 0.0, 0.5, 1.0))
+				$EditorLines.set_color(Color(1.0, 0.0, 0.5, 1.0))
 				var dir = node.translation - self.translation
 				if dir.length() == 0:
 					continue
 				
 				dir *= (dir.length() - NODE_RADIUS) / dir.length()
 				var offset = 0.25 * Vector3(0, 1, 0).cross(dir.normalized())
-				$"EditorLines".add_vertex(offset)
-				$"EditorLines".add_vertex(dir + offset)
-				$"EditorLines".add_vertex(dir + offset)
-				$"EditorLines".add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), 0.2617994))
-				$"EditorLines".add_vertex(dir + offset)
-				$"EditorLines".add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), -0.2617994))
-		$"EditorLines".end()
+				$EditorLines.add_vertex(offset)
+				$EditorLines.add_vertex(dir + offset)
+				$EditorLines.add_vertex(dir + offset)
+				$EditorLines.add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), 0.2617994))
+				$EditorLines.add_vertex(dir + offset)
+				$EditorLines.add_vertex(dir + offset + (-0.25 * dir.normalized()).rotated(Vector3(0, 1, 0), -0.2617994))
+		$EditorLines.end()

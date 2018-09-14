@@ -26,7 +26,7 @@ func _on_Arrow_mouse_exited():
 		controller.selected_id = -1
 
 func _on_Arrow_input_event(camera, event, click_position, click_normal, shape_idx):
-	if (event.is_action("ui_accept") || event.is_action("left_mouse_pressed")) && controller.selected_id == id:
+	if (event.is_action("ui_accept") or event.is_action("left_mouse_pressed")) and controller.selected_id == id:
 		pressed()
 
 func pressed():
