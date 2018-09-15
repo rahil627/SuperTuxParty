@@ -14,6 +14,8 @@ class PlayerState:
 	# Which space on the board the player is standing on
 	var space = null
 
+const MINIGAME_REWARD_SCREEN_PATH = "res://boards/controller/rewardscreen.tscn";
+
 var PluginSystem = preload("res://pluginsystem.gd")
 var plugin_system = PluginSystem.new()
 
@@ -52,6 +54,13 @@ var cookie_space = 0
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var turn = 1
 
+# The minigame to return to in "try minigame" mode
+# If it is null, then no minigame is tried and the next turn resumes
+var current_minigame = null
+
+# Stores the last placement (not changed when you press "try")
+# Used in rewardscreen.gd
+var placement
 
 func _ready():
 	randomize()
@@ -99,6 +108,7 @@ func _goto_scene_ingame(path):
 	
 	for i in range(players.size()):
 		var player = current_scene.get_node("Player" + var2str(i+1))
+		
 		var new_model = load(character_loader.get_character_path(players[i].character)).instance()
 		new_model.set_name("Model")
 		
@@ -120,10 +130,12 @@ func _goto_scene_ingame(path):
 	
 
 # Change scene to one of the mini-games
-func goto_minigame(minigame = ""):
+func goto_minigame(minigame, try=false):
 	
 	# Current player nodes
 	var r_players = get_tree().get_nodes_in_group("players")
+	if try:
+		current_minigame = minigame
 	
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
@@ -134,21 +146,23 @@ func goto_minigame(minigame = ""):
 		players[i].cakes = r_players[i].cakes
 		players[i].space = r_players[i].space.get_path()
 	
-	if minigame == "":
-		minigame_loader.goto_random_ffa()
-	else:
-		call_deferred("_goto_scene_ingame", minigame)
+	call_deferred("_goto_scene_ingame", minigame.scene_path)
 
 # Go back to board from mini-game, placement is an array with the players' id:s
 func goto_board(placement):
-	if award == AWARD_T.linear:
-		for i in range(amount_of_players):
-			players[placement[i] - 1].cookies += 15 - (i * 5)
+	if current_minigame == null:
+		# Only award if it's not a test
+		match award:
+			AWARD_T.linear:
+				for i in range(amount_of_players):
+					players[placement[i] - 1].cookies += 15 - (i * 5)
+			AWARD_T.winner_only:
+				players[placement[0] - 1].cookies += 10
 		
-	elif award == AWARD_T.winner_only:
-		players[placement[0] - 1].cookies += 10
-	
-	call_deferred("_goto_scene_ingame", current_board)
+		self.placement = placement
+		call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH)
+	else:
+		call_deferred("_goto_scene_ingame", current_board)
 
 func load_board_state():
 	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes
@@ -162,6 +176,10 @@ func load_board_state():
 		cake_node.cake = true
 		cake_node.get_node("Cake").visible = true
 		
+		var controller = current_scene.get_node("Controller")
+		controller.current_minigame = current_minigame
+		current_minigame = null
+		
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id
@@ -173,7 +191,6 @@ func load_board_state():
 			r_players[i].is_ai = players[i].is_ai
 			
 			# Move piece to the right space, increase y-axis so two players are not placed inside each other
-			var controller = current_scene.get_node("Controller")
 			var num = controller.get_players_on_space(r_players[i].space)
 			var translation = controller.EMPTY_SPACE_PLAYER_TRANSLATION
 			if num > 1:
