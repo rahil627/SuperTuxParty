@@ -21,47 +21,47 @@ func setup():
 		
 		$List/Players.add_child(button)
 	
-	var loader = $"/root/Global".minigame_loader
+	var loader = Global.minigame_loader
 	
 	for game in loader.minigames_duel:
 		var button = Button.new()
 		
-		button.text = game
+		button.text = loader.parse_file(game).name + " (Duel)"
 		button.add_font_override("font", preload("res://fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [button.text])
+		button.connect("pressed", self, "_on_minigame_pressed", [game])
 		
 		$List/Minigames.add_child(button)
 	
 	for game in loader.minigames_1v3:
 		var button = Button.new()
 		
-		button.text = game
+		button.text = loader.parse_file(game).name + " (1v3)"
 		button.add_font_override("font", preload("res://fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [button.text])
+		button.connect("pressed", self, "_on_minigame_pressed", [game])
 		
 		$List/Minigames.add_child(button)
 		
 	for game in loader.minigames_2v2:
 		var button = Button.new()
 		
-		button.text = game
+		button.text = loader.parse_file(game).name + " (2v2)"
 		button.add_font_override("font", preload("res://fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [button.text])
+		button.connect("pressed", self, "_on_minigame_pressed", [game])
 		
 		$List/Minigames.add_child(button)
 	
 	for game in loader.minigames_ffa:
 		var button = Button.new()
 		
-		button.text = game
+		button.text = loader.parse_file(game).name + " (FFA)"
 		button.add_font_override("font", preload("res://fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [button.text])
+		button.connect("pressed", self, "_on_minigame_pressed", [game])
 		
 		$List/Minigames.add_child(button)
 
 func _on_Skip_pressed():
-	$"/root/Global".turn += 1
-	$"../Turn".text = "Turn: " + var2str($"/root/Global".turn)
+	Global.turn += 1
+	$"../Turn".text = "Turn: " + var2str(Global.turn)
 
 func _on_AddCookies_pressed():
 	$List/Players.show()
@@ -102,4 +102,11 @@ func _on_player_pressed(id):
 	$"../..".update_player_info()
 
 func _on_minigame_pressed(minigame):
-	$"/root/Global".goto_minigame(minigame)
+	var mg = Global.minigame_loader.parse_file(minigame)
+	var controller = get_tree().get_nodes_in_group("Controller")[0]
+	controller.current_minigame = mg
+	controller.show_minigame_info()
+	controller.hide_splash()
+	hide()
+	$List.hide()
+	

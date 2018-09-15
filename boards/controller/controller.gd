@@ -5,6 +5,8 @@ const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vec
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
+const CONTROL_HELPER = preload("res://controlhelper.gd")
+
 var COOKIES_FOR_CAKE = 30
 
 const NODE = preload("res://boards/node/node.gd")
@@ -45,6 +47,8 @@ var splash_ended = false
 
 # Flag that indicates if the input needs to wait for the animation to finish
 var wait_for_animation = false
+
+var current_minigame = null
 
 func check_winner():
 	if Global.turn > Global.max_turns:
@@ -104,7 +108,10 @@ func _ready():
 	check_winner()
 	
 	# Show "your turn screen" for first player
-	_on_Roll_pressed()
+	if current_minigame != null:
+		show_minigame_info()
+	else:
+		_on_Roll_pressed()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
@@ -376,14 +383,14 @@ func do_step(player, num):
 			player.cookies += 3
 
 func roll():
-	$Screen/Splash.play("hide")
-	wait_for_animation = true
-	end_turn = true
-	
 	if winner != null:
 		return
 	
 	if player_turn <= players.size():
+		$Screen/Splash.play("hide")
+		wait_for_animation = true
+		end_turn = true
+		
 		var player = players[player_turn - 1]
 		camera_focus = player
 		
@@ -396,15 +403,16 @@ func roll():
 		
 		# Show which number was rolled
 		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+		
+		player_turn += 1
+		
+		if player_turn > players.size():
+			$Screen/Roll.text = "Minigame"
 	else:
 		# All players have had their turn, goto mini-game
-		Global.turn += 1
-		Global.goto_minigame()
+		current_minigame = Global.minigame_loader.get_random_ffa()
+		show_minigame_info()
 	
-	player_turn += 1
-	
-	if player_turn > players.size():
-		$Screen/Roll.text = "Minigame"
 
 func _process(delta):
 	if camera_focus != null:
@@ -438,6 +446,9 @@ func update_player_info():
 		
 		info.get_node("Cakes/Amount").text = var2str(p.cakes)
 		i += 1
+
+func hide_splash():
+	$Screen/Splash/Background.hide()
 
 func _on_GetCake_pressed():
 	$Screen/BuyCake/HSlider.max_value = int(players[player_turn - 2].cookies / COOKIES_FOR_CAKE)
@@ -477,3 +488,63 @@ func _on_Abort_pressed():
 
 func _on_HSlider_value_changed(value):
 	$Screen/BuyCake/Amount.text = "x" + var2str(int(value))
+
+func setup_character_viewport():
+	for i in range(Global.amount_of_players):
+		var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i+1))
+		var new_model = load(Global.character_loader.get_character_path(Global.players[i].character)).instance()
+		new_model.name = player.name
+		
+		new_model.translation = player.translation
+		new_model.scale = player.scale
+		new_model.rotation = player.rotation
+		$Screen/MinigameInformation/Characters/Viewport.remove_child(player)
+		$Screen/MinigameInformation/Characters/Viewport.add_child(new_model)
+		if new_model.has_node("AnimationPlayer"):
+			new_model.get_node("AnimationPlayer").play("idle")
+			if i > 0:
+				new_model.get_node("AnimationPlayer").playback_speed = 0
+
+func show_minigame_info():
+	setup_character_viewport()
+	
+	$Screen/MinigameInformation/Title.text = current_minigame.name
+	$Screen/MinigameInformation/Description/Text.bbcode_text = current_minigame.description.en
+	if current_minigame.image_path != null:
+		$Screen/MinigameInformation/Screenshot.texture = load(current_minigame.image_path)
+	
+	for i in range(1, Global.amount_of_players + 1):
+		var label = $Screen/MinigameInformation/Controls.get_node("Player" + var2str(i))
+		if players[i - 1].is_ai:
+			# If the player is controlled by an AI, there is no point in showing controls
+			$Screen/MinigameInformation/Controls.remove_child(label)
+			continue
+		
+		label.bbcode_text = ""
+		for action in current_minigame.used_controls:
+			label.append_bbcode(CONTROL_HELPER.get_button_name(InputMap.get_action_list("player"+var2str(i) + "_" + action)[0]) + " - " + current_minigame.used_controls[action].en + "\n")
+	
+	$Screen/MinigameInformation.show()
+
+func _on_Try_pressed():
+	Global.goto_minigame(current_minigame, true)
+
+func _on_Play_pressed():
+	Global.turn += 1
+	Global.goto_minigame(current_minigame)
+	current_minigame = null
+
+func _on_Controls_tab_changed(tab):
+	var last_tab_selected =$Screen/MinigameInformation/Controls.get_previous_tab()
+	var last_player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(last_tab_selected+1))
+	var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(tab+1))
+	
+	if last_player.has_node("AnimationPlayer"):
+		# Pause the animation, when it is no longer selected
+		last_player.get_node("AnimationPlayer").seek(0, true)
+		last_player.get_node("AnimationPlayer").playback_speed = 0
+	
+	if player.has_node("AnimationPlayer"):
+		player.get_node("AnimationPlayer").playback_speed = 1
+	
+	$Screen/MinigameInformation/Characters/Viewport/Indicator.translation = player.translation + Vector3(0, 1.5, 0)

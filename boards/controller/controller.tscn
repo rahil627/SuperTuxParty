@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://boards/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://boards/controller/editor_script.gd" type="Script" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://boards/controller/debug.gd" type="Script" id=9]
 [ext_resource path="res://boards/controller/pause_menu.gd" type="Script" id=10]
+[ext_resource path="res://fonts/RichTextLabel-BoldItalic.tres" type="DynamicFont" id=11]
+[ext_resource path="res://fonts/RichTextLabel-Italic.tres" type="DynamicFont" id=12]
+[ext_resource path="res://fonts/RichTextLabel-Bold.tres" type="DynamicFont" id=13]
+[ext_resource path="res://fonts/RichTextLabel-Normal.tres" type="DynamicFont" id=14]
+[ext_resource path="res://fonts/button_font_small.tres" type="DynamicFont" id=15]
+[ext_resource path="res://boards/controller/indicator.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=1]
 
@@ -57,7 +63,242 @@ use_filter = true
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Controller" type="Spatial" index="0"]
+[sub_resource type="StyleBoxFlat" id=15]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width" ]
+
+[sub_resource type="StyleBoxFlat" id=18]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.498039, 0.341176, 0.223529, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 0
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=17]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.137255, 0.145098, 0.152941, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width" ]
+
+[sub_resource type="Environment" id=19]
+
+background_mode = 1
+background_sky_custom_fov = 0.0
+background_color = Color( 0.258824, 0.345098, 0.45098, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Background" ]
+
+[sub_resource type="SpatialMaterial" id=4]
+
+render_priority = 0
+flags_transparent = true
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = true
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 1
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "floating_animation"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="Controller" type="Spatial"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -779,6 +1020,7 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="GetCake" type="VBoxContainer" parent="Screen" index="6"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -911,6 +1153,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="BuyCake" type="VBoxContainer" parent="Screen" index="7"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1114,7 +1357,6 @@ playback_speed = 1.0
 anims/hide = SubResource( 1 )
 anims/show = SubResource( 2 )
 blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
 
 [node name="Background" type="TextureRect" parent="Screen/Splash" index="0"]
 
@@ -1134,7 +1376,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 7 )
 stretch_mode = 4
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Player" type="TextureRect" parent="Screen/Splash/Background" index="0"]
 
@@ -1201,6 +1442,7 @@ _sections_unfolded = [ "Margin" ]
 
 [node name="Row1" type="HBoxContainer" parent="Screen/Debug" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1294,6 +1536,7 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="Row2" type="HBoxContainer" parent="Screen/Debug" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1362,6 +1605,7 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="List" type="WindowDialog" parent="Screen/Debug" index="3"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1577,6 +1821,572 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
+[node name="MinigameInformation" type="Container" parent="Screen" index="13"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "custom_styles" ]
+
+[node name="Panel" type="Panel" parent="Screen/MinigameInformation" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Description" type="Panel" parent="Screen/MinigameInformation" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 125.0
+margin_top = -280.0
+margin_right = 425.0
+margin_bottom = -51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 15 )
+_sections_unfolded = [ "Margin", "Rect", "custom_styles" ]
+
+[node name="Header" type="Panel" parent="Screen/MinigameInformation/Description" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 18 )
+_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+
+[node name="Label" type="Label" parent="Screen/MinigameInformation/Description/Header" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "Description"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Text" type="RichTextLabel" parent="Screen/MinigameInformation/Description" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 33.0
+margin_right = 295.0
+margin_bottom = 233.0
+rect_min_size = Vector2( 290, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Margin", "Rect" ]
+
+[node name="Controls" type="TabContainer" parent="Screen/MinigameInformation" index="2"]
+
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -475.0
+margin_top = -300.0
+margin_right = -125.0
+margin_bottom = -100.0
+rect_min_size = Vector2( 350, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 17 )
+custom_fonts/font = ExtResource( 15 )
+custom_constants/side_margin = 4
+tab_align = 0
+tabs_visible = true
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+
+[node name="Player1" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 31.0
+margin_right = -2.0
+margin_bottom = -2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
+
+[node name="Player2" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 38.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
+
+[node name="Player3" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 38.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
+
+[node name="Player4" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 38.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
+
+[node name="Screenshot" type="TextureRect" parent="Screen/MinigameInformation" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 75.0
+margin_top = 100.0
+margin_right = 475.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 400, 250 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect" ]
+
+[node name="Title" type="Label" parent="Screen/MinigameInformation" index="4"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -250.0
+margin_top = 25.0
+margin_right = 250.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 500, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Buttons" type="HBoxContainer" parent="Screen/MinigameInformation" index="5"]
+
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -250.0
+margin_top = -65.0
+margin_right = -75.0
+margin_bottom = -35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+
+[node name="Try" type="Button" parent="Screen/MinigameInformation/Buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 75.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 75, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Try"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Play" type="Button" parent="Screen/MinigameInformation/Buttons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_right = 175.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 75, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Characters" type="ViewportContainer" parent="Screen/MinigameInformation" index="6"]
+
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -500.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 400, 250 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch = false
+stretch_shrink = 1
+
+[node name="Viewport" type="Viewport" parent="Screen/MinigameInformation/Characters" index="0"]
+
+arvr = false
+size = Vector2( 400, 250 )
+own_world = true
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 0
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Rendering" ]
+
+[node name="Camera" type="Camera" parent="Screen/MinigameInformation/Characters/Viewport" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = SubResource( 19 )
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Indicator" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, -2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite3D" parent="Screen/MinigameInformation/Characters/Viewport/Indicator" index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+layers = 1
+material_override = SubResource( 4 )
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+centered = true
+offset = Vector2( 0, 0 )
+flip_h = false
+flip_v = false
+modulate = Color( 1, 1, 1, 1 )
+opacity = 1.0
+pixel_size = 0.002
+axis = 2
+transparent = true
+shaded = false
+double_sided = true
+alpha_cut = 0
+texture = ExtResource( 16 )
+vframes = 1
+hframes = 1
+frame = 0
+region_enabled = false
+region_rect = Rect2( 0, 0, 0, 0 )
+_sections_unfolded = [ "Geometry", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen/MinigameInformation/Characters/Viewport/Indicator/Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = "floating_animation"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/floating_animation = SubResource( 5 )
+blend_times = [  ]
+
+[node name="Player1" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="2"]
+
+transform = Transform( 0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, -1.5, 0, -2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player2" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="3"]
+
+transform = Transform( 0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -0.5, 0, -2.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player3" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="4"]
+
+transform = Transform( 0.980785, 0, -0.19509, 0, 1, 0, 0.19509, 0, 0.980785, 0.5, 0, -2.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player4" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="5"]
+
+transform = Transform( 0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, 1.5, 0, -2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Screen/MinigameInformation/Characters/Viewport" index="6"]
+
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 1, 0 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Transform" ]
+
 [node name="Camera" type="Camera" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 4 )
@@ -1621,5 +2431,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [connection signal="pressed" from="Screen/PauseMenu/Container/ExitMenu" to="Screen/PauseMenu" method="_on_ExitMenu_pressed"]
 
 [connection signal="pressed" from="Screen/PauseMenu/Container/ExitDesktop" to="Screen/PauseMenu" method="_on_ExitDesktop_pressed"]
+
+[connection signal="tab_changed" from="Screen/MinigameInformation/Controls" to="." method="_on_Controls_tab_changed"]
+
+[connection signal="pressed" from="Screen/MinigameInformation/Buttons/Try" to="." method="_on_Try_pressed"]
+
+[connection signal="pressed" from="Screen/MinigameInformation/Buttons/Play" to="." method="_on_Play_pressed"]
 
 

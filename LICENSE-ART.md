@@ -28,6 +28,16 @@ http://scripts.sil.org/OFL
 
 See fonts/OFL for full license.
 
+## fonts/IBM-Plex-Sans/
+Copyright (c) 2018, IBM
+v1.1.6 Retrieved from https://github.com/IBM/plex/releases
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+See fonts/OFL for full license.
+
 ## boards/node/
 ### tile_blue_col.jpg | tile_red_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
 

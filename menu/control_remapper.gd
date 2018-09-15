@@ -1,7 +1,6 @@
-extends Object
-
-# The file where the input configuration is stored
 const USER_CONFIG_FILE = "user://controls.cfg"
+
+const CONTROL_HELPER = preload("res://controlhelper.gd")
 
 # The eventname that is currently remapped
 var control_remap_event
@@ -99,70 +98,13 @@ func controls_remapping_setup():
 				var event_name = "player" + var2str(player_id + 1) + "_" + child.get_name()
 				var input_event = InputMap.get_action_list(event_name)[0]
 				if input_event != null:
-					button.text = event_to_str(input_event)
+					button.text = CONTROL_HELPER.get_button_name(input_event)
 					button.connect("pressed", self, "_control_remap_pressed", [event_name, button])
 
 func _control_remap_pressed(event, button):
 	control_remap_event = event
 	control_remap_button = button
 	button.set_text("Press a key")
-
-func get_mousebutton_name(index):
-	match index:
-		BUTTON_LEFT:
-			return "Left mouse button"
-		BUTTON_RIGHT:
-			return "Right mouse button"
-		BUTTON_MIDDLE:
-			return "Middle mouse button"
-		BUTTON_WHEEL_UP:
-			return "Button wheel up"
-		BUTTON_WHEEL_DOWN:
-			return "Button wheel down"
-		BUTTON_WHEEL_LEFT:
-			return "Button wheel left"
-		BUTTON_WHEEL_RIGHT:
-			return "Button wheel right"
-		_:
-			return "Mouse button " + var2str(index)
-
-func get_joypad_axis_name(axis, axis_value):
-	var axis_name = "+"
-	if axis_value < 0:
-		axis_name = "-"
-	
-	match axis:
-		JOY_ANALOG_LX:
-			axis_name += "X Left"
-		JOY_ANALOG_LY:
-			axis_name += "Y Left"
-		JOY_ANALOG_RX:
-			axis_name += "X Right"
-		JOY_ANALOG_RY:
-			axis_name += "Y Right"
-		JOY_ANALOG_L2:
-			return "Trigger Left"
-		JOY_ANALOG_R2:
-			return "Trigger Right"
-		_:
-			axis_name += "Unknown Axis " + var2str(axis)
-	
-	return axis_name
-
-func get_joypad_button_name(button):
-	return "Joypad button " + var2str(button)
-
-func event_to_str(event):
-	if event is InputEventKey:
-		return OS.get_scancode_string(event.scancode)
-	elif event is InputEventMouseButton:
-		return get_mousebutton_name(event.button_index)
-	elif event is InputEventJoypadMotion:
-		return "Joypad " + get_joypad_axis_name(event.axis, event.axis_value)
-	elif event is InputEventJoypadButton:
-		return get_joypad_button_name(event.button_index)
-	else:
-		return "Unknown"
 
 # The min value of the axis to get chosen during remap
 # prevents choosing the axis with a little value over one with a large vlaue
@@ -175,7 +117,7 @@ func _input(event):
 	
 	if valid_type and control_remap_event != null and mousebutton_pressed_check and joypad_deadzone_check:
 		main_menu.get_tree().set_input_as_handled()
-		control_remap_button.text = event_to_str(event)
+		control_remap_button.text = CONTROL_HELPER.get_button_name(event)
 		
 		# Remove old keybindings
 		for old_event in InputMap.get_action_list(control_remap_event):
