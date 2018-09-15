@@ -107,7 +107,7 @@ func _ready():
 	_on_Roll_pressed()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") && !players[player_turn - 1].is_ai && end_turn == true:
+	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
 		_on_Roll_pressed()
 	elif event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -118,7 +118,7 @@ func _unhandled_input(event):
 		else:
 			$Screen/PauseMenu.popup()
 			get_tree().paused = true
-	elif end_turn == false && do_action == TURN_ACTION.CHOOSE_PATH && !players[player_turn - 2].is_ai:
+	elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 2].is_ai:
 		# Be able to choose path with controller or keyboard
 		if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
 			selected_id -= 1
@@ -130,7 +130,7 @@ func _unhandled_input(event):
 			
 			if selected_id >= get_tree().get_nodes_in_group("arrows").size():
 				selected_id = 0
-		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") && selected_id >= 0:
+		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
 			get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
 
 func get_players_on_space(space):
@@ -295,7 +295,7 @@ func do_step(player, num):
 				player.space = player.space.next[0]
 			
 			# If player passes a cake-spot
-			if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
+			if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
 				do_action = TURN_ACTION.BUY_CAKE
 				
 				end_turn = false
@@ -348,7 +348,7 @@ func do_step(player, num):
 		else:
 			player.space = player.space.next[0]
 		
-		if player.space.cake && player.cookies >= COOKIES_FOR_CAKE:
+		if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
 			
 			do_action = TURN_ACTION.BUY_CAKE
 			
@@ -413,10 +413,10 @@ func _process(delta):
 			self.translation += (CAMERA_SPEED * dir.length()) * dir.normalized() * delta
 	
 	# Automatically switch to next player when current player has finished moving
-	if player_turn - 2 >= 0 && player_turn - 1 < Global.amount_of_players:
+	if player_turn - 2 >= 0 and player_turn - 1 < Global.amount_of_players:
 		var player = players[player_turn - 2]
 		if camera_focus == player:
-			if player.destination.size() == 0 && end_turn:
+			if player.destination.size() == 0 and end_turn:
 				camera_focus = players[player_turn - 1]
 
 # Function that updates the player info shown in the GUI
