@@ -2,11 +2,9 @@ extends Spatial
 
 func _ready():
 	for i in range(Global.amount_of_players):
-		var player = get_node("Player" + var2str(i+1))
 		var new_model = load(Global.character_loader.get_character_path(Global.players[i].character)).instance()
-		new_model.name = player.name
+		new_model.name = "Player" + var2str(i+1)
 		
-		remove_child(player)
 		add_child(new_model)
 	
 	var i = 0

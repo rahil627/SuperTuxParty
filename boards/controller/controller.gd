@@ -221,7 +221,7 @@ func animation_step(player_id):
 		$Screen/Stepcounter.text = ""
 
 func _ai_continue_callback(timer):
-	remove_child(timer)
+	timer.queue_free()
 	
 	wait_for_animation = false
 	end_turn = true
@@ -229,7 +229,7 @@ func _ai_continue_callback(timer):
 	do_step(players[player_turn - 2], steps_remaining)
 
 func _ai_timer_callback(timer):
-	remove_child(timer)
+	timer.queue_free()
 	_on_Roll_pressed()
 
 func _on_Roll_pressed():
@@ -498,7 +498,7 @@ func setup_character_viewport():
 		new_model.translation = player.translation
 		new_model.scale = player.scale
 		new_model.rotation = player.rotation
-		$Screen/MinigameInformation/Characters/Viewport.remove_child(player)
+		player.queue_free()
 		$Screen/MinigameInformation/Characters/Viewport.add_child(new_model)
 		if new_model.has_node("AnimationPlayer"):
 			new_model.get_node("AnimationPlayer").play("idle")
@@ -517,7 +517,7 @@ func show_minigame_info():
 		var label = $Screen/MinigameInformation/Controls.get_node("Player" + var2str(i))
 		if players[i - 1].is_ai:
 			# If the player is controlled by an AI, there is no point in showing controls
-			$Screen/MinigameInformation/Controls.remove_child(label)
+			label.queue_free()
 			continue
 		
 		label.bbcode_text = ""
