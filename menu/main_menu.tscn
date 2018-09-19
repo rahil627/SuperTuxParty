@@ -150,9 +150,8 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="SelectionBoard" type="Container" parent="." index="1"]
+[node name="SelectionPlayers" type="Container" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -166,7 +165,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Title" type="Label" parent="SelectionBoard" index="0"]
+[node name="Title" type="Label" parent="SelectionPlayers" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -180,37 +179,53 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 2 )
-text = "Select board"
+text = "Select amount of players"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="SelectionBoard" index="1"]
+[node name="Buttons" type="VBoxContainer" parent="SelectionPlayers" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 120.0
-margin_bottom = -158.0
-rect_min_size = Vector2( 512, 140 )
+margin_top = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
+
+[node name="VScrollBar" type="ScrollContainer" parent="SelectionPlayers/Buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 512.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 512, 105 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 1
 scroll_horizontal_enabled = false
 scroll_horizontal = 0
 scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Scroll" ]
+_sections_unfolded = [ "Anchor", "Margin", "Scroll", "Size Flags" ]
 
-[node name="Buttons" type="VBoxContainer" parent="SelectionBoard/ScrollContainer" index="0"]
+[node name="Grid" type="GridContainer" parent="SelectionPlayers/Buttons/VScrollBar" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -223,118 +238,122 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_constants/separation = 0
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
+columns = 2
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
-[node name="HumanPlayerLabel" type="Label" parent="SelectionBoard" index="2"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -159.0
-margin_bottom = -130.0
-rect_min_size = Vector2( 512, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-text = "Amount of human players: 4"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
-
-[node name="HumanPlayerSlider" type="HSlider" parent="SelectionBoard" index="3"]
+[node name="One" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid" index="0"]
 
 anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -125.0
-margin_bottom = -109.0
-rect_min_size = Vector2( 512, 0 )
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 254.0
+margin_bottom = 35.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 1.0
-max_value = 4.0
-step = 1.0
-page = 0.0
-value = 4.0
-exp_edit = false
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = false
-focus_mode = 2
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
-
-[node name="LabelAward" type="Label" parent="SelectionBoard" index="4"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-margin_top = -105.0
-margin_right = -2.0
-margin_bottom = -70.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-text = "Reward system:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
-
-[node name="AwardType" type="OptionButton" parent="SelectionBoard" index="5"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -70.0
-margin_bottom = -35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
-action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "1"
 flat = false
-align = 0
-items = [  ]
-selected = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Back" type="Button" parent="SelectionBoard" index="6"]
+[node name="Two" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid" index="1"]
 
 anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -35.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_right = 512.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "2"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Three" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 39.0
+margin_right = 254.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "3"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="Four" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_top = 39.0
+margin_right = 512.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "4"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="Back" type="Button" parent="SelectionPlayers/Buttons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 105.0
+margin_right = 512.0
+margin_bottom = 140.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -350,7 +369,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionChar" type="Container" parent="." index="2"]
 
@@ -470,7 +489,158 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="OptionsMenu" type="Container" parent="." index="3"]
+[node name="SelectionBoard" type="Container" parent="." index="3"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Title" type="Label" parent="SelectionBoard" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_top = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 2 )
+text = "Select board"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SelectionBoard" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 120.0
+margin_bottom = -158.0
+rect_min_size = Vector2( 512, 140 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+scroll_horizontal_enabled = false
+scroll_horizontal = 0
+scroll_vertical_enabled = true
+scroll_vertical = 0
+scroll_deadzone = 0
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Scroll" ]
+
+[node name="Buttons" type="VBoxContainer" parent="SelectionBoard/ScrollContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 512.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
+
+[node name="LabelAward" type="Label" parent="SelectionBoard" index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -105.0
+margin_right = -2.0
+margin_bottom = -70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Reward system:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
+
+[node name="AwardType" type="OptionButton" parent="SelectionBoard" index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -70.0
+margin_bottom = -35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+items = [  ]
+selected = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Back" type="Button" parent="SelectionBoard" index="4"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
+
+[node name="OptionsMenu" type="Container" parent="." index="4"]
 
 editor/display_folded = true
 visible = false
@@ -649,9 +819,8 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="PlayerInfo1" type="VBoxContainer" parent="." index="4"]
+[node name="PlayerInfo1" type="VBoxContainer" parent="." index="5"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -743,7 +912,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="PlayerInfo2" type="VBoxContainer" parent="." index="5"]
+[node name="PlayerInfo2" type="VBoxContainer" parent="." index="6"]
 
 editor/display_folded = true
 visible = false
@@ -840,7 +1009,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="PlayerInfo3" type="VBoxContainer" parent="." index="6"]
+[node name="PlayerInfo3" type="VBoxContainer" parent="." index="7"]
 
 editor/display_folded = true
 visible = false
@@ -935,7 +1104,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="PlayerInfo4" type="VBoxContainer" parent="." index="7"]
+[node name="PlayerInfo4" type="VBoxContainer" parent="." index="8"]
 
 editor/display_folded = true
 visible = false
@@ -1039,13 +1208,21 @@ _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [connection signal="pressed" from="MainMenu/Buttons/Quit" to="." method="_on_Quit_pressed"]
 
-[connection signal="value_changed" from="SelectionBoard/HumanPlayerSlider" to="." method="_on_NumPlayers_value_changed"]
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/One" to="." method="_on_One_Player_pressed"]
+
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Two" to="." method="_on_Two_pressed"]
+
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Three" to="." method="_on_Three_pressed"]
+
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Four" to="." method="_on_Four_pressed"]
+
+[connection signal="pressed" from="SelectionPlayers/Buttons/Back" to="." method="_on_Amount_Of_Players_Back_pressed"]
+
+[connection signal="pressed" from="SelectionChar/Buttons/Back" to="." method="_on_SelectionChar_Back_pressed"]
 
 [connection signal="item_selected" from="SelectionBoard/AwardType" to="." method="_on_AwardType_item_selected"]
 
 [connection signal="pressed" from="SelectionBoard/Back" to="." method="_on_Selection_Back_pressed"]
-
-[connection signal="pressed" from="SelectionChar/Buttons/Back" to="." method="_on_SelectionChar_Back_pressed"]
 
 [connection signal="toggled" from="OptionsMenu/Buttons/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
 

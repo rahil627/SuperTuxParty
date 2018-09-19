@@ -7,6 +7,9 @@ var current_player = 1
 # Path to the characters used on game start
 var characters = []
 
+# Player names
+var names = []
+
 var board_loader
 var character_loader
 
@@ -53,33 +56,11 @@ func _ready():
 	control_remapper.controls_remapping_setup()
 	characters.resize(Global.amount_of_players)
 
-func _on_Play_pressed():
-	$MainMenu.hide()
-	$SelectionBoard.show()
+#*** Options menu ***#
 
 func _on_Options_pressed():
 	$MainMenu.hide()
 	$OptionsMenu.show()
-
-func _on_Quit_pressed():
-	get_tree().quit()
-
-func _on_Options_Back_pressed():
-	$MainMenu.show()
-	$OptionsMenu.hide()
-
-func _on_Selection_Back_pressed():
-	$MainMenu.show()
-	$SelectionBoard.hide()
-
-func _on_board_select(target):
-	Global.new_game = true
-	board = board_loader.get_board_path(target.get_text())
-	$SelectionBoard.hide()
-	$SelectionChar.show()
-	
-	for i in range(1, 5):
-		get_node("PlayerInfo" + var2str(i)).show()
 
 func _on_Fullscreen_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
@@ -87,9 +68,77 @@ func _on_Fullscreen_toggled(button_pressed):
 func _input(event):
 	control_remapper._input(event)
 
+func _on_Options_Back_pressed():
+	$MainMenu.show()
+	$OptionsMenu.hide()
+
+func _on_Quit_pressed():
+	get_tree().quit()
+
+#*** Amount of players menu ***#
+
+# _amount_players_selected is called when amount of players is selected
+func _amount_players_selected():
+	for i in range(1, human_players + 1):
+		get_node("PlayerInfo" + var2str(i)).show()
+	
+	$SelectionPlayers.hide()
+	$SelectionChar.show()
+
+func _on_Play_pressed():
+	$MainMenu.hide()
+	$SelectionPlayers.show()
+
+func _on_One_Player_pressed():
+	human_players = 1
+	_amount_players_selected()
+
+func _on_Two_pressed():
+	human_players = 2
+	_amount_players_selected()
+
+
+func _on_Three_pressed():
+	human_players = 3
+	_amount_players_selected()
+
+
+func _on_Four_pressed():
+	human_players = 4
+	_amount_players_selected()
+
+func _on_Amount_Of_Players_Back_pressed():
+	$SelectionPlayers.hide()
+	$MainMenu.show()
+
+#*** Character selection menu ***#
+
+func _on_character_select(target):
+	get_node("PlayerInfo" + var2str(current_player) + "/Character").text = "Character: " + target.get_text()
+	get_node("PlayerInfo" + var2str(current_player) + "/Ready").text = "Ready!"
+	
+	characters[current_player - 1] = target.get_text()
+	current_player += 1
+	
+	if current_player > human_players:
+		names = []
+		
+		for i in range(1, Global.amount_of_players + 1):
+			if i < current_player:
+				names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
+			else:
+				var possible_characters = character_loader.get_loaded_characters()
+				characters[i - 1] = possible_characters[randi() % possible_characters.size()]
+				names.push_back("%s Bot" % characters[i - 1])
+			
+			$SelectionChar.hide()
+			$SelectionBoard.show()
+	
+	$SelectionChar/Title.text = "Select character for Player " + var2str(current_player)
+
 func _on_SelectionChar_Back_pressed():
-	$SelectionBoard.show()
 	$SelectionChar.hide()
+	$SelectionPlayers.show()
 	
 	current_player = 1
 	
@@ -100,27 +149,12 @@ func _on_SelectionChar_Back_pressed():
 		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
 		get_node("PlayerInfo" + var2str(i)).hide()
 
-func _on_character_select(target):
-	get_node("PlayerInfo" + var2str(current_player) + "/Character").text = "Character: " + target.get_text()
-	get_node("PlayerInfo" + var2str(current_player) + "/Ready").text = "Ready!"
-	
-	characters[current_player - 1] = target.get_text()
-	current_player += 1
-	
-	if current_player > human_players:
-		var names = []
-		
-		for i in range(1, Global.amount_of_players + 1):
-			if i < current_player:
-				names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
-			else:
-				var possible_characters = character_loader.get_loaded_characters()
-				characters[i - 1] = possible_characters[randi() % possible_characters.size()]
-				names.push_back("%s Bot" % characters[i - 1])
-		
-		Global.load_board(board, names, characters, human_players)
-	
-	$SelectionChar/Title.text = "Select character for Player " + var2str(current_player)
+#*** Board selection menu ***#
+
+func _on_board_select(target):
+	Global.new_game = true
+	board = board_loader.get_board_path(target.get_text())
+	Global.load_board(board, names, characters, human_players)
 
 func _on_AwardType_item_selected(ID):
 	match ID:
@@ -129,8 +163,6 @@ func _on_AwardType_item_selected(ID):
 		Global.AWARD_T.winner_only:
 			Global.award = ID
 
-
-func _on_NumPlayers_value_changed(value):
-	human_players = int(value)
-	
-	$SelectionBoard/HumanPlayerLabel.text = "Amount of human players: %d" % int(value)
+func _on_Selection_Back_pressed():
+	$SelectionBoard.hide()
+	_amount_players_selected()
