@@ -9,7 +9,7 @@
 [ext_resource path="res://boards/controller/splash_background.png" type="Texture" id=7]
 [ext_resource path="res://fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://boards/controller/debug.gd" type="Script" id=9]
-[ext_resource path="res://boards/controller/pause_menu.gd" type="Script" id=10]
+[ext_resource path="res://boards/controller/pausemenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://fonts/RichTextLabel-BoldItalic.tres" type="DynamicFont" id=11]
 [ext_resource path="res://fonts/RichTextLabel-Italic.tres" type="DynamicFont" id=12]
 [ext_resource path="res://fonts/RichTextLabel-Bold.tres" type="DynamicFont" id=13]
@@ -63,7 +63,7 @@ use_filter = true
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -92,7 +92,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=5]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -120,7 +120,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=6]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -149,7 +149,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="Environment" id=19]
+[sub_resource type="Environment" id=7]
 
 background_mode = 1
 background_sky_custom_fov = 0.0
@@ -228,7 +228,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background" ]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=8]
 
 render_priority = 0
 flags_transparent = true
@@ -279,9 +279,8 @@ uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 
-resource_name = "floating_animation"
 length = 2.0
 loop = true
 step = 0.1
@@ -1656,170 +1655,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="PauseMenu" type="PopupPanel" parent="Screen" index="12"]
-
-pause_mode = 2
-editor/display_folded = true
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -200.0
-margin_top = -300.0
-margin_right = 200.0
-margin_bottom = 300.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = true
-script = ExtResource( 10 )
-_sections_unfolded = [ "Pause" ]
-
-[node name="Container" type="VBoxContainer" parent="Screen/PauseMenu" index="0"]
-
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
-
-[node name="Label" type="Label" parent="Screen/PauseMenu/Container" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 320.0
-margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 2
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Paused"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
-
-[node name="Resume" type="Button" parent="Screen/PauseMenu/Container" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 96.0
-margin_right = 320.0
-margin_bottom = 188.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Resume"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
-
-[node name="Options" type="Button" parent="Screen/PauseMenu/Container" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 192.0
-margin_right = 320.0
-margin_bottom = 284.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Options"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
-
-[node name="ExitMenu" type="Button" parent="Screen/PauseMenu/Container" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 288.0
-margin_right = 320.0
-margin_bottom = 380.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Exit to menu"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
-
-[node name="ExitDesktop" type="Button" parent="Screen/PauseMenu/Container" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 384.0
-margin_right = 320.0
-margin_bottom = 480.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Exit to desktop"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+[node name="PauseMenu" parent="Screen" index="12" instance=ExtResource( 10 )]
 
 [node name="MinigameInformation" type="Container" parent="Screen" index="13"]
 
@@ -1867,7 +1703,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 15 )
+custom_styles/panel = SubResource( 4 )
 _sections_unfolded = [ "Margin", "Rect", "custom_styles" ]
 
 [node name="Header" type="Panel" parent="Screen/MinigameInformation/Description" index="0"]
@@ -1885,7 +1721,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 5 )
 _sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
 [node name="Label" type="Label" parent="Screen/MinigameInformation/Description/Header" index="0"]
@@ -1963,7 +1799,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 6 )
 custom_fonts/font = ExtResource( 15 )
 custom_constants/side_margin = 4
 tab_align = 0
@@ -2010,10 +1846,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 38.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 1.0
+margin_top = 31.0
+margin_right = -2.0
+margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -2044,10 +1880,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 38.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 1.0
+margin_top = 31.0
+margin_right = -2.0
+margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -2078,10 +1914,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 38.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 1.0
+margin_top = 31.0
+margin_right = -2.0
+margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -2278,12 +2114,12 @@ _sections_unfolded = [ "Rendering" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 keep_aspect = 1
 cull_mask = 1048575
-environment = SubResource( 19 )
+environment = SubResource( 7 )
 h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = false
+current = true
 fov = 70.0
 size = 1.0
 near = 0.05
@@ -2301,7 +2137,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 layers = 1
-material_override = SubResource( 4 )
+material_override = SubResource( 8 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -2336,7 +2172,7 @@ autoplay = "floating_animation"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/floating_animation = SubResource( 5 )
+anims/floating_animation = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Player1" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="2"]
@@ -2425,12 +2261,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [connection signal="pressed" from="Screen/Debug/Row2/PlayersTurn" to="Screen/Debug" method="_on_PlayersTurn_pressed"]
 
 [connection signal="pressed" from="Screen/Debug/Row2/Minigame" to="Screen/Debug" method="_on_Minigame_pressed"]
-
-[connection signal="pressed" from="Screen/PauseMenu/Container/Resume" to="Screen/PauseMenu" method="_on_Resume_pressed"]
-
-[connection signal="pressed" from="Screen/PauseMenu/Container/ExitMenu" to="Screen/PauseMenu" method="_on_ExitMenu_pressed"]
-
-[connection signal="pressed" from="Screen/PauseMenu/Container/ExitDesktop" to="Screen/PauseMenu" method="_on_ExitDesktop_pressed"]
 
 [connection signal="tab_changed" from="Screen/MinigameInformation/Controls" to="." method="_on_Controls_tab_changed"]
 

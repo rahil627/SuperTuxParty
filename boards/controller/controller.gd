@@ -118,13 +118,6 @@ func _unhandled_input(event):
 		_on_Roll_pressed()
 	elif event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
-	elif event.is_action_pressed("pause"):
-		if $Screen/PauseMenu.visible:
-			$Screen/PauseMenu.hide()
-			get_tree().paused = false
-		else:
-			$Screen/PauseMenu.popup()
-			get_tree().paused = true
 	elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 2].is_ai:
 		# Be able to choose path with controller or keyboard
 		if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
