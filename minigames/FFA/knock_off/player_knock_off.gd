@@ -1,8 +1,6 @@
 extends RigidBody
 
-const ICE_RADIUS = 3
 const MAX_SPEED = 4
-const PLAYER_RADIUS = 0.5
 
 var player_id = 0
 var accel = 15
@@ -11,6 +9,8 @@ var is_ai = false
 var winner = false setget set_winner
 
 var is_walking = false
+
+var ground_edges = {}
 
 func set_winner(win):
 	winner = win
@@ -25,6 +25,56 @@ func _ready():
 		$Model/AnimationPlayer.play("idle")
 	
 	add_to_group("players")
+	
+	precompute_ground_edges()
+
+func precompute_ground_edges():
+	var faces = $"../Ground/StaticBody/CollisionShape".shape.get_faces()
+	var inward_edges = {}
+	
+	var i = 0
+	while i < faces.size():
+		var p1 = faces[i]
+		for x in range(3):
+			i += 1
+			var p2
+			
+			# Triangles, e.g. 0 -> 1 -> 2 form a triangle
+			# This method calculates the distance to the edges, therefore needed edges 0 -> 1, 1 -> 2, 2 -> 0
+			if x == 2:
+				p2 = faces[i - 3]
+			else:
+				p2 = faces[i]
+			
+			var edge = [p1, p2]
+			var value_hash = edge.hash()
+			if not inward_edges.has(value_hash):
+				if ground_edges.has(value_hash):
+					inward_edges[value_hash] = edge
+					ground_edges.erase(value_hash)
+				else:
+					ground_edges[value_hash] = edge
+
+func get_distance_to_shape(point, edges):
+	var distance = INF
+	
+	for e in edges.values():
+		var p1 = e[0]
+		var p2 = e[1]
+		
+		var dir = (p2 - p1).normalized()
+		var r = dir.dot(point - p1)
+		
+		r = clamp(r, 0, 1)
+		
+		var dist = sqrt(pow((point - p1).length(), 2) - r * pow((p2-p1).length(), 2))
+		if dist < distance:
+			distance = dist
+	
+	return distance
+
+func is_on_floor():
+	return translation.y > 2.4
 
 func _process(delta):
 	var dir = Vector3()
@@ -33,7 +83,7 @@ func _process(delta):
 	
 	var players = get_tree().get_nodes_in_group("players")
 	
-	if not is_ai:
+	if not is_ai and is_on_floor():
 		if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
 			dir.x -= 1
 		if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
@@ -42,12 +92,16 @@ func _process(delta):
 			dir.z += 1
 		if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
 			dir.z -= 1
-	else:
+	elif is_on_floor():
 		# Try to knock off the player, that is the farthest away from the center, yet still on the ice
-		var farthest_player
+		var farthest_player = null
+		var farthest_distance = INF
 		for p in players:
-			if p != self and p.translation.length() - PLAYER_RADIUS < ICE_RADIUS and (farthest_player == null or (farthest_player.translation - translation).length_squared() > (p.translation - translation).length_squared()):
-				farthest_player = p
+			if p != self:
+				var distance = get_distance_to_shape(p.translation, ground_edges)
+				if p.is_on_floor() and (farthest_player == null or farthest_distance > distance):
+					farthest_player = p
+					farthest_distance = distance
 		
 		if farthest_player != null:
 			dir = (farthest_player.translation - translation).rotated(Vector3(0, 1, 0), PI/2)
