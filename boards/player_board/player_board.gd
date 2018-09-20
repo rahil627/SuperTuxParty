@@ -17,9 +17,10 @@ var gui_timer = GUI_TIMER
 
 var is_walking = false
 
-func _ready():
+func _init():
 	add_to_group("players")
-	
+
+func _ready():
 	if has_node("Model/AnimationPlayer"):
 		$Model/AnimationPlayer.play("idle")
 
