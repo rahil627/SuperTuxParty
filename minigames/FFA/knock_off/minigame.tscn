@@ -81,6 +81,8 @@ _sections_unfolded = [ "Anchor", "Margin", "Material", "Visibility", "custom_col
 
 [node name="PauseMenu" parent="Environment/Screen" index="1" instance=ExtResource( 4 )]
 
+visible = false
+
 [node name="Ground" type="MeshInstance" parent="." index="1"]
 
 editor/display_folded = true
