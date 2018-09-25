@@ -64,6 +64,16 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+### IceC_S.jpg | IceC_N.jpg | SnowB_S.jpg | SnowB_N.jpg
+
+Public Domain by Keith333
+
+Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-batch-of-15-seamless-textures-with-normalmaps)
+
+IceC_S.jpg and SnowB_S.jpg modified by Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
 ## boards/controller
 ### cake.png
 
