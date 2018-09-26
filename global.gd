@@ -161,14 +161,12 @@ func load_board_from_savegame(savegame):
 	call_deferred("_goto_scene_ingame", current_board)
 
 # Change scene to one of the mini-games
-func goto_minigame(minigame, try=false):
+func goto_minigame(minigame, try = false):
 	
 	# Current player nodes
 	var r_players = get_tree().get_nodes_in_group("players")
 	if try:
 		current_minigame = minigame
-	
-	player_turn = get_tree().get_nodes_in_group("Controller")[0].player_turn
 	
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
@@ -263,6 +261,7 @@ func reset_state():
 	new_game = true
 	cookie_space = 0
 	current_board = ""
+	player_turn = 1
 	players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 	turn = 1
 

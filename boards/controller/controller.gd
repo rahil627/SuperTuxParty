@@ -23,6 +23,9 @@ var winner = null
 var camera_focus = null
 var end_turn = true
 
+# Next node for player to go to when the player has chosen a path
+var next_node = null
+
 enum EDITOR_NODE_LINKING_DISPLAY { DISABLED = 0, NEXT_NODES = 1, PREV_NODES = 2, ALL = 3 }
 enum TURN_ACTION {BUY_CAKE = 0, CHOOSE_PATH = 1}
 
@@ -90,6 +93,7 @@ func _ready():
 			p.translation = p.space.translation + PLAYER_TRANSLATION[i-2]
 	
 	Global.load_board_state()
+	
 	if player_turn <= players.size():
 		camera_focus = players[player_turn - 1]
 	
@@ -113,118 +117,7 @@ func _ready():
 	else:
 		_on_Roll_pressed()
 
-func _unhandled_input(event):
-	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
-		_on_Roll_pressed()
-	elif event.is_action_pressed("debug"):
-		$Screen/Debug.popup()
-	elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 2].is_ai:
-		# Be able to choose path with controller or keyboard
-		if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
-			selected_id -= 1
-			
-			if selected_id < 0:
-				selected_id = get_tree().get_nodes_in_group("arrows").size() - 1
-		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
-			selected_id += 1
-			
-			if selected_id >= get_tree().get_nodes_in_group("arrows").size():
-				selected_id = 0
-		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
-			get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
-
-func get_players_on_space(space):
-	var num = 0
-	for player in players:
-		if(player.space == space):
-			num += 1
-	
-	return num
-
-func update_space(space):
-	var num  = 0
-	var max_num = get_players_on_space(space)
-	for player in players:
-		if player.space == space:
-			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
-			
-			if max_num > 1:
-				offset = PLAYER_TRANSLATION[num]
-			
-			player.destination.append(player.space.translation + offset)
-			num += 1
-
-func animation_ended(player_id):
-	if player_id != player_turn - 1:
-		return
-	
-	var player = players[player_id - 1]
-	
-	if end_turn:
-		wait_for_animation = false
-		_on_Roll_pressed()
-	else:
-		if not player.is_ai:
-			wait_for_animation = true
-			
-			match do_action:
-				TURN_ACTION.BUY_CAKE:
-					$Screen/GetCake.show()
-				TURN_ACTION.CHOOSE_PATH:
-					pass
-		else:
-			match do_action:
-				TURN_ACTION.BUY_CAKE:
-					
-					var cakes = int(player.cookies / COOKIES_FOR_CAKE)
-					
-					player.cakes += cakes
-					player.cookies -= COOKIES_FOR_CAKE * cakes
-					
-				TURN_ACTION.CHOOSE_PATH:
-					
-					var previous_space = player.space
-					
-					player.space = player.space.next[randi() % player.space.next.size()]
-					
-					var players_on_space = get_players_on_space(player.space) - 1
-					var offset = EMPTY_SPACE_PLAYER_TRANSLATION
-					
-					if players_on_space > 0:
-						offset = PLAYER_TRANSLATION[players_on_space]
-					
-					player.destination.append(player.space.translation + offset)
-					steps_remaining -= 1
-			
-			var timer = Timer.new()
-			timer.set_wait_time(1)
-			timer.connect("timeout", self, "_ai_continue_callback", [timer])
-			timer.start()
-			add_child(timer)
-
-func animation_step(player_id):
-	if player_id != player_turn - 1:
-		return
-	
-	step_count -= 1
-	
-	if step_count > 0:
-		$Screen/Stepcounter.text = var2str(step_count)
-	else:
-		$Screen/Stepcounter.text = ""
-
-func _ai_continue_callback(timer):
-	timer.queue_free()
-	
-	wait_for_animation = false
-	end_turn = true
-	
-	do_step(players[player_turn - 2], steps_remaining)
-
-func _ai_timer_callback(timer):
-	timer.queue_free()
-	_on_Roll_pressed()
-
+# Function to check if the next player can roll or not
 func _on_Roll_pressed():
 	if wait_for_animation:
 		return
@@ -253,18 +146,47 @@ func _on_Roll_pressed():
 			timer.start()
 			add_child(timer)
 
+# Roll for the current plyaer
+func roll():
+	if winner != null:
+		return
+	
+	if player_turn <= players.size():
+		$Screen/Splash.play("hide")
+		wait_for_animation = true
+		end_turn = true
+		
+		var player = players[player_turn - 1]
+		camera_focus = player
+		
+		var dice = (randi() % 6) + 1 # Random number between 1 & 6
+		
+		$Screen/Stepcounter.text = var2str(dice)
+		step_count = dice
+		
+		do_step(player, dice)
+		
+		# Show which number was rolled
+		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+		
+		if player_turn > players.size():
+			$Screen/Roll.text = "Minigame"
+	else:
+		# All players have had their turn, goto mini-game
+		current_minigame = Global.minigame_loader.get_random_ffa()
+		show_minigame_info()
+
 # Moves a player num spaces forward and stops when a cake spot is encoutered
 func do_step(player, num):
 	if num <= 0:
 		animation_ended(player.player_id)
 	else:
 		# Adds each animation step to the player_board.gd script
-		# The step to the last space is added during update_space(player.space)
+		# The last step is added during update_space(player.space)
 		var previous_space = player.space
 		for i in range(num - 1):
-			
 			# If there are multiple branches
-			if player.space.next.size() > 1:
+			if player.space.next.size() > 1 and next_node == null:
 				if player.is_ai == false:
 					selected_id = 0
 					
@@ -285,12 +207,20 @@ func do_step(player, num):
 				
 				selected_id = -1
 				do_action = TURN_ACTION.CHOOSE_PATH
+				
 				end_turn = false
 				
-				steps_remaining = num - (i + 1)
-				update_space(player.space)
+				# Player has not moved a space yet so only subtract with i
+				steps_remaining = num - (i)
+				
+				if not previous_space == player.space:
+					update_space(previous_space)
+					update_space(player.space)
 				
 				return
+			elif player.space.next.size() > 1 and not next_node == null:
+				player.space = next_node
+				next_node = null
 			elif player.space.next.size() == 1:
 				player.space = player.space.next[0]
 			
@@ -314,10 +244,10 @@ func do_step(player, num):
 				
 				player.destination.append(player.space.translation + offset)
 		
-		# Last step
-		
+		# Last step the player makes
+		# ==============================
 		# If there are multiple branches
-		if player.space.next.size() > 1:
+		if player.space.next.size() > 1 and next_node == null:
 			if player.is_ai == false:
 				selected_id = 0
 				
@@ -342,10 +272,15 @@ func do_step(player, num):
 			steps_remaining = 1
 			selected_id = -1
 			
-			update_space(player.space)
+			if not previous_space == player.space:
+				update_space(previous_space)
+				update_space(player.space)
 			
 			return
-		else:
+		elif player.space.next.size() > 1 and not next_node == null:
+			player.space = next_node
+			next_node = null
+		elif player.space.next.size() == 1:
 			player.space = player.space.next[0]
 		
 		if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
@@ -354,14 +289,15 @@ func do_step(player, num):
 			
 			end_turn = false
 			steps_remaining = 0
+			
 			update_space(previous_space)
 			update_space(player.space)
+			
 			return
 		
 		# Reposition figures
 		update_space(previous_space)
 		update_space(player.space)
-	
 	
 	# Lose cookies if you land on red space
 	match player.space.type:
@@ -375,37 +311,111 @@ func do_step(player, num):
 		NODE.BLUE:
 			player.cookies += 3
 
-func roll():
-	if winner != null:
+func update_space(space):
+	var num  = 0
+	var max_num = get_players_on_space(space)
+	for player in players:
+		if player.space == space:
+			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
+			
+			if max_num > 1:
+				offset = PLAYER_TRANSLATION[num]
+			
+			player.destination.append(player.space.translation + offset)
+			num += 1
+
+func _unhandled_input(event):
+	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
+		_on_Roll_pressed()
+	elif event.is_action_pressed("debug"):
+		$Screen/Debug.popup()
+	elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 1].is_ai:
+		# Be able to choose path with controller or keyboard
+		if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
+			selected_id -= 1
+			
+			if selected_id < 0:
+				selected_id = get_tree().get_nodes_in_group("arrows").size() - 1
+		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
+			selected_id += 1
+			
+			if selected_id >= get_tree().get_nodes_in_group("arrows").size():
+				selected_id = 0
+		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
+			get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
+
+func get_players_on_space(space):
+	var num = 0
+	for player in players:
+		if(player.space == space):
+			num += 1
+	
+	return num
+
+func animation_ended(player_id):
+	if player_id != player_turn :
 		return
 	
-	if player_turn <= players.size():
-		$Screen/Splash.play("hide")
-		wait_for_animation = true
-		end_turn = true
-		
-		var player = players[player_turn - 1]
-		camera_focus = player
-		
-		var dice = (randi() % 6) + 1 # Random number between 1 & 6
-		
-		$Screen/Stepcounter.text = var2str(dice)
-		step_count = dice
-		
-		do_step(player, dice)
-		
-		# Show which number was rolled
-		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
-		
-		player_turn += 1
-		
-		if player_turn > players.size():
-			$Screen/Roll.text = "Minigame"
-	else:
-		# All players have had their turn, goto mini-game
-		current_minigame = Global.minigame_loader.get_random_ffa()
-		show_minigame_info()
+	var player = players[player_id - 1]
 	
+	if end_turn:
+		player_turn += 1
+		wait_for_animation = false
+		_on_Roll_pressed()
+	else:
+		step_count += 1
+		$Screen/Stepcounter.text = var2str(step_count)
+		
+		if not player.is_ai:
+			wait_for_animation = true
+			
+			match do_action:
+				TURN_ACTION.BUY_CAKE:
+					$Screen/GetCake.show()
+				TURN_ACTION.CHOOSE_PATH:
+					pass
+		else:
+			match do_action:
+				TURN_ACTION.BUY_CAKE:
+					
+					var cakes = int(player.cookies / COOKIES_FOR_CAKE)
+					
+					player.cakes += cakes
+					player.cookies -= COOKIES_FOR_CAKE * cakes
+					
+				TURN_ACTION.CHOOSE_PATH:
+					
+					next_node = player.space.next[randi() % player.space.next.size()]
+					
+			
+			var timer = Timer.new()
+			timer.set_wait_time(1)
+			timer.connect("timeout", self, "_ai_continue_callback", [timer])
+			timer.start()
+			add_child(timer)
+
+func animation_step(player_id):
+	if player_id != player_turn:
+		return
+	
+	step_count -= 1
+	
+	if step_count > 0:
+		$Screen/Stepcounter.text = var2str(step_count)
+	else:
+		$Screen/Stepcounter.text = ""
+
+func _ai_continue_callback(timer):
+	timer.queue_free()
+	
+	wait_for_animation = false
+	end_turn = true
+	
+	do_step(players[player_turn - 1], steps_remaining)
+
+func _ai_timer_callback(timer):
+	timer.queue_free()
+	_on_Roll_pressed()
 
 func _process(delta):
 	if camera_focus != null:
@@ -416,6 +426,7 @@ func _process(delta):
 	# Automatically switch to next player when current player has finished moving
 	if player_turn - 2 >= 0 and player_turn - 1 < Global.amount_of_players:
 		var player = players[player_turn - 2]
+		
 		if camera_focus == player:
 			if player.destination.size() == 0 and end_turn:
 				camera_focus = players[player_turn - 1]
@@ -444,7 +455,7 @@ func hide_splash():
 	$Screen/Splash/Background.hide()
 
 func _on_GetCake_pressed():
-	$Screen/BuyCake/HSlider.max_value = int(players[player_turn - 2].cookies / COOKIES_FOR_CAKE)
+	$Screen/BuyCake/HSlider.max_value = int(players[player_turn - 1].cookies / COOKIES_FOR_CAKE)
 	
 	if $Screen/BuyCake/HSlider.max_value == 1:
 		$Screen/BuyCake/HSlider.hide()
@@ -458,7 +469,7 @@ func _on_GetCake_pressed():
 	$Screen/BuyCake/Amount.text = "x" + var2str(int($Screen/BuyCake/HSlider.max_value))
 
 func _on_GetCake_abort():
-	var player = players[player_turn - 2]
+	var player = players[player_turn - 1]
 	
 	$Screen/GetCake.hide()
 	end_turn = true
@@ -467,7 +478,7 @@ func _on_GetCake_abort():
 func _on_Buy_pressed():
 	var amount = int($Screen/BuyCake/HSlider.value)
 	
-	var player = players[player_turn - 2]
+	var player = players[player_turn - 1]
 	player.cookies -= COOKIES_FOR_CAKE * amount
 	player.cakes += amount
 	
@@ -486,13 +497,16 @@ func setup_character_viewport():
 	for i in range(Global.amount_of_players):
 		var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i+1))
 		var new_model = load(Global.character_loader.get_character_path(Global.players[i].character)).instance()
-		new_model.name = player.name
 		
+		new_model.name = player.name
 		new_model.translation = player.translation
 		new_model.scale = player.scale
 		new_model.rotation = player.rotation
+		
 		player.queue_free()
+		
 		$Screen/MinigameInformation/Characters/Viewport.add_child(new_model)
+		
 		if new_model.has_node("AnimationPlayer"):
 			new_model.get_node("AnimationPlayer").play("idle")
 			if i > 0:
