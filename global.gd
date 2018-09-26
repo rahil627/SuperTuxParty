@@ -28,6 +28,9 @@ var minigame_loader = MinigameLoader.new(self)
 var CharacterLoader = preload("res://characters/characterloader.gd")
 var character_loader = CharacterLoader.new()
 
+var SaveGameLoader = preload("res://savegames/savegames.gd")
+var savegame_loader = SaveGameLoader.new()
+
 # linear, 1st: 15, 2nd: 10, 3rd: 5, 4th: 0
 # winner_only, 1st: 10, 2nd-4th: 0
 enum AWARD_T {
@@ -53,10 +56,14 @@ var new_game = true
 var cookie_space = 0
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var turn = 1
+var player_turn = 1
 
 # The minigame to return to in "try minigame" mode
 # If it is null, then no minigame is tried and the next turn resumes
 var current_minigame = null
+
+var current_savegame = null
+var is_new_savegame = false
 
 # Stores the last placement (not changed when you press "try")
 # Used in rewardscreen.gd
@@ -66,6 +73,8 @@ func _ready():
 	randomize()
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
+	
+	savegame_loader.read_savegames()
 
 func load_board(board, names, characters, human_players):
 	for i in range(characters.size()):
@@ -129,6 +138,28 @@ func _goto_scene_ingame(path):
 	get_tree().set_current_scene(current_scene)
 	
 
+func load_board_from_savegame(savegame):
+	current_savegame = savegame
+	is_new_savegame = false
+	new_game = false
+	
+	current_board = savegame.board_path;
+	for i in range(amount_of_players):
+		players[i].player_id = i + 1
+		players[i].player_name = savegame.players[i].player_name
+		players[i].is_ai = savegame.players[i].is_ai
+		players[i].space = savegame.players[i].space
+		players[i].character = savegame.players[i].character
+		players[i].cookies = int(savegame.players[i].cookies)
+		players[i].cakes = int(savegame.players[i].cakes)
+	
+	cookie_space = int(savegame.cookie_space)
+	current_minigame = savegame.current_minigame
+	player_turn = int(current_savegame.player_turn)
+	award = int(savegame.award_type)
+	
+	call_deferred("_goto_scene_ingame", current_board)
+
 # Change scene to one of the mini-games
 func goto_minigame(minigame, try=false):
 	
@@ -136,6 +167,8 @@ func goto_minigame(minigame, try=false):
 	var r_players = get_tree().get_nodes_in_group("players")
 	if try:
 		current_minigame = minigame
+	
+	player_turn = get_tree().get_nodes_in_group("Controller")[0].player_turn
 	
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
@@ -180,6 +213,8 @@ func load_board_state():
 		controller.current_minigame = current_minigame
 		current_minigame = null
 		
+		controller.player_turn = player_turn
+		
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id
@@ -190,15 +225,22 @@ func load_board_state():
 			r_players[i].space = current_scene.get_node(players[i].space)
 			r_players[i].is_ai = players[i].is_ai
 			
-			# Move piece to the right space, increase y-axis so two players are not placed inside each other
+			# Move piece to the right space, place them to different position on the same space
 			var num = controller.get_players_on_space(r_players[i].space)
 			var translation = controller.EMPTY_SPACE_PLAYER_TRANSLATION
+			
+			# Fix first player sitting in the middle of the space
+			if num == 2:
+				for x in range(i):
+					if r_players[i].space == r_players[x].space:
+						r_players[x].translation = r_players[x].space.translation + controller.PLAYER_TRANSLATION[0]
+			
 			if num > 1:
 				translation = controller.PLAYER_TRANSLATION[num - 1]
 			r_players[i].translation = r_players[i].space.translation + translation
 			
-			if i == 0:
-				current_scene.get_node("Controller").translation = r_players[i].translation # Move camera to player 1
+			if i == controller.player_turn:
+				controller.translation = r_players[i].translation # Move camera to player 1
 	else:
 		for i in range(r_players.size()):
 			r_players[i].player_name = players[i].player_name
@@ -223,3 +265,27 @@ func reset_state():
 	current_board = ""
 	players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 	turn = 1
+
+func new_savegame():
+	current_savegame = SaveGameLoader.SaveGame.new()
+	is_new_savegame = true
+
+func save_game():
+	var r_players = get_tree().get_nodes_in_group("players")
+	var controller = get_tree().get_nodes_in_group("Controller")[0]
+	
+	current_savegame.board_path = current_board;
+	for i in range(amount_of_players):
+		current_savegame.players[i].player_name = r_players[i].player_name
+		current_savegame.players[i].is_ai = r_players[i].is_ai
+		current_savegame.players[i].space = r_players[i].space.get_path()
+		current_savegame.players[i].character = players[i].character
+		current_savegame.players[i].cookies = r_players[i].cookies
+		current_savegame.players[i].cakes = r_players[i].cakes
+	
+	current_savegame.cookie_space = cookie_space
+	current_savegame.current_minigame = current_minigame
+	current_savegame.player_turn = controller.player_turn
+	current_savegame.award_type = award
+	
+	savegame_loader.save(current_savegame)

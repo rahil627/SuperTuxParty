@@ -297,7 +297,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
-[node name="Controller" type="Spatial"]
+[node name="Controller" type="Spatial" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -1656,6 +1656,9 @@ alignment = 0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="PauseMenu" parent="Screen" index="12" instance=ExtResource( 10 )]
+
+visible = false
+can_save_game = true
 
 [node name="MinigameInformation" type="Container" parent="Screen" index="13"]
 

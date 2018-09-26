@@ -6,10 +6,9 @@ const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
 const CONTROL_HELPER = preload("res://controlhelper.gd")
+const NODE = preload("res://boards/node/node.gd")
 
 var COOKIES_FOR_CAKE = 30
-
-const NODE = preload("res://boards/node/node.gd")
 
 # Used internally for selecting a path on the board with buttons
 var selected_id = -1
@@ -86,12 +85,13 @@ func _ready():
 	for p in players:
 		p.player_id = i
 		i += 1
-		if p.space == null:
+		if p.space == null and Global.new_game:
 			p.space = get_node(start_node)
 			p.translation = p.space.translation + PLAYER_TRANSLATION[i-2]
 	
-	camera_focus = players[0]
 	Global.load_board_state()
+	if player_turn <= players.size():
+		camera_focus = players[player_turn - 1]
 	
 	if Global.award == Global.AWARD_T.winner_only:
 		COOKIES_FOR_CAKE = 20
@@ -99,7 +99,7 @@ func _ready():
 	
 	# Initialize GUI
 	$Screen/Turn.text = "Turn: " + var2str(Global.turn)
-	$Screen/Dice.text = "Roll " + players[0].player_name + "!"
+	$Screen/Dice.text = "Roll " + players[player_turn - 1].player_name + "!"
 	
 	update_player_info()
 	
@@ -524,6 +524,7 @@ func _on_Try_pressed():
 
 func _on_Play_pressed():
 	Global.turn += 1
+	player_turn = 1
 	Global.goto_minigame(current_minigame)
 	current_minigame = null
 
