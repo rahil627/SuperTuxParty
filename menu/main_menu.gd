@@ -154,6 +154,8 @@ func _on_SelectionChar_Back_pressed():
 func _on_board_select(target):
 	Global.new_game = true
 	board = board_loader.get_board_path(target.get_text())
+	
+	Global.new_savegame()
 	Global.load_board(board, names, characters, human_players)
 
 func _on_AwardType_item_selected(ID):
@@ -166,3 +168,25 @@ func _on_AwardType_item_selected(ID):
 func _on_Selection_Back_pressed():
 	$SelectionBoard.hide()
 	_amount_players_selected()
+
+#*** Load game menu ***#
+
+func _on_Load_pressed():
+	for i in range(Global.savegame_loader.get_num_savegames()):
+		var template = preload("res://savegames/savegame_entry.tscn").instance()
+		
+		var savegame = Global.savegame_loader.get_savegame(i)
+		template.text = savegame.name
+		
+		template.connect("pressed", self, "_on_savegame_pressed", [savegame])
+		$LoadGameMenu/ScrollContainer/Saves.add_child(template)
+	
+	$MainMenu.hide()
+	$LoadGameMenu.show()
+
+func _on_savegame_pressed(savegame):
+	Global.load_board_from_savegame(savegame)
+
+func _on_LoadGame_Back_pressed():
+	$LoadGameMenu.hide()
+	$MainMenu.show()
