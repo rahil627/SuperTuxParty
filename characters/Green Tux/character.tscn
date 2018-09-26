@@ -200,14 +200,14 @@ tracks/6/path = NodePath("Armature/Skeleton:Right Foot")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = true
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/keys = PoolRealArray( 0, 1, 1.39427e-14, 5.34592e-08, 1.18156e-07, -7.45058e-09, 0, 0, 1, 1, 1, 1, 1.2, 1, 1.39427e-14, 5.34592e-08, 1.18156e-07, -7.45058e-09, 0, 0, 1, 1, 1, 1 )
 tracks/7/type = "transform"
 tracks/7/path = NodePath("Armature/Skeleton:Left Foot")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = true
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/keys = PoolRealArray( 0, 1, -1.4505e-14, -3.38081e-08, 3.82733e-08, -1.49012e-08, -3.55271e-15, -7.10543e-15, 1, 1, 1, 1, 1.2, 1, -1.4505e-14, -3.38081e-08, 3.82733e-08, -1.49012e-08, -3.55271e-15, -7.10543e-15, 1, 1, 1, 1 )
 
 [sub_resource type="Animation" id=5]
