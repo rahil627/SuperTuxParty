@@ -30,26 +30,11 @@ func _on_Arrow_input_event(camera, event, click_position, click_normal, shape_id
 		pressed()
 
 func pressed():
-	var player = controller.players[controller.player_turn - 2]
-	var previous_space = player.space
+	var player = controller.players[controller.player_turn - 1]
 	
-	player.space = next_node
-	
-	var players_on_space = controller.get_players_on_space(player.space) - 1
-	var offset = controller.EMPTY_SPACE_PLAYER_TRANSLATION
-	
-	if players_on_space > 0:
-		offset = controller.PLAYER_TRANSLATION[players_on_space]
-	
-	player.destination.append(player.space.translation + offset)
-	
+	controller.next_node = self.next_node;
 	controller.end_turn = true
-	
-	if controller.steps_remaining > 1:
-		controller.do_step(player, controller.steps_remaining)
-	else:
-		controller.update_space(previous_space)
-		controller.update_space(player.space)
+	controller.do_step(player, controller.steps_remaining)
 	
 	controller.selected_id = -1
 	

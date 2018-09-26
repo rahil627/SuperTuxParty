@@ -45,9 +45,11 @@ func _physics_process(delta):
 		
 		if destination.size() == 0:
 			rotation.y = 0
+			
 			if has_node("Model/AnimationPlayer"):
 				$Model/AnimationPlayer.play("idle")
 				is_walking = false
+			
 			$"../Controller".update_player_info()
 			$"../Controller".animation_ended(player_id)
 	else:

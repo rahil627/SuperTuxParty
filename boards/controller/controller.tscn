@@ -297,7 +297,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
-[node name="Controller" type="Spatial" index="0"]
+[node name="Controller" type="Spatial"]
 
 pause_mode = 2
 script = ExtResource( 1 )
