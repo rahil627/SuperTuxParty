@@ -74,6 +74,15 @@ IceC_S.jpg and SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
+## minigames/FFA/harvest_food
+### fence.escn
+
+Exported model of Public Domain Model by WeaponGuy
+
+Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ## boards/controller
 ### cake.png
 

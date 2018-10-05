@@ -1,0 +1,15 @@
+{
+    "name" : "Harvest Food",
+    "scene_path" : "res://minigames/FFA/harvest_food/minigame.tscn",
+    "image_path" : "",
+    
+    "description" : {
+	"en" : "The players participate in a race.\n\nDon't get hit by the obstacles! The last player standing wins."
+    },
+    
+    "used_controls" : {
+	"action1" : {
+	    "en" : "Jump"
+	}
+    }
+}
