@@ -1,20 +1,95 @@
+## boards/controller
+### cake.png
+
+Public Domain by maruki
+
+Retrived from [Open Game Art](https://opengameart.org/content/foodies)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### cookie.png
+
+Copyright © 2017 InkMammoth
+
+Retrived from [Open Game Art](https://opengameart.org/content/pixel-art-food-pack-by-inkmammoth)
+
+License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+### indicator.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### splash_background.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## boards/node/
+### tile_blue_col.jpg | tile_red_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### arrow.png
+
+Copyright © 2018 Jakob Sinclair
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## characters/Tux
-Tux model and texture
+### character.dae | tux_texture.png | tux.blend
 
 Copyright © 2010 durmieu 
+
+Modified by Florian Kothmeier 2018
 
 Retrived from [Open Game Art](https://opengameart.org/content/tux)
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### splash.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## characters/Green Tux
-Tux model and texture
+### tux_texture.png
 
-Copyright © 2010 durmieu
+Copyright © 2010 durmieu 
 
-Texture modified by Florian Kothmeier
+Modified by Florian Kothmeier 2018
 
 Retrived from [Open Game Art](https://opengameart.org/content/tux)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### splash.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## characters/Beastie
+### beastie_tex.png | beastie.blend | beastie.dae
+
+Copyright © 2010 durmieu 
+
+Modified by Florian Kothmeier 2018
+
+Retrived from [Open Game Art](https://opengameart.org/content/beastie)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### splash.png
+
+Copyright © 2018 Florian Kothmeier 
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -38,14 +113,53 @@ http://scripts.sil.org/OFL
 
 See fonts/OFL for full license.
 
-## boards/node/
-### tile_blue_col.jpg | tile_red_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
+## icon.* | icon-*
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## minigames/FFA/harvest_food
+### fence.escn
+
+Exported model of Public Domain Model by WeaponGuy
+
+Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+## minigames/FFA/hurdle
+### asphalt_* | plastic_* | metal_*
 
 Public Domain by StruffelProductions
 
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### green_point_park_2k.hdr
+
+Copyright © 2016 Greg Zaal
+
+Retrived from [HDRIHaven](https://hdrihaven.com/hdri/?c=skies&h=green_point_park)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### trashcan.escn
+
+Exported from Public Domain model by yethiel
+
+Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+### trashcan_diffuse.png | trashcan_spec.png | trashcan_normal.png
+
+Public domain textures for the trashcan model by yethiel
+
+Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
 ## minigames/FFA/knock_off
 ### water_diffuse.png
@@ -74,44 +188,8 @@ IceC_S.jpg and SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-## minigames/FFA/harvest_food
-### fence.escn
+## screenshot.png
 
-Exported model of Public Domain Model by WeaponGuy
-
-Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
-
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-## minigames/FFA/hurdle
-### trashcan.escn
-
-Exported from Public Domain model by yethiel
-
-Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
+Copyright © 2018 Jakob Sinclair
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-
-### trashcan_diffuse.png | trashcan_spec.png | trashcan_normal.png
-
-Public domain textures for the trashcan model by yethiel
-
-Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
-
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-
-## boards/controller
-### cake.png
-
-Public Domain by maruki
-
-Retrived from [Open Game Art](https://opengameart.org/content/foodies)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-### cookie.png
-
-Copyright © 2017 InkMammoth
-
-Retrived from [Open Game Art](https://opengameart.org/content/pixel-art-food-pack-by-inkmammoth)
-
-License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
