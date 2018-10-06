@@ -1,12 +1,29 @@
 extends Spatial
 
+const HURDLES = [ preload("res://minigames/FFA/hurdle/hurdle.tscn"),
+                  preload("res://minigames/FFA/hurdle/trashcan.tscn") ]
+
+const POWERUPS = [ preload("res://minigames/FFA/hurdle/star.tscn"),
+                   preload("res://minigames/FFA/hurdle/landmine.tscn"),
+                   preload("res://minigames/FFA/hurdle/ghost_powerup.tscn") ]
+
 var losses = 0 # Number of players that have been knocked-out
 var placement = [0, 0, 0, 0] # Placements, is filled with player id in order. Index 0 is first place
 var timer = 50.0 # Timer of minigame
 var end_timer = 4 # How long the winning message will be shown before exiting
 var end_timer_start = false # When to start the end timer
 var spawn_timer = 5
-var max_spawn = 5
+var max_spawn = 3
+
+var powerup_spawn_timer = 3
+var powerup_max_spawn = 3
+
+onready var hurdle1_pointer = $Hurdle1
+onready var hurdle2_pointer = $Hurdle2
+onready var hurdle3_pointer = $Hurdle3
+onready var hurdle4_pointer = $Hurdle4
+
+var time_since_last_hurdle = 0
 
 func _ready():
 	var i = 1
@@ -15,9 +32,44 @@ func _ready():
 	for p in get_tree().get_nodes_in_group("players"):
 		p.player_id = i
 		i += 1
+	
+	spawn_hurdle()
+
+func spawn_hurdle():
+	var type = HURDLES[randi()%HURDLES.size()]
+	
+	var hurdle1 = type.instance()
+	var hurdle2 = type.instance()
+	var hurdle3 = type.instance()
+	var hurdle4 = type.instance()
+	
+	hurdle1.translation = hurdle1_pointer.translation
+	hurdle2.translation = hurdle2_pointer.translation
+	hurdle3.translation = hurdle3_pointer.translation
+	hurdle4.translation = hurdle4_pointer.translation
+	
+	add_child(hurdle1)
+	add_child(hurdle2)
+	add_child(hurdle3)
+	add_child(hurdle4)
+
+func spawn_powerup():
+	var powerup = POWERUPS[randi()%POWERUPS.size()].instance()
+	
+	var position = [ hurdle1_pointer.translation,
+	                 hurdle2_pointer.translation,
+	                 hurdle3_pointer.translation,
+	                 hurdle4_pointer.translation ]
+	
+	powerup.translation = position[randi() % position.size()]
+	
+	add_child(powerup)
 
 func _process(delta):
 	spawn_timer -= delta
+	powerup_spawn_timer -= delta
+	
+	time_since_last_hurdle += delta
 	
 	if spawn_timer < 0:
 		max_spawn -= 0.25
@@ -27,14 +79,19 @@ func _process(delta):
 		
 		spawn_timer = rand_range(1.0, max_spawn)
 		
-		var hurdle1 = preload("res://minigames/FFA/hurdle/hurdle.tscn").instance()
-		var hurdle2 = preload("res://minigames/FFA/hurdle/hurdle.tscn").instance()
+		spawn_hurdle()
+		time_since_last_hurdle = 0
+	
+	# Prevent powerups from spawning inside hurdles
+	if powerup_spawn_timer < 0 and time_since_last_hurdle > 0.1 and spawn_timer > 0.1:
+		powerup_max_spawn -= 0.5
 		
-		hurdle1.translation = Vector3(1, 0, 16)
-		hurdle2.translation = Vector3(-1, 0, 16)
+		if powerup_max_spawn < 0.5:
+			powerup_max_spawn = 0.5
 		
-		add_child(hurdle1)
-		add_child(hurdle2)
+		powerup_spawn_timer = rand_range(1.0, powerup_max_spawn)
+		
+		spawn_powerup()
 	
 	var players = get_tree().get_nodes_in_group("players")
 	for p in players:
