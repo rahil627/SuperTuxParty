@@ -15,7 +15,45 @@ var character_loader
 
 var control_remapper = preload("res://menu/control_remapper.gd").new(self)
 
-onready var human_players = Global.amount_of_players
+var human_players = Global.amount_of_players
+
+func _ready():
+	var award_type = $SelectionBoard/AwardType
+	award_type.add_item("Linear", Global.AWARD_T.linear);
+	award_type.add_item("Winner takes all", Global.AWARD_T.winner_only);
+	load_boards()
+	load_characters()
+	control_remapper.controls_remapping_setup()
+	characters.resize(Global.amount_of_players)
+	
+	if Global.quit_to_menu:
+		Global.quit_to_menu = false
+		
+		$MainMenu.visible = false
+		$SelectionBoard.visible = true
+		
+		human_players = 0
+		
+		var i = 1;
+		
+		for p in Global.players:
+			if p.is_ai:
+				continue
+			else:
+				human_players += 1
+			
+			get_node("PlayerInfo" + var2str(i) + "/Name").text = p.player_name;
+			get_node("PlayerInfo" + var2str(i) + "/Character").text = "Character: " + p.character;
+			get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Ready!"
+			get_node("PlayerInfo" + var2str(i)).visible = true
+			
+			characters[i - 1] = p.character;
+			
+			i += 1
+		
+		current_player = human_players + 1
+		
+		prepare_player_states()
 
 func load_boards():
 	board_loader = Global.board_loader
@@ -46,15 +84,6 @@ func load_characters():
 		character_list_entry.connect("pressed", self, "_on_character_select", [character_list_entry])
 		
 		selection_char_list.add_child(character_list_entry)
-
-func _ready():
-	var award_type = $SelectionBoard/AwardType
-	award_type.add_item("Linear", Global.AWARD_T.linear);
-	award_type.add_item("Winner takes all", Global.AWARD_T.winner_only);
-	load_boards()
-	load_characters()
-	control_remapper.controls_remapping_setup()
-	characters.resize(Global.amount_of_players)
 
 #*** Options menu ***#
 
@@ -113,6 +142,17 @@ func _on_Amount_Of_Players_Back_pressed():
 
 #*** Character selection menu ***#
 
+func prepare_player_states():
+	names = []
+	
+	for i in range(1, Global.amount_of_players + 1):
+		if i < current_player:
+			names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
+		else:
+			var possible_characters = character_loader.get_loaded_characters()
+			characters[i - 1] = possible_characters[randi() % possible_characters.size()]
+			names.push_back("%s Bot" % characters[i - 1])
+
 func _on_character_select(target):
 	get_node("PlayerInfo" + var2str(current_player) + "/Character").text = "Character: " + target.get_text()
 	get_node("PlayerInfo" + var2str(current_player) + "/Ready").text = "Ready!"
@@ -121,18 +161,10 @@ func _on_character_select(target):
 	current_player += 1
 	
 	if current_player > human_players:
-		names = []
+		prepare_player_states()
 		
-		for i in range(1, Global.amount_of_players + 1):
-			if i < current_player:
-				names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
-			else:
-				var possible_characters = character_loader.get_loaded_characters()
-				characters[i - 1] = possible_characters[randi() % possible_characters.size()]
-				names.push_back("%s Bot" % characters[i - 1])
-			
-			$SelectionChar.hide()
-			$SelectionBoard.show()
+		$SelectionChar.hide()
+		$SelectionBoard.show()
 	
 	$SelectionChar/Title.text = "Select character for Player " + var2str(current_player)
 
@@ -167,6 +199,11 @@ func _on_AwardType_item_selected(ID):
 
 func _on_Selection_Back_pressed():
 	$SelectionBoard.hide()
+	current_player = 1;
+	
+	for i in range(1, 5):
+		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
+	
 	_amount_players_selected()
 
 #*** Load game menu ***#

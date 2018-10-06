@@ -21,6 +21,7 @@ func _on_Resume_pressed():
 
 func _on_ExitMenu_pressed():
 	get_tree().paused = false
+	Global.quit_to_menu = true
 	
 	Global.reset_state()
 	Global.goto_scene("res://menu/main_menu.tscn")

@@ -41,6 +41,9 @@ enum AWARD_T {
 
 var amount_of_players = 4
 
+# Is true if you exit to menu from inside the game
+var quit_to_menu = false
+
 # Option to choose how players are awarded after completing a mini-game
 var award = AWARD_T.linear
 
@@ -262,8 +265,13 @@ func reset_state():
 	cookie_space = 0
 	current_board = ""
 	player_turn = 1
-	players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 	turn = 1
+	
+	for p in players:
+		p.cookies = 0
+		p.cookies_gui = 0
+		p.cakes = 0
+		p.space = null
 
 func new_savegame():
 	current_savegame = SaveGameLoader.SaveGame.new()
