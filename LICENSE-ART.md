@@ -82,6 +82,22 @@ Exported model of Public Domain Model by WeaponGuy
 Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+## minigames/FFA/hurdle
+### trashcan.escn
+
+Exported from Public Domain model by yethiel
+
+Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+### trashcan_diffuse.png | trashcan_spec.png | trashcan_normal.png
+
+Public domain textures for the trashcan model by yethiel
+
+Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
 ## boards/controller
 ### cake.png

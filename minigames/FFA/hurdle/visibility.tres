@@ -1,0 +1,38 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type spatial;
+render_mode blend_mix;
+
+uniform vec4 invisible_color : hint_color;
+uniform vec4 visible_color : hint_color;
+
+uniform float begin_blink;
+uniform float blink_interval;
+
+uniform float time_invisible;
+
+void vertex() {
+	
+}
+
+void fragment() {
+	float invisible = time_invisible > 0.0 ? (time_invisible > begin_blink ? 1.0 : abs(mod(begin_blink - time_invisible, 2.0*blink_interval) - blink_interval) / blink_interval) : 0.0;
+	ALBEDO = mix(visible_color.rgb, invisible_color.rgb, invisible);
+	
+	ALPHA = mix(visible_color.a, invisible_color.a, invisible);
+}
+"
+
+[resource]
+
+render_priority = 0
+shader = SubResource( 1 )
+shader_param/invisible_color = Color( 1, 0, 0, 0.784314 )
+shader_param/visible_color = Color( 1, 0, 0, 0 )
+shader_param/begin_blink = 2.0
+shader_param/blink_interval = 0.5
+shader_param/time_invisible = 0.0
+_sections_unfolded = [ "shader_param" ]
+
