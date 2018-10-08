@@ -128,6 +128,14 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fe
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
+### BarrelWoodUV.jpg
+
+Texture of fence model by WeaponGuy
+
+Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ## minigames/FFA/hurdle
 ### asphalt_* | plastic_* | metal_*
 
@@ -161,6 +169,18 @@ Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
+### landmine.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+### star.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
 ## minigames/FFA/knock_off
 ### water_diffuse.png
 
@@ -185,6 +205,12 @@ Public Domain by Keith333
 Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-batch-of-15-seamless-textures-with-normalmaps)
 
 IceC_S.jpg and SnowB_S.jpg modified by Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+### ice.escn
+
+Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
