@@ -137,7 +137,7 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/FFA/harvest_food
-### fence.escn
+### fence.escn | picketfence_0.blend
 
 Exported model of Public Domain Model by WeaponGuy
 
@@ -152,6 +152,18 @@ Texture of fence model by WeaponGuy
 Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### carrot.blend
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### carrot_rotten.blend
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/FFA/hurdle
 ### asphalt_* | plastic_* | metal_*
@@ -170,9 +182,9 @@ Retrived from [HDRIHaven](https://hdrihaven.com/hdri/?c=skies&h=green_point_park
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-### trashcan.escn
+### trashcan.escn | trashcan.blend
 
-Exported from Public Domain model by yethiel
+Copyright © yethiel
 
 Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
@@ -186,13 +198,13 @@ Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-### landmine.escn
+### landmine.escn | landmine.blend
 
 Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-### star.escn
+### star.escn | star.blend
 
 Copyright © Florian Kothmeier
 
