@@ -42,8 +42,14 @@ Copyright © 2018 Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### node.escn
+
+Copyright © Jakob Sinclair
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## characters/Tux
-### character.dae | tux_texture.png | tux.blend
+### character.dae | tux_texture.png | tux.blend | tux.escn
 
 Copyright © 2010 durmieu 
 
@@ -60,6 +66,16 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## characters/Green Tux
+### character.escn | tux.escn
+
+Copyright © 2010 durmieu 
+
+Modified by Florian Kothmeier 2018
+
+Retrived from [Open Game Art](https://opengameart.org/content/tux)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ### tux_texture.png
 
 Copyright © 2010 durmieu 
@@ -77,7 +93,7 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## characters/Beastie
-### beastie_tex.png | beastie.blend | beastie.dae
+### beastie_tex.png | beastie.blend | beastie.dae | character.escn
 
 Copyright © 2010 durmieu 
 
@@ -93,7 +109,8 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## fonts/Boogaloo-Regular.ttf
+## fonts
+### Boogaloo-Regular.ttf
 Copyright (c) 2011, John Vargas Beltr�n� (www.johnvargasbeltran.com|john.vargasbeltran@gmail.com),
 with Reserved Font Name Boogaloo.
 
@@ -181,6 +198,24 @@ Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
+### ground_model.escn
+
+Copyright © Jakob Sinclair
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+### hurdle_model.escn
+
+Copyright © Jakob Sinclair
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
 ## minigames/FFA/knock_off
 ### water_diffuse.png
 
@@ -208,9 +243,15 @@ IceC_S.jpg and SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-### ice.escn
+### ice.escn | iceberg.blend
 
 Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+### screenshot.png
+
+Coyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
