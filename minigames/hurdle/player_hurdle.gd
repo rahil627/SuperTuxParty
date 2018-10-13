@@ -31,7 +31,7 @@ func _ready():
 	if has_node("Model/AnimationPlayer"):
 		get_node("Model/AnimationPlayer").play("run")
 	
-	visibility_material = load("res://minigames/FFA/hurdle/visibility.tres").duplicate()
+	visibility_material = load("res://minigames/hurdle/visibility.tres").duplicate()
 	
 	Utility.apply_nextpass_material(visibility_material, $Model)
 

@@ -16,8 +16,8 @@ config/icon="res://icon-smallest.png"
 
 [autoload]
 
-Global="*res://global.gd"
 Utility="*res://utility.gd"
+Global="*res://global.gd"
 
 [display]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://minigames/FFA/hurdle/hurdle.gd" type="Script" id=1]
-[ext_resource path="res://minigames/FFA/hurdle/trashcan_diffuse.png" type="Texture" id=2]
-[ext_resource path="res://minigames/FFA/hurdle/trashcan_spec.png" type="Texture" id=3]
-[ext_resource path="res://minigames/FFA/hurdle/trashcan_normal.png" type="Texture" id=4]
+[ext_resource path="res://minigames/hurdle/hurdle.gd" type="Script" id=1]
+[ext_resource path="res://minigames/hurdle/trashcan_diffuse.png" type="Texture" id=2]
+[ext_resource path="res://minigames/hurdle/trashcan_spec.png" type="Texture" id=3]
+[ext_resource path="res://minigames/hurdle/trashcan_normal.png" type="Texture" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -76,13 +76,13 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Metallic" ]
+_sections_unfolded = [ "Albedo", "Metallic", "NormalMap" ]
 
 [sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 1, 2, 1 )
 
-[node name="Scene Root" type="StaticBody"]
+[node name="Scene Root" type="StaticBody" index="0"]
 
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 input_ray_pickable = true

@@ -1,8 +1,11 @@
 [gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
-[ext_resource path="res://minigames/FFA/hurdle/plastic_col.jpg" type="Texture" id=1]
-[ext_resource path="res://minigames/FFA/hurdle/plastic_nrm.jpg" type="Texture" id=2]
-[ext_resource path="res://minigames/FFA/hurdle/plastic_rgh.jpg" type="Texture" id=3]
+[ext_resource path="res://minigames/hurdle/plastic_col.jpg" type="Texture" id=1]
+[ext_resource path="res://minigames/hurdle/plastic_nrm.jpg" type="Texture" id=2]
+[ext_resource path="res://minigames/hurdle/plastic_rgh.jpg" type="Texture" id=3]
+
+
+
 
 [resource]
 

@@ -23,7 +23,7 @@ var BoardLoader = preload("res://boards/boardloader.gd")
 var board_loader = BoardLoader.new()
 
 var MinigameLoader = preload("res://minigames/minigameloader.gd")
-var minigame_loader = MinigameLoader.new(self)
+var minigame_loader = MinigameLoader.new()
 
 var CharacterLoader = preload("res://characters/characterloader.gd")
 var character_loader = CharacterLoader.new()

@@ -1,11 +1,11 @@
 extends Spatial
 
-const HURDLES = [ preload("res://minigames/FFA/hurdle/hurdle.tscn"),
-                  preload("res://minigames/FFA/hurdle/trashcan.tscn") ]
+const HURDLES = [ preload("res://minigames/hurdle/hurdle.tscn"),
+                  preload("res://minigames/hurdle/trashcan.tscn") ]
 
-const POWERUPS = [ preload("res://minigames/FFA/hurdle/star.tscn"),
-                   preload("res://minigames/FFA/hurdle/landmine.tscn"),
-                   preload("res://minigames/FFA/hurdle/ghost_powerup.tscn") ]
+const POWERUPS = [ preload("res://minigames/hurdle/star.tscn"),
+                   preload("res://minigames/hurdle/landmine.tscn"),
+                   preload("res://minigames/hurdle/ghost_powerup.tscn") ]
 
 var losses = 0 # Number of players that have been knocked-out
 var placement = [0, 0, 0, 0] # Placements, is filled with player id in order. Index 0 is first place

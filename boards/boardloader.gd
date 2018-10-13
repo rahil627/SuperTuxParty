@@ -12,7 +12,7 @@ func read_directory(filename, output):
 	var err = dir.open(filename)
 	if(err != OK):
 		# TODO convert error code to error string
-		print("Unable to open directory '" + filename + "'. Debug error code: " + String(err))
+		print("Unable to open directory '" + filename + "'. Reason: " + Utility.error_code_to_string(err))
 		return
 	dir.list_dir_begin(true) # Parameter indicates to skip . and ..
 	
