@@ -1,6 +1,7 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://minigames/FFA/harvest_food/BarrelWoodUV.jpg" type="Texture" id=1]
+[ext_resource path="res://minigames/harvest_food/BarrelWoodUV.jpg" type="Texture" id=1]
+
 
 [resource]
 

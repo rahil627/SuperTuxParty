@@ -1,15 +1,23 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://minigames/FFA/hurdle/hurdle_game.gd" type="Script" id=1]
-[ext_resource path="res://minigames/FFA/hurdle/green_point_park_2k.hdr" type="Texture" id=2]
+[ext_resource path="res://minigames/hurdle/hurdle_game.gd" type="Script" id=1]
+[ext_resource path="res://minigames/hurdle/green_point_park_2k.hdr" type="Texture" id=2]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://boards/controller/pausemenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://minigames/FFA/hurdle/player_hurdle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://minigames/FFA/hurdle/ground_model.escn" type="PackedScene" id=6]
-[ext_resource path="res://minigames/FFA/hurdle/ground.shader" type="Shader" id=7]
-[ext_resource path="res://minigames/FFA/hurdle/asphalt_col.jpg" type="Texture" id=8]
-[ext_resource path="res://minigames/FFA/hurdle/asphalt_nrm.jpg" type="Texture" id=9]
-[ext_resource path="res://minigames/FFA/hurdle/asphalt_rgh.jpg" type="Texture" id=10]
+[ext_resource path="res://minigames/hurdle/player_hurdle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://minigames/hurdle/ground_model.escn" type="PackedScene" id=6]
+[ext_resource path="res://minigames/hurdle/ground.shader" type="Shader" id=7]
+[ext_resource path="res://minigames/hurdle/asphalt_col.jpg" type="Texture" id=8]
+[ext_resource path="res://minigames/hurdle/asphalt_nrm.jpg" type="Texture" id=9]
+[ext_resource path="res://minigames/hurdle/asphalt_rgh.jpg" type="Texture" id=10]
+
+
+
+
+
+
+
+
 
 [sub_resource type="PanoramaSky" id=1]
 

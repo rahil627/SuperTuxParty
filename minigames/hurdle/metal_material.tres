@@ -1,8 +1,13 @@
-[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
 
-[ext_resource path="res://minigames/FFA/knock_off/SnowB_S.jpg" type="Texture" id=1]
-[ext_resource path="res://minigames/FFA/knock_off/SnowB_N.jpg" type="Texture" id=2]
-[ext_resource path="res://minigames/FFA/knock_off/paper02_rgh.jpg" type="Texture" id=3]
+[ext_resource path="res://minigames/hurdle/metal_col.jpg" type="Texture" id=1]
+[ext_resource path="res://minigames/hurdle/metal_met.jpg" type="Texture" id=2]
+[ext_resource path="res://minigames/hurdle/metal_nrm.jpg" type="Texture" id=3]
+[ext_resource path="res://minigames/hurdle/metal_rgh.jpg" type="Texture" id=4]
+
+
+
+
 
 [resource]
 
@@ -29,16 +34,17 @@ params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
 albedo_texture = ExtResource( 1 )
-metallic = 0.04
+metallic = 1.0
 metallic_specular = 0.5
-metallic_texture_channel = 3
+metallic_texture = ExtResource( 2 )
+metallic_texture_channel = 4
 roughness = 1.0
-roughness_texture = ExtResource( 3 )
+roughness_texture = ExtResource( 4 )
 roughness_texture_channel = 4
 emission_enabled = false
 normal_enabled = true
 normal_scale = 1.0
-normal_texture = ExtResource( 2 )
+normal_texture = ExtResource( 3 )
 rim_enabled = false
 clearcoat_enabled = false
 anisotropy_enabled = false
@@ -58,5 +64,4 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Metallic", "NormalMap", "Roughness" ]
 

@@ -1,7 +1,8 @@
 {
-    "name" : "Harvest Food",
-    "scene_path" : "res://minigames/FFA/harvest_food/minigame.tscn",
-    "image_path" : "",
+    "name" : "Hurdles",
+    "scene_path" : "res://minigames/hurdle/minigame.tscn",
+    "image_path" : "res://minigames/hurdle/screenshot.png",
+    "type" : ["FFA"],
     
     "description" : {
 	"en" : "The players participate in a race.\n\nDon't get hit by the obstacles! The last player standing wins."

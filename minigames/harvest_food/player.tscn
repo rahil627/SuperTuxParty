@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://minigames/FFA/harvest_food/player.gd" type="Script" id=1]
+[ext_resource path="res://minigames/harvest_food/player.gd" type="Script" id=1]
+
 
 [node name="KinematicBody" type="KinematicBody" index="0" groups=[
 "players",

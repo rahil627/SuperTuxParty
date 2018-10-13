@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://minigames/FFA/hurdle/ghost_powerup.gd" type="Script" id=1]
+[ext_resource path="res://minigames/hurdle/ghost_powerup.gd" type="Script" id=1]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 
