@@ -61,8 +61,8 @@ func load_boards():
 	
 	var selection_board_list = $SelectionBoard/ScrollContainer/Buttons
 	
+	var button_template = preload("res://menu/board_selection_button.tscn")
 	for board in board_loader.get_loaded_boards():
-		var button_template = preload("res://menu/board_selection_button.tscn")
 		var board_list_entry = button_template.instance()
 		
 		board_list_entry.set_text(board)
@@ -209,16 +209,16 @@ func _on_Selection_Back_pressed():
 #*** Load game menu ***#
 
 func _on_Load_pressed():
+	var savegame_template = preload("res://savegames/savegame_entry.tscn")
 	for i in range(Global.savegame_loader.get_num_savegames()):
-		var template = preload("res://savegames/savegame_entry.tscn").instance()
-		
+		var savegame_entry = savegame_template.instance()
 		var savegame = Global.savegame_loader.get_savegame(i)
-		template.get_node("Load").text = savegame.name
+		savegame_entry.get_node("Load").text = savegame.name
 		
-		template.get_node("Load").connect("pressed", self, "_on_SaveGame_Load_pressed", [savegame])
-		template.get_node("Delete").connect("pressed", self, "_on_SaveGame_Delete_pressed", [savegame, template])
+		savegame_entry.get_node("Load").connect("pressed", self, "_on_SaveGame_Load_pressed", [savegame])
+		savegame_entry.get_node("Delete").connect("pressed", self, "_on_SaveGame_Delete_pressed", [savegame, template])
 		
-		$LoadGameMenu/ScrollContainer/Saves.add_child(template)
+		$LoadGameMenu/ScrollContainer/Saves.add_child(savegame_entry)
 	
 	$MainMenu.hide()
 	$LoadGameMenu.show()
@@ -232,5 +232,8 @@ func _on_SaveGame_Delete_pressed(savegame, node):
 	Global.savegame_loader.delete_savegame(savegame)
 
 func _on_LoadGame_Back_pressed():
+	for i in $LoadGameMenu/ScrollContainer/Saves.get_children():
+		i.queue_free()
+	
 	$LoadGameMenu.hide()
 	$MainMenu.show()
