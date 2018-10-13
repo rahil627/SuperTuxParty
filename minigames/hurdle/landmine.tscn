@@ -2,7 +2,6 @@
 
 [ext_resource path="res://minigames/hurdle/landmine.gd" type="Script" id=1]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -138,7 +137,9 @@ surfaces/1 = {
 
 extents = Vector3( 1, 0.2, 1 )
 
-[node name="Landmine" type="Area" index="0"]
+[node name="Landmine" type="Area" index="0" groups=[
+"hurdles",
+]]
 
 input_ray_pickable = false
 input_capture_on_drag = false

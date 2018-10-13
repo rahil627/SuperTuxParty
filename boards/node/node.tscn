@@ -56,9 +56,15 @@ uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
 
-[node name="Node" type="Spatial"]
+[node name="Node" type="Spatial" index="0" groups=[
+"nodes",
+]]
 
 script = ExtResource( 1 )
+type = 0
+potential_cake = false
+next_nodes = null
+prev_nodes = null
 
 [node name="Model" parent="." index="0" instance=ExtResource( 2 )]
 

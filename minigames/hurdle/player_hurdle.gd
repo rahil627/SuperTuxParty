@@ -24,9 +24,6 @@ var collision_disabled = 0
 
 var visibility_material;
 
-func _init():
-	add_to_group("players")
-
 func _ready():
 	if has_node("Model/AnimationPlayer"):
 		get_node("Model/AnimationPlayer").play("run")

@@ -2,7 +2,9 @@
 
 [ext_resource path="res://boards/player_board/player_board.gd" type="Script" id=1]
 
-[node name="Player" type="Spatial" index="0"]
+[node name="Player" type="Spatial" index="0" groups=[
+"players",
+]]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]

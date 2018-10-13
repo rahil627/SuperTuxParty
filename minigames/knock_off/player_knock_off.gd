@@ -24,8 +24,6 @@ func _ready():
 	if has_node("Model/AnimationPlayer"):
 		$Model/AnimationPlayer.play("idle")
 	
-	add_to_group("players")
-	
 	precompute_ground_edges()
 
 func precompute_ground_edges():

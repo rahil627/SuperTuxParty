@@ -4,9 +4,6 @@
 [ext_resource path="res://minigames/hurdle/metal_material.tres" type="Material" id=2]
 [ext_resource path="res://minigames/hurdle/plastic_material.tres" type="Material" id=3]
 
-
-
-
 [sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
@@ -142,7 +139,9 @@ surfaces/1 = {
 
 extents = Vector3( 0.5, 0.55, 0.05 )
 
-[node name="Hurdle" type="StaticBody"]
+[node name="Hurdle" type="StaticBody" index="0" groups=[
+"hurdles",
+]]
 
 input_ray_pickable = true
 input_capture_on_drag = false
