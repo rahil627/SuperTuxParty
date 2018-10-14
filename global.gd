@@ -16,17 +16,11 @@ class PlayerState:
 
 const MINIGAME_REWARD_SCREEN_PATH = "res://boards/controller/rewardscreen.tscn";
 
-var PluginSystem = preload("res://pluginsystem.gd")
-var plugin_system = PluginSystem.new()
+var plugin_system = preload("res://pluginsystem.gd").new()
 
-var BoardLoader = preload("res://boards/boardloader.gd")
-var board_loader = BoardLoader.new()
-
-var MinigameLoader = preload("res://minigames/minigameloader.gd")
-var minigame_loader = MinigameLoader.new()
-
-var CharacterLoader = preload("res://characters/characterloader.gd")
-var character_loader = CharacterLoader.new()
+var board_loader = preload("res://boards/boardloader.gd").new()
+var minigame_loader = preload("res://minigames/minigameloader.gd").new()
+var character_loader = preload("res://characters/characterloader.gd").new()
 
 var SaveGameLoader = preload("res://savegames/savegames.gd")
 var savegame_loader = SaveGameLoader.new()
