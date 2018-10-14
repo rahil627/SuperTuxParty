@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=3]
 
-[node name="Menus" type="Container"]
+[node name="Menus" type="Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
