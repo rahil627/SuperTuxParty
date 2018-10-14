@@ -216,7 +216,7 @@ func _on_Load_pressed():
 		savegame_entry.get_node("Load").text = savegame.name
 		
 		savegame_entry.get_node("Load").connect("pressed", self, "_on_SaveGame_Load_pressed", [savegame])
-		savegame_entry.get_node("Delete").connect("pressed", self, "_on_SaveGame_Delete_pressed", [savegame, template])
+		savegame_entry.get_node("Delete").connect("pressed", self, "_on_SaveGame_Delete_pressed", [savegame, savegame_entry])
 		
 		$LoadGameMenu/ScrollContainer/Saves.add_child(savegame_entry)
 	
