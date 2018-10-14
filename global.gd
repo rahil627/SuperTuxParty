@@ -133,7 +133,6 @@ func _goto_scene_ingame(path):
 	
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
-	
 
 func load_board_from_savegame(savegame):
 	current_savegame = savegame
