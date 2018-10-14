@@ -38,7 +38,6 @@ func read_savegames():
 		
 		var file = File.new()
 		var err = file.open(SAVEGAME_DIRECTORY + filename, File.READ)
-		
 		if err != OK:
 			print("Couldn't open file '%s'" % (SAVEGAME_DIRECTORY + filename))
 			continue
@@ -93,3 +92,13 @@ func save(savegame):
 	read_savegames()
 	return true
 
+func delete_savegame(savegame):
+	if not savegames.has(savegame):
+		return
+	
+	savegames.erase(savegame)
+	
+	var directory = Directory.new()
+	var err = directory.remove(SAVEGAME_DIRECTORY + savegame.name)
+	if err != OK:
+		print("Failed to delete file '%s'" % SAVEGAME_DIRECTORY + savegame.name)

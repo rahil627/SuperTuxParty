@@ -213,16 +213,23 @@ func _on_Load_pressed():
 		var template = preload("res://savegames/savegame_entry.tscn").instance()
 		
 		var savegame = Global.savegame_loader.get_savegame(i)
-		template.text = savegame.name
+		template.get_node("Load").text = savegame.name
 		
-		template.connect("pressed", self, "_on_savegame_pressed", [savegame])
+		template.get_node("Load").connect("pressed", self, "_on_SaveGame_Load_pressed", [savegame])
+		template.get_node("Delete").connect("pressed", self, "_on_SaveGame_Delete_pressed", [savegame, template])
+		
 		$LoadGameMenu/ScrollContainer/Saves.add_child(template)
 	
 	$MainMenu.hide()
 	$LoadGameMenu.show()
 
-func _on_savegame_pressed(savegame):
+func _on_SaveGame_Load_pressed(savegame):
 	Global.load_board_from_savegame(savegame)
+
+func _on_SaveGame_Delete_pressed(savegame, node):
+	node.queue_free()
+	
+	Global.savegame_loader.delete_savegame(savegame)
 
 func _on_LoadGame_Back_pressed():
 	$LoadGameMenu.hide()
