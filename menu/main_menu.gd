@@ -94,6 +94,24 @@ func _on_Options_pressed():
 func _on_Fullscreen_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
 
+func _on_bus_toggled(enabled, index):
+	AudioServer.set_bus_mute(index, not enabled)
+
+func _on_volume_changed(value, index):
+	AudioServer.set_bus_volume_db(index, value)
+	
+	var percentage = str((value + 80) / 80 * 100).pad_decimals(0) + "%"
+	match index:
+		0:
+			$OptionsMenu/Buttons/TabContainer/Audio/Master/Label.text = percentage
+		1:
+			$OptionsMenu/Buttons/TabContainer/Audio/Music/Label.text = percentage
+		2:
+			$OptionsMenu/Buttons/TabContainer/Audio/Effects/Label.text = percentage
+
+func _on_MuteUnfocus_toggled(button_pressed):
+	Global.mute_window_unfocus = button_pressed
+
 func _input(event):
 	control_remapper._input(event)
 

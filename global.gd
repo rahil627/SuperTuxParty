@@ -32,11 +32,14 @@ enum AWARD_T {
 	winner_only
 }
 
-
 var amount_of_players = 4
 
 # Is true if you exit to menu from inside the game
 var quit_to_menu = false
+
+# Mute game if the window loses focus
+var mute_window_unfocus = true
+var _was_muted = false
 
 # Option to choose how players are awarded after completing a mini-game
 var award = AWARD_T.linear
@@ -72,6 +75,21 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() -1)
 	
 	savegame_loader.read_savegames()
+
+func _notification(what):
+	match what:
+		MainLoop.NOTIFICATION_WM_FOCUS_IN:
+			if mute_window_unfocus:
+				if not _was_muted:
+					AudioServer.set_bus_mute(0, false)
+				else:
+					_was_muted = false
+		MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+			if mute_window_unfocus:
+				if not AudioServer.is_bus_mute(0):
+					AudioServer.set_bus_mute(0, true)
+				else:
+					_was_muted = true
 
 func load_board(board, names, characters, human_players):
 	for i in range(characters.size()):
