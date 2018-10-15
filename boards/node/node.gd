@@ -186,7 +186,6 @@ func _exit_tree():
 		p.next.erase(self)
 
 func _enter_tree():
-	add_to_group("nodes")
 	set_material()
 	
 	if next != null:
@@ -201,7 +200,8 @@ func _enter_tree():
 	if potential_cake:
 		if Engine.editor_hint == true:
 			$Cake.show()
-		add_to_group("cake_nodes")
+		else:
+			add_to_group("cake_nodes")
 	elif not Engine.editor_hint:
 		$Cake.queue_free()
 		$EditorLines.queue_free()

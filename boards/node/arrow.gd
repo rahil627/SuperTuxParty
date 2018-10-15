@@ -2,11 +2,7 @@ extends Spatial
 
 var id = -1
 var next_node = null
-var controller = null
-
-func _ready():
-	controller = get_tree().get_nodes_in_group("Controller")[0]
-	add_to_group("arrows")
+onready var controller = get_tree().get_nodes_in_group("Controller")[0]
 
 func _process(delta):
 	if controller == null:

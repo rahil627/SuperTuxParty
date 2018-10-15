@@ -78,9 +78,6 @@ func check_winner():
 		$Screen/Dice.text = "Game over!"
 
 func _ready():
-	# Make it easier for nodes to find the controller
-	add_to_group("Controller")
-	
 	# Give each player a unique id
 	var i = 1
 	

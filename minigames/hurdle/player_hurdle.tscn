@@ -2,8 +2,9 @@
 
 [ext_resource path="res://minigames/hurdle/player_hurdle.gd" type="Script" id=1]
 
-
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody" index="0" groups=[
+"players",
+]]
 
 input_ray_pickable = true
 input_capture_on_drag = false
