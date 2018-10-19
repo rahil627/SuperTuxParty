@@ -3,7 +3,8 @@
 [ext_resource path="res://minigames/harvest_food/minigame.gd" type="Script" id=1]
 [ext_resource path="res://minigames/harvest_food/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://minigames/harvest_food/fence.tscn" type="PackedScene" id=4]
+[ext_resource path="res://minigames/harvest_food/fence/fence.tscn" type="PackedScene" id=4]
+
 
 
 

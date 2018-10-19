@@ -188,7 +188,7 @@ func do_step(player, num):
 					selected_id = 0
 					
 					for node in player.space.next:
-						var arrow = preload("res://boards/node/arrow.tscn").instance()
+						var arrow = preload("res://boards/node/arrow/arrow.tscn").instance()
 						var dir = node.translation - player.space.translation
 						
 						dir = dir.normalized()
@@ -249,7 +249,7 @@ func do_step(player, num):
 				selected_id = 0
 				
 				for node in player.space.next:
-					var arrow = preload("res://boards/node/arrow.tscn").instance()
+					var arrow = preload("res://boards/node/arrow/arrow.tscn").instance()
 					var dir = node.translation - player.space.translation
 					
 					dir = dir.normalized()

@@ -2,10 +2,10 @@
 
 [ext_resource path="res://boards/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://boards/controller/cookie.png" type="Texture" id=3]
-[ext_resource path="res://boards/controller/cake.png" type="Texture" id=4]
+[ext_resource path="res://boards/controller/icons/cookie.png" type="Texture" id=3]
+[ext_resource path="res://boards/controller/icons/cake.png" type="Texture" id=4]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://boards/controller/splash_background.png" type="Texture" id=6]
+[ext_resource path="res://boards/controller/icons/splash_background.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://boards/controller/debug.gd" type="Script" id=8]
 [ext_resource path="res://boards/controller/pausemenu.tscn" type="PackedScene" id=9]
@@ -14,7 +14,12 @@
 [ext_resource path="res://fonts/RichTextLabel-Bold.tres" type="DynamicFont" id=12]
 [ext_resource path="res://fonts/RichTextLabel-Normal.tres" type="DynamicFont" id=13]
 [ext_resource path="res://fonts/button_font_small.tres" type="DynamicFont" id=14]
-[ext_resource path="res://boards/controller/indicator.png" type="Texture" id=15]
+[ext_resource path="res://boards/controller/icons/indicator.png" type="Texture" id=15]
+
+
+
+
+
 
 [sub_resource type="Animation" id=1]
 
