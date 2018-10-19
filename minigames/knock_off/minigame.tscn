@@ -4,11 +4,14 @@
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://boards/controller/pausemenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://minigames/knock_off/ice_mesh.tres" type="ArrayMesh" id=5]
-[ext_resource path="res://minigames/knock_off/ice_material.tres" type="Material" id=6]
-[ext_resource path="res://minigames/knock_off/ice_shape.tres" type="Shape" id=7]
+[ext_resource path="res://minigames/knock_off/ice/ice_mesh.tres" type="ArrayMesh" id=5]
+[ext_resource path="res://minigames/knock_off/ice/ice_material.tres" type="Material" id=6]
+[ext_resource path="res://minigames/knock_off/ice/ice_shape.tres" type="Shape" id=7]
 [ext_resource path="res://minigames/knock_off/player_knock_off.tscn" type="PackedScene" id=8]
-[ext_resource path="res://minigames/knock_off/water_material.tres" type="Material" id=9]
+[ext_resource path="res://minigames/knock_off/water/water_material.tres" type="Material" id=9]
+
+
+
 
 
 

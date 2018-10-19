@@ -1,4 +1,10 @@
-## boards/controller
+## screenshot.png
+
+Copyright © 2018 Jakob Sinclair
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+## boards/controller/icons
 ### cake.png
 
 Public Domain by maruki
@@ -27,7 +33,21 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## boards/node/
+## boards/node
+### node.escn
+
+Copyright © Jakob Sinclair
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## boards/node/arrow
+### arrow.png
+
+Copyright © 2018 Jakob Sinclair
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## boards/node/material
 ### tile_blue_col.jpg | tile_red_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
 
 Public Domain by StruffelProductions
@@ -35,18 +55,6 @@ Public Domain by StruffelProductions
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-### arrow.png
-
-Copyright © 2018 Jakob Sinclair
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### node.escn
-
-Copyright © Jakob Sinclair
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## characters/Tux
 ### character.dae | tux_texture.png | tux.blend | tux.escn
@@ -130,13 +138,39 @@ http://scripts.sil.org/OFL
 
 See fonts/OFL for full license.
 
-## icon.* | icon-*
+## blender_files/icon
+### icon.blend
+
+Copyright © 2018 Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### tux_texture.png
+
+Copyright © 2010 durmieu 
+
+Modified by Florian Kothmeier 2018
+
+Retrieved from [Open Game Art](https://opengameart.org/content/tux)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### blue-sky-merge-clouds-675977.jpeg
+
+Public Domain by Skitterphoto
+
+Retrieved from [pexels.com](https://www.pexels.com/photo/air-atmosphere-blue-blue-sky-675977)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+## icons
+### icon.\* | icon-\*
 
 Copyright © 2018 Florian Kothmeier 
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/FFA/harvest_food
+## minigames/harvest_food/fence
 ### fence.escn | picketfence_0.blend
 
 Exported model of Public Domain Model by WeaponGuy
@@ -153,6 +187,7 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fe
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
+## minigames/harvest_food/plants
 ### carrot.blend
 
 Copyright © Florian Kothmeier
@@ -165,15 +200,7 @@ Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/FFA/hurdle
-### asphalt_* | plastic_* | metal_*
-
-Public Domain by StruffelProductions
-
-Retrived from [CC0 Textures](https://cc0textures.com/home)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
+## minigames/hurdle
 ### green_point_park_2k.hdr
 
 Copyright © 2016 Greg Zaal
@@ -182,6 +209,43 @@ Retrived from [HDRIHaven](https://hdrihaven.com/hdri/?c=skies&h=green_point_park
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+## minigames/hurdle/ground
+### asphalt_\*
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### ground_model.escn
+
+Copyright © Jakob Sinclair
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+## minigames/hurdle/hurdles/normal_hurdle
+### hurdle_model.escn | hurdle.blend
+
+Copyright © Jakob Sinclair
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+### plastic_\* | metal_\*
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## minigames/hurdle/hurdles/trashcan
 ### trashcan.escn | trashcan.blend
 
 Copyright © yethiel
@@ -198,45 +262,45 @@ Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
+## minigames/hurdle/powerups/landmine
 ### landmine.escn | landmine.blend
 
 Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
+## minigames/hurdle/powerups/star
 ### star.escn | star.blend
 
 Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-### ground_model.escn
-
-Copyright © Jakob Sinclair
-
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
-
-### hurdle_model.escn
-
-Copyright © Jakob Sinclair
-
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
-
+## minigames/knock_off
 ### screenshot.png
+
+Coyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+## minigames/knock_off/ice
+### ice.escn | iceberg.blend
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-## minigames/FFA/knock_off
-### water_diffuse.png
+### IceC_S.jpg | IceC_N.jpg
 
-Public Domain by Bastiaan Olij
+Public Domain by Keith333
 
-Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
+Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-batch-of-15-seamless-textures-with-normalmaps)
 
-License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+IceC_S.jpg modified by Florian Kothmeier
 
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+## minigames/knock_off/player_ball_material
 ### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
 
 Public Domain by StruffelProductions
@@ -245,30 +309,30 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-### IceC_S.jpg | IceC_N.jpg | SnowB_S.jpg | SnowB_N.jpg
+### SnowB_S.jpg | SnowB_N.jpg
 
 Public Domain by Keith333
 
 Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-batch-of-15-seamless-textures-with-normalmaps)
 
-IceC_S.jpg and SnowB_S.jpg modified by Florian Kothmeier
+SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-### ice.escn | iceberg.blend
+## minigames/knock_off/water
+### water_diffuse.png
 
-Copyright © Florian Kothmeier
+Public Domain by Bastiaan Olij
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
-### screenshot.png
+License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-Coyright © Florian Kothmeier
+## savegames
+### delete_save.png
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+Copyright © Godot Engine
 
-## screenshot.png
+Retrieved from [github.com](https://github.com/godotengine/godot-design/blob/master/engine/icons/original/icon_remove.png)
 
-Copyright © 2018 Jakob Sinclair
-
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0)

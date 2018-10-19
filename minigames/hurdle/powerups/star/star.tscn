@@ -1,0 +1,147 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://minigames/hurdle/powerups/star/star.gd" type="Script" id=1]
+
+
+
+
+[sub_resource type="ArrayMesh" id=1]
+
+blend_shape_mode = 1
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+surfaces/0 = {
+"aabb": AABB( -0.951056, -0.125, -0.809017, 1.90211, 0.25001, 1.80902 ),
+"array_data": PoolByteArray( 0, 0, 0, 48, 121, 183, 0, 60, 193, 0, 147, 0, 179, 56, 0, 176, 120, 186, 0, 60, 193, 0, 147, 0, 0, 0, 0, 176, 121, 183, 0, 60, 193, 0, 147, 0, 179, 56, 0, 48, 120, 186, 0, 60, 124, 0, 26, 0, 27, 55, 0, 176, 158, 176, 0, 60, 124, 0, 26, 0, 179, 56, 0, 176, 120, 186, 0, 60, 124, 0, 26, 0, 27, 55, 0, 48, 158, 176, 0, 60, 84, 0, 162, 0, 155, 59, 0, 176, 241, 52, 0, 60, 84, 0, 162, 0, 27, 55, 0, 176, 158, 176, 0, 60, 84, 0, 162, 0, 155, 59, 0, 48, 241, 52, 0, 60, 12, 0, 126, 0, 100, 52, 0, 176, 12, 54, 0, 60, 12, 0, 126, 0, 155, 59, 0, 176, 241, 52, 0, 60, 12, 0, 126, 0, 100, 52, 0, 48, 12, 54, 0, 60, 116, 0, 51, 0, 0, 0, 0, 176, 0, 60, 0, 60, 116, 0, 51, 0, 100, 52, 0, 176, 12, 54, 0, 60, 116, 0, 51, 0, 0, 0, 0, 48, 0, 60, 0, 60, 140, 0, 51, 0, 100, 180, 0, 176, 12, 54, 0, 60, 140, 0, 51, 0, 0, 0, 0, 176, 0, 60, 0, 60, 140, 0, 51, 0, 100, 180, 0, 48, 12, 54, 0, 60, 244, 0, 126, 0, 155, 187, 0, 176, 241, 52, 0, 60, 244, 0, 126, 0, 100, 180, 0, 176, 12, 54, 0, 60, 244, 0, 126, 0, 155, 187, 0, 48, 241, 52, 0, 60, 172, 0, 162, 0, 27, 183, 0, 176, 158, 176, 0, 60, 172, 0, 162, 0, 155, 187, 0, 176, 241, 52, 0, 60, 172, 0, 162, 0, 27, 183, 0, 48, 158, 176, 0, 60, 0, 127, 0, 0, 100, 52, 0, 48, 12, 54, 0, 60, 0, 127, 0, 0, 27, 55, 0, 48, 158, 176, 0, 60, 0, 127, 0, 0, 27, 183, 0, 48, 158, 176, 0, 60, 132, 0, 26, 0, 179, 184, 0, 176, 120, 186, 0, 60, 132, 0, 26, 0, 27, 183, 0, 176, 158, 176, 0, 60, 132, 0, 26, 0, 179, 184, 0, 48, 120, 186, 0, 60, 63, 0, 147, 0, 0, 0, 0, 176, 121, 183, 0, 60, 63, 0, 147, 0, 179, 184, 0, 176, 120, 186, 0, 60, 63, 0, 147, 0, 100, 52, 0, 176, 12, 54, 0, 60, 0, 129, 0, 0, 100, 180, 0, 176, 12, 54, 0, 60, 0, 129, 0, 0, 27, 183, 0, 176, 158, 176, 0, 60, 0, 129, 0, 0, 179, 56, 0, 48, 120, 186, 0, 60, 193, 0, 147, 0, 179, 56, 0, 48, 120, 186, 0, 60, 124, 0, 26, 0, 27, 55, 0, 48, 158, 176, 0, 60, 124, 0, 26, 0, 27, 55, 0, 176, 158, 176, 0, 60, 124, 0, 26, 0, 27, 55, 0, 48, 158, 176, 0, 60, 84, 0, 162, 0, 155, 59, 0, 48, 241, 52, 0, 60, 84, 0, 162, 0, 155, 59, 0, 176, 241, 52, 0, 60, 84, 0, 162, 0, 155, 59, 0, 48, 241, 52, 0, 60, 12, 0, 126, 0, 100, 52, 0, 48, 12, 54, 0, 60, 12, 0, 126, 0, 100, 52, 0, 176, 12, 54, 0, 60, 12, 0, 126, 0, 0, 0, 0, 48, 0, 60, 0, 60, 116, 0, 51, 0, 100, 180, 0, 48, 12, 54, 0, 60, 140, 0, 51, 0, 100, 180, 0, 48, 12, 54, 0, 60, 244, 0, 126, 0, 155, 187, 0, 48, 241, 52, 0, 60, 244, 0, 126, 0, 155, 187, 0, 176, 241, 52, 0, 60, 244, 0, 126, 0, 27, 183, 0, 48, 158, 176, 0, 60, 172, 0, 162, 0, 27, 55, 0, 48, 158, 176, 0, 60, 0, 127, 0, 0, 179, 56, 0, 48, 120, 186, 0, 60, 0, 127, 0, 0, 0, 0, 0, 48, 121, 183, 0, 60, 0, 127, 0, 0, 179, 184, 0, 48, 120, 186, 0, 60, 0, 127, 0, 0, 27, 183, 0, 48, 158, 176, 0, 60, 0, 127, 0, 0, 155, 187, 0, 48, 241, 52, 0, 60, 0, 127, 0, 0, 100, 180, 0, 48, 12, 54, 0, 60, 0, 127, 0, 0, 100, 180, 0, 48, 12, 54, 0, 60, 0, 127, 0, 0, 0, 0, 0, 48, 0, 60, 0, 60, 0, 127, 0, 0, 100, 52, 0, 48, 12, 54, 0, 60, 0, 127, 0, 0, 100, 52, 0, 48, 12, 54, 0, 60, 0, 127, 0, 0, 155, 59, 0, 48, 241, 52, 0, 60, 0, 127, 0, 0, 27, 183, 0, 48, 158, 176, 0, 60, 132, 0, 26, 0, 179, 184, 0, 48, 120, 186, 0, 60, 132, 0, 26, 0, 179, 184, 0, 176, 120, 186, 0, 60, 132, 0, 26, 0, 0, 0, 0, 48, 121, 183, 0, 60, 63, 0, 147, 0, 0, 0, 0, 176, 121, 183, 0, 60, 0, 129, 0, 0, 179, 56, 0, 176, 120, 186, 0, 60, 0, 129, 0, 0, 27, 55, 0, 176, 158, 176, 0, 60, 0, 129, 0, 0, 155, 59, 0, 176, 241, 52, 0, 60, 0, 129, 0, 0, 100, 52, 0, 176, 12, 54, 0, 60, 0, 129, 0, 0, 0, 0, 0, 176, 0, 60, 0, 60, 0, 129, 0, 0, 100, 180, 0, 176, 12, 54, 0, 60, 0, 129, 0, 0, 155, 187, 0, 176, 241, 52, 0, 60, 0, 129, 0, 0, 179, 184, 0, 176, 120, 186, 0, 60, 0, 129, 0, 0, 27, 55, 0, 176, 158, 176, 0, 60, 0, 129, 0, 0, 100, 52, 0, 176, 12, 54, 0, 60, 0, 129, 0, 0, 27, 183, 0, 176, 158, 176, 0, 60, 0, 129, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0, 6, 0, 8, 0, 7, 0, 9, 0, 11, 0, 10, 0, 12, 0, 14, 0, 13, 0, 15, 0, 17, 0, 16, 0, 18, 0, 20, 0, 19, 0, 21, 0, 23, 0, 22, 0, 24, 0, 26, 0, 25, 0, 27, 0, 29, 0, 28, 0, 30, 0, 32, 0, 31, 0, 33, 0, 35, 0, 34, 0, 0, 0, 1, 0, 36, 0, 37, 0, 39, 0, 38, 0, 40, 0, 42, 0, 41, 0, 43, 0, 45, 0, 44, 0, 12, 0, 13, 0, 46, 0, 15, 0, 16, 0, 47, 0, 48, 0, 50, 0, 49, 0, 21, 0, 22, 0, 51, 0, 52, 0, 54, 0, 53, 0, 54, 0, 56, 0, 55, 0, 56, 0, 58, 0, 57, 0, 59, 0, 61, 0, 60, 0, 62, 0, 52, 0, 63, 0, 52, 0, 56, 0, 54, 0, 56, 0, 62, 0, 58, 0, 64, 0, 66, 0, 65, 0, 30, 0, 31, 0, 67, 0, 68, 0, 70, 0, 69, 0, 70, 0, 33, 0, 71, 0, 72, 0, 74, 0, 73, 0, 34, 0, 35, 0, 75, 0, 35, 0, 68, 0, 76, 0, 68, 0, 35, 0, 70, 0, 77, 0, 79, 0, 78, 0 ),
+"blend_shape_data": [  ],
+"format": 98051,
+"index_count": 108,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 80
+}
+_sections_unfolded = [ "surface_1" ]
+
+[sub_resource type="Shader" id=2]
+
+code = "shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+uniform float specular;
+uniform float metallic;
+uniform float roughness : hint_range(0,1);
+uniform float point_size : hint_range(0,128);
+uniform sampler2D texture_metallic : hint_white;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_white;
+uniform vec4 roughness_texture_channel;
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+uniform vec4 start_color : hint_color;
+uniform vec4 end_color : hint_color;
+
+uniform float color_cycle_duration;
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+}
+
+
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	float time = abs((mod(TIME, 2.0*color_cycle_duration) - color_cycle_duration) / color_cycle_duration);
+	ALBEDO = mix(start_color.rgb, end_color.rgb, time) * albedo.rgb * albedo_tex.rgb;
+	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+	SPECULAR = specular;
+}
+"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=3]
+
+render_priority = 0
+shader = SubResource( 2 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 0.0
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/start_color = Color( 0, 0.666667, 1, 1 )
+shader_param/end_color = Color( 0.603088, 0.828634, 0.941406, 1 )
+shader_param/color_cycle_duration = 1.0
+_sections_unfolded = [ "shader_param" ]
+
+[sub_resource type="BoxShape" id=4]
+
+extents = Vector3( 1, 1, 0.25 )
+
+[node name="Star" type="Area" index="0"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+speed = 6
+rotation_speed = 5.0
+
+[node name="Cylinder" type="MeshInstance" parent="." index="0"]
+
+transform = Transform( 0.5, -8.74228e-08, -1.50938e-11, -1.50938e-11, -0.000172653, 0.5, -8.74228e-08, -0.5, -0.000172653, 0, 0.5, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = SubResource( 3 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0 )
+shape = SubResource( 4 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Star_body_entered"]
+
+

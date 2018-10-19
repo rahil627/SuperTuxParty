@@ -2,8 +2,10 @@
 
 [ext_resource path="res://boards/node/node.gd" type="Script" id=1]
 [ext_resource path="res://boards/node/node.escn" type="PackedScene" id=2]
-[ext_resource path="res://boards/node/node_blue_material.tres" type="Material" id=3]
-[ext_resource path="res://boards/controller/cake.png" type="Texture" id=4]
+[ext_resource path="res://boards/node/material/node_blue_material.tres" type="Material" id=3]
+[ext_resource path="res://boards/controller/icons/cake.png" type="Texture" id=4]
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

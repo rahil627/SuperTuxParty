@@ -173,11 +173,11 @@ func set_type(t):
 func set_material():
 	match type:
 		RED:
-			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/node_red_material.tres"))
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/material/node_red_material.tres"))
 		GREEN:
-			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/node_green_material.tres"))
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/material/node_green_material.tres"))
 		BLUE:
-			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/node_blue_material.tres"))
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/material/node_blue_material.tres"))
 
 func _exit_tree():
 	for p in next:

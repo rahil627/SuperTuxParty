@@ -12,7 +12,7 @@ config_version=3
 
 config/name="Super Tux Party"
 run/main_scene="res://menu/main_menu.tscn"
-config/icon="res://icon-smallest.png"
+config/icon="res://icons/icon-smallest.png"
 
 [autoload]
 

@@ -1,7 +1,7 @@
 extends Spatial
 
-const ROTTEN_PLANT = "res://minigames/harvest_food/carrot_rotten.tscn"
-const NORMAL_PLANT = "res://minigames/harvest_food/carrot.tscn"
+const ROTTEN_PLANT = "res://minigames/harvest_food/plants/carrot_rotten.tscn"
+const NORMAL_PLANT = "res://minigames/harvest_food/plants/carrot.tscn"
 
 var rounds = 5
 

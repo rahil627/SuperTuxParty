@@ -22,7 +22,7 @@ function ProgressBar {
     echo -ne '\033[32m]\033[0m\r'
 }
 
-readarray -t FILES <<< $(find -type f -regextype posix-extended -regex '^.+?(\.png|\.jpg|\.escn|\.dae|\.hdr|\.ttf|\.blend)$')
+readarray -t FILES <<< $(find -type f -regextype posix-extended -regex '^.+?(\.png|\.jpg|\.jpeg|\.escn|\.dae|\.hdr|\.ttf|\.blend)$')
 
 # Blacklist: every file that should not be checked (regex)
 BLACKLIST="^$"
@@ -48,7 +48,7 @@ function checkFiles() {
     for file in "${FILEMASK[@]}"
     do
 	# Expand special characters, e.g. * to full path(s), escape spaces and remove double /
-	FILEPATH=$(echo "$2/"$(trim "$file" | sed 's/ /\\ /g') | tr -s "//" "/")
+	FILEPATH=$(echo "$2/"$(trim "$file" | sed 's/ /\\ /g' | tr -s '\\*' '*') | tr -s "//" "/")
 
 	# convert multiple files to array, e.g. image* matches image.blend & image.png -> (image.blend image.png)
 	readarray -t ARRAY <<< $(echo $FILEPATH" " | grep -o -E '([^ ]|\\ )*[^\\] ')
