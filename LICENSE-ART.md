@@ -4,6 +4,27 @@ Copyright © 2018 Jakob Sinclair
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
+## assets/control_view/images
+### down.png | left.png | left_mouse.png | middle_mouse.png | right.png | right_mouse.png | up.png | key_background.png
+
+Public domain by qubodup
+
+key_background.png is a modified version of left.png by Florian Kothmeier
+
+Retrieved from [Open Game Art](https://opengameart.org/content/mouse-buttons-arrow-keys)
+
+License: [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/)
+
+### arrowDown.png | arrowLeft.png | arrowRight.png | arrowUp.png | buttonA.png | buttonB.png | buttonL.png | buttonL1.png | buttonL2.png | buttonR.png | buttonR1.png | buttonR2.png | buttonSelect.png | buttonStart.png | buttonX.png | buttonY.png | button1.png | button2.png | button3.png | button4.png | buttonCircle.png | buttonSquare.png | buttonTriangle.png
+
+Public domain by Kenney
+
+button4.png, buttonCircle.png, buttonSquare.png and buttonTriangle.png are a modified versions of button1.png by Florian Kothmeier
+
+Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ## boards/controller/icons
 ### cake.png
 
@@ -299,6 +320,27 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-ba
 IceC_S.jpg modified by Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+## minigames/kernel_compiling
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+## minigames/kernel_compiling/battery
+### battery.blend | tex_empty.png | tex_full.png
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+## minigames/kernel_compiling/screen
+### screen.blend | screen.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
 
 ## minigames/knock_off/player_ball_material
 ### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
