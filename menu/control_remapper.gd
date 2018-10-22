@@ -83,6 +83,10 @@ func save_controls():
 func controls_remapping_setup():
 	load_controls()
 	var controls_tab = main_menu.get_node("OptionsMenu/Buttons/TabContainer/Controls/TabContainer")
+	for child in controls_tab.get_children():
+		child.queue_free()
+		controls_tab.remove_child(child)
+	
 	for player_id in range(4):
 		var template = preload("player_controls_template.tscn")
 		var instance = template.instance()

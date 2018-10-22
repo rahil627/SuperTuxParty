@@ -21,6 +21,11 @@ func _ready():
 	var award_type = $SelectionBoard/AwardType
 	award_type.add_item("Linear", Global.AWARD_T.linear);
 	award_type.add_item("Winner takes all", Global.AWARD_T.winner_only);
+	var joypad_display_types = $OptionsMenu/Buttons/TabContainer/Controls/JoypadDisplayType
+	joypad_display_types.add_item("Numbers", Global.JOYPAD_DISPLAY_TYPE.NUMBERS)
+	joypad_display_types.add_item("XBOX", Global.JOYPAD_DISPLAY_TYPE.XBOX)
+	joypad_display_types.add_item("Nintendo DS", Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS)
+	joypad_display_types.add_item("Playstation", Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION)
 	load_boards()
 	load_characters()
 	control_remapper.controls_remapping_setup()
@@ -121,6 +126,11 @@ func _on_Options_Back_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
+func _on_JoypadDisplayType_item_selected(ID):
+	Global.joypad_display = ID
+	
+	control_remapper.controls_remapping_setup()
 
 #*** Amount of players menu ***#
 

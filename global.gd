@@ -32,6 +32,15 @@ enum AWARD_T {
 	winner_only
 }
 
+enum JOYPAD_DISPLAY_TYPE {
+	NUMBERS,
+	XBOX,
+	NINTENDO_DS,
+	PLAYSTATION
+}
+
+var joypad_display = NUMBERS
+
 var amount_of_players = 4
 
 # Is true if you exit to menu from inside the game
