@@ -1,5 +1,7 @@
 extends Container
 
+const USER_OPTIONS_FILE = "user://options.cfg"
+
 # Path to the board being used on game start
 var board = ""
 var current_player = 1
@@ -26,6 +28,7 @@ func _ready():
 	joypad_display_types.add_item("XBOX", Global.JOYPAD_DISPLAY_TYPE.XBOX)
 	joypad_display_types.add_item("Nintendo DS", Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS)
 	joypad_display_types.add_item("Playstation", Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION)
+	load_options()
 	load_boards()
 	load_characters()
 	control_remapper.controls_remapping_setup()
@@ -98,9 +101,13 @@ func _on_Options_pressed():
 
 func _on_Fullscreen_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
+	
+	save_options()
 
 func _on_bus_toggled(enabled, index):
 	AudioServer.set_bus_mute(index, not enabled)
+	
+	save_options()
 
 func _on_volume_changed(value, index):
 	AudioServer.set_bus_volume_db(index, value)
@@ -113,9 +120,13 @@ func _on_volume_changed(value, index):
 			$OptionsMenu/Buttons/TabContainer/Audio/Music/Label.text = percentage
 		2:
 			$OptionsMenu/Buttons/TabContainer/Audio/Effects/Label.text = percentage
+	
+	save_options()
 
 func _on_MuteUnfocus_toggled(button_pressed):
 	Global.mute_window_unfocus = button_pressed
+	
+	save_options()
 
 func _input(event):
 	control_remapper._input(event)
@@ -131,6 +142,64 @@ func _on_JoypadDisplayType_item_selected(ID):
 	Global.joypad_display = ID
 	
 	control_remapper.controls_remapping_setup()
+	
+	save_options()
+
+func load_options():
+	var config = ConfigFile.new()
+	
+	var err = config.load(USER_OPTIONS_FILE)
+	
+	if err != OK:
+		print("Error while loading options: " + Utility.error_code_to_string(err))
+		return
+	
+	OS.window_fullscreen = config.get_value("visual", "fullscreen", false)
+	$OptionsMenu/Buttons/TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen
+	
+	AudioServer.set_bus_mute(0, config.get_value("audio", "master_muted", false))
+	AudioServer.set_bus_mute(1, config.get_value("audio", "music_muted", false))
+	AudioServer.set_bus_mute(2, config.get_value("audio", "effects_muted", false))
+	
+	$OptionsMenu/Buttons/TabContainer/Audio/Master/CheckBox.pressed = not AudioServer.is_bus_mute(0)
+	$OptionsMenu/Buttons/TabContainer/Audio/Music/CheckBox.pressed = not AudioServer.is_bus_mute(1)
+	$OptionsMenu/Buttons/TabContainer/Audio/Effects/CheckBox.pressed = not AudioServer.is_bus_mute(2)
+	
+	Global.mute_window_unfocus = config.get_value("audio", "mute_window_unfocus", true)
+	$OptionsMenu/Buttons/TabContainer/Audio/MuteUnfocus.pressed = Global.mute_window_unfocus
+	
+	AudioServer.set_bus_volume_db(0, config.get_value("audio", "master_volume", 0))
+	AudioServer.set_bus_volume_db(1, config.get_value("audio", "music_volume", 0))
+	AudioServer.set_bus_volume_db(2, config.get_value("audio", "effects_volume", 0))
+	
+	$OptionsMenu/Buttons/TabContainer/Audio/MasterVolume.value = AudioServer.get_bus_volume_db(0)
+	$OptionsMenu/Buttons/TabContainer/Audio/MusicVolume.value = AudioServer.get_bus_volume_db(1)
+	$OptionsMenu/Buttons/TabContainer/Audio/EffectsVolume.value = AudioServer.get_bus_volume_db(2)
+	
+	Global.joypad_display = config.get_value("misc", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS)
+	$OptionsMenu/Buttons/TabContainer/Controls/JoypadDisplayType.select(Global.joypad_display)
+
+func save_options():
+	var config = ConfigFile.new()
+	
+	config.set_value("visual", "fullscreen", OS.window_fullscreen)
+	
+	config.set_value("audio", "master_muted", AudioServer.is_bus_mute(0))
+	config.set_value("audio", "music_muted", AudioServer.is_bus_mute(1))
+	config.set_value("audio", "effects_muted", AudioServer.is_bus_mute(2))
+	
+	config.set_value("audio", "mute_window_unfocus", Global.mute_window_unfocus)
+	
+	config.set_value("audio", "master_volume", AudioServer.get_bus_volume_db(0))
+	config.set_value("audio", "music_volume", AudioServer.get_bus_volume_db(1))
+	config.set_value("audio", "effects_volume", AudioServer.get_bus_volume_db(2))
+	
+	config.set_value("misc", "joypad_display_type", Global.joypad_display)
+	
+	var err = config.save(USER_OPTIONS_FILE)
+	
+	if err != OK:
+		print("Error while saving options: " + Utility.error_code_to_string(err))
 
 #*** Amount of players menu ***#
 
