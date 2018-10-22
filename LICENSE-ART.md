@@ -138,6 +138,23 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## characters/Godette
+### palette.png | godete_palette.svg | godot_chan.blend | godot_chan_one_object.blend | godot_chan.dae
+
+Copyright © SirRichard94
+
+Models modified by Florian Kothmeier 2018
+
+Retrieved from [Github](https://github.com/SirRichard94/low-poly-godette)
+
+License: [CC-BY 3.0](https://github.com/SirRichard94/low-poly-godette/blob/master/License)
+
+### splash.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## fonts
 ### Boogaloo-Regular.ttf
 Copyright (c) 2011, John Vargas Beltr�n� (www.johnvargasbeltran.com|john.vargasbeltran@gmail.com),
