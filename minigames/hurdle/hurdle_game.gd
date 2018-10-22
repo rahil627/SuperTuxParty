@@ -66,6 +66,9 @@ func spawn_powerup():
 	add_child(powerup)
 
 func _process(delta):
+	var current_time = $Ground/Mesh/Cube.get_surface_material(0).get_shader_param("t")
+	$Ground/Mesh/Cube.get_surface_material(0).set_shader_param("t", current_time + delta)
+	
 	spawn_timer -= delta
 	powerup_spawn_timer -= delta
 	
