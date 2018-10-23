@@ -1,19 +1,32 @@
 extends PopupPanel
 
 export(bool) var can_save_game = false
+var player_id = 0
 
 func _ready():
 	if not can_save_game:
 		$Container/SaveGame.hide()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("player1_pause"):
 		if visible:
 			hide()
 			get_tree().paused = false
 		else:
+			player_id = 1
 			popup()
 			get_tree().paused = true
+	else:
+		for i in range(2, Global.amount_of_players + 1):
+			if event.is_action_pressed("player" + var2str(i) + "_pause"):
+				if visible:
+					if player_id == i:
+						hide()
+						get_tree().paused = false
+				else:
+					player_id = i
+					popup()
+					get_tree().paused = true
 
 func _on_Resume_pressed():
 	get_tree().paused = false
