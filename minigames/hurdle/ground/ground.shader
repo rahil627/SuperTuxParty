@@ -19,8 +19,10 @@ uniform vec3 uv2_offset;
 
 uniform float speed = 1;
 
+uniform float t = 0;
+
 void vertex() {
-	UV=UV*uv1_scale.xy+uv1_offset.xy + vec2(-TIME * speed, 0);
+	UV=UV*uv1_scale.xy+uv1_offset.xy + vec2(-t * speed, 0);
 }
 
 
