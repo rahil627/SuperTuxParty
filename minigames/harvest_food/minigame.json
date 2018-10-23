@@ -2,7 +2,7 @@
     "name" : "Harvest Food",
     "scene_path" : "res://minigames/harvest_food/minigame.tscn",
     "type" : ["FFA", "2v2", "Duel"],
-    "image_path" : "",
+    "image_path" : "res://minigames/harvest_food/screenshot.png",
     
     "description" : {
 	"en" : "The players select a fruit until the time is up. Every player that has selected a healthy fruit gets a point. The catch is: One of those fruits is rotten and gives no points.\n\nThe player that gets the most non-rotten plants wins!"
