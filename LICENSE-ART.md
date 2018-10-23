@@ -176,7 +176,7 @@ http://scripts.sil.org/OFL
 
 See fonts/OFL for full license.
 
-## blender_files/icon
+## assets/blender_files/icon
 ### icon.blend
 
 Copyright © 2018 Florian Kothmeier
