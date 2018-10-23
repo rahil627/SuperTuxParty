@@ -1,5 +1,5 @@
 # SuperTuxParty
-![](icon-smallest.png)
+![](icons/icon-smallest.png)
 
 An open-source party game that is meant to replicate the feel of games like
 Mario Party while remaining free and open-source.
