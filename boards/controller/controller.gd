@@ -496,6 +496,7 @@ func setup_character_viewport():
 		var new_model = load(Global.character_loader.get_character_path(Global.players[i].character)).instance()
 		
 		new_model.name = player.name
+		player_name = "deleted"
 		new_model.translation = player.translation
 		new_model.scale = player.scale
 		new_model.rotation = player.rotation
