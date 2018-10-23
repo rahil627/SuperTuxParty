@@ -492,11 +492,11 @@ func _on_HSlider_value_changed(value):
 
 func setup_character_viewport():
 	for i in range(Global.amount_of_players):
-		var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i+1))
+		var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i + 1))
 		var new_model = load(Global.character_loader.get_character_path(Global.players[i].character)).instance()
 		
 		new_model.name = player.name
-		player_name = "deleted"
+		player.name = "deleted"
 		new_model.translation = player.translation
 		new_model.scale = player.scale
 		new_model.rotation = player.rotation
