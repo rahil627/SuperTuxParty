@@ -10,7 +10,7 @@ const POWERUPS = [ preload("res://minigames/hurdle/powerups/star/star.tscn"),
 var losses = 0 # Number of players that have been knocked-out
 var placement = [0, 0, 0, 0] # Placements, is filled with player id in order. Index 0 is first place
 var timer = 50.0 # Timer of minigame
-var end_timer = 4 # How long the winning message will be shown before exiting
+var end_timer = 6.0 # How long the winning message will be shown before exiting
 var end_timer_start = false # When to start the end timer
 var spawn_timer = 5
 var max_spawn = 3
@@ -126,24 +126,7 @@ func _process(delta):
 			end_timer_start = true
 			timer = 0.0
 			
-			# Store the winners based on the z-coordinate
-			var winner = [null, null, null, null]
-			var winner_index = 0
-			
 			for p in players:
-				if winner[0] == null:
-					winner[0] = p
-				elif (p.translation.z + p.player_id) > (winner[winner_index].translation.z + winner[winner_index].player_id):
-					winner[winner_index + 1] = winner[winner_index]
-					winner[winner_index] = p
-					
-					winner_index += 1
-			
-			winner_index = 0
-			
-			for w in winner:
-				if placement[winner_index] == 0 && w != null:
-					placement[winner_index] = winner[winner_index].player_id
-					winner_index += 1
+				p.stop = true
 		
 		$Environment/Screen/Timer.text = "Timer: " + var2str(stepify(timer, 0.01))
