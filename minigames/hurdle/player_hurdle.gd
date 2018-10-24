@@ -10,6 +10,7 @@ var player_id = 1
 var jump = JUMP_MAX
 var movement = Vector3()
 var is_ai = false
+var stop = false
 
 var playing_jump_animation = false
 var walking_animation_position = 0
@@ -33,7 +34,7 @@ func _ready():
 	Utility.apply_nextpass_material(visibility_material, $Model)
 
 func _physics_process(delta):
-	if disable_jump == 0 and jump > 0:
+	if disable_jump == 0 and jump > 0 and stop == false:
 		if not is_ai and Input.is_action_pressed("player" + var2str(player_id) + "_action1") :
 			movement = JUMP_VECTOR
 		elif is_ai and collision_disabled <= 0:
@@ -42,6 +43,9 @@ func _physics_process(delta):
 				if dir.length() < 2.5 + next_jump_randomness and dir.angle_to(Vector3(0, 0, 1)) < PI/2 and abs(dir.x) < 0.5:
 					movement = JUMP_VECTOR
 					next_jump_randomness = randf() - 0.5
+	if stop:
+		acceleration = -6
+	
 	
 	move_and_slide(acceleration * ACCELERATION_DIR, Vector3(0.0, 1.0, 0.0))
 	acceleration = max(0, acceleration - delta)
