@@ -2,6 +2,7 @@ extends RigidBody
 
 const MAX_SPEED = 4
 
+var team
 var player_id = 0
 var accel = 15
 var is_ai = false
@@ -95,7 +96,7 @@ func _process(delta):
 		var farthest_player = null
 		var farthest_distance = INF
 		for p in players:
-			if p != self:
+			if p != self and (p.team != self.team or Global.minigame_type == Global.FREE_FOR_ALL):
 				var distance = get_distance_to_shape(p.translation, ground_edges)
 				if p.is_on_floor() and (farthest_player == null or farthest_distance > distance):
 					farthest_player = p

@@ -1,7 +1,7 @@
 tool
 extends Spatial
 
-enum NODE_TYPES {BLUE, RED, GREEN}
+enum NODE_TYPES {BLUE, RED, GREEN, YELLOW}
 
 # The setter and getter for this variables ensure that the changes are immediately visible to the editor
 export(NODE_TYPES) var type = BLUE setget set_type
@@ -178,6 +178,8 @@ func set_material():
 			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/material/node_green_material.tres"))
 		BLUE:
 			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/material/node_blue_material.tres"))
+		YELLOW:
+			$Model/Cylinder.set_surface_material(0, preload("res://boards/node/material/node_yellow_material.tres"))
 
 func _exit_tree():
 	for p in next:
