@@ -1,11 +1,15 @@
 extends Spatial
 
-const HURDLES = [ preload("res://minigames/hurdle/hurdles/normal_hurdle/hurdle.tscn"),
-                  preload("res://minigames/hurdle/hurdles/trashcan/trashcan.tscn") ]
+const HURDLES = [
+	preload("res://minigames/hurdle/hurdles/normal_hurdle/hurdle.tscn"),
+	preload("res://minigames/hurdle/hurdles/trashcan/trashcan.tscn")
+]
 
-const POWERUPS = [ preload("res://minigames/hurdle/powerups/star/star.tscn"),
-                   preload("res://minigames/hurdle/powerups/landmine/landmine.tscn"),
-                   preload("res://minigames/hurdle/powerups/ghost_powerup/ghost_powerup.tscn") ]
+const POWERUPS = [
+	preload("res://minigames/hurdle/powerups/star/star.tscn"),
+	preload("res://minigames/hurdle/powerups/landmine/landmine.tscn"),
+	preload("res://minigames/hurdle/powerups/ghost_powerup/ghost_powerup.tscn")
+]
 
 var losses = 0 # Number of players that have been knocked-out
 var placement = [0, 0, 0, 0] # Placements, is filled with player id in order. Index 0 is first place
@@ -54,20 +58,22 @@ func spawn_hurdle():
 	add_child(hurdle4)
 
 func spawn_powerup():
-	var powerup = POWERUPS[randi()%POWERUPS.size()].instance()
+	var powerup = POWERUPS[randi() % POWERUPS.size()].instance()
 	
-	var position = [ hurdle1_pointer.translation,
-	                 hurdle2_pointer.translation,
-	                 hurdle3_pointer.translation,
-	                 hurdle4_pointer.translation ]
+	var position = [
+		hurdle1_pointer.translation,
+		hurdle2_pointer.translation,
+		hurdle3_pointer.translation,
+		hurdle4_pointer.translation
+	]
 	
 	powerup.translation = position[randi() % position.size()]
 	
 	add_child(powerup)
 
 func _process(delta):
-	var current_time = $Ground/Mesh/Cube.get_surface_material(0).get_shader_param("t")
-	$Ground/Mesh/Cube.get_surface_material(0).set_shader_param("t", current_time + delta)
+	var current_time = $Ground/Mesh/Cube.get_surface_material(0).get_shader_param("delta_time")
+	$Ground/Mesh/Cube.get_surface_material(0).set_shader_param("delta_time", current_time + delta)
 	
 	spawn_timer -= delta
 	powerup_spawn_timer -= delta

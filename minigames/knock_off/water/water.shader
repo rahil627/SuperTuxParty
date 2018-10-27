@@ -8,7 +8,7 @@ uniform sampler2D texturemap : hint_albedo;
 uniform vec2 texture_scale = vec2(30.0, 30.0);
 
 float height(vec2 pos, float time) {
-	return (amplitude.x * sin(pos.x * frequency.x + time * time_factor.x)) + (amplitude.y * sin(pos.y * frequency.y + time * time_factor.y));
+	return (amplitude.x * sin(pos.x*frequency.x + time*time_factor.x)) + (amplitude.y * sin(pos.y*frequency.y + time*time_factor.y));
 }
 
 void vertex() {
