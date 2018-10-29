@@ -247,6 +247,8 @@ func do_step(player, num):
 				if not previous_space == player.space:
 					update_space(previous_space)
 					update_space(player.space)
+				else:
+					update_space(player.space)
 				
 				return
 			elif player.space.next.size() > 1 and not next_node == null:
