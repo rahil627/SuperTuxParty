@@ -8,6 +8,8 @@ const ACTIONS = ["up", "down", "left", "right", "action1", "action2", "action3",
 
 var presses = 0
 
+var player_id
+
 var is_ai
 var ai_wait_time
 
@@ -31,7 +33,7 @@ func press():
 	$Model/AnimationPlayer.play("punch")
 	$Model/AnimationPlayer.queue("idle")
 	presses += 1
-	get_node("../Battery" + var2str(idx) + "/Cylinder").get_surface_material(0).set_shader_param("percentage", float(presses) / NEEDED_BUTTON_PRESSES)
+	$Battery/Cylinder.get_surface_material(0).set_shader_param("percentage", float(presses) / NEEDED_BUTTON_PRESSES)
 	if presses < NEEDED_BUTTON_PRESSES:
 		$"..".next_action(idx)
 	else:
@@ -54,7 +56,7 @@ func _input(event):
 		else:
 			# Check if it was another action by that player
 			for action in ACTIONS:
-				if event.is_action_pressed("player"+var2str(idx)+"_"+action):
+				if event.is_action_pressed("player"+var2str(player_id)+"_"+action):
 					disable_input()
 					return
 

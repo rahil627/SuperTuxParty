@@ -13,12 +13,17 @@ var is_walking = false
 
 var input_disabled
 
-onready var plant_spots = [$"../Area1", $"../Area2", $"../Area3", $"../Area4"]
+var plant_spots
 
 var current_destination = null
 
 func _ready():
 	$Model/AnimationPlayer.play("idle")
+	
+	if Global.minigame_type == Global.DUEL:
+		plant_spots = [$"../Area2", $"../Area4"]
+	else:
+		plant_spots = [$"../Area1", $"../Area2", $"../Area3", $"../Area4"]
 
 func has_player(colliders, blacklist):
 	for collider in colliders:

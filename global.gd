@@ -14,7 +14,10 @@ class PlayerState:
 	# Which space on the board the player is standing on
 	var space = null
 
-const MINIGAME_REWARD_SCREEN_PATH = "res://boards/controller/rewardscreen.tscn";
+const MINIGAME_REWARD_SCREEN_PATH_FFA = "res://boards/controller/rewardscreens/ffa.tscn";
+const MINIGAME_REWARD_SCREEN_PATH_DUEL = "res://boards/controller/rewardscreens/duel.tscn";
+const MINIGAME_REWARD_SCREEN_PATH_1V3 = "res://boards/controller/rewardscreens/1v3.tscn";
+const MINIGAME_REWARD_SCREEN_PATH_2V2 = "res://boards/controller/rewardscreens/2v2.tscn";
 
 var plugin_system = preload("res://pluginsystem.gd").new()
 
@@ -32,11 +35,23 @@ enum AWARD_T {
 	winner_only
 }
 
+enum MINIGAME_DUEL_REWARDS {
+	TEN_COOKIES,
+	ONE_CAKE
+}
+
 enum JOYPAD_DISPLAY_TYPE {
 	NUMBERS,
 	XBOX,
 	NINTENDO_DS,
 	PLAYSTATION
+}
+
+enum MINIGAME_TYPES {
+	DUEL,
+	ONE_VS_THREE,
+	TWO_VS_TWO,
+	FREE_FOR_ALL
 }
 
 var joypad_display = NUMBERS
@@ -70,6 +85,10 @@ var player_turn = 1
 # The minigame to return to in "try minigame" mode
 # If it is null, then no minigame is tried and the next turn resumes
 var current_minigame = null
+var minigame_type
+var minigame_teams
+
+var minigame_duel_reward
 
 var current_savegame = null
 var is_new_savegame = false
@@ -139,24 +158,56 @@ func _goto_scene_ingame(path):
 	
 	current_scene = s.instance()
 	
-	for i in range(players.size()):
-		var player = current_scene.get_node("Player" + var2str(i+1))
-		
-		var new_model = load(character_loader.get_character_path(players[i].character)).instance()
-		new_model.set_name("Model")
-		
-		var old_model = player.get_node("Model")
-		new_model.translation = old_model.translation
-		new_model.scale = old_model.scale
-		new_model.rotation = old_model.rotation
-		old_model.replace_by(new_model, true)
-		
-		player.is_ai = players[i].is_ai
-		
-		if player.has_node("Shape"):
-			var collision_shape = player.get_node("Shape")
-			collision_shape.translation += new_model.translation
-			collision_shape.shape = load(character_loader.get_collision_shape_path(players[i].character))
+	if minigame_teams == null:
+		for i in range(players.size()):
+			var player = current_scene.get_node("Player" + var2str(i+1))
+			
+			var new_model = load(character_loader.get_character_path(players[i].character)).instance()
+			new_model.set_name("Model")
+			
+			var old_model = player.get_node("Model")
+			new_model.translation = old_model.translation
+			new_model.scale = old_model.scale
+			new_model.rotation = old_model.rotation
+			old_model.replace_by(new_model, true)
+			
+			player.is_ai = players[i].is_ai
+			
+			if player.has_node("Shape"):
+				var collision_shape = player.get_node("Shape")
+				collision_shape.translation += new_model.translation
+				collision_shape.shape = load(character_loader.get_collision_shape_path(players[i].character))
+	else:
+		var i = 1
+		for team in minigame_teams:
+			for player_id in team:
+				var player = current_scene.get_node("Player" + var2str(i))
+				
+				var new_model = load(character_loader.get_character_path(players[player_id - 1].character)).instance()
+				new_model.set_name("Model")
+				
+				var old_model = player.get_node("Model")
+				new_model.translation = old_model.translation
+				new_model.scale = old_model.scale
+				new_model.rotation = old_model.rotation
+				old_model.replace_by(new_model, true)
+				
+				player.is_ai = players[player_id - 1].is_ai
+				player.player_id = player_id
+				
+				if player.has_node("Shape"):
+					var collision_shape = player.get_node("Shape")
+					collision_shape.translation += new_model.translation
+					collision_shape.shape = load(character_loader.get_collision_shape_path(players[player_id - 1].character))
+				
+				i += 1
+			
+			# Remove unnecessary players
+		while i <= Global.amount_of_players:
+			var player = current_scene.get_node("Player" + var2str(i))
+			current_scene.remove_child(player)
+			player.queue_free()
+			i += 1
 	
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
@@ -191,6 +242,8 @@ func goto_minigame(minigame, try = false):
 	if try:
 		current_minigame = minigame
 	
+	player_turn = get_tree().get_nodes_in_group("Controller")[0].player_turn
+	
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
 		players[i].player_id = r_players[i].player_id
@@ -206,15 +259,39 @@ func goto_minigame(minigame, try = false):
 func goto_board(placement):
 	if current_minigame == null:
 		# Only award if it's not a test
-		match award:
-			AWARD_T.linear:
-				for i in range(amount_of_players):
-					players[placement[i] - 1].cookies += 15 - (i * 5)
-			AWARD_T.winner_only:
-				players[placement[0] - 1].cookies += 10
-		
 		self.placement = placement
-		call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH)
+		match minigame_type:
+			FREE_FOR_ALL:
+				match award:
+					AWARD_T.linear:
+						for i in range(amount_of_players):
+							players[placement[i] - 1].cookies += 15 - (i * 5)
+					AWARD_T.winner_only:
+						players[placement[0] - 1].cookies += 10
+				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_FFA)
+			TWO_VS_TWO:
+				for player_id in minigame_teams[placement]:
+					players[player_id - 1].cookies += 10
+				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_2V2)
+			ONE_VS_THREE:
+				for player_id in minigame_teams[placement]:
+					# Has the solo player won?
+					if placement == 1:
+						players[player_id - 1].cookies += 10
+					else:
+						players[player_id - 1].cookies += 5
+				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_1V3)
+			DUEL:
+				match minigame_duel_reward:
+					MINIGAME_DUEL_REWARDS.TEN_COOKIES:
+						var other_player_cookies = min(players[placement[1] - 1].cookies, 10)
+						players[placement[0] - 1].cookies += other_player_cookies
+						players[placement[1] - 1].cookies -= other_player_cookies
+					MINIGAME_DUEL_REWARDS.ONE_CAKE:
+						var other_player_cakes = min(players[placement[1] - 1].cakes, 1)
+						players[placement[0] - 1].cakes += other_player_cakes
+						players[placement[1] - 1].cakes -= other_player_cakes
+				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_DUEL)
 	else:
 		call_deferred("_goto_scene_ingame", current_board)
 

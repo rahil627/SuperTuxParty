@@ -27,7 +27,7 @@ var end_turn = true
 var next_node = null
 
 enum EDITOR_NODE_LINKING_DISPLAY { DISABLED = 0, NEXT_NODES = 1, PREV_NODES = 2, ALL = 3 }
-enum TURN_ACTION {BUY_CAKE = 0, CHOOSE_PATH = 1}
+enum TURN_ACTION {BUY_CAKE = 0, CHOOSE_PATH = 1, CHOOSE_OPPONENT}
 
 # Path to the node, where Players start
 export(NodePath) var start_node
@@ -99,8 +99,9 @@ func _ready():
 		$Screen/GetCake/Label.text = "Buy a cake for 20 cookies"
 	
 	# Initialize GUI
-	$Screen/Turn.text = "Turn: " + var2str(Global.turn)
-	$Screen/Dice.text = "Roll " + players[player_turn - 1].player_name + "!"
+	if player_turn <= Global.amount_of_players:
+		$Screen/Turn.text = "Turn: " + var2str(Global.turn)
+		$Screen/Dice.text = "Roll " + players[player_turn - 1].player_name + "!"
 	
 	update_player_info()
 	
@@ -170,7 +171,40 @@ func roll():
 			$Screen/Roll.text = "Minigame"
 	else:
 		# All players have had their turn, goto mini-game
-		current_minigame = Global.minigame_loader.get_random_ffa()
+		var blue_team = []
+		var red_team = []
+		
+		for p in players:
+			match p.space.type:
+				NODE.BLUE:
+					blue_team.push_back(p.player_id)
+				NODE.RED:
+					red_team.push_back(p.player_id)
+				_:
+					if randi() % 2 == 0:
+						blue_team.push_back(p.player_id)
+					else:
+						red_team.push_back(p.player_id)
+		
+		if blue_team.size() < red_team.size():
+			var tmp = blue_team
+			blue_team = red_team
+			red_team = blue_team
+		
+		Global.minigame_teams = [blue_team, red_team]
+		
+		match [blue_team.size(), red_team.size()]:
+			[4, 0]:
+				Global.minigame_type = Global.FREE_FOR_ALL
+				current_minigame = Global.minigame_loader.get_random_ffa()
+			[3, 1]:
+				Global.minigame_type = Global.ONE_VS_THREE
+				current_minigame = Global.minigame_loader.get_random_1v3()
+			[2, 2]:
+				Global.minigame_type = Global.TWO_VS_TWO
+				current_minigame = Global.minigame_loader.get_random_2v2()
+		
+		yield(show_minigame_animation(), "completed")
 		show_minigame_info()
 
 # Moves a player num spaces forward and stops when a cake spot is encoutered
@@ -307,6 +341,15 @@ func do_step(player, num):
 				get_parent().fire_event(player, player.space)
 		NODE.BLUE:
 			player.cookies += 3
+		NODE.YELLOW:
+			end_turn = false
+			do_action = CHOOSE_OPPONENT
+			
+			var rewards = Global.MINIGAME_DUEL_REWARDS.values()
+			
+			Global.minigame_type = Global.DUEL
+			current_minigame = Global.minigame_loader.get_random_duel()
+			Global.minigame_duel_reward = rewards[randi() % rewards.size()]
 
 func update_space(space):
 	var num  = 0
@@ -371,6 +414,21 @@ func animation_ended(player_id):
 					$Screen/GetCake.show()
 				TURN_ACTION.CHOOSE_PATH:
 					pass
+				TURN_ACTION.CHOOSE_OPPONENT:
+					player_turn += 1
+					yield(minigame_duel_reward_animation(), "completed")
+					var players = get_tree().get_nodes_in_group("players")
+					players.remove(players.find(player))
+					
+					var i = 1
+					for p in players:
+						var node = $Screen/DuelSelection.get_node("Player"+var2str(i))
+						node.texture_normal = load(Global.character_loader.get_character_splash(Global.players[p.player_id - 1].character))
+						node.connect("pressed", self, "_on_duel_opponent_select", [player.player_id, p.player_id])
+						
+						i += 1
+					
+					$Screen/DuelSelection.show()
 		else:
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
@@ -384,6 +442,16 @@ func animation_ended(player_id):
 					
 					next_node = player.space.next[randi() % player.space.next.size()]
 					
+				TURN_ACTION.CHOOSE_OPPONENT:
+					player_turn += 1
+					var players = get_tree().get_nodes_in_group("players")
+					players.remove(players.find(player))
+					
+					Global.minigame_teams = [[players[randi() % players.size()].player_id], [player.player_id]]
+					yield(minigame_duel_reward_animation(), "completed")
+					yield(show_minigame_animation(), "completed")
+					show_minigame_info()
+					return
 			
 			var timer = Timer.new()
 			timer.set_wait_time(1)
@@ -490,25 +558,69 @@ func _on_Abort_pressed():
 func _on_HSlider_value_changed(value):
 	$Screen/BuyCake/Amount.text = "x" + var2str(int(value))
 
+func minigame_duel_reward_animation():
+	var name
+	for key in Global.MINIGAME_DUEL_REWARDS.keys():
+		if Global.MINIGAME_DUEL_REWARDS[key] == Global.minigame_duel_reward:
+			name = key
+	$Screen/DuelReward/Value.text = name
+	$Screen/DuelReward.show()
+	yield(get_tree().create_timer(1), "timeout")
+	$Screen/DuelReward.hide()
+
+func show_minigame_animation():
+	var i = 1
+	for team in Global.minigame_teams:
+		for player_id in team:
+			$Screen/MinigameTypeAnimation/Root.get_node("Player"+var2str(i)).texture = load(Global.character_loader.get_character_splash(Global.players[player_id - 1].character))
+			i += 1
+	
+	match Global.minigame_type:
+		Global.FREE_FOR_ALL:
+			$Screen/MinigameTypeAnimation.play("FFA")
+		Global.ONE_VS_THREE:
+			$Screen/MinigameTypeAnimation.play("1v3")
+		Global.TWO_VS_TWO:
+			$Screen/MinigameTypeAnimation.play("2v2")
+		Global.DUEL:
+			$Screen/MinigameTypeAnimation.play("Duel")
+	
+	yield($Screen/MinigameTypeAnimation, "animation_finished")
+
 func setup_character_viewport():
-	for i in range(Global.amount_of_players):
-		var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i + 1))
-		var new_model = load(Global.character_loader.get_character_path(Global.players[i].character)).instance()
+	var i = 1
+	for team in Global.minigame_teams:
+		for player_id in team:
+			var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i))
+			var new_model = load(Global.character_loader.get_character_path(Global.players[player_id - 1].character)).instance()
+			
+			new_model.name = player.name
+			new_model.translation = player.translation
+			new_model.scale = player.scale
+			new_model.rotation = player.rotation
+			
+			player.replace_by(new_model)
+			
+			if new_model.has_node("AnimationPlayer"):
+				new_model.get_node("AnimationPlayer").play("idle")
+				if i > 0:
+					new_model.get_node("AnimationPlayer").playback_speed = 0
+			
+			i += 1
+	
+	while i <= Global.amount_of_players:
+		var player = $Screen/MinigameInformation/Characters/Viewport.get_node("Player" + var2str(i))
+		player.hide()
 		
-		new_model.name = player.name
-		player.name = "deleted"
-		new_model.translation = player.translation
-		new_model.scale = player.scale
-		new_model.rotation = player.rotation
-		
-		player.queue_free()
-		
-		$Screen/MinigameInformation/Characters/Viewport.add_child(new_model)
-		
-		if new_model.has_node("AnimationPlayer"):
-			new_model.get_node("AnimationPlayer").play("idle")
-			if i > 0:
-				new_model.get_node("AnimationPlayer").playback_speed = 0
+		i += 1
+
+func minigame_has_player(i):
+	for team in Global.minigame_teams:
+		for player_id in team:
+			if player_id == i:
+				return true
+	
+	return false
 
 func show_minigame_info():
 	setup_character_viewport()
@@ -520,7 +632,7 @@ func show_minigame_info():
 	
 	for i in range(1, Global.amount_of_players + 1):
 		var label = $Screen/MinigameInformation/Controls.get_node("Player" + var2str(i))
-		if players[i - 1].is_ai:
+		if not minigame_has_player(i) or players[i - 1].is_ai:
 			# If the player is controlled by an AI, there is no point in showing controls
 			label.queue_free()
 			continue
@@ -535,8 +647,9 @@ func _on_Try_pressed():
 	Global.goto_minigame(current_minigame, true)
 
 func _on_Play_pressed():
-	Global.turn += 1
-	player_turn = 1
+	if Global.minigame_type != Global.DUEL:
+		Global.turn += 1
+		player_turn = 1
 	Global.goto_minigame(current_minigame)
 	current_minigame = null
 
@@ -554,3 +667,10 @@ func _on_Controls_tab_changed(tab):
 		player.get_node("AnimationPlayer").playback_speed = 1
 	
 	$Screen/MinigameInformation/Characters/Viewport/Indicator.translation = player.translation + Vector3(0, 1.5, 0)
+
+func _on_duel_opponent_select(self_id, other_id):
+	Global.minigame_teams = [[other_id], [self_id]]
+	
+	$Screen/DuelSelection.hide()
+	yield(show_minigame_animation(), "completed")
+	show_minigame_info()

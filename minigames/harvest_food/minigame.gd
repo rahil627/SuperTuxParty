@@ -9,16 +9,22 @@ var plants
 var rotten_index
 
 func _ready():
-	$Player1.player_id = 1
-	$Screen/Player1Name.text = Global.players[0].player_name
-	$Player2.player_id = 2
-	$Screen/Player2Name.text = Global.players[1].player_name
-	$Player3.player_id = 3
-	$Screen/Player3Name.text = Global.players[2].player_name
-	$Player4.player_id = 4
-	$Screen/Player4Name.text = Global.players[3].player_name
-	
-	plants = [$Area1, $Area2, $Area3, $Area4]
+	$Screen/Player1Name.text = Global.players[$Player1.player_id - 1].player_name
+	$Screen/Player2Name.text = Global.players[$Player2.player_id - 1].player_name
+	if Global.minigame_type != Global.DUEL:
+		$Screen/Player3Name.text = Global.players[$Player3.player_id - 1].player_name
+		$Screen/Player4Name.text = Global.players[$Player4.player_id - 1].player_name
+		
+		plants = [$Area1, $Area2, $Area3, $Area4]
+	else:
+		plants = [$Area2, $Area4]
+		$Area1.queue_free()
+		$Area3.queue_free()
+		
+		$Screen/Player3Name.queue_free()
+		$Screen/Player3.queue_free()
+		$Screen/Player4Name.queue_free()
+		$Screen/Player4.queue_free()
 	spawn_plants()
 
 func spawn_plants():
@@ -41,10 +47,11 @@ func _on_Timer_timeout():
 	$Player1.translation -= $Player1.translation.normalized()
 	$Player2.input_disabled = true
 	$Player2.translation -= $Player2.translation.normalized()
-	$Player3.input_disabled = true
-	$Player3.translation -= $Player3.translation.normalized()
-	$Player4.input_disabled = true
-	$Player4.translation -= $Player4.translation.normalized()
+	if Global.minigame_type != Global.DUEL:
+		$Player3.input_disabled = true
+		$Player3.translation -= $Player3.translation.normalized()
+		$Player4.input_disabled = true
+		$Player4.translation -= $Player4.translation.normalized()
 	
 	for i in range(plants.size()):
 		var colliders = plants[i].get_overlapping_bodies()
@@ -79,14 +86,15 @@ func _on_Timer_timeout():
 	$Player2.play_animation("idle")
 	$Player2.translation = Vector3(1, 0.44, -1)
 	$Player2.current_destination = null
-	$Player3.input_disabled = false
-	$Player3.play_animation("idle")
-	$Player3.translation = Vector3(1, 0.44, 1)
-	$Player3.current_destination = null
-	$Player4.input_disabled = false
-	$Player4.play_animation("idle")
-	$Player4.translation = Vector3(-1, 0.44, 1)
-	$Player4.current_destination = null
+	if Global.minigame_type != Global.DUEL:
+		$Player3.input_disabled = false
+		$Player3.play_animation("idle")
+		$Player3.translation = Vector3(1, 0.44, 1)
+		$Player3.current_destination = null
+		$Player4.input_disabled = false
+		$Player4.play_animation("idle")
+		$Player4.translation = Vector3(-1, 0.44, 1)
+		$Player4.current_destination = null
 	
 	$Screen/Message.text = ""
 	
@@ -101,18 +109,34 @@ func _on_Timer_timeout():
 	if rounds > 0:
 		spawn_plants()
 	else:
-		var placement = [1, 2, 3, 4]
-		var players = [$Player1, $Player2, $Player3, $Player4]
-		
-		placement.sort_custom(Sorter.new(players), "_sort")
+		var placement
+		match Global.minigame_type:
+			Global.FREE_FOR_ALL, Global.DUEL:
+				var players
+				if Global.minigame_type == Global.DUEL:
+					placement = [1, 2]
+					players = [$Player1, $Player2]
+				else:
+					placement = [1, 2, 3, 4]
+					players = [$Player1, $Player2, $Player3, $Player4]
+				
+				placement.sort_custom(Sorter.new(players), "_sort")
+				for i in range(placement.size()):
+					placement[i] = players[placement[i] - 1].player_id
+			Global.TWO_VS_TWO:
+				if $Player1.plants + $Player2.plants >= $Player3.plants + $Player4.plants:
+					placement = 0
+				else:
+					placement = 1
 		
 		Global.goto_board(placement)
 
 func update_overlay():
 	$Screen/Player1.text = var2str($Player1.plants)
 	$Screen/Player2.text = var2str($Player2.plants)
-	$Screen/Player3.text = var2str($Player3.plants)
-	$Screen/Player4.text = var2str($Player4.plants)
+	if Global.minigame_type != Global.DUEL:
+		$Screen/Player3.text = var2str($Player3.plants)
+		$Screen/Player4.text = var2str($Player4.plants)
 
 func _process(delta):
 	$Screen/Time.text = var2str(stepify($Timer.time_left, 0.01))
