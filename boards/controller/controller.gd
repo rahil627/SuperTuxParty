@@ -367,24 +367,27 @@ func update_space(space):
 			num += 1
 
 func _unhandled_input(event):
-	if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
-		_on_Roll_pressed()
-	elif event.is_action_pressed("debug"):
+	if player_turn <= players.size():
+		if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
+			_on_Roll_pressed()
+		elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 1].is_ai:
+			# Be able to choose path with controller or keyboard
+			if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
+				selected_id -= 1
+				
+				if selected_id < 0:
+					selected_id = get_tree().get_nodes_in_group("arrows").size() - 1
+			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
+				selected_id += 1
+				
+				if selected_id >= get_tree().get_nodes_in_group("arrows").size():
+					selected_id = 0
+			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
+				get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
+	
+	if event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
-	elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 1].is_ai:
-		# Be able to choose path with controller or keyboard
-		if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
-			selected_id -= 1
-			
-			if selected_id < 0:
-				selected_id = get_tree().get_nodes_in_group("arrows").size() - 1
-		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
-			selected_id += 1
-			
-			if selected_id >= get_tree().get_nodes_in_group("arrows").size():
-				selected_id = 0
-		elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
-			get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
+
 
 func get_players_on_space(space):
 	var num = 0
