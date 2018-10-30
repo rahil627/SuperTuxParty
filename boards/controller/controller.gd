@@ -166,9 +166,6 @@ func roll():
 		
 		# Show which number was rolled
 		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
-		
-		if player_turn > players.size():
-			$Screen/Roll.text = "Minigame"
 	else:
 		# All players have had their turn, goto mini-game
 		var blue_team = []
@@ -189,7 +186,7 @@ func roll():
 		if blue_team.size() < red_team.size():
 			var tmp = blue_team
 			blue_team = red_team
-			red_team = blue_team
+			red_team = tmp
 		
 		Global.minigame_teams = [blue_team, red_team]
 		
