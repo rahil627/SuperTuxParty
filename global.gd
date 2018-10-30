@@ -364,6 +364,11 @@ func reset_state():
 	player_turn = 1
 	turn = 1
 	
+	current_minigame = null
+	minigame_type = null
+	minigame_teams = null
+	minigame_duel_reward = null
+	
 	for p in players:
 		p.cookies = 0
 		p.cookies_gui = 0
