@@ -3,7 +3,7 @@ extends Object
 # The directory from which plugins are loaded. Plugins have to be either in .zip or .pck file format
 const PLUGIN_DIRECTORY = "plugins"
 
-const NATIVE = true; # Only use files present in the project, no external files. Useful for testing
+const NATIVE = false; # Only use files present in the project, no external files. Useful for testing
 
 # loads all .pck and .zip files into the res:// file system
 func read_content_packs():
