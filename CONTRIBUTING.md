@@ -8,9 +8,11 @@ This means that:
 - The `master` branch is our release branch
 - No merge requests will be accepted into the `master` branch
 - Merge requests must instead be merged into the `dev` branch
+- Only core team members are allowed to push directly to `dev` branch
 
 Additionally:
 - All commits should be signed off
+- Commit messages needs to be written in present tense
 - If you add assets you need to update `LICENSE-ART.md` with appropiate licensing information
 - Changelog should ideally also be updated if the change affects end-users
 
