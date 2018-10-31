@@ -11,7 +11,7 @@ This means that:
 - Only core team members are allowed to push directly to `dev` branch
 
 Additionally:
-- All commits should be signed off
+- All commits must be [signed-off](https://git-scm.com/docs/git-commit#git-commit--s), to certify that you wrote the patch
 - Commit messages needs to be written in present tense
 - If you add assets you need to update `LICENSE-ART.md` with appropiate licensing information
 - Changelog should ideally also be updated if the change affects end-users
