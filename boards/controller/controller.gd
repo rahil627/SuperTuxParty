@@ -565,9 +565,16 @@ func minigame_duel_reward_animation():
 	for key in Global.MINIGAME_DUEL_REWARDS.keys():
 		if Global.MINIGAME_DUEL_REWARDS[key] == Global.minigame_duel_reward:
 			name = key
-	$Screen/DuelReward/Value.text = name
+	
+	if name == "TEN_COOKIES":
+		$Screen/DuelReward/Value.text = "Winner steals 10 cookies"
+	elif name == "ONE_CAKE":
+		$Screen/DuelReward/Value.text = "Winner steals 1 cake"
+	else:
+		$Screen/DuelReward/Value.text = name
+	
 	$Screen/DuelReward.show()
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(2), "timeout")
 	$Screen/DuelReward.hide()
 
 func show_minigame_animation():

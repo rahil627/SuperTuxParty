@@ -1,5 +1,23 @@
 # Releases
 
+## Alpha Version - v0.2 - 2018-10-31
+### New features
+- Godette, Godot's unofficial mascot, as a new playable character, !53
+- Animations for all characters, !25
+- Bowling minigame, one player tries to hit the other 3 players, !63
+- Kernel Compiling minigame, press the correct buttons quickly, !52
+- Harvest Food minigame, guessing game, !39
+- Boards can now have multiple paths, players can choose which way to go, !26
+- Minigame information screens, !28
+- New gamemodes added such as, Duel, 1v3 and 2v2, !64
+- Games can now be saved, !33
+
+### Improved
+- Options are now saved, !54
+- Fixed a memory leak, !29
+- Improved mesh and texture for ice in Knock Off minigame, !30, !34
+- Hurdle minigame now has powerups and different hurdles, !38
+
 ## Demo Version - v0.1 - 2018-09-01
 - 3 playable characters
 - 2 minigames
