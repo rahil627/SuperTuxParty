@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://minigames/kernel_compiling/minigame.gd" type="Script" id=1]
 [ext_resource path="res://minigames/kernel_compiling/player_kernel_compiling.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://boards/controller/pausemenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -216,8 +217,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
 text = "Ready?"
 align = 1
 valign = 1
@@ -236,6 +237,10 @@ playback_speed = 1.0
 anims/fadeout = SubResource( 3 )
 anims/reset = SubResource( 4 )
 blend_times = [  ]
+
+[node name="PauseMenu" parent="Overlay" index="2" instance=ExtResource( 4 )]
+
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
