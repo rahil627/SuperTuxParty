@@ -1,5 +1,21 @@
 # Contributing
 
+## Workflow
+Super Tux Party now follows the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+This means that:
+- All merge requests should have their own branch
+- That branch must have an appropiate name
+- The `master` branch is our release branch
+- No merge requests will be accepted into the `master` branch
+- Merge requests must instead be merged into the `dev` branch
+- Only core team members are allowed to push directly to `dev` branch
+
+Additionally:
+- All commits must be [signed-off](https://git-scm.com/docs/git-commit#git-commit--s), to certify that you wrote the patch
+- Commit messages needs to be written in present tense
+- If you add assets you need to update `LICENSE-ART.md` with appropiate licensing information
+- Changelog should ideally also be updated if the change affects end-users
+
 ## Git
 [git-lfs](https://git-lfs.github.com/) is used in this project for handling
 asset files. Tutorial for git-lfs can be found [here]
