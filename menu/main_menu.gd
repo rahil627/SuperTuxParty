@@ -2,6 +2,9 @@ extends Container
 
 const USER_OPTIONS_FILE = "user://options.cfg"
 
+var _options_file = ConfigFile.new()
+var _is_loading_options = false
+
 # Path to the board being used on game start
 var board = ""
 var current_player = 1
@@ -63,6 +66,9 @@ func _ready():
 		
 		prepare_player_states()
 
+func _input(event):
+	control_remapper._input(event)
+
 func load_boards():
 	board_loader = Global.board_loader
 	character_loader = Global.character_loader
@@ -102,12 +108,12 @@ func _on_Options_pressed():
 func _on_Fullscreen_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
 	
-	save_options()
+	save_option("visual", "fullscreen", button_pressed)
 
 func _on_bus_toggled(enabled, index):
 	AudioServer.set_bus_mute(index, not enabled)
 	
-	save_options()
+	save_option("audio", AudioServer.get_bus_name(index).to_lower() + "_muted", not enabled)
 
 func _on_volume_changed(value, index):
 	AudioServer.set_bus_volume_db(index, value)
@@ -121,83 +127,69 @@ func _on_volume_changed(value, index):
 		2:
 			$OptionsMenu/Buttons/TabContainer/Audio/Effects/Label.text = percentage
 	
-	save_options()
+	save_option("audio", AudioServer.get_bus_name(index).to_lower() + "_volume", value)
 
 func _on_MuteUnfocus_toggled(button_pressed):
 	Global.mute_window_unfocus = button_pressed
 	
-	save_options()
-
-func _input(event):
-	control_remapper._input(event)
-
-func _on_Options_Back_pressed():
-	$MainMenu.show()
-	$OptionsMenu.hide()
-
-func _on_Quit_pressed():
-	get_tree().quit()
+	save_option("audio", "mute_window_unfocus", button_pressed)
 
 func _on_JoypadDisplayType_item_selected(ID):
 	Global.joypad_display = ID
 	
 	control_remapper.controls_remapping_setup()
 	
-	save_options()
+	save_option("misc", "joypad_display_type", ID)
+
+func _on_Options_Back_pressed():
+	$MainMenu.show()
+	$OptionsMenu.hide()
+
+func get_option_value_safely(section, key, default, min_value=null, max_value=null):
+	var value = _options_file.get_value(section, key, default)
+	if typeof(value) != typeof(default) or min_value != null and value < min_value or max_value != null and value > max_value:
+		return default
+	
+	return value
 
 func load_options():
-	var config = ConfigFile.new()
-	
-	var err = config.load(USER_OPTIONS_FILE)
-	
+	var err = _options_file.load(USER_OPTIONS_FILE)
 	if err != OK:
 		print("Error while loading options: " + Utility.error_code_to_string(err))
 		return
 	
-	OS.window_fullscreen = config.get_value("visual", "fullscreen", false)
+	_is_loading_options = true # Avoid saving options while loading them.
+	
+	OS.window_fullscreen = get_option_value_safely("visual", "fullscreen", false)
 	$OptionsMenu/Buttons/TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen
 	
-	AudioServer.set_bus_mute(0, config.get_value("audio", "master_muted", false))
-	AudioServer.set_bus_mute(1, config.get_value("audio", "music_muted", false))
-	AudioServer.set_bus_mute(2, config.get_value("audio", "effects_muted", false))
+	AudioServer.set_bus_mute(0, get_option_value_safely("audio", "master_muted", false))
+	AudioServer.set_bus_mute(1, get_option_value_safely("audio", "music_muted", false))
+	AudioServer.set_bus_mute(2, get_option_value_safely("audio", "effects_muted", false))
 	
 	$OptionsMenu/Buttons/TabContainer/Audio/Master/CheckBox.pressed = not AudioServer.is_bus_mute(0)
 	$OptionsMenu/Buttons/TabContainer/Audio/Music/CheckBox.pressed = not AudioServer.is_bus_mute(1)
 	$OptionsMenu/Buttons/TabContainer/Audio/Effects/CheckBox.pressed = not AudioServer.is_bus_mute(2)
 	
-	Global.mute_window_unfocus = config.get_value("audio", "mute_window_unfocus", true)
+	Global.mute_window_unfocus = get_option_value_safely("audio", "mute_window_unfocus", true)
 	$OptionsMenu/Buttons/TabContainer/Audio/MuteUnfocus.pressed = Global.mute_window_unfocus
 	
-	AudioServer.set_bus_volume_db(0, config.get_value("audio", "master_volume", 0))
-	AudioServer.set_bus_volume_db(1, config.get_value("audio", "music_volume", 0))
-	AudioServer.set_bus_volume_db(2, config.get_value("audio", "effects_volume", 0))
+	# Setting the 'value' of 'Range' nodes directly also fires their signals.
+	$OptionsMenu/Buttons/TabContainer/Audio/MasterVolume.value = get_option_value_safely("audio", "master_volume", 0.0, -80, 0)
+	$OptionsMenu/Buttons/TabContainer/Audio/MusicVolume.value = get_option_value_safely("audio", "music_volume", 0.0, -80, 0)
+	$OptionsMenu/Buttons/TabContainer/Audio/EffectsVolume.value = get_option_value_safely("audio", "effects_volume", 0.0, -80, 0)
 	
-	$OptionsMenu/Buttons/TabContainer/Audio/MasterVolume.value = AudioServer.get_bus_volume_db(0)
-	$OptionsMenu/Buttons/TabContainer/Audio/MusicVolume.value = AudioServer.get_bus_volume_db(1)
-	$OptionsMenu/Buttons/TabContainer/Audio/EffectsVolume.value = AudioServer.get_bus_volume_db(2)
-	
-	Global.joypad_display = config.get_value("misc", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS)
+	Global.joypad_display = get_option_value_safely("misc", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS, 0, Global.JOYPAD_DISPLAY_TYPE.size() - 1)
 	$OptionsMenu/Buttons/TabContainer/Controls/JoypadDisplayType.select(Global.joypad_display)
+	
+	_is_loading_options = false
 
-func save_options():
-	var config = ConfigFile.new()
+func save_option(section, key, value):
+	if _is_loading_options:
+		return
 	
-	config.set_value("visual", "fullscreen", OS.window_fullscreen)
-	
-	config.set_value("audio", "master_muted", AudioServer.is_bus_mute(0))
-	config.set_value("audio", "music_muted", AudioServer.is_bus_mute(1))
-	config.set_value("audio", "effects_muted", AudioServer.is_bus_mute(2))
-	
-	config.set_value("audio", "mute_window_unfocus", Global.mute_window_unfocus)
-	
-	config.set_value("audio", "master_volume", AudioServer.get_bus_volume_db(0))
-	config.set_value("audio", "music_volume", AudioServer.get_bus_volume_db(1))
-	config.set_value("audio", "effects_volume", AudioServer.get_bus_volume_db(2))
-	
-	config.set_value("misc", "joypad_display_type", Global.joypad_display)
-	
-	var err = config.save(USER_OPTIONS_FILE)
-	
+	_options_file.set_value(section, key, value)
+	var err = _options_file.save(USER_OPTIONS_FILE)
 	if err != OK:
 		print("Error while saving options: " + Utility.error_code_to_string(err))
 
@@ -334,3 +326,6 @@ func _on_LoadGame_Back_pressed():
 	
 	$LoadGameMenu.hide()
 	$MainMenu.show()
+
+func _on_Quit_pressed():
+	get_tree().quit()
