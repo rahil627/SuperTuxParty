@@ -110,6 +110,24 @@ func _on_Fullscreen_toggled(button_pressed):
 	
 	save_option("visual", "fullscreen", button_pressed)
 
+func _on_VSync_toggled(button_pressed):
+	OS.vsync_enabled = button_pressed
+	
+	save_option("visual", "vsync", button_pressed)
+
+func _on_FrameCap_item_selected(ID):
+	match ID:
+		0:
+			Engine.target_fps = 30
+		1:
+			Engine.target_fps = 60
+		2:
+			Engine.target_fps = 120
+		3:
+			Engine.target_fps = 0 # A zero value uncaps the frames.
+	
+	save_option("visual", "frame_cap", ID)
+
 func _on_bus_toggled(enabled, index):
 	AudioServer.set_bus_mute(index, not enabled)
 	
@@ -162,6 +180,13 @@ func load_options():
 	
 	OS.window_fullscreen = get_option_value_safely("visual", "fullscreen", false)
 	$OptionsMenu/Buttons/TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen
+	
+	OS.vsync_enabled = get_option_value_safely("visual", "vsync", false)
+	$OptionsMenu/Buttons/TabContainer/Visual/VSync.pressed = OS.vsync_enabled
+	
+	var frame_id = get_option_value_safely("visual", "frame_cap", 1, 0, 3)
+	_on_FrameCap_item_selected(frame_id)
+	$OptionsMenu/Buttons/TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
 	
 	AudioServer.set_bus_mute(0, get_option_value_safely("audio", "master_muted", false))
 	AudioServer.set_bus_mute(1, get_option_value_safely("audio", "music_muted", false))
