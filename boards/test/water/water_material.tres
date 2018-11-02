@@ -3,22 +3,14 @@
 [ext_resource path="res://minigames/knock_off/water/water.shader" type="Shader" id=1]
 [ext_resource path="res://assets/textures/water_diffuse.png" type="Texture" id=2]
 
-
-
-
-
-
-
-
-
 [resource]
 
 render_priority = 0
 shader = ExtResource( 1 )
-shader_param/amplitude = null
-shader_param/frequency = null
-shader_param/time_factor = null
-shader_param/texture_scale = null
+shader_param/amplitude = Vector2( 0.05, 0.05 )
+shader_param/frequency = Vector2( 5, 5 )
+shader_param/time_factor = Vector2( 1, 1 )
+shader_param/texture_scale = Vector2( 100, 100 )
 shader_param/texturemap = ExtResource( 2 )
 _sections_unfolded = [ "shader_param" ]
 
