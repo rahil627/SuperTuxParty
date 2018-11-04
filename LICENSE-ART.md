@@ -79,6 +79,30 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## boards/test/bridge
+### bridge_mesh.blend | bridge_mesh.obj | bridge_diffuse.png
+
+Public domain by JamesWhite
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## boards/test/islands
+### island1.blend | island1.dae | island2.blend | island2.dae
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### Sand3.jpg
+
+Public domain by MrCraft Animation
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/sand-texture-pack)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## characters/Tux
 ### character.dae | tux_texture.png | tux.blend | tux.escn
 
@@ -380,7 +404,7 @@ SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
-## minigames/knock_off/water
+## assets/textures/
 ### water_diffuse.png
 
 Public Domain by Bastiaan Olij
