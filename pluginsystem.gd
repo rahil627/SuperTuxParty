@@ -3,8 +3,6 @@ extends Object
 # The directory from which plugins are loaded. Plugins have to be either in .zip or .pck file format
 const PLUGIN_DIRECTORY = "plugins"
 
-var NATIVE = OS.is_debug_build(); # Only use files present in the project, no external files. Useful for testing
-
 # loads all .pck and .zip files into the res:// file system
 func read_content_packs():
 	var dir = Directory.new()
@@ -30,7 +28,8 @@ func read_content_packs():
 	dir.list_dir_end()
 
 func _init():
-	if not NATIVE:
+	# Only use files present in the project, no external files. Useful for testing
+	if not OS.is_debug_build() or ProjectSettings.get("plugins/load_plugins"):
 		print("Loading plugins...")
 		read_content_packs()
 		print("Loading plugins finished")
