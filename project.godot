@@ -116,6 +116,10 @@ player3_pause=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"r
 player4_pause=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":1,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 
+[plugins]
+
+load_plugins=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
