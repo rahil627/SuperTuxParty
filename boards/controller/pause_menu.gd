@@ -1,11 +1,18 @@
 extends PopupPanel
 
-export(bool) var can_save_game = false
+export var can_save_game = false
+
 var player_id = 0
 
 func _ready():
 	if not can_save_game:
 		$Container/SaveGame.hide()
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and Global.pause_window_unfocus and not visible:
+		player_id = 1
+		popup()
+		get_tree().paused = true
 
 func _unhandled_input(event):
 	if event.is_action_pressed("player1_pause"):

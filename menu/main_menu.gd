@@ -157,7 +157,12 @@ func _on_JoypadDisplayType_item_selected(ID):
 	
 	control_remapper.controls_remapping_setup()
 	
-	save_option("misc", "joypad_display_type", ID)
+	save_option("controls", "joypad_display_type", ID)
+
+func _on_PauseUnfocus_toggled(button_pressed):
+	Global.pause_window_unfocus = button_pressed
+	
+	save_option("misc", "pause_window_unfocus", button_pressed)
 
 func _on_Options_Back_pressed():
 	$MainMenu.show()
@@ -204,8 +209,11 @@ func load_options():
 	$OptionsMenu/Buttons/TabContainer/Audio/MusicVolume.value = get_option_value_safely("audio", "music_volume", 0.0, -80, 0)
 	$OptionsMenu/Buttons/TabContainer/Audio/EffectsVolume.value = get_option_value_safely("audio", "effects_volume", 0.0, -80, 0)
 	
-	Global.joypad_display = get_option_value_safely("misc", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS, 0, Global.JOYPAD_DISPLAY_TYPE.size() - 1)
+	Global.joypad_display = get_option_value_safely("controls", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS, 0, Global.JOYPAD_DISPLAY_TYPE.size() - 1)
 	$OptionsMenu/Buttons/TabContainer/Controls/JoypadDisplayType.select(Global.joypad_display)
+	
+	Global.pause_window_unfocus = get_option_value_safely("misc", "pause_window_unfocus", true)
+	$OptionsMenu/Buttons/TabContainer/Misc/PauseUnfocus.pressed = Global.pause_window_unfocus
 	
 	_is_loading_options = false
 

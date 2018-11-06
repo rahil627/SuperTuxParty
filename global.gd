@@ -1,6 +1,5 @@
 extends Node
 
-
 # Information about a player that needs to be saved when a scene change occurs
 class PlayerState:
 	var player_id = 0
@@ -60,6 +59,9 @@ var amount_of_players = 4
 
 # Is true if you exit to menu from inside the game
 var quit_to_menu = false
+
+# Pause game if the window loses focus
+var pause_window_unfocus = true
 
 # Mute game if the window loses focus
 var mute_window_unfocus = true
