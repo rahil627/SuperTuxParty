@@ -1,6 +1,6 @@
 extends Spatial
 
-const MOVEMENT_SPEED = 5 # The speed used for walking to destination
+const MOVEMENT_SPEED = 7 # The speed used for walking to destination
 const GUI_TIMER = 0.2
 
 # The position this node is walking to, used for animation
@@ -28,15 +28,15 @@ func _physics_process(delta):
 			is_walking = true
 		
 		var dir = (destination[0] - translation)
-		translation +=  (MOVEMENT_SPEED * dir.length()) * dir.normalized() * delta;
+		var movement = MOVEMENT_SPEED * dir.normalized() * delta
+		if movement.length_squared() <= dir.length_squared():
+			translation += movement
+		else:
+			translation += dir
 		
 		rotation.y = atan2(dir.normalized().x, dir.normalized().z)
 		
-		if destination.size() > 1:
-			if dir.length() < 0.3:
-				destination.pop_front()
-				$"../Controller".animation_step(player_id)
-		elif dir.length() < 0.01:
+		if dir.length() < 0.01:
 			destination.pop_front()
 			$"../Controller".animation_step(player_id)
 		
