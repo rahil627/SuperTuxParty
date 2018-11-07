@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
+<<<<<<< HEAD:plugins/boards/test/board.tscn
 [ext_resource path="res://plugins/boards/test/board.gd" type="Script" id=1]
 [ext_resource path="res://scenes/board_logic/player_board/player_board.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/board_logic/controller/controller.tscn" type="PackedScene" id=3]
@@ -9,6 +10,18 @@
 [ext_resource path="res://assets/models/still_water/water_material.tres" type="Material" id=7]
 [ext_resource path="res://plugins/boards/test/islands/island1.dae" type="PackedScene" id=8]
 [ext_resource path="res://plugins/boards/test/islands/island2.dae" type="PackedScene" id=9]
+=======
+[ext_resource path="res://boards/test/board.gd" type="Script" id=1]
+[ext_resource path="res://boards/player_board/player_board.tscn" type="PackedScene" id=2]
+[ext_resource path="res://boards/controller/controller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://boards/node/node.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/models/bridge/bridge_mesh.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://assets/models/bridge/bridge_diffuse.png" type="Texture" id=6]
+[ext_resource path="res://boards/test/water/water_material.tres" type="Material" id=7]
+[ext_resource path="res://boards/test/islands/island1.dae" type="PackedScene" id=8]
+[ext_resource path="res://boards/test/islands/island2.dae" type="PackedScene" id=9]
+>>>>>>> Add KDEValley board:boards/test/board.tscn
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

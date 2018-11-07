@@ -25,6 +25,15 @@ Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## plugins/boards/test/bridge
+### bridge_mesh.blend | bridge_mesh.obj | bridge_diffuse.png
+
+Public domain by JamesWhite
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## scenes/board_logic/controller/icons
 ### cake.png
 
@@ -79,14 +88,14 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## plugins/boards/test/bridge
-### bridge_mesh.blend | bridge_mesh.obj | bridge_diffuse.png
+## boards/KDEValley
+### kdevalley.blend | kdevalley.dae
 
-Public domain by JamesWhite
+Copyright © Florian Kothmeier
 
-Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+Copyright 
 
 ## plugins/boards/test/islands
 ### island1.blend | island1.dae | island2.blend | island2.dae
@@ -427,6 +436,23 @@ Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
 License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+### grass.png
+
+Copyright © Lamoot
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/grass-001)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+
+### rock.png
+
+Copyright © Sindwiller
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/generic-rock-texture)
+
+License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+
+## savegames
 ### delete_save.png
 
 Copyright © Godot Engine
