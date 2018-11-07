@@ -52,7 +52,8 @@ func _init():
 # TODO: make output pretty
 func print_loaded_characters():
 	print("Loaded characters:")
-	print(characters)
+	for i in characters:
+		print("\t" + i)
 
 func get_loaded_characters():
 	return characters

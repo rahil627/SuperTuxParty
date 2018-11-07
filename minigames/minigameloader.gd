@@ -76,24 +76,20 @@ func _init():
 	print("Loading minigames finished")
 	print_loaded_minigames()
 
-func fancy_print(array):
-	var s = "["
-	for m in array:
-		s += parse_file(m).name
-		if m != array.back():
-			s += ", "
-	print(s + "]")
-
 func print_loaded_minigames():
 	print("Loaded minigames:")
-	print("1v3:")
-	fancy_print(minigames_1v3)
-	print("2v2:")
-	fancy_print(minigames_2v2)
-	print("Duel:")
-	fancy_print(minigames_duel)
-	print("FFA:")
-	fancy_print(minigames_ffa)
+	print("\t1v3:")
+	for i in minigames_1v3:
+		print("\t\t" + parse_file(i).name)
+	print("\t2v2:")
+	for i in minigames_2v2:
+		print("\t\t" + parse_file(i).name)
+	print("\tDuel:")
+	for i in minigames_duel:
+		print("\t\t" + parse_file(i).name)
+	print("\tFFA:")
+	for i in minigames_ffa:
+		print("\t\t" + parse_file(i).name)
 
 func parse_json_file(file):
 	var f = File.new()

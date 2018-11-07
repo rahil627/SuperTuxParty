@@ -41,7 +41,8 @@ func _init():
 # TODO: make output pretty
 func print_loaded_boards():
 	print("Loaded boards:")
-	print(boards)
+	for i in boards:
+		print("\t" + i)
 
 func get_loaded_boards():
 	return boards
