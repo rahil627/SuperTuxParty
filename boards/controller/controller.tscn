@@ -1286,6 +1286,7 @@ stretch_mode = 4
 
 [node name="Dice" type="Label" parent="Screen" index="4"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1309,6 +1310,7 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", 
 
 [node name="Roll" type="Button" parent="Screen" index="5"]
 
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -1663,7 +1665,6 @@ _sections_unfolded = [ "Grow Direction", "Rect" ]
 
 [node name="Splash" type="AnimationPlayer" parent="Screen" index="10"]
 
-editor/display_folded = true
 root_node = NodePath("Background")
 autoplay = ""
 playback_process_mode = 1

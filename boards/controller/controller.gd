@@ -74,8 +74,10 @@ func check_winner():
 			message = "The winner is " + winner.player_name
 		
 		$Screen/Turn.text = message
-		$Screen/Roll.disabled = true
 		$Screen/Dice.text = "Game over!"
+		
+		$Screen/Dice.show()
+		$Screen/Roll.hide()
 
 func _ready():
 	# Give each player a unique id
@@ -128,6 +130,8 @@ func _on_Roll_pressed():
 	if splash_ended or player_turn > players.size():
 		splash_ended = false
 		roll()
+		
+		$Screen/Roll.hide()
 	else:
 		splash_ended = true
 		var image = load(Global.character_loader.get_character_splash(Global.players[player_turn - 1].character)).get_data()
@@ -138,11 +142,11 @@ func _on_Roll_pressed():
 		$Screen/Splash.play("show")
 		
 		if players[player_turn - 1].is_ai:
-			var timer = Timer.new()
-			timer.set_wait_time(1)
-			timer.connect("timeout", self, "_ai_timer_callback", [timer])
-			timer.start()
-			add_child(timer)
+			get_tree().create_timer(1).connect("timeout", self, "_on_Roll_pressed")
+		else:
+			$Screen/Roll.show()
+		
+		$Screen/Dice.hide()
 
 # Roll for the current plyaer
 func roll():
@@ -166,6 +170,7 @@ func roll():
 		
 		# Show which number was rolled
 		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+		$Screen/Dice.show()
 	else:
 		# All players have had their turn, goto mini-game
 		var blue_team = []
@@ -414,8 +419,6 @@ func animation_ended(player_id):
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
 					$Screen/GetCake.show()
-				TURN_ACTION.CHOOSE_PATH:
-					pass
 				TURN_ACTION.CHOOSE_OPPONENT:
 					player_turn += 1
 					yield(minigame_duel_reward_animation(), "completed")
@@ -434,16 +437,11 @@ func animation_ended(player_id):
 		else:
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
-					
 					var cakes = int(player.cookies / COOKIES_FOR_CAKE)
-					
 					player.cakes += cakes
 					player.cookies -= COOKIES_FOR_CAKE * cakes
-					
 				TURN_ACTION.CHOOSE_PATH:
-					
 					next_node = player.space.next[randi() % player.space.next.size()]
-					
 				TURN_ACTION.CHOOSE_OPPONENT:
 					player_turn += 1
 					var players = get_tree().get_nodes_in_group("players")
@@ -455,11 +453,7 @@ func animation_ended(player_id):
 					show_minigame_info()
 					return
 			
-			var timer = Timer.new()
-			timer.set_wait_time(1)
-			timer.connect("timeout", self, "_ai_continue_callback", [timer])
-			timer.start()
-			add_child(timer)
+			get_tree().create_timer(1).connect("timeout", self, "_ai_continue_callback")
 
 func animation_step(player_id):
 	if player_id != player_turn:
@@ -472,17 +466,11 @@ func animation_step(player_id):
 	else:
 		$Screen/Stepcounter.text = ""
 
-func _ai_continue_callback(timer):
-	timer.queue_free()
-	
+func _ai_continue_callback():
 	wait_for_animation = false
 	end_turn = true
 	
 	do_step(players[player_turn - 1], steps_remaining)
-
-func _ai_timer_callback(timer):
-	timer.queue_free()
-	_on_Roll_pressed()
 
 func _process(delta):
 	if camera_focus != null:
@@ -573,6 +561,8 @@ func minigame_duel_reward_animation():
 	else:
 		$Screen/DuelReward/Value.text = name
 	
+	$Screen/Dice.hide()
+	
 	$Screen/DuelReward.show()
 	yield(get_tree().create_timer(2), "timeout")
 	$Screen/DuelReward.hide()
@@ -593,6 +583,8 @@ func show_minigame_animation():
 			$Screen/MinigameTypeAnimation.play("2v2")
 		Global.DUEL:
 			$Screen/MinigameTypeAnimation.play("Duel")
+	
+	$Screen/Dice.hide()
 	
 	yield($Screen/MinigameTypeAnimation, "animation_finished")
 
