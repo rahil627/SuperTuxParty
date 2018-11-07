@@ -267,12 +267,21 @@ func _on_Amount_Of_Players_Back_pressed():
 func prepare_player_states():
 	names = []
 	
+	var possible_characters = character_loader.get_loaded_characters()
+	var num_characters = possible_characters.size()
+	if num_characters >= Global.amount_of_players:
+		for child in $SelectionChar/Buttons/VScrollBar/Grid.get_children():
+			if child.disabled:
+				possible_characters.remove(possible_characters.find(child.get_text()))
+	
 	for i in range(1, Global.amount_of_players + 1):
 		if i < current_player:
 			names.push_back(get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
 		else:
-			var possible_characters = character_loader.get_loaded_characters()
-			characters[i - 1] = possible_characters[randi() % possible_characters.size()]
+			var idx = randi() % possible_characters.size()
+			characters[i - 1] = possible_characters[idx]
+			if num_characters >= Global.amount_of_players:
+				possible_characters.remove(idx)
 			names.push_back("%s Bot" % characters[i - 1])
 
 func _on_character_select(target):
@@ -281,6 +290,9 @@ func _on_character_select(target):
 	
 	characters[current_player - 1] = target.get_text()
 	current_player += 1
+	
+	if Global.character_loader.get_loaded_characters().size() >= Global.amount_of_players:
+		target.disabled = true
 	
 	if current_player > human_players:
 		prepare_player_states()
@@ -302,6 +314,10 @@ func _on_SelectionChar_Back_pressed():
 		get_node("PlayerInfo" + var2str(i) + "/Character").text = "Character:"
 		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
 		get_node("PlayerInfo" + var2str(i)).hide()
+	
+	# Reenable all characters
+	for child in $SelectionChar/Buttons/VScrollBar/Grid.get_children():
+		child.disabled = false
 
 #*** Board selection menu ***#
 
@@ -325,6 +341,10 @@ func _on_Selection_Back_pressed():
 	
 	for i in range(1, 5):
 		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
+	
+	# Reenable all characters
+	for child in $SelectionChar/Buttons/VScrollBar/Grid.get_children():
+		child.disabled = false
 	
 	_amount_players_selected()
 
