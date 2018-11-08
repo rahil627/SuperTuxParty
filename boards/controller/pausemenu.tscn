@@ -7,7 +7,6 @@
 [node name="PauseMenu" type="PopupPanel" index="0"]
 
 pause_mode = 2
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -196,7 +195,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="SavegameNameInput" type="PopupDialog" parent="." index="1"]
+[node name="SavegameNameInput" type="WindowDialog" parent="." index="1"]
 
 editor/display_folded = true
 visible = false
@@ -206,8 +205,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
 margin_top = -50.0
-margin_right = 200.0
-margin_bottom = 50.0
+margin_right = 205.0
+margin_bottom = 78.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -215,14 +214,20 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 popup_exclusive = false
-_sections_unfolded = [ "Rect" ]
+window_title = "Save Game"
+resizable = false
+_sections_unfolded = [ "Dialog", "Rect" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SavegameNameInput" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SavegameNameInput" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -230,7 +235,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Label" type="Label" parent="SavegameNameInput/VBoxContainer" index="0"]
 
@@ -238,7 +243,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 400.0
+margin_right = 389.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -254,40 +259,29 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextEdit" type="TextEdit" parent="SavegameNameInput/VBoxContainer" index="1"]
+[node name="LineEdit" type="LineEdit" parent="SavegameNameInput/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 33.0
-margin_right = 400.0
-margin_bottom = 65.0
-rect_min_size = Vector2( 0, 32 )
+margin_right = 389.0
+margin_bottom = 72.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
-mouse_default_cursor_shape = 0
+mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = ""
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
+focus_mode = 2
 context_menu_enabled = false
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
+placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
-caret_moving_by_right_click = true
+caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
 [node name="Button" type="Button" parent="SavegameNameInput/VBoxContainer" index="2"]
@@ -296,9 +290,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 69.0
-margin_right = 400.0
-margin_bottom = 104.0
+margin_top = 76.0
+margin_right = 389.0
+margin_bottom = 111.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -307,6 +301,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -325,8 +320,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
 margin_top = -50.0
-margin_right = 200.0
-margin_bottom = 50.0
+margin_right = 210.0
+margin_bottom = 20.0
 rect_min_size = Vector2( 200, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -349,7 +344,13 @@ _sections_unfolded = [ "Dialog", "Rect" ]
 
 [connection signal="pressed" from="Container/ExitDesktop" to="." method="_on_ExitDesktop_pressed"]
 
-[connection signal="pressed" from="SavegameNameInput/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="popup_hide" from="SavegameNameInput" to="SavegameNameInput/VBoxContainer/LineEdit" method="clear"]
+
+[connection signal="text_changed" from="SavegameNameInput/VBoxContainer/LineEdit" to="." method="_on_Savegame_LineEdit_text_changed"]
+
+[connection signal="text_entered" from="SavegameNameInput/VBoxContainer/LineEdit" to="." method="_save_game"]
+
+[connection signal="pressed" from="SavegameNameInput/VBoxContainer/Button" to="." method="_on_Savegame_Button_pressed"]
 
 [connection signal="confirmed" from="OverrideSave" to="." method="_on_OverrideSave_confirmed"]
 
