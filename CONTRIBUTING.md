@@ -18,8 +18,7 @@ Additionally:
 
 ## Git
 [git-lfs](https://git-lfs.github.com/) is used in this project for handling
-asset files. Tutorial for git-lfs can be found [here]
-(https://www.atlassian.com/git/tutorials/git-lfs).
+asset files. Tutorial for git-lfs can be found [here](https://www.atlassian.com/git/tutorials/git-lfs).
 
 Too clone the repository, simply run:
 - `git clone https://gitlab.com/SuperTuxParty/SuperTuxParty.git`
