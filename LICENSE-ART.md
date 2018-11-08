@@ -2,7 +2,7 @@
 
 Copyright © 2018 Jakob Sinclair
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/control_view/images
 ### down.png | left.png | left_mouse.png | middle_mouse.png | right.png | right_mouse.png | up.png | key_background.png
@@ -13,7 +13,7 @@ key_background.png is a modified version of left.png by Florian Kothmeier
 
 Retrieved from [Open Game Art](https://opengameart.org/content/mouse-buttons-arrow-keys)
 
-License: [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/)
+License: [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### arrowDown.png | arrowLeft.png | arrowRight.png | arrowUp.png | buttonA.png | buttonB.png | buttonL.png | buttonL1.png | buttonL2.png | buttonR.png | buttonR1.png | buttonR2.png | buttonSelect.png | buttonStart.png | buttonX.png | buttonY.png | button1.png | button2.png | button3.png | button4.png | buttonCircle.png | buttonSquare.png | buttonTriangle.png
 
@@ -23,7 +23,7 @@ button4.png, buttonCircle.png, buttonSquare.png and buttonTriangle.png are a mod
 
 Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
 
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## boards/controller/icons
 ### cake.png
@@ -173,7 +173,7 @@ Models modified by Florian Kothmeier 2018
 
 Retrieved from [Github](https://github.com/SirRichard94/low-poly-godette)
 
-License: [CC-BY 3.0](https://github.com/SirRichard94/low-poly-godette/blob/master/License)
+License: [CC BY 3.0](https://github.com/SirRichard94/low-poly-godette/blob/master/License)
 
 ### splash.png
 
@@ -225,7 +225,7 @@ Public Domain by Skitterphoto
 
 Retrieved from [pexels.com](https://www.pexels.com/photo/air-atmosphere-blue-blue-sky-675977)
 
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## icons
 ### icon.\* | icon-\*
@@ -234,6 +234,20 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## minigames/bowling
+### screenshot.png
+
+Copyright © Michael Alexsander Silva Dias
+
+License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+## minigames/harvest_food
+### screenshot.png
+
+Copyright © Jakob Sinclair
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ## minigames/harvest_food/fence
 ### fence.escn | picketfence_0.blend
 
@@ -241,7 +255,7 @@ Exported model of Public Domain Model by WeaponGuy
 
 Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
 
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### BarrelWoodUV.jpg
 
@@ -249,20 +263,20 @@ Texture of fence model by WeaponGuy
 
 Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
 
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## minigames/harvest_food/plants
 ### carrot.blend
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### carrot_rotten.blend
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/hurdle
 ### green_point_park_2k.hdr
@@ -277,7 +291,7 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/hurdle/ground
 ### asphalt_\*
@@ -292,14 +306,14 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 
 Copyright © Jakob Sinclair
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/hurdle/hurdles/normal_hurdle
 ### hurdle_model.escn | hurdle.blend
 
 Copyright © Jakob Sinclair
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### plastic_\* | metal_\*
 
@@ -316,7 +330,7 @@ Copyright © yethiel
 
 Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### trashcan_diffuse.png | trashcan_spec.png | trashcan_normal.png
 
@@ -324,35 +338,35 @@ Public domain textures for the trashcan model by yethiel
 
 Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/hurdle/powerups/landmine
 ### landmine.escn | landmine.blend
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/hurdle/powerups/star
 ### star.escn | star.blend
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/knock_off
 ### screenshot.png
 
 Coyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/knock_off/ice
 ### ice.escn | iceberg.blend
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### IceC_S.jpg | IceC_N.jpg
 
@@ -362,28 +376,28 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-ba
 
 IceC_S.jpg modified by Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/kernel_compiling
 ### screenshot.png
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/kernel_compiling/battery
 ### battery.blend | tex_empty.png | tex_full.png
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/kernel_compiling/screen
 ### screen.blend | screen.escn
 
 Copyright © Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## minigames/knock_off/player_ball_material
 ### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
@@ -402,7 +416,7 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/snow-and-ice-ba
 
 SnowB_S.jpg modified by Florian Kothmeier
 
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/textures/
 ### water_diffuse.png
@@ -420,4 +434,4 @@ Copyright © Godot Engine
 
 Retrieved from [github.com](https://github.com/godotengine/godot-design/blob/master/engine/icons/original/icon_remove.png)
 
-License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0)
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
