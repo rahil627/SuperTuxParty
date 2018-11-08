@@ -43,6 +43,10 @@ func read_savegames():
 			continue
 		
 		var savegame = parse_json(file.get_as_text())
+		if typeof(savegame) != TYPE_DICTIONARY:
+			print("File '%s' is not a valid save" % (SAVEGAME_DIRECTORY + filename))
+			continue
+		
 		file.close()
 		
 		savegame = dict2inst(savegame)
@@ -78,14 +82,15 @@ func save(savegame):
 		print("Failed to open file '%s'" % filename)
 		return false
 	
-	var result
+	var save_dict = inst2dict(savegame)
 	
-	# inst2dict is not recursive => first serialize the players
-	for i in range(savegame.players.size()):
-		savegame.players[i] = inst2dict(savegame.players[i])
-	result = inst2dict(savegame)
+	# 'inst2dict()' is not recursive. Serialize the players.
+	var players_serialized = []
+	for i in savegame.players.size():
+		players_serialized.append(inst2dict(savegame.players[i]))
+	save_dict["players"] = players_serialized
 	
-	file.store_string(to_json(result))
+	file.store_string(to_json(save_dict))
 	file.close()
 	
 	# Sync the savegames
