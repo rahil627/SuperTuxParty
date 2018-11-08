@@ -241,6 +241,13 @@ Copyright © Michael Alexsander Silva Dias
 
 License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
+## minigames/harvest_food
+### screenshot.png
+
+Copyright © Jakob Sinclair
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ## minigames/harvest_food/fence
 ### fence.escn | picketfence_0.blend
 
