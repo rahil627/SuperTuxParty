@@ -35,6 +35,20 @@ func _unhandled_input(event):
 					popup()
 					get_tree().paused = true
 
+func _save_game(save_name):
+	if save_name == "":
+		return
+	
+	Global.current_savegame.name = save_name
+	for savegame in Global.savegame_loader.savegames:
+		if savegame.name == save_name:
+			$OverrideSave.popup()
+			return
+	
+	Global.save_game()
+	$SavegameNameInput.hide()
+	_on_Resume_pressed()
+
 func _on_Resume_pressed():
 	get_tree().paused = false
 	self.hide()
@@ -56,18 +70,11 @@ func _on_SaveGame_pressed():
 		Global.save_game()
 		_on_Resume_pressed()
 
-func _on_Button_pressed():
-	var text = $SavegameNameInput/VBoxContainer/TextEdit.text
-	if text.length() > 0:
-		Global.current_savegame.name = text
-		for savegame in Global.savegame_loader.savegames:
-			if savegame.name == text:
-				$OverrideSave.popup()
-				return
-		
-		Global.save_game()
-		$SavegameNameInput.hide()
-		_on_Resume_pressed()
+func _on_Savegame_LineEdit_text_changed(new_text):
+	$SavegameNameInput/VBoxContainer/Button.disabled = new_text.empty()
+
+func _on_Savegame_Button_pressed():
+	_save_game($SavegameNameInput/VBoxContainer/LineEdit.text)
 
 func _on_OverrideSave_confirmed():
 	Global.save_game()
