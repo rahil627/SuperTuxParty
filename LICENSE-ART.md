@@ -234,6 +234,13 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## minigames/bowling
+### screenshot.png
+
+Copyright © Michael Alexsander Silva Dias
+
+License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
 ## minigames/harvest_food/fence
 ### fence.escn | picketfence_0.blend
 
