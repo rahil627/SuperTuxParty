@@ -169,6 +169,7 @@ prev_nodes = [ NodePath("../Node1") ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.582, 7, 15.8086 )
 _sections_unfolded = [ "Transform" ]
+type = 1
 next_nodes = [ NodePath("../Node4") ]
 prev_nodes = [ NodePath("../Node2"), NodePath("../Node41") ]
 
@@ -181,6 +182,7 @@ prev_nodes = [ NodePath("../Node3") ]
 [node name="Node5" parent="Nodes" index="5" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3153, 6.94616, 7.17693 )
+type = 3
 next_nodes = [ NodePath("../Node6") ]
 prev_nodes = [ NodePath("../Node4") ]
 
@@ -199,13 +201,13 @@ prev_nodes = [ NodePath("../Node6") ]
 [node name="Node8" parent="Nodes" index="8" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8655, 13.2604, 0 )
+type = 1
 next_nodes = [ NodePath("../Node9") ]
 prev_nodes = [ NodePath("../Node7") ]
 
 [node name="Node9" parent="Nodes" index="9" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9674, 15.914, 1.96283 )
-potential_cake = true
 next_nodes = [ NodePath("../Node10") ]
 prev_nodes = [ NodePath("../Node8") ]
 
@@ -218,18 +220,21 @@ prev_nodes = [ NodePath("../Node9") ]
 [node name="Node11" parent="Nodes" index="11" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45687, 15.901, -2.04827 )
+type = 1
 next_nodes = [ NodePath("../Node12") ]
 prev_nodes = [ NodePath("../Node10") ]
 
 [node name="Node12" parent="Nodes" index="12" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04156, 16.0105, -1.65163 )
+type = 3
 next_nodes = [ NodePath("../Node13") ]
 prev_nodes = [ NodePath("../Node11") ]
 
 [node name="Node13" parent="Nodes" index="13" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3725, 15.951, 0 )
+potential_cake = true
 next_nodes = [ NodePath("../Node14") ]
 prev_nodes = [ NodePath("../Node12") ]
 
@@ -242,6 +247,7 @@ prev_nodes = [ NodePath("../Node13") ]
 [node name="Node15" parent="Nodes" index="15" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.1179, 11.5202, 0 )
+type = 1
 next_nodes = [ NodePath("../Node16") ]
 prev_nodes = [ NodePath("../Node14") ]
 
@@ -266,6 +272,7 @@ prev_nodes = [ NodePath("../Node17") ]
 [node name="Node19" parent="Nodes" index="19" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0704, 6.58536, 10.5099 )
+type = 1
 next_nodes = [ NodePath("../Node20"), NodePath("../Node25") ]
 prev_nodes = [ NodePath("../Node18") ]
 
@@ -284,6 +291,7 @@ prev_nodes = [ NodePath("../Node20") ]
 [node name="Node22" parent="Nodes" index="22" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.11044, 6.5669, 8.12328 )
+type = 1
 next_nodes = [ NodePath("../Node23") ]
 prev_nodes = [ NodePath("../Node21") ]
 
@@ -296,6 +304,7 @@ prev_nodes = [ NodePath("../Node22") ]
 [node name="Node24" parent="Nodes" index="24" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1333, 6.68137, 7.40871 )
+type = 3
 next_nodes = [ NodePath("../Node1") ]
 prev_nodes = [ NodePath("../Node23") ]
 
@@ -308,6 +317,7 @@ prev_nodes = [ NodePath("../Node19") ]
 [node name="Node26" parent="Nodes" index="26" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8288, 6.57946, 32.0431 )
+type = 1
 next_nodes = [ NodePath("../Node27") ]
 prev_nodes = [ NodePath("../Node25") ]
 
@@ -326,6 +336,7 @@ prev_nodes = [ NodePath("../Node27") ]
 [node name="Node29" parent="Nodes" index="29" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.3806, 6.50242, 53.9706 )
+type = 1
 next_nodes = [ NodePath("../Node30") ]
 prev_nodes = [ NodePath("../Node28") ]
 
@@ -344,6 +355,7 @@ prev_nodes = [ NodePath("../Node30") ]
 [node name="Node32" parent="Nodes" index="32" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3571, 6.53406, 57.5745 )
+type = 1
 next_nodes = [ NodePath("../Node33") ]
 prev_nodes = [ NodePath("../Node31") ]
 
@@ -356,12 +368,14 @@ prev_nodes = [ NodePath("../Node32") ]
 [node name="Node34" parent="Nodes" index="34" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51243, 6.49873, 58.1131 )
+potential_cake = true
 next_nodes = [ NodePath("../Node35") ]
 prev_nodes = [ NodePath("../Node33") ]
 
 [node name="Node35" parent="Nodes" index="35" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21381, 6.5229, 55.3016 )
+type = 1
 next_nodes = [ NodePath("../Node36") ]
 prev_nodes = [ NodePath("../Node34") ]
 
@@ -386,6 +400,7 @@ prev_nodes = [ NodePath("../Node37") ]
 [node name="Node39" parent="Nodes" index="39" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6785, 6.46242, 47.4022 )
+type = 1
 next_nodes = [ NodePath("../Node40") ]
 prev_nodes = [ NodePath("../Node38") ]
 
@@ -410,6 +425,8 @@ prev_nodes = [ NodePath("../Node25") ]
 [node name="Node43" parent="Nodes" index="43" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2651, 6.63596, 38.5346 )
+type = 3
+potential_cake = true
 next_nodes = [ NodePath("../Node44") ]
 prev_nodes = [ NodePath("../Node42") ]
 
@@ -428,6 +445,7 @@ prev_nodes = [ NodePath("../Node44") ]
 [node name="Node46" parent="Nodes" index="46" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.909, 6.49943, 30.0195 )
+type = 1
 next_nodes = [ NodePath("../Node41") ]
 prev_nodes = [ NodePath("../Node45") ]
 
