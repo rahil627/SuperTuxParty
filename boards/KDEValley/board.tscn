@@ -61,8 +61,6 @@ distance_fade_enable = false
 
 [node name="Spatial" type="Spatial" index="0"]
 
-editor/display_folded = true
-
 [node name="Background" parent="." index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
@@ -101,19 +99,53 @@ skeleton = NodePath("..")
 material/0 = SubResource( 1 )
 _sections_unfolded = [ "Transform", "material" ]
 
-[node name="Controller" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Bridge3" type="MeshInstance" parent="." index="3"]
+
+transform = Transform( 1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 35.1897, 6.86266, 22.6938 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 1 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Bridge4" type="MeshInstance" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6822, 6.86266, 22.6938 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = SubResource( 1 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="Controller" parent="." index="5" instance=ExtResource( 4 )]
 
 start_node = NodePath("../Nodes/Node")
 
-[node name="Player1" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Player1" parent="." index="6" instance=ExtResource( 5 )]
 
-[node name="Player2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Player2" parent="." index="7" instance=ExtResource( 5 )]
 
-[node name="Player3" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Player3" parent="." index="8" instance=ExtResource( 5 )]
 
-[node name="Player4" parent="." index="7" instance=ExtResource( 5 )]
+[node name="Player4" parent="." index="9" instance=ExtResource( 5 )]
 
-[node name="Nodes" type="Spatial" parent="." index="8"]
+[node name="Nodes" type="Spatial" parent="." index="10"]
 
 [node name="Node" parent="Nodes" index="0" instance=ExtResource( 6 )]
 
@@ -135,10 +167,10 @@ prev_nodes = [ NodePath("../Node1") ]
 
 [node name="Node3" parent="Nodes" index="3" instance=ExtResource( 6 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4534, 7, 12.5583 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.582, 7, 15.8086 )
 _sections_unfolded = [ "Transform" ]
 next_nodes = [ NodePath("../Node4") ]
-prev_nodes = [ NodePath("../Node2") ]
+prev_nodes = [ NodePath("../Node2"), NodePath("../Node41") ]
 
 [node name="Node4" parent="Nodes" index="4" instance=ExtResource( 6 )]
 
@@ -234,7 +266,7 @@ prev_nodes = [ NodePath("../Node17") ]
 [node name="Node19" parent="Nodes" index="19" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0704, 6.58536, 10.5099 )
-next_nodes = [ NodePath("../Node20") ]
+next_nodes = [ NodePath("../Node20"), NodePath("../Node25") ]
 prev_nodes = [ NodePath("../Node18") ]
 
 [node name="Node20" parent="Nodes" index="20" instance=ExtResource( 6 )]
@@ -267,7 +299,139 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1333, 6.68137, 7.40871 )
 next_nodes = [ NodePath("../Node1") ]
 prev_nodes = [ NodePath("../Node23") ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="9"]
+[node name="Node25" parent="Nodes" index="25" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7209, 6.59502, 30.6662 )
+next_nodes = [ NodePath("../Node26"), NodePath("../Node42") ]
+prev_nodes = [ NodePath("../Node19") ]
+
+[node name="Node26" parent="Nodes" index="26" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8288, 6.57946, 32.0431 )
+next_nodes = [ NodePath("../Node27") ]
+prev_nodes = [ NodePath("../Node25") ]
+
+[node name="Node27" parent="Nodes" index="27" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1506, 6.47996, 34.9776 )
+next_nodes = [ NodePath("../Node28") ]
+prev_nodes = [ NodePath("../Node26") ]
+
+[node name="Node28" parent="Nodes" index="28" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4396, 6.52417, 41.8504 )
+next_nodes = [ NodePath("../Node29") ]
+prev_nodes = [ NodePath("../Node27") ]
+
+[node name="Node29" parent="Nodes" index="29" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.3806, 6.50242, 53.9706 )
+next_nodes = [ NodePath("../Node30") ]
+prev_nodes = [ NodePath("../Node28") ]
+
+[node name="Node30" parent="Nodes" index="30" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.7663, 6.49195, 61.2349 )
+next_nodes = [ NodePath("../Node31") ]
+prev_nodes = [ NodePath("../Node29") ]
+
+[node name="Node31" parent="Nodes" index="31" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.881, 6.59052, 62.546 )
+next_nodes = [ NodePath("../Node32") ]
+prev_nodes = [ NodePath("../Node30") ]
+
+[node name="Node32" parent="Nodes" index="32" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3571, 6.53406, 57.5745 )
+next_nodes = [ NodePath("../Node33") ]
+prev_nodes = [ NodePath("../Node31") ]
+
+[node name="Node33" parent="Nodes" index="33" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3207, 6.4805, 59.0873 )
+next_nodes = [ NodePath("../Node34") ]
+prev_nodes = [ NodePath("../Node32") ]
+
+[node name="Node34" parent="Nodes" index="34" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51243, 6.49873, 58.1131 )
+next_nodes = [ NodePath("../Node35") ]
+prev_nodes = [ NodePath("../Node33") ]
+
+[node name="Node35" parent="Nodes" index="35" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21381, 6.5229, 55.3016 )
+next_nodes = [ NodePath("../Node36") ]
+prev_nodes = [ NodePath("../Node34") ]
+
+[node name="Node36" parent="Nodes" index="36" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8342, 6.64277, 58.9373 )
+next_nodes = [ NodePath("../Node37") ]
+prev_nodes = [ NodePath("../Node35") ]
+
+[node name="Node37" parent="Nodes" index="37" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6529, 6.73244, 64.4418 )
+next_nodes = [ NodePath("../Node38") ]
+prev_nodes = [ NodePath("../Node36") ]
+
+[node name="Node38" parent="Nodes" index="38" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4777, 6.59334, 58.3242 )
+next_nodes = [ NodePath("../Node39") ]
+prev_nodes = [ NodePath("../Node37") ]
+
+[node name="Node39" parent="Nodes" index="39" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6785, 6.46242, 47.4022 )
+next_nodes = [ NodePath("../Node40") ]
+prev_nodes = [ NodePath("../Node38") ]
+
+[node name="Node40" parent="Nodes" index="40" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.093, 6.48792, 36.8902 )
+next_nodes = [ NodePath("../Node41") ]
+prev_nodes = [ NodePath("../Node39") ]
+
+[node name="Node41" parent="Nodes" index="41" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5729, 6.48352, 29.3387 )
+next_nodes = [ NodePath("../Node3") ]
+prev_nodes = [ NodePath("../Node40"), NodePath("../Node46") ]
+
+[node name="Node42" parent="Nodes" index="42" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1435, 6.57946, 33.9416 )
+next_nodes = [ NodePath("../Node43") ]
+prev_nodes = [ NodePath("../Node25") ]
+
+[node name="Node43" parent="Nodes" index="43" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2651, 6.63596, 38.5346 )
+next_nodes = [ NodePath("../Node44") ]
+prev_nodes = [ NodePath("../Node42") ]
+
+[node name="Node44" parent="Nodes" index="44" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72485, 6.47892, 39.8479 )
+next_nodes = [ NodePath("../Node45") ]
+prev_nodes = [ NodePath("../Node43") ]
+
+[node name="Node45" parent="Nodes" index="45" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1485, 6.55598, 32.6421 )
+next_nodes = [ NodePath("../Node46") ]
+prev_nodes = [ NodePath("../Node44") ]
+
+[node name="Node46" parent="Nodes" index="46" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.909, 6.49943, 30.0195 )
+next_nodes = [ NodePath("../Node41") ]
+prev_nodes = [ NodePath("../Node45") ]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="11"]
 
 transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 38.1499, 34.4648 )
 layers = 1
