@@ -4,7 +4,7 @@ Copyright © 2018 Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## assets/control_view/images
+## assets/textures/controls
 ### down.png | left.png | left_mouse.png | middle_mouse.png | right.png | right_mouse.png | up.png | key_background.png
 
 Public domain by qubodup
@@ -25,7 +25,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## boards/controller/icons
+## scenes/board_logic/controller/icons
 ### cake.png
 
 Public Domain by maruki
@@ -54,21 +54,21 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## boards/node
+## scenes/board_logic/node
 ### node.escn
 
 Copyright © Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## boards/node/arrow
+## scenes/board_logic/node/arrow
 ### arrow.png
 
 Copyright © 2018 Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## boards/node/material
+## scenes/board_logic/node/material
 ### tile_blue_col.jpg | tile_red_col.png | tile_yellow_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
 
 Public Domain by StruffelProductions
@@ -79,7 +79,7 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## boards/test/bridge
+## plugins/boards/test/bridge
 ### bridge_mesh.blend | bridge_mesh.obj | bridge_diffuse.png
 
 Public domain by JamesWhite
@@ -88,7 +88,7 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## boards/test/islands
+## plugins/boards/test/islands
 ### island1.blend | island1.dae | island2.blend | island2.dae
 
 Copyright © Florian Kothmeier
@@ -103,7 +103,7 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/sand-texture-pack)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## characters/Tux
+## plugins/characters/Tux
 ### character.dae | tux_texture.png | tux.blend | tux.escn
 
 Copyright © 2010 durmieu 
@@ -120,7 +120,7 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## characters/Green Tux
+## plugins/characters/Green Tux
 ### character.escn | tux.escn
 
 Copyright © 2010 durmieu 
@@ -147,7 +147,7 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## characters/Beastie
+## plugins/characters/Beastie
 ### beastie_tex.png | beastie.blend | beastie.dae | character.escn
 
 Copyright © 2010 durmieu 
@@ -164,7 +164,7 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## characters/Godette
+## plugins/characters/Godette
 ### palette.png | godete_palette.svg | godot_chan.blend | godot_chan_one_object.blend | godot_chan.dae
 
 Copyright © SirRichard94
@@ -181,7 +181,7 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## fonts
+## assets/fonts
 ### Boogaloo-Regular.ttf
 Copyright (c) 2011, John Vargas Beltr�n� (www.johnvargasbeltran.com|john.vargasbeltran@gmail.com),
 with Reserved Font Name Boogaloo.
@@ -190,9 +190,9 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL
 
-See fonts/OFL for full license.
+See assets/fonts/OFL for full license.
 
-## fonts/IBM-Plex-Sans/
+## assets/fonts/IBM-Plex-Sans/
 Copyright (c) 2018, IBM
 v1.1.6 Retrieved from https://github.com/IBM/plex/releases
 
@@ -200,9 +200,9 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL
 
-See fonts/OFL for full license.
+See assets/fonts/OFL for full license.
 
-## assets/blender_files/icon
+## assets/icons/blender
 ### icon.blend
 
 Copyright © 2018 Florian Kothmeier
@@ -227,28 +227,28 @@ Retrieved from [pexels.com](https://www.pexels.com/photo/air-atmosphere-blue-blu
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## icons
+## assets/icons
 ### icon.\* | icon-\*
 
 Copyright © 2018 Florian Kothmeier 
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/bowling
+## plugins/minigames/bowling
 ### screenshot.png
 
 Copyright © Michael Alexsander Silva Dias
 
 License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
-## minigames/harvest_food
+## plugins/minigames/harvest_food
 ### screenshot.png
 
 Copyright © Jakob Sinclair
 
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-## minigames/harvest_food/fence
+## assets/models/fence
 ### fence.escn | picketfence_0.blend
 
 Exported model of Public Domain Model by WeaponGuy
@@ -265,7 +265,7 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fe
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## minigames/harvest_food/plants
+## plugins/minigames/harvest_food/plants
 ### carrot.blend
 
 Copyright © Florian Kothmeier
@@ -278,7 +278,7 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/hurdle
+## plugins/minigames/hurdle
 ### green_point_park_2k.hdr
 
 Copyright © 2016 Greg Zaal
@@ -293,7 +293,7 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/hurdle/ground
+## plugins/minigames/hurdle/ground
 ### asphalt_\*
 
 Public Domain by StruffelProductions
@@ -308,7 +308,7 @@ Copyright © Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/hurdle/hurdles/normal_hurdle
+## plugins/minigames/hurdle/hurdles/normal_hurdle
 ### hurdle_model.escn | hurdle.blend
 
 Copyright © Jakob Sinclair
@@ -323,7 +323,7 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## minigames/hurdle/hurdles/trashcan
+## plugins/minigames/hurdle/hurdles/trashcan
 ### trashcan.escn | trashcan.blend
 
 Copyright © yethiel
@@ -340,28 +340,28 @@ Retrieved from [Open Game Art](https://opengameart.org/content/trashcan)
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/hurdle/powerups/landmine
+## plugins/minigames/hurdle/powerups/landmine
 ### landmine.escn | landmine.blend
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/hurdle/powerups/star
+## plugins/minigames/hurdle/powerups/star
 ### star.escn | star.blend
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/knock_off
+## plugins/minigames/knock_off
 ### screenshot.png
 
 Coyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/knock_off/ice
+## assets/models/ice
 ### ice.escn | iceberg.blend
 
 Copyright © Florian Kothmeier
@@ -378,28 +378,28 @@ IceC_S.jpg modified by Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/kernel_compiling
+## plugins/minigames/kernel_compiling
 ### screenshot.png
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/kernel_compiling/battery
+## plugins/minigames/kernel_compiling/battery
 ### battery.blend | tex_empty.png | tex_full.png
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/kernel_compiling/screen
+## assets/models/screen
 ### screen.blend | screen.escn
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## minigames/knock_off/player_ball_material
+## plugins/minigames/knock_off/player_ball_material
 ### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
 
 Public Domain by StruffelProductions
@@ -418,7 +418,7 @@ SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## assets/textures/
+## assets/textures
 ### water_diffuse.png
 
 Public Domain by Bastiaan Olij
@@ -427,7 +427,6 @@ Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
 License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## savegames
 ### delete_save.png
 
 Copyright © Godot Engine

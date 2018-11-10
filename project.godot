@@ -11,13 +11,13 @@ config_version=3
 [application]
 
 config/name="Super Tux Party"
-run/main_scene="res://menu/main_menu.tscn"
-config/icon="res://icons/icon-smallest.png"
+run/main_scene="res://scenes/menus/main_menu.tscn"
+config/icon="res://assets/icons/icon-smallest.png"
 
 [autoload]
 
-Utility="*res://utility.gd"
-Global="*res://global.gd"
+Global="*res://scripts/global.gd"
+Utility="*res://scripts/utility.gd"
 
 [debug]
 
@@ -122,4 +122,4 @@ load_plugins=false
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://assets/defaults/default_env.tres"

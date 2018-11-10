@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/board_logic/player_board/player_board.gd" type="Script" id=1]
+
+
+
+[node name="Player" type="Spatial" index="0" groups=[
+"players",
+]]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Model" type="Spatial" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+

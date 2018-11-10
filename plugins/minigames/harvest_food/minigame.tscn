@@ -1,0 +1,646 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://plugins/minigames/harvest_food/minigame.gd" type="Script" id=1]
+[ext_resource path="res://plugins/minigames/harvest_food/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/models/fence/fence.tscn" type="PackedScene" id=5]
+
+
+
+
+
+
+
+[sub_resource type="PlaneMesh" id=1]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 10, 10 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 5, 0.1, 5 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 0.25, 0.1, 0.25 )
+
+[node name="Spatial" type="Spatial" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="." index="0"]
+
+transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -5, 3, 0 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2" type="Camera" parent="." index="1"]
+
+transform = Transform( -2.8213e-07, -0.258819, 0.965926, 0, 0.965926, 0.258819, -1, 7.30206e-08, -2.72517e-07, 4, 1.5, 0 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ground" type="StaticBody" parent="." index="2"]
+
+editor/display_folded = true
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground" index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="Player1" parent="." index="3" instance=ExtResource( 2 )]
+
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0.44, -1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player2" parent="." index="4" instance=ExtResource( 2 )]
+
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0.44, -1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player3" parent="." index="5" instance=ExtResource( 2 )]
+
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0.44, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player4" parent="." index="6" instance=ExtResource( 2 )]
+
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0.44, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="7"]
+
+transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -3.94703, 2.45993, 0.184541 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area1" type="Area" parent="." index="8"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area1" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2" type="Area" parent="." index="9"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area2" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area3" type="Area" parent="." index="10"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area3" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area4" type="Area" parent="." index="11"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area4" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Timer" type="Timer" parent="." index="12"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = true
+autostart = false
+
+[node name="Screen" type="Control" parent="." index="13"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Player1Name" type="Label" parent="Screen" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 66.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_constants", "custom_fonts" ]
+
+[node name="Player1" type="Label" parent="Screen" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 63.0
+margin_right = 48.0
+margin_bottom = 121.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_constants", "custom_fonts" ]
+
+[node name="Player2Name" type="Label" parent="Screen" index="2"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -48.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 66.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Player2" type="Label" parent="Screen" index="3"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -48.0
+margin_top = 63.0
+margin_right = -8.0
+margin_bottom = 121.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin" ]
+
+[node name="Player3Name" type="Label" parent="Screen" index="4"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -66.0
+margin_right = 48.0
+margin_bottom = -8.0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = -1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin" ]
+
+[node name="Player3" type="Label" parent="Screen" index="5"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -123.0
+margin_right = 48.0
+margin_bottom = -65.0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Player4Name" type="Label" parent="Screen" index="6"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -66.0
+margin_right = -8.0
+margin_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Player4" type="Label" parent="Screen" index="7"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -123.0
+margin_right = -8.0
+margin_bottom = -65.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_constants", "custom_fonts" ]
+
+[node name="Time" type="Label" parent="Screen" index="8"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -29.0
+margin_top = 16.0
+margin_right = 29.0
+margin_bottom = 58.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+text = "5.0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
+
+[node name="Message" type="Label" parent="Screen" index="9"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -500.0
+margin_top = 76.0
+margin_right = 500.0
+margin_bottom = 146.0
+rect_min_size = Vector2( 1000, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="PauseMenu" parent="Screen" index="10" instance=ExtResource( 4 )]
+
+visible = false
+
+[node name="Fences" type="Spatial" parent="." index="14"]
+
+editor/display_folded = true
+
+[node name="Fence" parent="Fences" index="0" instance=ExtResource( 5 )]
+
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.51461, 0.536983, -4.49385 )
+
+[node name="Fence2" parent="Fences" index="1" instance=ExtResource( 5 )]
+
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.77198, 0.536983, -4.49385 )
+
+[node name="Fence3" parent="Fences" index="2" instance=ExtResource( 5 )]
+
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.0023495, 0.536983, -4.49385 )
+
+[node name="Fence4" parent="Fences" index="3" instance=ExtResource( 5 )]
+
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.78754, 0.536983, -4.49385 )
+
+[node name="Fence5" parent="Fences" index="4" instance=ExtResource( 5 )]
+
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.5569, 0.536983, -4.49385 )
+
+[node name="Fence6" parent="Fences" index="5" instance=ExtResource( 5 )]
+
+transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -3.54565 )
+
+[node name="Fence7" parent="Fences" index="6" instance=ExtResource( 5 )]
+
+transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -1.77788 )
+
+[node name="Fence8" parent="Fences" index="7" instance=ExtResource( 5 )]
+
+transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -0.0080117 )
+
+[node name="Fence9" parent="Fences" index="8" instance=ExtResource( 5 )]
+
+transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, 1.77062 )
+
+[node name="Fence10" parent="Fences" index="9" instance=ExtResource( 5 )]
+
+transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, 3.55992 )
+
+[node name="Fence11" parent="Fences" index="10" instance=ExtResource( 5 )]
+
+transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, -3.42424, 0.536983, 4.37628 )
+
+[node name="Fence12" parent="Fences" index="11" instance=ExtResource( 5 )]
+
+transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, -1.68655, 0.536983, 4.37628 )
+
+[node name="Fence13" parent="Fences" index="12" instance=ExtResource( 5 )]
+
+transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 0.0589688, 0.536983, 4.37628 )
+
+[node name="Fence14" parent="Fences" index="13" instance=ExtResource( 5 )]
+
+transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 1.80712, 0.536983, 4.37628 )
+
+[node name="Fence15" parent="Fences" index="14" instance=ExtResource( 5 )]
+
+transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 3.54376, 0.536983, 4.37628 )
+
+[node name="Fence16" parent="Fences" index="15" instance=ExtResource( 5 )]
+
+transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, 3.42397 )
+
+[node name="Fence17" parent="Fences" index="16" instance=ExtResource( 5 )]
+
+transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, 1.65518 )
+
+[node name="Fence18" parent="Fences" index="17" instance=ExtResource( 5 )]
+
+transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -0.0895427 )
+
+[node name="Fence19" parent="Fences" index="18" instance=ExtResource( 5 )]
+
+transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -1.84788 )
+
+[node name="Fence20" parent="Fences" index="19" instance=ExtResource( 5 )]
+
+transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -3.58013 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+
