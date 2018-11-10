@@ -34,6 +34,30 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## assets/models/buildings/Blends
+### *.blend
+Public domain by quaternius
+
+Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## assets/models/buildings/OBJ
+### *.obj
+Public domain by quaternius
+
+Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## assets/models/buildings/Textures
+### *.png
+Public domain by quaternius
+
+Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## scenes/board_logic/controller/icons
 ### cake.png
 
@@ -88,7 +112,7 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## boards/KDEValley
+## boards/KDEValley/landscape
 ### kdevalley.blend | kdevalley.dae
 
 Copyright © Florian Kothmeier
