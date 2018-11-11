@@ -164,7 +164,7 @@ func roll():
 		var player = players[player_turn - 1]
 		camera_focus = player
 		
-		var dice = 3#(randi() % 6) + 1 # Random number between 1 & 6
+		var dice = (randi() % 6) + 1 # Random number between 1 & 6
 		
 		$Screen/Stepcounter.text = var2str(dice)
 		step_count = dice
