@@ -25,7 +25,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## plugins/boards/test/bridge
+## assets/models/bridge
 ### bridge_mesh.blend | bridge_mesh.obj | bridge_diffuse.png
 
 Public domain by JamesWhite
@@ -112,7 +112,7 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## boards/KDEValley/landscape
+## plugins/boards/KDEValley/landscape
 ### kdevalley.blend | kdevalley.dae
 
 Copyright © Florian Kothmeier
