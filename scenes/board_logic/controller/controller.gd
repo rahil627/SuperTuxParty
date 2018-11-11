@@ -459,7 +459,6 @@ func animation_ended(player_id):
 						i += 1
 					
 					$Screen/DuelSelection/Player1.grab_focus()
-					$Screen/DuelSelection/Player1.material.set_shader_param("enable_shader", true)
 					selected_opponent = 1;
 					$Screen/DuelSelection.show()
 		else:
