@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=2]
@@ -612,6 +612,60 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="Shader" id=14]
+
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float outLineSize  = 0.02;
+uniform vec4  outLineColor = vec4(1.0, 1.0, 1.0, 1.0);
+
+uniform bool enable_shader = false;
+
+void fragment()
+{
+    vec4 tcol = texture(TEXTURE, UV);
+    
+    if (enable_shader && tcol.a == 0.0)
+    {
+        if (texture(TEXTURE, UV + vec2(0.0,          outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(0.0,         -outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  0.0)).a          != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, 0.0)).a          != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, -outLineSize)).a != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  -outLineSize)).a != 0.0) 
+            tcol = outLineColor;
+    }
+    
+    COLOR = tcol;
+}"
+
+[sub_resource type="ShaderMaterial" id=15]
+
+render_priority = 0
+shader = SubResource( 14 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
+[sub_resource type="ShaderMaterial" id=16]
+
+render_priority = 0
+shader = SubResource( 14 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
+[sub_resource type="ShaderMaterial" id=17]
+
+render_priority = 0
+shader = SubResource( 14 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
 [node name="Controller" type="Spatial" index="0" groups=[
 "Controller",
 ]]
@@ -624,7 +678,6 @@ show_linking_type = null
 
 [node name="Screen" type="Control" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -2681,7 +2734,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DuelSelection" type="Control" parent="Screen" index="15"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2719,6 +2771,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" type="TextureButton" parent="Screen/DuelSelection" index="1"]
 
+material = SubResource( 15 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2729,7 +2782,12 @@ margin_right = -136.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -2743,6 +2801,7 @@ stretch_mode = 5
 
 [node name="Player2" type="TextureButton" parent="Screen/DuelSelection" index="2"]
 
+material = SubResource( 16 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2753,7 +2812,12 @@ margin_right = 64.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -2764,10 +2828,10 @@ shortcut = null
 group = null
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Rect" ]
 
 [node name="Player3" type="TextureButton" parent="Screen/DuelSelection" index="3"]
 
+material = SubResource( 17 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2778,7 +2842,12 @@ margin_right = 264.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1

@@ -13,6 +13,9 @@ var COOKIES_FOR_CAKE = 30
 # Used internally for selecting a path on the board with buttons
 var selected_id = -1
 
+# Used internally for selecting a duel opponent with buttons
+var selected_opponent = -1;
+
 # Array containing the player nodes
 var players = null 
 
@@ -161,7 +164,7 @@ func roll():
 		var player = players[player_turn - 1]
 		camera_focus = player
 		
-		var dice = (randi() % 6) + 1 # Random number between 1 & 6
+		var dice = 3#(randi() % 6) + 1 # Random number between 1 & 6
 		
 		$Screen/Stepcounter.text = var2str(dice)
 		step_count = dice
@@ -386,6 +389,24 @@ func _unhandled_input(event):
 					selected_id = 0
 			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
 				get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
+		elif end_turn == false and do_action == TURN_ACTION.CHOOSE_OPPONENT and not players[player_turn - 2].is_ai:
+			# Be able to choose path with controller or keyboard
+			if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
+				selected_opponent -= 1
+				
+				if selected_opponent < 1:
+					selected_opponent = 3
+				
+				$Screen/DuelSelection.get_node("Player" + var2str(selected_opponent)).grab_focus()
+			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
+				selected_opponent += 1
+				
+				if selected_opponent > 3:
+					selected_opponent = 1
+				
+				$Screen/DuelSelection.get_node("Player" + var2str(selected_opponent)).grab_focus()
+			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
+				$Screen/DuelSelection.get_node("Player"+var2str(selected_opponent)).pressed()
 	
 	if event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -429,10 +450,17 @@ func animation_ended(player_id):
 					for p in players:
 						var node = $Screen/DuelSelection.get_node("Player"+var2str(i))
 						node.texture_normal = load(Global.character_loader.get_character_splash(Global.players[p.player_id - 1].character))
-						node.connect("pressed", self, "_on_duel_opponent_select", [player.player_id, p.player_id])
 						
+						node.connect("focus_entered", self, "_on_duel_opponent_focus_entered", [node])
+						node.connect("focus_exited", self, "_on_duel_opponent_focus_exited", [node])
+						node.connect("mouse_entered", self, "_on_duel_opponent_mouse_entered", [node])
+						node.connect("mouse_exited", self, "_on_duel_opponent_mouse_exited", [node])
+						node.connect("pressed", self, "_on_duel_opponent_select", [player.player_id, p.player_id])
 						i += 1
 					
+					$Screen/DuelSelection/Player1.grab_focus()
+					$Screen/DuelSelection/Player1.material.set_shader_param("enable_shader", true)
+					selected_opponent = 1;
 					$Screen/DuelSelection.show()
 		else:
 			match do_action:
@@ -675,3 +703,16 @@ func _on_duel_opponent_select(self_id, other_id):
 	$Screen/DuelSelection.hide()
 	yield(show_minigame_animation(), "completed")
 	show_minigame_info()
+
+func _on_duel_opponent_focus_entered(button):
+	button.material.set_shader_param("enable_shader", true)
+
+func _on_duel_opponent_focus_exited(button):
+	button.material.set_shader_param("enable_shader", false)
+
+func _on_duel_opponent_mouse_entered(button):
+	button.material.set_shader_param("enable_shader", true)
+
+func _on_duel_opponent_mouse_exited(button):
+	if not button.has_focus():
+		button.material.set_shader_param("enable_shader", false)
