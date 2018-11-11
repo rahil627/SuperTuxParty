@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://savegames/delete_save.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/textures/delete_save.png" type="Texture" id=2]
+
+
+
 
 [node name="SaveGame" type="HBoxContainer" index="0"]
 

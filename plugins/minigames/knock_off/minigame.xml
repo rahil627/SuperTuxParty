@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<minigame name = "Knock off" scene_path = "res://plugins/minigames/knock_off/minigame.tscn" image_path = "res://plugins/minigames/knock_off/screenshot.png" type = "FFA,2v2,Duel">
+    <description>
+      <en>KNOCK OFF is a game where each player attempts to knock off all opponents off the iceberg.
+Last person standing wins!</en>
+    </description>
+    
+    <used_controls>
+	<control name="up">
+	    <en> Move up </en>
+	</control>
+	<control name="left">
+	    <en> Move left </en>
+	</control>
+	<control name="down">
+	    <en> Move down </en>
+	</control>
+	<control name="right">
+	    <en> Move right </en>
+	</control>
+    </used_controls>
+</minigame>
