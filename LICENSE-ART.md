@@ -476,7 +476,6 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/generic-rock-textur
 
 License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 
-## savegames
 ### delete_save.png
 
 Copyright © Godot Engine
