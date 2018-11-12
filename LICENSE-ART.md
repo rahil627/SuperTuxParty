@@ -119,8 +119,6 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-Copyright 
-
 ## plugins/boards/test/islands
 ### island1.blend | island1.dae | island2.blend | island2.dae
 
