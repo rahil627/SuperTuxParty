@@ -58,7 +58,7 @@ func _on_ExitMenu_pressed():
 	Global.quit_to_menu = true
 	
 	Global.reset_state()
-	Global.goto_scene("res://menu/main_menu.tscn")
+	Global.goto_scene("res://scenes/menus/main_menu.tscn")
 
 func _on_ExitDesktop_pressed():
 	get_tree().quit()
