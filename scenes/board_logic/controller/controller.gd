@@ -5,7 +5,7 @@ const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vec
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
-const CONTROL_HELPER = preload("res://scripts/controlhelper.gd")
+const CONTROL_HELPER = preload("res://scripts/control_helper.gd")
 const NODE = preload("res://scenes/board_logic/node/node.gd")
 
 var COOKIES_FOR_CAKE = 30
