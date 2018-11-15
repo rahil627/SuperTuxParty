@@ -18,11 +18,11 @@ const MINIGAME_REWARD_SCREEN_PATH_DUEL = "res://scenes/board_logic/controller/re
 const MINIGAME_REWARD_SCREEN_PATH_1V3 = "res://scenes/board_logic/controller/rewardscreens/1v3.tscn";
 const MINIGAME_REWARD_SCREEN_PATH_2V2 = "res://scenes/board_logic/controller/rewardscreens/2v2.tscn";
 
-var plugin_system = preload("res://scripts/pluginsystem.gd").new()
+var plugin_system = preload("res://scripts/plugin_system.gd").new()
 
-var board_loader = preload("res://scripts/boardloader.gd").new()
-var minigame_loader = preload("res://scripts/minigameloader.gd").new()
-var character_loader = preload("res://scripts/characterloader.gd").new()
+var board_loader = preload("res://scripts/board_loader.gd").new()
+var minigame_loader = preload("res://scripts/minigame_loader.gd").new()
+var character_loader = preload("res://scripts/character_loader.gd").new()
 
 var SaveGameLoader = preload("res://savegames/savegames.gd")
 var savegame_loader = SaveGameLoader.new()

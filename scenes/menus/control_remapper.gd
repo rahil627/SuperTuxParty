@@ -1,6 +1,6 @@
 const USER_CONFIG_FILE = "user://controls.cfg"
 
-const CONTROL_HELPER = preload("res://scripts/controlhelper.gd")
+const CONTROL_HELPER = preload("res://scripts/control_helper.gd")
 
 # The eventname that is currently remapped
 var control_remap_event
