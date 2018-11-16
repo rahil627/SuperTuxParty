@@ -1,6 +1,10 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
+<<<<<<< HEAD:assets/models/wavy_water/water_material.tres
 [ext_resource path="res://assets/models/wavy_water/water.shader" type="Shader" id=1]
+=======
+[ext_resource path="res://assets/shaders/water.shader" type="Shader" id=1]
+>>>>>>> Add KDEValley board:minigames/knock_off/water/water_material.tres
 [ext_resource path="res://assets/textures/water_diffuse.png" type="Texture" id=2]
 
 
@@ -12,8 +16,11 @@
 
 
 
+<<<<<<< HEAD:assets/models/wavy_water/water_material.tres
 
 
+=======
+>>>>>>> Add KDEValley board:minigames/knock_off/water/water_material.tres
 [resource]
 
 render_priority = 0
