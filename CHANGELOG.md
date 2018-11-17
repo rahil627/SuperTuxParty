@@ -1,5 +1,20 @@
 # Releases
 
+## Alpha Version - v0.3 - 2019-01-31
+### New features
+- KDEValley, a new board
+- New scenery for 'test' board
+- Added screenshot for 'Bowling minigame'
+- Frame cap and VSync can now be set in options
+
+### Improved / Changed
+- Each character can only be chosen once now
+
+Internally the project has been restructured and switched to the
+[Git Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows).
+
+### Removed
+
 ## Alpha Version - v0.2 - 2018-10-31
 ### New features
 - Godette, Godot's unofficial mascot, as a new playable character, !53
