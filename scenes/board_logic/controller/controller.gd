@@ -7,6 +7,7 @@ const CAMERA_SPEED = 6
 
 const CONTROL_HELPER = preload("res://scripts/control_helper.gd")
 const NODE = preload("res://scenes/board_logic/node/node.gd")
+const ITEM = preload("res://plugins/items/item.gd")
 
 var COOKIES_FOR_CAKE = 30
 
@@ -14,7 +15,11 @@ var COOKIES_FOR_CAKE = 30
 var selected_id = -1
 
 # Used internally for selecting a duel opponent with buttons
-var selected_opponent = -1;
+var selected_opponent = -1
+
+# Used internally for selecting an item with buttons
+var selected_item_id = -1
+var selected_item = null
 
 # Array containing the player nodes
 var players = null 
@@ -164,16 +169,25 @@ func roll():
 		var player = players[player_turn - 1]
 		camera_focus = player
 		
-		var dice = (randi() % 6) + 1 # Random number between 1 & 6
+		yield(select_item(player), "completed")
 		
-		$Screen/Stepcounter.text = var2str(dice)
-		step_count = dice
-		
-		do_step(player, dice)
-		
-		# Show which number was rolled
-		$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
-		$Screen/Dice.show()
+		match selected_item.type:
+			ITEM.DICE:
+				var dice = selected_item.activate(player, self)
+				
+				$Screen/Stepcounter.text = var2str(dice)
+				step_count = dice
+				
+				do_step(player, dice)
+				
+				# Show which number was rolled
+				$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+				$Screen/Dice.show()
+			ITEM.PLACABLE:
+				var placable = selected_item.activate(player, self)
+				# TODO: select a space to place
+			ITEM.ACTION:
+				selected_item.activate(player, self)
 	else:
 		# All players have had their turn, goto mini-game
 		var blue_team = []
@@ -373,7 +387,7 @@ func update_space(space):
 
 func _unhandled_input(event):
 	if player_turn <= players.size():
-		if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true:
+		if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true and wait_for_animation == false:
 			_on_Roll_pressed()
 		elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 1].is_ai:
 			# Be able to choose path with controller or keyboard
@@ -407,6 +421,24 @@ func _unhandled_input(event):
 				$Screen/DuelSelection.get_node("Player" + var2str(selected_opponent)).grab_focus()
 			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
 				$Screen/DuelSelection.get_node("Player"+var2str(selected_opponent)).pressed()
+		elif selected_item_id != -1:
+			# Be able to choose items with controller or keyboard
+			if event.is_action_pressed("player" + var2str(player_turn) + "_left"):
+				selected_item_id -= 1
+				
+				if selected_item_id < 1:
+					selected_item_id = players[player_turn - 1].items.size()
+				
+				$Screen/ItemSelection.get_node("Item" + var2str(selected_item_id)).grab_focus()
+			elif event.is_action_pressed("player" + var2str(player_turn) + "_right"):
+				selected_item_id += 1
+				
+				if selected_item_id > players[player_turn - 1].items.size():
+					selected_item_id = 1
+				
+				$Screen/ItemSelection.get_node("Item" + var2str(selected_item_id)).grab_focus()
+			elif event.is_action_pressed("player" + var2str(player_turn) + "_ok") and selected_id >= 0:
+				$Screen/ItemSelection.get_node("Item"+var2str(selected_item_id)).pressed()
 	
 	if event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -451,10 +483,10 @@ func animation_ended(player_id):
 						var node = $Screen/DuelSelection.get_node("Player"+var2str(i))
 						node.texture_normal = load(Global.character_loader.get_character_splash(Global.players[p.player_id - 1].character))
 						
-						node.connect("focus_entered", self, "_on_duel_opponent_focus_entered", [node])
-						node.connect("focus_exited", self, "_on_duel_opponent_focus_exited", [node])
-						node.connect("mouse_entered", self, "_on_duel_opponent_mouse_entered", [node])
-						node.connect("mouse_exited", self, "_on_duel_opponent_mouse_exited", [node])
+						node.connect("focus_entered", self, "_on_focus_entered", [node])
+						node.connect("focus_exited", self, "_on_focus_exited", [node])
+						node.connect("mouse_entered", self, "_on_mouse_entered", [node])
+						node.connect("mouse_exited", self, "_on_mouse_exited", [node])
 						node.connect("pressed", self, "_on_duel_opponent_select", [player.player_id, p.player_id])
 						i += 1
 					
@@ -703,15 +735,79 @@ func _on_duel_opponent_select(self_id, other_id):
 	yield(show_minigame_animation(), "completed")
 	show_minigame_info()
 
-func _on_duel_opponent_focus_entered(button):
+func _on_focus_entered(button):
 	button.material.set_shader_param("enable_shader", true)
 
-func _on_duel_opponent_focus_exited(button):
+func _on_focus_exited(button):
 	button.material.set_shader_param("enable_shader", false)
 
-func _on_duel_opponent_mouse_entered(button):
+func _on_mouse_entered(button):
 	button.material.set_shader_param("enable_shader", true)
 
-func _on_duel_opponent_mouse_exited(button):
+func _on_mouse_exited(button):
 	if not button.has_focus():
 		button.material.set_shader_param("enable_shader", false)
+
+signal item_selected
+
+func select_item(player):
+	var i = 1
+	for item in player.items:
+		var node = $Screen/ItemSelection.get_node("Item"+var2str(i))
+		node.texture_normal = item.icon
+		
+		node.connect("focus_entered", self, "_on_focus_entered", [node])
+		node.connect("focus_exited", self, "_on_focus_exited", [node])
+		node.connect("mouse_entered", self, "_on_mouse_entered", [node])
+		node.connect("mouse_exited", self, "_on_mouse_exited", [node])
+		node.connect("pressed", self, "_on_item_select", [player, item])
+		
+		node.material.set_shader_param("enable_shader", false)
+		
+		i += 1
+	
+	# Clear all remaining item slots
+	while i <= player.MAX_ITEMS:
+		var node = $Screen/ItemSelection.get_node("Item"+var2str(i))
+		node.texture_normal = null
+		
+		node.disconnect("focus_entered", self, "_on_focus_entered")
+		node.disconnect("focus_exited", self, "_on_focus_exited")
+		node.disconnect("mouse_entered", self, "_on_mouse_entered")
+		node.disconnect("mouse_exited", self, "_on_mouse_exited")
+		node.disconnect("pressed", self, "_on_item_select")
+		
+		node.material.set_shader_param("enable_shader", false)
+		
+		i += 1
+	
+	$Screen/ItemSelection.show()
+	
+	if player.is_ai:
+		yield(get_tree().create_timer(0.75), "timeout")
+		var item_id = (randi() % player.items.size()) + 1
+		$Screen/ItemSelection.get_node("Item" + var2str(item_id)).grab_focus()
+		yield(get_tree().create_timer(0.25), "timeout")
+		
+		selected_item = player.items[item_id - 1]
+		$Screen/ItemSelection.hide()
+	else:
+		
+		$Screen/ItemSelection/Item1.grab_focus()
+		selected_item_id = 1
+		
+		yield(self, "item_selected")
+
+func _on_item_select(player, item):
+	selected_item = item
+	
+	# Remove the item from the inventory if it is consumed
+	if selected_item.is_consumed:
+		player.items.remove(player.items.find(item))
+	
+	# Reset the state
+	selected_item_id = -1
+	$Screen/ItemSelection.hide()
+	
+	# Continue execution
+	emit_signal("item_selected")

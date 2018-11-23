@@ -23,6 +23,7 @@ var plugin_system = preload("res://scripts/plugin_system.gd").new()
 var board_loader = preload("res://scripts/board_loader.gd").new()
 var minigame_loader = preload("res://scripts/minigame_loader.gd").new()
 var character_loader = preload("res://scripts/character_loader.gd").new()
+var item_loader = preload("res://scripts/item_loader.gd").new()
 
 var SaveGameLoader = preload("res://savegames/savegames.gd")
 var savegame_loader = SaveGameLoader.new()

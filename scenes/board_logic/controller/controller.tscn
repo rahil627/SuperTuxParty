@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=2]
@@ -649,6 +649,7 @@ shader = SubResource( 14 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
+_sections_unfolded = [ "shader_param" ]
 
 [sub_resource type="ShaderMaterial" id=16]
 
@@ -659,6 +660,31 @@ shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
 
 [sub_resource type="ShaderMaterial" id=17]
+
+render_priority = 0
+shader = SubResource( 14 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
+[sub_resource type="ShaderMaterial" id=18]
+
+render_priority = 0
+shader = SubResource( 14 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+_sections_unfolded = [ "shader_param" ]
+
+[sub_resource type="ShaderMaterial" id=19]
+
+render_priority = 0
+shader = SubResource( 14 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
+[sub_resource type="ShaderMaterial" id=20]
 
 render_priority = 0
 shader = SubResource( 14 )
@@ -2788,6 +2814,7 @@ focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -2818,6 +2845,7 @@ focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -2848,6 +2876,7 @@ focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -2859,7 +2888,117 @@ group = null
 expand = true
 stretch_mode = 4
 
-[node name="DuelReward" type="Control" parent="Screen" index="16"]
+[node name="ItemSelection" type="Control" parent="Screen" index="16"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Item1" type="TextureButton" parent="Screen/ItemSelection" index="0"]
+
+material = SubResource( 18 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.0
+margin_top = -64.0
+margin_right = -136.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Material" ]
+
+[node name="Item2" type="TextureButton" parent="Screen/ItemSelection" index="1"]
+
+material = SubResource( 19 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Material" ]
+
+[node name="Item3" type="TextureButton" parent="Screen/ItemSelection" index="2"]
+
+material = SubResource( 20 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -64.0
+margin_right = 264.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+expand = true
+stretch_mode = 4
+_sections_unfolded = [ "Material" ]
+
+[node name="DuelReward" type="Control" parent="Screen" index="17"]
 
 editor/display_folded = true
 visible = false
