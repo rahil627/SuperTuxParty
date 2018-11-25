@@ -18,6 +18,8 @@ class SaveGame:
 	var cookie_space = 0
 	var player_turn = 1
 	var award_type = Global.AWARD_T.linear
+	
+	var trap_states = []
 
 var savegames
 
