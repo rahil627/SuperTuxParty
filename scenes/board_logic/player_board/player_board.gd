@@ -19,7 +19,7 @@ var gui_timer = GUI_TIMER
 
 var is_walking = false
 
-var items = [ preload("res://plugins/items/dice/item.gd").new(), preload("res://plugins/items/cookie_steal_trap/item.gd").new() ]
+var items = [ preload("res://plugins/items/dice/item.gd").new() ]
 
 func _ready():
 	if has_node("Model/AnimationPlayer"):
