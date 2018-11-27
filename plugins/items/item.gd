@@ -23,3 +23,6 @@ func _init():
 
 func activate(player, controller):
 	print("activate(Player, Controller) not overriden in item: %s" % get_path())
+
+func recreate_state():
+	_init()

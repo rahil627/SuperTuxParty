@@ -1,6 +1,7 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://plugins/items/cookie_steal_trap/icon.png" type="Texture" id=1]
+[ext_resource path="res://plugins/items/cookie_steal_trap/material.png" type="Texture" id=1]
+
 
 
 [resource]

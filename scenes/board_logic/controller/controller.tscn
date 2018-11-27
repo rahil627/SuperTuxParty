@@ -2056,6 +2056,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 [node name="PauseMenu" parent="Screen" index="12" instance=ExtResource( 9 )]
 
 visible = false
+can_save_game = true
 
 [node name="MinigameTypeAnimation" type="AnimationPlayer" parent="Screen" index="13"]
 

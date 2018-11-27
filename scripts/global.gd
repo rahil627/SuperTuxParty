@@ -233,7 +233,7 @@ func load_board_from_savegame(savegame):
 		players[i].character = savegame.players[i].character
 		players[i].cookies = int(savegame.players[i].cookies)
 		players[i].cakes = int(savegame.players[i].cakes)
-		players[i].items = deduplicate(savegame.players[i].items)
+		players[i].items = savegame.players[i].items
 	
 	cookie_space = int(savegame.cookie_space)
 	current_minigame = savegame.current_minigame
@@ -363,6 +363,10 @@ func load_board_state():
 			
 			r_players[i].items = deduplicate_items(players[i].items)
 			
+			for item in r_players[i].items:
+				# Load missing icons, material, etc
+				item.recreate_state()
+			
 			# Move piece to the right space, place them to different position on the same space
 			var num = controller.get_players_on_space(r_players[i].space)
 			var translation = controller.EMPTY_SPACE_PLAYER_TRANSLATION
@@ -433,13 +437,18 @@ func save_game():
 		current_savegame.players[i].character = players[i].character
 		current_savegame.players[i].cookies = r_players[i].cookies
 		current_savegame.players[i].cakes = r_players[i].cakes
-		current_savegame.players[i].items = duplicate(r_players[i].items)
+		current_savegame.players[i].items = duplicate_items(r_players[i].items)
 	
 	current_savegame.cookie_space = cookie_space
 	current_savegame.current_minigame = current_minigame
 	current_savegame.player_turn = controller.player_turn
 	current_savegame.award_type = award
 	
-	current_savegame.trap_states = trap_states
+	current_savegame.trap_states = []
+	
+	for trap in get_tree().get_nodes_in_group("trap"):
+		var state = { node = trap.get_path(), item = inst2dict(trap.trap), player = trap.trap_player.get_path() }
+		
+		current_savegame.trap_states.push_back(state)
 	
 	savegame_loader.save(current_savegame)

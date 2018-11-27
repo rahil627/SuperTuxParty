@@ -7,6 +7,8 @@ class SaveGamePlayerState:
 	var character = ""
 	var cookies = 0
 	var cakes = 0
+	
+	var items = []
 
 class SaveGame:
 	var name = ""
