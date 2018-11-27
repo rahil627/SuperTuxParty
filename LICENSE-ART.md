@@ -101,6 +101,12 @@ Copyright © 2018 Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### arrow_keep.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## scenes/board_logic/node/material
 ### tile_blue_col.jpg | tile_red_col.png | tile_yellow_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
 
@@ -207,6 +213,22 @@ Retrieved from [Github](https://github.com/SirRichard94/low-poly-godette)
 License: [CC BY 3.0](https://github.com/SirRichard94/low-poly-godette/blob/master/License)
 
 ### splash.png
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/items/cookie_steal_trap
+### icon.png | icon.xcf
+
+Copyright © 2018 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### material.png | material.xcf
+
+## plugins/items/dice
+### icon.png | icon.xcf
 
 Copyright © 2018 Florian Kothmeier 
 
