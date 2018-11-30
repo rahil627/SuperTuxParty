@@ -18,6 +18,8 @@ func _ready():
 		plants = [$Area1, $Area2, $Area3, $Area4]
 	else:
 		plants = [$Area2, $Area4]
+		rounds = 3
+		
 		$Area1.queue_free()
 		$Area3.queue_free()
 		
@@ -44,14 +46,16 @@ func spawn_plants():
 func _on_Timer_timeout():
 	# Move every player in front of the spot
 	$Player1.input_disabled = true
-	$Player1.translation -= $Player1.translation.normalized()
+	$Player1.current_destination = $Player1.translation - $Player1.translation.normalized()
 	$Player2.input_disabled = true
-	$Player2.translation -= $Player2.translation.normalized()
+	$Player2.current_destination = $Player2.translation - $Player2.translation.normalized()
 	if Global.minigame_type != Global.DUEL:
 		$Player3.input_disabled = true
-		$Player3.translation -= $Player3.translation.normalized()
+		$Player3.current_destination = $Player3.translation - $Player3.translation.normalized()
+		$Player3.rotation = Vector3(0, -PI/2, 0)
 		$Player4.input_disabled = true
-		$Player4.translation -= $Player4.translation.normalized()
+		$Player4.current_destination = $Player4.translation - $Player4.translation.normalized()
+		$Player4.rotation = Vector3(0, -PI/2, 0)
 	
 	for i in range(plants.size()):
 		var colliders = plants[i].get_overlapping_bodies()
@@ -73,9 +77,7 @@ func _on_Timer_timeout():
 	rounds -= 1
 	update_overlay()
 	
-	$Camera2.current = true
-	
-	# Wait 2 seconds
+	# Wait 5 seconds
 	yield(get_tree().create_timer(5.0), "timeout")
 	
 	$Player1.input_disabled = false
@@ -103,8 +105,6 @@ func _on_Timer_timeout():
 		
 		plant.remove_child(model)
 		model.queue_free()
-	
-	$Camera2.current = false
 	
 	if rounds > 0:
 		spawn_plants()
