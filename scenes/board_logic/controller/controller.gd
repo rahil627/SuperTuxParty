@@ -12,6 +12,7 @@ const ITEM = preload("res://plugins/items/item.gd")
 var COOKIES_FOR_CAKE = 30
 
 # Used internally for selecting a path on the board with buttons
+var enable_select_arrows = false
 var selected_id = -1
 
 # Used internally for selecting a duel opponent with buttons
@@ -22,6 +23,7 @@ var selected_item_id = -1
 var selected_item = null
 
 # Used internally for selecting a space with buttons
+var selected_space_arrow_id = -1
 var selected_space
 var selected_space_distance
 var select_space_max_distance
@@ -274,6 +276,7 @@ func do_step(player, num):
 			# If there are multiple branches
 			if player.space.next.size() > 1 and next_node == null:
 				if player.is_ai == false:
+					enable_select_arrows = true
 					selected_id = 0
 					
 					for node in player.space.next:
@@ -286,6 +289,8 @@ func do_step(player, num):
 						arrow.next_node = node
 						arrow.translation = player.space.translation
 						arrow.rotation.y = atan2(dir.normalized().x, dir.normalized().z)
+						
+						arrow.connect("arrow_activated", self, "_on_choose_path_arrow_activated", [arrow])
 						
 						selected_id += 1
 						
@@ -337,6 +342,7 @@ func do_step(player, num):
 		# If there are multiple branches
 		if player.space.next.size() > 1 and next_node == null:
 			if player.is_ai == false:
+				enable_select_arrows = true
 				selected_id = 0
 				
 				for node in player.space.next:
@@ -408,19 +414,19 @@ func _unhandled_input(event):
 	if player_turn <= players.size():
 		if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true and wait_for_animation == false:
 			_on_Roll_pressed()
-		elif end_turn == false and do_action == TURN_ACTION.CHOOSE_PATH and not players[player_turn - 1].is_ai:
+		elif enable_select_arrows and not players[player_turn - 1].is_ai:
 			# Be able to choose path with controller or keyboard
-			if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
+			if event.is_action_pressed("player" + var2str(player_turn) + "_left"):
 				selected_id -= 1
 				
 				if selected_id < 0:
 					selected_id = get_tree().get_nodes_in_group("arrows").size() - 1
-			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
+			elif event.is_action_pressed("player" + var2str(player_turn) + "_right"):
 				selected_id += 1
 				
 				if selected_id >= get_tree().get_nodes_in_group("arrows").size():
 					selected_id = 0
-			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
+			elif event.is_action_pressed("player" + var2str(player_turn) + "_ok") and selected_id >= 0:
 				get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
 		elif selected_opponent != -1 and not players[player_turn - 2].is_ai:
 			# Be able to choose path with controller or keyboard
@@ -775,6 +781,7 @@ func _on_Controls_tab_changed(tab):
 	$Screen/MinigameInformation/Characters/Viewport/Indicator.translation = player.translation + Vector3(0, 1.5, 0)
 
 func _on_choose_path_arrow_activated(arrow):
+	enable_select_arrows = false
 	selected_id = -1
 	
 	next_node = arrow.next_node;
@@ -886,7 +893,7 @@ signal space_selected
 func select_space(player, max_distance):
 	if player.is_ai:
 		# Select random space in front of or behind player
-		var distance = (randi() % (2*max_distance + 1)) - (max_distance + 1)
+		var distance = (randi() % (2*max_distance + 1)) - max_distance
 		selected_space = player.space
 		
 		if distance > 0:
@@ -901,6 +908,7 @@ func select_space(player, max_distance):
 		
 		yield(get_tree().create_timer(1), "timeout")
 	else:
+		enable_select_arrows = true
 		selected_id = 0
 		selected_space_distance = 0
 		select_space_max_distance = max_distance
@@ -912,12 +920,13 @@ func select_space(player, max_distance):
 
 func show_select_space_arrows():
 	var keep_arrow = preload("res://scenes/board_logic/node/arrow/arrow_keep.tscn").instance()
+	var id = 0
 	
-	keep_arrow.id = selected_id
+	keep_arrow.id = id
 	keep_arrow.next_node = selected_space
 	keep_arrow.translation = selected_space.translation
 	
-	selected_id += 1
+	id += 1
 	
 	keep_arrow.connect("arrow_activated", self, "_on_select_space_arrow_activated", [keep_arrow, 0])
 	
@@ -930,12 +939,12 @@ func show_select_space_arrows():
 			
 			dir = dir.normalized()
 			
-			arrow.id = selected_id
+			arrow.id = id
 			arrow.next_node = node
 			arrow.translation = selected_space.translation
 			arrow.rotation.y = atan2(dir.normalized().x, dir.normalized().z)
 			
-			selected_id += 1
+			id += 1
 			
 			arrow.connect("arrow_activated", self, "_on_select_space_arrow_activated", [arrow, +1])
 			
@@ -948,12 +957,12 @@ func show_select_space_arrows():
 			
 			dir = dir.normalized()
 			
-			arrow.id = selected_id
+			arrow.id = id
 			arrow.next_node = node
 			arrow.translation = selected_space.translation
 			arrow.rotation.y = atan2(dir.normalized().x, dir.normalized().z)
 			
-			selected_id += 1
+			id += 1
 			
 			arrow.connect("arrow_activated", self, "_on_select_space_arrow_activated", [arrow, -1])
 			
@@ -965,6 +974,7 @@ func _on_select_space_arrow_activated(arrow, distance):
 	selected_id = -1
 	
 	if arrow.next_node == selected_space:
+		enable_select_arrows = false
 		camera_focus = players[player_turn - 1]
 		
 		emit_signal("space_selected")
