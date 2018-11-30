@@ -1,8 +1,6 @@
 extends "../item.gd"
 
-func _init():
-	type = PLACABLE
-	
+func _init().(PLACABLE):
 	is_consumed = true
 
 func activate(from_player, trap_player, controller):

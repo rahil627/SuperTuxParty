@@ -15,7 +15,8 @@ var max_place_distance = 5 # Can only be placed 5 nodes in either direction onto
 
 var material
 
-func _init():
+func _init(type):
+	self.type = type
 	icon = load(get_script().resource_path.get_base_dir() + "/icon.png")
 	
 	if type == PLACABLE:

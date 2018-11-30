@@ -1,8 +1,6 @@
 extends "../item.gd"
 
-func _init():
-	type = DICE
-	
+func _init().(DICE):
 	is_consumed = false
 
 func activate(player, controller):
