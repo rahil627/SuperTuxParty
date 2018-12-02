@@ -6,6 +6,7 @@
 - New scenery for 'test' board
 - Added screenshot for 'Bowling minigame'
 - Frame cap and VSync can now be set in options
+- Items (e.g. Dice and traps)
 
 ### Improved / Changed
 - Each character can only be chosen once now

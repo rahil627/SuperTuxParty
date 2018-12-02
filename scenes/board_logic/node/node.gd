@@ -16,6 +16,10 @@ var prev
 
 var cake = false
 
+# An item that was placed onto this node
+var trap setget set_trap
+var trap_player = null
+
 # The material for editor rendered linking arrows
 var material = SpatialMaterial.new()
 
@@ -169,17 +173,30 @@ func set_type(t):
 	if has_node("Model/Cylinder"):
 		set_material()
 
+func set_trap(item):
+	trap = item
+	
+	set_material()
+	
+	if item == null:
+		remove_from_group("trap")
+	else:
+		add_to_group("trap")
+
 # Helper function to update the material based on the node-type
 func set_material():
-	match type:
-		RED:
-			$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_red_material.tres"))
-		GREEN:
-			$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_green_material.tres"))
-		BLUE:
-			$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_blue_material.tres"))
-		YELLOW:
-			$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_yellow_material.tres"))
+	if trap != null:
+		$Model/Cylinder.set_surface_material(0, trap.material)
+	else:
+		match type:
+			RED:
+				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_red_material.tres"))
+			GREEN:
+				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_green_material.tres"))
+			BLUE:
+				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_blue_material.tres"))
+			YELLOW:
+				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_yellow_material.tres"))
 
 func _exit_tree():
 	for p in next:

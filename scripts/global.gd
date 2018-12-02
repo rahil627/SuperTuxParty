@@ -9,6 +9,7 @@ class PlayerState:
 	var cookies = 0
 	var cookies_gui = 0
 	var cakes = 0
+	var items = []
 	
 	# Which space on the board the player is standing on
 	var space = null
@@ -23,6 +24,7 @@ var plugin_system = preload("res://scripts/plugin_system.gd").new()
 var board_loader = preload("res://scripts/board_loader.gd").new()
 var minigame_loader = preload("res://scripts/minigame_loader.gd").new()
 var character_loader = preload("res://scripts/character_loader.gd").new()
+var item_loader = preload("res://scripts/item_loader.gd").new()
 
 var SaveGameLoader = preload("res://savegames/savegames.gd")
 var savegame_loader = SaveGameLoader.new()
@@ -83,6 +85,9 @@ var cookie_space = 0
 var players = [PlayerState.new(), PlayerState.new(), PlayerState.new(), PlayerState.new()]
 var turn = 1
 var player_turn = 1
+
+# Stores where a trap is placed and what item and player created it
+var trap_states = []
 
 # The minigame to return to in "try minigame" mode
 # If it is null, then no minigame is tried and the next turn resumes
@@ -228,11 +233,14 @@ func load_board_from_savegame(savegame):
 		players[i].character = savegame.players[i].character
 		players[i].cookies = int(savegame.players[i].cookies)
 		players[i].cakes = int(savegame.players[i].cakes)
+		players[i].items = savegame.players[i].items
 	
 	cookie_space = int(savegame.cookie_space)
 	current_minigame = savegame.current_minigame
 	player_turn = int(current_savegame.player_turn)
 	award = int(savegame.award_type)
+	
+	trap_states = savegame.trap_states.duplicate()
 	
 	call_deferred("_goto_scene_ingame", current_board)
 
@@ -246,6 +254,12 @@ func goto_minigame(minigame, try = false):
 	
 	player_turn = get_tree().get_nodes_in_group("Controller")[0].player_turn
 	
+	trap_states = []
+	for trap in get_tree().get_nodes_in_group("trap"):
+		var state = { node = trap.get_path(), item = trap.trap, player = trap.trap_player.get_path() }
+		
+		trap_states.push_back(state)
+	
 	# Save player states in the array 'players'
 	for i in range(r_players.size()):
 		players[i].player_id = r_players[i].player_id
@@ -254,8 +268,24 @@ func goto_minigame(minigame, try = false):
 		players[i].cookies_gui = r_players[i].cookies_gui
 		players[i].cakes = r_players[i].cakes
 		players[i].space = r_players[i].space.get_path()
+		
+		players[i].items = duplicate_items(r_players[i].items)
 	
 	call_deferred("_goto_scene_ingame", minigame.scene_path)
+
+func duplicate_items(items):
+	var list = []
+	for item in items:
+		list.push_back(inst2dict(item))
+	
+	return list
+
+func deduplicate_items(items):
+	var list = []
+	for item in items:
+		list.push_back(dict2inst(item))
+	
+	return list
 
 # Go back to board from mini-game, placement is an array with the players' id:s
 func goto_board(placement):
@@ -315,6 +345,12 @@ func load_board_state():
 		
 		controller.player_turn = player_turn
 		
+		# Replace traps
+		for trap in trap_states:
+			var node = get_node(trap.node)
+			node.trap = trap.item
+			node.trap_player = get_node(trap.player)
+		
 		# Load player states from the array 'players'
 		for i in range(r_players.size()):
 			r_players[i].player_id = players[i].player_id
@@ -324,6 +360,12 @@ func load_board_state():
 			r_players[i].cakes = players[i].cakes
 			r_players[i].space = current_scene.get_node(players[i].space)
 			r_players[i].is_ai = players[i].is_ai
+			
+			r_players[i].items = deduplicate_items(players[i].items)
+			
+			for item in r_players[i].items:
+				# Load missing icons, material, etc
+				item.recreate_state()
 			
 			# Move piece to the right space, place them to different position on the same space
 			var num = controller.get_players_on_space(r_players[i].space)
@@ -371,6 +413,8 @@ func reset_state():
 	minigame_teams = null
 	minigame_duel_reward = null
 	
+	trap_states = []
+	
 	for p in players:
 		p.cookies = 0
 		p.cookies_gui = 0
@@ -393,10 +437,18 @@ func save_game():
 		current_savegame.players[i].character = players[i].character
 		current_savegame.players[i].cookies = r_players[i].cookies
 		current_savegame.players[i].cakes = r_players[i].cakes
+		current_savegame.players[i].items = duplicate_items(r_players[i].items)
 	
 	current_savegame.cookie_space = cookie_space
 	current_savegame.current_minigame = current_minigame
 	current_savegame.player_turn = controller.player_turn
 	current_savegame.award_type = award
+	
+	current_savegame.trap_states = []
+	
+	for trap in get_tree().get_nodes_in_group("trap"):
+		var state = { node = trap.get_path(), item = inst2dict(trap.trap), player = trap.trap_player.get_path() }
+		
+		current_savegame.trap_states.push_back(state)
 	
 	savegame_loader.save(current_savegame)

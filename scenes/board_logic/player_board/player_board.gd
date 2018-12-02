@@ -3,6 +3,8 @@ extends Spatial
 const MOVEMENT_SPEED = 7 # The speed used for walking to destination
 const GUI_TIMER = 0.2
 
+const MAX_ITEMS = 3
+
 # The position this node is walking to, used for animation
 var destination = []
 
@@ -17,9 +19,18 @@ var gui_timer = GUI_TIMER
 
 var is_walking = false
 
+var items = [ preload("res://plugins/items/dice/item.gd").new() ]
+
 func _ready():
 	if has_node("Model/AnimationPlayer"):
 		$Model/AnimationPlayer.play("idle")
+
+func give_item(item):
+	if items.size() < MAX_ITEMS:
+		items.push_back(item)
+		return true
+	
+	return false
 
 func _physics_process(delta):
 	if destination.size() > 0:
