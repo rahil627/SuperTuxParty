@@ -35,47 +35,52 @@ func has_player(colliders, blacklist):
 func _physics_process(delta):
 	var dir = Vector3()
 	
-	if not is_ai:
-		if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
-			dir.x += 1
-		if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
-			dir.x -= 1
-		if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
-			dir.z -= 1
-		if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
-			dir.z += 1
+	if not input_disabled:
+		if not is_ai:
+			if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
+				dir.x += 1
+			if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
+				dir.x -= 1
+			if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
+				dir.z -= 1
+			if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
+				dir.z += 1
+		else:
+			if current_destination == null or has_player(current_destination.get_overlapping_bodies(), [self]):
+				var spots = []
+				
+				for plant in plant_spots:
+					var colliders = plant.get_overlapping_bodies()
+					# Dont blacklist self beause the colliders might not have been updated yet.
+					# If everything is occupied, the AI will wait a turn
+					if not has_player(colliders, []):
+						spots.append(plant)
+				
+				if not spots.empty():
+					current_destination = spots[randi() % spots.size()]
+			
+			var destination_vec = current_destination.translation - self.translation
+			
+			if destination_vec.length_squared() > 0.01:
+				dir = destination_vec.normalized()
 	else:
-		if current_destination == null or has_player(current_destination.get_overlapping_bodies(), [self]):
-			var spots = []
-			
-			for plant in plant_spots:
-				var colliders = plant.get_overlapping_bodies()
-				# Dont blacklist self beause the colliders might not have been updated yet.
-				# If everything is occupied, the AI will wait a turn
-				if not has_player(colliders, []):
-					spots.append(plant)
-			
-			if not spots.empty():
-				current_destination = spots[randi() % spots.size()]
-		
-		var destination_vec = current_destination.translation - self.translation
-		
-		if destination_vec.length_squared() > 0.01:
-			dir = destination_vec.normalized()
+		dir = current_destination - translation
+		if dir.length_squared() > pow(delta, 2) + 0.01:
+			dir = Vector3(dir.x, 0, dir.z).normalized()
+		else:
+			dir = Vector3()
+			rotation = Vector3(0, -PI/2, 0)
 	
 	movement += Vector3(0, -9.81, 0) * delta
-	if input_disabled:
-		move_and_slide(movement, Vector3(0, 1, 0))
-	else:
-		move_and_slide(movement + dir * MOVEMENT_SPEED, Vector3(0, 1, 0))
+	move_and_slide(movement + dir * MOVEMENT_SPEED, Vector3(0, 1, 0))
 	
-	if dir.length_squared() > 0 and not input_disabled:
+	if dir.length_squared() > 0:
 		rotation.y = atan2(dir.x, dir.z)
 	
-	if (dir.length_squared() > 0 and not input_disabled) and not is_walking:
+	if dir.length_squared() > 0 and not is_walking:
 		$Model/AnimationPlayer.play("run")
 		is_walking = true
-	elif (dir.length_squared() == 0 or input_disabled) and is_walking:
+	elif dir.length_squared() == 0 and is_walking:
 		$Model/AnimationPlayer.play("idle")
 		is_walking = false
 	
