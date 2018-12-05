@@ -16,6 +16,7 @@ var cookies = 0
 var cakes = 0
 var cookies_gui = 0
 var gui_timer = GUI_TIMER
+var target_rotation = 0
 
 var is_walking = false
 
@@ -45,14 +46,14 @@ func _physics_process(delta):
 		else:
 			translation += dir
 		
-		rotation.y = atan2(dir.normalized().x, dir.normalized().z)
+		target_rotation = atan2(dir.normalized().x, dir.normalized().z)
 		
 		if dir.length() < 0.01:
 			destination.pop_front()
 			$"../Controller".animation_step(player_id)
 		
 		if destination.size() == 0:
-			rotation.y = 0
+			target_rotation = 0
 			
 			if has_node("Model/AnimationPlayer"):
 				$Model/AnimationPlayer.play("idle")
@@ -61,6 +62,7 @@ func _physics_process(delta):
 			$"../Controller".update_player_info()
 			$"../Controller".animation_ended(player_id)
 	else:
+		target_rotation = 0
 		if cookies_gui < cookies:
 			gui_timer -= delta
 			
@@ -75,3 +77,16 @@ func _physics_process(delta):
 				gui_timer = GUI_TIMER
 				cookies_gui -= 1
 				$"../Controller".update_player_info()
+	
+	var dist = rotation.y - target_rotation
+	
+	if abs(dist) > deg2rad(0.1):
+		while dist > PI:
+			dist -= TAU
+		while dist < -PI:
+			dist += TAU
+		
+		if dist > 0:
+			rotation.y -= 5 * delta * dist
+		else:
+			rotation.y += 5 * delta * abs(dist)
