@@ -124,6 +124,10 @@ func _on_FrameCap_item_selected(ID):
 		2:
 			Engine.target_fps = 120
 		3:
+			Engine.target_fps = 144
+		4:
+			Engine.target_fps = 240
+		5:
 			Engine.target_fps = 0 # A zero value uncaps the frames.
 	
 	save_option("visual", "frame_cap", ID)
