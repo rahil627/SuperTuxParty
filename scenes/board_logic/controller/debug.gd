@@ -4,7 +4,8 @@ enum STATES {
 	addCookies,
 	addCakes,
 	addItems,
-	gotoPlayer
+	gotoPlayer,
+	move
 }
 
 var players = null
@@ -70,11 +71,14 @@ func setup():
 		button.connect("pressed", self, "_on_item_selected", [item])
 		
 		$List/Items.add_child(button)
+	
+	
 
 func hide_lists():
 	$List/Players.hide()
 	$List/Minigames.hide()
 	$List/Items.hide()
+	$List/Inputs.hide()
 
 func _on_Skip_pressed():
 	Global.turn += 1
@@ -93,6 +97,13 @@ func _on_AddCake_pressed():
 	$List.popup()
 	
 	state = STATES.addCakes
+
+func _on_Move_pressed():
+	hide_lists()
+	$List/Inputs.show()
+	$List.popup()
+	
+	state = STATES.move
 
 func _on_PlayersTurn_pressed():
 	hide_lists()
@@ -157,5 +168,16 @@ func _on_Item_pressed():
 
 func _on_item_selected(item):
 	selected_player.give_item(load(Global.item_loader.get_item_path(item)).new())
+	$List.hide()
+	hide()
+
+func _on_Ok_pressed():
+	var controller = get_tree().get_nodes_in_group("Controller")[0]
+	
+	match state:
+		STATES.move:
+			var steps = int($List/Inputs/Number.value)
+			controller.roll(steps)
+	
 	$List.hide()
 	hide()

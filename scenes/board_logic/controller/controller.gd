@@ -166,7 +166,7 @@ func _on_Roll_pressed():
 		$Screen/Dice.hide()
 
 # Roll for the current plyaer
-func roll():
+func roll(steps = null):
 	if winner != null:
 		return
 	
@@ -178,7 +178,20 @@ func roll():
 		var player = players[player_turn - 1]
 		camera_focus = player
 		
-		yield(select_item(player), "completed")
+		if steps == null:
+			yield(select_item(player), "completed")
+		else:
+			var dice = steps
+			
+			$Screen/Stepcounter.text = var2str(dice)
+			step_count = dice
+			
+			do_step(player, dice)
+			
+			# Show which number was rolled
+			$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice)
+			$Screen/Dice.show()
+			return
 		
 		match selected_item.type:
 			ITEM.DICE:
@@ -781,12 +794,13 @@ func _on_Controls_tab_changed(tab):
 	$Screen/MinigameInformation/Characters/Viewport/Indicator.translation = player.translation + Vector3(0, 1.5, 0)
 
 func _on_choose_path_arrow_activated(arrow):
+	var player = players[player_turn - 1]
 	enable_select_arrows = false
 	selected_id = -1
 	
 	next_node = arrow.next_node;
 	end_turn = true
-	do_step(arrow.player, steps_remaining)
+	do_step(player, steps_remaining)
 
 func _on_duel_opponent_select(self_id, other_id):
 	Global.minigame_teams = [[other_id], [self_id]]
