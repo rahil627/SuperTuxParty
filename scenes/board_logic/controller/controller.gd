@@ -149,11 +149,8 @@ func _on_Roll_pressed():
 		$Screen/Roll.hide()
 	else:
 		splash_ended = true
-		var image = load(Global.character_loader.get_character_splash(Global.players[player_turn - 1].character)).get_data()
-		image.resize(256, 256)
 		
-		$Screen/Splash/Background/Player.texture = ImageTexture.new()
-		$Screen/Splash/Background/Player.texture.create_from_image(image)
+		$Screen/Splash/Background/Player.texture = load(Global.character_loader.get_character_splash(Global.players[player_turn - 1].character))
 		$Screen/Splash.play("show")
 		
 		if players[player_turn - 1].is_ai:
@@ -165,7 +162,7 @@ func _on_Roll_pressed():
 		
 		$Screen/Dice.hide()
 
-# Roll for the current plyaer
+# Roll for the current player
 func roll(steps = null):
 	if winner != null:
 		return
@@ -277,7 +274,40 @@ func roll(steps = null):
 		yield(show_minigame_animation(), "completed")
 		show_minigame_info()
 
-# Moves a player num spaces forward and stops when a cake spot is encoutered
+func create_choose_path_arrows(player, previous_space):
+	if not player.is_ai:
+		enable_select_arrows = true
+		selected_id = 0
+		
+		for node in player.space.next:
+			var arrow = preload("res://scenes/board_logic/node/arrow/arrow.tscn").instance()
+			var dir = node.translation - player.space.translation
+			
+			dir = dir.normalized()
+			
+			arrow.id = selected_id
+			arrow.next_node = node
+			arrow.translation = player.space.translation
+			arrow.rotation.y = atan2(dir.normalized().x, dir.normalized().z)
+			
+			arrow.connect("arrow_activated", self, "_on_choose_path_arrow_activated", [arrow])
+			
+			selected_id += 1
+			
+			get_parent().add_child(arrow)
+	
+	selected_id = -1
+	do_action = TURN_ACTION.CHOOSE_PATH
+	
+	end_turn = false
+	
+	if not previous_space == player.space:
+		update_space(previous_space)
+		update_space(player.space)
+	else:
+		update_space(player.space)
+
+# Moves a player num spaces forward and stops when a cake spot is encountered
 func do_step(player, num):
 	if num <= 0:
 		animation_ended(player.player_id)
@@ -288,41 +318,9 @@ func do_step(player, num):
 		for i in range(num - 1):
 			# If there are multiple branches
 			if player.space.next.size() > 1 and next_node == null:
-				if player.is_ai == false:
-					enable_select_arrows = true
-					selected_id = 0
-					
-					for node in player.space.next:
-						var arrow = preload("res://scenes/board_logic/node/arrow/arrow.tscn").instance()
-						var dir = node.translation - player.space.translation
-						
-						dir = dir.normalized()
-						
-						arrow.id = selected_id
-						arrow.next_node = node
-						arrow.translation = player.space.translation
-						arrow.rotation.y = atan2(dir.normalized().x, dir.normalized().z)
-						
-						arrow.connect("arrow_activated", self, "_on_choose_path_arrow_activated", [arrow])
-						
-						selected_id += 1
-						
-						get_parent().add_child(arrow)
-				
-				selected_id = -1
-				do_action = TURN_ACTION.CHOOSE_PATH
-				
-				end_turn = false
-				
+				create_choose_path_arrows(player, previous_space)
 				# Player has not moved a space yet so only subtract with i
 				steps_remaining = num - (i)
-				
-				if not previous_space == player.space:
-					update_space(previous_space)
-					update_space(player.space)
-				else:
-					update_space(player.space)
-				
 				return
 			elif player.space.next.size() > 1 and not next_node == null:
 				player.space = next_node
@@ -354,37 +352,8 @@ func do_step(player, num):
 		# ==============================
 		# If there are multiple branches
 		if player.space.next.size() > 1 and next_node == null:
-			if player.is_ai == false:
-				enable_select_arrows = true
-				selected_id = 0
-				
-				for node in player.space.next:
-					var arrow = preload("res://scenes/board_logic/node/arrow/arrow.tscn").instance()
-					var dir = node.translation - player.space.translation
-					
-					dir = dir.normalized()
-					
-					arrow.id = selected_id
-					arrow.next_node = node
-					arrow.translation = player.space.translation
-					arrow.rotation.y = atan2(dir.normalized().x, dir.normalized().z)
-					
-					arrow.connect("arrow_activated", self, "_on_choose_path_arrow_activated", [arrow])
-					
-					selected_id += 1
-					
-					get_parent().add_child(arrow)
-			
-			do_action = TURN_ACTION.CHOOSE_PATH
-			end_turn = false
-			
+			create_choose_path_arrows(player, previous_space)
 			steps_remaining = 1
-			selected_id = -1
-			
-			if not previous_space == player.space:
-				update_space(previous_space)
-				update_space(player.space)
-			
 			return
 		elif player.space.next.size() > 1 and not next_node == null:
 			player.space = next_node
@@ -423,60 +392,70 @@ func update_space(space):
 			player.destination.append(player.space.translation + offset)
 			num += 1
 
+func select_arrows_input(event):
+	var arrows = get_tree().get_nodes_in_group("arrows")
+	# Be able to choose path with controller or keyboard
+	if event.is_action_pressed("player%d_left" % player_turn):
+		selected_id -= 1
+		
+		if selected_id < 0:
+			selected_id = arrows.size() - 1
+	elif event.is_action_pressed("player%d_right" % player_turn):
+		selected_id += 1
+		
+		if selected_id >= arrows.size():
+			selected_id = 0
+	elif event.is_action_pressed("player%d_ok" % player_turn) and selected_id >= 0:
+		arrows[selected_id].pressed()
+
+func select_opponent_input(event):
+	# Be able to choose path with controller or keyboard
+	if event.is_action_pressed("player%d_left" % (player_turn - 1)):
+		selected_opponent -= 1
+		
+		if selected_opponent < 1:
+			selected_opponent = 3
+		
+		$Screen/DuelSelection.get_node("Player%d" % selected_opponent).grab_focus()
+	elif event.is_action_pressed("player%d_right" % (player_turn - 1)):
+		selected_opponent += 1
+		
+		if selected_opponent > 3:
+			selected_opponent = 1
+		
+		$Screen/DuelSelection.get_node("Player%d" % selected_opponent).grab_focus()
+	elif event.is_action_pressed("player%d_ok" % (player_turn - 1)) and selected_id >= 0:
+		$Screen/DuelSelection.get_node("Player%d" % selected_opponent).pressed()
+
+func select_item_input(event):
+	# Be able to choose items with controller or keyboard
+	if event.is_action_pressed("player%d_left" % player_turn):
+		selected_item_id -= 1
+		
+		if selected_item_id < 1:
+			selected_item_id = players[player_turn - 1].items.size()
+		
+		$Screen/ItemSelection.get_node("Item%d" % selected_item_id).grab_focus()
+	elif event.is_action_pressed("player%d_right" % player_turn):
+		selected_item_id += 1
+		
+		if selected_item_id > players[player_turn - 1].items.size():
+			selected_item_id = 1
+		
+		$Screen/ItemSelection.get_node("Item%d" % selected_item_id).grab_focus()
+	elif event.is_action_pressed("player%d_ok" % player_turn) and selected_id >= 0:
+		$Screen/ItemSelection.get_node("Item%d" % selected_item_id).pressed()
+
 func _unhandled_input(event):
 	if player_turn <= players.size():
-		if event.is_action_pressed("player" + var2str(player_turn) + "_ok") and not players[player_turn - 1].is_ai and end_turn == true and wait_for_animation == false:
+		if event.is_action_pressed("player%d_ok" % player_turn) and not players[player_turn - 1].is_ai and end_turn == true and wait_for_animation == false:
 			_on_Roll_pressed()
 		elif enable_select_arrows and not players[player_turn - 1].is_ai:
-			# Be able to choose path with controller or keyboard
-			if event.is_action_pressed("player" + var2str(player_turn) + "_left"):
-				selected_id -= 1
-				
-				if selected_id < 0:
-					selected_id = get_tree().get_nodes_in_group("arrows").size() - 1
-			elif event.is_action_pressed("player" + var2str(player_turn) + "_right"):
-				selected_id += 1
-				
-				if selected_id >= get_tree().get_nodes_in_group("arrows").size():
-					selected_id = 0
-			elif event.is_action_pressed("player" + var2str(player_turn) + "_ok") and selected_id >= 0:
-				get_tree().get_nodes_in_group("arrows")[selected_id].pressed()
+			select_arrows_input(event)
 		elif selected_opponent != -1 and not players[player_turn - 2].is_ai:
-			# Be able to choose path with controller or keyboard
-			if event.is_action_pressed("player" + var2str(player_turn - 1) + "_left"):
-				selected_opponent -= 1
-				
-				if selected_opponent < 1:
-					selected_opponent = 3
-				
-				$Screen/DuelSelection.get_node("Player" + var2str(selected_opponent)).grab_focus()
-			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_right"):
-				selected_opponent += 1
-				
-				if selected_opponent > 3:
-					selected_opponent = 1
-				
-				$Screen/DuelSelection.get_node("Player" + var2str(selected_opponent)).grab_focus()
-			elif event.is_action_pressed("player" + var2str(player_turn - 1) + "_ok") and selected_id >= 0:
-				$Screen/DuelSelection.get_node("Player"+var2str(selected_opponent)).pressed()
+			select_opponent_input(event)
 		elif selected_item_id != -1 and not players[player_turn - 1].is_ai:
-			# Be able to choose items with controller or keyboard
-			if event.is_action_pressed("player" + var2str(player_turn) + "_left"):
-				selected_item_id -= 1
-				
-				if selected_item_id < 1:
-					selected_item_id = players[player_turn - 1].items.size()
-				
-				$Screen/ItemSelection.get_node("Item" + var2str(selected_item_id)).grab_focus()
-			elif event.is_action_pressed("player" + var2str(player_turn) + "_right"):
-				selected_item_id += 1
-				
-				if selected_item_id > players[player_turn - 1].items.size():
-					selected_item_id = 1
-				
-				$Screen/ItemSelection.get_node("Item" + var2str(selected_item_id)).grab_focus()
-			elif event.is_action_pressed("player" + var2str(player_turn) + "_ok") and selected_id >= 0:
-				$Screen/ItemSelection.get_node("Item"+var2str(selected_item_id)).pressed()
+			select_item_input(event)
 	
 	if event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -601,14 +580,6 @@ func _process(delta):
 		var dir = camera_focus.translation - self.translation
 		if(dir.length() > 0.01):
 			self.translation += (CAMERA_SPEED * dir.length()) * dir.normalized() * delta
-	
-	# Automatically switch to next player when current player has finished moving
-#	if player_turn - 2 >= 0 and player_turn - 1 < Global.amount_of_players:
-#		var player = players[player_turn - 2]
-#		
-#		if camera_focus == player:
-#			if player.destination.size() == 0 and end_turn and not wait_for_animation:
-#				camera_focus = players[player_turn - 1]
 
 # Function that updates the player info shown in the GUI
 func update_player_info():
