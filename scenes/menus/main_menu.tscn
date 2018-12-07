@@ -22,7 +22,6 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="MainMenu" type="Container" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.3
 anchor_top = 0.2
 anchor_right = 0.7
@@ -58,7 +57,6 @@ _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -519,6 +517,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionBoard" type="Container" parent="." index="3"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -669,6 +668,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" 
 
 [node name="OptionsMenu" type="Container" parent="." index="4"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -705,6 +705,7 @@ _sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
 
 [node name="Buttons" type="VBoxContainer" parent="OptionsMenu" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -741,7 +742,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Visual" type="VBoxContainer" parent="OptionsMenu/Buttons/TabContainer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -811,7 +811,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="FrameCap" type="HBoxContainer" parent="OptionsMenu/Buttons/TabContainer/Visual" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -833,7 +832,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 418.0
+margin_right = 445.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -854,7 +853,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 422.0
+margin_left = 449.0
 margin_right = 504.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -873,9 +872,8 @@ group = null
 text = "60"
 flat = false
 align = 0
-items = [ "30", null, false, 0, null, "60", null, false, 1, null, "120", null, false, 2, null, "Uncapped", null, false, 3, null ]
+items = [ "30", null, false, 0, null, "60", null, false, 1, null, "120", null, false, 2, null, "144", null, false, 3, null, "240", null, false, 4, null, "Uncapped", null, false, 5, null ]
 selected = 1
-_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Audio" type="VBoxContainer" parent="OptionsMenu/Buttons/TabContainer" index="1"]
 
