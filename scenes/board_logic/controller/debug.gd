@@ -3,11 +3,13 @@ extends WindowDialog
 enum STATES {
 	addCookies,
 	addCakes,
+	addItems,
 	gotoPlayer
 }
 
 var players = null
 var state = null
+var selected_player = null
 
 func setup():
 	players = get_tree().get_nodes_in_group("players")
@@ -58,34 +60,49 @@ func setup():
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.FREE_FOR_ALL])
 		
 		$List/Minigames.add_child(button)
+	
+	var item_loader = Global.item_loader
+	for item in Global.item_loader.get_loaded_items():
+		var button = Button.new()
+		
+		button.text = item
+		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
+		button.connect("pressed", self, "_on_item_selected", [item])
+		
+		$List/Items.add_child(button)
+
+func hide_lists():
+	$List/Players.hide()
+	$List/Minigames.hide()
+	$List/Items.hide()
 
 func _on_Skip_pressed():
 	Global.turn += 1
 	$"../Turn".text = "Turn: " + var2str(Global.turn)
 
 func _on_AddCookies_pressed():
+	hide_lists()
 	$List/Players.show()
-	$List/Minigames.hide()
 	$List.popup()
 	
 	state = STATES.addCookies
 
 func _on_AddCake_pressed():
+	hide_lists()
 	$List/Players.show()
-	$List/Minigames.hide()
 	$List.popup()
 	
 	state = STATES.addCakes
 
 func _on_PlayersTurn_pressed():
+	hide_lists()
 	$List/Players.show()
-	$List/Minigames.hide()
 	$List.popup()
 	
 	state = STATES.gotoPlayer
 
 func _on_Minigame_pressed():
-	$List/Players.hide()
+	hide_lists()
 	$List/Minigames.show()
 	$List.popup()
 
@@ -96,6 +113,10 @@ func _on_player_pressed(id):
 		player.cookies += 5
 	elif state == STATES.addCakes:
 		player.cakes += 1
+	elif state == STATES.addItems:
+		selected_player = player
+		$List/Players.hide()
+		$List/Items.show()
 	elif state == STATES.gotoPlayer:
 		$"../..".player_turn = player.player_id
 	
@@ -126,3 +147,15 @@ func _on_minigame_pressed(minigame, type):
 	hide()
 	$List.hide()
 	
+
+func _on_Item_pressed():
+	hide_lists()
+	$List/Players.show()
+	$List.popup()
+	
+	state = STATES.addItems
+
+func _on_item_selected(item):
+	selected_player.give_item(load(Global.item_loader.get_item_path(item)).new())
+	$List.hide()
+	hide()
