@@ -424,8 +424,8 @@ func select_opponent_input(event):
 			selected_opponent = 1
 		
 		$Screen/DuelSelection.get_node("Player%d" % selected_opponent).grab_focus()
-	elif event.is_action_pressed("player%d_ok" % (player_turn - 1)) and selected_id >= 0:
-		$Screen/DuelSelection.get_node("Player%d" % selected_opponent).pressed()
+	elif event.is_action_pressed("player%d_ok" % (player_turn - 1)) and selected_opponent >= 0:
+		$Screen/DuelSelection.get_node("Player%d" % selected_opponent).emit_signal("pressed")
 
 func select_item_input(event):
 	# Be able to choose items with controller or keyboard
@@ -443,8 +443,8 @@ func select_item_input(event):
 			selected_item_id = 1
 		
 		$Screen/ItemSelection.get_node("Item%d" % selected_item_id).grab_focus()
-	elif event.is_action_pressed("player%d_ok" % player_turn) and selected_id >= 0:
-		$Screen/ItemSelection.get_node("Item%d" % selected_item_id).pressed()
+	elif event.is_action_pressed("player%d_ok" % player_turn) and selected_item_id >= 0:
+		$Screen/ItemSelection.get_node("Item%d" % selected_item_id).emit_signal("pressed")
 
 func _unhandled_input(event):
 	if player_turn <= players.size():
