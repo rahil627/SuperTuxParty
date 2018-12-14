@@ -295,6 +295,14 @@ Copyright © Michael Alexsander Silva Dias
 License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/minigames/harvest_food
+### carrot.png
+
+Public Domain by thekingphoenix
+
+Retrieved from [Open Game Art](https://opengameart.org/content/icons-food)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ### screenshot.png
 
 Copyright © Jakob Sinclair
