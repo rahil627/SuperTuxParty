@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/menus/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=4]
 
-[node name="PauseMenu" type="PopupPanel"]
+[node name="PauseMenu" type="PopupPanel" index="0"]
 
 pause_mode = 2
 anchor_left = 0.5
@@ -28,7 +29,6 @@ can_save_game = false
 
 [node name="Container" type="VBoxContainer" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.1
 anchor_top = 0.1
 anchor_right = 0.9
@@ -336,7 +336,56 @@ dialog_text = "Another save has the same name. Do you want to override it?"
 dialog_hide_on_ok = true
 _sections_unfolded = [ "Dialog", "Rect" ]
 
+[node name="OptionsWindow" type="WindowDialog" parent="." index="3"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -371.0
+margin_top = -288.5
+margin_right = 371.0
+margin_bottom = 288.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+window_title = "Options"
+resizable = false
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionsWindow" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 25
+custom_constants/margin_left = 25
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="OptionsMenu" parent="OptionsWindow/MarginContainer" index="0" instance=ExtResource( 4 )]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_right = 717.0
+margin_bottom = 577.0
+
 [connection signal="pressed" from="Container/Resume" to="." method="_on_Resume_pressed"]
+
+[connection signal="pressed" from="Container/Options" to="." method="_on_Options_pressed"]
 
 [connection signal="pressed" from="Container/SaveGame" to="." method="_on_SaveGame_pressed"]
 
@@ -353,5 +402,7 @@ _sections_unfolded = [ "Dialog", "Rect" ]
 [connection signal="pressed" from="SavegameNameInput/VBoxContainer/Button" to="." method="_on_Savegame_Button_pressed"]
 
 [connection signal="confirmed" from="OverrideSave" to="." method="_on_OverrideSave_confirmed"]
+
+[connection signal="quit" from="OptionsWindow/MarginContainer/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
 
 

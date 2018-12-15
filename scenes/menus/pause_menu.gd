@@ -80,3 +80,10 @@ func _on_OverrideSave_confirmed():
 	Global.save_game()
 	$SavegameNameInput.hide()
 	_on_Resume_pressed()
+
+func _on_Options_pressed():
+	$OptionsWindow.popup()
+	$OptionsWindow/MarginContainer/OptionsMenu.show()
+
+func _on_OptionsMenu_quit():
+	$OptionsWindow.hide()
