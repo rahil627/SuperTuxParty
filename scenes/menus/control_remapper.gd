@@ -82,7 +82,7 @@ func save_controls():
 # loads for every player an instance of player_controls_template.tscn and assigns a click handler to every button
 func controls_remapping_setup():
 	load_controls()
-	var controls_tab = main_menu.get_node("OptionsMenu/Buttons/TabContainer/Controls/TabContainer")
+	var controls_tab = main_menu.get_node("Buttons/TabContainer/Controls/TabContainer")
 	for child in controls_tab.get_children():
 		child.queue_free()
 		controls_tab.remove_child(child)
