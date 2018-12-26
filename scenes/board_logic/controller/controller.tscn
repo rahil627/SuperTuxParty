@@ -1,20 +1,21 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scenes/board_logic/controller/icons/cookie.png" type="Texture" id=3]
-[ext_resource path="res://scenes/board_logic/controller/icons/cake.png" type="Texture" id=4]
-[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://scenes/board_logic/controller/icons/splash_background.png" type="Texture" id=6]
-[ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://scenes/board_logic/controller/debug.gd" type="Script" id=8]
-[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/fonts/RichTextLabel-BoldItalic.tres" type="DynamicFont" id=10]
-[ext_resource path="res://assets/fonts/RichTextLabel-Italic.tres" type="DynamicFont" id=11]
-[ext_resource path="res://assets/fonts/RichTextLabel-Bold.tres" type="DynamicFont" id=12]
-[ext_resource path="res://assets/fonts/RichTextLabel-Normal.tres" type="DynamicFont" id=13]
-[ext_resource path="res://assets/fonts/button_font_small.tres" type="DynamicFont" id=14]
-[ext_resource path="res://scenes/board_logic/controller/icons/indicator.png" type="Texture" id=15]
+[ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/board_logic/controller/icons/cookie.png" type="Texture" id=4]
+[ext_resource path="res://scenes/board_logic/controller/icons/cake.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://scenes/board_logic/controller/icons/splash_background.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://scenes/board_logic/controller/debug.gd" type="Script" id=9]
+[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/fonts/RichTextLabel-BoldItalic.tres" type="DynamicFont" id=11]
+[ext_resource path="res://assets/fonts/RichTextLabel-Italic.tres" type="DynamicFont" id=12]
+[ext_resource path="res://assets/fonts/RichTextLabel-Bold.tres" type="DynamicFont" id=13]
+[ext_resource path="res://assets/fonts/RichTextLabel-Normal.tres" type="DynamicFont" id=14]
+[ext_resource path="res://assets/fonts/button_font_small.tres" type="DynamicFont" id=15]
+[ext_resource path="res://scenes/board_logic/controller/icons/indicator.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=1]
 
@@ -59,7 +60,7 @@ tracks/0/keys = {
 size = 100
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=4]
@@ -692,7 +693,7 @@ shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
 
-[node name="Controller" type="Spatial" index="0" groups=[
+[node name="Controller" type="Spatial" groups=[
 "Controller",
 ]]
 
@@ -714,7 +715,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin", "Mouse" ]
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Anchor", "Margin", "Theme" ]
 
 [node name="PlayerInfo1" type="VBoxContainer" parent="Screen" index="0"]
 
@@ -750,17 +752,15 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "Player 1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo1" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -790,7 +790,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 4
 _sections_unfolded = [ "Rect" ]
 
@@ -809,17 +809,16 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo1" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -849,7 +848,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Amount" type="Label" parent="Screen/PlayerInfo1/Cakes" index="1"]
@@ -867,14 +866,11 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="PlayerInfo2" type="VBoxContainer" parent="Screen" index="1"]
 
@@ -910,9 +906,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "Player 2"
 align = 2
 percent_visible = 1.0
@@ -922,6 +916,7 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", 
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo2" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -952,14 +947,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
 [node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cookies" index="1"]
 
@@ -976,12 +969,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 4
 _sections_unfolded = [ "Rect" ]
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo2" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1012,14 +1006,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cakes" index="1"]
 
@@ -1036,7 +1028,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="PlayerInfo3" type="VBoxContainer" parent="Screen" index="2"]
@@ -1074,17 +1066,16 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "Player 3"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo3" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1114,7 +1105,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 4
 _sections_unfolded = [ "Rect" ]
 
@@ -1133,17 +1124,16 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo3" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1173,7 +1163,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Amount" type="Label" parent="Screen/PlayerInfo3/Cakes" index="1"]
@@ -1191,14 +1181,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="PlayerInfo4" type="VBoxContainer" parent="Screen" index="3"]
 
@@ -1235,18 +1223,17 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "Player 4"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo4" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1277,14 +1264,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
 [node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cookies" index="1"]
 
@@ -1301,12 +1286,13 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 4
 _sections_unfolded = [ "Rect" ]
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo4" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1337,14 +1323,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cakes" index="1"]
 
@@ -1361,7 +1345,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Dice" type="Label" parent="Screen" index="4"]
@@ -1377,15 +1361,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 6 )
 text = "Roll Player 1!"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="Roll" type="Button" parent="Screen" index="5"]
 
@@ -1404,7 +1386,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
@@ -1448,15 +1430,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "Buy a cake for 30 cookies"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
 [node name="Buttons" type="HBoxContainer" parent="Screen/GetCake" index="1"]
 
@@ -1467,7 +1447,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 62.0
 margin_right = 520.0
-margin_bottom = 97.0
+margin_bottom = 95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -1483,7 +1463,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 128.0
-margin_bottom = 35.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 128, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1492,7 +1472,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1510,7 +1490,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 132.0
 margin_right = 388.0
-margin_bottom = 35.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 256, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1528,7 +1508,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 392.0
 margin_right = 520.0
-margin_bottom = 35.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 128, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1537,7 +1517,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1583,14 +1563,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="HSlider" type="HSlider" parent="Screen/BuyCake" index="1"]
 
@@ -1658,7 +1636,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1685,7 +1663,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1709,15 +1687,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 text = "Turn: 1"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
 
 [node name="Stepcounter" type="Label" parent="Screen" index="9"]
 
@@ -1733,9 +1709,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 3 )
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1744,6 +1718,7 @@ _sections_unfolded = [ "Grow Direction", "Rect" ]
 
 [node name="Splash" type="AnimationPlayer" parent="Screen" index="10"]
 
+editor/display_folded = true
 root_node = NodePath("Background")
 autoplay = ""
 playback_process_mode = 1
@@ -1769,7 +1744,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 4
 
 [node name="Player" type="TextureRect" parent="Screen/Splash/Background" index="0"]
@@ -1810,10 +1785,11 @@ text = "It's your turn"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Mouse", "custom_fonts" ]
+_sections_unfolded = [ "Margin" ]
 
 [node name="Debug" type="WindowDialog" parent="Screen" index="11"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1831,7 +1807,7 @@ size_flags_vertical = 1
 popup_exclusive = false
 window_title = "Debug"
 resizable = false
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="Row1" type="HBoxContainer" parent="Screen/Debug" index="1"]
@@ -1866,7 +1842,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1892,7 +1868,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1918,7 +1894,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1961,7 +1937,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1987,7 +1963,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -2013,7 +1989,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -2056,7 +2032,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -2068,6 +2044,7 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="List" type="WindowDialog" parent="Screen/Debug" index="4"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2215,7 +2192,7 @@ text = "Ok"
 flat = false
 align = 1
 
-[node name="PauseMenu" parent="Screen" index="12" instance=ExtResource( 9 )]
+[node name="PauseMenu" parent="Screen" index="12" instance=ExtResource( 10 )]
 
 visible = false
 can_save_game = true
@@ -2346,7 +2323,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -2437,7 +2414,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "Description"
 align = 1
 valign = 1
@@ -2463,10 +2440,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/bold_italics_font = ExtResource( 10 )
-custom_fonts/italics_font = ExtResource( 11 )
-custom_fonts/bold_font = ExtResource( 12 )
-custom_fonts/normal_font = ExtResource( 13 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
@@ -2499,7 +2476,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/panel = SubResource( 10 )
-custom_fonts/font = ExtResource( 14 )
+custom_fonts/font = ExtResource( 15 )
 custom_constants/side_margin = 4
 tab_align = 0
 tabs_visible = true
@@ -2512,7 +2489,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
-margin_top = 31.0
+margin_top = 29.0
 margin_right = -2.0
 margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -2521,10 +2498,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/bold_italics_font = ExtResource( 10 )
-custom_fonts/italics_font = ExtResource( 11 )
-custom_fonts/bold_font = ExtResource( 12 )
-custom_fonts/normal_font = ExtResource( 13 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
@@ -2555,10 +2532,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/bold_italics_font = ExtResource( 10 )
-custom_fonts/italics_font = ExtResource( 11 )
-custom_fonts/bold_font = ExtResource( 12 )
-custom_fonts/normal_font = ExtResource( 13 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
@@ -2589,10 +2566,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/bold_italics_font = ExtResource( 10 )
-custom_fonts/italics_font = ExtResource( 11 )
-custom_fonts/bold_font = ExtResource( 12 )
-custom_fonts/normal_font = ExtResource( 13 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
@@ -2623,10 +2600,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/bold_italics_font = ExtResource( 10 )
-custom_fonts/italics_font = ExtResource( 11 )
-custom_fonts/bold_font = ExtResource( 12 )
-custom_fonts/normal_font = ExtResource( 13 )
+custom_fonts/bold_italics_font = ExtResource( 11 )
+custom_fonts/italics_font = ExtResource( 12 )
+custom_fonts/bold_font = ExtResource( 13 )
+custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
@@ -2678,7 +2655,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -2716,7 +2693,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 75.0
-margin_bottom = 30.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 75, 30 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -2742,7 +2719,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 100.0
 margin_right = 175.0
-margin_bottom = 30.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 75, 30 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -2855,7 +2832,7 @@ transparent = true
 shaded = false
 double_sided = true
 alpha_cut = 0
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 vframes = 1
 hframes = 1
 frame = 0
@@ -2923,6 +2900,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DuelSelection" type="Control" parent="Screen" index="15"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2951,7 +2929,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Select Opponent:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -3053,6 +3031,7 @@ stretch_mode = 4
 
 [node name="ItemSelection" type="Control" parent="Screen" index="16"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -3192,7 +3171,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Duel reward:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -3212,7 +3191,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
