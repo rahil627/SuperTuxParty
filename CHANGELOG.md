@@ -10,6 +10,7 @@
 
 ### Improved / Changed
 - Each character can only be chosen once now
+- New GUI theme
 
 Internally the project has been restructured and switched to the
 [Git Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows).
