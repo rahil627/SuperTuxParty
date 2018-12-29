@@ -181,7 +181,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionPlayers" type="Container" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -1170,13 +1169,13 @@ script = ExtResource( 7 )
 
 [connection signal="pressed" from="MainMenu/Buttons/Quit" to="." method="_on_Quit_pressed"]
 
-[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/One" to="." method="_on_One_Player_pressed"]
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/One" to="." method="_select_player_amount" binds= [ 1 ]]
 
-[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Two" to="." method="_on_Two_pressed"]
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Two" to="." method="_select_player_amount" binds= [ 2 ]]
 
-[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Three" to="." method="_on_Three_pressed"]
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Three" to="." method="_select_player_amount" binds= [ 3 ]]
 
-[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Four" to="." method="_on_Four_pressed"]
+[connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Four" to="." method="_select_player_amount" binds= [ 4 ]]
 
 [connection signal="pressed" from="SelectionPlayers/Buttons/Back" to="." method="_on_Amount_Of_Players_Back_pressed"]
 
