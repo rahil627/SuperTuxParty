@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=2]
@@ -385,71 +385,14 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+bg_color = Color( 0.27451, 0.396078, 0.631373, 1 )
 draw_center = true
 border_width_left = 0
 border_width_top = 0
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-_sections_unfolded = [ "Border", "Border Width" ]
-
-[sub_resource type="StyleBoxFlat" id=9]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.498039, 0.341176, 0.223529, 1 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
+border_width_right = 0
 border_width_bottom = 0
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=10]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.137255, 0.145098, 0.152941, 1 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
 corner_radius_top_left = 0
 corner_radius_top_right = 0
 corner_radius_bottom_right = 0
@@ -463,9 +406,8 @@ shadow_color = Color( 0, 0, 0, 0.6 )
 shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
-_sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="Environment" id=11]
+[sub_resource type="Environment" id=10]
 
 background_mode = 1
 background_sky_custom_fov = 0.0
@@ -544,7 +486,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background" ]
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=11]
 
 render_priority = 0
 flags_transparent = true
@@ -595,7 +537,7 @@ uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 
 length = 2.0
 loop = true
@@ -613,7 +555,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Shader" id=14]
+[sub_resource type="Shader" id=13]
 
 code = "shader_type canvas_item;
 render_mode blend_mix;
@@ -643,19 +585,27 @@ void fragment()
     COLOR = tcol;
 }"
 
-[sub_resource type="ShaderMaterial" id=15]
+[sub_resource type="ShaderMaterial" id=14]
 
 render_priority = 0
-shader = SubResource( 14 )
+shader = SubResource( 13 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
 _sections_unfolded = [ "shader_param" ]
 
+[sub_resource type="ShaderMaterial" id=15]
+
+render_priority = 0
+shader = SubResource( 13 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
 [sub_resource type="ShaderMaterial" id=16]
 
 render_priority = 0
-shader = SubResource( 14 )
+shader = SubResource( 13 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
@@ -663,37 +613,29 @@ shader_param/enable_shader = null
 [sub_resource type="ShaderMaterial" id=17]
 
 render_priority = 0
-shader = SubResource( 14 )
-shader_param/outLineSize = 0.02
-shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-
-[sub_resource type="ShaderMaterial" id=18]
-
-render_priority = 0
-shader = SubResource( 14 )
+shader = SubResource( 13 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
 _sections_unfolded = [ "shader_param" ]
 
+[sub_resource type="ShaderMaterial" id=18]
+
+render_priority = 0
+shader = SubResource( 13 )
+shader_param/outLineSize = 0.02
+shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader_param/enable_shader = null
+
 [sub_resource type="ShaderMaterial" id=19]
 
 render_priority = 0
-shader = SubResource( 14 )
+shader = SubResource( 13 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = null
 
-[sub_resource type="ShaderMaterial" id=20]
-
-render_priority = 0
-shader = SubResource( 14 )
-shader_param/outLineSize = 0.02
-shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-
-[node name="Controller" type="Spatial" groups=[
+[node name="Controller" type="Spatial" index="0" groups=[
 "Controller",
 ]]
 
@@ -2335,7 +2277,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="MinigameInformation" type="Container" parent="Screen" index="14"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2361,10 +2302,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/panel = SubResource( 8 )
+_sections_unfolded = [ "custom_styles" ]
 
 [node name="Description" type="Panel" parent="Screen/MinigameInformation" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
@@ -2379,12 +2321,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 8 )
 _sections_unfolded = [ "Margin", "Rect", "custom_styles" ]
 
 [node name="Header" type="Panel" parent="Screen/MinigameInformation/Description" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2397,8 +2337,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 9 )
-_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label" type="Label" parent="Screen/MinigameInformation/Description/Header" index="0"]
 
@@ -2421,7 +2360,7 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect" ]
 
 [node name="Text" type="RichTextLabel" parent="Screen/MinigameInformation/Description" index="1"]
 
@@ -2459,7 +2398,6 @@ _sections_unfolded = [ "BBCode", "Margin", "Rect" ]
 
 [node name="Controls" type="TabContainer" parent="Screen/MinigameInformation" index="2"]
 
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -2475,12 +2413,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/panel = SubResource( 10 )
 custom_fonts/font = ExtResource( 15 )
-custom_constants/side_margin = 4
 tab_align = 0
 tabs_visible = true
-_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Player1" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="0"]
 
@@ -2488,10 +2424,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 29.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_left = 8.0
+margin_top = 36.0
+margin_right = -8.0
+margin_bottom = -8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -2523,7 +2459,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
-margin_top = 31.0
+margin_top = 29.0
 margin_right = -2.0
 margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -2557,7 +2493,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
-margin_top = 31.0
+margin_top = 29.0
 margin_right = -2.0
 margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -2591,7 +2527,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
-margin_top = 31.0
+margin_top = 29.0
 margin_right = -2.0
 margin_bottom = -2.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -2789,7 +2725,7 @@ _sections_unfolded = [ "Rendering" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 keep_aspect = 1
 cull_mask = 1048575
-environment = SubResource( 11 )
+environment = SubResource( 10 )
 h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
@@ -2812,7 +2748,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 layers = 1
-material_override = SubResource( 12 )
+material_override = SubResource( 11 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -2847,7 +2783,7 @@ autoplay = "floating_animation"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/floating_animation = SubResource( 13 )
+anims/floating_animation = SubResource( 12 )
 blend_times = [  ]
 
 [node name="Player1" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="2"]
@@ -2938,7 +2874,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Player1" type="TextureButton" parent="Screen/DuelSelection" index="1"]
 
-material = SubResource( 15 )
+material = SubResource( 14 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2969,7 +2905,7 @@ stretch_mode = 5
 
 [node name="Player2" type="TextureButton" parent="Screen/DuelSelection" index="2"]
 
-material = SubResource( 16 )
+material = SubResource( 15 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3000,7 +2936,7 @@ stretch_mode = 5
 
 [node name="Player3" type="TextureButton" parent="Screen/DuelSelection" index="3"]
 
-material = SubResource( 17 )
+material = SubResource( 16 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3046,7 +2982,7 @@ size_flags_vertical = 1
 
 [node name="Item1" type="TextureButton" parent="Screen/ItemSelection" index="0"]
 
-material = SubResource( 18 )
+material = SubResource( 17 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3078,7 +3014,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="Item2" type="TextureButton" parent="Screen/ItemSelection" index="1"]
 
-material = SubResource( 19 )
+material = SubResource( 18 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3110,7 +3046,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="Item3" type="TextureButton" parent="Screen/ItemSelection" index="2"]
 
-material = SubResource( 20 )
+material = SubResource( 19 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
