@@ -726,7 +726,7 @@ func show_minigame_info():
 	if current_minigame.image_path != null:
 		$Screen/MinigameInformation/Screenshot.texture = load(current_minigame.image_path)
 	
-	for i in range(1, Global.amount_of_players + 1):
+	for i in range(1, players.size() + 1):
 		var label = $Screen/MinigameInformation/Controls.get_node("Player" + var2str(i))
 		if not minigame_has_player(i) or players[i - 1].is_ai:
 			# If the player is controlled by an AI, there is no point in showing controls
