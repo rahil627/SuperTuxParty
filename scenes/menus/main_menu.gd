@@ -132,9 +132,11 @@ func prepare_player_states():
 	var possible_characters = character_loader.get_loaded_characters()
 	var num_characters = possible_characters.size()
 	if num_characters >= Global.amount_of_players:
-		for child in $SelectionChar/Buttons/VScrollBar/Grid.get_children():
-			if child.disabled:
-				possible_characters.remove(possible_characters.find(child.get_text()))
+		for i in characters:
+			if i == null:
+				break
+			
+			possible_characters.remove(possible_characters.find(i))
 	
 	for i in range(1, Global.amount_of_players + 1):
 		if i < current_player:
@@ -207,6 +209,9 @@ func _on_Selection_Back_pressed():
 	# Reenable all characters
 	for child in $SelectionChar/Buttons/VScrollBar/Grid.get_children():
 		child.disabled = false
+	
+	characters.clear()
+	characters.resize(Global.amount_of_players)
 	
 	_amount_players_selected()
 
