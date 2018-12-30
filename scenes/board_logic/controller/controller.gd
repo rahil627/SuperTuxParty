@@ -41,12 +41,22 @@ var end_turn = true
 # Next node for player to go to when the player has chosen a path
 var next_node = null
 
-enum EDITOR_NODE_LINKING_DISPLAY { DISABLED = 0, NEXT_NODES = 1, PREV_NODES = 2, ALL = 3 }
-enum TURN_ACTION {BUY_CAKE = 0, CHOOSE_PATH = 1, LAND_ON_SPACE = 2}
+enum EDITOR_NODE_LINKING_DISPLAY {
+	DISABLED,
+	NEXT_NODES,
+	PREV_NODES,
+	ALL
+}
+
+enum TURN_ACTION {
+	BUY_CAKE,
+	CHOOSE_PATH,
+	LAND_ON_SPACE
+}
 
 # Path to the node, where Players start
 export(NodePath) var start_node
-export(EDITOR_NODE_LINKING_DISPLAY) var show_linking_type = ALL
+export(EDITOR_NODE_LINKING_DISPLAY) var show_linking_type = EDITOR_NODE_LINKING_DISPLAY.ALL
 
 # Stores the amount of steps the current player still needs to take, to complete his roll
 # Used when the player movement is interrupted because of a cake spot
@@ -191,7 +201,7 @@ func roll(steps = null):
 			return
 		
 		match selected_item.type:
-			ITEM.DICE:
+			ITEM.TYPES.DICE:
 				var dice = selected_item.activate(player, self)
 				
 				$Screen/Stepcounter.text = var2str(dice)
@@ -202,7 +212,7 @@ func roll(steps = null):
 				# Show which number was rolled
 				$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
 				$Screen/Dice.show()
-			ITEM.PLACABLE:
+			ITEM.TYPES.PLACABLE:
 				yield(select_space(player, selected_item.max_place_distance), "completed")
 				selected_space.trap = selected_item
 				selected_space.trap_player = player
@@ -222,7 +232,7 @@ func roll(steps = null):
 				# Show which number was rolled
 				$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
 				$Screen/Dice.show()
-			ITEM.ACTION:
+			ITEM.TYPES.ACTION:
 				selected_item.activate(player, self)
 				
 				# Use default dice
@@ -243,9 +253,9 @@ func roll(steps = null):
 		
 		for p in players:
 			match p.space.type:
-				NODE.BLUE:
+				NODE.NODE_TYPES.BLUE:
 					blue_team.push_back(p.player_id)
-				NODE.RED:
+				NODE.NODE_TYPES.RED:
 					red_team.push_back(p.player_id)
 				_:
 					if randi() % 2 == 0:
@@ -262,13 +272,13 @@ func roll(steps = null):
 		
 		match [blue_team.size(), red_team.size()]:
 			[4, 0]:
-				Global.minigame_type = Global.FREE_FOR_ALL
+				Global.minigame_type = Global.MINIGAME_TYPES.FREE_FOR_ALL
 				current_minigame = Global.minigame_loader.get_random_ffa()
 			[3, 1]:
-				Global.minigame_type = Global.ONE_VS_THREE
+				Global.minigame_type = Global.MINIGAME_TYPES.ONE_VS_THREE
 				current_minigame = Global.minigame_loader.get_random_1v3()
 			[2, 2]:
-				Global.minigame_type = Global.TWO_VS_TWO
+				Global.minigame_type = Global.MINIGAME_TYPES.TWO_VS_TWO
 				current_minigame = Global.minigame_loader.get_random_2v2()
 		
 		yield(show_minigame_animation(), "completed")
@@ -377,7 +387,7 @@ func do_step(player, num):
 		update_space(previous_space)
 		update_space(player.space)
 		
-		do_action = LAND_ON_SPACE
+		do_action = TURN_ACTION.LAND_ON_SPACE
 
 func update_space(space):
 	var num  = 0
@@ -475,28 +485,28 @@ func animation_ended(player_id):
 	var player = players[player_id - 1]
 	
 	if end_turn:
-		if do_action == LAND_ON_SPACE:
+		if do_action == TURN_ACTION.LAND_ON_SPACE:
 			# Activate the item placed onto the node if any
 			if player.space.trap != null and player.space.trap.activate(player, player.space.trap_player, self):
 				player.space.trap = null
 			
 			# Lose cookies if you land on red space
 			match player.space.type:
-				NODE.RED:
+				NODE.NODE_TYPES.RED:
 					player.cookies -= 3
 					if player.cookies < 0:
 						player.cookies = 0
-				NODE.GREEN:
+				NODE.NODE_TYPES.GREEN:
 					if get_parent().has_method("fire_event"):
 						get_parent().fire_event(player, player.space)
 						do_action = null
 						return
-				NODE.BLUE:
+				NODE.NODE_TYPES.BLUE:
 					player.cookies += 3
-				NODE.YELLOW:
+				NODE.NODE_TYPES.YELLOW:
 					var rewards = Global.MINIGAME_DUEL_REWARDS.values()
 					
-					Global.minigame_type = Global.DUEL
+					Global.minigame_type = Global.MINIGAME_TYPES.DUEL
 					current_minigame = Global.minigame_loader.get_random_duel()
 					Global.minigame_duel_reward = rewards[randi() % rewards.size()]
 					
@@ -670,13 +680,13 @@ func show_minigame_animation():
 			i += 1
 	
 	match Global.minigame_type:
-		Global.FREE_FOR_ALL:
+		Global.MINIGAME_TYPES.FREE_FOR_ALL:
 			$Screen/MinigameTypeAnimation.play("FFA")
-		Global.ONE_VS_THREE:
+		Global.MINIGAME_TYPES.ONE_VS_THREE:
 			$Screen/MinigameTypeAnimation.play("1v3")
-		Global.TWO_VS_TWO:
+		Global.MINIGAME_TYPES.TWO_VS_TWO:
 			$Screen/MinigameTypeAnimation.play("2v2")
-		Global.DUEL:
+		Global.MINIGAME_TYPES.DUEL:
 			$Screen/MinigameTypeAnimation.play("Duel")
 	
 	$Screen/Dice.hide()
@@ -743,7 +753,7 @@ func _on_Try_pressed():
 	Global.goto_minigame(current_minigame, true)
 
 func _on_Play_pressed():
-	if Global.minigame_type != Global.DUEL:
+	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		Global.turn += 1
 		player_turn = 1
 	Global.goto_minigame(current_minigame)

@@ -49,7 +49,7 @@ func _on_Timer_timeout():
 			next_action(i + 1)
 	else:
 		match Global.minigame_type:
-			Global.FREE_FOR_ALL, Global.DUEL:
+			Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
 				var placement = []
 				
 				for i in range(num_players):
@@ -62,7 +62,7 @@ func _on_Timer_timeout():
 					placement[i] = players[placement[i] - 1].player_id
 				
 				Global.goto_board(placement)
-			Global.TWO_VS_TWO:
+			Global.MINIGAME_TYPES.TWO_VS_TWO:
 				# Find the team of the player that won
 				for p in get_tree().get_nodes_in_group("players"):
 					if p.presses == p.NEEDED_BUTTON_PRESSES:

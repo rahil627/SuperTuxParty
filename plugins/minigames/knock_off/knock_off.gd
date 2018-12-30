@@ -10,7 +10,7 @@ var winner_team
 func _ready():
 	$Environment/Screen/Message.hide()
 	
-	if Global.minigame_type == Global.DUEL:
+	if Global.minigame_type == Global.MINIGAME_TYPES.DUEL:
 		placement = [0, 0]
 	else:
 		placement = [0, 0, 0, 0]
@@ -22,7 +22,7 @@ func _ready():
 			i += 1
 
 func win_condition(players):
-	if Global.minigame_type == Global.FREE_FOR_ALL:
+	if Global.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL:
 		return players.size() <= 1
 	else:
 		var team
@@ -55,11 +55,11 @@ func _process(delta):
 		timer_end_start = true
 		
 		match Global.minigame_type:
-			Global.FREE_FOR_ALL, Global.DUEL:
+			Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
 				for p in Global.players:
 					if p.player_id == placement[0]:
 						$Environment/Screen/Message.text = p.player_name + " wins!"
-			Global.TWO_VS_TWO:
+			Global.MINIGAME_TYPES.TWO_VS_TWO:
 				$Environment/Screen/Message.text = "Team %d wins!" % (winner_team + 1)
 		
 		$Environment/Screen/Message.show()
@@ -68,7 +68,7 @@ func _process(delta):
 		timer_end -= delta
 		if timer_end <= 0:
 			match Global.minigame_type:
-				Global.DUEL, Global.FREE_FOR_ALL:
+				Global.MINIGAME_TYPES.DUEL, Global.MINIGAME_TYPES.FREE_FOR_ALL:
 					Global.goto_board(placement)
-				Global.TWO_VS_TWO:
+				Global.MINIGAME_TYPES.TWO_VS_TWO:
 					Global.goto_board(winner_team)

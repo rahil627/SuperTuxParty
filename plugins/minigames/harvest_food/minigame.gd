@@ -11,7 +11,7 @@ var rotten_index
 func _ready():
 	$Screen/Player1Name.text = Global.players[$Player1.player_id - 1].player_name
 	$Screen/Player2Name.text = Global.players[$Player2.player_id - 1].player_name
-	if Global.minigame_type != Global.DUEL:
+	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Screen/Player3Name.text = Global.players[$Player3.player_id - 1].player_name
 		$Screen/Player4Name.text = Global.players[$Player4.player_id - 1].player_name
 		
@@ -49,7 +49,7 @@ func _on_Timer_timeout():
 	$Player1.current_destination = $Player1.translation - $Player1.translation.normalized()
 	$Player2.input_disabled = true
 	$Player2.current_destination = $Player2.translation - $Player2.translation.normalized()
-	if Global.minigame_type != Global.DUEL:
+	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Player3.input_disabled = true
 		$Player3.current_destination = $Player3.translation - $Player3.translation.normalized()
 		$Player3.rotation = Vector3(0, -PI/2, 0)
@@ -88,7 +88,7 @@ func _on_Timer_timeout():
 	$Player2.play_animation("idle")
 	$Player2.translation = Vector3(1, 0.44, -1)
 	$Player2.current_destination = null
-	if Global.minigame_type != Global.DUEL:
+	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Player3.input_disabled = false
 		$Player3.play_animation("idle")
 		$Player3.translation = Vector3(1, 0.44, 1)
@@ -111,9 +111,9 @@ func _on_Timer_timeout():
 	else:
 		var placement
 		match Global.minigame_type:
-			Global.FREE_FOR_ALL, Global.DUEL:
+			Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
 				var players
-				if Global.minigame_type == Global.DUEL:
+				if Global.minigame_type == Global.MINIGAME_TYPES.DUEL:
 					placement = [1, 2]
 					players = [$Player1, $Player2]
 				else:
@@ -123,7 +123,7 @@ func _on_Timer_timeout():
 				placement.sort_custom(Sorter.new(players), "_sort")
 				for i in range(placement.size()):
 					placement[i] = players[placement[i] - 1].player_id
-			Global.TWO_VS_TWO:
+			Global.MINIGAME_TYPES.TWO_VS_TWO:
 				if $Player1.plants + $Player2.plants >= $Player3.plants + $Player4.plants:
 					placement = 0
 				else:
@@ -134,7 +134,7 @@ func _on_Timer_timeout():
 func update_overlay():
 	$Screen/Player1.text = var2str($Player1.plants)
 	$Screen/Player2.text = var2str($Player2.plants)
-	if Global.minigame_type != Global.DUEL:
+	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Screen/Player3.text = var2str($Player3.plants)
 		$Screen/Player4.text = var2str($Player4.plants)
 

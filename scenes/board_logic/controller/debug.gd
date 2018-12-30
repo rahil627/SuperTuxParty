@@ -1,11 +1,11 @@
 extends WindowDialog
 
 enum STATES {
-	addCookies,
-	addCakes,
-	addItems,
-	gotoPlayer,
-	move
+	ADD_COOKIES,
+	ADD_CAKES,
+	ADD_ITEMS,
+	GOTO_PLAYER,
+	MOVE
 }
 
 var players = null
@@ -31,7 +31,7 @@ func setup():
 		
 		button.text = loader.parse_file(game).name + " (Duel)"
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.DUEL])
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.DUEL])
 		
 		$List/Minigames.add_child(button)
 	
@@ -40,7 +40,7 @@ func setup():
 		
 		button.text = loader.parse_file(game).name + " (1v3)"
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.ONE_VS_THREE])
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.ONE_VS_THREE])
 		
 		$List/Minigames.add_child(button)
 		
@@ -49,7 +49,7 @@ func setup():
 		
 		button.text = loader.parse_file(game).name + " (2v2)"
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.TWO_VS_TWO])
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.TWO_VS_TWO])
 		
 		$List/Minigames.add_child(button)
 	
@@ -58,7 +58,7 @@ func setup():
 		
 		button.text = loader.parse_file(game).name + " (FFA)"
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.FREE_FOR_ALL])
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.FREE_FOR_ALL])
 		
 		$List/Minigames.add_child(button)
 	
@@ -84,33 +84,33 @@ func _on_Skip_pressed():
 	Global.turn += 1
 	$"../Turn".text = "Turn: " + var2str(Global.turn)
 
-func _on_AddCookies_pressed():
+func _on_ADD_COOKIES_pressed():
 	hide_lists()
 	$List/Players.show()
 	$List.popup()
 	
-	state = STATES.addCookies
+	state = STATES.ADD_COOKIES
 
 func _on_AddCake_pressed():
 	hide_lists()
 	$List/Players.show()
 	$List.popup()
 	
-	state = STATES.addCakes
+	state = STATES.ADD_CAKES
 
-func _on_Move_pressed():
+func _on_MOVE_pressed():
 	hide_lists()
 	$List/Inputs.show()
 	$List.popup()
 	
-	state = STATES.move
+	state = STATES.MOVE
 
 func _on_PlayersTurn_pressed():
 	hide_lists()
 	$List/Players.show()
 	$List.popup()
 	
-	state = STATES.gotoPlayer
+	state = STATES.GOTO_PLAYER
 
 func _on_Minigame_pressed():
 	hide_lists()
@@ -120,15 +120,15 @@ func _on_Minigame_pressed():
 func _on_player_pressed(id):
 	var player = players[id - 1]
 	
-	if state == STATES.addCookies:
+	if state == STATES.ADD_COOKIES:
 		player.cookies += 5
-	elif state == STATES.addCakes:
+	elif state == STATES.ADD_CAKES:
 		player.cakes += 1
-	elif state == STATES.addItems:
+	elif state == STATES.ADD_ITEMS:
 		selected_player = player
 		$List/Players.hide()
 		$List/Items.show()
-	elif state == STATES.gotoPlayer:
+	elif state == STATES.GOTO_PLAYER:
 		$"../..".player_turn = player.player_id
 	
 	$"../..".update_player_info()
@@ -138,18 +138,18 @@ func _on_minigame_pressed(minigame, type):
 	var controller = get_tree().get_nodes_in_group("Controller")[0]
 	Global.minigame_type = type
 	match type:
-		Global.FREE_FOR_ALL:
+		Global.MINIGAME_TYPES.FREE_FOR_ALL:
 			Global.minigame_teams = [[1, 2, 3, 4], []]
-		Global.TWO_VS_TWO:
+		Global.MINIGAME_TYPES.TWO_VS_TWO:
 			Global.minigame_teams = [[1, 3], [2, 4]]
-		Global.ONE_VS_THREE:
+		Global.MINIGAME_TYPES.ONE_VS_THREE:
 			# Randomly place player to either solo or group team
 			# TODO: Add a dialog to choose which side to join
 			if randi() % 2 == 0:
 				Global.minigame_teams = [[1, 2, 3], [4]]
 			else:
 				Global.minigame_teams = [[2, 3, 4], [1]]
-		Global.DUEL:
+		Global.MINIGAME_TYPES.DUEL:
 			Global.minigame_teams = [[1], [2]]
 	
 	controller.current_minigame = mg
@@ -164,7 +164,7 @@ func _on_Item_pressed():
 	$List/Players.show()
 	$List.popup()
 	
-	state = STATES.addItems
+	state = STATES.ADD_ITEMS
 
 func _on_item_selected(item):
 	selected_player.give_item(load(Global.item_loader.get_item_path(item)).new())
@@ -175,7 +175,7 @@ func _on_Ok_pressed():
 	var controller = get_tree().get_nodes_in_group("Controller")[0]
 	
 	match state:
-		STATES.move:
+		STATES.MOVE:
 			var steps = int($List/Inputs/Number.value)
 			controller.roll(steps)
 	

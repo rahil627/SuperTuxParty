@@ -55,7 +55,7 @@ enum MINIGAME_TYPES {
 	FREE_FOR_ALL
 }
 
-var joypad_display = NUMBERS
+var joypad_display = JOYPAD_DISPLAY_TYPE.NUMBERS
 
 var amount_of_players = 4
 
@@ -293,7 +293,7 @@ func goto_board(placement):
 		# Only award if it's not a test
 		self.placement = placement
 		match minigame_type:
-			FREE_FOR_ALL:
+			MINIGAME_TYPES.FREE_FOR_ALL:
 				match award:
 					AWARD_T.linear:
 						for i in range(amount_of_players):
@@ -301,11 +301,11 @@ func goto_board(placement):
 					AWARD_T.winner_only:
 						players[placement[0] - 1].cookies += 10
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_FFA)
-			TWO_VS_TWO:
+			MINIGAME_TYPES.TWO_VS_TWO:
 				for player_id in minigame_teams[placement]:
 					players[player_id - 1].cookies += 10
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_2V2)
-			ONE_VS_THREE:
+			MINIGAME_TYPES.ONE_VS_THREE:
 				for player_id in minigame_teams[placement]:
 					# Has the solo player won?
 					if placement == 1:
@@ -313,7 +313,7 @@ func goto_board(placement):
 					else:
 						players[player_id - 1].cookies += 5
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_1V3)
-			DUEL:
+			MINIGAME_TYPES.DUEL:
 				match minigame_duel_reward:
 					MINIGAME_DUEL_REWARDS.TEN_COOKIES:
 						var other_player_cookies = min(players[placement[1] - 1].cookies, 10)
