@@ -4,7 +4,7 @@ extends Spatial
 enum NODE_TYPES {BLUE, RED, GREEN, YELLOW}
 
 # The setter and getter for this variables ensure that the changes are immediately visible to the editor
-export(NODE_TYPES) var type = BLUE setget set_type
+export(NODE_TYPES) var type = NODE_TYPES.BLUE setget set_type
 export var potential_cake = false setget set_cake
 
 # Hack to ensure a nice editing experience, see _ready function for more details
@@ -189,13 +189,13 @@ func set_material():
 		$Model/Cylinder.set_surface_material(0, trap.material)
 	else:
 		match type:
-			RED:
+			NODE_TYPES.RED:
 				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_red_material.tres"))
-			GREEN:
+			NODE_TYPES.GREEN:
 				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_green_material.tres"))
-			BLUE:
+			NODE_TYPES.BLUE:
 				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_blue_material.tres"))
-			YELLOW:
+			NODE_TYPES.YELLOW:
 				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_yellow_material.tres"))
 
 func _exit_tree():
@@ -235,7 +235,7 @@ func _enter_tree():
 
 const SHOW_NEXT_NODES = 1
 const SHOW_PREV_NODES = 2
-const SHOW_ALL        = 3
+const SHOW_ALL = 3
 
 # Renders the linking arrows
 func _process(delta):

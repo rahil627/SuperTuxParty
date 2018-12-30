@@ -20,7 +20,7 @@ var current_destination = null
 func _ready():
 	$Model/AnimationPlayer.play("idle")
 	
-	if Global.minigame_type == Global.DUEL:
+	if Global.minigame_type == Global.MINIGAME_TYPES.DUEL:
 		plant_spots = [$"../Area2", $"../Area4"]
 	else:
 		plant_spots = [$"../Area1", $"../Area2", $"../Area3", $"../Area4"]

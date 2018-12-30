@@ -1,3 +1,4 @@
+extends Node
 
 enum TYPES {
 	DICE,
@@ -5,7 +6,7 @@ enum TYPES {
 	ACTION
 }
 
-var type = ACTION
+var type = TYPES.ACTION
 var is_consumed = true
 
 var icon
@@ -23,7 +24,7 @@ func _init(type):
 func load_resources():
 	icon = load(get_script().resource_path.get_base_dir() + "/icon.png")
 	
-	if type == PLACABLE:
+	if type == TYPES.PLACABLE:
 		material = load(get_script().resource_path.get_base_dir() + "/material.tres")
 
 func activate(player, controller):
