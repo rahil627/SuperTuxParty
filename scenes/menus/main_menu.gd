@@ -86,6 +86,10 @@ func _on_Options_pressed():
 	$MainMenu.hide()
 	$OptionsMenu.show()
 
+func _on_OptionsMenu_quit():
+	$MainMenu.show()
+	$OptionsMenu.hide()
+
 #*** Amount of players menu ***#
 
 func _select_player_amount(players):
@@ -229,6 +233,3 @@ func _on_LoadGame_Back_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
-
-func _on_OptionsMenu_quit():
-	$MainMenu.show()

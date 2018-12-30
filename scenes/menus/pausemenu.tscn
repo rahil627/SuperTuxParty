@@ -73,9 +73,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 83.0
+margin_top = 80.0
 margin_right = 320.0
-margin_bottom = 162.0
+margin_bottom = 156.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -99,9 +99,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 166.0
+margin_top = 160.0
 margin_right = 320.0
-margin_bottom = 245.0
+margin_bottom = 236.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -125,16 +125,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 249.0
+margin_top = 240.0
 margin_right = 320.0
-margin_bottom = 311.0
+margin_bottom = 316.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -143,7 +143,7 @@ group = null
 text = "Save Game"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
 
 [node name="ExitMenu" type="Button" parent="Container" index="4"]
 
@@ -151,9 +151,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 315.0
+margin_top = 320.0
 margin_right = 320.0
-margin_bottom = 394.0
+margin_bottom = 396.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -177,7 +177,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 398.0
+margin_top = 400.0
 margin_right = 320.0
 margin_bottom = 480.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -346,9 +346,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -371.0
-margin_top = -288.5
+margin_top = -206.0
 margin_right = 371.0
-margin_bottom = 288.5
+margin_bottom = 206.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -358,24 +358,9 @@ size_flags_vertical = 1
 popup_exclusive = false
 window_title = "Options"
 resizable = false
+_sections_unfolded = [ "Rect" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="OptionsWindow" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/margin_right = 25
-custom_constants/margin_left = 25
-_sections_unfolded = [ "custom_constants" ]
-
-[node name="OptionsMenu" parent="OptionsWindow/MarginContainer" index="0" instance=ExtResource( 5 )]
+[node name="OptionsMenu" parent="OptionsWindow" index="1" instance=ExtResource( 5 )]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -406,6 +391,6 @@ margin_bottom = 569.0
 
 [connection signal="confirmed" from="OverrideSave" to="." method="_on_OverrideSave_confirmed"]
 
-[connection signal="quit" from="OptionsWindow/MarginContainer/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
+[connection signal="quit" from="OptionsWindow/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
 
 

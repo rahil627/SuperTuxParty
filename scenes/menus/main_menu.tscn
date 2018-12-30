@@ -37,7 +37,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin", "Theme" ]
+_sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Title" type="Label" parent="MainMenu" index="0"]
 
@@ -75,7 +75,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 4
 alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Play" type="Button" parent="MainMenu/Buttons" index="0"]
 
@@ -181,6 +181,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionPlayers" type="Container" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -402,6 +403,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="SelectionChar" type="Container" parent="." index="2"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.3
 anchor_top = 0.2
@@ -531,7 +533,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Title" type="Label" parent="SelectionBoard" index="0"]
 
@@ -668,9 +670,52 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="OptionsMenu" parent="." index="4" instance=ExtResource( 5 )]
+[node name="OptionsMenu" type="Container" parent="." index="4"]
 
+editor/display_folded = true
 visible = false
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
+margin_left = 3.05176e-05
+margin_top = 1.52588e-05
+margin_bottom = 6.10352e-05
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Title" type="Label" parent="OptionsMenu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_top = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Options"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
+
+[node name="OptionsMenu" parent="OptionsMenu" index="1" instance=ExtResource( 5 )]
+
+margin_left = 0.0
+margin_top = 160.0
+margin_right = 0.0
+margin_bottom = 27.0
 
 [node name="LoadGameMenu" type="Container" parent="." index="5"]
 
@@ -1185,7 +1230,7 @@ script = ExtResource( 7 )
 
 [connection signal="pressed" from="SelectionBoard/Back" to="." method="_on_Selection_Back_pressed"]
 
-[connection signal="quit" from="OptionsMenu" to="." method="_on_OptionsMenu_quit"]
+[connection signal="quit" from="OptionsMenu/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
 
 [connection signal="pressed" from="LoadGameMenu/Back" to="." method="_on_LoadGame_Back_pressed"]
 

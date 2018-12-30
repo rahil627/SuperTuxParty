@@ -42,7 +42,7 @@ func _save_game(save_name):
 	Global.current_savegame.name = save_name
 	for savegame in Global.savegame_loader.savegames:
 		if savegame.name == save_name:
-			$OverrideSave.popup()
+			$OverrideSave.popup_centered()
 			return
 	
 	Global.save_game()
@@ -65,7 +65,7 @@ func _on_ExitDesktop_pressed():
 
 func _on_SaveGame_pressed():
 	if Global.is_new_savegame:
-		$SavegameNameInput.popup()
+		$SavegameNameInput.popup_centered()
 	else:
 		Global.save_game()
 		_on_Resume_pressed()
@@ -82,8 +82,8 @@ func _on_OverrideSave_confirmed():
 	_on_Resume_pressed()
 
 func _on_Options_pressed():
-	$OptionsWindow.popup()
-	$OptionsWindow/MarginContainer/OptionsMenu.show()
+	$OptionsWindow.popup_centered()
+	$OptionsWindow/OptionsMenu.show()
 
 func _on_OptionsMenu_quit():
 	$OptionsWindow.hide()
