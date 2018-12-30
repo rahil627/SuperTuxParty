@@ -13,7 +13,7 @@ var names = []
 var board_loader
 var character_loader
 
-var human_players = Global.amount_of_players
+var human_players = 0
 
 func _ready():
 	var award_type = $SelectionBoard/AwardType
@@ -28,8 +28,6 @@ func _ready():
 		
 		$MainMenu.visible = false
 		$SelectionBoard.visible = true
-		
-		human_players = 0
 		
 		var i = 1;
 		
@@ -90,8 +88,8 @@ func _on_Options_pressed():
 
 #*** Amount of players menu ***#
 
-# _amount_players_selected is called when amount of players is selected
-func _amount_players_selected():
+func _select_player_amount(players):
+	human_players = players
 	for i in range(1, human_players + 1):
 		get_node("PlayerInfo" + var2str(i)).show()
 	
@@ -101,24 +99,6 @@ func _amount_players_selected():
 func _on_Play_pressed():
 	$MainMenu.hide()
 	$SelectionPlayers.show()
-
-func _on_One_Player_pressed():
-	human_players = 1
-	_amount_players_selected()
-
-func _on_Two_pressed():
-	human_players = 2
-	_amount_players_selected()
-
-
-func _on_Three_pressed():
-	human_players = 3
-	_amount_players_selected()
-
-
-func _on_Four_pressed():
-	human_players = 4
-	_amount_players_selected()
 
 func _on_Amount_Of_Players_Back_pressed():
 	$SelectionPlayers.hide()
@@ -213,7 +193,7 @@ func _on_Selection_Back_pressed():
 	characters.clear()
 	characters.resize(Global.amount_of_players)
 	
-	_amount_players_selected()
+	_select_player_amount(0)
 
 #*** Load game menu ***#
 
