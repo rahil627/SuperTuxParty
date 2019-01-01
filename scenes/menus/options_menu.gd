@@ -10,7 +10,7 @@ var control_remapper = preload("res://scenes/menus/control_remapper.gd").new(sel
 signal quit
 
 func _ready():
-	var joypad_display_types = $Buttons/TabContainer/Controls/JoypadDisplayType
+	var joypad_display_types = $TabContainer/Controls/JoypadDisplayType
 	joypad_display_types.add_item("Numbers", Global.JOYPAD_DISPLAY_TYPE.NUMBERS)
 	joypad_display_types.add_item("XBOX", Global.JOYPAD_DISPLAY_TYPE.XBOX)
 	joypad_display_types.add_item("Nintendo DS", Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS)
@@ -60,11 +60,11 @@ func _on_volume_changed(value, index):
 	var percentage = str((value + 80) / 80 * 100).pad_decimals(0) + "%"
 	match index:
 		0:
-			$Buttons/TabContainer/Audio/Master/Label.text = percentage
+			$TabContainer/Audio/Master/Label.text = percentage
 		1:
-			$Buttons/TabContainer/Audio/Music/Label.text = percentage
+			$TabContainer/Audio/Music/Label.text = percentage
 		2:
-			$Buttons/TabContainer/Audio/Effects/Label.text = percentage
+			$TabContainer/Audio/Effects/Label.text = percentage
 	
 	save_option("audio", AudioServer.get_bus_name(index).to_lower() + "_volume", value)
 
@@ -85,11 +85,6 @@ func _on_PauseUnfocus_toggled(button_pressed):
 	
 	save_option("misc", "pause_window_unfocus", button_pressed)
 
-func _on_Options_Back_pressed():
-	hide()
-	
-	emit_signal("quit")
-
 func get_option_value_safely(section, key, default, min_value=null, max_value=null):
 	var value = _options_file.get_value(section, key, default)
 	if typeof(value) != typeof(default) or min_value != null and value < min_value or max_value != null and value > max_value:
@@ -106,36 +101,36 @@ func load_options():
 	_is_loading_options = true # Avoid saving options while loading them.
 	
 	OS.window_fullscreen = get_option_value_safely("visual", "fullscreen", false)
-	$Buttons/TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen
+	$TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen
 	
 	OS.vsync_enabled = get_option_value_safely("visual", "vsync", false)
-	$Buttons/TabContainer/Visual/VSync.pressed = OS.vsync_enabled
+	$TabContainer/Visual/VSync.pressed = OS.vsync_enabled
 	
 	var frame_id = get_option_value_safely("visual", "frame_cap", 1, 0, 3)
 	_on_FrameCap_item_selected(frame_id)
-	$Buttons/TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
+	$TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
 	
 	AudioServer.set_bus_mute(0, get_option_value_safely("audio", "master_muted", false))
 	AudioServer.set_bus_mute(1, get_option_value_safely("audio", "music_muted", false))
 	AudioServer.set_bus_mute(2, get_option_value_safely("audio", "effects_muted", false))
 	
-	$Buttons/TabContainer/Audio/Master/CheckBox.pressed = not AudioServer.is_bus_mute(0)
-	$Buttons/TabContainer/Audio/Music/CheckBox.pressed = not AudioServer.is_bus_mute(1)
-	$Buttons/TabContainer/Audio/Effects/CheckBox.pressed = not AudioServer.is_bus_mute(2)
+	$TabContainer/Audio/Master/CheckBox.pressed = not AudioServer.is_bus_mute(0)
+	$TabContainer/Audio/Music/CheckBox.pressed = not AudioServer.is_bus_mute(1)
+	$TabContainer/Audio/Effects/CheckBox.pressed = not AudioServer.is_bus_mute(2)
 	
 	Global.mute_window_unfocus = get_option_value_safely("audio", "mute_window_unfocus", true)
-	$Buttons/TabContainer/Audio/MuteUnfocus.pressed = Global.mute_window_unfocus
+	$TabContainer/Audio/MuteUnfocus.pressed = Global.mute_window_unfocus
 	
 	# Setting the 'value' of 'Range' nodes directly also fires their signals.
-	$Buttons/TabContainer/Audio/MasterVolume.value = get_option_value_safely("audio", "master_volume", 0.0, -80, 0)
-	$Buttons/TabContainer/Audio/MusicVolume.value = get_option_value_safely("audio", "music_volume", 0.0, -80, 0)
-	$Buttons/TabContainer/Audio/EffectsVolume.value = get_option_value_safely("audio", "effects_volume", 0.0, -80, 0)
+	$TabContainer/Audio/MasterVolume.value = get_option_value_safely("audio", "master_volume", 0.0, -80, 0)
+	$TabContainer/Audio/MusicVolume.value = get_option_value_safely("audio", "music_volume", 0.0, -80, 0)
+	$TabContainer/Audio/EffectsVolume.value = get_option_value_safely("audio", "effects_volume", 0.0, -80, 0)
 	
 	Global.joypad_display = get_option_value_safely("controls", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS, 0, Global.JOYPAD_DISPLAY_TYPE.size() - 1)
-	$Buttons/TabContainer/Controls/JoypadDisplayType.select(Global.joypad_display)
+	$TabContainer/Controls/JoypadDisplayType.select(Global.joypad_display)
 	
 	Global.pause_window_unfocus = get_option_value_safely("misc", "pause_window_unfocus", true)
-	$Buttons/TabContainer/Misc/PauseUnfocus.pressed = Global.pause_window_unfocus
+	$TabContainer/Misc/PauseUnfocus.pressed = Global.pause_window_unfocus
 	
 	_is_loading_options = false
 

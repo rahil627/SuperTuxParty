@@ -1,66 +1,32 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/options_menu.gd" type="Script" id=2]
-[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/fonts/button_font_small.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/button_font_small.tres" type="DynamicFont" id=4]
 
-[node name="OptionsMenu" type="Container"]
-
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Margin", "Theme" ]
-
-[node name="Title" type="Label" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_top = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 2
-custom_fonts/font = ExtResource( 3 )
-text = "Options"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "BBCode", "Margin", "custom_fonts" ]
-
-[node name="Buttons" type="VBoxContainer" parent="." index="1"]
+[node name="OptionsMenu" type="VBoxContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 160.0
+margin_left = 384.0
+margin_top = 260.5
+margin_right = -384.0
+margin_bottom = -260.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_constants/separation = 0
+theme = ExtResource( 1 )
 alignment = 0
-_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
+script = ExtResource( 2 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Theme" ]
 
-[node name="TabContainer" type="TabContainer" parent="Buttons" index="0"]
+[node name="TabContainer" type="TabContainer" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -74,12 +40,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 tab_align = 0
 tabs_visible = true
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Visual" type="VBoxContainer" parent="Buttons/TabContainer" index="0"]
+[node name="Visual" type="VBoxContainer" parent="TabContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -97,7 +63,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Fullscreen" type="CheckButton" parent="Buttons/TabContainer/Visual" index="0"]
+[node name="Fullscreen" type="CheckButton" parent="TabContainer/Visual" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -112,7 +78,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -122,7 +88,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="VSync" type="CheckButton" parent="Buttons/TabContainer/Visual" index="1"]
+[node name="VSync" type="CheckButton" parent="TabContainer/Visual" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -138,7 +104,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -148,7 +114,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="FrameCap" type="HBoxContainer" parent="Buttons/TabContainer/Visual" index="2"]
+[node name="FrameCap" type="HBoxContainer" parent="TabContainer/Visual" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -165,7 +131,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Label" type="Label" parent="Buttons/TabContainer/Visual/FrameCap" index="0"]
+[node name="Label" type="Label" parent="TabContainer/Visual/FrameCap" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -179,14 +145,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Frame Cap"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="OptionButton" type="OptionButton" parent="Buttons/TabContainer/Visual/FrameCap" index="1"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Visual/FrameCap" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -202,7 +168,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 2
@@ -214,17 +180,17 @@ align = 0
 items = [ "30", null, false, 0, null, "60", null, false, 1, null, "120", null, false, 2, null, "144", null, false, 3, null, "240", null, false, 4, null, "Uncapped", null, false, 5, null ]
 selected = 1
 
-[node name="Audio" type="VBoxContainer" parent="Buttons/TabContainer" index="1"]
+[node name="Audio" type="VBoxContainer" parent="TabContainer" index="1"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 47.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 8.0
+margin_top = 45.0
+margin_right = -8.0
+margin_bottom = -8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -233,7 +199,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Master" type="HBoxContainer" parent="Buttons/TabContainer/Audio" index="0"]
+[node name="Master" type="HBoxContainer" parent="TabContainer/Audio" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -249,7 +215,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="CheckBox" type="CheckBox" parent="Buttons/TabContainer/Audio/Master" index="0"]
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Master" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -264,7 +230,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -275,7 +241,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="Buttons/TabContainer/Audio/Master" index="1"]
+[node name="Label" type="Label" parent="TabContainer/Audio/Master" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -289,7 +255,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "100%"
 align = 2
 percent_visible = 1.0
@@ -297,7 +263,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="MasterVolume" type="HSlider" parent="Buttons/TabContainer/Audio" index="1"]
+[node name="MasterVolume" type="HSlider" parent="TabContainer/Audio" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -324,7 +290,7 @@ tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
 
-[node name="MuteUnfocus" type="CheckButton" parent="Buttons/TabContainer/Audio" index="2"]
+[node name="MuteUnfocus" type="CheckButton" parent="TabContainer/Audio" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -339,7 +305,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -350,7 +316,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Music" type="HBoxContainer" parent="Buttons/TabContainer/Audio" index="3"]
+[node name="Music" type="HBoxContainer" parent="TabContainer/Audio" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -366,7 +332,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="CheckBox" type="CheckBox" parent="Buttons/TabContainer/Audio/Music" index="0"]
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Music" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -381,7 +347,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -392,7 +358,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="Buttons/TabContainer/Audio/Music" index="1"]
+[node name="Label" type="Label" parent="TabContainer/Audio/Music" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -406,7 +372,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "100%"
 align = 2
 percent_visible = 1.0
@@ -414,7 +380,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="MusicVolume" type="HSlider" parent="Buttons/TabContainer/Audio" index="4"]
+[node name="MusicVolume" type="HSlider" parent="TabContainer/Audio" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -441,7 +407,7 @@ tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
 
-[node name="Effects" type="HBoxContainer" parent="Buttons/TabContainer/Audio" index="5"]
+[node name="Effects" type="HBoxContainer" parent="TabContainer/Audio" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -457,7 +423,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="CheckBox" type="CheckBox" parent="Buttons/TabContainer/Audio/Effects" index="0"]
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Audio/Effects" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -472,7 +438,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -483,7 +449,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="Buttons/TabContainer/Audio/Effects" index="1"]
+[node name="Label" type="Label" parent="TabContainer/Audio/Effects" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -497,7 +463,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "100%"
 align = 2
 percent_visible = 1.0
@@ -505,7 +471,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="EffectsVolume" type="HSlider" parent="Buttons/TabContainer/Audio" index="6"]
+[node name="EffectsVolume" type="HSlider" parent="TabContainer/Audio" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -532,7 +498,7 @@ tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
 
-[node name="Controls" type="VBoxContainer" parent="Buttons/TabContainer" index="2"]
+[node name="Controls" type="VBoxContainer" parent="TabContainer" index="2"]
 
 editor/display_folded = true
 visible = false
@@ -540,10 +506,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 47.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 8.0
+margin_top = 45.0
+margin_right = -8.0
+margin_bottom = -8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -552,7 +518,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="TabContainer" type="TabContainer" parent="Buttons/TabContainer/Controls" index="0"]
+[node name="TabContainer" type="TabContainer" parent="TabContainer/Controls" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -566,11 +532,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 tab_align = 0
 tabs_visible = true
 
-[node name="Label" type="Label" parent="Buttons/TabContainer/Controls" index="1"]
+[node name="Label" type="Label" parent="TabContainer/Controls" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -589,7 +555,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="JoypadDisplayType" type="OptionButton" parent="Buttons/TabContainer/Controls" index="2"]
+[node name="JoypadDisplayType" type="OptionButton" parent="TabContainer/Controls" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -614,17 +580,17 @@ align = 0
 items = [  ]
 selected = -1
 
-[node name="Misc" type="VBoxContainer" parent="Buttons/TabContainer" index="3"]
+[node name="Misc" type="VBoxContainer" parent="TabContainer" index="3"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 47.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 8.0
+margin_top = 45.0
+margin_right = -8.0
+margin_bottom = -8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -633,7 +599,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="PauseUnfocus" type="CheckButton" parent="Buttons/TabContainer/Misc" index="0"]
+[node name="PauseUnfocus" type="CheckButton" parent="TabContainer/Misc" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -648,7 +614,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 pressed = true
 enabled_focus_mode = 2
@@ -659,15 +625,15 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Back" type="Button" parent="Buttons" index="1"]
+[node name="Back" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 162.0
+margin_top = 166.0
 margin_right = 512.0
-margin_bottom = 195.0
+margin_bottom = 199.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -675,7 +641,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -685,28 +651,28 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="toggled" from="Buttons/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
+[connection signal="toggled" from="TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
 
-[connection signal="toggled" from="Buttons/TabContainer/Visual/VSync" to="." method="_on_VSync_toggled"]
+[connection signal="toggled" from="TabContainer/Visual/VSync" to="." method="_on_VSync_toggled"]
 
-[connection signal="item_selected" from="Buttons/TabContainer/Visual/FrameCap/OptionButton" to="." method="_on_FrameCap_item_selected"]
+[connection signal="item_selected" from="TabContainer/Visual/FrameCap/OptionButton" to="." method="_on_FrameCap_item_selected"]
 
-[connection signal="toggled" from="Buttons/TabContainer/Audio/Master/CheckBox" to="." method="_on_bus_toggled" binds= [ 0 ]]
+[connection signal="toggled" from="TabContainer/Audio/Master/CheckBox" to="." method="_on_bus_toggled" binds= [ 0 ]]
 
-[connection signal="value_changed" from="Buttons/TabContainer/Audio/MasterVolume" to="." method="_on_volume_changed" binds= [ 0 ]]
+[connection signal="value_changed" from="TabContainer/Audio/MasterVolume" to="." method="_on_volume_changed" binds= [ 0 ]]
 
-[connection signal="toggled" from="Buttons/TabContainer/Audio/MuteUnfocus" to="." method="_on_MuteUnfocus_toggled"]
+[connection signal="toggled" from="TabContainer/Audio/MuteUnfocus" to="." method="_on_MuteUnfocus_toggled"]
 
-[connection signal="toggled" from="Buttons/TabContainer/Audio/Music/CheckBox" to="." method="_on_bus_toggled" binds= [ 1 ]]
+[connection signal="toggled" from="TabContainer/Audio/Music/CheckBox" to="." method="_on_bus_toggled" binds= [ 1 ]]
 
-[connection signal="value_changed" from="Buttons/TabContainer/Audio/MusicVolume" to="." method="_on_volume_changed" binds= [ 1 ]]
+[connection signal="value_changed" from="TabContainer/Audio/MusicVolume" to="." method="_on_volume_changed" binds= [ 1 ]]
 
-[connection signal="toggled" from="Buttons/TabContainer/Audio/Effects/CheckBox" to="." method="_on_bus_toggled" binds= [ 2 ]]
+[connection signal="toggled" from="TabContainer/Audio/Effects/CheckBox" to="." method="_on_bus_toggled" binds= [ 2 ]]
 
-[connection signal="value_changed" from="Buttons/TabContainer/Audio/EffectsVolume" to="." method="_on_volume_changed" binds= [ 2 ]]
+[connection signal="value_changed" from="TabContainer/Audio/EffectsVolume" to="." method="_on_volume_changed" binds= [ 2 ]]
 
-[connection signal="toggled" from="Buttons/TabContainer/Misc/PauseUnfocus" to="." method="_on_PauseUnfocus_toggled"]
+[connection signal="toggled" from="TabContainer/Misc/PauseUnfocus" to="." method="_on_PauseUnfocus_toggled"]
 
-[connection signal="pressed" from="Buttons/Back" to="." method="_on_Options_Back_pressed"]
+[connection signal="pressed" from="Back" to="." method="emit_signal" binds= [ "quit" ]]
 
 
