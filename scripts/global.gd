@@ -31,9 +31,9 @@ var savegame_loader = SaveGameLoader.new()
 
 # linear, 1st: 15, 2nd: 10, 3rd: 5, 4th: 0
 # winner_only, 1st: 10, 2nd-4th: 0
-enum AWARD_T {
-	linear,
-	winner_only
+enum AWARD_TYPE {
+	LINEAR,
+	WINNER_ONLY
 }
 
 enum MINIGAME_DUEL_REWARDS {
@@ -70,7 +70,7 @@ var mute_window_unfocus = true
 var _was_muted = false
 
 # Option to choose how players are awarded after completing a mini-game
-var award = AWARD_T.linear
+var award = AWARD_TYPE.LINEAR
 
 # Resource location of the current board
 var current_board
@@ -295,10 +295,10 @@ func goto_board(placement):
 		match minigame_type:
 			MINIGAME_TYPES.FREE_FOR_ALL:
 				match award:
-					AWARD_T.linear:
+					AWARD_TYPE.LINEAR:
 						for i in range(amount_of_players):
 							players[placement[i] - 1].cookies += 15 - (i * 5)
-					AWARD_T.winner_only:
+					AWARD_TYPE.WINNER_ONLY:
 						players[placement[0] - 1].cookies += 10
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_FFA)
 			MINIGAME_TYPES.TWO_VS_TWO:
