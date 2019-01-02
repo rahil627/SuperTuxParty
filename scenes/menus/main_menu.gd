@@ -17,8 +17,8 @@ var human_players = 0
 
 func _ready():
 	var award_type = $SelectionBoard/AwardType
-	award_type.add_item("Linear", Global.AWARD_T.linear);
-	award_type.add_item("Winner takes all", Global.AWARD_T.winner_only);
+	award_type.add_item("Linear", Global.AWARD_TYPE.LINEAR);
+	award_type.add_item("Winner takes all", Global.AWARD_TYPE.WINNER_ONLY);
 	load_boards()
 	load_characters()
 	characters.resize(Global.amount_of_players)
@@ -178,9 +178,9 @@ func _on_board_select(target):
 
 func _on_AwardType_item_selected(ID):
 	match ID:
-		Global.AWARD_T.linear:
+		Global.AWARD_TYPE.LINEAR:
 			Global.award = ID
-		Global.AWARD_T.winner_only:
+		Global.AWARD_TYPE.WINNER_ONLY:
 			Global.award = ID
 
 func _on_Selection_Back_pressed():
