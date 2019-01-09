@@ -1,7 +1,7 @@
 tool
 extends Spatial
 
-enum NODE_TYPES {BLUE, RED, GREEN, YELLOW}
+enum NODE_TYPES {BLUE, RED, GREEN, YELLOW, SHOP}
 
 # The setter and getter for this variables ensure that the changes are immediately visible to the editor
 export(NODE_TYPES) var type = NODE_TYPES.BLUE setget set_type
@@ -10,6 +10,12 @@ export var potential_cake = false setget set_cake
 # Hack to ensure a nice editing experience, see _ready function for more details
 export(Array, NodePath) var next_nodes setget set_next, get_next
 export(Array, NodePath) var prev_nodes setget set_prev, get_prev
+
+# Settings for shop node
+const MAX_STORE_SIZE = 8
+
+export(int, 1, 8) var amount_of_items_sold = 8 # const properties are not valid in export declarations, therefore the content MAX_STORE_SIZE is repeat as upper bound here
+export(Array, String, FILE, "*.gd") var custom_items = []
 
 var next
 var prev
@@ -197,6 +203,8 @@ func set_material():
 				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_blue_material.tres"))
 			NODE_TYPES.YELLOW:
 				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_yellow_material.tres"))
+			NODE_TYPES.SHOP:
+				$Model/Cylinder.set_surface_material(0, preload("res://scenes/board_logic/node/material/node_purple_material.tres"))
 
 func _exit_tree():
 	for p in next:

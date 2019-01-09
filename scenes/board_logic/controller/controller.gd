@@ -51,7 +51,8 @@ enum EDITOR_NODE_LINKING_DISPLAY {
 enum TURN_ACTION {
 	BUY_CAKE,
 	CHOOSE_PATH,
-	LAND_ON_SPACE
+	LAND_ON_SPACE,
+	SHOP
 }
 
 # Path to the node, where Players start
@@ -349,6 +350,17 @@ func do_step(player, num):
 				update_space(player.space)
 				
 				return
+			# If player passes a shop space
+			elif player.space.type == NODE.NODE_TYPES.SHOP:
+				do_action = TURN_ACTION.SHOP
+				
+				end_turn = false
+				steps_remaining = num - (i + 1)
+				
+				update_space(previous_space)
+				update_space(player.space)
+				
+				return
 			else:
 				var players_on_space = get_players_on_space(player.space) - 1
 				var offset = EMPTY_SPACE_PLAYER_TRANSLATION
@@ -466,6 +478,8 @@ func _unhandled_input(event):
 			select_opponent_input(event)
 		elif selected_item_id != -1 and not players[player_turn - 1].is_ai:
 			select_item_input(event)
+		elif $Screen/Shop.visible:
+			shop_input(event)
 	
 	if event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -548,8 +562,8 @@ func animation_ended(player_id):
 		wait_for_animation = false
 		_on_Roll_pressed()
 	else:
-		step_count += 1
-		$Screen/Stepcounter.text = var2str(step_count)
+		steps_remaining += 1
+		$Screen/Stepcounter.text = var2str(steps_remaining)
 		
 		if not player.is_ai:
 			wait_for_animation = true
@@ -557,6 +571,80 @@ func animation_ended(player_id):
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
 					$Screen/GetCake.show()
+				TURN_ACTION.SHOP:
+					var buyable_item_information = Global.item_loader.get_buyable_items()
+					
+					var buyable_items = []
+					var items = []
+					var icons = []
+					var cost = []
+					
+					for item in buyable_item_information:
+						buyable_items.append(Global.item_loader.get_item_path(item))
+					
+					for file in player.space.custom_items:
+						buyable_items.erase(file)
+						items.append(file)
+						var instance = load(file).new()
+						icons.append(instance.icon)
+						cost.append(instance.item_cost)
+					
+					if items.size() > NODE.MAX_STORE_SIZE:
+						items.resize(NODE.MAX_STORE_SIZE)
+					
+					var i = items.size()
+					while i < NODE.MAX_STORE_SIZE and buyable_items.size() != 0:
+						var index = randi() % buyable_items.size()
+						var random_item = buyable_items[index]
+						buyable_items.remove(index)
+						items.append(random_item)
+						var instance = load(random_item).new()
+						icons.append(instance.icon)
+						cost.append(instance.item_cost)
+						
+						i = i + 1
+					
+					i = 0
+					while i < NODE.MAX_STORE_SIZE:
+						var element = $Screen/Shop.get_node("Item%d" % (i+1))
+						var texture_button = element.get_node("Image")
+						texture_button.disconnect("pressed", self, "_on_shop_item")
+						
+						
+						if i < items.size():
+							texture_button.connect("pressed", self, "_on_shop_item", [player, items[i], cost[i]])
+							texture_button.texture_normal = icons[i]
+							if texture_button.is_connected("focus_entered", self, "_on_focus_entered"):
+								texture_button.disconnect("focus_entered", self, "_on_focus_entered")
+							if texture_button.is_connected("focus_exited", self, "_on_focus_exited"):
+								texture_button.disconnect("focus_exited", self, "_on_focus_exited")
+							if texture_button.is_connected("mouse_entered", self, "_on_mouse_entered"):
+								texture_button.disconnect("mouse_entered", self, "_on_mouse_entered")
+							if texture_button.is_connected("mouse_exited", self, "_on_mouse_exited"):
+								texture_button.disconnect("mouse_exited", self, "_on_mouse_exited")
+							if texture_button.is_connected("pressed", self, "_on_item_select"):
+								texture_button.disconnect("pressed", self, "_on_item_select")
+							
+							texture_button.connect("focus_entered", self, "_on_focus_entered", [texture_button])
+							texture_button.connect("focus_exited", self, "_on_focus_exited", [texture_button])
+							texture_button.connect("mouse_entered", self, "_on_mouse_entered", [texture_button])
+							texture_button.connect("mouse_exited", self, "_on_mouse_exited", [texture_button])
+							
+							texture_button.material.set_shader_param("enable_shader", false)
+
+							element.get_node("Cost/Amount").text = var2str(cost[i])
+							if player.cookies < cost[i]:
+								element.get_node("Cost/Amount").add_color_override("font_color", Color(1, 0, 0))
+							else:
+								element.get_node("Cost/Amount").add_color_override("font_color", Color(1, 1, 1))
+						else:
+							texture_button.texture_normal = null
+							element.get_node("Cost/Amount").text = ""
+						
+						i = i + 1
+					
+					$Screen/Shop/Item1/Image.grab_focus()
+					$Screen/Shop.show()
 		else:
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
@@ -565,6 +653,9 @@ func animation_ended(player_id):
 					player.cookies -= COOKIES_FOR_CAKE * cakes
 				TURN_ACTION.CHOOSE_PATH:
 					next_node = player.space.next[randi() % player.space.next.size()]
+				TURN_ACTION.SHOP:
+					# TODO
+					pass
 			
 			get_tree().create_timer(1).connect("timeout", self, "_ai_continue_callback")
 
@@ -979,3 +1070,27 @@ func _on_select_space_arrow_activated(arrow, distance):
 	selected_space_distance += distance
 	
 	show_select_space_arrows()
+
+func _on_shop_item(player, item, cost):
+	if player.cookies >= cost and player.give_item(load(item).new()):
+		player.cookies -= cost
+	elif player.cookies < cost:
+		$Screen/Shop/Notification.dialog_text = "You don't have enough cookies to buy that"
+		# Make it visible or else Godot does not recalculate the size
+		# Temporary until fixed in Godot
+		$Screen/Shop/Notification.show()
+		
+		$Screen/Shop/Notification.popup_centered()
+	else:
+		$Screen/Shop/Notification.dialog_text = "You don't have space left in your inventory"
+		# Make it visible or else Godot does not recalculate the size
+		# Temporary until fixed in Godot
+		$Screen/Shop/Notification.show()
+		
+		$Screen/Shop/Notification.popup_centered()
+
+func _on_Shop_Back_pressed():
+	$Screen/Shop.hide()
+	
+	end_turn = true
+	do_step(players[player_turn-1], steps_remaining)
