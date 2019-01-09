@@ -562,8 +562,8 @@ func animation_ended(player_id):
 		wait_for_animation = false
 		_on_Roll_pressed()
 	else:
-		steps_remaining += 1
-		$Screen/Stepcounter.text = var2str(steps_remaining)
+		step_count += 1
+		$Screen/Stepcounter.text = var2str(step_count)
 		
 		if not player.is_ai:
 			wait_for_animation = true
