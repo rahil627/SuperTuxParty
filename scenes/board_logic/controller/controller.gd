@@ -478,8 +478,6 @@ func _unhandled_input(event):
 			select_opponent_input(event)
 		elif selected_item_id != -1 and not players[player_turn - 1].is_ai:
 			select_item_input(event)
-		elif $Screen/Shop.visible:
-			shop_input(event)
 	
 	if event.is_action_pressed("debug"):
 		$Screen/Debug.popup()
@@ -562,8 +560,9 @@ func animation_ended(player_id):
 		wait_for_animation = false
 		_on_Roll_pressed()
 	else:
-		step_count += 1
-		$Screen/Stepcounter.text = var2str(step_count)
+		if do_action == TURN_ACTION.CHOOSE_PATH:
+			step_count += 1
+			$Screen/Stepcounter.text = var2str(step_count)
 		
 		if not player.is_ai:
 			wait_for_animation = true
