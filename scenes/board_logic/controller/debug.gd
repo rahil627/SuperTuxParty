@@ -84,7 +84,7 @@ func _on_Skip_pressed():
 	Global.turn += 1
 	$"../Turn".text = "Turn: " + var2str(Global.turn)
 
-func _on_ADD_COOKIES_pressed():
+func _on_AddCookies_pressed():
 	hide_lists()
 	$List/Players.show()
 	$List.popup()
@@ -98,7 +98,7 @@ func _on_AddCake_pressed():
 	
 	state = STATES.ADD_CAKES
 
-func _on_MOVE_pressed():
+func _on_Move_pressed():
 	hide_lists()
 	$List/Inputs.show()
 	$List.popup()
