@@ -9,6 +9,9 @@ enum TYPES {
 var type = TYPES.ACTION
 var is_consumed = true
 
+var can_be_bought = false
+var item_cost = 0
+
 var icon
 
 # Used when placed onto board

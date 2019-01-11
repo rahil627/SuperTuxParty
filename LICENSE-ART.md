@@ -108,11 +108,11 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/board_logic/node/material
-### tile_blue_col.jpg | tile_red_col.png | tile_yellow_col.png | tile_green_col.png | tile_nrm.jpg | tile_rgh.jpg
+### tile_blue_col.jpg | tile_red_col.png | tile_yellow_col.png | tile_green_col.png | tile_purple_col.png | tile_nrm.jpg | tile_rgh.jpg
 
 Public Domain by StruffelProductions
 
-tile_yellow_col.png is a modified version of tile_red_col.png by Florian Kothmeier
+tile_yellow_col.png and tile_purple_col.png are modified versions of tile_red_col.png by Florian Kothmeier
 
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
