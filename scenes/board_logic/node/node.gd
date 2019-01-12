@@ -172,7 +172,8 @@ func get_prev():
 
 # Updates the visual changes in the editor when the type is being changed
 func set_type(t):
-	type = t
+	if t != null:
+		type = t
 	
 	# Check if it has already been added to the tree to prevent errors
 	# from flooding the console when opening it in the editor
