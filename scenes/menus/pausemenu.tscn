@@ -6,7 +6,9 @@
 [ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=5]
 
-[node name="PauseMenu" type="PopupPanel"]
+[node name="PauseMenu" type="PopupPanel" index="0" groups=[
+"pausemenu",
+]]
 
 pause_mode = 2
 anchor_left = 0.5

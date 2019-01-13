@@ -11,9 +11,7 @@ const solo_ground_box = AABB(Vector3(-3, -0.25, 3), Vector3(6, 0.5, 2))
 var is_ai
 var player_id
 
-enum {
-	PAUSED,
-	
+enum STATE {
 	IDLE,
 	RUNNING,
 	JUMP,
@@ -32,7 +30,7 @@ var ai_running_dir = Vector3()
 var ai_time_dir_change = 0
 var ai_jump_timer = rand_range(MIN_JUMP_TIME, MAX_JUMP_TIME)
 
-var state = PAUSED
+var state = STATE.IDLE
 
 var movement = Vector3()
 
@@ -55,7 +53,7 @@ func _ready():
 func _process(delta):
 	fire_cooldown -= delta
 	var dir = Vector3()
-	if not is_ai and state != DEAD and state != PAUSED:
+	if not is_ai and state != STATE.DEAD:
 		if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
 			dir.z -= 1
 		if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
@@ -73,7 +71,7 @@ func _process(delta):
 		
 		if Input.is_action_just_pressed("player" + var2str(player_id) + "_action2") and is_solo_player:
 			fire()
-	elif is_ai and state != DEAD and state != PAUSED:
+	elif is_ai and state != STATE.DEAD:
 		if not is_solo_player:
 			ai_time_dir_change -= delta
 			if ai_time_dir_change <= 0:
@@ -98,7 +96,7 @@ func _process(delta):
 			if fire_cooldown <= 0:
 				var active_players = []
 				for p in get_tree().get_nodes_in_group("players"):
-					if p != self and p.state != DEAD:
+					if p != self and p.state != STATE.DEAD:
 						active_players.append(p)
 				if not active_players.empty():
 					var player = active_players[randi() % active_players.size()]
@@ -120,8 +118,8 @@ func _process(delta):
 				dir = ai_running_dir
 	
 	if translation.y < -2:
-		if state != DEAD:
-			state = DEAD
+		if state != STATE.DEAD:
+			state = STATE.DEAD
 			$"..".knockout(self)
 		queue_free()
 	
@@ -132,13 +130,13 @@ func _process(delta):
 		dir = dir.normalized()
 		rotation = Vector3(0, atan2(dir.x, dir.z), 0)
 	else:
-		if state == RUNNING:
+		if state == STATE.RUNNING:
 			$Model/AnimationPlayer.play("idle")
-			state = IDLE
+			state = STATE.IDLE
 	
 	movement += GRAVITY * delta
 	
-	if state != DEAD:
+	if state != STATE.DEAD:
 		move_and_slide(movement + dir * SPEED, Vector3(0, 1, 0))
 		
 		if is_on_floor():
@@ -155,7 +153,7 @@ func _process(delta):
 				collision.collider.knockout(movement)
 
 func knockout(mov):
-	if state != DEAD:
-		state = DEAD
+	if state != STATE.DEAD:
+		state = STATE.DEAD
 		$"..".knockout(self)
 		movement = mov
