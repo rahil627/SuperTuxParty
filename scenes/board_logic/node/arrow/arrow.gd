@@ -2,30 +2,50 @@ extends Spatial
 
 signal arrow_activated
 
-var id = -1
 var next_node = null
-onready var controller = get_tree().get_nodes_in_group("Controller")[0]
 
-func _process(delta):
-	if controller == null:
-		print("[arrow.gd] Warning: controller could not be found")
-		return
+var next_arrow = null
+var previous_arrow = null
+
+var selected = false setget set_selected
+
+func set_selected(enable):
+	selected = enable
 	
-	if controller.selected_id == id:
+	if selected:
 		$Sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		add_to_group("selected_arrow")
 	else:
 		$Sprite.modulate = Color(1.0, 0.5, 0.5, 0.3)
+		remove_from_group("selected_arrow")
 
 func _on_Arrow_mouse_entered():
-	controller.selected_id = id
-
-func _on_Arrow_mouse_exited():
-	if controller.selected_id == id:
-		controller.selected_id = -1
+	# Unselect the current selected arrow
+	for arrow in get_tree().get_nodes_in_group("selected_arrow"):
+		arrow.selected = false
+	
+	self.selected = true
 
 func _on_Arrow_input_event(camera, event, click_position, click_normal, shape_idx):
-	if (event.is_action("ui_accept") or event.is_action("left_mouse_pressed") and event.is_pressed()) and controller.selected_id == id:
+	if event.is_action_pressed("left_mouse_pressed"):
 		pressed()
+
+func _unhandled_input(event):
+	if selected:
+		if event.is_action_pressed("ui_accept"):
+			pressed()
+			# Prevents duplicate activation 
+			get_tree().set_input_as_handled()
+		elif event.is_action_pressed("ui_left"):
+			self.selected = false
+			previous_arrow.selected = true
+			# Prevents the next arrow from acting on this input too
+			get_tree().set_input_as_handled()
+		elif event.is_action_pressed("ui_right"):
+			self.selected = false
+			next_arrow.selected = true
+			# Prevents the next arrow from acting on this input too
+			get_tree().set_input_as_handled()
 
 func pressed():
 	for a in get_tree().get_nodes_in_group("arrows"):
