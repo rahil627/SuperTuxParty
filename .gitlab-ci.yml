@@ -1,4 +1,4 @@
-image: ioribranford/godot-docker:3.0.6
+image: ioribranford/godot-docker:latest
 
 stages:
   - build
