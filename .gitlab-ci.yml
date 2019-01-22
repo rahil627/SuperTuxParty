@@ -1,0 +1,20 @@
+image: ioribranford/godot-docker:3.0.6
+
+stages:
+  - build
+
+build:linux:
+  stage: build
+  script:
+    - godot -path SuperTuxParty/engine.cfg -export_debug "Linux X11" "Super Tux Party.x86_64"
+    - godot -path SuperTuxParty/engine.cfg -export_debug "Resources" "Super Tux Party.pck"
+  only:
+    - dev
+
+build:windows:
+  stage: build
+  script:
+    - godot -path SuperTuxParty/engine.cfg -export_debug "Windows Desktop" "Super Tux Party.exe"
+    - godot -path SuperTuxParty/engine.cfg -export_debug "Resources" "Super Tux Party.pck"
+  only:
+    - dev
