@@ -3,37 +3,47 @@ extends PopupPanel
 export var can_save_game = false
 
 var player_id = 0
+var paused = false
+
+var was_already_paused
 
 func _ready():
 	if not can_save_game:
 		$Container/SaveGame.hide()
 
+func pause():
+	popup()
+	was_already_paused = get_tree().paused
+	paused = true
+	get_tree().paused = true
+
+func unpause():
+	hide()
+	get_tree().paused = was_already_paused
+	paused = false
+	was_already_paused = false
+
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and Global.pause_window_unfocus and not visible:
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and Global.pause_window_unfocus and not paused:
 		player_id = 1
-		popup()
-		get_tree().paused = true
+		pause()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("player1_pause"):
 		if visible:
-			hide()
-			get_tree().paused = false
+			unpause()
 		else:
 			player_id = 1
-			popup()
-			get_tree().paused = true
+			pause()
 	else:
 		for i in range(2, Global.amount_of_players + 1):
 			if event.is_action_pressed("player" + var2str(i) + "_pause"):
 				if visible:
 					if player_id == i:
-						hide()
-						get_tree().paused = false
+						unpause()
 				else:
 					player_id = i
-					popup()
-					get_tree().paused = true
+					pause()
 
 func _save_game(save_name):
 	if save_name == "":
@@ -50,11 +60,10 @@ func _save_game(save_name):
 	_on_Resume_pressed()
 
 func _on_Resume_pressed():
-	get_tree().paused = false
-	self.hide()
+	unpause()
 
 func _on_ExitMenu_pressed():
-	get_tree().paused = false
+	unpause()
 	Global.quit_to_menu = true
 	
 	Global.reset_state()

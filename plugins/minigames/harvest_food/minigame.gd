@@ -9,12 +9,7 @@ var plants
 var rotten_index
 
 func _ready():
-	$Screen/Player1Name.text = Global.players[$Player1.player_id - 1].player_name
-	$Screen/Player2Name.text = Global.players[$Player2.player_id - 1].player_name
 	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
-		$Screen/Player3Name.text = Global.players[$Player3.player_id - 1].player_name
-		$Screen/Player4Name.text = Global.players[$Player4.player_id - 1].player_name
-		
 		plants = [$Area1, $Area2, $Area3, $Area4]
 	else:
 		plants = [$Area2, $Area4]
@@ -22,11 +17,6 @@ func _ready():
 		
 		$Area1.queue_free()
 		$Area3.queue_free()
-		
-		$Screen/Player3Name.queue_free()
-		$Screen/Player3.queue_free()
-		$Screen/Player4Name.queue_free()
-		$Screen/Player4.queue_free()
 	spawn_plants()
 
 func spawn_plants():
@@ -132,11 +122,11 @@ func _on_Timer_timeout():
 		Global.goto_board(placement)
 
 func update_overlay():
-	$Screen/Player1.text = var2str($Player1.plants)
-	$Screen/Player2.text = var2str($Player2.plants)
+	$Screen/ScoreOverlay.set_score(1, $Player1.plants)
+	$Screen/ScoreOverlay.set_score(2, $Player2.plants)
 	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
-		$Screen/Player3.text = var2str($Player3.plants)
-		$Screen/Player4.text = var2str($Player4.plants)
+		$Screen/ScoreOverlay.set_score(3, $Player3.plants)
+		$Screen/ScoreOverlay.set_score(4, $Player4.plants)
 
 func _process(delta):
 	$Screen/Time.text = var2str(stepify($Timer.time_left, 0.01))

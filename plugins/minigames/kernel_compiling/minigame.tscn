@@ -1,14 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://plugins/minigames/kernel_compiling/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/kernel_compiling/player_kernel_compiling.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/countdown/countdown.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=4]
-
-
-
-
-
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -25,68 +20,6 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="Animation" id=3]
-
-resource_name = "fadeout"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Label:custom_colors/font_color_shadow")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-
-resource_name = "reset"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Label:custom_colors/font_color_shadow")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ) ]
-}
-
 [node name="Spatial" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
@@ -95,9 +28,9 @@ _sections_unfolded = [ "Transform" ]
 [node name="Timer" type="Timer" parent="." index="0"]
 
 process_mode = 1
-wait_time = 2.0
-one_shot = true
-autostart = true
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [node name="Ground" type="MeshInstance" parent="." index="1"]
 
@@ -196,57 +129,14 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="Overlay" type="Control" parent="." index="9"]
+[node name="Countdown" parent="." index="9" instance=ExtResource( 3 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Label" type="Label" parent="Overlay" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
-text = "Ready?"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Overlay" index="1"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/fadeout = SubResource( 3 )
-anims/reset = SubResource( 4 )
-blend_times = [  ]
-
-[node name="PauseMenu" parent="Overlay" index="2" instance=ExtResource( 4 )]
+[node name="PauseMenu" parent="." index="10" instance=ExtResource( 4 )]
 
 visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="finish" from="Countdown" to="." method="_on_Countdown_finish"]
 
 
