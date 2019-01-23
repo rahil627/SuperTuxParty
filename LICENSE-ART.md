@@ -287,6 +287,14 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### heart.png | heart_grayscale.png
+
+Copyright © [DontMind8](http://dontmind8.blogspot.com)
+
+Retrieved from [Open Game Art](https://opengameart.org/content/heart-pixel-art)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## plugins/minigames/bowling
 ### screenshot.png
 
