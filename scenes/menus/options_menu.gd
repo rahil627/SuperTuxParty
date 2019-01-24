@@ -1,4 +1,4 @@
-extends Container
+extends VBoxContainer
 
 const USER_OPTIONS_FILE = "user://options.cfg"
 
