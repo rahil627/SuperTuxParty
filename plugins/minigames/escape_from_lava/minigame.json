@@ -1,0 +1,25 @@
+{
+    "name" : "Escape from lava",
+    "scene_path" : "res://plugins/minigames/escape_from_lava/minigame.tscn",
+    "type" : ["FFA", "2v2", "Duel"],
+    "image_path" : "res://plugins/minigames/escape_from_lava/screenshot.png",
+    
+    "description" : {
+	"en" : "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nThe first player that makes it safe to the top wins!"
+    },
+    
+    "used_controls" : {
+	"up" : {
+	    "en" : "Move up"
+	},
+	"left" : {
+	    "en" : "Move left"
+	},
+	"down" : {
+	    "en" : "Move down"
+	},
+	"right" : {
+	    "en" : "Move right"
+	},
+    }
+}

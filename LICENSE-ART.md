@@ -58,6 +58,23 @@ Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## assets/models/door/
+### WoodenDoor.blend | WoodenDoor.dae
+Copyright Danimal and Yughues
+
+Retrieved from [Open Game Art](https://opengameart.org/content/wooden-door)
+
+License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
+
+## assets/models/door/images
+### WoodenDoorNormal.png | WoodenDoor.png
+
+Copyright Danimal and Yughues
+
+Retrieved from [Open Game Art](https://opengameart.org/content/wooden-door)
+
+License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
+
 ## scenes/board_logic/controller/icons
 ### cake.png
 
@@ -487,6 +504,13 @@ SnowB_S.jpg modified by Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## plugins/minigames/escape_from_lava
+### ground.blend | ground.dae
+
+Copyright Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## assets/textures
 ### water_diffuse.png
 
@@ -519,3 +543,10 @@ Copyright © Godot Engine
 Retrieved from [github.com](https://github.com/godotengine/godot-design/blob/master/engine/icons/original/icon_remove.png)
 
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+### lava.png
+Copyright by Maujoe
+
+Retrieved from [Github](https://github.com/Maujoe/godot-flow-map-shader)
+
+License: [MIT](https://github.com/Maujoe/godot-flow-map-shader/blob/master/LICENSE.md)
