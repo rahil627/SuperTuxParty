@@ -13,7 +13,7 @@
 render_priority = 0
 shader = ExtResource( 6 )
 
-[node name="Menus" type="Container" index="0"]
+[node name="Menus" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -29,20 +29,24 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Rect", "Theme" ]
 
-[node name="MainMenu" type="Container" parent="." index="0"]
+[node name="MainMenu" type="Control" parent="." index="0"]
 
 editor/display_folded = true
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -216.0
+margin_right = 256.0
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Title" type="Label" parent="MainMenu" index="0"]
 
@@ -184,14 +188,18 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="SelectionPlayers" type="Container" parent="." index="1"]
+[node name="SelectionPlayers" type="Control" parent="." index="1"]
 
 editor/display_folded = true
 visible = false
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -216.0
+margin_right = 256.0
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -258,7 +266,7 @@ scroll_horizontal = 0
 scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
-_sections_unfolded = [ "Anchor", "Margin", "Scroll", "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Scroll", "Size Flags" ]
 
 [node name="Grid" type="GridContainer" parent="SelectionPlayers/Buttons/VScrollBar" index="0"]
 
@@ -283,7 +291,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 254.0
-margin_bottom = 35.0
+margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -309,7 +317,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 258.0
 margin_right = 512.0
-margin_bottom = 35.0
+margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -333,9 +341,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 39.0
+margin_top = 37.0
 margin_right = 254.0
-margin_bottom = 74.0
+margin_bottom = 70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -360,9 +368,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 258.0
-margin_top = 39.0
+margin_top = 37.0
 margin_right = 512.0
-margin_bottom = 74.0
+margin_bottom = 70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -388,7 +396,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 105.0
 margin_right = 512.0
-margin_bottom = 140.0
+margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -406,21 +414,25 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="SelectionChar" type="Container" parent="." index="2"]
+[node name="SelectionChar" type="Control" parent="." index="2"]
 
 editor/display_folded = true
 visible = false
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -216.0
+margin_right = 256.0
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="Title" type="Label" parent="SelectionChar" index="0"]
 
@@ -480,7 +492,7 @@ scroll_horizontal = 0
 scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
-_sections_unfolded = [ "Anchor", "Margin", "Scroll", "Size Flags" ]
+_sections_unfolded = [ "Scroll", "Size Flags" ]
 
 [node name="Grid" type="GridContainer" parent="SelectionChar/Buttons/VScrollBar" index="0"]
 
@@ -506,7 +518,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 105.0
 margin_right = 512.0
-margin_bottom = 140.0
+margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -524,14 +536,18 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="SelectionBoard" type="Container" parent="." index="3"]
+[node name="SelectionBoard" type="Control" parent="." index="3"]
 
 editor/display_folded = true
 visible = false
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -216.0
+margin_right = 256.0
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -639,7 +655,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 2
@@ -649,7 +664,7 @@ flat = false
 align = 0
 items = [  ]
 selected = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility" ]
 
 [node name="Back" type="Button" parent="SelectionBoard" index="4"]
 
@@ -675,17 +690,18 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="OptionsMenu" type="Container" parent="." index="4"]
+[node name="OptionsMenu" type="Control" parent="." index="4"]
 
 editor/display_folded = true
 visible = false
-anchor_left = 0.3
-anchor_top = 0.2
-anchor_right = 0.7
-anchor_bottom = 0.8
-margin_left = 3.05176e-05
-margin_top = 1.52588e-05
-margin_bottom = 6.10352e-05
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -255.5
+margin_top = -216.0
+margin_right = 255.5
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -722,22 +738,25 @@ margin_top = 160.0
 margin_right = 0.0
 margin_bottom = 27.0
 
-[node name="LoadGameMenu" type="Container" parent="." index="5"]
+[node name="LoadGameMenu" type="Control" parent="." index="5"]
 
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1279.0
-margin_bottom = 725.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -216.0
+margin_right = 256.0
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="Title" type="Label" parent="LoadGameMenu" index="0"]
 
@@ -745,10 +764,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 384.0
-margin_top = 184.0
-margin_right = -375.0
-margin_bottom = 242.0
+margin_top = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -761,19 +777,16 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "BBCode", "Margin", "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "BBCode", "Margin", "Size Flags", "custom_fonts" ]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="LoadGameMenu" index="1"]
 
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -260.5
-margin_top = -32.5
-margin_right = 259.5
-margin_bottom = 167.5
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 183.0
+margin_bottom = -49.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -785,7 +798,7 @@ scroll_horizontal = 0
 scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
-_sections_unfolded = [ "Rect", "Scroll" ]
+_sections_unfolded = [ "Rect", "Scroll", "Size Flags" ]
 
 [node name="Saves" type="VBoxContainer" parent="LoadGameMenu/ScrollContainer" index="0"]
 
@@ -793,8 +806,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 520.0
-rect_min_size = Vector2( 520, 0 )
+margin_right = 512.0
+rect_min_size = Vector2( 512, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -807,13 +820,10 @@ _sections_unfolded = [ "Rect" ]
 [node name="Back" type="Button" parent="LoadGameMenu" index="2"]
 
 anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 384.0
-margin_top = 540.0
-margin_right = 896.0
-margin_bottom = 575.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -35.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -829,7 +839,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
 [node name="PlayerInfo1" type="VBoxContainer" parent="." index="6"]
 

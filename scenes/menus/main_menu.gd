@@ -1,4 +1,4 @@
-extends Container
+extends Control
 
 # Path to the board being used on game start
 var board = ""
