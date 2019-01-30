@@ -61,10 +61,12 @@ distance_fade_enable = false
 ]]
 
 script = ExtResource( 1 )
-type = null
+type = 0
 potential_cake = false
 next_nodes = null
 prev_nodes = null
+amount_of_items_sold = 8
+custom_items = [  ]
 
 [node name="Model" parent="." index="0" instance=ExtResource( 2 )]
 
