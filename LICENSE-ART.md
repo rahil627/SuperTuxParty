@@ -105,9 +105,9 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/board_logic/node
-### node.escn
+### node.escn | node.blend
 
-Copyright © Jakob Sinclair
+Copyright © Florian Kothmeier based on an idea by Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -312,6 +312,14 @@ Retrieved from [Open Game Art](https://opengameart.org/content/heart-pixel-art)
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### cookie-grayscale.png
+
+Copyright © 2017 InkMammoth, Modified by Jakob Sinclair
+
+Retrieved from [Open Game Art](https://opengameart.org/content/pixel-art-food-pack-by-inkmammoth)
+
+License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
 ## plugins/minigames/bowling
 ### screenshot.png
 
@@ -505,6 +513,13 @@ SnowB_S.jpg modified by Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/minigames/escape_from_lava
+### ground.blend | ground.dae
+
+Copyright Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/escape_from_lava_1v3
 ### ground.blend | ground.dae
 
 Copyright Florian Kothmeier
