@@ -1,8 +1,10 @@
 # Releases
 
-## Alpha Version - v0.3 - 2019-01-31
+## Alpha Version - v0.3 - 2019-02-02
 ### New features
 - KDEValley, a new board
+- Escape from lava, a new minigame
+- New background for main menu
 - New scenery for 'test' board
 - Added screenshot for 'Bowling minigame'
 - Frame cap and VSync can now be set in options
@@ -12,11 +14,11 @@
 ### Improved / Changed
 - Each character can only be chosen once now
 - New GUI theme
+- Options can now be opened in-game
+- Smooth rotations for board movement
 
 Internally the project has been restructured and switched to the
 [Git Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows).
-
-### Removed
 
 ## Alpha Version - v0.2 - 2018-10-31
 ### New features
