@@ -1,23 +1,21 @@
-const ITEM_FILENAME = "item.gd"
-
-const NEEDED_FILES = [ITEM_FILENAME]
+const NEEDED_FILES = ["item.gd", "item.gdc"]
 const ITEM_PATH = "res://plugins/items"
 
-# Stores the name of each subdirectory of ITEM_PATH
+# Stores the path to each item.gd file of each subdirectory of ITEM_PATH
 var items = []
 
 var buyable_items = []
 
-# Checks if every file f in files exists in directory filename + "/" + file
-func exist_all_files(filename, file, files):
+# Checks if one of the filenames in 'files' exists in directory filename + "/" + file
+func exist_files(filename, file, files):
 	var new_dir = Directory.new()
 	new_dir.open(filename + "/" + file)
 	for f in files:
-		if not new_dir.file_exists(f):
-			print("Error: No '" + f + "' file found for: " + file)
-			return false
-
-	return true
+		if new_dir.file_exists(f):
+			return f
+	
+	print("Error: No file of %s found for: %s" % [NEEDED_FILES, file])
+	return false
 
 # checks every file in the directory given by filename and adds every path to a MINIGAME_BOARD_FILENAME file of each directory into the output array
 func read_directory(filename, output, buyable):
@@ -36,11 +34,13 @@ func read_directory(filename, output, buyable):
 		if file == "":
 			break
 		elif dir.current_is_dir():
-			if exist_all_files(filename, file, NEEDED_FILES):
-				output.append(file)
+			var path = exist_files(filename, file, NEEDED_FILES)
+			if path:
+				output.append(file + "/" + path)
 				
-				if load(filename + "/" + file + "/" + ITEM_FILENAME).new().can_be_bought:
-					buyable.append(file)
+				var fullpath = filename + "/" + file + "/" + path
+				if load(fullpath).new().can_be_bought:
+					buyable.append(file + "/" + path)
 
 	dir.list_dir_end()
 
@@ -63,4 +63,6 @@ func get_buyable_items():
 	return buyable_items.duplicate()
 
 func get_item_path(name):
-	return ITEM_PATH + "/" + name + "/" + ITEM_FILENAME
+	var path = ITEM_PATH + "/" + name
+	
+	return path
