@@ -1,10 +1,10 @@
 image: ioribranford/godot-docker:latest
 
 stages:
-  - build
+  - build_and_test
 
 build:linux:
-  stage: build
+  stage: build_and_test
   script:
     - godot --path SuperTuxParty/engine.cfg --export-debug "Linux X11" "Super Tux Party.x86_64"
     - godot --path SuperTuxParty/engine.cfg --export-debug "Resources" "Super Tux Party.pck"
@@ -12,9 +12,17 @@ build:linux:
     - dev
 
 build:windows:
-  stage: build
+  stage: build_and_test
   script:
     - godot --path SuperTuxParty/engine.cfg --export-debug "Windows Desktop" "Super Tux Party.exe"
     - godot --path SuperTuxParty/engine.cfg --export-debug "Resources" "Super Tux Party.pck"
   only:
     - dev
+
+license_test:
+  image: python:latest
+  stage: build_and_test
+  before_script:
+    - pip install tqdm
+  script:
+    - python check_license.py
