@@ -29,38 +29,38 @@ func setup():
 	for game in loader.minigames_duel:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name + " (Duel)"
+		button.text = loader.parse_file(game).name
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.DUEL])
 		
-		$List/Minigames.add_child(button)
+		$List/Minigames/TabContainer/Duel/VBoxContainer.add_child(button)
 	
 	for game in loader.minigames_1v3:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name + " (1v3)"
+		button.text = loader.parse_file(game).name
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.ONE_VS_THREE])
 		
-		$List/Minigames.add_child(button)
+		$List/Minigames/TabContainer/"1v3"/VBoxContainer.add_child(button)
 		
 	for game in loader.minigames_2v2:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name + " (2v2)"
+		button.text = loader.parse_file(game).name
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.TWO_VS_TWO])
 		
-		$List/Minigames.add_child(button)
+		$List/Minigames/TabContainer/"2v2"/VBoxContainer.add_child(button)
 	
 	for game in loader.minigames_ffa:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name + " (FFA)"
+		button.text = loader.parse_file(game).name
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.FREE_FOR_ALL])
 		
-		$List/Minigames.add_child(button)
+		$List/Minigames/TabContainer/FFA/VBoxContainer.add_child(button)
 	
 	var item_loader = Global.item_loader
 	for item in Global.item_loader.get_loaded_items():
