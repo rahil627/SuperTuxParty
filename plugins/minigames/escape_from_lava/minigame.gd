@@ -68,9 +68,6 @@ func end_game():
 
 func _on_EndTimer_timeout():
 	if Global.minigame_type == Global.MINIGAME_TYPES.DUEL or Global.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL:
-		Global.goto_board(winners)
+		Global.minigame_win_by_position(winners)
 	else:
-		if Global.minigame_teams[0].has(winners[0]):
-			Global.goto_board(0)
-		else:
-			Global.goto_board(1)
+		Global.minigame_team_win_by_player(winners[0])

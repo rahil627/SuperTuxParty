@@ -288,7 +288,7 @@ func deduplicate_items(items):
 	return list
 
 # Go back to board from mini-game, placement is an array with the players' id:s
-func goto_board(placement):
+func _goto_board(placement):
 	if current_minigame == null:
 		# Only award if it's not a test
 		self.placement = placement
@@ -296,36 +296,113 @@ func goto_board(placement):
 			MINIGAME_TYPES.FREE_FOR_ALL:
 				match award:
 					AWARD_TYPE.LINEAR:
-						for i in range(amount_of_players):
-							players[placement[i] - 1].cookies += 15 - (i * 5)
+						# Store the current place.
+						var place = 0
+						for i in range(len(placement)):
+							for j in range(len(placement[i])):
+								players[placement[i] [j]- 1].cookies += 15 - (place * 5)
+							# If placement looks like this: [[1, 2], [3], [4]]
+							# Then the placement is 1,2 are 1st, 3 is 3rd, 4 is 4th
+							# Therefore we need to increase the place by the amount of players on that place
+							place += len(placement[i])
 					AWARD_TYPE.WINNER_ONLY:
-						players[placement[0] - 1].cookies += 10
+						for p in placement[0]:
+							players[p - 1].cookies += 10
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_FFA)
 			MINIGAME_TYPES.TWO_VS_TWO:
-				for player_id in minigame_teams[placement]:
-					players[player_id - 1].cookies += 10
+				if placement != -1:
+					for player_id in minigame_teams[placement]:
+						players[player_id - 1].cookies += 10
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_2V2)
 			MINIGAME_TYPES.ONE_VS_THREE:
-				for player_id in minigame_teams[placement]:
-					# Has the solo player won?
-					if placement == 1:
-						players[player_id - 1].cookies += 10
-					else:
-						players[player_id - 1].cookies += 5
+				if placement != -1:
+					for player_id in minigame_teams[placement]:
+						# Has the solo player won?
+						if placement == 1:
+							players[player_id - 1].cookies += 10
+						else:
+							players[player_id - 1].cookies += 5
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_1V3)
 			MINIGAME_TYPES.DUEL:
-				match minigame_duel_reward:
-					MINIGAME_DUEL_REWARDS.TEN_COOKIES:
-						var other_player_cookies = min(players[placement[1] - 1].cookies, 10)
-						players[placement[0] - 1].cookies += other_player_cookies
-						players[placement[1] - 1].cookies -= other_player_cookies
-					MINIGAME_DUEL_REWARDS.ONE_CAKE:
-						var other_player_cakes = min(players[placement[1] - 1].cakes, 1)
-						players[placement[0] - 1].cakes += other_player_cakes
-						players[placement[1] - 1].cakes -= other_player_cakes
+				if len(placement) == 2:
+					match minigame_duel_reward:
+						MINIGAME_DUEL_REWARDS.TEN_COOKIES:
+							var other_player_cookies = min(players[placement[1][0] - 1].cookies, 10)
+							players[placement[0][0] - 1].cookies += other_player_cookies
+							players[placement[1][0] - 1].cookies -= other_player_cookies
+						MINIGAME_DUEL_REWARDS.ONE_CAKE:
+							var other_player_cakes = min(players[placement[1] - 1].cakes, 1)
+							players[placement[0][0] - 1].cakes += other_player_cakes
+							players[placement[1][0] - 1].cakes -= other_player_cakes
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_DUEL)
 	else:
 		call_deferred("_goto_scene_ingame", current_board)
+
+func minigame_win_by_points(points):
+	var players = []
+	var p = []
+	
+	# Sort into the array players while grouping players with the same amount of points together
+	for i in range(len(points)):
+		var insert_index = p.bsearch(points[i])
+		# Does the current entry differ (if it's not out of range). If yes we need to insert a new entry
+		if insert_index == len(p) or p[insert_index] != points[i]:
+			p.insert(insert_index, points[i])
+			if minigame_type == MINIGAME_TYPES.FREE_FOR_ALL:
+				players.insert(insert_index, [minigame_teams[0][i]])
+			else:
+				players.insert(insert_index, [minigame_teams[i][0]])
+		else:
+			if minigame_type == MINIGAME_TYPES.FREE_FOR_ALL:
+				players[insert_index].append(minigame_teams[0][i])
+			else:
+				players[insert_index].append(minigame_teams[i][0])
+	
+	# We need to sort from high to low
+	players.invert()
+	_goto_board(players)
+
+func minigame_win_by_position(players):
+	var placement = []
+	
+	# We're expecting an array with multiple possible players per placement in _goto_board
+	for p in players:
+		placement.append([p])
+	
+	_goto_board(placement)
+
+func minigame_duel_draw():
+	_goto_board([[minigame_teams[0][0], minigame_teams[1][0]]])
+
+func minigame_team_win(team):
+	_goto_board(team)
+
+func minigame_team_win_by_points(points):
+	if points[0] == points[1]:
+		_goto_board(-1)
+	elif points[0] > points[1]:
+		_goto_board(0)
+	else:
+		_goto_board(1)
+
+func minigame_team_win_by_player(player):
+	for i in range(len(minigame_teams)):
+		if minigame_teams[i].has(player):
+			_goto_board(i)
+			
+			return
+
+func minigame_team_draw():
+	_goto_board(-1)
+
+func minigame_1v3_draw():
+	_goto_board(-1)
+
+func minigame_1v3_win_team_players():
+	_goto_board(0)
+
+func minigame_1v3_win_solo_player():
+	_goto_board(1)
 
 func load_board_state():
 	var r_players = get_tree().get_nodes_in_group("players") # Current player nodes

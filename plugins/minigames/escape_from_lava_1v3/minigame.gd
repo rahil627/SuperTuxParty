@@ -81,6 +81,6 @@ func end_game():
 
 func _on_EndTimer_timeout():
 	if num_players_alive > 1:
-		Global.goto_board(0)
+		Global.minigame_1v3_win_team_players()
 	else:
-		Global.goto_board(1)
+		Global.minigame_1v3_win_solo_player()

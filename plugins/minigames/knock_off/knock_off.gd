@@ -69,6 +69,6 @@ func _process(delta):
 		if timer_end <= 0:
 			match Global.minigame_type:
 				Global.MINIGAME_TYPES.DUEL, Global.MINIGAME_TYPES.FREE_FOR_ALL:
-					Global.goto_board(placement)
+					Global.minigame_win_by_position(placement)
 				Global.MINIGAME_TYPES.TWO_VS_TWO:
-					Global.goto_board(winner_team)
+					Global.minigame_team_win(winner_team)

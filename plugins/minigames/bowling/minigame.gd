@@ -39,7 +39,7 @@ func knockout(player):
 			end_timer()
 
 func _on_EndTimer_timeout():
-	Global.goto_board(winner)
+	Global.minigame_team_win(winner)
 
 func _on_Countdown_finish():
 	$Screen/Time.show()
