@@ -23,11 +23,17 @@ func _ready():
 	load_characters()
 	characters.resize(Global.amount_of_players)
 	
+	$MainMenu/Buttons/Play.grab_focus()
+	
 	if Global.quit_to_menu:
 		Global.quit_to_menu = false
 		
 		$MainMenu.visible = false
 		$SelectionBoard.visible = true
+		if $SelectionBoard/ScrollContainer/Buttons.get_child_count() > 0:
+			$SelectionBoard/ScrollContainer/Buttons.get_child(0).grab_focus()
+		else:
+			$SelectionBoard/Back.grab_focus()
 		
 		var i = 1;
 		
@@ -85,10 +91,12 @@ func load_characters():
 func _on_Options_pressed():
 	$MainMenu.hide()
 	$OptionsMenu.show()
+	$OptionsMenu/OptionsMenu/Back.grab_focus()
 
 func _on_OptionsMenu_quit():
 	$MainMenu.show()
 	$OptionsMenu.hide()
+	$MainMenu/Buttons/Options.grab_focus()
 
 #*** Amount of players menu ***#
 
@@ -99,14 +107,20 @@ func _select_player_amount(players):
 	
 	$SelectionPlayers.hide()
 	$SelectionChar.show()
+	if $SelectionChar/Buttons/VScrollBar/Grid.get_child_count() > 0:
+		$SelectionChar/Buttons/VScrollBar/Grid.get_child(0).grab_focus()
+	else:
+		$SelectionChar/Buttons/Back.grab_focus()
 
 func _on_Play_pressed():
 	$MainMenu.hide()
 	$SelectionPlayers.show()
+	$SelectionPlayers/Buttons/VScrollBar/Grid/One.grab_focus()
 
 func _on_Amount_Of_Players_Back_pressed():
 	$SelectionPlayers.hide()
 	$MainMenu.show()
+	$MainMenu/Buttons/Play.grab_focus()
 
 #*** Character selection menu ***#
 
@@ -147,12 +161,17 @@ func _on_character_select(target):
 		
 		$SelectionChar.hide()
 		$SelectionBoard.show()
+		if $SelectionBoard/ScrollContainer/Buttons.get_child_count() > 0:
+			$SelectionBoard/ScrollContainer/Buttons.get_child(0).grab_focus()
+		else:
+			$SelectionBoard/Back.grab_focus()
 	
 	$SelectionChar/Title.text = "Select character for Player " + var2str(current_player)
 
 func _on_SelectionChar_Back_pressed():
 	$SelectionChar.hide()
 	$SelectionPlayers.show()
+	$SelectionPlayers/Buttons/VScrollBar/Grid/One.grab_focus()
 	
 	current_player = 1
 	
@@ -198,6 +217,10 @@ func _on_Selection_Back_pressed():
 	characters.resize(Global.amount_of_players)
 	
 	_select_player_amount(0)
+	if $SelectionChar/Buttons/VScrollBar/Grid.get_child_count() > 0:
+		$SelectionChar/Buttons/VScrollBar/Grid.get_child(0).grab_focus()
+	else:
+		$SelectionChar/Buttons/Back.grab_focus()
 
 #*** Load game menu ***#
 
@@ -215,12 +238,24 @@ func _on_Load_pressed():
 	
 	$MainMenu.hide()
 	$LoadGameMenu.show()
+	if $LoadGameMenu/ScrollContainer/Saves.get_child_count() > 0:
+			$LoadGameMenu/ScrollContainer/Saves.get_child(0).get_child(0).grab_focus()
+	else:
+		$LoadGameMenu/Back.grab_focus()
 
 func _on_SaveGame_Load_pressed(savegame):
 	Global.load_board_from_savegame(savegame)
 
 func _on_SaveGame_Delete_pressed(savegame, node):
+	var index = node.get_index()
 	node.queue_free()
+	$LoadGameMenu/ScrollContainer/Saves.remove_child(node)
+	
+	var num_children = $LoadGameMenu/ScrollContainer/Saves.get_child_count()
+	if num_children > 0:
+		$LoadGameMenu/ScrollContainer/Saves.get_child(min(index, num_children)).get_child(0).grab_focus()
+	else:
+		$LoadGameMenu/Back.grab_focus()
 	
 	Global.savegame_loader.delete_savegame(savegame)
 
@@ -230,6 +265,7 @@ func _on_LoadGame_Back_pressed():
 	
 	$LoadGameMenu.hide()
 	$MainMenu.show()
+	$MainMenu/Buttons/Load.grab_focus()
 
 func _on_Quit_pressed():
 	get_tree().quit()

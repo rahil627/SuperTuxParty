@@ -75,6 +75,7 @@ func _on_ExitDesktop_pressed():
 func _on_SaveGame_pressed():
 	if Global.is_new_savegame:
 		$SavegameNameInput.popup_centered()
+		$SavegameNameInput/VBoxContainer/LineEdit.grab_focus()
 	else:
 		Global.save_game()
 		_on_Resume_pressed()
