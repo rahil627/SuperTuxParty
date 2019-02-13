@@ -783,6 +783,8 @@ func minigame_has_player(i):
 func show_minigame_info():
 	setup_character_viewport()
 	
+	$Screen/MinigameInformation/Buttons/Play.grab_focus()
+	
 	$Screen/MinigameInformation/Title.text = current_minigame.name
 	$Screen/MinigameInformation/Description/Text.bbcode_text = current_minigame.description.en
 	if current_minigame.image_path != null:
