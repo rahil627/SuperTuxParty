@@ -41,7 +41,7 @@ func _on_Lava_body_entered(body):
 			winners[num_players_alive - 1] = body.player_id
 			num_players_alive -= 1
 			
-			if num_players_alive == 1:
+			if num_players_alive == num_players_finished:
 				for player in get_tree().get_nodes_in_group("players"):
 					if not player.is_dead() and not player.has_finished:
 						player.die()
