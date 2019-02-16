@@ -99,27 +99,13 @@ func _on_Timer_timeout():
 	if rounds > 0:
 		spawn_plants()
 	else:
-		var placement
 		match Global.minigame_type:
-			Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
-				var players
-				if Global.minigame_type == Global.MINIGAME_TYPES.DUEL:
-					placement = [1, 2]
-					players = [$Player1, $Player2]
-				else:
-					placement = [1, 2, 3, 4]
-					players = [$Player1, $Player2, $Player3, $Player4]
-				
-				placement.sort_custom(Sorter.new(players), "_sort")
-				for i in range(placement.size()):
-					placement[i] = players[placement[i] - 1].player_id
+			Global.MINIGAME_TYPES.FREE_FOR_ALL:
+				Global.minigame_win_by_points([$Player1.plants, $Player2.plants, $Player3.plants, $Player4.plants])
+			Global.MINIGAME_TYPES.DUEL:
+				Global.minigame_win_by_points([$Player1.plants, $Player2.plants])
 			Global.MINIGAME_TYPES.TWO_VS_TWO:
-				if $Player1.plants + $Player2.plants >= $Player3.plants + $Player4.plants:
-					placement = 0
-				else:
-					placement = 1
-		
-		Global.goto_board(placement)
+				Global.minigame_team_win_by_points([$Player1.plants + $Player2.plants, $Player3.plants + $Player4.plants])
 
 func update_overlay():
 	$Screen/ScoreOverlay.set_score(1, $Player1.plants)
@@ -130,12 +116,3 @@ func update_overlay():
 
 func _process(delta):
 	$Screen/Time.text = var2str(stepify($Timer.time_left, 0.01))
-
-class Sorter:
-	var players
-	
-	func _init(players):
-		self.players = players
-	
-	func _sort(a, b):
-		return players[a - 1].plants > players[b - 1].plants

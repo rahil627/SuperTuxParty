@@ -41,7 +41,7 @@ func _on_Lava_body_entered(body):
 			winners[num_players_alive - 1] = body.player_id
 			num_players_alive -= 1
 			
-			if num_players_alive == 1:
+			if num_players_alive == num_players_finished:
 				for player in get_tree().get_nodes_in_group("players"):
 					if not player.is_dead() and not player.has_finished:
 						player.die()
@@ -68,9 +68,6 @@ func end_game():
 
 func _on_EndTimer_timeout():
 	if Global.minigame_type == Global.MINIGAME_TYPES.DUEL or Global.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL:
-		Global.goto_board(winners)
+		Global.minigame_win_by_position(winners)
 	else:
-		if Global.minigame_teams[0].has(winners[0]):
-			Global.goto_board(0)
-		else:
-			Global.goto_board(1)
+		Global.minigame_team_win_by_player(winners[0])

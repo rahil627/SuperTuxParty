@@ -36,26 +36,17 @@ class Sorter:
 func _on_Timer_timeout():
 	match Global.minigame_type:
 		Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
-			var placement = []
+			var points = []
 			
-			for i in range(num_players):
-				placement.append(i + 1)
+			for p in get_tree().get_nodes_in_group("players"):
+				points.append(p.presses)
 			
-			var players = get_tree().get_nodes_in_group("players")
-			
-			placement.sort_custom(Sorter.new(players), "_sort")
-			for i in range(placement.size()):
-				placement[i] = players[placement[i] - 1].player_id
-			
-			Global.goto_board(placement)
+			Global.minigame_win_by_points(points)
 		Global.MINIGAME_TYPES.TWO_VS_TWO:
 			# Find the team of the player that won
 			for p in get_tree().get_nodes_in_group("players"):
 				if p.presses == p.NEEDED_BUTTON_PRESSES:
-					for team_id in range(Global.minigame_teams.size()):
-						for player_id in Global.minigame_teams[team_id]:
-							if p.player_id == player_id:
-								Global.goto_board(team_id)
+					Global.minigame_team_win_by_player(p.player_id)
 
 func _on_Countdown_finish():
 	for i in range(num_players):

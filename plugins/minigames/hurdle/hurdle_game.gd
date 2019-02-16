@@ -124,7 +124,7 @@ func _process(delta):
 	if end_timer_start:
 		end_timer -= delta
 		if end_timer <= 0:
-			Global.goto_board(placement)
+			Global.minigame_win_by_position(placement)
 	else:
 		timer -= delta
 		
