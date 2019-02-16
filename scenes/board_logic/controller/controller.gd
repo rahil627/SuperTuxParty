@@ -454,6 +454,36 @@ func get_players_on_space(space):
 	
 	return num
 
+func generate_shop_items(space, items, icons, cost):
+	var buyable_item_information = Global.item_loader.get_buyable_items()
+	
+	var buyable_items = []
+	
+	for item in buyable_item_information:
+		buyable_items.append(Global.item_loader.get_item_path(item))
+	
+	for file in space.custom_items:
+		buyable_items.erase(file)
+		items.append(file)
+		var instance = load(file).new()
+		icons.append(instance.icon)
+		cost.append(instance.item_cost)
+	
+	if items.size() > NODE.MAX_STORE_SIZE:
+		items.resize(NODE.MAX_STORE_SIZE)
+	
+	var i = items.size()
+	while i < NODE.MAX_STORE_SIZE and buyable_items.size() != 0:
+		var index = randi() % buyable_items.size()
+		var random_item = buyable_items[index]
+		buyable_items.remove(index)
+		items.append(random_item)
+		var instance = load(random_item).new()
+		icons.append(instance.icon)
+		cost.append(instance.item_cost)
+		
+		i = i + 1
+
 func animation_ended(player_id):
 	if player_id != player_turn :
 		return
@@ -533,40 +563,13 @@ func animation_ended(player_id):
 				TURN_ACTION.BUY_CAKE:
 					$Screen/GetCake.show()
 				TURN_ACTION.SHOP:
-					var buyable_item_information = Global.item_loader.get_buyable_items()
-					
-					var buyable_items = []
 					var items = []
 					var icons = []
 					var cost = []
 					
-					for item in buyable_item_information:
-						buyable_items.append(Global.item_loader.get_item_path(item))
+					generate_shop_items(player.space, items, icons, cost)
 					
-					for file in player.space.custom_items:
-						buyable_items.erase(file)
-						items.append(file)
-						var instance = load(file).new()
-						icons.append(instance.icon)
-						cost.append(instance.item_cost)
-					
-					if items.size() > NODE.MAX_STORE_SIZE:
-						items.resize(NODE.MAX_STORE_SIZE)
-					
-					var i = items.size()
-					while i < NODE.MAX_STORE_SIZE and buyable_items.size() != 0:
-						var index = randi() % buyable_items.size()
-						var random_item = buyable_items[index]
-						buyable_items.remove(index)
-						items.append(random_item)
-						var instance = load(random_item).new()
-						icons.append(instance.icon)
-						cost.append(instance.item_cost)
-						
-						i = i + 1
-					
-					i = 0
-					while i < NODE.MAX_STORE_SIZE:
+					for i in range(NODE.MAX_STORE_SIZE):
 						var element = $Screen/Shop.get_node("Item%d" % (i+1))
 						var texture_button = element.get_node("Image")
 						if texture_button.is_connected("pressed", self, "_on_shop_item"):
@@ -601,8 +604,6 @@ func animation_ended(player_id):
 						else:
 							texture_button.texture_normal = null
 							element.get_node("Cost/Amount").text = ""
-						
-						i = i + 1
 					
 					$Screen/Shop/Item1/Image.grab_focus()
 					$Screen/Shop.show()
@@ -615,8 +616,22 @@ func animation_ended(player_id):
 				TURN_ACTION.CHOOSE_PATH:
 					next_node = player.space.next[randi() % player.space.next.size()]
 				TURN_ACTION.SHOP:
-					# TODO
-					pass
+					var items = []
+					var icons = []
+					var cost = []
+					generate_shop_items(player.space, items, icons, cost)
+					
+					# Index into the item array
+					var item_to_buy
+					print(len(items))
+					for i in range(len(items)):
+						# Always keep enough money ready to buy a cake
+						# Buy the most expensive item that satisfies this criteria
+						if player.cookies - cost[i] >= COOKIES_FOR_CAKE and (item_to_buy == null or cost[item_to_buy] < cost[i]):
+							item_to_buy = i
+					
+					if item_to_buy != null and player.give_item(load(items[item_to_buy]).new()):
+						player.cookies -= cost[item_to_buy]
 			
 			get_tree().create_timer(1).connect("timeout", self, "_ai_continue_callback")
 
