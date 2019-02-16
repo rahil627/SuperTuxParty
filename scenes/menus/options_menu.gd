@@ -20,6 +20,32 @@ func _ready():
 	control_remapper.controls_remapping_setup()
 
 func _input(event):
+	if get_focus_owner() != $Back:
+		if $TabContainer/Controls/TabContainer.is_a_parent_of(get_focus_owner()):
+			if event.is_action_pressed("ui_focus_prev"):
+				$TabContainer/Controls/TabContainer.current_tab = ($TabContainer/Controls/TabContainer.current_tab + $TabContainer/Controls/TabContainer.get_tab_count() - 1) % $TabContainer/Controls/TabContainer.get_tab_count()
+				$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
+				get_tree().set_input_as_handled()
+			elif event.is_action_pressed("ui_focus_next"):
+				$TabContainer/Controls/TabContainer.current_tab = ($TabContainer/Controls/TabContainer.current_tab + 1) % $TabContainer/Controls/TabContainer.get_tab_count()
+				$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
+				get_tree().set_input_as_handled()
+		else:
+			if event.is_action_pressed("ui_focus_prev"):
+				$TabContainer.current_tab = ($TabContainer.current_tab + $TabContainer.get_tab_count() - 1) % $TabContainer.get_tab_count()
+				if $TabContainer.current_tab == 2:
+					$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
+				else:
+					$TabContainer.get_current_tab_control().get_child(0).grab_focus()
+				get_tree().set_input_as_handled()
+			elif event.is_action_pressed("ui_focus_next"):
+				$TabContainer.current_tab = ($TabContainer.current_tab + 1) % $TabContainer.get_tab_count()
+				if $TabContainer.current_tab == 2:
+					$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
+				else:
+					$TabContainer.get_current_tab_control().get_child(0).grab_focus()
+				get_tree().set_input_as_handled()
+	
 	control_remapper._input(event)
 
 func _on_Fullscreen_toggled(button_pressed):
@@ -142,3 +168,4 @@ func save_option(section, key, value):
 	var err = _options_file.save(USER_OPTIONS_FILE)
 	if err != OK:
 		print("Error while saving options: " + Utility.error_code_to_string(err))
+
