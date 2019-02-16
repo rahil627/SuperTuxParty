@@ -623,7 +623,6 @@ func animation_ended(player_id):
 					
 					# Index into the item array
 					var item_to_buy
-					print(len(items))
 					for i in range(len(items)):
 						# Always keep enough money ready to buy a cake
 						# Buy the most expensive item that satisfies this criteria
