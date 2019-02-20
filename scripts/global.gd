@@ -12,7 +12,7 @@ class PlayerState:
 	var items = []
 	
 	# Which space on the board the player is standing on
-	var space = null
+	var space
 
 const MINIGAME_REWARD_SCREEN_PATH_FFA = "res://scenes/board_logic/controller/rewardscreens/ffa.tscn";
 const MINIGAME_REWARD_SCREEN_PATH_DUEL = "res://scenes/board_logic/controller/rewardscreens/duel.tscn";
@@ -107,7 +107,7 @@ var placement
 func _ready():
 	randomize()
 	var root = get_tree().get_root()
-	current_scene = root.get_child(root.get_child_count() -1)
+	current_scene = root.get_child(root.get_child_count() - 1)
 	
 	savegame_loader.read_savegames()
 
@@ -167,7 +167,7 @@ func _goto_scene_ingame(path):
 	
 	if minigame_teams == null:
 		for i in range(players.size()):
-			var player = current_scene.get_node("Player" + var2str(i+1))
+			var player = current_scene.get_node("Player" + str(i + 1))
 			
 			var new_model = load(character_loader.get_character_path(players[i].character)).instance()
 			new_model.set_name("Model")
@@ -188,7 +188,7 @@ func _goto_scene_ingame(path):
 		var i = 1
 		for team in minigame_teams:
 			for player_id in team:
-				var player = current_scene.get_node("Player" + var2str(i))
+				var player = current_scene.get_node("Player" + str(i))
 				
 				var new_model = load(character_loader.get_character_path(players[player_id - 1].character)).instance()
 				new_model.set_name("Model")
@@ -211,7 +211,7 @@ func _goto_scene_ingame(path):
 			
 			# Remove unnecessary players
 		while i <= Global.amount_of_players:
-			var player = current_scene.get_node("Player" + var2str(i))
+			var player = current_scene.get_node("Player" + str(i))
 			current_scene.remove_child(player)
 			player.queue_free()
 			i += 1
@@ -300,7 +300,7 @@ func _goto_board(placement):
 						var place = 0
 						for i in range(len(placement)):
 							for j in range(len(placement[i])):
-								players[placement[i] [j]- 1].cookies += 15 - (place * 5)
+								players[placement[i] [j]- 1].cookies += 15 - place*5
 							# If placement looks like this: [[1, 2], [3], [4]]
 							# Then the placement is 1,2 are 1st, 3 is 3rd, 4 is 4th
 							# Therefore we need to increase the place by the amount of players on that place
@@ -331,7 +331,7 @@ func _goto_board(placement):
 							players[placement[0][0] - 1].cookies += other_player_cookies
 							players[placement[1][0] - 1].cookies -= other_player_cookies
 						MINIGAME_DUEL_REWARDS.ONE_CAKE:
-							var other_player_cakes = min(players[placement[1] - 1].cakes, 1)
+							var other_player_cakes = min(players[placement[1][0] - 1].cakes, 1)
 							players[placement[0][0] - 1].cakes += other_player_cakes
 							players[placement[1][0] - 1].cakes -= other_player_cakes
 				call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_DUEL)
@@ -524,7 +524,11 @@ func save_game():
 	current_savegame.trap_states = []
 	
 	for trap in get_tree().get_nodes_in_group("trap"):
-		var state = { node = trap.get_path(), item = inst2dict(trap.trap), player = trap.trap_player.get_path() }
+		var state = {
+			node = trap.get_path(),
+			item = inst2dict(trap.trap),
+			player = trap.trap_player.get_path()
+		}
 		
 		current_savegame.trap_states.push_back(state)
 	
