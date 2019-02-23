@@ -18,6 +18,8 @@ var cookies_gui = 0
 var gui_timer = GUI_TIMER
 var target_rotation = 0
 
+onready var controller = get_tree().get_nodes_in_group("Controller")[0]
+
 var is_walking = false
 
 var items = [ preload("res://plugins/items/dice/item.gd").new() ]
@@ -29,6 +31,16 @@ func _ready():
 func give_item(item):
 	if items.size() < MAX_ITEMS:
 		items.push_back(item)
+		controller.update_player_info()
+		return true
+	
+	return false
+
+func remove_item(item):
+	var index = items.find(item)
+	if index >= 0:
+		items.remove(index)
+		controller.update_player_info()
 		return true
 	
 	return false

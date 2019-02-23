@@ -4,6 +4,7 @@
 ### New features
 ### Improved / Changed
 - The main menu can now be navigated with keyboard/controller
+- The board overlay now shows the items of each player
 
 ## Alpha Version - v0.3 - 2019-02-02
 ### New features

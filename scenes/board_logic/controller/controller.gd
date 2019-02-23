@@ -8,6 +8,7 @@ const CAMERA_SPEED = 6
 const CONTROL_HELPER = preload("res://scripts/control_helper.gd")
 const NODE = preload("res://scenes/board_logic/node/node.gd")
 const ITEM = preload("res://plugins/items/item.gd")
+const PLAYER = preload("res://scenes/board_logic/player_board/player_board.gd")
 
 var COOKIES_FOR_CAKE = 30
 
@@ -675,6 +676,18 @@ func update_player_info():
 			info.get_node("Cookies/Amount").text = "+" + var2str(p.cookies - p.cookies_gui) + "  " + var2str(p.cookies_gui)
 		
 		info.get_node("Cakes/Amount").text = var2str(p.cakes)
+		for j in range(PLAYER.MAX_ITEMS):
+			var item
+			if j < p.items.size():
+				item = p.items[j]
+			var texture_rect = info.get_node("Items/"+var2str(j))
+			if item != null:
+				texture_rect.texture = item.icon
+			else:
+				texture_rect.texture = null
+			
+			j += 1
+		
 		i += 1
 
 func hide_splash():
@@ -940,7 +953,7 @@ func _on_item_select(player, item):
 	
 	# Remove the item from the inventory if it is consumed
 	if selected_item.is_consumed:
-		player.items.remove(player.items.find(item))
+		player.remove_item(item)
 	
 	# Reset the state
 	$Screen/ItemSelection.hide()
