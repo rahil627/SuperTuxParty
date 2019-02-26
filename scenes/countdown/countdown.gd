@@ -46,7 +46,7 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	timer_finished = true
-	$Label.text = "Go!"
+	$Label.text = tr("CONTEXT_LABEL_GO")
 	$AnimationPlayer.play("fadeout")
 	get_tree().paused = false
 	

@@ -1,0 +1,124 @@
+﻿id,en,fr,es,de,it,pt_BR,pt_PT,ru_RU,el,tr,da,nn,sv,nl,pl,fi,ja,zh_CN,zh_TW,ko,cs,hu,ro,th,bg,he,ar,bs_BA
+CONTEXT_LABEL_BUY_CAKE,Buy a cake for %d cookies,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_DUEL_REWARD,Duel Reward:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_DUEL_SELECT,Select Opponent:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_FINISH,Finish!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_GO,Go!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_OUTCOME_DRAW,Draw!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_OUTCOME_GAME_OVER,Game over!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER,The winner is %s!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_PLAYER_ROLLED,%s rolled %d:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_PLAYER_WINS,%s wins!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_READY_QUESTION,Ready?,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_ROLL,Roll,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_ROLL_PLAYER,Roll %s!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_STEAL_ONE_CAKE,Winner steals 1 cake,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_STEAL_TEN_COOKIES,Winner steals 10 cookies,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_TURN_NUM,Turn %d,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_VS,VS.,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_LABEL_YOUR_TURN,It's your turn!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES,You don't have enough cookies to buy that,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE,You don't have space left in your inventory,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_ACTION_1,Action 1,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_ACTION_2,Action 2,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_ACTION_3,Action 3,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_ACTION_4,Action 4,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_MINUS,Axis -,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_PLUS,Axis +,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_UNKNOWN,Unknown Axis,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_X_LEFT,X Left,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_X_RIGHT,X Right,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_Y_LEFT,Y Left,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_AXIS_Y_RIGHT,Y Right,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_BUTTON_UNKNOWN,Unknown Button,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD,Gamepad,Manette,Mando,Gamepad,Controller,Controle,Comando,Геймпад,Gamepad,Oyun Kumandası,Gamepad,Spillkontroll,Handkontroll,Controller,Kontroler,Peliohjain,ゲームパッド,游戏手柄,游戲手柄,게임 패드,Ovladač,Kontroller,Gamepad,จอยสติ๊ก,Джойстик,ג'ויסטיק,مقبض التحكم,Džojstik
+MENU_CONTROLS_GAMEPAD_BUTTON,Gamepad button,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_1,Gamepad button 1,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_2,Gamepad button 2,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_3,Gamepad button 3,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_4,Gamepad button 4,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_A,Gamepad button A,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_B,Gamepad button B,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE,Gamepad button Circle,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_CROSS,Gamepad button Cross,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE,Gamepad button Square,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE,Gamepad button Triangle,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_X,Gamepad button X,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_BUTTON_Y,Gamepad button Y,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_SELECT,Gamepad Select,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_GAMEPAD_START,Gamepad Start,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE,Mouse,Souris,Ratón,Maus,Mouse,Mouse,Rato,Мышь,Ποντίκι,Fare,Mus,Mus,Mus,Muis,Mysz,Hiiri,マウス,鼠标,鼠標,마우스,Myš,Egér,Mouse,เมาส์,Мишка,עכבר,الفأرة,Miš
+MENU_CONTROLS_MOUSE_BUTTON,Mouse button,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_BUTTON_LEFT,Left mouse button,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_BUTTON_MIDDLE,Middle mouse button,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_BUTTON_RIGHT,Right mouse button,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_WHEEL_DOWN,Button wheel down,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_WHEEL_LEFT,Button wheel left,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_WHEEL_RIGHT,Button wheel right,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_MOUSE_WHEEL_UP,Button wheel up,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_TRIGGER_LEFT,Left Trigger,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_TRIGGER_LEFT_2,Left Trigger 2,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_TRIGGER_LEFT_3,Left Trigger 3,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_TRIGGER_RIGHT,Right Trigger,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_TRIGGER_RIGHT_2,Right Trigger 2,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_TRIGGER_RIGHT_3,Right Trigger 3,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_ACTION_NUM,Action %d,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_CONTROLS_DIR_DOWN,Down,Bas,Abajo,Unten,Giù,Abaixo,Baixo,Вниз,Κάτω,Aşağı,Ned,Ned,Ner,Omlaag,Dół,Alas,下,下,下,아래,Dolů,Le,Jos,ล่าง,Надолу,למטה,تحت,Dole
+MENU_CONTROLS_DIR_LEFT,Left,Gauche,Izquierda,Links,Sinistra,Esquerda,Esquerda,Влево,Αριστερά,Sol,Venstre,Venstre,Vänster,Links,Lewo,Vasen,左,左,左,왼쪽,vlevo,Bal,Stânga,ซ้าย,Наляво,שמאלה,يسار,Lijevo
+MENU_CONTROLS_DIR_RIGHT,Right,Droite,Derecha,Rechts,Destra,Direita,Direita,Вправо,Δεξί,Sağ,Højre,Høyre,Höger,Rechts,Prawo,Oikea,右,右,右,오른쪽,vpravo,Jobb,Dreapta,ขวา,Надясно,ימינה,يمين,Desno
+MENU_CONTROLS_DIR_UP,Up,Haut,Arriba,Oben,Su,Acima,Cima,Вверх,Πάνω,Yukarı,Op,Opp,Upp,Omhoog,Góra,Ylös,上,上,上,위,Nahoru,Fel,Sus,บน,Нагоре,למעלה,فوق,Gore
+MENU_IO_ENTER_SAVEGAME_NAME,Enter savegame name:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_IO_LOAD_GAME,Load Game,Charger partie,Cargar juego,Spiel laden,Carica partita,Carregar Jogo,Carregar Jogo,Загрузить игру,Άνοιγμα παιχνιδιού,Oyunu Yükle,Indlæs Spil,Laste Opp Spill,Ladda spel,Spel laden,Wczytaj Grę,Lataa peli,ゲームデータをロード,载入游戏,載入游戲,게임 불러오기,Načíst hru,Játék betöltése,Încarcă Jocul,โหลดเกม,Зареждане на игра,טען משחק שמור,تحميل لعبة محفوظة,Učitavanje Igre
+MENU_IO_SAVE,Save,Sauvegarder,Guardar,Speichern,Salva,Salvar,Guardar,Сохранить,Αποθήκευσε,Kaydet,Gem,Lagre,Spara,Opslaan,Zapisz,Tallenna,セーブ,保存,保存,저장,Uložit,Mentés,Salvează,บันทึก,Записване,שמור,حفظ,Spremiti
+MENU_IO_SAVE_GAME,Save Game,Sauvegarder partie,Guardar juego,Spiel speichern,Salva partita,Salvar Jogo,Guardar Jogo,Сохранить игру,Αποθήκευσε παιχνίδι,Oyunu Kaydet,Gem Spil,Lagre Spill,Spara spel,Spel opslaan,Zapisz Grę,Tallenna peli,ゲームデータをセーブ,保存游戏,保存游戏,게임 저장,Uložit hru,Játék mentése,Salvează Jocul,บันทึกเกม,Записване на играта,שמור משחק,حفظ اللعبة,Spremiti Igru
+MENU_LABEL_BACK,Back,Retour,Volver,Zurück,Indietro,Voltar,Atrás,Назад,Επιστροφή,Geri,Tilbage,Tilbake,Tillbaka,Terug,Wstecz,Takaisin,戻る,返回,返回,뒤로,Zpět,Vissza,Înapoi,กลับ,Назад,חזרה,الرجوع,Nazad
+MENU_LABEL_CANCEL,Cancel,Annuler,Cancelar,Abbrechen,Cancella,Cancelar,Cancelar,Отмена,Ακύρωση,İptal,Annuler,Avbryte,Avbryt,Annuleren,Anuluj,Peruuta,キャンセル,取消,取消,취소,Storno,Mégse,Anulare,ยกเลิก,Отмяма,ביטול,إلغاء,Otkazati
+MENU_LABEL_CHARACTER,Character:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_CONTINUE,Continue,Continuer,Continuar,Fortsetzen,Continua,Continuar,Continuar,Продолжить игру,Συνέχεια,Devam Et,Fortsæt,Gå videre,Fortsätt,Doorgaan,Kontynuuj,Jatka,続ける,继续,繼續,계속,Pokračovat,Folytatás,Continuă,เล่นต่อ,Продължаване,המשך,متابعة,Nastaviti
+MENU_LABEL_DESCRIPTION,Description,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_DESKTOP,Exit to Desktop,Retourner sur le bureau,Salir al escritorio,Zurück zum Desktop,Torna al desktop,Sair para a área de trabalho,Sair para o ambiente de trabalho,Выйти на рабочий стол,Επιστροφή στο περιβάλλον εργασίας,Masaüstüne Çıkış,Afslut til Skrivebord,Avslutt til skrivebordet,Avsluta till skrivbordet,Sluiten naar bureaublad,Wyjdź do Pulpitu,Poistu työpöydälle,終了してデスクトップへ戻る,退出至桌面,退出至桌面,바탕화면으로 나가기,Odejít na plochu,Kilépés a munkaasztalra,Ieșire către Desktop,ออกสู่ desktop,Изход до работния плот,יציאה לשולחן העבודה,الخروج لسطح المكتب,Izađi na Desktop
+MENU_LABEL_GAMEPAD_DISPLAY_NAMES,Joypad display names:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_LINEAR,Linear,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NEW_GAME,New Game,Nouvelle partie,Juego nuevo,Neues Spiel,Nuova partita,Novo Jogo,Novo Jogo,Новая игра,Νέο παιχνίδι,Yeni Oyun,Nyt Spil,Nytt Spill,Nytt spel,Nieuw spel,Nowa Gra,Uusi peli,新しいゲーム,新游戏,新游戲,새 게임,Nová hra,Új játék,Joc nou,เริ่มเกมใหม่,Нова игра,משחק חדש,لعبة جديدة,Nova Igra
+MENU_LABEL_NINTENDO_DS,Nintendo DS,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NOT_READY_ELLIPSIS,Not ready...,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NUMBERS,Numbers,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NUM_1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NUM_2,2,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NUM_3,3,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_NUM_4,4,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_OK,Ok,OK,Ok,OK,Ok,Ok,Ok,ОК,ΟΚ,TAMAM,OK,OK,OK,OK,OK,OK,OK,OK,OK,확인,OK,OK,OK,ตกลง,Добре,טוב,موافق,Ok
+MENU_LABEL_PAUSE,Pause,Pause,Pausa,Pause,Pausa,Pausar,Pausa,Пауза,Παύση,Durdur,Pause,Pause,Pausa,Pauzeren,Pauza,Pysäytä,ポーズ,暂停,暫停,일시 정지,Pauza,Szünet,Pauză,หยุด,Преустановяване,השהה,إيقاف,Pauza
+MENU_LABEL_PAUSED,Paused,En pause,Pausado,Pausiert,In pausa,Pausado,Em Pausa,Приостановлено,Σε παύση,Durduruldu,Pauset,Pauset,Pausat,Gepauzeerd,Pauza,Pysäytetty,ポーズ中,暂停中,暫停中,일시 정지됨,Pozastaveno,Szünetelve,Suspendat,หยุด,Пауза,מושהה,متوقف,Pauzirano
+MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS,Pause on Window Unfocus,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_PLAY,Play,Jouer,Jugar,Spielen,Gioca,Jogar,Jogar,Играть,Παίξε,Oyna,Spil,Spill,Spela,Spelen,Zagraj,Pelaa,プレイ,开始,開始,플레이,Hrát,Játszás,Joacă,เล่น,Пускане,התחל,لعب,Igraj
+MENU_LABEL_PLAYER,Player,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_PLAYSTATION,Playstation,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_PRESS_ANY_KEY,Press any key,Appuyez sur une touche,Pulsa cualquier tecla,Drücke eine beliebige Taste,Premi un tasto,Pressione qualquer botão,Carregue em qualquer tecla,Нажмите любую клавишу,Πάτα ένα πλήκτρο,Herhangi bir tuşa bas,Tryk en vilkårlig tast,Trykk en knapp,Tryck på valfri knapp,Druk op een knop,Naciśnij dowolny klawisz,Paina mitä tahansa näppäintä,いずれかのキーを押す,按下任意键,按下任意鍵,아무 키나 누르세요,Stiskněte libovolnou klávesu,Nyomj egy gombot,Apasă orice tasta,กดปุ่มใดๆ,Натиснете някакъв клавиш,כדי להתחיל לחץ על אחד מהמקשים,اضغط على أي مفتاح,Pritisnite Bilo Koje Dugme
+MENU_LABEL_QUIT,Quit,Quitter,Cerrar,Beenden,Esci,Sair,Sair,Выход,Έξοδος,Oyunu Kapat,Afslut,Avslutt,Avsluta,Stoppen,Wyjdź,Lopeta,終了する,退出,退出,종료,Ukončit hru,Bezárás,Închidere,ออก,Изход,הפסק,خروج,Izaći
+MENU_LABEL_READY,Ready!,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_RESUME,Resume,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_RETURN_MENU,Return to Main Menu,Retourner au menu principal,Volver al menú principal,Zurück zum Hauptmenü,Ritorna al menù principale,Retornar ao Menu Principal,Regressar ao Menu Principal,Вернуться в главное меню,Επιστροφή στο Κεντρικό Μενού,Ana Menü'ye geri dön,Tilbage til hovedmenuen,Gå til hoved meny,Återgå till huvudmeny,Terug naar hoofdmenu,Powrót do Menu Głównego,Palaa päävalikkoon,メインメニューに戻る,返回至主界面,返回至主界面,메인 메뉴로 돌아가기,Vrátit se na hlavní menu,Vissza a főmenüre,Întoarcere către meniul principal,กลับไปเมนูหลัก,Обратно към главното меню,חזור למסך הראשי,عودة إلى القائمة الرئيسية,Natrag na Glavni Meni
+MENU_LABEL_REWARD_SYSTEM,Reward System:,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_SELECT_BOARD,Select board,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_SELECT_CHARACTER_PLAYER_1,Select a character for Player 1,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_SELECT_CHARACTER_PLAYER_2,Select a character for Player 2,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_SELECT_CHARACTER_PLAYER_3,Select a character for Player 3,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_SELECT_CHARACTER_PLAYER_4,Select a character for Player 4,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_SELECT_NUM_PLAYERS,Select amount of players,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_TITLE,Super Tux Party,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_TRY,Try,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_WINNER_TAKES_ALL,Winner takes all,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_XBOX,XBOX,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS,Options,Options,Opciones,Optionen,Opzioni,Opções,Opções,Настройки,Επιλογές,Ayarlar,Indstillinger,Innstillinger,Inställningar,Instellingen,Ustawienia,Asetukset,設定,设置,設置,설정,Nastavení,Beállítások,Preferințe,ตัวเลือก,Настройки,אפשרויות,خيارات,Opcije
+MENU_OPTIONS_AUDIO,Audio,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_CONTROLS,Controls,Contrôles,Controles,Tastenbelegung,Comandi,Controles,Controlos,Управление,Χειρισμός,Kontroller,Tastindstillinger,Kontroller,Kontroller,Besturing,Sterowanie,Ohjausasetukset,操作方法,操作模式,操作模式,조작 방식,Ovládání,Irányítás,Controale,การบังคับ,Управление,מקשים,مفاتيح التحكم,kontrole
+MENU_OPTIONS_EFFECTS,Effects,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_FRAME_CAP,Frame Cap,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_FULLSCREEN,Fullscreen,Plein écran,Pantalla completa,Vollbild,Schermo intero,Tela cheia,Ecrã inteiro,Во весь экран,Πλήρης οθόνη,Tam ekran,Fuld skærm,Fullskjerm,Fullskärm,Volledig scherm,Pełny ekran,Kokoruutu,フルスクリーン,全屏,全屏,전체화면,Celá obrazovka,Teljes képernyő,Ecran complet,เต็มหน้าจอ,На цял екран,מסך מלא,تكبير الشاشة Fullscreen,Cijeli Zaslon
+MENU_OPTIONS_MASTER,Master,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_MISC,Misc.,Divers,Otros,Verschiedene,Vari,Diversos,Diversos,Разное,Αλλα,Çeşitli,Diverse,Diverse,Blandat,Overig,Różne,Sekalaiset,その他,其它,其它,기타,Různé,Egyéb,Altele,เบ็ดเตล็ด,Разни,משחק שונות,منوّع,Razno
+MENU_OPTIONS_MUSIC,Music,Musique,Música,Musik,Musica,Música,Música,Музыка,Μουσική,Müzik,Musik,Musikk,Musik,Muziek,Muzyka,Musiikki,音楽,音乐,音樂,음악,Hudba,Zene,Muzică,เพลง,Музика,מוזיקה,الموسيقى,Muzika
+MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS,Mute on Window Unfocus,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_VISUAL,Visual,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_VSYNC,V-sync,VSync,V-sync,Bildschirmsynchronisation,VSync,Vsync,Vsync,Вертикальная синхронизация,Vsync,Dikey Senkronizasyon (Vsync),Vsync,Vsync,Vsync,Vsync,Vsync,Vsync,垂直同期,垂直同步,垂直同步,수직 동기,Vertikální synchronizace obrazu,V-sync,V-sync,V-sync,Отвесна синхронизация,Vsync,تزامن اللقطات مع الشاشة V-sync,V-sync

@@ -2,21 +2,21 @@
 static func get_mousebutton_name(index):
 	match index:
 		BUTTON_LEFT:
-			return "Left mouse button"
+			return tr("MENU_CONTROLS_MOUSE_BUTTON_LEFT")
 		BUTTON_RIGHT:
-			return "Right mouse button"
+			return tr("MENU_CONTROLS_MOUSE_BUTTON_RIGHT")
 		BUTTON_MIDDLE:
-			return "Middle mouse button"
+			return tr("MENU_CONTROLS_MOUSE_BUTTON_MIDDLE")
 		BUTTON_WHEEL_UP:
-			return "Button wheel up"
+			return tr("MENU_CONTROLS_WHEEL_UP")
 		BUTTON_WHEEL_DOWN:
-			return "Button wheel down"
+			return tr("MENU_CONTROLS_WHEEL_DOWN")
 		BUTTON_WHEEL_LEFT:
-			return "Button wheel left"
+			return tr("MENU_CONTROLS_WHEEL_LEFT")
 		BUTTON_WHEEL_RIGHT:
-			return "Button wheel right"
+			return tr("MENU_CONTROLS_WHEEL_RIGHT")
 		_:
-			return "Mouse button " + var2str(index)
+			return tr("MENU_CONTROLS_MOUSE_BUTTON") + " " + var2str(index)
 
 static func get_joypad_axis_name(axis, axis_value):
 	var axis_name = "+"
@@ -25,19 +25,19 @@ static func get_joypad_axis_name(axis, axis_value):
 	
 	match axis:
 		JOY_ANALOG_LX:
-			axis_name += "X Left"
+			axis_name += tr("MENU_CONTROLS_AXIS_X_LEFT")
 		JOY_ANALOG_LY:
-			axis_name += "Y Left"
+			axis_name += tr("MENU_CONTROLS_AXIS_Y_LEFT")
 		JOY_ANALOG_RX:
-			axis_name += "X Right"
+			axis_name += tr("MENU_CONTROLS_AXIS_X_RIGHT")
 		JOY_ANALOG_RY:
-			axis_name += "Y Right"
+			axis_name += tr("MENU_CONTROLS_AXIS_Y_RIGHT")
 		JOY_ANALOG_L2:
-			return "Trigger Left"
+			return tr("MENU_CONTROLS_TRIGGER_LEFT")
 		JOY_ANALOG_R2:
-			return "Trigger Right"
+			return tr("MENU_CONTROLS_TRIGGER_RIGHT")
 		_:
-			axis_name += "Unknown Axis " + var2str(axis)
+			axis_name += tr("MENU_CONTROLS_AXIS_UNKNOWN") + " " + var2str(axis)
 	
 	return axis_name
 
@@ -55,61 +55,61 @@ static func get_joypad_button_name(button):
 		JOY_BUTTON_0:
 			match Global.joypad_display:
 				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					return "Joypad button 3"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_3")
 				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					return "Joypad button A"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_A")
 				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					return "Joypad button B"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_B")
 				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					return "Joypad button Cross"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_CROSS")
 		JOY_BUTTON_1:
 			match Global.joypad_display:
 				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					return "Joypad button 2"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_2")
 				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					return "Joypad button B"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_B")
 				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					return "Joypad button A"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_A")
 				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					return "Joypad button Circle"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE")
 		JOY_BUTTON_2:
 			match Global.joypad_display:
 				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					return "Joypad button 4"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_4")
 				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					return "Joypad button X"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_X")
 				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					return "Joypad button Y"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_Y")
 				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					return "Joypad button Square"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE")
 		JOY_BUTTON_3:
 			match Global.joypad_display:
 				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					return "Joypad button 1"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_1")
 				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					return "Joypad button Y"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_Y")
 				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					return "Joypad button X"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_X")
 				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					return "Joypad button Triangle"
+					return tr("MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE")
 		JOY_L:
-			return "Left Trigger"
+			return tr("MENU_CONTROLS_TRIGGER_LEFT")
 		JOY_L2:
-			return "Left Trigger 2"
+			return tr("MENU_CONTROLS_TRIGGER_LEFT_2")
 		JOY_L3:
-			return "Left Trigger 3"
+			return tr("MENU_CONTROLS_TRIGGER_LEFT_3")
 		JOY_R:
-			return "Right Trigger"
+			return tr("MENU_CONTROLS_TRIGGER_RIGHT")
 		JOY_R2:
-			return "Right Trigger 2"
+			return tr("MENU_CONTROLS_TRIGGER_RIGHT_2")
 		JOY_R3:
-			return "Right Trigger 3"
+			return tr("MENU_CONTROLS_TRIGGER_RIGHT_3")
 		JOY_START:
-			return "Joypad Start"
+			return tr("MENU_CONTROLS_GAMEPAD_START")
 		JOY_SELECT:
-			return "Joypad Select"
+			return tr("MENU_CONTROLS_GAMEPAD_SELECT")
 	
-	return "Joypad button " + var2str(button)
+	return tr("MENU_CONTROLS_GAMEPAD_BUTTON") + " " + var2str(button)
 
 static func get_button_name(event):
 	if event is InputEventKey:
@@ -117,8 +117,8 @@ static func get_button_name(event):
 	elif event is InputEventMouseButton:
 		return get_mousebutton_name(event.button_index)
 	elif event is InputEventJoypadMotion:
-		return "Joypad " + get_joypad_axis_name(event.axis, event.axis_value)
+		return tr("MENU_CONTROLS_GAMEPAD") + " " + get_joypad_axis_name(event.axis, event.axis_value)
 	elif event is InputEventJoypadButton:
 		return get_joypad_button_name(event.button_index)
 	else:
-		return "Unknown"
+		return tr("MENU_CONTROLS_BUTTON_UNKNOWN")

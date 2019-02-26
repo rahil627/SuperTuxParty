@@ -90,7 +90,7 @@ func controls_remapping_setup():
 	for player_id in range(4):
 		var template = preload("player_controls_template.tscn")
 		var instance = template.instance()
-		instance.set_name("Player" + var2str(player_id+1))
+		instance.set_name(tr("MENU_LABEL_PLAYER") + var2str(player_id+1))
 		controls_tab.add_child(instance)
 		
 		# Iterating over all direct children of our template
@@ -108,7 +108,7 @@ func controls_remapping_setup():
 func _control_remap_pressed(event, button):
 	control_remap_event = event
 	control_remap_button = button
-	button.set_text("Press a key")
+	button.set_text(tr("MENU_LABEL_PRESS_ANY_KEY"))
 
 # The min value of the axis to get chosen during remap
 # prevents choosing the axis with a little value over one with a large vlaue
