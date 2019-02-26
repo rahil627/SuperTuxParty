@@ -2,6 +2,8 @@
 
 ## Alpha Version - v0.4
 ### New features
+- Support for localization (except plugins)
+
 ### Improved / Changed
 - The main menu can now be navigated with keyboard/controller
 

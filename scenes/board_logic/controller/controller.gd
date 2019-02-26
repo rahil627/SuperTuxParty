@@ -84,13 +84,13 @@ func check_winner():
 						winner = p
 						message = winner.player_name
 					elif p.cookies == winner.cookies:
-						message = "Draw!"
+						message = tr("CONTEXT_LABEL_OUTCOME_DRAW")
 		
-		if message != "Draw!":
-			message = "The winner is " + winner.player_name
+		if message != tr("CONTEXT_LABEL_OUTCOME_DRAW"):
+			message = tr("CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER") % [winner.player_name]
 		
 		$Screen/Turn.text = message
-		$Screen/Dice.text = "Game over!"
+		$Screen/Dice.text = tr("CONTEXT_LABEL_OUTCOME_GAME_OVER")
 		
 		$Screen/Dice.show()
 		$Screen/Roll.hide()
@@ -114,12 +114,12 @@ func _ready():
 	
 	if Global.award == Global.AWARD_TYPE.WINNER_ONLY:
 		COOKIES_FOR_CAKE = 20
-		$Screen/GetCake/Label.text = "Buy a cake for 20 cookies"
+		$Screen/GetCake/Label.text = tr("CONTEXT_LABEL_BUY_CAKE") % [COOKIES_FOR_CAKE]
 	
 	# Initialize GUI
 	if player_turn <= Global.amount_of_players:
-		$Screen/Turn.text = "Turn: " + var2str(Global.turn)
-		$Screen/Dice.text = "Roll " + players[player_turn - 1].player_name + "!"
+		$Screen/Turn.text = tr("CONTEXT_LABEL_TURN_NUM") % [Global.turn]
+		$Screen/Dice.text = tr("CONTEXT_LABEL_ROLL_PLAYER") % [players[player_turn - 1].player_name]
 	
 	update_player_info()
 	
@@ -187,7 +187,8 @@ func roll(steps = null):
 			do_step(player, dice)
 			
 			# Show which number was rolled
-			$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice)
+			$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") % [player.player_name, dice]
+			#$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice)
 			$Screen/Dice.show()
 			return
 		
@@ -201,7 +202,7 @@ func roll(steps = null):
 				do_step(player, dice)
 				
 				# Show which number was rolled
-				$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") % [player.player_name, dice]
 				$Screen/Dice.show()
 			ITEM.TYPES.PLACABLE:
 				yield(select_space(player, selected_item.max_place_distance), "completed")
@@ -221,7 +222,7 @@ func roll(steps = null):
 				do_step(player, dice)
 				
 				# Show which number was rolled
-				$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") % [player.player_name, dice]
 				$Screen/Dice.show()
 			ITEM.TYPES.ACTION:
 				selected_item.activate(player, self)
@@ -235,7 +236,7 @@ func roll(steps = null):
 				do_step(player, dice)
 				
 				# Show which number was rolled
-				$Screen/Dice.text = player.player_name + " rolled: " + var2str(dice) 
+				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") % [player.player_name, dice]
 				$Screen/Dice.show()
 	else:
 		# All players have had their turn, goto mini-game
@@ -726,9 +727,9 @@ func minigame_duel_reward_animation():
 			name = key
 	
 	if name == "TEN_COOKIES":
-		$Screen/DuelReward/Value.text = "Winner steals 10 cookies"
+		$Screen/DuelReward/Value.text = tr("CONTEXT_LABEL_STEAL_TEN_COOKIES")
 	elif name == "ONE_CAKE":
-		$Screen/DuelReward/Value.text = "Winner steals 1 cake"
+		$Screen/DuelReward/Value.text = tr("CONTEXT_LABEL_STEAL_ONE_CAKE")
 	else:
 		$Screen/DuelReward/Value.text = name
 	
@@ -1049,14 +1050,14 @@ func _on_shop_item(player, item, cost):
 	if player.cookies >= cost and player.give_item(load(item).new()):
 		player.cookies -= cost
 	elif player.cookies < cost:
-		$Screen/Shop/Notification.dialog_text = "You don't have enough cookies to buy that"
+		$Screen/Shop/Notification.dialog_text = tr("CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES")
 		# Make it visible or else Godot does not recalculate the size
 		# Temporary until fixed in Godot
 		$Screen/Shop/Notification.show()
 		
 		$Screen/Shop/Notification.popup_centered()
 	else:
-		$Screen/Shop/Notification.dialog_text = "You don't have space left in your inventory"
+		$Screen/Shop/Notification.dialog_text = tr("CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE")
 		# Make it visible or else Godot does not recalculate the size
 		# Temporary until fixed in Godot
 		$Screen/Shop/Notification.show()

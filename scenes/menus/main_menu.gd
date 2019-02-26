@@ -17,8 +17,8 @@ var human_players = 0
 
 func _ready():
 	var award_type = $SelectionBoard/AwardType
-	award_type.add_item("Linear", Global.AWARD_TYPE.LINEAR);
-	award_type.add_item("Winner takes all", Global.AWARD_TYPE.WINNER_ONLY);
+	award_type.add_item(tr("MENU_LABEL_LINEAR"), Global.AWARD_TYPE.LINEAR);
+	award_type.add_item(tr("MENU_LABEL_WINNER_TAKES_ALL"), Global.AWARD_TYPE.WINNER_ONLY);
 	load_boards()
 	load_characters()
 	characters.resize(Global.amount_of_players)
@@ -44,8 +44,8 @@ func _ready():
 				human_players += 1
 			
 			get_node("PlayerInfo" + var2str(i) + "/Name").text = p.player_name;
-			get_node("PlayerInfo" + var2str(i) + "/Character").text = "Character: " + p.character;
-			get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Ready!"
+			get_node("PlayerInfo" + var2str(i) + "/Character").text = tr("MENU_LABEL_CHARACTER") + " " + p.character;
+			get_node("PlayerInfo" + var2str(i) + "/Ready").text = tr("MENU_LABEL_READY")
 			get_node("PlayerInfo" + var2str(i)).visible = true
 			
 			characters[i - 1] = p.character;
@@ -147,8 +147,8 @@ func prepare_player_states():
 			names.push_back("%s Bot" % characters[i - 1])
 
 func _on_character_select(target):
-	get_node("PlayerInfo" + var2str(current_player) + "/Character").text = "Character: " + target.get_text()
-	get_node("PlayerInfo" + var2str(current_player) + "/Ready").text = "Ready!"
+	get_node("PlayerInfo" + var2str(current_player) + "/Character").text = tr("MENU_LABEL_CHARACTER") + " " + target.get_text()
+	get_node("PlayerInfo" + var2str(current_player) + "/Ready").text = tr("MENU_LABEL_READY")
 	
 	characters[current_player - 1] = target.get_text()
 	current_player += 1
@@ -166,7 +166,7 @@ func _on_character_select(target):
 		else:
 			$SelectionBoard/Back.grab_focus()
 	
-	$SelectionChar/Title.text = "Select character for Player " + var2str(current_player)
+	$SelectionChar/Title.text = tr("MENU_LABEL_SELECT_CHARACTER_PLAYER_" + var2str(current_player))
 
 func _on_SelectionChar_Back_pressed():
 	$SelectionChar.hide()
@@ -175,11 +175,11 @@ func _on_SelectionChar_Back_pressed():
 	
 	current_player = 1
 	
-	$SelectionChar/Title.text = "Select character for Player 1"
+	$SelectionChar/Title.text = tr("MENU_LABEL_SELECT_CHARACTER_PLAYER_1")
 	
 	for i in range(1, 5):
-		get_node("PlayerInfo" + var2str(i) + "/Character").text = "Character:"
-		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
+		get_node("PlayerInfo" + var2str(i) + "/Character").text = tr("MENU_LABEL_CHARACTER")
+		get_node("PlayerInfo" + var2str(i) + "/Ready").text = tr("MENU_LABEL_NOT_READY_ELLIPSIS")
 		get_node("PlayerInfo" + var2str(i)).hide()
 	
 	# Reenable all characters
@@ -207,7 +207,7 @@ func _on_Selection_Back_pressed():
 	current_player = 1;
 	
 	for i in range(1, 5):
-		get_node("PlayerInfo" + var2str(i) + "/Ready").text = "Not ready..."
+		get_node("PlayerInfo" + var2str(i) + "/Ready").text = tr("MENU_LABEL_NOT_READY_ELLIPSIS")
 	
 	# Reenable all characters
 	for child in $SelectionChar/Buttons/VScrollBar/Grid.get_children():

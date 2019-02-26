@@ -26,7 +26,7 @@ func display_mouse_button(event):
 		BUTTON_MIDDLE:
 			$TextureRect.texture = load("res://assets/textures/controls/middle_mouse.png")
 		_:
-			$Label.text = "Mouse " + var2str(event.button_index)
+			$Label.text = tr("MENU_CONTROLS_MOUSE") + " " + var2str(event.button_index)
 
 func display_joypad_button(event):
 	match event.button_index:
@@ -96,7 +96,7 @@ func display_joypad_button(event):
 		JOY_R3:
 			$TextureRect.texture = load("res://assets/textures/controls/buttonR2.png")
 		_:
-			$Label.text = "Joypad " + var2str(event.button_index)
+			$Label.text = tr("MENU_CONTROLS_GAMEPAD") + " " + var2str(event.button_index)
 
 func display_joypad_axis(event):
 	match event.axis:
@@ -126,9 +126,9 @@ func display_joypad_axis(event):
 			$TextureRect.texture = load("res://assets/textures/controls/buttonR.png")
 		_:
 			if event.axis_value < 0:
-				$Label.text = "Axis -" + var2str(event.axis)
+				$Label.text = tr("MENU_CONTROLS_AXIS_MINUS") + var2str(event.axis)
 			else:
-				$Label.text = "Axis +" + var2str(event.axis)
+				$Label.text = tr("MENU_CONTROLS_AXIS_PLUS") + var2str(event.axis)
 	
 	return name
 
