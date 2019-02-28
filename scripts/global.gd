@@ -77,7 +77,6 @@ var current_board
 
 # Pointer to top-level node in current scene
 var current_scene = null
-var max_turns = 5
 
 # Stops the controller from loading information when starting a new game
 var new_game = true
