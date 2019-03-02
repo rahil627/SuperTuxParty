@@ -10,7 +10,8 @@ const NODE = preload("res://scenes/board_logic/node/node.gd")
 const ITEM = preload("res://plugins/items/item.gd")
 const PLAYER = preload("res://scenes/board_logic/player_board/player_board.gd")
 
-var COOKIES_FOR_CAKE = 30
+export(int) var COOKIES_FOR_CAKE = 30
+export(int) var MAX_TURNS = 10
 
 var selected_item = null
 
@@ -70,7 +71,7 @@ var wait_for_animation = false
 var current_minigame = null
 
 func check_winner():
-	if Global.turn > Global.max_turns:
+	if Global.turn > MAX_TURNS:
 		var message = ""
 		
 		for p in players:
