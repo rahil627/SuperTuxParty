@@ -282,7 +282,9 @@ func duplicate_items(items):
 func deduplicate_items(items):
 	var list = []
 	for item in items:
-		list.push_back(dict2inst(item))
+		var deserialized = dict2inst(item)
+		deserialized.type = int(deserialized.type)
+		list.push_back(deserialized)
 	
 	return list
 
