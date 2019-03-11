@@ -10,6 +10,14 @@ var control_remapper = preload("res://scenes/menus/control_remapper.gd").new(sel
 signal quit
 
 func _ready():
+	# Populate with toggled translations in 'Project Settings > Localization > Locales Filter'.
+	var languages = ProjectSettings.get("locale/locale_filter")[1]
+	var language_control = $TabContainer/Visual/Language/OptionButton
+	for i in languages.size():
+		language_control.add_item(
+				TranslationServer.get_locale_name(languages[i]), i + 1)
+		language_control.set_item_metadata(i + 1, languages[i])
+	
 	var joypad_display_types = $TabContainer/Controls/JoypadDisplayType
 	joypad_display_types.add_item(tr("MENU_LABEL_NUMBERS"), Global.JOYPAD_DISPLAY_TYPE.NUMBERS)
 	joypad_display_types.add_item(tr("MENU_LABEL_XBOX"), Global.JOYPAD_DISPLAY_TYPE.XBOX)
@@ -57,6 +65,21 @@ func _on_VSync_toggled(button_pressed):
 	OS.vsync_enabled = button_pressed
 	
 	save_option("visual", "vsync", button_pressed)
+
+func _on_Language_item_selected(ID):
+	var locales = ProjectSettings.get("locale/locale_filter")[1]
+	var option_meta = $TabContainer/Visual/Language/OptionButton.get_item_metadata(ID)
+	if option_meta == "":
+		TranslationServer.set_locale(OS.get_locale())
+	elif not locales.has(option_meta):
+		TranslationServer.set_locale(OS.get_locale())
+		
+		save_option("visual", "language", "")
+		return
+	
+	TranslationServer.set_locale(option_meta)
+	
+	save_option("visual", "language", option_meta)
 
 func _on_FrameCap_item_selected(ID):
 	match ID:
@@ -125,6 +148,15 @@ func load_options():
 		return
 	
 	_is_loading_options = true # Avoid saving options while loading them.
+	
+	var language = get_option_value_safely("visual", "language", "")
+	var language_id = ProjectSettings.get("locale/locale_filter")[1].find(language)
+	if language_id == -1:
+		language_id = 0
+	else:
+		language_id += 1
+	_on_Language_item_selected(language_id)
+	$TabContainer/Visual/Language/OptionButton.select(language_id)
 	
 	OS.window_fullscreen = get_option_value_safely("visual", "fullscreen", false)
 	$TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen

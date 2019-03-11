@@ -124,7 +124,8 @@ player4_pause=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"r
 
 [locale]
 
-translations=PoolStringArray( "res://translations/translations.en.translation", "res://translations/pirate.pt.translation" )
+translations=PoolStringArray( "res://translations/translations.en.translation", "res://translations/pirate.pt.translation", "res://translations/translations.pt_BR.translation" )
+locale_filter=[ 0, [ "en", "pt_BR" ] ]
 
 [plugins]
 
