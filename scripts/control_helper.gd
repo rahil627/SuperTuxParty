@@ -1,5 +1,6 @@
+extends Node
 
-static func get_mousebutton_name(index):
+func get_mousebutton_name(index):
 	match index:
 		BUTTON_LEFT:
 			return tr("MENU_CONTROLS_MOUSE_BUTTON_LEFT")
@@ -18,7 +19,7 @@ static func get_mousebutton_name(index):
 		_:
 			return tr("MENU_CONTROLS_MOUSE_BUTTON") + " " + var2str(index)
 
-static func get_joypad_axis_name(axis, axis_value):
+func get_joypad_axis_name(axis, axis_value):
 	var axis_name = "+"
 	if axis_value < 0:
 		axis_name = "-"
@@ -41,7 +42,7 @@ static func get_joypad_axis_name(axis, axis_value):
 	
 	return axis_name
 
-static func get_joypad_button_name(button):
+func get_joypad_button_name(button):
 	# Joystick button indizes:
 	#      3
 	#    2   1
@@ -111,7 +112,7 @@ static func get_joypad_button_name(button):
 	
 	return tr("MENU_CONTROLS_GAMEPAD_BUTTON") + " " + var2str(button)
 
-static func get_button_name(event):
+func get_button_name(event):
 	if event is InputEventKey:
 		return OS.get_scancode_string(event.scancode)
 	elif event is InputEventMouseButton:
