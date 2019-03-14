@@ -164,7 +164,7 @@ func load_options():
 	OS.vsync_enabled = get_option_value_safely("visual", "vsync", false)
 	$TabContainer/Visual/VSync.pressed = OS.vsync_enabled
 	
-	var frame_id = get_option_value_safely("visual", "frame_cap", 1, 0, 3)
+	var frame_id = get_option_value_safely("visual", "frame_cap", 1, 0, 5)
 	_on_FrameCap_item_selected(frame_id)
 	$TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
 	
