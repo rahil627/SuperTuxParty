@@ -1,7 +1,5 @@
 const USER_CONFIG_FILE = "user://controls.cfg"
 
-const CONTROL_HELPER = preload("res://scripts/control_helper.gd")
-
 # The eventname that is currently remapped
 var control_remap_event
 # The button which triggered the remap
@@ -102,7 +100,7 @@ func controls_remapping_setup():
 				var event_name = "player" + var2str(player_id + 1) + "_" + child.get_name()
 				var input_event = InputMap.get_action_list(event_name)[0]
 				if input_event != null:
-					button.text = CONTROL_HELPER.get_button_name(input_event)
+					button.text = ControlHelper.get_button_name(input_event)
 					button.connect("pressed", self, "_control_remap_pressed", [event_name, button])
 
 func _control_remap_pressed(event, button):
@@ -121,7 +119,7 @@ func _input(event):
 	
 	if valid_type and control_remap_event != null and mousebutton_pressed_check and joypad_deadzone_check:
 		main_menu.get_tree().set_input_as_handled()
-		control_remap_button.text = CONTROL_HELPER.get_button_name(event)
+		control_remap_button.text = ControlHelper.get_button_name(event)
 		
 		# Remove old keybindings
 		for old_event in InputMap.get_action_list(control_remap_event):

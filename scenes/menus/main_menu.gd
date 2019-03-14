@@ -253,7 +253,7 @@ func _on_SaveGame_Delete_pressed(savegame, node):
 	
 	var num_children = $LoadGameMenu/ScrollContainer/Saves.get_child_count()
 	if num_children > 0:
-		$LoadGameMenu/ScrollContainer/Saves.get_child(min(index, num_children)).get_child(0).grab_focus()
+		$LoadGameMenu/ScrollContainer/Saves.get_child(min(index, num_children - 1)).get_child(0).grab_focus()
 	else:
 		$LoadGameMenu/Back.grab_focus()
 	

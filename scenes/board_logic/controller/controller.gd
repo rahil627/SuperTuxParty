@@ -5,7 +5,6 @@ const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vec
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
-const CONTROL_HELPER = preload("res://scripts/control_helper.gd")
 const NODE = preload("res://scenes/board_logic/node/node.gd")
 const ITEM = preload("res://plugins/items/item.gd")
 const PLAYER = preload("res://scenes/board_logic/player_board/player_board.gd")
@@ -496,7 +495,7 @@ func animation_ended(player_id):
 	if end_turn:
 		if do_action == TURN_ACTION.LAND_ON_SPACE:
 			# Activate the item placed onto the node if any
-			if player.space.trap != null and player.space.trap.activate(player, player.space.trap_player, self):
+			if player.space.trap != null and player.space.trap.activate(player, player.space.trap_player):
 				player.space.trap = null
 			
 			# Lose cookies if you land on red space
@@ -828,7 +827,7 @@ func show_minigame_info():
 		
 		label.bbcode_text = ""
 		for action in current_minigame.used_controls:
-			label.append_bbcode(CONTROL_HELPER.get_button_name(InputMap.get_action_list("player"+var2str(i) + "_" + action)[0]) + " - " + current_minigame.used_controls[action].en + "\n")
+			label.append_bbcode(ControlHelper.get_button_name(InputMap.get_action_list("player" + var2str(i) + "_" + action)[0]) + " - " + current_minigame.used_controls[action].en + "\n")
 	
 	$Screen/MinigameInformation.show()
 

@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/tile_green_col.png-dc6ae111f0b97d8f609fa419baa1f292.s3tc.stex"
 path.etc2="res://.import/tile_green_col.png-dc6ae111f0b97d8f609fa419baa1f292.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
@@ -15,6 +19,7 @@ dest_files=[ "res://.import/tile_green_col.png-dc6ae111f0b97d8f609fa419baa1f292.
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
@@ -24,6 +29,7 @@ flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
