@@ -338,9 +338,33 @@ License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### screenshot.png
 
-Copyright © Jakob Sinclair
+Copyright © Florian Kothmeier
 
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## plugins/minigames/harvest_food/background
+### panorama.blend | panorama.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### asphalt.png
+
+Copyright © PagDev
+
+Retrieved from [Open Game Art](https://opengameart.org/content/asphalt)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/harvest_food/background/wood_tex/pattern_\*
+### diffuse.tga | normal.tga | specular.tga
+
+Public Domain by yughues
+
+Retrieved from [Open Game Art](https://opengameart.org/content/free-tiling-textures-pack-45-0)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/fence
 ### fence.escn | picketfence_0.blend
@@ -360,6 +384,30 @@ Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fe
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## plugins/minigames/harvest_food/plants
+### potato.blend | potato.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### potato_rotten.blend | potato_rotten.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### radish.blend | radish.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### radish_rotten.blend | radish_rotten.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ### carrot.blend
 
 Copyright © Florian Kothmeier
@@ -527,6 +575,14 @@ Copyright Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/textures
+### dirt.png | dirt.xcf
+
+Copyright © Charlie
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/tileable-dirt-texture-256x256)
+
+License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+
 ### water_diffuse.png
 
 Public Domain by Bastiaan Olij

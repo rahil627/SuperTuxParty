@@ -1,7 +1,15 @@
 extends Spatial
 
-const ROTTEN_PLANT = "res://plugins/minigames/harvest_food/plants/carrot_rotten.tscn"
-const NORMAL_PLANT = "res://plugins/minigames/harvest_food/plants/carrot.tscn"
+const ROTTEN_PLANTS = [
+						preload("res://plugins/minigames/harvest_food/plants/carrot_rotten.tscn"),
+						preload("res://plugins/minigames/harvest_food/plants/radish_rotten.tscn"),
+						preload("res://plugins/minigames/harvest_food/plants/potato_rotten.tscn")
+					  ]
+const NORMAL_PLANTS = [
+						preload("res://plugins/minigames/harvest_food/plants/carrot.tscn"), preload("res://plugins/minigames/harvest_food/plants/carrot.tscn"),
+						preload("res://plugins/minigames/harvest_food/plants/carrot.tscn"), preload("res://plugins/minigames/harvest_food/plants/radish.tscn"),
+						preload("res://plugins/minigames/harvest_food/plants/carrot.tscn"), preload("res://plugins/minigames/harvest_food/plants/potato.tscn")
+					  ]
 
 var rounds = 5
 
@@ -25,9 +33,9 @@ func spawn_plants():
 	for i in range(plants.size()):
 		var plant
 		if i == rotten_index:
-			plant = preload(ROTTEN_PLANT).instance()
+			plant = ROTTEN_PLANTS[randi() % ROTTEN_PLANTS.size()].instance()
 		else:
-			plant = preload(NORMAL_PLANT).instance()
+			plant = NORMAL_PLANTS[randi() % NORMAL_PLANTS.size()].instance()
 		
 		plants[i].add_child(plant)
 	
@@ -61,7 +69,7 @@ func _on_Timer_timeout():
 					collider.play_animation("sad")
 					$Screen/Message.text = "%s has chosen the rotten plant!" % Global.players[collider.player_id - 1].player_name
 		
-		var animationplayer = plants[i].get_node("Carrot/AnimationPlayer")
+		var animationplayer = plants[i].get_node("Plant/AnimationPlayer")
 		animationplayer.play("show")
 	
 	rounds -= 1
@@ -91,7 +99,7 @@ func _on_Timer_timeout():
 	$Screen/Message.text = ""
 	
 	for plant in plants:
-		var model = plant.get_node("Carrot")
+		var model = plant.get_node("Plant")
 		
 		plant.remove_child(model)
 		model.queue_free()
