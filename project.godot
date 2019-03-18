@@ -262,7 +262,7 @@ player4_pause={
 
 [locale]
 
-translations=PoolStringArray( "res://translations/translations.en.translation", "res://translations/translations.pt_BR.translation" )
+translations=PoolStringArray( "res://translations/translations.en.translation", "res://translations/pirate.pt.translation", "res://translations/translations.pt_BR.translation" )
 locale_filter=[ 0, [ "en", "pt_BR" ] ]
 
 [plugins]

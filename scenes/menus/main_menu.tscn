@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/main_menu.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=6]
 [ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=7]
+[ext_resource path="res://assets/music/main menu.ogg" type="AudioStream" id=8]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
@@ -310,6 +311,7 @@ margin_right = 0.0
 margin_bottom = 27.0
 
 [node name="LoadGameMenu" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -330,6 +332,7 @@ text = "MENU_IO_LOAD_GAME"
 align = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="LoadGameMenu"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 183.0
@@ -488,6 +491,11 @@ anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 7 )
 stretch_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+bus = "Music"
 
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
