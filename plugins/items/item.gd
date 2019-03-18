@@ -31,7 +31,10 @@ func load_resources():
 		material = load(get_script().resource_path.get_base_dir() + "/material.tres")
 
 func activate(player, controller):
-	print("activate(Player, Controller) not overriden in item: %s" % get_path())
+	push_error("activate(Player, Controller) not overriden in item: %s" % get_path())
+
+func activate_trap(from_player, trap_player, controller):
+	push_error("activate(Player, Controller) not overriden in item: %s" % get_path())
 
 func recreate_state():
 	load_resources()
