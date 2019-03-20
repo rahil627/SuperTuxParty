@@ -205,6 +205,7 @@ func _on_AwardType_item_selected(ID):
 func _on_Selection_Back_pressed():
 	$SelectionBoard.hide()
 	current_player = 1;
+	$SelectionChar/Title.text = tr("MENU_LABEL_SELECT_CHARACTER_PLAYER_1")
 	
 	for i in range(1, 5):
 		get_node("PlayerInfo" + var2str(i) + "/Ready").text = tr("MENU_LABEL_NOT_READY_ELLIPSIS")
@@ -216,7 +217,7 @@ func _on_Selection_Back_pressed():
 	characters.clear()
 	characters.resize(Global.amount_of_players)
 	
-	_select_player_amount(0)
+	_select_player_amount(human_players)
 	if $SelectionChar/Buttons/VScrollBar/Grid.get_child_count() > 0:
 		$SelectionChar/Buttons/VScrollBar/Grid.get_child(0).grab_focus()
 	else:
