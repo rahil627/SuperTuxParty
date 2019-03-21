@@ -6,7 +6,7 @@ func _init().(TYPES.PLACABLE):
 	can_be_bought = true
 	item_cost = 2
 
-func activate(from_player, trap_player):
+func activate_trap(from_player, trap_player, controller):
 	var cookies = min(from_player.cookies, 10)
 	
 	from_player.cookies -= cookies
