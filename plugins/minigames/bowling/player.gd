@@ -64,9 +64,9 @@ func _process(delta):
 			dir.x += 1
 		
 		if Input.is_action_pressed("player" + var2str(player_id) + "_action1") and is_on_floor():
-			if state != JUMP:
+			if state != STATE.JUMP:
 				$Model/AnimationPlayer.play("jump")
-				state = JUMP
+				state = STATE.JUMP
 			movement = Vector3(0, 4, 0)
 		
 		if Input.is_action_just_pressed("player" + var2str(player_id) + "_action2") and is_solo_player:
@@ -86,9 +86,9 @@ func _process(delta):
 				ai_jump_timer -= delta
 				if ai_jump_timer <= 0:
 					ai_jump_timer = rand_range(MIN_JUMP_TIME, MAX_JUMP_TIME)
-					if state != JUMP:
+					if state != STATE.JUMP:
 						$Model/AnimationPlayer.play("jump")
-						state = JUMP
+						state = STATE.JUMP
 					movement = Vector3(0, 4, 0)
 			
 			dir = ai_running_dir
@@ -124,9 +124,9 @@ func _process(delta):
 		queue_free()
 	
 	if dir.length() > 0:
-		if state == IDLE:
+		if state == STATE.IDLE:
 			$Model/AnimationPlayer.play("run")
-			state = RUNNING
+			state = STATE.RUNNING
 		dir = dir.normalized()
 		rotation = Vector3(0, atan2(dir.x, dir.z), 0)
 	else:
@@ -141,9 +141,9 @@ func _process(delta):
 		
 		if is_on_floor():
 			movement = Vector3()
-			if state == JUMP:
+			if state == STATE.JUMP:
 				$Model/AnimationPlayer.play("idle")
-				state = IDLE
+				state = STATE.IDLE
 	else:
 		# Knock out all players that are hit by a knocked out player
 		var collision = move_and_collide(movement * delta)
