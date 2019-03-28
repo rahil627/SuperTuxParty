@@ -3,10 +3,19 @@
 ## Alpha Version - v0.4
 ### New features
 - Support for localization (except plugins)
+  - Currently supported languages:
+    - English
+    - Brazilian Portuguese
 
 ### Improved / Changed
 - The main menu can now be navigated with keyboard/controller
 - The board overlay now shows the items of each player
+- Computer controlled characters now buy items in the shop
+- Added Music in the main menu
+- Fix a bug that made items not usable in games loaded from savegames
+- Added textures for Harvest Food minigame and placement scene
+
+Internally the project has switched to the new [Godot](https://godotengine.org) version 3.1
 
 ## Alpha Version - v0.3 - 2019-02-02
 ### New features
