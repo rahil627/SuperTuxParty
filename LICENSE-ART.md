@@ -111,6 +111,13 @@ Copyright © Florian Kothmeier based on an idea by Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## scenes/board_logic/controller/rewardscreens
+### background.png | background.blend | seats.png
+
+Copyright © 2019 Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## scenes/board_logic/node/arrow
 ### arrow.png
 
@@ -621,3 +628,13 @@ Copyright by Maujoe
 Retrieved from [Github](https://github.com/Maujoe/godot-flow-map-shader)
 
 License: [MIT](https://github.com/Maujoe/godot-flow-map-shader/blob/master/LICENSE.md)
+
+## assets/textures/crate\*
+### crate\*.png
+Public domain by Luke.RUSTLTD
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/3-crate-textures-w-bump-normal)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+
