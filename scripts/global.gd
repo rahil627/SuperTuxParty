@@ -19,6 +19,8 @@ const MINIGAME_REWARD_SCREEN_PATH_DUEL = "res://scenes/board_logic/controller/re
 const MINIGAME_REWARD_SCREEN_PATH_1V3 = "res://scenes/board_logic/controller/rewardscreens/1v3.tscn";
 const MINIGAME_REWARD_SCREEN_PATH_2V2 = "res://scenes/board_logic/controller/rewardscreens/2v2.tscn";
 
+const MINIGAME_TEAM_COLORS = [Color(1, 0, 0), Color(0, 0, 1)]
+
 var plugin_system = preload("res://scripts/plugin_system.gd").new()
 
 var board_loader = preload("res://scripts/board_loader.gd").new()
@@ -185,7 +187,8 @@ func _goto_scene_ingame(path):
 				collision_shape.shape = load(character_loader.get_collision_shape_path(players[i].character))
 	else:
 		var i = 1
-		for team in minigame_teams:
+		for team_id in range(len(minigame_teams)):
+			var team = minigame_teams[team_id]
 			for player_id in team:
 				var player = current_scene.get_node("Player" + str(i))
 				
@@ -201,10 +204,19 @@ func _goto_scene_ingame(path):
 				player.is_ai = players[player_id - 1].is_ai
 				player.player_id = player_id
 				
+				var shape : Shape = load(character_loader.get_collision_shape_path(players[player_id - 1].character))
+				if minigame_type == MINIGAME_TYPES.TWO_VS_TWO:
+					var bbox : AABB = Utility.get_aabb_from_shape(shape)
+					
+					var indicator = preload("res://scenes/team_indicator/team_indicator.tscn").instance()
+					indicator.material_override.albedo_color = MINIGAME_TEAM_COLORS[team_id]
+					indicator.translation.y = bbox.size.y + 0.05
+					new_model.add_child(indicator)
+				
 				if player.has_node("Shape"):
 					var collision_shape = player.get_node("Shape")
 					collision_shape.translation += new_model.translation
-					collision_shape.shape = load(character_loader.get_collision_shape_path(players[player_id - 1].character))
+					collision_shape.shape = shape
 				
 				i += 1
 			

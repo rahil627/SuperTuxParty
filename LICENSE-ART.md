@@ -142,6 +142,13 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## scenes/team_indicator
+### indicator.png
+
+Copyright © 2019 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## plugins/boards/KDEValley/landscape
 ### kdevalley.blend | kdevalley.dae
 
