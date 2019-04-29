@@ -534,12 +534,61 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### panel.blend | panel.escn
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## plugins/minigames/kernel_compiling/battery
 ### battery.blend | tex_empty.png | tex_full.png
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/kernel_compiling/background
+### background.blend | background.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/kernel_compiling/background/[4K]Concrete16
+### \*.jpg
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/kernel_compiling/background/[4K]Fabric04
+### \*.jpg
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/kernel_compiling/[4K]Plastic04
+### \*.jpg
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/kernel_compiling/[4K]Paint01
+### \*.jpg
+
+Public Domain by StruffelProductions
+
+Retrived from [CC0 Textures](https://cc0textures.com/home)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/screen
 ### screen.blend | screen.escn

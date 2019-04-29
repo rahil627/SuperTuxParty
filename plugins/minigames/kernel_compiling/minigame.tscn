@@ -1,39 +1,58 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://plugins/minigames/kernel_compiling/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/kernel_compiling/player_kernel_compiling.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/countdown/countdown.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://plugins/minigames/kernel_compiling/background/background.png" type="Texture" id=3]
+[ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_col.jpg" type="Texture" id=4]
+[ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_nrm.jpg" type="Texture" id=5]
+[ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_rgh.jpg" type="Texture" id=6]
+[ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_disp.jpg" type="Texture" id=7]
+[ext_resource path="res://scenes/countdown/countdown.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=9]
 
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 10, 10 )
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 3 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_orientation = Basis( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648 )
+
+[sub_resource type="CubeMesh" id=3]
 size = Vector3( 1, 1, 5 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 4 )
+roughness_texture = ExtResource( 6 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 5 )
+transmission_enabled = true
+transmission = Color( 0, 0, 0, 1 )
+transmission_texture = ExtResource( 7 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Ground" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = null
-
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, -2 )
 
 [node name="Player2" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, -1 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, -0.75 )
 
 [node name="Player3" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 1 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0.75 )
 
 [node name="Player4" parent="." instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -3, 1, 0 )
+environment = SubResource( 2 )
 current = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -41,12 +60,12 @@ transform = Transform( -1.62921e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 8.1460
 
 [node name="ScreenDesk" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0 )
-mesh = SubResource( 2 )
-material/0 = null
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
-[node name="Countdown" parent="." instance=ExtResource( 3 )]
+[node name="Countdown" parent="." instance=ExtResource( 8 )]
 
-[node name="PauseMenu" parent="." instance=ExtResource( 4 )]
+[node name="PauseMenu" parent="." instance=ExtResource( 9 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finish" from="Countdown" to="." method="_on_Countdown_finish"]
