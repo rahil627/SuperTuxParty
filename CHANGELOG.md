@@ -7,6 +7,7 @@
     - English
     - Brazilian Portuguese
     - German
+- Team indicator in 2v2 minigames
 
 ### Improved / Changed
 - The main menu can now be navigated with keyboard/controller
