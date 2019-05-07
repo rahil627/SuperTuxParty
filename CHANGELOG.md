@@ -6,6 +6,7 @@
   - Currently supported languages:
     - English
     - Brazilian Portuguese
+    - German
 
 ### Improved / Changed
 - The main menu can now be navigated with keyboard/controller
