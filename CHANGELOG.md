@@ -6,6 +6,7 @@
   - Currently supported languages:
     - English
     - Brazilian Portuguese
+    - German
 - Team indicator in 2v2 minigames
 
 ### Improved / Changed
