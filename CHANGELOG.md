@@ -7,6 +7,7 @@
     - English
     - Brazilian Portuguese
     - German
+    - French
 - Team indicator in 2v2 minigames
 
 ### Improved / Changed
