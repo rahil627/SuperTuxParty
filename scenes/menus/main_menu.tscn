@@ -496,7 +496,6 @@ stretch_mode = 2
 stream = ExtResource( 8 )
 autoplay = true
 bus = "Music"
-
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
