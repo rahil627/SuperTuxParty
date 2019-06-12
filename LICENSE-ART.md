@@ -624,6 +624,12 @@ SnowB_S.jpg modified by Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/minigames/escape_from_lava
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ### ground.blend | ground.dae
 
 Copyright Florian Kothmeier
@@ -631,6 +637,12 @@ Copyright Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/minigames/escape_from_lava_1v3
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ### ground.blend | ground.dae
 
 Copyright Florian Kothmeier
