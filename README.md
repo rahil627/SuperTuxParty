@@ -9,7 +9,7 @@ replicate the feel of games such as Mario Party.
 
 ## Engine
 SuperTuxParty is built with the [Godot Engine](https://godotengine.org/).
-The latest stable version, 3.0.6, is used.
+The latest stable version, 3.1.1, is used.
 
 ## Issues
 If you have ideas for mini-games, design improvements or have found a bug then
@@ -22,7 +22,7 @@ see the **LICENSE** file for more information.
 All other data such as art, sound, music, and etc. is usually
 released under the [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 though it should always be specified which license it falls under,
-see the **LICENSE-ART** file for details.
+see the **LICENSE-ART** or **LICENSE-MUSIC** file for details.
 
 ## Community
 We also have a [subreddit](https://www.reddit.com/r/SuperTuxParty/)
