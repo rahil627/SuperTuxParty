@@ -5,12 +5,14 @@
     "type" : ["FFA"],
     
     "description" : {
-	"en" : "The players participate in a race.\n\nDon't get hit by the obstacles! The last player standing wins."
+	"en" : "The players participate in a race.\n\nDon't get hit by the obstacles! The last player standing wins.",
+	"de" : "Die Spieler nehmen an einem Hindernislauf teil.\n\nLass dich nicht von den Hindernissen treffen! Der letzte, der übrig ist, gewinnt."
     },
     
     "used_controls" : {
 	"action1" : {
-	    "en" : "Jump"
+	    "en" : "Jump",
+	    "de" : "Springen"
 	}
     }
 }

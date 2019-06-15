@@ -5,12 +5,14 @@
     "image_path" : "res://plugins/minigames/harvest_food/screenshot.png",
     
     "description" : {
-	"en" : "The players select a fruit until the time is up. Every player that has selected a healthy fruit gets a point. The catch is: One of those fruits is rotten and gives no points.\n\nThe player that gets the most non-rotten plants wins!"
+	"en" : "The players select a fruit until the time is up. Every player that has selected a healthy fruit gets a point. The catch is: One of those fruits is rotten and gives no points.\n\nThe player that gets the most non-rotten plants wins!",
+	"de": "Jeder Spieler wählt eine der Pflanzen aus, bevor die Zeit ausläuft. Für jede gesammelte Pflanze gibt es einen Punkt.\nJedoch Vorsicht: Eine der Pflanzen ist verrottet und bringt keine Punkte.\n\nDer Spieler, der die meisten gesunden Pflanzen sammelt, gewinnt!"
     },
     
     "used_controls" : {
 	"action1" : {
-	    "en" : "Jump"
+	    "en" : "Jump",
+	    "de" : "Springen"
 	}
     }
 }
