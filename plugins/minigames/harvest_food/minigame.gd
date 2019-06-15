@@ -122,5 +122,5 @@ func update_overlay():
 		$Screen/ScoreOverlay.set_score(3, $Player3.plants)
 		$Screen/ScoreOverlay.set_score(4, $Player4.plants)
 
-func _process(delta):
+func _process(_delta):
 	$Screen/Time.text = var2str(stepify($Timer.time_left, 0.01))

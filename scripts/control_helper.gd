@@ -109,8 +109,7 @@ func get_joypad_button_name(button):
 			return tr("MENU_CONTROLS_GAMEPAD_START")
 		JOY_SELECT:
 			return tr("MENU_CONTROLS_GAMEPAD_SELECT")
-	
-	return tr("MENU_CONTROLS_GAMEPAD_BUTTON") + " " + var2str(button)
+		_: return tr("MENU_CONTROLS_GAMEPAD_BUTTON") + " " + var2str(button)
 
 func get_button_name(event):
 	if event is InputEventKey:

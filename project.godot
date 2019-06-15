@@ -28,6 +28,10 @@ ControlHelper="*res://scripts/control_helper.gd"
 [debug]
 
 settings/fps/force_fps=60
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/function_conflicts_variable=false
+gdscript/warnings/function_conflicts_constant=false
+gdscript/warnings/return_value_discarded=false
 
 [display]
 

@@ -31,7 +31,7 @@ func _ready():
 func set_score(player_id, score):
 	get_node("Player%dScore" % player_id).text = str(score)
 
-func get_score(player_id, score):
+func get_score(player_id):
 	return int(get_node("Player%dScore" % player_id).text)
 
 func set_icon(tex):
