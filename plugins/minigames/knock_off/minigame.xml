@@ -3,20 +3,26 @@
     <description>
       <en>KNOCK OFF is a game where each player attempts to knock off all opponents off the iceberg.
 Last person standing wins!</en>
+      <de>Die Spieler versuchen sich gegenseitig von der Plattform zu stoßen.
+Der letzte, der noch übrig ist, gewinnt!</de>
     </description>
     
     <used_controls>
 	<control name="up">
-	    <en> Move up </en>
+	  <en>Move up</en>
+	  <de>Nach oben bewegen</de>
 	</control>
 	<control name="left">
-	    <en> Move left </en>
+	  <en>Move left</en>
+	  <de>Nach links bewegen</de>
 	</control>
 	<control name="down">
-	    <en> Move down </en>
+	  <en>Move down</en>
+	  <de>Nach unten bewegen</de>
 	</control>
 	<control name="right">
-	    <en> Move right </en>
+	  <en>Move right</en>
+	  <de>Nach rechts bewegen</de>
 	</control>
     </used_controls>
 </minigame>

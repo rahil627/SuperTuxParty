@@ -5,30 +5,38 @@
     "image_path" : "res://plugins/minigames/escape_from_lava_1v3/screenshot.png",
     
     "description" : {
-	"en" : "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. The solo player selects one door that won't open.\nThe solo player has to ensure that no one reaches the top!"
+	"en" : "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. The solo player selects one door that won't open.\nThe solo player has to ensure that no one reaches the top!",
+	"de" : "Die Spieler liefern sich ein Wettrennen.\nSie müssen mehrere Türen passieren, um nicht von der steigenden Lava verschlungen zu werden. Der Einzelspieler wählt eine der Türen aus, um sie zu verbarrikadieren, wodurch sie sich nicht öffen lässt.\nSchafft es die Gruppe aufs Plateau, gewinnt sie. Ansonsten gewinnt der Einzelspieler"
     },
     
     "used_controls" : {
 	"up" : {
-	    "en" : "Move up"
+	    "en" : "Move up",
+	    "de" : "Nach oben bewegen"
 	},
 	"left" : {
-	    "en" : "Move left"
+	    "en" : "Move left",
+	    "de" : "Nach links bewegen"
 	},
 	"down" : {
-	    "en" : "Move down"
+	    "en" : "Move down",
+	    "de" : "Nach unten bewegen"
 	},
 	"right" : {
-	    "en" : "Move right"
+	    "en" : "Move right",
+	    "de" : "Nach rechts bewegen"
 	},
 	"action1" : {
-	    "en" : "Obstruct door 1 - Solo player only"
+	    "en" : "Obstruct door 1 - Solo player only",
+	    "de" : "Die erste Türe verriegeln - Nur der Einzelspieler"
 	},
 	"action2" : {
-	    "en" : "Obstruct door 2 - solo player only"
+	    "en" : "Obstruct door 2 - solo player only",
+	    "de" : "Die zweite Tür verriegeln -  Nur der Einzelspieler"
 	},
 	"action3" : {
-	    "en" : "Obstruct door 3 - solo player only"
+	    "en" : "Obstruct door 3 - solo player only",
+	    "de" : "Die dritte Tür verriegeln - Nur der Einzelspieler"
 	}
     }
 }

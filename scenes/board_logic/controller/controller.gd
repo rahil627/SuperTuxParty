@@ -808,13 +808,27 @@ func minigame_has_player(i):
 	
 	return false
 
+func _get_translation(dictionary: Dictionary) -> String:
+	var locale = TranslationServer.get_locale()
+	
+	if dictionary.has(locale):
+		return dictionary.get(locale)
+	elif dictionary.has("en"):
+		return dictionary.en
+	else:
+		var values = dictionary.values()
+		if values.size() > 0:
+			return values[0]
+		
+		return "Unable to get translation"
+
 func show_minigame_info():
 	setup_character_viewport()
 	
 	$Screen/MinigameInformation/Buttons/Play.grab_focus()
 	
 	$Screen/MinigameInformation/Title.text = current_minigame.name
-	$Screen/MinigameInformation/Description/Text.bbcode_text = current_minigame.description.en
+	$Screen/MinigameInformation/Description/Text.bbcode_text = _get_translation(current_minigame.description)
 	if current_minigame.image_path != null:
 		$Screen/MinigameInformation/Screenshot.texture = load(current_minigame.image_path)
 	
@@ -827,7 +841,7 @@ func show_minigame_info():
 		
 		label.bbcode_text = ""
 		for action in current_minigame.used_controls:
-			label.append_bbcode(ControlHelper.get_button_name(InputMap.get_action_list("player" + var2str(i) + "_" + action)[0]) + " - " + current_minigame.used_controls[action].en + "\n")
+			label.append_bbcode(ControlHelper.get_button_name(InputMap.get_action_list("player" + var2str(i) + "_" + action)[0]) + " - " + _get_translation(current_minigame.used_controls[action]) + "\n")
 	
 	$Screen/MinigameInformation.show()
 

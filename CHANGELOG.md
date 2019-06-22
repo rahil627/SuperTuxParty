@@ -1,4 +1,9 @@
 # Releases
+## Alpha Version - v0.5
+### New features
+
+### Improved / Changed
+- Support for localization in the minigame information screen
 
 ## Alpha Version - v0.4
 ### New features

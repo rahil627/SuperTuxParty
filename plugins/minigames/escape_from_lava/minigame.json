@@ -5,21 +5,26 @@
     "image_path" : "res://plugins/minigames/escape_from_lava/screenshot.png",
     
     "description" : {
-	"en" : "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nThe first player that makes it safe to the top wins!"
+	"en" : "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nThe first player that makes it safe to the top wins!",
+	"de" : "Die Spieler liefern sich ein Wettrennen.\nSie müssen mehrere Türen passieren, um nicht von der steigenden Lava verschlungen zu werden. Eine dieser Türen ist jedoch blockiert, wodurch sie sich nicht öffnen lässt.\nDer erste Spieler, der sicher am oberen Ende ankommt, gewinnt!"
     },
     
     "used_controls" : {
 	"up" : {
-	    "en" : "Move up"
+	    "en" : "Move up",
+	    "de" : "Nach oben bewegen"
 	},
 	"left" : {
-	    "en" : "Move left"
+	    "en" : "Move left",
+	    "de" : "Nach links bewegen"
 	},
 	"down" : {
-	    "en" : "Move down"
+	    "en" : "Move down",
+	    "de" : "Nach unten bewegen"
 	},
 	"right" : {
-	    "en" : "Move right"
+	    "en" : "Move right",
+	    "de" : "Nach rechts bewegen"
 	},
     }
 }
