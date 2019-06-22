@@ -1,4 +1,4 @@
 extends Camera
 
-func _process(delta):
+func _process(_delta):
 	$Viewport/Camera.transform = global_transform

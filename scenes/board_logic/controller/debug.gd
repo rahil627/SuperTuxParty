@@ -62,7 +62,6 @@ func setup():
 		
 		$List/Minigames/TabContainer/FFA/VBoxContainer.add_child(button)
 	
-	var item_loader = Global.item_loader
 	for item in Global.item_loader.get_loaded_items():
 		var button = Button.new()
 		

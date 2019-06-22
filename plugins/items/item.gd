@@ -30,10 +30,10 @@ func load_resources():
 	if type == TYPES.PLACABLE:
 		material = load(get_script().resource_path.get_base_dir() + "/material.tres")
 
-func activate(player, controller):
+func activate(_player, _controller):
 	push_error("activate(Player, Controller) not overriden in item: %s" % get_path())
 
-func activate_trap(from_player, trap_player, controller):
+func activate_trap(_from_player, _trap_player, _controller):
 	push_error("activate(Player, Controller) not overriden in item: %s" % get_path())
 
 func recreate_state():

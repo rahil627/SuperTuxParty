@@ -7,6 +7,7 @@ var _is_loading_options = false
 
 var control_remapper = preload("res://scenes/menus/control_remapper.gd").new(self)
 
+#warning-ignore:unused_signal
 signal quit
 
 func _ready():

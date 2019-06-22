@@ -247,7 +247,7 @@ const SHOW_PREV_NODES = 2
 const SHOW_ALL = 3
 
 # Renders the linking arrows
-func _process(delta):
+func _process(_delta):
 	if Engine.editor_hint:
 		var controllers = get_tree().get_nodes_in_group("Controller")
 		var show_linking_type = SHOW_ALL
