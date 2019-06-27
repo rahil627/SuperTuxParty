@@ -18,11 +18,8 @@
 [ext_resource path="res://scenes/board_logic/controller/icons/indicator.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "hide"
 length = 0.8
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 2
@@ -37,11 +34,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-
 resource_name = "show"
 length = 0.5
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 2
@@ -56,19 +50,14 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=3]
-
 size = 100
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 8 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=4]
-
 resource_name = "1v3"
 length = 3.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("MinigameTypeAnimation/Root/Player1:rect_position")
 tracks/0/interp = 1
@@ -143,11 +132,8 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-
 resource_name = "2v2"
 length = 3.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("MinigameTypeAnimation/Root/Player1:rect_position")
 tracks/0/interp = 1
@@ -222,11 +208,8 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-
 resource_name = "Duel"
 length = 3.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("MinigameTypeAnimation/Root/Player1:rect_position")
 tracks/0/interp = 1
@@ -301,11 +284,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-
 resource_name = "FFA"
-length = 1.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("MinigameTypeAnimation/Root/Player1:rect_position")
 tracks/0/interp = 1
@@ -380,168 +359,21 @@ tracks/5/keys = {
 }
 
 [sub_resource type="StyleBoxFlat" id=8]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 bg_color = Color( 0.27451, 0.396078, 0.631373, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
 
 [sub_resource type="Environment" id=9]
-
 background_mode = 1
-background_sky_custom_fov = 0.0
 background_color = Color( 0.258824, 0.345098, 0.45098, 1 )
-background_energy = 1.0
-background_canvas_max_layer = 0
-ambient_light_color = Color( 0, 0, 0, 1 )
-ambient_light_energy = 1.0
-ambient_light_sky_contribution = 1.0
-fog_enabled = false
-fog_color = Color( 0.5, 0.6, 0.7, 1 )
-fog_sun_color = Color( 1, 0.9, 0.7, 1 )
-fog_sun_amount = 0.0
-fog_depth_enabled = true
-fog_depth_begin = 10.0
-fog_depth_curve = 1.0
-fog_transmit_enabled = false
-fog_transmit_curve = 1.0
-fog_height_enabled = false
-fog_height_min = 0.0
-fog_height_max = 100.0
-fog_height_curve = 1.0
-tonemap_mode = 0
-tonemap_exposure = 1.0
-tonemap_white = 1.0
-auto_exposure_enabled = false
-auto_exposure_scale = 0.4
-auto_exposure_min_luma = 0.05
-auto_exposure_max_luma = 8.0
-auto_exposure_speed = 0.5
-ss_reflections_enabled = false
-ss_reflections_max_steps = 64
-ss_reflections_fade_in = 0.15
-ss_reflections_fade_out = 2.0
-ss_reflections_depth_tolerance = 0.2
-ss_reflections_roughness = true
-ssao_enabled = false
-ssao_radius = 1.0
-ssao_intensity = 1.0
-ssao_radius2 = 0.0
-ssao_intensity2 = 1.0
-ssao_bias = 0.01
-ssao_light_affect = 0.0
-ssao_color = Color( 0, 0, 0, 1 )
-ssao_quality = 0
-ssao_blur = 3
-ssao_edge_sharpness = 4.0
-dof_blur_far_enabled = false
-dof_blur_far_distance = 10.0
-dof_blur_far_transition = 5.0
-dof_blur_far_amount = 0.1
-dof_blur_far_quality = 1
-dof_blur_near_enabled = false
-dof_blur_near_distance = 2.0
-dof_blur_near_transition = 1.0
-dof_blur_near_amount = 0.1
-dof_blur_near_quality = 1
-glow_enabled = false
-glow_levels/1 = false
-glow_levels/2 = false
-glow_levels/3 = true
-glow_levels/4 = false
-glow_levels/5 = true
-glow_levels/6 = false
-glow_levels/7 = false
-glow_intensity = 0.8
-glow_strength = 1.0
-glow_bloom = 0.0
-glow_blend_mode = 2
-glow_hdr_threshold = 1.0
-glow_hdr_scale = 2.0
-glow_bicubic_upscale = false
-adjustment_enabled = false
-adjustment_brightness = 1.0
-adjustment_contrast = 1.0
-adjustment_saturation = 1.0
-_sections_unfolded = [ "Background" ]
 
 [sub_resource type="SpatialMaterial" id=10]
-
-render_priority = 0
 flags_transparent = true
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
 flags_fixed_size = true
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
 params_billboard_mode = 1
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
 roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
 
 [sub_resource type="Animation" id=11]
-
 length = 2.0
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
@@ -556,7 +388,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Shader" id=12]
-
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -586,847 +417,348 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=13]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=14]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=15]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=16]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=17]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=18]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=19]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=20]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = false
-_sections_unfolded = [ "shader_param" ]
 
 [sub_resource type="ShaderMaterial" id=21]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=22]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=23]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=24]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = null
-_sections_unfolded = [ "shader_param" ]
+shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=25]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = false
-_sections_unfolded = [ "shader_param" ]
 
 [sub_resource type="ShaderMaterial" id=26]
-
-render_priority = 0
 shader = SubResource( 12 )
 shader_param/outLineSize = 0.02
 shader_param/outLineColor = Plane( 1, 1, 1, 1 )
 shader_param/enable_shader = false
-_sections_unfolded = [ "shader_param" ]
 
-[node name="Controller" type="Spatial" index="0" groups=[
+[node name="Controller" type="Spatial" groups=[
 "Controller",
 ]]
-
 pause_mode = 2
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause", "Transform" ]
-start_node = null
-show_linking_type = null
 
-[node name="Screen" type="Control" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Screen" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = 3.0
 margin_right = 1.0
 margin_bottom = 3.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 theme = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Margin", "Theme" ]
 
-[node name="PlayerInfo1" type="VBoxContainer" parent="Screen" index="0"]
-
+[node name="PlayerInfo1" type="VBoxContainer" parent="Screen"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 264.0
 margin_bottom = 264.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Player" type="Label" parent="Screen/PlayerInfo1" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Player" type="Label" parent="Screen/PlayerInfo1"]
 margin_right = 256.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Player 1"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo1" index="1"]
-
+[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo1"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 62.0
 margin_right = 256.0
 margin_bottom = 120.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo1/Cookies" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo1/Cookies"]
 margin_right = 32.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo1/Cookies" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo1/Cookies"]
 margin_left = 36.0
 margin_right = 59.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo1" index="2"]
-
+[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo1"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 124.0
 margin_right = 256.0
 margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo1/Cakes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo1/Cakes"]
 margin_right = 30.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo1/Cakes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo1/Cakes"]
 margin_left = 34.0
 margin_right = 57.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo1" index="3"]
-
+[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo1"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 186.0
 margin_right = 256.0
 margin_bottom = 218.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="0" type="TextureRect" parent="Screen/PlayerInfo1/Items" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 31.0
-margin_bottom = 31.0
+[node name="0" type="TextureRect" parent="Screen/PlayerInfo1/Items"]
+margin_right = 32.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="1" type="TextureRect" parent="Screen/PlayerInfo1/Items" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="1" type="TextureRect" parent="Screen/PlayerInfo1/Items"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="2" type="TextureRect" parent="Screen/PlayerInfo1/Items" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="2" type="TextureRect" parent="Screen/PlayerInfo1/Items"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="PlayerInfo2" type="VBoxContainer" parent="Screen" index="1"]
-
+[node name="PlayerInfo2" type="VBoxContainer" parent="Screen"]
 editor/display_folded = true
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_left = -264.0
 margin_top = 8.0
 margin_right = -8.0
 margin_bottom = 264.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Player" type="Label" parent="Screen/PlayerInfo2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Player" type="Label" parent="Screen/PlayerInfo2"]
 margin_right = 256.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Player 2"
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo2" index="1"]
-
+[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo2"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 62.0
 margin_right = 256.0
 margin_bottom = 120.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 2
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cookies" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cookies"]
 margin_left = 197.0
 margin_right = 220.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cookies" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cookies"]
 margin_left = 224.0
 margin_right = 256.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
 
-[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo2" index="2"]
-
+[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo2"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 124.0
 margin_right = 256.0
 margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 2
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cakes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo2/Cakes"]
 margin_left = 199.0
 margin_right = 222.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cakes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo2/Cakes"]
 margin_left = 226.0
 margin_right = 256.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo2" index="3"]
-
+[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo2"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 186.0
 margin_right = 256.0
 margin_bottom = 218.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="0" type="TextureRect" parent="Screen/PlayerInfo2/Items" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="0" type="TextureRect" parent="Screen/PlayerInfo2/Items"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="1" type="TextureRect" parent="Screen/PlayerInfo2/Items" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="1" type="TextureRect" parent="Screen/PlayerInfo2/Items"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="2" type="TextureRect" parent="Screen/PlayerInfo2/Items" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="2" type="TextureRect" parent="Screen/PlayerInfo2/Items"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="PlayerInfo3" type="VBoxContainer" parent="Screen" index="2"]
-
+[node name="PlayerInfo3" type="VBoxContainer" parent="Screen"]
 editor/display_folded = true
-anchor_left = 0.0
 anchor_top = 1.0
-anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = -264.0
 margin_right = 264.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 2
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Player" type="Label" parent="Screen/PlayerInfo3" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Player" type="Label" parent="Screen/PlayerInfo3"]
 margin_top = 38.0
 margin_right = 256.0
 margin_bottom = 96.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Player 3"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo3" index="1"]
-
+[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo3"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 256.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo3/Cookies" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo3/Cookies"]
 margin_right = 32.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo3/Cookies" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo3/Cookies"]
 margin_left = 36.0
 margin_right = 59.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo3" index="2"]
-
+[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo3"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 162.0
 margin_right = 256.0
 margin_bottom = 220.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo3/Cakes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo3/Cakes"]
 margin_right = 30.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo3/Cakes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo3/Cakes"]
 margin_left = 34.0
 margin_right = 57.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo3" index="3"]
-
+[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo3"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 224.0
 margin_right = 256.0
 margin_bottom = 256.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="0" type="TextureRect" parent="Screen/PlayerInfo3/Items" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="0" type="TextureRect" parent="Screen/PlayerInfo3/Items"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="1" type="TextureRect" parent="Screen/PlayerInfo3/Items" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="1" type="TextureRect" parent="Screen/PlayerInfo3/Items"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="2" type="TextureRect" parent="Screen/PlayerInfo3/Items" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="2" type="TextureRect" parent="Screen/PlayerInfo3/Items"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="PlayerInfo4" type="VBoxContainer" parent="Screen" index="3"]
-
+[node name="PlayerInfo4" type="VBoxContainer" parent="Screen"]
 editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
@@ -1436,249 +768,94 @@ margin_left = -264.0
 margin_top = -264.0
 margin_right = -8.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 2
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Player" type="Label" parent="Screen/PlayerInfo4" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Player" type="Label" parent="Screen/PlayerInfo4"]
 margin_top = 38.0
 margin_right = 256.0
 margin_bottom = 96.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Player 4"
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo4" index="1"]
-
+[node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo4"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 256.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 2
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cookies" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cookies"]
 margin_left = 197.0
 margin_right = 220.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cookies" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cookies"]
 margin_left = 224.0
 margin_right = 256.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
 stretch_mode = 4
-_sections_unfolded = [ "Rect" ]
 
-[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo4" index="2"]
-
+[node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo4"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 162.0
 margin_right = 256.0
 margin_bottom = 220.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 2
 
-[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cakes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/PlayerInfo4/Cakes"]
 margin_left = 199.0
 margin_right = 222.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cakes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Image" type="TextureRect" parent="Screen/PlayerInfo4/Cakes"]
 margin_left = 226.0
 margin_right = 256.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo4" index="3"]
-
+[node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo4"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 224.0
 margin_right = 256.0
 margin_bottom = 256.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="0" type="TextureRect" parent="Screen/PlayerInfo4/Items" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="0" type="TextureRect" parent="Screen/PlayerInfo4/Items"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="1" type="TextureRect" parent="Screen/PlayerInfo4/Items" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="1" type="TextureRect" parent="Screen/PlayerInfo4/Items"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="2" type="TextureRect" parent="Screen/PlayerInfo4/Items" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="2" type="TextureRect" parent="Screen/PlayerInfo4/Items"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 
-[node name="Dice" type="Label" parent="Screen" index="4"]
-
-anchor_left = 0.0
+[node name="Dice" type="Label" parent="Screen"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -96.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 text = "Roll Player 1!"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="Roll" type="Button" parent="Screen" index="5"]
-
+[node name="Roll" type="Button" parent="Screen"]
 visible = false
 anchor_left = 0.5
 anchor_top = 1.0
@@ -1688,24 +865,12 @@ margin_left = -64.0
 margin_top = -48.0
 margin_right = 64.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+focus_mode = 0
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
 enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "CONTEXT_LABEL_ROLL"
-flat = false
-align = 1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="GetCake" type="VBoxContainer" parent="Screen" index="6"]
-
+[node name="GetCake" type="VBoxContainer" parent="Screen"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1715,127 +880,41 @@ margin_left = -256.0
 margin_top = -32.0
 margin_right = 264.0
 margin_bottom = 186.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
-[node name="Label" type="Label" parent="Screen/GetCake" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Screen/GetCake"]
 margin_right = 628.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Buy a cake for 30 cookies"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
 
-[node name="Buttons" type="HBoxContainer" parent="Screen/GetCake" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Buttons" type="HBoxContainer" parent="Screen/GetCake"]
 margin_top = 62.0
 margin_right = 628.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Ok" type="Button" parent="Screen/GetCake/Buttons" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Ok" type="Button" parent="Screen/GetCake/Buttons"]
 margin_right = 160.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 128, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_OK"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Spacer" type="Control" parent="Screen/GetCake/Buttons" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Spacer" type="Control" parent="Screen/GetCake/Buttons"]
 margin_left = 164.0
 margin_right = 420.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 256, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Abort" type="Button" parent="Screen/GetCake/Buttons" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Abort" type="Button" parent="Screen/GetCake/Buttons"]
 margin_left = 424.0
 margin_right = 628.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 128, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_CANCEL"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BuyCake" type="VBoxContainer" parent="Screen" index="7"]
-
+[node name="BuyCake" type="VBoxContainer" parent="Screen"]
 editor/display_folded = true
 visible = false
 anchor_left = 0.5
@@ -1846,216 +925,82 @@ margin_left = -128.0
 margin_top = -32.0
 margin_right = 132.0
 margin_bottom = 85.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 alignment = 1
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/BuyCake" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Amount" type="Label" parent="Screen/BuyCake"]
 margin_top = 1.0
 margin_right = 380.0
 margin_bottom = 59.0
 rect_min_size = Vector2( 150, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="HSlider" type="HSlider" parent="Screen/BuyCake" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HSlider" type="HSlider" parent="Screen/BuyCake"]
 margin_top = 63.0
 margin_right = 380.0
 margin_bottom = 79.0
 rect_min_size = Vector2( 150, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
 min_value = 1.0
-max_value = 100.0
-step = 1.0
-page = 0.0
 value = 1.0
-exp_edit = false
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = false
-focus_mode = 2
-_sections_unfolded = [ "Margin", "Rect" ]
+ticks_on_borders = true
 
-[node name="Buttons" type="HBoxContainer" parent="Screen/BuyCake" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Buttons" type="HBoxContainer" parent="Screen/BuyCake"]
 margin_top = 83.0
 margin_right = 380.0
 margin_bottom = 116.0
 rect_min_size = Vector2( 260, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 16
-alignment = 0
 
-[node name="Ok" type="Button" parent="Screen/BuyCake/Buttons" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Ok" type="Button" parent="Screen/BuyCake/Buttons"]
 margin_right = 160.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 120, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_OK"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Abort" type="Button" parent="Screen/BuyCake/Buttons" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Abort" type="Button" parent="Screen/BuyCake/Buttons"]
 margin_left = 176.0
 margin_right = 380.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 120, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_CANCEL"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Turn" type="Label" parent="Screen" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Turn" type="Label" parent="Screen"]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_top = 16.0
 margin_bottom = 74.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Turn: 1"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
 
-[node name="Stepcounter" type="Label" parent="Screen" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Stepcounter" type="Label" parent="Screen"]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_top = 80.0
 margin_bottom = 138.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Grow Direction", "Rect" ]
 
-[node name="Splash" type="AnimationPlayer" parent="Screen" index="10"]
-
+[node name="Splash" type="AnimationPlayer" parent="Screen"]
 editor/display_folded = true
 root_node = NodePath("Background")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
 anims/hide = SubResource( 1 )
 anims/show = SubResource( 2 )
-blend_times = [  ]
 
-[node name="Background" type="TextureRect" parent="Screen/Splash" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Background" type="TextureRect" parent="Screen/Splash"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1600.0
 margin_top = -2000.0
 margin_right = -1600.0
 margin_bottom = -2000.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 7 )
 stretch_mode = 4
 
-[node name="Player" type="TextureRect" parent="Screen/Splash/Background" index="0"]
-
+[node name="Player" type="TextureRect" parent="Screen/Splash/Background"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2063,17 +1008,10 @@ anchor_bottom = 0.5
 margin_left = 200.0
 margin_top = -160.0
 rect_min_size = Vector2( 256, 256 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
-stretch_mode = 0
 
-[node name="Label" type="Label" parent="Screen/Splash/Background" index="1"]
-
+[node name="Label" type="Label" parent="Screen/Splash/Background"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2081,636 +1019,209 @@ anchor_bottom = 0.5
 margin_left = -300.0
 margin_top = -32.0
 margin_right = 256.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
 text = "CONTEXT_LABEL_YOUR_TURN"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin" ]
 
-[node name="Debug" type="WindowDialog" parent="Screen" index="11"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Debug" type="WindowDialog" parent="Screen"]
 margin_top = 20.0
 margin_right = 512.0
 margin_bottom = 256.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
 window_title = "Debug"
-resizable = false
 script = ExtResource( 9 )
-_sections_unfolded = [ "Margin" ]
 
-[node name="Row1" type="HBoxContainer" parent="Screen/Debug" index="1"]
-
+[node name="Row1" type="HBoxContainer" parent="Screen/Debug"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Skip" type="Button" parent="Screen/Debug/Row1" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Skip" type="Button" parent="Screen/Debug/Row1"]
 margin_right = 168.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Skip to next turn"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="AddCookies" type="Button" parent="Screen/Debug/Row1" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="AddCookies" type="Button" parent="Screen/Debug/Row1"]
 margin_left = 172.0
 margin_right = 340.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add cookies"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="AddCake" type="Button" parent="Screen/Debug/Row1" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="AddCake" type="Button" parent="Screen/Debug/Row1"]
 margin_left = 344.0
 margin_right = 512.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add cakes"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="Row2" type="HBoxContainer" parent="Screen/Debug" index="2"]
-
+[node name="Row2" type="HBoxContainer" parent="Screen/Debug"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_top = 40.0
 margin_bottom = 80.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="PlayersTurn" type="Button" parent="Screen/Debug/Row2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PlayersTurn" type="Button" parent="Screen/Debug/Row2"]
 margin_right = 210.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Go to players turn"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="Minigame" type="Button" parent="Screen/Debug/Row2" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Minigame" type="Button" parent="Screen/Debug/Row2"]
 margin_left = 214.0
 margin_right = 424.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Go to minigame"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="Item" type="Button" parent="Screen/Debug/Row2" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Item" type="Button" parent="Screen/Debug/Row2"]
 margin_left = 428.0
 margin_right = 512.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Give item"
-flat = false
-align = 1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Row3" type="HBoxContainer" parent="Screen/Debug" index="3"]
-
+[node name="Row3" type="HBoxContainer" parent="Screen/Debug"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_top = 80.0
 margin_bottom = 120.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Move" type="Button" parent="Screen/Debug/Row3" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Move" type="Button" parent="Screen/Debug/Row3"]
 margin_right = 512.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Move"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
-[node name="List" type="WindowDialog" parent="Screen/Debug" index="4"]
-
+[node name="List" type="WindowDialog" parent="Screen/Debug"]
 editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 354.0
 margin_top = 130.0
 margin_right = 986.0
 margin_bottom = 530.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
 window_title = "Debug list"
-resizable = false
-_sections_unfolded = [ "Margin" ]
 
-[node name="Players" type="VBoxContainer" parent="Screen/Debug/List" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Players" type="VBoxContainer" parent="Screen/Debug/List"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Minigames" type="VBoxContainer" parent="Screen/Debug/List" index="2"]
-
+[node name="Minigames" type="VBoxContainer" parent="Screen/Debug/List"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="TabContainer" type="TabContainer" parent="Screen/Debug/List/Minigames" index="0"]
-
+[node name="TabContainer" type="TabContainer" parent="Screen/Debug/List/Minigames"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 403.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 tab_align = 0
-tabs_visible = true
 
-[node name="Duel" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer" index="0"]
-
+[node name="Duel" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 45.0
+margin_top = 47.0
 margin_right = -8.0
 margin_bottom = -8.0
 rect_min_size = Vector2( 0, 350 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 scroll_horizontal_enabled = false
-scroll_horizontal = 0
-scroll_vertical_enabled = true
-scroll_vertical = 0
-scroll_deadzone = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/Duel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/Duel"]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="1v3" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer" index="1"]
-
+[node name="1v3" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 45.0
+margin_top = 47.0
 margin_right = -8.0
 margin_bottom = -8.0
 rect_min_size = Vector2( 0, 350 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 scroll_horizontal_enabled = false
-scroll_horizontal = 0
-scroll_vertical_enabled = true
-scroll_vertical = 0
-scroll_deadzone = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/1v3" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/1v3"]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="2v2" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer" index="2"]
-
+[node name="2v2" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 45.0
+margin_top = 47.0
 margin_right = -8.0
 margin_bottom = -8.0
 rect_min_size = Vector2( 0, 350 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 scroll_horizontal_enabled = false
-scroll_horizontal = 0
-scroll_vertical_enabled = true
-scroll_vertical = 0
-scroll_deadzone = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/2v2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/2v2"]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="FFA" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer" index="3"]
-
+[node name="FFA" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 45.0
+margin_top = 47.0
 margin_right = -8.0
 margin_bottom = -8.0
 rect_min_size = Vector2( 0, 350 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 scroll_horizontal_enabled = false
-scroll_horizontal = 0
-scroll_vertical_enabled = true
-scroll_vertical = 0
-scroll_deadzone = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/FFA" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/FFA"]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Items" type="VBoxContainer" parent="Screen/Debug/List" index="3"]
-
+[node name="Items" type="VBoxContainer" parent="Screen/Debug/List"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Inputs" type="VBoxContainer" parent="Screen/Debug/List" index="4"]
-
+[node name="Inputs" type="VBoxContainer" parent="Screen/Debug/List"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="Screen/Debug/List/Inputs" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Screen/Debug/List/Inputs"]
 margin_right = 632.0
 margin_bottom = 29.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Enter the number of spaces you want to move"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Number" type="SpinBox" parent="Screen/Debug/List/Inputs" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Number" type="SpinBox" parent="Screen/Debug/List/Inputs"]
 margin_top = 33.0
 margin_right = 632.0
 margin_bottom = 70.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
 rounded = true
-editable = true
-prefix = ""
-suffix = ""
 
-[node name="Ok" type="Button" parent="Screen/Debug/List/Inputs" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Ok" type="Button" parent="Screen/Debug/List/Inputs"]
 margin_top = 74.0
 margin_right = 632.0
 margin_bottom = 107.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Ok"
-flat = false
-align = 1
 
-[node name="PauseMenu" parent="Screen" index="12" instance=ExtResource( 10 )]
-
-visible = false
+[node name="PauseMenu" parent="Screen" instance=ExtResource( 10 )]
 can_save_game = true
 
-[node name="MinigameTypeAnimation" type="AnimationPlayer" parent="Screen" index="13"]
-
+[node name="MinigameTypeAnimation" type="AnimationPlayer" parent="Screen"]
 editor/display_folded = true
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
 anims/1v3 = SubResource( 4 )
 anims/2v2 = SubResource( 5 )
 anims/Duel = SubResource( 6 )
 anims/FFA = SubResource( 7 )
-blend_times = [  ]
 
-[node name="Root" type="Control" parent="Screen/MinigameTypeAnimation" index="0"]
-
+[node name="Root" type="Control" parent="Screen/MinigameTypeAnimation"]
 editor/display_folded = true
 visible = false
 anchor_left = 0.5
@@ -2721,15 +1232,8 @@ margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Player1" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root" index="0"]
-
+[node name="Player1" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2738,17 +1242,10 @@ margin_left = -192.0
 margin_top = -64.0
 margin_right = -64.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 stretch_mode = 6
 
-[node name="Player2" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root" index="1"]
-
+[node name="Player2" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2757,17 +1254,10 @@ margin_left = 64.0
 margin_top = -64.0
 margin_right = 192.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 stretch_mode = 6
 
-[node name="Player3" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root" index="2"]
-
+[node name="Player3" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2776,17 +1266,10 @@ margin_left = 64.0
 margin_top = -138.0
 margin_right = 192.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 stretch_mode = 6
 
-[node name="Player4" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root" index="3"]
-
+[node name="Player4" type="TextureRect" parent="Screen/MinigameTypeAnimation/Root"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2795,18 +1278,10 @@ margin_left = 64.0
 margin_top = 10.0
 margin_right = 192.0
 margin_bottom = 138.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 stretch_mode = 6
-_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="VS" type="Label" parent="Screen/MinigameTypeAnimation/Root" index="4"]
-
+[node name="VS" type="Label" parent="Screen/MinigameTypeAnimation/Root"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2815,148 +1290,58 @@ margin_left = -23.0
 margin_top = -29.0
 margin_right = 23.0
 margin_bottom = 29.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CONTEXT_LABEL_VS"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Visibility" ]
 
-[node name="MinigameInformation" type="Container" parent="Screen" index="14"]
-
+[node name="MinigameInformation" type="Container" parent="Screen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "custom_styles" ]
 
-[node name="Panel" type="Panel" parent="Screen/MinigameInformation" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Panel" type="Panel" parent="Screen/MinigameInformation"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_styles/panel = SubResource( 8 )
-_sections_unfolded = [ "custom_styles" ]
 
-[node name="Description" type="Panel" parent="Screen/MinigameInformation" index="1"]
-
+[node name="Description" type="Panel" parent="Screen/MinigameInformation"]
 editor/display_folded = true
-anchor_left = 0.0
 anchor_top = 1.0
-anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 125.0
 margin_top = -280.0
 margin_right = 425.0
 margin_bottom = -51.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Margin", "Rect", "custom_styles" ]
 
-[node name="Header" type="Panel" parent="Screen/MinigameInformation/Description" index="0"]
-
+[node name="Header" type="Panel" parent="Screen/MinigameInformation/Description"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 300.0
 margin_bottom = 29.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="Screen/MinigameInformation/Description/Header" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Screen/MinigameInformation/Description/Header"]
 margin_right = 300.0
 margin_bottom = 29.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 text = "MENU_LABEL_DESCRIPTION"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Text" type="RichTextLabel" parent="Screen/MinigameInformation/Description" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Text" type="RichTextLabel" parent="Screen/MinigameInformation/Description"]
 margin_left = 5.0
 margin_top = 33.0
 margin_right = 295.0
 margin_bottom = 233.0
 rect_min_size = Vector2( 290, 200 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/bold_italics_font = ExtResource( 11 )
 custom_fonts/italics_font = ExtResource( 12 )
 custom_fonts/bold_font = ExtResource( 13 )
 custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Margin", "Rect" ]
 
-[node name="Controls" type="TabContainer" parent="Screen/MinigameInformation" index="2"]
-
+[node name="Controls" type="TabContainer" parent="Screen/MinigameInformation"]
 editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
@@ -2967,202 +1352,88 @@ margin_top = -300.0
 margin_right = -125.0
 margin_bottom = -100.0
 rect_min_size = Vector2( 350, 200 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 15 )
 tab_align = 0
-tabs_visible = true
-_sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Player1" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Player1" type="RichTextLabel" parent="Screen/MinigameInformation/Controls"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 36.0
+margin_top = 38.0
 margin_right = -8.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/bold_italics_font = ExtResource( 11 )
 custom_fonts/italics_font = ExtResource( 12 )
 custom_fonts/bold_font = ExtResource( 13 )
 custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
 
-[node name="Player2" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="1"]
-
+[node name="Player2" type="RichTextLabel" parent="Screen/MinigameInformation/Controls"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 36.0
+margin_top = 38.0
 margin_right = -8.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/bold_italics_font = ExtResource( 11 )
 custom_fonts/italics_font = ExtResource( 12 )
 custom_fonts/bold_font = ExtResource( 13 )
 custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
 
-[node name="Player3" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="2"]
-
+[node name="Player3" type="RichTextLabel" parent="Screen/MinigameInformation/Controls"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 36.0
+margin_top = 38.0
 margin_right = -8.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/bold_italics_font = ExtResource( 11 )
 custom_fonts/italics_font = ExtResource( 12 )
 custom_fonts/bold_font = ExtResource( 13 )
 custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
 
-[node name="Player4" type="RichTextLabel" parent="Screen/MinigameInformation/Controls" index="3"]
-
+[node name="Player4" type="RichTextLabel" parent="Screen/MinigameInformation/Controls"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 36.0
+margin_top = 38.0
 margin_right = -8.0
 margin_bottom = -8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/bold_italics_font = ExtResource( 11 )
 custom_fonts/italics_font = ExtResource( 12 )
 custom_fonts/bold_font = ExtResource( 13 )
 custom_fonts/normal_font = ExtResource( 14 )
 bbcode_enabled = true
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
 
-[node name="Screenshot" type="TextureRect" parent="Screen/MinigameInformation" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Screenshot" type="TextureRect" parent="Screen/MinigameInformation"]
 margin_left = 75.0
 margin_top = 100.0
 margin_right = 475.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 400, 250 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Rect" ]
 
-[node name="Title" type="Label" parent="Screen/MinigameInformation" index="4"]
-
+[node name="Title" type="Label" parent="Screen/MinigameInformation"]
 anchor_left = 0.5
-anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.0
 margin_left = -250.0
 margin_top = 25.0
 margin_right = 250.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 500, 50 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
 clip_text = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Buttons" type="HBoxContainer" parent="Screen/MinigameInformation" index="5"]
-
+[node name="Buttons" type="HBoxContainer" parent="Screen/MinigameInformation"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -3171,245 +1442,78 @@ margin_left = -250.0
 margin_top = -65.0
 margin_right = -75.0
 margin_bottom = -35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 25
-alignment = 0
-_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
 
-[node name="Try" type="Button" parent="Screen/MinigameInformation/Buttons" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Try" type="Button" parent="Screen/MinigameInformation/Buttons"]
 margin_right = 168.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 75, 30 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_TRY"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Play" type="Button" parent="Screen/MinigameInformation/Buttons" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Play" type="Button" parent="Screen/MinigameInformation/Buttons"]
 margin_left = 193.0
 margin_right = 371.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 75, 30 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_PLAY"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Characters" type="ViewportContainer" parent="Screen/MinigameInformation" index="6"]
-
+[node name="Characters" type="ViewportContainer" parent="Screen/MinigameInformation"]
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_left = -500.0
 margin_top = 100.0
 margin_right = -100.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 400, 250 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-stretch = false
-stretch_shrink = 1
 
-[node name="Viewport" type="Viewport" parent="Screen/MinigameInformation/Characters" index="0"]
-
-arvr = false
+[node name="Viewport" type="Viewport" parent="Screen/MinigameInformation/Characters"]
 size = Vector2( 400, 250 )
 own_world = true
-world = null
-transparent_bg = false
-msaa = 0
-hdr = true
-disable_3d = false
-usage = 2
-debug_draw = 0
-render_target_v_flip = false
-render_target_clear_mode = 0
+handle_input_locally = false
 render_target_update_mode = 0
-audio_listener_enable_2d = false
-audio_listener_enable_3d = false
-physics_object_picking = false
-gui_disable_input = false
-gui_snap_controls_to_pixels = true
-shadow_atlas_size = 0
-shadow_atlas_quad_0 = 2
-shadow_atlas_quad_1 = 2
-shadow_atlas_quad_2 = 3
-shadow_atlas_quad_3 = 4
-_sections_unfolded = [ "Rendering" ]
 
-[node name="Camera" type="Camera" parent="Screen/MinigameInformation/Characters/Viewport" index="0"]
-
+[node name="Camera" type="Camera" parent="Screen/MinigameInformation/Characters/Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-keep_aspect = 1
-cull_mask = 1048575
 environment = SubResource( 9 )
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
 current = true
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="Indicator" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="1"]
-
+[node name="Indicator" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, -2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite3D" parent="Screen/MinigameInformation/Characters/Viewport/Indicator" index="0"]
-
+[node name="Sprite" type="Sprite3D" parent="Screen/MinigameInformation/Characters/Viewport/Indicator"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
-layers = 1
 material_override = SubResource( 10 )
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-centered = true
-offset = Vector2( 0, 0 )
-flip_h = false
-flip_v = false
-modulate = Color( 1, 1, 1, 1 )
-opacity = 1.0
 pixel_size = 0.002
-axis = 2
-transparent = true
-shaded = false
-double_sided = true
-alpha_cut = 0
 texture = ExtResource( 16 )
-vframes = 1
-hframes = 1
-frame = 0
-region_enabled = false
-region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen/MinigameInformation/Characters/Viewport/Indicator/Sprite" index="0"]
-
-root_node = NodePath("..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen/MinigameInformation/Characters/Viewport/Indicator/Sprite"]
 autoplay = "floating_animation"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
 anims/floating_animation = SubResource( 11 )
-blend_times = [  ]
 
-[node name="Player1" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="2"]
-
+[node name="Player1" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport"]
 transform = Transform( 0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, -1.5, 0, -2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Player2" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="3"]
-
+[node name="Player2" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport"]
 transform = Transform( 0.980785, 0, 0.19509, 0, 1, 0, -0.19509, 0, 0.980785, -0.5, 0, -2.2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Player3" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="4"]
-
+[node name="Player3" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport"]
 transform = Transform( 0.980785, 0, -0.19509, 0, 1, 0, 0.19509, 0, 0.980785, 0.5, 0, -2.2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Player4" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport" index="5"]
-
+[node name="Player4" type="Spatial" parent="Screen/MinigameInformation/Characters/Viewport"]
 transform = Transform( 0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, 1.5, 0, -2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="Screen/MinigameInformation/Characters/Viewport" index="6"]
-
+[node name="DirectionalLight" type="DirectionalLight" parent="Screen/MinigameInformation/Characters/Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 1, 0 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.1
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-directional_shadow_mode = 2
-directional_shadow_split_1 = 0.1
-directional_shadow_split_2 = 0.2
-directional_shadow_split_3 = 0.5
-directional_shadow_blend_splits = false
-directional_shadow_normal_bias = 0.8
-directional_shadow_bias_split_scale = 0.25
-directional_shadow_depth_range = 0
-directional_shadow_max_distance = 200.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="DuelSelection" type="Control" parent="Screen" index="15"]
-
+[node name="DuelSelection" type="Control" parent="Screen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Screen/DuelSelection" index="0"]
-
+[node name="Label" type="Label" parent="Screen/DuelSelection"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3418,21 +1522,10 @@ margin_left = -140.0
 margin_top = -179.0
 margin_right = 140.0
 margin_bottom = -121.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "CONTEXT_LABEL_DUEL_SELECT"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Player1" type="TextureButton" parent="Screen/DuelSelection" index="1"]
-
+[node name="Player1" type="TextureButton" parent="Screen/DuelSelection"]
 material = SubResource( 13 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3442,23 +1535,10 @@ margin_left = -264.0
 margin_top = -64.0
 margin_right = -136.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Material" ]
 
-[node name="Player2" type="TextureButton" parent="Screen/DuelSelection" index="2"]
-
+[node name="Player2" type="TextureButton" parent="Screen/DuelSelection"]
 material = SubResource( 14 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3468,23 +1548,10 @@ margin_left = -64.0
 margin_top = -64.0
 margin_right = 64.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Material" ]
 
-[node name="Player3" type="TextureButton" parent="Screen/DuelSelection" index="3"]
-
+[node name="Player3" type="TextureButton" parent="Screen/DuelSelection"]
 material = SubResource( 15 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3494,38 +1561,16 @@ margin_left = 136.0
 margin_top = -64.0
 margin_right = 264.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 stretch_mode = 4
-_sections_unfolded = [ "Material" ]
 
-[node name="ItemSelection" type="Control" parent="Screen" index="16"]
-
+[node name="ItemSelection" type="Control" parent="Screen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Item1" type="TextureButton" parent="Screen/ItemSelection" index="0"]
-
+[node name="Item1" type="TextureButton" parent="Screen/ItemSelection"]
 material = SubResource( 16 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3535,23 +1580,10 @@ margin_left = -264.0
 margin_top = -64.0
 margin_right = -136.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Material" ]
 
-[node name="Item2" type="TextureButton" parent="Screen/ItemSelection" index="1"]
-
+[node name="Item2" type="TextureButton" parent="Screen/ItemSelection"]
 material = SubResource( 17 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3561,23 +1593,10 @@ margin_left = -64.0
 margin_top = -64.0
 margin_right = 64.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 stretch_mode = 5
-_sections_unfolded = [ "Material" ]
 
-[node name="Item3" type="TextureButton" parent="Screen/ItemSelection" index="2"]
-
+[node name="Item3" type="TextureButton" parent="Screen/ItemSelection"]
 material = SubResource( 18 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3587,38 +1606,16 @@ margin_left = 136.0
 margin_top = -64.0
 margin_right = 264.0
 margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 stretch_mode = 4
-_sections_unfolded = [ "Material" ]
 
-[node name="DuelReward" type="Control" parent="Screen" index="17"]
-
+[node name="DuelReward" type="Control" parent="Screen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Title" type="Label" parent="Screen/DuelReward" index="0"]
-
+[node name="Title" type="Label" parent="Screen/DuelReward"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3627,55 +1624,25 @@ margin_left = -104.0
 margin_top = -104.0
 margin_right = 103.0
 margin_bottom = -46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "CONTEXT_LABEL_DUEL_REWARD"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Value" type="Label" parent="Screen/DuelReward" index="1"]
-
-anchor_left = 0.0
+[node name="Value" type="Label" parent="Screen/DuelReward"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -29.0
 margin_bottom = 29.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Shop" type="Container" parent="Screen" index="18"]
-
+[node name="Shop" type="Container" parent="Screen"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Item1" type="VBoxContainer" parent="Screen/Shop" index="0"]
-
+[node name="Item1" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3685,123 +1652,48 @@ margin_left = -322.0
 margin_top = -210.0
 margin_right = -190.0
 margin_bottom = -46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item1" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item1"]
 material = SubResource( 19 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item4/Image")
 focus_neighbour_top = NodePath("../../Back")
 focus_neighbour_right = NodePath("../../Item2/Image")
 focus_neighbour_bottom = NodePath("../../Item5/Image")
 focus_next = NodePath("../../Item2/Image")
 focus_previous = NodePath("../../Back")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item1" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item1"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item1/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item1/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item1/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item1/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item1/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item1/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item2" type="VBoxContainer" parent="Screen/Shop" index="1"]
-
+[node name="Item2" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3811,123 +1703,48 @@ margin_left = -156.0
 margin_top = -210.0
 margin_right = -24.0
 margin_bottom = -46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item2" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item2"]
 material = SubResource( 20 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item1/Image")
 focus_neighbour_top = NodePath("../../Back")
 focus_neighbour_right = NodePath("../../Item3/Image")
 focus_neighbour_bottom = NodePath("../../Item6/Image")
 focus_next = NodePath("../../Item3/Image")
 focus_previous = NodePath("../../Item1/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item2" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item2"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item2/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item2/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item2/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item2/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item2/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item2/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item3" type="VBoxContainer" parent="Screen/Shop" index="2"]
-
+[node name="Item3" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3937,124 +1754,48 @@ margin_left = 24.0
 margin_top = -210.0
 margin_right = 156.0
 margin_bottom = -46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item3" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item3"]
 material = SubResource( 21 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item2/Image")
 focus_neighbour_top = NodePath("../../Back")
 focus_neighbour_right = NodePath("../../Item4/Image")
 focus_neighbour_bottom = NodePath("../../Item7/Image")
 focus_next = NodePath("../../Item4/Image")
 focus_previous = NodePath("../../Item2/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
-_sections_unfolded = [ "Material" ]
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item3" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item3"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item3/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item3/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item3/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item3/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item3/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item3/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item4" type="VBoxContainer" parent="Screen/Shop" index="3"]
-
+[node name="Item4" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4064,124 +1805,48 @@ margin_left = 190.0
 margin_top = -210.0
 margin_right = 322.0
 margin_bottom = -46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item4" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item4"]
 material = SubResource( 22 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item3/Image")
 focus_neighbour_top = NodePath("../../Back")
 focus_neighbour_right = NodePath("../../Item1/Image")
 focus_neighbour_bottom = NodePath("../../Item8/Image")
 focus_next = NodePath("../../Item5/Image")
 focus_previous = NodePath("../../Item3/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
-_sections_unfolded = [ "Material" ]
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item4" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item4"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item4/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item4/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item4/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item4/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item4/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item4/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item5" type="VBoxContainer" parent="Screen/Shop" index="4"]
-
+[node name="Item5" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4191,124 +1856,48 @@ margin_left = -322.0
 margin_top = -10.0
 margin_right = -190.0
 margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item5" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item5"]
 material = SubResource( 23 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item8/Image")
 focus_neighbour_top = NodePath("../../Item1/Image")
 focus_neighbour_right = NodePath("../../Item6/Image")
 focus_neighbour_bottom = NodePath("../../Back")
 focus_next = NodePath("../../Item6/Image")
 focus_previous = NodePath("../../Item4/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
-_sections_unfolded = [ "Material" ]
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item5" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item5"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item5/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item5/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item5/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item5/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item5/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item5/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item6" type="VBoxContainer" parent="Screen/Shop" index="5"]
-
+[node name="Item6" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4318,125 +1907,48 @@ margin_left = -156.0
 margin_top = -10.0
 margin_right = -24.0
 margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item6" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item6"]
 material = SubResource( 24 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item5/Image")
 focus_neighbour_top = NodePath("../../Item2/Image")
 focus_neighbour_right = NodePath("../../Item7/Image")
 focus_neighbour_bottom = NodePath("../../Back")
 focus_next = NodePath("../../Item7/Image")
 focus_previous = NodePath("../../Item5/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
-_sections_unfolded = [ "Focus", "Material" ]
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item6" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item6"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item6/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item6/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item6/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item6/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item6/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item6/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item7" type="VBoxContainer" parent="Screen/Shop" index="6"]
-
+[node name="Item7" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4446,125 +1958,48 @@ margin_left = 24.0
 margin_top = -10.0
 margin_right = 156.0
 margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item7" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item7"]
 material = SubResource( 25 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item6/Image")
 focus_neighbour_top = NodePath("../../Item3/Image")
 focus_neighbour_right = NodePath("../../Item8/Image")
 focus_neighbour_bottom = NodePath("../../Back")
 focus_next = NodePath("../../Item8/Image")
 focus_previous = NodePath("../../Item6/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
-_sections_unfolded = [ "Material" ]
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item7" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item7"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item7/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item7/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item7/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item7/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item7/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item7/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Item8" type="VBoxContainer" parent="Screen/Shop" index="7"]
-
+[node name="Item8" type="VBoxContainer" parent="Screen/Shop"]
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4574,123 +2009,48 @@ margin_left = 190.0
 margin_top = -10.0
 margin_right = 322.0
 margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Image" type="TextureButton" parent="Screen/Shop/Item8" index="0"]
-
+[node name="Image" type="TextureButton" parent="Screen/Shop/Item8"]
 material = SubResource( 26 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 132.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../../Item7/Image")
 focus_neighbour_top = NodePath("../../Item4/Image")
 focus_neighbour_right = NodePath("../../Item5/Image")
 focus_neighbour_bottom = NodePath("../../Back")
 focus_next = NodePath("../../Back")
 focus_previous = NodePath("../../Item7/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 expand = true
 
-[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item8" index="1"]
-
+[node name="Cost" type="HBoxContainer" parent="Screen/Shop/Item8"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 132.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Amount" type="Label" parent="Screen/Shop/Item8/Cost" index="0"]
-
+[node name="Amount" type="Label" parent="Screen/Shop/Item8/Cost"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 96, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 6 )
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Panel" type="Panel" parent="Screen/Shop/Item8/Cost/Amount" index="0"]
-
+[node name="Panel" type="Panel" parent="Screen/Shop/Item8/Cost/Amount"]
 show_behind_parent = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 132.0
 margin_bottom = 31.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Currency" type="TextureRect" parent="Screen/Shop/Item8/Cost" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Currency" type="TextureRect" parent="Screen/Shop/Item8/Cost"]
 margin_left = 100.0
 margin_right = 132.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
 
-[node name="Back" type="Button" parent="Screen/Shop" index="8"]
-
+[node name="Back" type="Button" parent="Screen/Shop"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -4699,99 +2059,37 @@ margin_left = -23.0
 margin_top = 208.0
 margin_right = 22.0
 margin_bottom = 241.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_neighbour_left = NodePath("../Item4/Image")
 focus_neighbour_top = NodePath("../Item6/Image")
 focus_neighbour_right = NodePath("../Item6/Image")
 focus_neighbour_bottom = NodePath("../Item2/Image")
 focus_next = NodePath("../Item1/Image")
 focus_previous = NodePath("../Item8/Image")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "MENU_LABEL_BACK"
-flat = false
-align = 1
 
-[node name="Notification" type="AcceptDialog" parent="Screen/Shop" index="9"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Notification" type="AcceptDialog" parent="Screen/Shop"]
 margin_right = 53.0
 margin_bottom = 86.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
 window_title = ""
-resizable = false
-dialog_hide_on_ok = true
-_sections_unfolded = [ "Rect" ]
 
-[node name="Camera" type="Camera" parent="." index="1"]
-
+[node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 4 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
 current = true
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
-_sections_unfolded = [ "Transform", "Visibility" ]
-
 [connection signal="pressed" from="Screen/Roll" to="." method="_on_Roll_pressed"]
-
 [connection signal="pressed" from="Screen/GetCake/Buttons/Ok" to="." method="_on_GetCake_pressed"]
-
 [connection signal="pressed" from="Screen/GetCake/Buttons/Abort" to="." method="_on_GetCake_abort"]
-
 [connection signal="value_changed" from="Screen/BuyCake/HSlider" to="." method="_on_HSlider_value_changed"]
-
 [connection signal="pressed" from="Screen/BuyCake/Buttons/Ok" to="." method="_on_Buy_pressed"]
-
 [connection signal="pressed" from="Screen/BuyCake/Buttons/Abort" to="." method="_on_Abort_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row1/Skip" to="Screen/Debug" method="_on_Skip_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row1/AddCookies" to="Screen/Debug" method="_on_AddCookies_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row1/AddCake" to="Screen/Debug" method="_on_AddCake_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row2/PlayersTurn" to="Screen/Debug" method="_on_PlayersTurn_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row2/Minigame" to="Screen/Debug" method="_on_Minigame_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row2/Item" to="Screen/Debug" method="_on_Item_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/Row3/Move" to="Screen/Debug" method="_on_Move_pressed"]
-
 [connection signal="pressed" from="Screen/Debug/List/Inputs/Ok" to="Screen/Debug" method="_on_Ok_pressed"]
-
 [connection signal="tab_changed" from="Screen/MinigameInformation/Controls" to="." method="_on_Controls_tab_changed"]
-
 [connection signal="pressed" from="Screen/MinigameInformation/Buttons/Try" to="." method="_on_Try_pressed"]
-
 [connection signal="pressed" from="Screen/MinigameInformation/Buttons/Play" to="." method="_on_Play_pressed"]
-
 [connection signal="pressed" from="Screen/Shop/Back" to="." method="_on_Shop_Back_pressed"]
-
-

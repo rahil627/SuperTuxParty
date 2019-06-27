@@ -105,6 +105,9 @@ var is_new_savegame = false
 # Used in rewardscreen.gd
 var placement
 
+var _board_loaded_translations = []
+var _minigame_loaded_translations = []
+
 func _ready():
 	randomize()
 	var root = get_tree().get_root()
@@ -128,6 +131,21 @@ func _notification(what):
 					_was_muted = true
 
 func load_board(board, names, characters, human_players):
+	var dir = Directory.new()
+	dir.open(board.get_base_dir() + "/translations")
+	dir.list_dir_begin(true)
+	while true:
+		var filename = dir.get_next()
+		if filename == "":
+			break
+		
+		if filename.ends_with(".translation"):
+			var translation = load(dir.get_current_dir() + "/" + filename)
+			TranslationServer.add_translation(translation)
+			_board_loaded_translations.push_back(translation)
+		
+	dir.list_dir_end()
+	
 	for i in range(characters.size()):
 		players[i].player_name = names[i]
 		players[i].character = characters[i]
@@ -235,6 +253,21 @@ func load_board_from_savegame(savegame):
 	is_new_savegame = false
 	new_game = false
 	
+	var dir = Directory.new()
+	dir.open(savegame.board_path.get_base_dir() + "/translations")
+	dir.list_dir_begin(true)
+	while true:
+		var filename = dir.get_next()
+		if filename == "":
+			break
+		
+		if filename.ends_with(".translation"):
+			var translation = load(dir.get_current_dir() + "/" + filename)
+			TranslationServer.add_translation(translation)
+			_board_loaded_translations.push_back(translation)
+		
+	dir.list_dir_end()
+	
 	current_board = savegame.board_path;
 	for i in range(amount_of_players):
 		players[i].player_id = i + 1
@@ -257,6 +290,20 @@ func load_board_from_savegame(savegame):
 
 # Change scene to one of the mini-games
 func goto_minigame(minigame, try = false):
+	var dir = Directory.new()
+	dir.open(minigame.translation_directory)
+	dir.list_dir_begin(true)
+	while true:
+		var filename = dir.get_next()
+		if filename == "":
+			break
+		
+		if filename.ends_with(".translation"):
+			var translation = load(dir.get_current_dir() + "/" + filename)
+			TranslationServer.add_translation(translation)
+			_minigame_loaded_translations.push_back(translation)
+		
+	dir.list_dir_end()
 	
 	# Current player nodes
 	var r_players = get_tree().get_nodes_in_group("players")
@@ -302,6 +349,10 @@ func deduplicate_items(items):
 
 # Go back to board from mini-game, placement is an array with the players' id:s
 func _goto_board(placement):
+	for t in _minigame_loaded_translations:
+		TranslationServer.remove_translation(t)
+	_minigame_loaded_translations.clear()
+	
 	if current_minigame == null:
 		# Only award if it's not a test
 		self.placement = placement
@@ -504,6 +555,14 @@ func reset_state():
 	minigame_duel_reward = null
 	
 	trap_states = []
+	
+	for t in _minigame_loaded_translations:
+		TranslationServer.remove_translation(t)
+	_minigame_loaded_translations.clear()
+	
+	for t in _board_loaded_translations:
+		TranslationServer.remove_translation(t)
+	_board_loaded_translations.clear()
 	
 	for p in players:
 		p.cookies = 0

@@ -3,6 +3,7 @@ class MinigameConfigFile:
 	var name = ""
 	var scene_path = ""
 	var image_path = null
+	var translation_directory = ""
 	
 	# BBCode (or anything that works in Richtextlabel) inside a dictionary, e.g. { "en" : "English description goes here" }
 	var description = {}
@@ -127,6 +128,9 @@ func parse_json_file(file):
 	if result.result.has("image_path"):
 		config.image_path = result.result.image_path
 	
+	if result.result.has("translation_directory"):
+		config.translation_directory = result.result.translation_directory
+	
 	if result.result.has("description"):
 		config.description = result.result.description
 	if result.result.has("used_controls"):
@@ -175,6 +179,9 @@ func parse_xml_file(file):
 	# Optional
 	if parser.has_attribute("image_path"):
 		config.image_path = parser.get_named_attribute_value("image_path")
+	
+	if parser.has_attribute("translation_directory"):
+		config.translation_directory = parser.get_named_attribute_value("translation_directory")
 	
 	while next_element(parser, "minigame"):
 		match parser.get_node_name():
