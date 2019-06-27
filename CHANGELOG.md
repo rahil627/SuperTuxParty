@@ -5,6 +5,13 @@
 ### Improved / Changed
 - Support for localization in the minigame information screen
 
+## Alpha Version - v0.5
+### New features
+- Support for localization in minigame descriptions
+
+### Improved / Changed
+- Fix French language not selectable
+
 ## Alpha Version - v0.4
 ### New features
 - Support for localization (except plugins)
