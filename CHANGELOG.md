@@ -8,6 +8,7 @@
 ## Alpha Version - v0.5
 ### New features
 - Support for localization in minigame descriptions
+- Translated minigames
 
 ### Improved / Changed
 - Fix French language not selectable

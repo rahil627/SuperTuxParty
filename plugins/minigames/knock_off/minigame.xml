@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<minigame name = "Knock off" scene_path = "res://plugins/minigames/knock_off/minigame.tscn" image_path = "res://plugins/minigames/knock_off/screenshot.png" type = "FFA,2v2,Duel">
+<minigame name = "Knock off" scene_path = "res://plugins/minigames/knock_off/minigame.tscn" image_path = "res://plugins/minigames/knock_off/screenshot.png" translation_directory = "res://plugins/minigames/knock_off/translations" type = "FFA,2v2,Duel">
     <description>
       <en>KNOCK OFF is a game where each player attempts to knock off all opponents off the iceberg.
 Last person standing wins!</en>

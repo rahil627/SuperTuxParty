@@ -117,7 +117,7 @@ func _process(delta):
 		
 		for p in Global.players:
 			if p.player_id == placement[0]:
-				$Environment/Screen/Message.text = p.player_name + " wins!"
+				$Environment/Screen/Message.text = tr("HURDLE_PLAYER_WINS_MSG") % p.player_name
 		
 		$Environment/Screen/Message.show()
 	
@@ -135,4 +135,4 @@ func _process(delta):
 			for p in players:
 				p.stop = true
 		
-		$Environment/Screen/Timer.text = "Timer: " + var2str(stepify(timer, 0.01))
+		$Environment/Screen/Timer.text = var2str(stepify(timer, 0.01))

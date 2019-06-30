@@ -2,6 +2,7 @@
     "name" : "Bowling",
     "scene_path" : "res://plugins/minigames/bowling/minigame.tscn",
     "image_path" : "res://plugins/minigames/bowling/screenshot.png",
+    "translation_directory" : "res://plugins/minigames/bowling/translations",
     "type" : ["1v3"],
     
     "description" : {

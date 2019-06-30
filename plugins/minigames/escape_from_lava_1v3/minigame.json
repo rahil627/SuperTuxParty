@@ -3,6 +3,7 @@
     "scene_path" : "res://plugins/minigames/escape_from_lava_1v3/minigame.tscn",
     "type" : ["1v3"],
     "image_path" : "res://plugins/minigames/escape_from_lava_1v3/screenshot.png",
+    "translation_directory" : "res://plugins/minigames/escape_from_lava_1v3/translations",
     
     "description" : {
 	"en" : "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. The solo player selects one door that won't open.\nThe solo player has to ensure that no one reaches the top!",
