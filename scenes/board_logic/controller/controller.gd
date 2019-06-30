@@ -813,6 +813,9 @@ func _get_translation(dictionary: Dictionary) -> String:
 	
 	if dictionary.has(locale):
 		return dictionary.get(locale)
+	elif dictionary.has(locale.substr(0, 2)):
+		# Check if, e.g. de is present if locale is de_DE
+		return dictionary.get(locale.substr(0, 2))
 	elif dictionary.has("en"):
 		return dictionary.en
 	else:
