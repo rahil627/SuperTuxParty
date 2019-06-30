@@ -191,10 +191,10 @@ func parse_xml_file(file):
 					var control_name = parser.get_named_attribute_value("name")
 					
 					config.used_controls[control_name] = {}
-					next_element(parser, "control")
-					var language = parser.get_node_name()
-					parser.read()
-					config.used_controls[control_name][language] = parser.get_node_data()
+					while next_element(parser, "control"):
+						var language = parser.get_node_name()
+						parser.read()
+						config.used_controls[control_name][language] = parser.get_node_data()
 	
 	return config
 
