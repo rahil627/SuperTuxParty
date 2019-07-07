@@ -8,6 +8,9 @@ const MAX_ITEMS = 3
 # The position this node is walking to, used for animation
 var destination = []
 
+signal walking_step
+signal walking_ended
+
 var player_id = 0
 var player_name = "" # Name that player has chosen
 var is_ai = false
@@ -45,6 +48,10 @@ func remove_item(item):
 	
 	return false
 
+func move_to(space):
+	self.space = space
+	controller.update_space(space)
+
 func _physics_process(delta):
 	if destination.size() > 0:
 		if not is_walking and has_node("Model/AnimationPlayer"):
@@ -62,7 +69,7 @@ func _physics_process(delta):
 		
 		if dir.length() < 0.01:
 			destination.pop_front()
-			$"../Controller".animation_step(player_id)
+			emit_signal("walking_step")
 		
 		if destination.size() == 0:
 			target_rotation = 0
@@ -71,8 +78,8 @@ func _physics_process(delta):
 				$Model/AnimationPlayer.play("idle")
 				is_walking = false
 			
-			$"../Controller".update_player_info()
-			$"../Controller".animation_ended(player_id)
+			controller.update_player_info()
+			emit_signal("walking_ended")
 	else:
 		target_rotation = 0
 		if cookies_gui < cookies:
@@ -81,14 +88,14 @@ func _physics_process(delta):
 			if gui_timer <= 0:
 				gui_timer = GUI_TIMER
 				cookies_gui += 1
-				$"../Controller".update_player_info()
+				controller.update_player_info()
 		elif cookies_gui > cookies:
 			gui_timer -= delta
 			
 			if gui_timer <= 0:
 				gui_timer = GUI_TIMER
 				cookies_gui -= 1
-				$"../Controller".update_player_info()
+				controller.update_player_info()
 	
 	var dist = rotation.y - target_rotation
 	
