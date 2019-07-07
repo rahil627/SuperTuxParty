@@ -1,19 +1,21 @@
 {
-    "name" : "Hurdles",
-    "scene_path" : "res://plugins/minigames/hurdle/minigame.tscn",
-    "image_path" : "res://plugins/minigames/hurdle/screenshot.png",
-    "translation_directory" : "res://plugins/minigames/hurdle/translations",
-    "type" : ["FFA"],
-    
-    "description" : {
-	"en" : "The players participate in a race.\n\nDon't get hit by the obstacles! The last player standing wins.",
-	"de" : "Die Spieler nehmen an einem Hindernislauf teil.\n\nLass dich nicht von den Hindernissen treffen! Der letzte, der übrig ist, gewinnt."
+    "name": "Hurdles",
+    "scene_path": "res://plugins/minigames/hurdle/minigame.tscn",
+    "image_path": "res://plugins/minigames/hurdle/screenshot.png",
+    "translation_directory": "res://plugins/minigames/hurdle/translations",
+    "type": ["FFA"],
+
+    "description": {
+        "en": "The players participate in a race.\n\nDon't get hit by the obstacles! The last player standing wins.",
+        "de": "Die Spieler nehmen an einem Hindernislauf teil.\n\nLass dich nicht von den Hindernissen treffen! Der letzte, der übrig ist, gewinnt.",
+        "pt_BR": "Os jogadores participam em uma corrida.\n\nNão seja atingido pelos obstáculos! O último jogador restante vence!"
     },
-    
-    "used_controls" : {
-	"action1" : {
-	    "en" : "Jump",
-	    "de" : "Springen"
-	}
+
+    "used_controls": {
+        "action1": {
+            "en": "Jump",
+            "de": "Springen",
+            "pt_BR": "Pular"
+        }
     }
 }

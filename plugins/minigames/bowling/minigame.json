@@ -1,39 +1,46 @@
 {
-    "name" : "Bowling",
-    "scene_path" : "res://plugins/minigames/bowling/minigame.tscn",
-    "image_path" : "res://plugins/minigames/bowling/screenshot.png",
-    "translation_directory" : "res://plugins/minigames/bowling/translations",
-    "type" : ["1v3"],
-    
-    "description" : {
-	"en" : "The solo player tries to knock all other players off their platform.\nIf he succeeds, he wins. If the time runs out, the group wins.",
-	"de" : "Der Einzelspieler versucht alle Gegner von der Plattform zu schupsen.\nSchafft er es in der gegebenen Zeit, so hat er gewonnen. Ansonsten gewinnt die Gruppe."
+    "name": "Bowling",
+    "scene_path": "res://plugins/minigames/bowling/minigame.tscn",
+    "image_path": "res://plugins/minigames/bowling/screenshot.png",
+    "translation_directory": "res://plugins/minigames/bowling/translations",
+    "type": ["1v3"],
+
+    "description": {
+        "en": "The solo player tries to knock all other players off their platform.\nIf he succeeds, he wins. If the time runs out, the group wins.",
+        "de": "Der Einzelspieler versucht alle Gegner von der Plattform zu schupsen.\nSchafft er es in der gegebenen Zeit, so hat er gewonnen. Ansonsten gewinnt die Gruppe.",
+        "pt_BR": "O jogador solo tenta derrubar todos os outros jogadores da plataforma.\nSe ele conseguir, ele vence. Se o tempo acabar, o grupo vence."
     },
-    
-    "used_controls" : {
-	"up" : {
-	    "en" : "Move up",
-	    "de" : "Nach oben bewegen"
-	},
-	"left" : {
-	    "en" : "Move left",
-	    "de" : "Nach links bewegen"
-	},
-	"down" : {
-	    "en" : "Move down",
-	    "de" : "Nach unten bewegen"
-	},
-	"right" : {
-	    "en" : "Move right",
-	    "de" : "Nach rechts bewegen"
-	},
-	"action1" : {
-	    "en" : "Jump",
-	    "de" : "Springen"
-	},
-	"action2" : {
-	    "en" : "Throw ball - Only solo player",
-	    "de" : "Ball werfen - Nur der Einzelspieler"
-	}
+
+    "used_controls": {
+        "up": {
+            "en": "Move up",
+            "de": "Nach oben bewegen",
+            "pt_BR": "Mover para cima",
+        },
+        "left": {
+            "en": "Move left",
+            "de": "Nach links bewegen",
+            "pt_BR": "Mover para a esquerda"
+        },
+        "down": {
+            "en": "Move down",
+            "de": "Nach unten bewegen",
+            "pt_BR": "Mover para baixo"
+        },
+        "right": {
+            "en": "Move right",
+            "de": "Nach rechts bewegen",
+            "pt_BR": "Mover para a direita"
+        },
+        "action1": {
+            "en": "Jump",
+            "de": "Springen",
+            "pt_BR": "Pular"
+        },
+        "action2": {
+            "en": "Throw ball - Only solo player",
+            "de": "Ball werfen - Nur der Einzelspieler",
+            "pt_BR": "Lançar bola - Somente o jogador solo"
+        }
     }
 }

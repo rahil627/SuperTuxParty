@@ -1,14 +1,14 @@
 {
-    "name" : "Kernel compiling",
-    "scene_path" : "res://plugins/minigames/kernel_compiling/minigame.tscn",
-    "type" : ["FFA", "2v2", "Duel"],
-    "image_path" : "res://plugins/minigames/kernel_compiling/screenshot.png",
-    
-    "description" : {
-	"en" : "The players generate energy to compile the linux kernel. The key to press is shown on a screen.\nThe fastest player wins!",
-	"de" : "Die Spieler erzeugen Energie um den Linux Kernel zu kompilieren. Die zu drückenden Tasten werden auf dem Bildschirm angezeigt.\nDer schnellste Spieler gewinnt!"
+    "name": "Kernel compiling",
+    "scene_path": "res://plugins/minigames/kernel_compiling/minigame.tscn",
+    "type": ["FFA", "2v2", "Duel"],
+    "image_path": "res://plugins/minigames/kernel_compiling/screenshot.png",
+
+    "description": {
+        "en": "The players generate energy to compile the Linux kernel. The key to press is shown on a screen.\nThe fastest player wins!",
+        "de": "Die Spieler erzeugen Energie um den Linux Kernel zu kompilieren. Die zu drückenden Tasten werden auf dem Bildschirm angezeigt.\nDer schnellste Spieler gewinnt!",
+        "pt_BR": "Os jogadores geram energia para compilar o kernel Linux. O botão para pressionar aparece na tela.\nO jogador mais rápido vence!"
     },
-    
-    "used_controls" : {
-    }
+
+    "used_controls": {}
 }
