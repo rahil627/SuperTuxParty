@@ -37,14 +37,8 @@ func _physics_process(delta):
 	
 	if not input_disabled:
 		if not is_ai:
-			if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
-				dir.x += 1
-			if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
-				dir.x -= 1
-			if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
-				dir.z -= 1
-			if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
-				dir.z += 1
+			dir.x = Input.get_action_strength("player%d_up" % player_id) - Input.get_action_strength("player%d_down" % player_id)
+			dir.z = Input.get_action_strength("player%d_right" % player_id) - Input.get_action_strength("player%d_left" % player_id)
 		else:
 			if current_destination == null or has_player(current_destination.get_overlapping_bodies(), [self]):
 				var spots = []

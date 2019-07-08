@@ -54,22 +54,16 @@ func _process(delta):
 	fire_cooldown -= delta
 	var dir = Vector3()
 	if not is_ai and state != STATE.DEAD:
-		if Input.is_action_pressed("player" + var2str(player_id) + "_up"):
-			dir.z -= 1
-		if Input.is_action_pressed("player" + var2str(player_id) + "_left"):
-			dir.x -= 1
-		if Input.is_action_pressed("player" + var2str(player_id) + "_down"):
-			dir.z += 1
-		if Input.is_action_pressed("player" + var2str(player_id) + "_right"):
-			dir.x += 1
+		dir.x = Input.get_action_strength("player%d_right" % player_id) - Input.get_action_strength("player%d_left" % player_id)
+		dir.z = Input.get_action_strength("player%d_down" % player_id) - Input.get_action_strength("player%d_up" % player_id)
 		
-		if Input.is_action_pressed("player" + var2str(player_id) + "_action1") and is_on_floor():
+		if Input.is_action_pressed("player%d_action1" % player_id) and is_on_floor():
 			if state != STATE.JUMP:
 				$Model/AnimationPlayer.play("jump")
 				state = STATE.JUMP
 			movement = Vector3(0, 4, 0)
 		
-		if Input.is_action_just_pressed("player" + var2str(player_id) + "_action2") and is_solo_player:
+		if Input.is_action_just_pressed("player%d_action2" % player_id) and is_solo_player:
 			fire()
 	elif is_ai and state != STATE.DEAD:
 		if not is_solo_player:
