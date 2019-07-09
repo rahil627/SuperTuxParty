@@ -35,14 +35,8 @@ func _process(delta):
 		var dir = Vector3()
 		if not has_finished:
 			if not is_ai and state != STATE.DEAD:
-				if Input.is_action_pressed("player%d_up" % player_id):
-					dir.z += 1
-				if Input.is_action_pressed("player%d_left" % player_id):
-					dir.x += 1
-				if Input.is_action_pressed("player%d_down" % player_id):
-					dir.z -= 1
-				if Input.is_action_pressed("player%d_right" % player_id):
-					dir.x -= 1
+				dir.x = Input.get_action_strength("player%d_left" % player_id) - Input.get_action_strength("player%d_right" % player_id)
+				dir.z = Input.get_action_strength("player%d_up" % player_id) - Input.get_action_strength("player%d_down" % player_id)
 			elif is_ai and state != STATE.DEAD:
 				dir = ai_waypoint.translation - self.translation
 				dir = Vector3(dir.x, 0, dir.z)
