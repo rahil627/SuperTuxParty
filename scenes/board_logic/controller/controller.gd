@@ -7,6 +7,11 @@ signal trigger_event(player, space)
 # warning-ignore:unused_signal
 signal event_completed
 
+signal cake_shopping_completed
+signal shopping_completed
+
+signal path_chosen
+
 # If multiple players get on one space, this array decides the translation of
 # each.
 const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0),
@@ -386,11 +391,7 @@ func do_step(player, num: int) -> void:
 
 				return
 			else:
-				var players_on_space = get_players_on_space(player.space) - 1
-				var offset = EMPTY_SPACE_PLAYER_TRANSLATION
-
-				if players_on_space > 0:
-					offset = PLAYER_TRANSLATION[players_on_space]
+				var offset: Vector3 = _get_player_offset(player.space)
 
 				var walking_state = PLAYER.WalkingState.new()
 				walking_state.space = player.space
@@ -461,13 +462,9 @@ func do_step(player, num: int) -> void:
 
 func update_space(space) -> void:
 	var num := 0
-	var max_num = get_players_on_space(space)
 	for player in players:
 		if player.space == space:
-			var offset = EMPTY_SPACE_PLAYER_TRANSLATION
-
-			if max_num > 1:
-				offset = PLAYER_TRANSLATION[num]
+			var offset = _get_player_offset(player.space, num)
 
 			var walking_state = PLAYER.WalkingState.new()
 			walking_state.space = player.space
@@ -520,6 +517,17 @@ func get_players_on_space(space) -> int:
 			num += 1
 
 	return num
+
+func _get_player_offset(space: NodeBoard, num := -1) -> Vector3:
+	var players_on_space = get_players_on_space(space)
+	if num < 0:
+		num = players_on_space - 1
+
+	if players_on_space > 1:
+		return PLAYER_TRANSLATION[num]
+	else:
+		return EMPTY_SPACE_PLAYER_TRANSLATION
+
 
 func generate_shop_items(space, items: Array, icons: Array, cost: Array) ->\
 		void:
@@ -636,6 +644,24 @@ func open_shop(player) -> void:
 func continue() -> void:
 	call_deferred("emit_signal", "event_completed")
 
+# Gets the reference to the node, on which the cake currently can be
+# collected
+func get_cake_space() -> NodeBoard:
+	return get_tree().get_nodes_in_group("cake_nodes")[Global.cookie_space]
+
+func buy_cake(player: Spatial) -> void:
+	if player.cookies >= COOKIES_FOR_CAKE:
+		if not player.is_ai:
+			$Screen/GetCake.show()
+			yield(self, "cake_shopping_completed")
+		else:
+			var cakes := int(player.cookies / COOKIES_FOR_CAKE)
+			player.cakes += cakes
+			player.cookies -= COOKIES_FOR_CAKE * cakes
+			yield(get_tree().create_timer(0), "timeout")
+	else:
+		yield(get_tree().create_timer(0), "timeout")
+
 # If we end up on a green space at the end of turn, we execute the board event
 # if the board event does a movement, we need to ignore it.
 # That's the purpose of this variable.
@@ -732,15 +758,20 @@ func animation_ended(player_id: int) -> void:
 
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
-					$Screen/GetCake.show()
+					buy_cake(player)
+					yield(self, "cake_shopping_completed")
+				TURN_ACTION.CHOOSE_PATH:
+					next_node = yield(self, "path_chosen")
 				TURN_ACTION.SHOP:
 					open_shop(player)
+					yield(self, "shopping_completed")
+
+			end_turn = true
+			do_step(player, steps_remaining)
 		else:
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
-					var cakes := int(player.cookies / COOKIES_FOR_CAKE)
-					player.cakes += cakes
-					player.cookies -= COOKIES_FOR_CAKE * cakes
+					buy_cake(player)
 				TURN_ACTION.CHOOSE_PATH:
 					next_node = player.space.next[randi() %\
 							player.space.next.size()]
@@ -826,11 +857,9 @@ func _on_GetCake_pressed() -> void:
 			"x" + var2str(int($Screen/BuyCake/HSlider.max_value))
 
 func _on_GetCake_abort() -> void:
-	var player = players[player_turn - 1]
-
 	$Screen/GetCake.hide()
-	end_turn = true
-	do_step(player, steps_remaining)
+
+	emit_signal("cake_shopping_completed")
 
 func _on_Buy_pressed() -> void:
 	var amount := int($Screen/BuyCake/HSlider.value)
@@ -840,8 +869,8 @@ func _on_Buy_pressed() -> void:
 	player.cakes += amount
 
 	$Screen/BuyCake.hide()
-	end_turn = true
-	do_step(player, steps_remaining)
+
+	emit_signal("cake_shopping_completed")
 
 func _on_Abort_pressed() -> void:
 	$Screen/BuyCake.hide()
@@ -1010,11 +1039,7 @@ func _on_Controls_tab_changed(tab: int) -> void:
 			player.translation + Vector3(0, 1.5, 0)
 
 func _on_choose_path_arrow_activated(arrow) -> void:
-	var player = players[player_turn - 1]
-
-	next_node = arrow.next_node;
-	end_turn = true
-	do_step(player, steps_remaining)
+	emit_signal("path_chosen", arrow.next_node)
 
 func _on_duel_opponent_select(self_id: int, other_id: int) -> void:
 	player_turn += 1
@@ -1272,5 +1297,4 @@ func _on_shop_item(player, item, cost: int) -> void:
 func _on_Shop_Back_pressed() -> void:
 	$Screen/Shop.hide()
 
-	end_turn = true
-	do_step(players[player_turn-1], steps_remaining)
+	emit_signal("shopping_completed")

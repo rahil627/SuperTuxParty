@@ -53,9 +53,19 @@ func remove_item(item: Item) -> bool:
 
 	return false
 
-func move_to(new_space: Spatial) -> void:
+func walk_to(new_space: Spatial) -> void:
+	var old_space: NodeBoard = space
 	space = new_space
+	controller.update_space(old_space)
 	controller.update_space(new_space)
+
+func teleport_to(new_space: Spatial) -> void:
+	var old_space: NodeBoard = space
+	space = new_space
+	controller.update_space(old_space)
+	controller.update_space(new_space)
+	translation = destination.back()
+	destination.clear()
 
 func _physics_process(delta: float) -> void:
 	if destination.size() > 0:
