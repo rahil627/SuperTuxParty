@@ -6,121 +6,33 @@
 [ext_resource path="res://scenes/board_logic/controller/icons/cake.png" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
-
-render_priority = 0
-flags_transparent = false
 flags_unshaded = true
 flags_vertex_lighting = true
-flags_no_depth_test = false
 flags_use_point_size = true
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
 vertex_color_use_as_albedo = true
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
 
-[node name="Node" type="Spatial" index="0" groups=[
+[node name="Node" type="Spatial" groups=[
 "nodes",
 ]]
-
 script = ExtResource( 1 )
-type = 0
-potential_cake = false
 next_nodes = null
 prev_nodes = null
-amount_of_items_sold = 8
-custom_items = [  ]
 
-[node name="Model" parent="." index="0" instance=ExtResource( 2 )]
-
+[node name="Model" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
 
 [node name="Cylinder" parent="Model" index="0"]
-
 material/0 = ExtResource( 3 )
-_sections_unfolded = [ "material" ]
 
-[node name="Cake" type="Sprite3D" parent="." index="1"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154082, 0 )
+[node name="Cake" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271818, 0 )
 visible = false
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-centered = true
-offset = Vector2( 0, 0 )
-flip_h = false
-flip_v = false
-modulate = Color( 1, 1, 1, 1 )
-opacity = 1.0
 pixel_size = 0.03
 axis = 1
-transparent = true
-shaded = false
 double_sided = false
-alpha_cut = 0
 texture = ExtResource( 4 )
-vframes = 1
-hframes = 1
-frame = 0
-region_enabled = false
-region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Flags" ]
 
-[node name="EditorLines" type="ImmediateGeometry" parent="." index="2"]
-
-layers = 1
+[node name="EditorLines" type="ImmediateGeometry" parent="."]
 material_override = SubResource( 1 )
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-
 
 [editable path="Model"]
