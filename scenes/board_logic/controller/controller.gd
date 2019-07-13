@@ -495,7 +495,7 @@ func animation_ended(player_id):
 	if end_turn:
 		if do_action == TURN_ACTION.LAND_ON_SPACE:
 			# Activate the item placed onto the node if any
-			if player.space.trap != null and player.space.trap.activate(player, player.space.trap_player, self):
+			if player.space.trap != null and player.space.trap.activate_trap(player, player.space.trap_player, self):
 				player.space.trap = null
 			
 			# Lose cookies if you land on red space
