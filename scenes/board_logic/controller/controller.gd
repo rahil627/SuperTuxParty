@@ -319,7 +319,9 @@ func create_choose_path_arrows(player, previous_space):
 # Moves a player num spaces forward and stops when a cake spot is encountered
 func do_step(player, num):
 	if num <= 0:
-		animation_ended(player.player_id)
+		player_turn += 1
+		wait_for_animation = false
+		_on_Roll_pressed()
 	else:
 		# Adds each animation step to the player_board.gd script
 		# The last step is added during update_space(player.space)
@@ -486,6 +488,69 @@ func generate_shop_items(space, items, icons, cost):
 		
 		i = i + 1
 
+func ai_do_shopping(player):
+	var items = []
+	var icons = []
+	var cost = []
+	generate_shop_items(player.space, items, icons, cost)
+	
+	# Index into the item array
+	var item_to_buy
+	for i in range(len(items)):
+		# Always keep enough money ready to buy a cake
+		# Buy the most expensive item that satisfies this criteria
+		if player.cookies - cost[i] >= COOKIES_FOR_CAKE and (item_to_buy == null or cost[item_to_buy] < cost[i]):
+			item_to_buy = i
+	
+	if item_to_buy != null and player.give_item(load(items[item_to_buy]).new()):
+		player.cookies -= cost[item_to_buy]
+
+func open_shop(player):
+	var items = []
+	var icons = []
+	var cost = []
+	
+	generate_shop_items(player.space, items, icons, cost)
+	
+	for i in range(NODE.MAX_STORE_SIZE):
+		var element = $Screen/Shop.get_node("Item%d" % (i+1))
+		var texture_button = element.get_node("Image")
+		if texture_button.is_connected("pressed", self, "_on_shop_item"):
+			texture_button.disconnect("pressed", self, "_on_shop_item")
+		
+		if i < items.size():
+			texture_button.connect("pressed", self, "_on_shop_item", [player, items[i], cost[i]])
+			texture_button.texture_normal = icons[i]
+			if texture_button.is_connected("focus_entered", self, "_on_focus_entered"):
+				texture_button.disconnect("focus_entered", self, "_on_focus_entered")
+			if texture_button.is_connected("focus_exited", self, "_on_focus_exited"):
+				texture_button.disconnect("focus_exited", self, "_on_focus_exited")
+			if texture_button.is_connected("mouse_entered", self, "_on_mouse_entered"):
+				texture_button.disconnect("mouse_entered", self, "_on_mouse_entered")
+			if texture_button.is_connected("mouse_exited", self, "_on_mouse_exited"):
+				texture_button.disconnect("mouse_exited", self, "_on_mouse_exited")
+			if texture_button.is_connected("pressed", self, "_on_item_select"):
+				texture_button.disconnect("pressed", self, "_on_item_select")
+			
+			texture_button.connect("focus_entered", self, "_on_focus_entered", [texture_button])
+			texture_button.connect("focus_exited", self, "_on_focus_exited", [texture_button])
+			texture_button.connect("mouse_entered", self, "_on_mouse_entered", [texture_button])
+			texture_button.connect("mouse_exited", self, "_on_mouse_exited", [texture_button])
+			
+			texture_button.material.set_shader_param("enable_shader", false)
+			
+			element.get_node("Cost/Amount").text = var2str(cost[i])
+			if player.cookies < cost[i]:
+				element.get_node("Cost/Amount").add_color_override("font_color", Color(1, 0, 0))
+			else:
+				element.get_node("Cost/Amount").add_color_override("font_color", Color(1, 1, 1))
+		else:
+			texture_button.texture_normal = null
+			element.get_node("Cost/Amount").text = ""
+	
+	$Screen/Shop/Item1/Image.grab_focus()
+	$Screen/Shop.show()
+
 func animation_ended(player_id):
 	if player_id != player_turn :
 		return
@@ -549,6 +614,13 @@ func animation_ended(player_id):
 						show_minigame_info()
 					
 					return
+				NODE.NODE_TYPES.SHOP:
+					if not player.is_ai:
+						open_shop(player)
+						return
+					else:
+						ai_do_shopping(player)
+						yield(get_tree().create_timer(1), "timeout")
 		
 		player_turn += 1
 		wait_for_animation = false
@@ -565,50 +637,7 @@ func animation_ended(player_id):
 				TURN_ACTION.BUY_CAKE:
 					$Screen/GetCake.show()
 				TURN_ACTION.SHOP:
-					var items = []
-					var icons = []
-					var cost = []
-					
-					generate_shop_items(player.space, items, icons, cost)
-					
-					for i in range(NODE.MAX_STORE_SIZE):
-						var element = $Screen/Shop.get_node("Item%d" % (i+1))
-						var texture_button = element.get_node("Image")
-						if texture_button.is_connected("pressed", self, "_on_shop_item"):
-							texture_button.disconnect("pressed", self, "_on_shop_item")
-						
-						if i < items.size():
-							texture_button.connect("pressed", self, "_on_shop_item", [player, items[i], cost[i]])
-							texture_button.texture_normal = icons[i]
-							if texture_button.is_connected("focus_entered", self, "_on_focus_entered"):
-								texture_button.disconnect("focus_entered", self, "_on_focus_entered")
-							if texture_button.is_connected("focus_exited", self, "_on_focus_exited"):
-								texture_button.disconnect("focus_exited", self, "_on_focus_exited")
-							if texture_button.is_connected("mouse_entered", self, "_on_mouse_entered"):
-								texture_button.disconnect("mouse_entered", self, "_on_mouse_entered")
-							if texture_button.is_connected("mouse_exited", self, "_on_mouse_exited"):
-								texture_button.disconnect("mouse_exited", self, "_on_mouse_exited")
-							if texture_button.is_connected("pressed", self, "_on_item_select"):
-								texture_button.disconnect("pressed", self, "_on_item_select")
-							
-							texture_button.connect("focus_entered", self, "_on_focus_entered", [texture_button])
-							texture_button.connect("focus_exited", self, "_on_focus_exited", [texture_button])
-							texture_button.connect("mouse_entered", self, "_on_mouse_entered", [texture_button])
-							texture_button.connect("mouse_exited", self, "_on_mouse_exited", [texture_button])
-							
-							texture_button.material.set_shader_param("enable_shader", false)
-
-							element.get_node("Cost/Amount").text = var2str(cost[i])
-							if player.cookies < cost[i]:
-								element.get_node("Cost/Amount").add_color_override("font_color", Color(1, 0, 0))
-							else:
-								element.get_node("Cost/Amount").add_color_override("font_color", Color(1, 1, 1))
-						else:
-							texture_button.texture_normal = null
-							element.get_node("Cost/Amount").text = ""
-					
-					$Screen/Shop/Item1/Image.grab_focus()
-					$Screen/Shop.show()
+					open_shop(player)
 		else:
 			match do_action:
 				TURN_ACTION.BUY_CAKE:
@@ -618,23 +647,13 @@ func animation_ended(player_id):
 				TURN_ACTION.CHOOSE_PATH:
 					next_node = player.space.next[randi() % player.space.next.size()]
 				TURN_ACTION.SHOP:
-					var items = []
-					var icons = []
-					var cost = []
-					generate_shop_items(player.space, items, icons, cost)
-					
-					# Index into the item array
-					var item_to_buy
-					for i in range(len(items)):
-						# Always keep enough money ready to buy a cake
-						# Buy the most expensive item that satisfies this criteria
-						if player.cookies - cost[i] >= COOKIES_FOR_CAKE and (item_to_buy == null or cost[item_to_buy] < cost[i]):
-							item_to_buy = i
-					
-					if item_to_buy != null and player.give_item(load(items[item_to_buy]).new()):
-						player.cookies -= cost[item_to_buy]
+					ai_do_shopping(player)
 			
-			get_tree().create_timer(1).connect("timeout", self, "_ai_continue_callback")
+			yield(get_tree().create_timer(1), "timeout")
+			wait_for_animation = false
+			end_turn = true
+			
+			do_step(players[player_turn - 1], steps_remaining)
 
 func animation_step(player_id):
 	if player_id != player_turn:
@@ -646,12 +665,6 @@ func animation_step(player_id):
 		$Screen/Stepcounter.text = var2str(step_count)
 	else:
 		$Screen/Stepcounter.text = ""
-
-func _ai_continue_callback():
-	wait_for_animation = false
-	end_turn = true
-	
-	do_step(players[player_turn - 1], steps_remaining)
 
 func _process(delta):
 	if camera_focus != null:
