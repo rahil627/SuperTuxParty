@@ -1,35 +1,27 @@
 extends Spatial
 
-func fire_event(player, space):
+func handle_event(player, space):
 	match space.name:
 		"Node6":
-			player.space = $Nodes/Node27
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node27)
 		"Node25":
-			player.space = $Nodes/Node26
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node26)
 		"Node31":
-			player.space = $Nodes/Node29
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node29)
 		"Node26":
-			player.space = $Nodes/Node25
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node25)
 		"Node27":
-			player.space = $Nodes/Node6
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node6)
 		"Node29":
-			player.space = $Nodes/Node31
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node31)
 		"Node15":
-			player.space = $Nodes/Node50
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node50)
 		"Node19":
-			player.space = $Nodes/Node41
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node41)
 		"Node41":
-			player.space = $Nodes/Node19
-			$Controller.update_space(player.space)
+			player.move_to($Nodes/Node19)
 		"Node50":
-			player.space = $Nodes/Node15
-			$Controller.update_space(player.space)
-
+			player.move_to($Nodes/Node15)
+	
+	yield(player, "walking_ended")
+	$Controller.continue()

@@ -1,5 +1,12 @@
 extends Spatial
 
+signal trigger_event (player, space)
+
+# This signal is emitted with a call_deferred("emit_signal", "event_completed")
+# The linter isn't smart enough for that and therefore we'll just ignore that warning
+#warning-ignore:unused_signal
+signal event_completed
+
 # If multiple players get on one space, this array decides the translation of each
 const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0), Vector3(0, 0.25, 0.75), Vector3(-0.75, 0.25, 0)]
 const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
@@ -103,6 +110,8 @@ func _ready():
 	players = get_tree().get_nodes_in_group("players")
 	for p in players:
 		p.player_id = i
+		p.connect("walking_step", self, "animation_step", [p.player_id])
+		p.connect("walking_ended", self, "animation_ended", [p.player_id])
 		i += 1
 		if p.space == null and Global.new_game:
 			p.space = get_node(start_node)
@@ -551,8 +560,18 @@ func open_shop(player):
 	$Screen/Shop/Item1/Image.grab_focus()
 	$Screen/Shop.show()
 
+# This method needs to be called, after an event triggered by landing on a green
+# space is fully processed
+func continue():
+	call_deferred("emit_signal", "event_completed")
+
+# If we end up on a green space at the end of turn, we execute the board event
+# if the board event does a movement, we need to ignore it
+# That's the purpose of this variable
+var _ignore_animation_ended: bool = false
+
 func animation_ended(player_id):
-	if player_id != player_turn :
+	if player_id != player_turn or _ignore_animation_ended:
 		return
 	
 	var player = players[player_id - 1]
@@ -570,10 +589,11 @@ func animation_ended(player_id):
 					if player.cookies < 0:
 						player.cookies = 0
 				NODE.NODE_TYPES.GREEN:
-					if get_parent().has_method("fire_event"):
-						get_parent().fire_event(player, player.space)
-						do_action = null
-						return
+					# If the event we will trigger, does move a player, we need to ignore it
+					_ignore_animation_ended = true
+					emit_signal("trigger_event", player, player.space)
+					yield(self, "event_completed")
+					_ignore_animation_ended = false
 				NODE.NODE_TYPES.BLUE:
 					player.cookies += 3
 				NODE.NODE_TYPES.YELLOW:
