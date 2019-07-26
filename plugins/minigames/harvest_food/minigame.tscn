@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://plugins/minigames/harvest_food/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/harvest_food/background/panorama.png" type="Texture" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://scenes/overlays/score_overlay.tscn" type="PackedScene" id=5]
 [ext_resource path="res://plugins/minigames/harvest_food/carrot.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=7]
-[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/models/fence/fence.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/models/fence/fence.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 2 )
@@ -133,68 +132,66 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
 
-[node name="PauseMenu" parent="Screen" instance=ExtResource( 8 )]
-
 [node name="Fences" type="Spatial" parent="."]
 editor/display_folded = true
 
-[node name="Fence" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.51461, 0.536983, -4.49385 )
 
-[node name="Fence2" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence2" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.77198, 0.536983, -4.49385 )
 
-[node name="Fence3" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence3" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.0023495, 0.536983, -4.49385 )
 
-[node name="Fence4" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence4" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.78754, 0.536983, -4.49385 )
 
-[node name="Fence5" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence5" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.5569, 0.536983, -4.49385 )
 
-[node name="Fence6" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence6" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -3.54565 )
 
-[node name="Fence7" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence7" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -1.77788 )
 
-[node name="Fence8" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence8" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -0.0080117 )
 
-[node name="Fence9" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence9" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, 1.77062 )
 
-[node name="Fence10" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence10" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, 3.55992 )
 
-[node name="Fence11" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence11" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, -3.42424, 0.536983, 4.37628 )
 
-[node name="Fence12" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence12" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, -1.68655, 0.536983, 4.37628 )
 
-[node name="Fence13" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence13" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 0.0589688, 0.536983, 4.37628 )
 
-[node name="Fence14" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence14" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 1.80712, 0.536983, 4.37628 )
 
-[node name="Fence15" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence15" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 3.54376, 0.536983, 4.37628 )
 
-[node name="Fence16" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence16" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, 3.42397 )
 
-[node name="Fence17" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence17" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, 1.65518 )
 
-[node name="Fence18" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence18" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -0.0895427 )
 
-[node name="Fence19" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence19" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -1.84788 )
 
-[node name="Fence20" parent="Fences" instance=ExtResource( 9 )]
+[node name="Fence20" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -3.58013 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

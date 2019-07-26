@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://plugins/minigames/kernel_compiling/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/kernel_compiling/player_kernel_compiling.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_rgh.jpg" type="Texture" id=6]
 [ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_disp.jpg" type="Texture" id=7]
 [ext_resource path="res://scenes/countdown/countdown.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=9]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 3 )
@@ -64,8 +63,5 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="Countdown" parent="." instance=ExtResource( 8 )]
-
-[node name="PauseMenu" parent="." instance=ExtResource( 9 )]
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finish" from="Countdown" to="." method="_on_Countdown_finish"]
