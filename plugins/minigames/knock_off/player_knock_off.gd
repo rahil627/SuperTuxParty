@@ -105,8 +105,18 @@ func _process(delta):
 	
 	dir = dir.normalized()
 	
-	if dir.length() > 0:
+	if dir.length_squared() > 0:
 		angular_velocity += dir * accel * delta
+		var target_rotation = atan2(-dir.z, dir.x)
+		
+		var diff1 = (target_rotation - $Model.rotation.y)
+		var diff2 = (target_rotation + sign($Model.rotation.y) * TAU - $Model.rotation.y)
+		
+		if abs(diff1) < abs(diff2):
+			$Model.rotation.y += diff1 * delta * 3
+		else:
+			$Model.rotation.y += diff2 * delta * 3
+		
 		if not is_walking and has_node("Model/AnimationPlayer"):
 			$Model/AnimationPlayer.play("walk")
 			is_walking = true
