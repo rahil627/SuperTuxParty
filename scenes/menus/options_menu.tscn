@@ -32,6 +32,7 @@ margin_right = -8.0
 margin_bottom = -8.0
 
 [node name="Language" type="HBoxContainer" parent="TabContainer/Visual"]
+editor/display_folded = true
 margin_right = 496.0
 margin_bottom = 29.0
 
@@ -45,6 +46,8 @@ text = "MENU_OPTIONS_LANGUAGE"
 margin_left = 271.0
 margin_right = 496.0
 margin_bottom = 29.0
+focus_neighbour_bottom = NodePath("../../Fullscreen")
+focus_next = NodePath("../../Fullscreen")
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_OPTIONS_SYSTEM_DEFAULT"
 items = [ "MENU_OPTIONS_SYSTEM_DEFAULT", null, false, 0, null ]
@@ -80,6 +83,8 @@ text = "MENU_OPTIONS_FRAME_CAP"
 margin_left = 462.0
 margin_right = 496.0
 margin_bottom = 29.0
+focus_neighbour_top = NodePath("../../VSync")
+focus_previous = NodePath("../../VSync")
 custom_fonts/font = ExtResource( 5 )
 text = "60"
 items = [ "30", null, false, 0, null, "60", null, false, 1, null, "120", null, false, 2, null, "144", null, false, 3, null, "240", null, false, 4, null, "∞", null, false, 5, null ]
@@ -238,7 +243,6 @@ margin_right = 512.0
 margin_bottom = 234.0
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_BACK"
-
 [connection signal="item_selected" from="TabContainer/Visual/Language/OptionButton" to="." method="_on_Language_item_selected"]
 [connection signal="toggled" from="TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
 [connection signal="toggled" from="TabContainer/Visual/VSync" to="." method="_on_VSync_toggled"]
