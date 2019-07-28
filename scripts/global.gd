@@ -170,7 +170,7 @@ func _goto_scene(path):
 	get_tree().set_current_scene(current_scene)
 
 # Internal function for actually changing scene while handling player objects
-func _goto_scene_ingame(path):
+func _goto_scene_ingame(path, instance_pause_menu = false):
 	current_scene.free()
 	
 	var loader = ResourceLoader.load_interactive(path)
@@ -183,6 +183,9 @@ func _goto_scene_ingame(path):
 	var s = loader.get_resource()
 	
 	current_scene = s.instance()
+	
+	if instance_pause_menu:
+		current_scene.add_child(preload("res://scenes/menus/pausemenu.tscn").instance())
 	
 	if minigame_teams == null:
 		for i in range(players.size()):
@@ -329,7 +332,7 @@ func goto_minigame(minigame, try = false):
 		
 		players[i].items = duplicate_items(r_players[i].items)
 	
-	call_deferred("_goto_scene_ingame", minigame.scene_path)
+	call_deferred("_goto_scene_ingame", minigame.scene_path, true)
 
 func duplicate_items(items):
 	var list = []

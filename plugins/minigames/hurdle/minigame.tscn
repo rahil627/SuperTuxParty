@@ -1,15 +1,14 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://plugins/minigames/hurdle/hurdle_game.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/hurdle/green_point_park_2k.hdr" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://plugins/minigames/hurdle/player_hurdle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://plugins/minigames/hurdle/ground/ground_model.escn" type="PackedScene" id=6]
-[ext_resource path="res://plugins/minigames/hurdle/ground/ground.shader" type="Shader" id=7]
-[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_col.jpg" type="Texture" id=8]
-[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_nrm.jpg" type="Texture" id=9]
-[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_rgh.jpg" type="Texture" id=10]
+[ext_resource path="res://plugins/minigames/hurdle/player_hurdle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://plugins/minigames/hurdle/ground/ground_model.escn" type="PackedScene" id=5]
+[ext_resource path="res://plugins/minigames/hurdle/ground/ground.shader" type="Shader" id=6]
+[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_col.jpg" type="Texture" id=7]
+[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_nrm.jpg" type="Texture" id=8]
+[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_rgh.jpg" type="Texture" id=9]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 2 )
@@ -22,7 +21,7 @@ background_sky = SubResource( 1 )
 extents = Vector3( 2, 1, 10 )
 
 [sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 7 )
+shader = ExtResource( 6 )
 shader_param/albedo = Color( 1, 1, 1, 1 )
 shader_param/metallic = 0.04
 shader_param/metallic_texture_channel = Plane( 0.333333, 0.333333, 0.333333, 0 )
@@ -33,9 +32,9 @@ shader_param/normal_scale = 1.0
 shader_param/uv_scale = Vector3( 2, 0.5, 1 )
 shader_param/speed = 0.2
 shader_param/delta_time = 0.0
-shader_param/texture_albedo = ExtResource( 8 )
-shader_param/texture_roughness = ExtResource( 10 )
-shader_param/texture_normal = ExtResource( 9 )
+shader_param/texture_albedo = ExtResource( 7 )
+shader_param/texture_roughness = ExtResource( 9 )
+shader_param/texture_normal = ExtResource( 8 )
 
 [node name="Root" type="Spatial"]
 script = ExtResource( 1 )
@@ -71,18 +70,16 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Timer: 50.0"
 
-[node name="PauseMenu" parent="Environment/Screen" instance=ExtResource( 4 )]
-
-[node name="Player1" parent="." instance=ExtResource( 5 )]
+[node name="Player1" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.2, 1 )
 
-[node name="Player2" parent="." instance=ExtResource( 5 )]
+[node name="Player2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.2, 2 )
 
-[node name="Player3" parent="." instance=ExtResource( 5 )]
+[node name="Player3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.2, 3 )
 
-[node name="Player4" parent="." instance=ExtResource( 5 )]
+[node name="Player4" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.2, 4 )
 
 [node name="Ground" type="StaticBody" parent="."]
@@ -92,7 +89,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6.5 )
 shape = SubResource( 3 )
 
-[node name="Mesh" parent="Ground" instance=ExtResource( 6 )]
+[node name="Mesh" parent="Ground" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6.5 )
 
 [node name="Cube" parent="Ground/Mesh" index="0"]
