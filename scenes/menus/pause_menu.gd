@@ -10,6 +10,7 @@ var was_already_paused
 func _ready():
 	if not can_save_game:
 		$Container/SaveGame.hide()
+	get_tree().connect("screen_resized", self, "_fix_size")
 
 func pause():
 	popup()
@@ -92,8 +93,10 @@ func _on_OverrideSave_confirmed():
 	_on_Resume_pressed()
 
 func _on_Options_pressed():
-	$OptionsWindow.popup_centered()
-	$OptionsWindow/OptionsMenu.show()
+	$OptionsWindow.popup()
 
 func _on_OptionsMenu_quit():
 	$OptionsWindow.hide()
+
+func _fix_size():
+	popup_centered()
