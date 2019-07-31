@@ -80,20 +80,20 @@ func _on_Timer_timeout():
 	
 	$Player1.input_disabled = false
 	$Player1.play_animation("idle")
-	$Player1.translation = Vector3(-1, 0.44, -1)
+	$Player1.translation = Vector3(-1, 0, -1)
 	$Player1.current_destination = null
 	$Player2.input_disabled = false
 	$Player2.play_animation("idle")
-	$Player2.translation = Vector3(1, 0.44, -1)
+	$Player2.translation = Vector3(1, 0, -1)
 	$Player2.current_destination = null
 	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Player3.input_disabled = false
 		$Player3.play_animation("idle")
-		$Player3.translation = Vector3(1, 0.44, 1)
+		$Player3.translation = Vector3(1, 0, 1)
 		$Player3.current_destination = null
 		$Player4.input_disabled = false
 		$Player4.play_animation("idle")
-		$Player4.translation = Vector3(-1, 0.44, 1)
+		$Player4.translation = Vector3(-1, 0, 1)
 		$Player4.current_destination = null
 	
 	$Screen/Message.text = ""

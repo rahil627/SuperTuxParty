@@ -50,16 +50,16 @@ material/0 = SubResource( 4 )
 shape = SubResource( 5 )
 
 [node name="Player1" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0.44, -1 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0.2, -1 )
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0.44, -1 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0, -1 )
 
 [node name="Player3" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0.44, 1 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0, 1 )
 
 [node name="Player4" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0.44, 1 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0, 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -3.94703, 2.45993, 0.184541 )
