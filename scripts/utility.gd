@@ -1,67 +1,68 @@
 extends Node
 
-func apply_nextpass_material(material, node):
+func apply_nextpass_material(material: Material, node: Spatial) -> void:
 	if node is MeshInstance:
-		var mat = node.get_surface_material(0)
-		var i = 0
+		var mat: Material = node.get_surface_material(0)
+		var i := 0
 		while mat != null:
 			while mat.next_pass != null:
 				mat = mat.next_pass
 			mat.next_pass = material
 			i += 1
 			mat = node.get_surface_material(i)
-	
+
 	for child in node.get_children():
 		apply_nextpass_material(material, child)
 
-func _shape_to_aabb(s : Shape) -> AABB:
+func _shape_to_aabb(s: Shape) -> AABB:
 	if s is BoxShape:
 		return AABB(-0.5 * s.extents, s.extents)
 	elif s is SphereShape:
-		var v : Vector3 = Vector3(s.radius, s.radius, s.radius)
+		var v := Vector3(s.radius, s.radius, s.radius)
 		return AABB(-0.5 * v, v)
 	elif s is CylinderShape:
-		var v : Vector3 = Vector3(s.radius, s.height, s.radius)
+		var v := Vector3(s.radius, s.height, s.radius)
 		return AABB(-0.5 * v, v)
 	elif s is CapsuleShape:
-		var v : Vector3 = Vector3(s.radius, s.height + 2 * s.radius, s.radius)
+		var v := Vector3(s.radius, s.height + 2 * s.radius, s.radius)
 		return AABB(-0.5 * v, v)
 	elif s is ConvexPolygonShape:
-		var begin : Vector3 = Vector3()
-		var end : Vector3 = Vector3()
-		
+		var begin := Vector3()
+		var end := Vector3()
+
 		for point in s.points:
 			begin.x = min(point.x, begin.x)
 			begin.y = min(point.y, begin.y)
 			begin.z = min(point.z, begin.z)
-			
+
 			end.x = max(point.x, end.x)
 			end.y = max(point.y, end.y)
 			end.z = max(point.z, end.z)
-		
+
 		return AABB(begin, end - begin)
 	elif s is ConcavePolygonShape:
-		var begin : Vector3 = Vector3()
-		var end : Vector3 = Vector3()
-		
+		var begin := Vector3()
+		var end := Vector3()
+
 		for point in s.get_faces():
 			begin.x = min(point.x, begin.x)
 			begin.y = min(point.y, begin.y)
 			begin.z = min(point.z, begin.z)
-			
+
 			end.x = max(point.x, end.x)
 			end.y = max(point.y, end.y)
 			end.z = max(point.z, end.z)
-		
+
 		return AABB(begin, end - begin)
-	
-	push_error("Unexpected Shape type in get_aabb_from_shape: %s" % s.get_class())
+
+	push_error("Unexpected Shape type in get_aabb_from_shape: %s" %\
+			s.get_class())
 	return AABB()
 
-func get_aabb_from_shape(s : Shape, transform : Transform = Transform()) -> AABB:
+func get_aabb_from_shape(s: Shape, transform := Transform()) -> AABB:
 	return transform.xform(_shape_to_aabb(s))
 
-func error_code_to_string(error):
+func error_code_to_string(error: int) -> String:
 	match error:
 		OK:
 			return "OK"

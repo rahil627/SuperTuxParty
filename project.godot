@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://plugins/items/item.gd"
+}, {
+"base": "Spatial",
+"class": "NodeBoard",
+"language": "GDScript",
+"path": "res://scenes/board_logic/node/node.gd"
+}, {
+"base": "Reference",
+"class": "SaveGameLoader",
+"language": "GDScript",
+"path": "res://savegames/savegames.gd"
+} ]
 _global_script_class_icons={
-
+"Item": "",
+"NodeBoard": "",
+"SaveGameLoader": ""
 }
 
 [application]

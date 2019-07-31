@@ -9,13 +9,14 @@
 [ext_resource path="res://scenes/board_logic/controller/icons/splash_background.png" type="Texture" id=7]
 [ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://scenes/board_logic/controller/debug.gd" type="Script" id=9]
-[ext_resource path="res://scenes/menus/pausemenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/menus/pause_menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/fonts/RichTextLabel-BoldItalic.tres" type="DynamicFont" id=11]
 [ext_resource path="res://assets/fonts/RichTextLabel-Italic.tres" type="DynamicFont" id=12]
 [ext_resource path="res://assets/fonts/RichTextLabel-Bold.tres" type="DynamicFont" id=13]
 [ext_resource path="res://assets/fonts/RichTextLabel-Normal.tres" type="DynamicFont" id=14]
 [ext_resource path="res://assets/fonts/button_font_small.tres" type="DynamicFont" id=15]
 [ext_resource path="res://scenes/board_logic/controller/icons/indicator.png" type="Texture" id=16]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "hide"
