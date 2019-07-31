@@ -1,24 +1,24 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/pause_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=6]
-[ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=7]
+[ext_resource path="res://scenes/sound_button/sound_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=7]
+[ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.352941, 0.788235, 0.866667, 1 )
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 6 )
+shader = ExtResource( 7 )
 
 [node name="PauseMenu" type="PopupPanel" groups=[
 "pausemenu",
 ]]
 pause_mode = 2
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -51,7 +51,7 @@ text = "MENU_LABEL_PAUSED"
 align = 1
 clip_text = true
 
-[node name="Resume" type="Button" parent="Container"]
+[node name="Resume" parent="Container" instance=ExtResource( 4 )]
 margin_top = 99.0
 margin_right = 518.0
 margin_bottom = 194.0
@@ -60,7 +60,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_RESUME"
 clip_text = true
 
-[node name="Options" type="Button" parent="Container"]
+[node name="Options" parent="Container" instance=ExtResource( 4 )]
 margin_top = 198.0
 margin_right = 518.0
 margin_bottom = 293.0
@@ -69,7 +69,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 clip_text = true
 
-[node name="SaveGame" type="Button" parent="Container"]
+[node name="SaveGame" parent="Container" instance=ExtResource( 4 )]
 margin_top = 297.0
 margin_right = 518.0
 margin_bottom = 392.0
@@ -78,7 +78,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_IO_SAVE_GAME"
 clip_text = true
 
-[node name="ExitMenu" type="Button" parent="Container"]
+[node name="ExitMenu" parent="Container" instance=ExtResource( 4 )]
 margin_top = 396.0
 margin_right = 518.0
 margin_bottom = 491.0
@@ -87,7 +87,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_RETURN_MENU"
 clip_text = true
 
-[node name="ExitDesktop" type="Button" parent="Container"]
+[node name="ExitDesktop" parent="Container" instance=ExtResource( 4 )]
 margin_top = 495.0
 margin_right = 518.0
 margin_bottom = 592.0
@@ -97,6 +97,7 @@ text = "MENU_LABEL_DESKTOP"
 clip_text = true
 
 [node name="SavegameNameInput" type="WindowDialog" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -108,6 +109,7 @@ margin_bottom = 296.0
 window_title = "MENU_IO_SAVE_GAME"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SavegameNameInput"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -118,7 +120,7 @@ margin_bottom = -8.0
 [node name="Label" type="Label" parent="SavegameNameInput/VBoxContainer"]
 margin_right = 389.0
 margin_bottom = 29.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_IO_ENTER_SAVEGAME_NAME"
 align = 1
 
@@ -126,14 +128,14 @@ align = 1
 margin_top = 33.0
 margin_right = 389.0
 margin_bottom = 70.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 context_menu_enabled = false
 
-[node name="Button" type="Button" parent="SavegameNameInput/VBoxContainer"]
+[node name="Button" parent="SavegameNameInput/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 74.0
 margin_right = 389.0
 margin_bottom = 107.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 disabled = true
 text = "MENU_IO_SAVE"
 
@@ -153,6 +155,10 @@ dialog_text = "Another save has the same name. Do you want to override it?"
 visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Control" type="Control" parent="OptionsWindow"]
@@ -168,7 +174,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 align = 1
 
-[node name="OptionsMenu" parent="OptionsWindow/Control" instance=ExtResource( 5 )]
+[node name="OptionsMenu" parent="OptionsWindow/Control" instance=ExtResource( 6 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -188,7 +194,7 @@ anchor_bottom = 1.0
 margin_right = 754.0
 margin_bottom = 120.0
 mouse_filter = 2
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 2
 [connection signal="pressed" from="Container/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Container/Options" to="." method="_on_Options_pressed"]

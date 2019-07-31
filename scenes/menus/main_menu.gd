@@ -62,9 +62,10 @@ func load_boards():
 	
 	var selection_board_list = $SelectionBoard/ScrollContainer/Buttons
 	
-	var button_template = preload("res://scenes/menus/board_selection_button.tscn")
+	var button_template = preload("res://scenes/sound_button/sound_button.tscn")
 	for board in board_loader.get_loaded_boards():
 		var board_list_entry = button_template.instance()
+		board_list_entry.size_flags_horizontal = SIZE_EXPAND_FILL
 		
 		board_list_entry.set_text(board)
 		board_list_entry.connect("pressed", self, "_on_board_select", [board_list_entry])
@@ -73,9 +74,10 @@ func load_boards():
 
 func load_characters():
 	var selection_char_list = $SelectionChar/Buttons/VScrollBar/Grid
-	var button_template = preload("res://scenes/menus/character_selection_button.tscn")
+	var button_template = preload("res://scenes/sound_button/sound_button.tscn")
 	for character in character_loader.get_loaded_characters():
 		var character_list_entry = button_template.instance()
+		character_list_entry.size_flags_horizontal = SIZE_EXPAND_FILL
 		
 		var image = load(character_loader.get_character_splash(character)).get_data()
 		image.resize(32, 32)

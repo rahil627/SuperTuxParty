@@ -24,6 +24,7 @@ config/icon="res://assets/icons/icon-smallest.png"
 Global="*res://scripts/global.gd"
 Utility="*res://scripts/utility.gd"
 ControlHelper="*res://scripts/control_helper.gd"
+UISound="*res://scenes/sound_button/ui_sound.tscn"
 
 [debug]
 

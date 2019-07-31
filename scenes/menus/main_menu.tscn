@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=6]
-[ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=7]
-[ext_resource path="res://assets/music/main menu.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scenes/sound_button/sound_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/sound_button/option_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=8]
+[ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=9]
+[ext_resource path="res://assets/music/main menu.ogg" type="AudioStream" id=10]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
@@ -34,7 +36,7 @@ action = "ui_cancel"
 shortcut = SubResource( 7 )
 
 [sub_resource type="ShaderMaterial" id=9]
-shader = ExtResource( 6 )
+shader = ExtResource( 8 )
 
 [node name="Menus" type="Control"]
 anchor_right = 1.0
@@ -43,6 +45,7 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="MainMenu" type="Control" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -68,30 +71,30 @@ anchor_bottom = 1.0
 margin_top = 200.0
 custom_constants/separation = 4
 
-[node name="Play" type="Button" parent="MainMenu/Buttons"]
+[node name="Play" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_right = 512.0
 margin_bottom = 33.0
 text = "MENU_LABEL_NEW_GAME"
 
-[node name="Load" type="Button" parent="MainMenu/Buttons"]
+[node name="Load" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_top = 37.0
 margin_right = 512.0
 margin_bottom = 70.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_IO_LOAD_GAME"
 
-[node name="Options" type="Button" parent="MainMenu/Buttons"]
+[node name="Options" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_top = 74.0
 margin_right = 512.0
 margin_bottom = 107.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_OPTIONS"
 
-[node name="Quit" type="Button" parent="MainMenu/Buttons"]
+[node name="Quit" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_top = 111.0
 margin_right = 512.0
 margin_bottom = 144.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_QUIT"
 
 [node name="SelectionPlayers" type="Control" parent="."]
@@ -123,6 +126,7 @@ margin_top = 200.0
 custom_constants/separation = 0
 
 [node name="VScrollBar" type="ScrollContainer" parent="SelectionPlayers/Buttons"]
+editor/display_folded = true
 margin_right = 512.0
 margin_bottom = 105.0
 rect_min_size = Vector2( 512, 105 )
@@ -130,53 +134,51 @@ size_flags_horizontal = 3
 scroll_horizontal_enabled = false
 
 [node name="Grid" type="GridContainer" parent="SelectionPlayers/Buttons/VScrollBar"]
+editor/display_folded = true
 margin_right = 512.0
 size_flags_horizontal = 3
 columns = 2
 
-[node name="One" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid"]
+[node name="One" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
 margin_right = 254.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_1"
 
-[node name="Two" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid"]
-margin_left = 258.0
-margin_right = 512.0
+[node name="Two" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
+margin_right = 254.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_2"
 
-[node name="Three" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid"]
-margin_top = 37.0
+[node name="Three" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
 margin_right = 254.0
-margin_bottom = 70.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_3"
 
-[node name="Four" type="Button" parent="SelectionPlayers/Buttons/VScrollBar/Grid"]
-margin_left = 258.0
-margin_top = 37.0
-margin_right = 512.0
-margin_bottom = 70.0
+[node name="Four" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
+margin_right = 254.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_4"
 
-[node name="Back" type="Button" parent="SelectionPlayers/Buttons"]
+[node name="Back" parent="SelectionPlayers/Buttons" instance=ExtResource( 4 )]
 margin_top = 105.0
 margin_right = 512.0
 margin_bottom = 138.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 shortcut = SubResource( 2 )
 text = "MENU_LABEL_BACK"
+custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="SelectionChar" type="Control" parent="."]
 editor/display_folded = true
@@ -200,6 +202,7 @@ text = "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
 align = 1
 
 [node name="Buttons" type="VBoxContainer" parent="SelectionChar"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 200.0
@@ -217,13 +220,14 @@ margin_right = 512.0
 size_flags_horizontal = 3
 columns = 2
 
-[node name="Back" type="Button" parent="SelectionChar/Buttons"]
+[node name="Back" parent="SelectionChar/Buttons" instance=ExtResource( 4 )]
 margin_top = 105.0
 margin_right = 512.0
 margin_bottom = 138.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 shortcut = SubResource( 4 )
 text = "MENU_LABEL_BACK"
+custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="SelectionBoard" type="Control" parent="."]
 editor/display_folded = true
@@ -267,26 +271,31 @@ margin_left = -2.0
 margin_top = -105.0
 margin_right = -2.0
 margin_bottom = -70.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_REWARD_SYSTEM"
 
-[node name="AwardType" type="OptionButton" parent="SelectionBoard"]
+[node name="AwardType" parent="SelectionBoard" instance=ExtResource( 6 )]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -70.0
+margin_right = 0.0
 margin_bottom = -35.0
 
-[node name="Back" type="Button" parent="SelectionBoard"]
+[node name="Back" parent="SelectionBoard" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -35.0
-custom_fonts/font = ExtResource( 4 )
+margin_right = 0.0
+margin_bottom = 0.0
+custom_fonts/font = ExtResource( 5 )
 shortcut = SubResource( 6 )
 text = "MENU_LABEL_BACK"
+custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="OptionsMenu" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -304,7 +313,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 align = 1
 
-[node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 5 )]
+[node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 7 )]
 margin_left = 0.0
 margin_top = 120.0
 margin_right = 0.0
@@ -343,14 +352,17 @@ scroll_horizontal_enabled = false
 margin_right = 512.0
 rect_min_size = Vector2( 512, 0 )
 
-[node name="Back" type="Button" parent="LoadGameMenu"]
+[node name="Back" parent="LoadGameMenu" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -35.0
-custom_fonts/font = ExtResource( 4 )
+margin_right = 0.0
+margin_bottom = 0.0
+custom_fonts/font = ExtResource( 5 )
 shortcut = SubResource( 8 )
 text = "MENU_LABEL_BACK"
+custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="PlayerInfo1" type="VBoxContainer" parent="."]
 editor/display_folded = true
@@ -363,21 +375,21 @@ margin_bottom = 136.0
 [node name="Name" type="LineEdit" parent="PlayerInfo1"]
 margin_right = 256.0
 margin_bottom = 37.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "Player 1"
 
 [node name="Character" type="Label" parent="PlayerInfo1"]
 margin_top = 41.0
 margin_right = 256.0
 margin_bottom = 70.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_CHARACTER"
 
 [node name="Ready" type="Label" parent="PlayerInfo1"]
 margin_top = 74.0
 margin_right = 256.0
 margin_bottom = 103.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 
 [node name="PlayerInfo2" type="VBoxContainer" parent="."]
@@ -393,7 +405,7 @@ margin_bottom = 136.0
 [node name="Name" type="LineEdit" parent="PlayerInfo2"]
 margin_right = 256.0
 margin_bottom = 37.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "Player 2"
 align = 2
 
@@ -401,7 +413,7 @@ align = 2
 margin_top = 41.0
 margin_right = 256.0
 margin_bottom = 70.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_CHARACTER"
 align = 2
 
@@ -409,7 +421,7 @@ align = 2
 margin_top = 74.0
 margin_right = 256.0
 margin_bottom = 103.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 align = 2
 
@@ -428,21 +440,21 @@ alignment = 2
 margin_top = 23.0
 margin_right = 256.0
 margin_bottom = 62.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "Player 3"
 
 [node name="Character" type="Label" parent="PlayerInfo3"]
 margin_top = 66.0
 margin_right = 256.0
 margin_bottom = 95.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_CHARACTER"
 
 [node name="Ready" type="Label" parent="PlayerInfo3"]
 margin_top = 99.0
 margin_right = 256.0
 margin_bottom = 128.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 
 [node name="PlayerInfo4" type="VBoxContainer" parent="."]
@@ -462,7 +474,7 @@ alignment = 2
 margin_top = 23.0
 margin_right = 256.0
 margin_bottom = 62.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "Player 4"
 align = 2
 
@@ -470,7 +482,7 @@ align = 2
 margin_top = 66.0
 margin_right = 256.0
 margin_bottom = 95.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_CHARACTER"
 align = 2
 
@@ -478,7 +490,7 @@ align = 2
 margin_top = 99.0
 margin_right = 256.0
 margin_bottom = 128.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 align = 2
 
@@ -489,11 +501,11 @@ material = SubResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 stretch_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 10 )
 autoplay = true
 bus = "Music"
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
