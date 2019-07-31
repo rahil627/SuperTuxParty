@@ -13,6 +13,8 @@ func _ready():
 	get_tree().connect("screen_resized", self, "_fix_size")
 
 func pause():
+	UISound.stream = preload("res://assets/sounds/ui/rollover2.wav")
+	UISound.play()
 	popup()
 	was_already_paused = get_tree().paused
 	paused = true
