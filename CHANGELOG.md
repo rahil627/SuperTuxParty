@@ -1,17 +1,32 @@
 # Releases
-## Alpha Version - v0.5
+## Alpha Version - v0.6
 ### New features
 
 ### Improved / Changed
-- Support for localization in the minigame information screen
 
 ## Alpha Version - v0.5
 ### New features
+- Support for localization in the minigame information screen
 - Support for localization in minigame descriptions
 - Translated minigames
+- Improved the API for board events (green spaces)
+- Add music to:
+  - The test and KDEValley boards
+  - The Escape from lava minigame
 
 ### Improved / Changed
 - Fix French language not selectable
+- Fixed the position of the minigame information screen to cover the full window
+- Improved icon quality
+- Fixed a bug that caused the cake icon on cake spots to disappear
+- Fixed a crash when player landed on a trap
+- Fixed a bug that caused the shop not to open when landing directly on it
+- The characters in the knock off minigame now face the direction they are walking
+- Made the options menu accessible from the pause menu look like in the main menu
+- Improved the controller navigation in the options
+- The characters in the harvest food minigame no longer spawn in the air
+- Fixed the black outline on the green tux texture
+- Fixed the descriptions in the main menu back buttons
 
 ## Alpha Version - v0.4
 ### New features
