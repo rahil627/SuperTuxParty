@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://plugins/minigames/escape_from_lava_1v3/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/escape_from_lava_1v3/player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://plugins/minigames/escape_from_lava_1v3/door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/control_view/control_view_2d.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/music/minigames/escape from lava.ogg" type="AudioStream" id=9]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 128, 128 )
@@ -58,7 +59,6 @@ is_solo_player = true
 [node name="Lava" type="Area" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-input_ray_pickable = false
 collision_layer = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Lava"]
@@ -195,7 +195,6 @@ transform = Transform( 0.984164, 0, -0.177263, 0, 1, 0, 0.177263, 0, 0.984164, -
 [node name="Area" type="Area" parent="Stage1"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -4 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Stage1/Area"]
 shape = SubResource( 4 )
@@ -214,7 +213,6 @@ transform = Transform( 0.874319, 0, 0.485351, 0, 1, 0, -0.485351, 0, 0.874319, 3
 
 [node name="Area" type="Area" parent="Stage2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6.11474 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Stage2/Area"]
 shape = SubResource( 5 )
@@ -234,7 +232,6 @@ transform = Transform( 0.929064, 0, 0.369919, 0, 1, 0, -0.369919, 0, 0.929064, 2
 [node name="Area" type="Area" parent="Stage3"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Stage3/Area"]
 shape = SubResource( 6 )
@@ -242,7 +239,6 @@ shape = SubResource( 6 )
 [node name="Finish" type="Area" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.5, 17 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Finish"]
 shape = SubResource( 7 )
@@ -289,6 +285,12 @@ margin_left = -192.0
 margin_top = -192.0
 margin_right = -64.0
 margin_bottom = -64.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+autoplay = true
+
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]
 [connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Stage1/Area" to="." method="enter_stage" binds= [ 1 ]]

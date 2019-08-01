@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/escape from lava.ogg-51d69c667db41357def9835cbbf98116.oggstr"
+
+[deps]
+
+source_file="res://assets/music/minigames/escape from lava.ogg"
+dest_files=[ "res://.import/escape from lava.ogg-51d69c667db41357def9835cbbf98116.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

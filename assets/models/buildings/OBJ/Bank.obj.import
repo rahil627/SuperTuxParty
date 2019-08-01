@@ -15,3 +15,4 @@ dest_files=[ "res://.import/Bank.obj-ea9b7f6e9f53f8c0d864d101f210cb24.mesh", "re
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

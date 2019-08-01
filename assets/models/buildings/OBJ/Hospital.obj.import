@@ -15,3 +15,4 @@ dest_files=[ "res://.import/Hospital.obj-c3d3edbc2d70953a7c16dacaa9f5a27e.mesh",
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

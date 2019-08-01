@@ -15,3 +15,4 @@ dest_files=[ "res://.import/House.obj-b1e401b847fa754866a1d216a728ea6e.mesh", "r
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

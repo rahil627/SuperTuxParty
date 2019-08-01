@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=8]
 [ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=9]
-[ext_resource path="res://assets/music/main menu.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/music/menus/main menu.ogg" type="AudioStream" id=10]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
@@ -512,6 +512,7 @@ stretch_mode = 2
 stream = ExtResource( 10 )
 autoplay = true
 bus = "Music"
+
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
