@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://plugins/minigames/escape_from_lava/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/escape_from_lava/player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/waypoint/waypoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://plugins/minigames/escape_from_lava/door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/music/minigames/escape from lava.ogg" type="AudioStream" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 128, 128 )
@@ -44,7 +45,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -26 )
 [node name="Lava" type="Area" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-input_ray_pickable = false
 collision_layer = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Lava"]
@@ -209,7 +209,6 @@ transform = Transform( 0.961371, 0, -0.275255, 0, 1, 0, 0.275255, 0, 0.961371, 4
 [node name="Finish" type="Area" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.5, 17 )
-input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Finish"]
 shape = SubResource( 4 )
@@ -228,6 +227,12 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "ESCAPE_FROM_LAVA_FINISH_MSG"
 align = 1
 valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+autoplay = true
+
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]
 [connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
