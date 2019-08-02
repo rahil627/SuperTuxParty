@@ -1,6 +1,6 @@
 extends Spatial
 
-func handle_event(player, space):
+func handle_event(player: Spatial, space: Spatial):
 	match space.name:
 		"Node6":
 			player.move_to($Nodes/Node27)
@@ -22,6 +22,6 @@ func handle_event(player, space):
 			player.move_to($Nodes/Node19)
 		"Node50":
 			player.move_to($Nodes/Node15)
-	
+
 	yield(player, "walking_ended")
 	$Controller.continue()

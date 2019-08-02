@@ -1,4 +1,5 @@
 extends Node
+class_name Item
 
 enum TYPES {
 	DICE,
@@ -6,35 +7,40 @@ enum TYPES {
 	ACTION
 }
 
-var type = TYPES.ACTION
-var is_consumed = true
+var type: int = TYPES.ACTION
+var is_consumed := true
 
-var can_be_bought = false
-var item_cost = 0
+var can_be_bought := false
+var item_cost := 0
 
-var icon
+var icon: Texture
 
-# Used when placed onto board
-var max_place_distance = 5 # Can only be placed 5 nodes in either direction onto the board, can be changed in subclasses
+# Used when placed onto board.
+# Can only be placed 5 nodes in either direction onto the board, can be changed
+# in subclasses.
+var max_place_distance := 5
 
-var material
+var material: Material
 
-func _init(type):
-	self.type = type
-	
+func _init(new_type: int) -> void:
+	type = new_type
+
 	load_resources()
 
-func load_resources():
+func load_resources() -> void:
 	icon = load(get_script().resource_path.get_base_dir() + "/icon.png")
-	
+
 	if type == TYPES.PLACABLE:
-		material = load(get_script().resource_path.get_base_dir() + "/material.tres")
+		material = load(
+				get_script().resource_path.get_base_dir() + "/material.tres")
 
 func activate(_player, _controller):
-	push_error("activate(Player, Controller) not overriden in item: %s" % get_path())
+	push_error("activate(Player, Controller) not overriden in item: %s" %
+			get_path())
 
 func activate_trap(_from_player, _trap_player, _controller):
-	push_error("activate(Player, Controller) not overriden in item: %s" % get_path())
+	push_error("activate(Player, Controller) not overriden in item: %s" %
+			get_path())
 
-func recreate_state():
+func recreate_state() -> void:
 	load_resources()

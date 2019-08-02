@@ -1,18 +1,18 @@
 extends PopupPanel
 
-export var can_save_game = false
+export var can_save_game := false
 
-var player_id = 0
-var paused = false
+var player_id := 0
+var paused := false
 
-var was_already_paused
+var was_already_paused: bool
 
-func _ready():
+func _ready() -> void:
 	if not can_save_game:
 		$Container/SaveGame.hide()
 	get_tree().connect("screen_resized", self, "_fix_size")
 
-func pause():
+func pause() -> void:
 	UISound.stream = preload("res://assets/sounds/ui/rollover2.wav")
 	UISound.play()
 	popup()
@@ -20,18 +20,19 @@ func pause():
 	paused = true
 	get_tree().paused = true
 
-func unpause():
+func unpause() -> void:
 	hide()
 	get_tree().paused = was_already_paused
 	paused = false
 	was_already_paused = false
 
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and Global.pause_window_unfocus and not paused:
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and\
+			Global.pause_window_unfocus and not paused:
 		player_id = 1
 		pause()
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("player1_pause"):
 		if visible:
 			unpause()
@@ -48,34 +49,34 @@ func _unhandled_input(event):
 					player_id = i
 					pause()
 
-func _save_game(save_name):
+func _save_game(save_name: String) -> void:
 	if save_name == "":
 		return
-	
+
 	Global.current_savegame.name = save_name
 	for savegame in Global.savegame_loader.savegames:
 		if savegame.name == save_name:
 			$OverrideSave.popup_centered()
 			return
-	
+
 	Global.save_game()
 	$SavegameNameInput.hide()
 	_on_Resume_pressed()
 
-func _on_Resume_pressed():
+func _on_Resume_pressed() -> void:
 	unpause()
 
-func _on_ExitMenu_pressed():
+func _on_ExitMenu_pressed() -> void:
 	unpause()
 	Global.quit_to_menu = true
-	
+
 	Global.reset_state()
 	Global.goto_scene("res://scenes/menus/main_menu.tscn")
 
-func _on_ExitDesktop_pressed():
+func _on_ExitDesktop_pressed() -> void:
 	get_tree().quit()
 
-func _on_SaveGame_pressed():
+func _on_SaveGame_pressed() -> void:
 	if Global.is_new_savegame:
 		$SavegameNameInput.popup_centered()
 		$SavegameNameInput/VBoxContainer/LineEdit.grab_focus()
@@ -83,22 +84,22 @@ func _on_SaveGame_pressed():
 		Global.save_game()
 		_on_Resume_pressed()
 
-func _on_Savegame_LineEdit_text_changed(new_text):
+func _on_Savegame_LineEdit_text_changed(new_text) -> void:
 	$SavegameNameInput/VBoxContainer/Button.disabled = new_text.empty()
 
-func _on_Savegame_Button_pressed():
+func _on_Savegame_Button_pressed() -> void:
 	_save_game($SavegameNameInput/VBoxContainer/LineEdit.text)
 
-func _on_OverrideSave_confirmed():
+func _on_OverrideSave_confirmed() -> void:
 	Global.save_game()
 	$SavegameNameInput.hide()
 	_on_Resume_pressed()
 
-func _on_Options_pressed():
+func _on_Options_pressed() -> void:
 	$OptionsWindow.popup()
 
-func _on_OptionsMenu_quit():
+func _on_OptionsMenu_quit() -> void:
 	$OptionsWindow.hide()
 
-func _fix_size():
+func _fix_size() -> void:
 	popup_centered()

@@ -1,6 +1,6 @@
 extends Node
 
-func get_mousebutton_name(index):
+func get_mousebutton_name(index: int) -> String:
 	match index:
 		BUTTON_LEFT:
 			return tr("MENU_CONTROLS_MOUSE_BUTTON_LEFT")
@@ -17,13 +17,13 @@ func get_mousebutton_name(index):
 		BUTTON_WHEEL_RIGHT:
 			return tr("MENU_CONTROLS_WHEEL_RIGHT")
 		_:
-			return tr("MENU_CONTROLS_MOUSE_BUTTON") + " " + var2str(index)
+			return tr("MENU_CONTROLS_MOUSE_BUTTON") + " " + str(index)
 
-func get_joypad_axis_name(axis, axis_value):
+func get_joypad_axis_name(axis: int, axis_value: float) -> String:
 	var axis_name = "+"
 	if axis_value < 0:
 		axis_name = "-"
-	
+
 	match axis:
 		JOY_ANALOG_LX:
 			axis_name += tr("MENU_CONTROLS_AXIS_X_LEFT")
@@ -38,11 +38,11 @@ func get_joypad_axis_name(axis, axis_value):
 		JOY_ANALOG_R2:
 			return tr("MENU_CONTROLS_TRIGGER_RIGHT")
 		_:
-			axis_name += tr("MENU_CONTROLS_AXIS_UNKNOWN") + " " + var2str(axis)
-	
+			axis_name += tr("MENU_CONTROLS_AXIS_UNKNOWN") + " " + str(axis)
+
 	return axis_name
 
-func get_joypad_button_name(button):
+func get_joypad_button_name(button: int) -> String:
 	# Joystick button indizes:
 	#      3
 	#    2   1
@@ -109,15 +109,16 @@ func get_joypad_button_name(button):
 			return tr("MENU_CONTROLS_GAMEPAD_START")
 		JOY_SELECT:
 			return tr("MENU_CONTROLS_GAMEPAD_SELECT")
-		_: return tr("MENU_CONTROLS_GAMEPAD_BUTTON") + " " + var2str(button)
+		_: return tr("MENU_CONTROLS_GAMEPAD_BUTTON") + " " + str(button)
 
-func get_button_name(event):
+func get_button_name(event: InputEvent) -> String:
 	if event is InputEventKey:
 		return OS.get_scancode_string(event.scancode)
 	elif event is InputEventMouseButton:
 		return get_mousebutton_name(event.button_index)
 	elif event is InputEventJoypadMotion:
-		return tr("MENU_CONTROLS_GAMEPAD") + " " + get_joypad_axis_name(event.axis, event.axis_value)
+		return tr("MENU_CONTROLS_GAMEPAD") + " " +\
+				get_joypad_axis_name(event.axis, event.axis_value)
 	elif event is InputEventJoypadButton:
 		return get_joypad_button_name(event.button_index)
 	else:

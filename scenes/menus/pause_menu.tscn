@@ -148,7 +148,6 @@ margin_left = -259.0
 margin_top = -296.0
 margin_right = 259.0
 margin_bottom = 296.0
-window_title = "Please Confirm..."
 dialog_text = "Another save has the same name. Do you want to override it?"
 
 [node name="OptionsWindow" type="PopupPanel" parent="."]
