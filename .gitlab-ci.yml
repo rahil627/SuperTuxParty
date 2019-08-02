@@ -13,7 +13,7 @@ build:linux:
     - mkdir build
     - godot --export "Linux/X11" "build/supertuxparty"
   only:
-    - dev
+    - dev@supertuxpary/supertuxparty
     - tags
 
 build:windows:
@@ -25,7 +25,7 @@ build:windows:
     - mkdir build
     - godot --export "Windows Desktop" "build/Supertuxparty.exe"
   only:
-    - dev
+    - dev@supertuxpary/supertuxparty
     - tags
 
 build:osx:
@@ -37,7 +37,7 @@ build:osx:
     - mkdir build
     - godot --export "Mac OSX" "build/supertuxparty.app"
   only:
-    - dev
+    - dev@supertuxpary/supertuxparty
     - tags
 
 build:plugins:
@@ -49,7 +49,7 @@ build:plugins:
     - mkdir -p build/plugins
     - godot --export "Resources" "build/plugins/default.pck"
   only:
-    - dev
+    - dev@supertuxpary/supertuxparty
     - tags
 
 build:sources:
@@ -60,7 +60,7 @@ build:sources:
   script:
     - zip -r super-tux-party-sources.zip *
   only:
-    - dev
+    - dev@supertuxpary/supertuxparty
     - tags
 
 license_test:
@@ -91,7 +91,7 @@ deploy_nightly:
     - chmod +x release.sh
     - ./release.sh supertuxparty/super-tux-party-nightly $CI_COMMIT_SHORT_SHA
   only:
-    - dev
+    - dev@supertuxparty/supertuxparty
 
 deploy_release:
   stage: deploy
