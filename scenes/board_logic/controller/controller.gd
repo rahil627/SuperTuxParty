@@ -626,8 +626,11 @@ func animation_ended(player_id: int) -> void:
 					# If the event we will trigger, does move a player,
 					# we need to ignore it.
 					_ignore_animation_ended = true
-					emit_signal("trigger_event", player, player.space)
-					yield(self, "event_completed")
+					if(len(self.get_signal_connection_list("trigger_event")) > 0):
+						emit_signal("trigger_event", player, player.space)
+						yield(self, "event_completed")
+					else:
+						yield(get_tree().create_timer(1), "timeout")
 					_ignore_animation_ended = false
 				NodeBoard.NODE_TYPES.BLUE:
 					player.cookies += 3
