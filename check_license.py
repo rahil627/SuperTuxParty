@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import re
 import os
 import sys
@@ -13,8 +13,8 @@ FILE_MARKDOWN = '### '
 
 BLACKLIST = []
 
-LICENSE_FILE = 'LICENSE-ART.md'
-FILE_EXTENSIONS = ['*.png','*.jpg','*.jpeg','*.escn','*.dae','*.obj','*.hdr','*.ttf','*.blend']
+LICENSE_FILE = ['LICENSE-ART.md', 'LICENSE-MUSIC.md']
+FILE_EXTENSIONS = ['*.png','*.jpg','*.jpeg','*.escn','*.dae','*.obj','*.hdr','*.ttf','*.blend','*.wav','*.mp3']
 
 def make_expand_shell_filter(shellpath):
     def expand_shell_filter(x):
@@ -46,23 +46,24 @@ for extension in FILE_EXTENSIONS:
 num_files = len(files)
 
 print("Checking %d files" % num_files)
-LICENSE_FILESIZE = os.stat(LICENSE_FILE).st_size
+LICENSE_FILESIZE = sum([os.stat(x).st_size for x in LICENSE_FILE])
 
-with open(LICENSE_FILE, 'r') as f:
-    with tqdm(total = LICENSE_FILESIZE, unit = 'B') as pbar:
-        current_dir = ''
-        for line in f:
-            if line.startswith(DIR_MARKDOWN):
-                current_dir = line[len(DIR_MARKDOWN):].strip()
-                expand_shell_filter = make_expand_shell_filter(current_dir)
-                files = [s for s in files if not expand_shell_filter(s)]
-            elif line.startswith(FILE_MARKDOWN):
-                current_files = map(str.strip, line[len(FILE_MARKDOWN):].split('|'))
-                
-                for name in current_files:
-                    expand_shell_filter = make_expand_shell_filter(os.path.normpath(("%s/%s" % (current_dir, name))))
+with tqdm(total = LICENSE_FILESIZE, unit = 'B') as pbar:
+    for x in LICENSE_FILE:
+        with open(x, 'r') as f:
+            current_dir = ''
+            for line in f:
+                if line.startswith(DIR_MARKDOWN):
+                    current_dir = line[len(DIR_MARKDOWN):].strip()
+                    expand_shell_filter = make_expand_shell_filter(current_dir)
                     files = [s for s in files if not expand_shell_filter(s)]
-            pbar.update(len(line))
+                elif line.startswith(FILE_MARKDOWN):
+                    current_files = map(str.strip, line[len(FILE_MARKDOWN):].split('|'))
+                    
+                    for name in current_files:
+                        expand_shell_filter = make_expand_shell_filter(os.path.normpath(("%s/%s" % (current_dir, name))))
+                        files = [s for s in files if not expand_shell_filter(s)]
+                pbar.update(len(line))
 
 blacklist_regex = re.compile('|'.join(BLACKLIST))
 print('\x1B[32mLicense found for %d files\x1B[0m' % (num_files - len(files)))

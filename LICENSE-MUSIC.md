@@ -1,4 +1,4 @@
-# assets/music/boards
+## assets/music/boards
 ### test board bgm.wav
 Public Domain by Cityfires
 
@@ -15,7 +15,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/one)
 
 License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 
-# assets/music/menus
+## assets/music/menus
 ### main menu.ogg
 
 Public Domain by Rezoner
@@ -26,7 +26,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/happy-arcade-tune
 
 License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 
-# assets/music/minigames
+## assets/music/minigames
 ### escape from lava.ogg
 Public Domain by [cynicmusic] [https://cynicmusic.com(https://cynicmusic.com) [https://pixelsphere.org](https://pixelsphere.org)
 
@@ -34,7 +34,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/battle-theme-a)
 
 License [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
 
-# assets/sounds/sfx
+## assets/sounds/sfx
 ### victory.ogg
 
 Public Domain by Matthew Pablo [https://matthewpablo.com](https://matthewpablo.com)
@@ -45,7 +45,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/lively-meadow-vic
 
 License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 
-# assets/sounds/ui
+## assets/sounds/ui
 ### click1.wav | click2.wav | rollover2.wav
 
 Public Domain by Kenney
