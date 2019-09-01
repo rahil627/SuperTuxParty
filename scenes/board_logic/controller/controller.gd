@@ -126,10 +126,7 @@ func _ready() -> void:
 	if player_turn <= players.size():
 		camera_focus = players[player_turn - 1]
 
-	if Global.award == Global.AWARD_TYPE.WINNER_ONLY:
-		COOKIES_FOR_CAKE = 20
-		$Screen/GetCake/Label.text = tr("CONTEXT_LABEL_BUY_CAKE") %\
-				[COOKIES_FOR_CAKE]
+	$Screen/GetCake/Label.text = tr("CONTEXT_LABEL_BUY_CAKE") % COOKIES_FOR_CAKE
 
 	# Initialize GUI.
 	if player_turn <= Global.amount_of_players:
