@@ -1,583 +1,542 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://plugins/boards/KDEValley/landscape/kdevalley.dae" type="PackedScene" id=1]
-[ext_resource path="res://assets/models/bridge/bridge_mesh.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://assets/models/bridge/bridge_diffuse.png" type="Texture" id=3]
-[ext_resource path="res://assets/models/buildings/OBJ/House2.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://assets/models/buildings/Textures/HouseTexture1.png" type="Texture" id=5]
-[ext_resource path="res://assets/models/buildings/OBJ/House.obj" type="ArrayMesh" id=6]
-[ext_resource path="res://assets/models/buildings/Textures/HouseTexture2.png" type="Texture" id=7]
-[ext_resource path="res://assets/models/buildings/OBJ/House3.obj" type="ArrayMesh" id=8]
-[ext_resource path="res://assets/models/buildings/OBJ/Flat.obj" type="ArrayMesh" id=9]
-[ext_resource path="res://assets/models/buildings/OBJ/Hospital.obj" type="ArrayMesh" id=10]
-[ext_resource path="res://assets/models/buildings/Textures/Hotel.png" type="Texture" id=11]
-[ext_resource path="res://assets/models/buildings/OBJ/Shop.obj" type="ArrayMesh" id=12]
-[ext_resource path="res://assets/models/buildings/Textures/Shop.png" type="Texture" id=13]
-[ext_resource path="res://scenes/board_logic/controller/controller.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/board_logic/player_board/player_board.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/board_logic/node/node.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/music/boards/kdevalley.wav" type="AudioStream" id=17]
+[ext_resource path="res://plugins/boards/KDEValley/board.gd" type="Script" id=1]
+[ext_resource path="res://plugins/boards/KDEValley/landscape/kdevalley.dae" type="PackedScene" id=2]
+[ext_resource path="res://assets/models/still_water/water_material.tres" type="Material" id=3]
+[ext_resource path="res://assets/models/tree/tree.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://scenes/board_logic/controller/controller.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/board_logic/player_board/player_board.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/board_logic/node/node.tscn" type="PackedScene" id=7]
+[ext_resource path="res://plugins/boards/KDEValley/dragons/dragon1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://plugins/boards/KDEValley/dragons/dragon.gd" type="Script" id=9]
+[ext_resource path="res://plugins/boards/KDEValley/dragons/dragon2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/music/boards/kdevalley.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/speech_dialog/speech_dialog.tscn" type="PackedScene" id=12]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 3 )
-roughness = 0.0
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_texture = ExtResource( 5 )
-roughness = 0.0
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 7 )
-roughness = 0.0
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 5 )
-roughness = 0.0
-
-[sub_resource type="SpatialMaterial" id=5]
-albedo_texture = ExtResource( 5 )
-roughness = 0.0
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_texture = ExtResource( 11 )
-roughness = 0.0
-
-[sub_resource type="SpatialMaterial" id=7]
-albedo_texture = ExtResource( 13 )
-roughness = 0.0
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 100, 100 )
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
 
-[node name="Background" parent="." instance=ExtResource( 1 )]
+[node name="Background" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 
-[node name="Bridge1" type="MeshInstance" parent="."]
-transform = Transform( -0.347296, 0, 1.96962, 0, 2, 0, -1.96962, 0, -0.347296, -12.3731, 16.2442, -0.27198 )
-mesh = ExtResource( 2 )
-material/0 = SubResource( 1 )
+[node name="Water" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 3 )
 
-[node name="Bridge2" type="MeshInstance" parent="."]
-transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -5.48589, 6.86266, 6.3917 )
-mesh = ExtResource( 2 )
-material/0 = SubResource( 1 )
+[node name="Decoration" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="Bridge3" type="MeshInstance" parent="."]
-transform = Transform( 1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 35.1897, 6.86266, 22.6938 )
-mesh = ExtResource( 2 )
-material/0 = SubResource( 1 )
-
-[node name="Bridge4" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6822, 6.86266, 22.6938 )
-mesh = ExtResource( 2 )
-material/0 = SubResource( 1 )
-
-[node name="Building1" type="MeshInstance" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -1.67225, 6.48199, 45.059 )
+[node name="Tree" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -29.2382, 0.981702, 6.92944 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 2 )
+material/0 = null
+material/1 = null
 
-[node name="Building2" type="MeshInstance" parent="."]
-transform = Transform( -2, 0, -6.51683e-07, 0, 2, 0, 6.51683e-07, 0, -2, -1.67224, 6.48199, 51.3237 )
+[node name="Tree2" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.8816, 1.35246, 9.45717 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 2 )
+material/0 = null
+material/1 = null
 
-[node name="Building3" type="MeshInstance" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -7.01041, 6.48199, 41.465 )
+[node name="Tree3" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.8816, 1.42405, 4.58257 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 2 )
+material/0 = null
+material/1 = null
 
-[node name="Building4" type="MeshInstance" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4.94444, 6.48199, 45.3755 )
+[node name="Tree5" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.8816, 1.42405, -1.30558 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 2 )
+material/0 = null
+material/1 = null
 
-[node name="Building5" type="MeshInstance" parent="."]
-transform = Transform( -3.25841e-07, 0, 2, 0, 2, 0, -2, 0, -3.25841e-07, -12.1257, 6.48199, 47.7496 )
-mesh = ExtResource( 6 )
-material/0 = SubResource( 3 )
+[node name="Tree17" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.4398, 1.42405, 1.66645 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Building6" type="MeshInstance" parent="."]
-transform = Transform( -2, 0, -6.51683e-07, 0, 2, 0, 6.51683e-07, 0, -2, 4.9782, 6.48199, 51.8594 )
-mesh = ExtResource( 8 )
-material/0 = SubResource( 4 )
+[node name="Tree6" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.3949, 1.42405, -7.14496 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Building7" type="MeshInstance" parent="."]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 16.3995, 6.48199, 51.8594 )
-mesh = ExtResource( 9 )
-material/0 = SubResource( 5 )
+[node name="Tree16" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -26.1661, 1.42405, -5.29571 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Building8" type="MeshInstance" parent="."]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 24.1117, 6.48199, 51.8594 )
-mesh = ExtResource( 9 )
-material/0 = SubResource( 5 )
+[node name="Tree7" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.3949, 1.88704, -15.2009 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Building9" type="MeshInstance" parent="."]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 24.1117, 6.48199, 45.3048 )
-mesh = ExtResource( 9 )
-material/0 = SubResource( 5 )
+[node name="Tree18" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -21.5821, 1.81835, -12.3124 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Building10" type="MeshInstance" parent="."]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 16.2624, 6.48199, 45.3048 )
-mesh = ExtResource( 9 )
-material/0 = SubResource( 5 )
+[node name="Tree22" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.800537, 1.81835, -20.6216 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Hospital" type="MeshInstance" parent="."]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -22.1561, 6.48199, 46.8668 )
-mesh = ExtResource( 10 )
-material/0 = SubResource( 6 )
+[node name="Tree23" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.54677, 1.81835, -22.35 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Shop" type="MeshInstance" parent="."]
-transform = Transform( 1.19428, 0, -1.60427, 0, 2, 0, 1.60427, 0, 1.19428, -36.4828, 6.48199, 55.8901 )
-mesh = ExtResource( 12 )
-material/0 = SubResource( 7 )
+[node name="Tree24" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.54703, 2.28698, -22.35 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Shop2" type="MeshInstance" parent="."]
-transform = Transform( 1.99811, 0, 0.086907, 0, 2, 0, -0.086907, 0, 1.99811, 17.5155, 6.48199, 8.41757 )
-mesh = ExtResource( 12 )
-material/0 = SubResource( 7 )
+[node name="Tree25" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.5371, 1.91173, -22.35 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
 
-[node name="Controller" parent="." instance=ExtResource( 14 )]
+[node name="Tree26" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.5371, 1.86494, -18.9046 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree27" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.00112, 1.61472, -18.9046 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree19" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -26.2025, 1.80864, -9.90665 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree8" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.288674, 2.09101, 14.5891 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree9" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 13.7943, 1.5759, 20.9006 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree10" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.45846, 1.5759, 18.0946 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree11" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.45846, 1.5759, 22.005 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree12" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.84636, 1.90032, 23.7548 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree13" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.179826, 2.97231, 27.1998 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree14" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.092, 1.43098, 19.5057 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree15" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.4441, 0.931494, 18.0142 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree4" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.6536, 0.981702, 16.5553 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree20" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.8745, 0.981702, 12.8529 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Tree21" type="MeshInstance" parent="Decoration"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -31.0632, 1.08728, 18.5376 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="Controller" parent="." instance=ExtResource( 5 )]
+COOKIES_FOR_CAKE = 20
 MAX_TURNS = 30
-start_node = NodePath("../Nodes/Node")
+start_node = NodePath("../Nodes/Start")
 
-[node name="Player1" parent="." instance=ExtResource( 15 )]
+[node name="Player1" parent="." instance=ExtResource( 6 )]
 
-[node name="Player2" parent="." instance=ExtResource( 15 )]
+[node name="Player2" parent="." instance=ExtResource( 6 )]
 
-[node name="Player3" parent="." instance=ExtResource( 15 )]
+[node name="Player3" parent="." instance=ExtResource( 6 )]
 
-[node name="Player4" parent="." instance=ExtResource( 15 )]
-
-[node name="Nodes" type="Spatial" parent="."]
-
-[node name="Node" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48638, 6.47844, 47.829 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [  ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node1" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0651, 7.06055, 10.8337 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [  ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node2" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7851, 7.06055, 13.7553 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node1") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node3" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.582, 7, 15.8086 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node2") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node4" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1087, 6.62132, 10.2811 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node3") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node5" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3153, 6.94616, 7.17693 )
-type = 3
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node4") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node6" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.1564, 6.67725, 0 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node5") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node7" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6963, 10.4752, 0 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node6") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node8" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8655, 13.2604, 0 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node7") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node9" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9674, 15.914, 1.96283 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node8") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node10" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9144, 16.0313, 1.41373 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node9") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node11" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45687, 15.901, -2.04827 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node10") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node12" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04156, 16.0105, -1.65163 )
-type = 3
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node11") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node13" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3725, 15.951, 0 )
-type = 0
-potential_cake = true
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node12") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node14" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3196, 15.8425, 0 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node13") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node15" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.1179, 11.5202, 0 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node14") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node16" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0421, 6.52622, -7.90454 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node15") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node17" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2313, 6.56285, 0 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node16") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node18" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.48, 6.63136, 8.43849 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node17") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node19" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0704, 6.58536, 10.5099 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node18") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node20" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1337, 6.56937, 10.6042 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node19") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node21" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4724, 6.72805, 11.667 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node20") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node22" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.11044, 6.5669, 8.12328 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node21") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node23" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.215, 6.71502, 5.19847 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node22") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node24" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1333, 6.68137, 7.40871 )
-type = 3
-potential_cake = false
-next_nodes = [ NodePath("../Node1") ]
-prev_nodes = [ NodePath("../Node23") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node25" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7209, 6.59502, 30.6662 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node19") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node26" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8288, 6.57946, 32.0431 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node25") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node27" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1506, 6.47996, 34.9776 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node26") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node28" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4396, 6.52417, 41.8504 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node27") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node29" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.3806, 6.50242, 53.9706 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node28") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node30" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.7663, 6.49195, 61.2349 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node29") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node31" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.881, 6.59052, 62.546 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node30") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node32" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3571, 6.53406, 57.5745 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node31") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node33" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3207, 6.4805, 59.0873 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node32") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node34" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51243, 6.49873, 58.1131 )
-type = 0
-potential_cake = true
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node33") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node35" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21381, 6.5229, 55.3016 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node34"), NodePath("../Node") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node36" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8342, 6.64277, 58.9373 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node35") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node37" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6529, 6.73244, 64.4418 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node36") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node38" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4777, 6.59334, 58.3242 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node37") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node39" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6785, 6.46242, 47.4022 )
-type = 1
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node38") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node40" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.093, 6.48792, 36.8902 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node39") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node41" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5729, 6.48352, 29.3387 )
-type = 0
-potential_cake = false
-next_nodes = [ NodePath("../Node3") ]
-prev_nodes = [ NodePath("../Node40") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node42" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1435, 6.57946, 33.9416 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node25") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node43" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2651, 6.63596, 38.5346 )
-type = 3
-potential_cake = true
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node42") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node44" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72485, 6.47892, 39.8479 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node43") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node45" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1485, 6.55598, 32.6421 )
-type = 0
-potential_cake = false
-next_nodes = [  ]
-prev_nodes = [ NodePath("../Node44") ]
-amount_of_items_sold = 8
-custom_items = [  ]
-
-[node name="Node46" parent="Nodes" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.909, 6.49943, 30.0195 )
-type = 1
-potential_cake = false
-next_nodes = [ NodePath("../Node41") ]
-prev_nodes = [ NodePath("../Node45") ]
-amount_of_items_sold = 8
-custom_items = [  ]
+[node name="Player4" parent="." instance=ExtResource( 6 )]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 38.1499, 34.4648 )
 
+[node name="Nodes" type="Spatial" parent="."]
+
+[node name="Node" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0988, 1.95664, 17.0239 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node2") ]
+prev_nodes = [ NodePath("../Node22") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node2" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2668, 1.57391, 13.3766 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node3") ]
+prev_nodes = [ NodePath("../Node"), NodePath("../Node27"), NodePath("../Start") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node3" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3505, 1.5506, 8.80358 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node4") ]
+prev_nodes = [ NodePath("../Node2") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node4" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9056, 1.36818, 3.65009 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node5") ]
+prev_nodes = [ NodePath("../Node3") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node5" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3293, 1.5281, -3.74082 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node6") ]
+prev_nodes = [ NodePath("../Node4") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node6" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8773, 2.001, -10.0095 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node7") ]
+prev_nodes = [ NodePath("../Node5") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node7" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5895, 2.23753, -12.9352 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node8") ]
+prev_nodes = [ NodePath("../Node6") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node8" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69606, 2.31381, -14.006 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node9") ]
+prev_nodes = [ NodePath("../Node7") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node9" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2783, 2.26341, -13.9925 )
+type = 3
+potential_cake = false
+next_nodes = [ NodePath("../Node10") ]
+prev_nodes = [ NodePath("../Node8") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node10" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 0.999996, 0.0028317, 0, -0.0028317, 0.999996, 0, 0, 0, 1, 8.49545, 1.97752, -13.2208 )
+type = 0
+potential_cake = true
+next_nodes = [ NodePath("../dragon1") ]
+prev_nodes = [ NodePath("../Node9") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="dragon1" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0739, 1.86993, -10.266 )
+type = 2
+potential_cake = false
+next_nodes = [ NodePath("../Node12") ]
+prev_nodes = [ NodePath("../Node10") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Dragon" parent="Nodes/dragon1" instance=ExtResource( 8 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0.5, 0.25, -0.8 )
+script = ExtResource( 9 )
+
+[node name="Node12" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.203, 1.87857, -3.11643 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node13"), NodePath("../Node28") ]
+prev_nodes = [ NodePath("../dragon1") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node13" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2983, 1.88364, 1.24555 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node14") ]
+prev_nodes = [ NodePath("../Node12") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node14" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8198, 1.81082, 6.52683 )
+type = 0
+potential_cake = true
+next_nodes = [ NodePath("../Node15") ]
+prev_nodes = [ NodePath("../Node13") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node15" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2303, 1.90818, 10.65 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node16") ]
+prev_nodes = [ NodePath("../Node14") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node16" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 0.999999, -0.0011796, 0, 0.0011796, 0.999999, 7.31428, 2.40839, 13.7531 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node17"), NodePath("../Node23") ]
+prev_nodes = [ NodePath("../Node15"), NodePath("../Node34") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node17" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10904, 2.9049, 21.2496 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node18") ]
+prev_nodes = [ NodePath("../Node16") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node18" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95889, 2.9082, 28.6352 )
+type = 3
+potential_cake = false
+next_nodes = [ NodePath("../Node19") ]
+prev_nodes = [ NodePath("../Node17") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node19" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2414, 2.63918, 30.8671 )
+type = 0
+potential_cake = true
+next_nodes = [ NodePath("../Node20") ]
+prev_nodes = [ NodePath("../Node18") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node20" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6293, 2.53446, 30.4795 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node21") ]
+prev_nodes = [ NodePath("../Node19") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node21" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4192, 1.80357, 26.9886 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node22") ]
+prev_nodes = [ NodePath("../Node20") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node22" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0953, 2.11758, 21.9052 )
+type = 4
+potential_cake = false
+next_nodes = [ NodePath("../Node") ]
+prev_nodes = [ NodePath("../Node21") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node23" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43152, 2.08069, 11.7725 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node24") ]
+prev_nodes = [ NodePath("../Node16") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node24" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42895, 1.80113, 10.3766 )
+type = 3
+potential_cake = false
+next_nodes = [ NodePath("../Node25") ]
+prev_nodes = [ NodePath("../Node23") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node25" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85059, 1.49862, 10.1411 )
+type = 0
+potential_cake = true
+next_nodes = [ NodePath("../dragon2") ]
+prev_nodes = [ NodePath("../Node24") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="dragon2" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4944, 1.75926, 12.2076 )
+type = 2
+potential_cake = false
+next_nodes = [ NodePath("../Node27") ]
+prev_nodes = [ NodePath("../Node25") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Dragon" parent="Nodes/dragon2" instance=ExtResource( 10 )]
+transform = Transform( 0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -0.3, 0.25, -0.9 )
+script = ExtResource( 9 )
+
+[node name="Node27" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6773, 1.76279, 13.6781 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node2") ]
+prev_nodes = [ NodePath("../dragon2") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node28" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6091, 2.20527, -1.01131 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node29") ]
+prev_nodes = [ NodePath("../Node12") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node29" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6753, 1.6406, 2.17441 )
+type = 4
+potential_cake = false
+next_nodes = [ NodePath("../Node30") ]
+prev_nodes = [ NodePath("../Node28") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node30" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3111, 1.60384, 6.37827 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node31") ]
+prev_nodes = [ NodePath("../Node29") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node31" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4954, 1.69534, 11.1191 )
+type = 0
+potential_cake = true
+next_nodes = [ NodePath("../Node32") ]
+prev_nodes = [ NodePath("../Node30") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node32" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2916, 1.90289, 15.1638 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node33") ]
+prev_nodes = [ NodePath("../Node31") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node33" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9468, 2.03396, 16.5023 )
+type = 1
+potential_cake = false
+next_nodes = [ NodePath("../Node34") ]
+prev_nodes = [ NodePath("../Node32") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Node34" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1955, 2.14555, 16.1117 )
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node16") ]
+prev_nodes = [ NodePath("../Node33") ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
+[node name="Start" parent="Nodes" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5583, 1.50459, 12.6072 )
+visible = false
+type = 0
+potential_cake = false
+next_nodes = [ NodePath("../Node2") ]
+prev_nodes = [  ]
+amount_of_items_sold = 8
+custom_items = [  ]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 17 )
+stream = ExtResource( 11 )
 autoplay = true
 
+[node name="SpeechDialog" parent="." instance=ExtResource( 12 )]
+[connection signal="trigger_event" from="Controller" to="." method="handle_event"]

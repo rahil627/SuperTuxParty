@@ -124,3 +124,5 @@ MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS,Mute on Window Unfocus,Muet en changer de f�
 MENU_OPTIONS_SYSTEM_DEFAULT,System Default,défaut du système,,System Standard,,Padrão do Sistema,,,,,,,,,,,,,,,,,,,,,,
 MENU_OPTIONS_VISUAL,Visual,Vidéo,,Aussehen,,Visual,,,,,,,,,,,,,,,,,,,,,,
 MENU_OPTIONS_VSYNC,V-sync,VSync,V-sync,Bildschirmsynchronisation,VSync,Vsync,Vsync,Вертикальная синхронизация,Vsync,Dikey Senkronizasyon (Vsync),Vsync,Vsync,Vsync,Vsync,Vsync,Vsync,垂直同期,垂直同步,垂直同步,수직 동기,Vertikální synchronizace obrazu,V-sync,V-sync,V-sync,Отвесна синхронизация,Vsync,تزامن اللقطات مع الشاشة V-sync,V-sync
+DIALOG_YES,Yes,Oui,,Ja,,,,,,,,,,,,,,,,,,,,,,,,
+DIALOG_NO,No,Non,,Nein,,,,,,,,,,,,,,,,,,,,,,,,

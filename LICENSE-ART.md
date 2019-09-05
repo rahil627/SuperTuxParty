@@ -34,30 +34,6 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## assets/models/buildings/Blends
-### *.blend
-Public domain by quaternius
-
-Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-## assets/models/buildings/OBJ
-### *.obj
-Public domain by quaternius
-
-Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-## assets/models/buildings/Textures
-### *.png
-Public domain by quaternius
-
-Retrieved from [Open Game Art](https://opengameart.org/content/lowpoly-buildings)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
 ## assets/models/door/
 ### WoodenDoor.blend | WoodenDoor.dae
 Copyright Danimal and Yughues
@@ -142,6 +118,13 @@ Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## scenes/speech_dialog
+### dialog_box.png | dialog_box_focus.png
+
+Copyright © 2019 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## scenes/team_indicator
 ### indicator.png
 
@@ -155,6 +138,29 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/boards/KDEValley/dragons
+### dragon\*_head.png | eyes.png
+
+Copyright © 2019 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### dragon\*.escn
+
+Copyright © 2019 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### dragon\*_icon.png
+
+Copyright © 2019 Néd J
+
+Modified by Florian Kothmeier 2019
+
+Retrieved from: [OpenGameArt](https://opengameart.org/content/mascots-and-friends-iconset-2)
+
+License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/boards/test/islands
 ### island1.blend | island1.dae | island2.blend | island2.dae
@@ -170,6 +176,13 @@ Public domain by MrCraft Animation
 Retrieved from [OpenGameArt](https://opengameart.org/content/sand-texture-pack)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/boards/KDEValley/landscape
+### kdevalley.dae
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/characters/Tux
 ### character.dae | tux_texture.png | tux.blend | tux.escn
@@ -604,6 +617,27 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## assets/models/tree
+### tree.obj | tree_snow.obj
+Public Domain by Mitylernal
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/low-poly-tree-1)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+## assets/models/KDE Dragon
+### dragon.blend
+
+Copyright © 2019 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### eyes.png | Head.png | Scarf.png
+
+Copyright © 2019 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## plugins/minigames/knock_off/player_ball_material
 ### paper02_col.jpg | paper02_nrm.jpg | paper02_rgh.jpg
 
@@ -666,22 +700,6 @@ Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
 License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-### grass.png
-
-Copyright © Lamoot
-
-Retrieved from [OpenGameArt](https://opengameart.org/content/grass-001)
-
-License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-
-### rock.png
-
-Copyright © Sindwiller
-
-Retrieved from [OpenGameArt](https://opengameart.org/content/generic-rock-texture)
-
-License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
-
 ### delete_save.png
 
 Copyright © Godot Engine
@@ -705,4 +723,20 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/3-crate-textures-w-
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
+
+## assets/textures/grass
+### grass_\*
+Public domain by rubberduck
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/handpainted-grass-texture-pack)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+## assets/textures/rock
+### rock_05_*
+Public domain by rubberduck
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/handpainted-rock-texture)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
