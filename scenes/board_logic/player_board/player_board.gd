@@ -5,6 +5,10 @@ const GUI_TIMER = 0.2
 
 const MAX_ITEMS = 3
 
+class WalkingState:
+	var space: NodeBoard
+	var position: Vector3
+
 # The position this node is walking to, used for animation
 var destination := []
 
@@ -59,7 +63,7 @@ func _physics_process(delta: float) -> void:
 			$Model/AnimationPlayer.play("walk")
 			is_walking = true
 
-		var dir: Vector3 = destination[0] - translation
+		var dir: Vector3 = destination[0].position - translation
 		var movement: Vector3 = MOVEMENT_SPEED * dir.normalized() * delta
 		if movement.length_squared() <= dir.length_squared():
 			translation += movement
@@ -69,8 +73,8 @@ func _physics_process(delta: float) -> void:
 		target_rotation = atan2(dir.normalized().x, dir.normalized().z)
 
 		if dir.length() < 0.01:
-			destination.pop_front()
-			emit_signal("walking_step")
+			var state = destination.pop_front()
+			emit_signal("walking_step", state.space)
 
 		if destination.size() == 0:
 			target_rotation = 0
