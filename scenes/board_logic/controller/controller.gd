@@ -330,6 +330,8 @@ func create_choose_path_arrows(player, previous_space) -> void:
 
 	end_turn = false
 
+	# Undo last step, to update it with a new location
+	player.destination.pop_back()
 	if not previous_space == player.space:
 		update_space(previous_space)
 		update_space(player.space)
@@ -339,19 +341,18 @@ func create_choose_path_arrows(player, previous_space) -> void:
 # Moves a player num spaces forward and stops when a cake spot is encountered.
 func do_step(player, num: int) -> void:
 	if num <= 0:
-		player_turn += 1
-		wait_for_animation = false
-		_on_Roll_pressed()
+		update_space(player.space)
+		do_action = TURN_ACTION.LAND_ON_SPACE
 	else:
 		# Adds each animation step to the player_board.gd script.
 		# The last step is added during update_space(player.space).
 		var previous_space = player.space
-		for i in range(num - 1):
+		var i = 0
+		while i < num - 1:
 			# If there are multiple branches.
 			if player.space.next.size() > 1 and next_node == null:
 				create_choose_path_arrows(player, previous_space)
-				# Player has not moved a space yet so only subtract with i.
-				steps_remaining = num - (i)
+				steps_remaining = num - i
 				return
 			elif player.space.next.size() > 1 and not next_node == null:
 				player.space = next_node
@@ -359,12 +360,15 @@ func do_step(player, num: int) -> void:
 			elif player.space.next.size() == 1:
 				player.space = player.space.next[0]
 
+			# If the space is a special space, we need to count it as visited
+			if player.space.is_visible_space():
+				i += 1
 			# If player passes a cake-spot.
 			if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
 				do_action = TURN_ACTION.BUY_CAKE
 
 				end_turn = false
-				steps_remaining = num - (i + 1)
+				steps_remaining = num - i
 
 				update_space(previous_space)
 				update_space(player.space)
@@ -375,7 +379,7 @@ func do_step(player, num: int) -> void:
 				do_action = TURN_ACTION.SHOP
 
 				end_turn = false
-				steps_remaining = num - (i + 1)
+				steps_remaining = num - i
 
 				update_space(previous_space)
 				update_space(player.space)
@@ -388,38 +392,72 @@ func do_step(player, num: int) -> void:
 				if players_on_space > 0:
 					offset = PLAYER_TRANSLATION[players_on_space]
 
-				player.destination.append(player.space.translation + offset)
+				var walking_state = PLAYER.WalkingState.new()
+				walking_state.space = player.space
+				walking_state.position = player.space.translation + offset
+				player.destination.append(walking_state)
 
-		# Last step the player makes.
-		# ===============================
-		# If there are multiple branches.
-		if player.space.next.size() > 1 and next_node == null:
-			create_choose_path_arrows(player, previous_space)
-			steps_remaining = 1
-			return
-		elif player.space.next.size() > 1 and not next_node == null:
-			player.space = next_node
-			next_node = null
-		elif player.space.next.size() == 1:
-			player.space = player.space.next[0]
+		while true:
+			# Last step the player makes.
+			# ===============================
+			# If there are multiple branches.
+			if player.space.next.size() > 1 and next_node == null:
+				create_choose_path_arrows(player, previous_space)
+				steps_remaining = 1
+				return
+			elif player.space.next.size() > 1 and not next_node == null:
+				player.space = next_node
+				next_node = null
+			elif player.space.next.size() == 1:
+				player.space = player.space.next[0]
 
-		if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
+			if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
 
-			do_action = TURN_ACTION.BUY_CAKE
+				do_action = TURN_ACTION.BUY_CAKE
 
-			end_turn = false
-			steps_remaining = 0
+				end_turn = false
+				if player.space.is_visible_space():
+					steps_remaining = 0
+				else:
+					steps_remaining = 1
 
-			update_space(previous_space)
-			update_space(player.space)
+				update_space(previous_space)
+				update_space(player.space)
 
-			return
+				return
+			elif player.space.type == NodeBoard.NODE_TYPES.SHOP:
+				do_action = TURN_ACTION.SHOP
 
-		# Reposition figures.
-		update_space(previous_space)
-		update_space(player.space)
+				end_turn = false
+				if player.space.is_visible_space():
+					steps_remaining = 0
+				else:
+					steps_remaining = 1
 
-		do_action = TURN_ACTION.LAND_ON_SPACE
+				update_space(previous_space)
+				update_space(player.space)
+
+				return
+
+			if player.space.is_visible_space():
+				# Reposition figures.
+				update_space(previous_space)
+				update_space(player.space)
+
+				do_action = TURN_ACTION.LAND_ON_SPACE
+				return
+			else:
+				var players_on_space = get_players_on_space(player.space) - 1
+				var offset = EMPTY_SPACE_PLAYER_TRANSLATION
+
+				if players_on_space > 0:
+					offset = PLAYER_TRANSLATION[players_on_space]
+
+				var walking_state = PLAYER.WalkingState.new()
+				walking_state.space = player.space
+				walking_state.position = player.space.translation + offset
+				player.destination.append(walking_state)
+
 
 func update_space(space) -> void:
 	var num := 0
@@ -431,7 +469,10 @@ func update_space(space) -> void:
 			if max_num > 1:
 				offset = PLAYER_TRANSLATION[num]
 
-			player.destination.append(player.space.translation + offset)
+			var walking_state = PLAYER.WalkingState.new()
+			walking_state.space = player.space
+			walking_state.position = player.space.translation + offset
+			player.destination.append(walking_state)
 			num += 1
 
 func raise_event(name: String, pressed: bool) -> void:
@@ -681,22 +722,11 @@ func animation_ended(player_id: int) -> void:
 						show_minigame_info()
 
 					return
-				NodeBoard.NODE_TYPES.SHOP:
-					if not player.is_ai:
-						open_shop(player)
-						return
-					else:
-						ai_do_shopping(player)
-						yield(get_tree().create_timer(1), "timeout")
 
 		player_turn += 1
 		wait_for_animation = false
 		_on_Roll_pressed()
 	else:
-		if do_action == TURN_ACTION.CHOOSE_PATH:
-			step_count += 1
-			$Screen/Stepcounter.text = var2str(step_count)
-
 		if not player.is_ai:
 			wait_for_animation = true
 
@@ -723,11 +753,12 @@ func animation_ended(player_id: int) -> void:
 
 			do_step(players[player_turn - 1], steps_remaining)
 
-func animation_step(player_id: int) -> void:
+func animation_step(space: NodeBoard, player_id: int) -> void:
 	if player_id != player_turn:
 		return
 
-	step_count -= 1
+	if space.is_visible_space():
+		step_count -= 1
 
 	if step_count > 0:
 		$Screen/Stepcounter.text = var2str(step_count)
@@ -1086,6 +1117,28 @@ func _on_item_select(player, item) -> void:
 
 signal space_selected
 
+func get_next_spaces(space: NodeBoard):
+	var result = []
+
+	for p in space.next:
+		if p.is_visible_space():
+			result.append(p)
+		else:
+			result += get_next_spaces(p)
+
+	return result
+
+func get_prev_spaces(space: NodeBoard):
+	var result = []
+
+	for p in space.prev:
+		if p.is_visible_space():
+			result.append(p)
+		else:
+			result += get_prev_spaces(p)
+
+	return result
+
 func select_space(player, max_distance: int) -> void:
 	if player.is_ai:
 		# Select random space in front of or behind player
@@ -1094,14 +1147,21 @@ func select_space(player, max_distance: int) -> void:
 
 		if distance > 0:
 			while distance > 0:
-				selected_space = selected_space.next[randi() %\
-						selected_space.next.size()]
+				var possible_spaces = get_next_spaces(selected_space)
+				if possible_spaces.size() == 0:
+					break
+
+				selected_space = possible_spaces[randi() %\
+						possible_spaces.size()]
 				distance -= 1
 		else:
 			while distance < 0:
-				selected_space = selected_space.prev[randi() %\
-						selected_space.prev.size()]
+				var possible_spaces = get_prev_spaces(selected_space)
+				if possible_spaces.size() == 0:
+					break
 
+				selected_space = possible_spaces[randi() %\
+						possible_spaces.size()]
 				distance += 1
 
 		yield(get_tree().create_timer(1), "timeout")
@@ -1129,7 +1189,7 @@ func show_select_space_arrows() -> void:
 	var previous = keep_arrow
 
 	if selected_space_distance < select_space_max_distance:
-		for node in selected_space.next:
+		for node in get_next_spaces(selected_space):
 			var arrow = preload("res://scenes/board_logic/node/arrow/" +\
 					"arrow.tscn").instance()
 			var dir: Vector3 = node.translation - selected_space.translation
@@ -1150,7 +1210,7 @@ func show_select_space_arrows() -> void:
 			previous = arrow
 
 	if selected_space_distance > -select_space_max_distance:
-		for node in selected_space.prev:
+		for node in get_prev_spaces(selected_space):
 			var arrow = preload("res://scenes/board_logic/node/arrow/" +\
 					"arrow.tscn").instance()
 			var dir: Vector3 = node.translation - selected_space.translation

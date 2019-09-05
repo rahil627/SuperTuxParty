@@ -43,6 +43,18 @@ var material := SpatialMaterial.new()
 # Radius of a node, used for drawing arrows in the editor.
 const NODE_RADIUS = 1
 
+export(bool) var _visible = true setget set_hidden
+
+func set_hidden(v: bool):
+	_visible = v
+	$Model.visible = v
+
+func set_visible(v: bool):
+	set_hidden(v)
+
+func is_visible_space() -> bool:
+	return _visible
+
 func _ready() -> void:
 	# Load nodes that couldn't be loaded by the editor.
 	# Reason: The exported data is assigned to the node when opening the scene
@@ -295,7 +307,8 @@ func _process(_delta: float) -> void:
 				if dir.length() == 0:
 					continue
 
-				dir *= (dir.length() - NODE_RADIUS) / dir.length()
+				if node.visible:
+					dir *= (dir.length() - NODE_RADIUS) / dir.length()
 				var offset: Vector3 =\
 						0.25 * Vector3(0, 1, 0).cross(dir.normalized())
 				$EditorLines.add_vertex(offset)
@@ -318,7 +331,8 @@ func _process(_delta: float) -> void:
 				if dir.length() == 0:
 					continue
 
-				dir *= (dir.length() - NODE_RADIUS) / dir.length()
+				if node.visible:
+					dir *= (dir.length() - NODE_RADIUS) / dir.length()
 				var offset = 0.25 * Vector3(0, 1, 0).cross(dir.normalized())
 				$EditorLines.add_vertex(offset)
 				$EditorLines.add_vertex(dir + offset)
