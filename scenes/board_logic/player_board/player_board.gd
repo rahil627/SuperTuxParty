@@ -64,7 +64,7 @@ func teleport_to(new_space: Spatial) -> void:
 	space = new_space
 	controller.update_space(old_space)
 	controller.update_space(new_space)
-	translation = destination.back()
+	translation = destination.back().position
 	destination.clear()
 
 func _physics_process(delta: float) -> void:
