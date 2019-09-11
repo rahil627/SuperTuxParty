@@ -31,7 +31,7 @@ export(Array, String, FILE, "*.gd") var custom_items = []
 var next
 var prev
 
-var cake := false
+var cake := false setget set_active_cake
 
 # An item that was placed onto this node.
 var trap: Item setget set_trap
@@ -98,6 +98,14 @@ func set_cake(enabled: bool) -> void:
 	else:
 		if Engine.editor_hint and has_node("Cake"):
 			$Cake.hide()
+
+# Sets wether this node is the currently active cake spot
+func set_active_cake(enabled: bool) -> void:
+	cake = enabled
+	if cake:
+		$Cake.show()
+	else:
+		$Cake.hide()
 
 # This function translates the NodePath objects used by the editor to the
 # actual nodes.

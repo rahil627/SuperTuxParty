@@ -107,7 +107,7 @@ func _ready() -> void:
 			p.space = get_node(start_node)
 			p.translation = p.space.translation + PLAYER_TRANSLATION[i-2]
 
-	Global.load_board_state()
+	Global.load_board_state(self)
 
 	if player_turn <= players.size():
 		camera_focus = players[player_turn - 1]
@@ -131,6 +131,16 @@ func _ready() -> void:
 		$Screen/MinigameInformation.show_minigame_info(current_minigame, players)
 	else:
 		_on_Roll_pressed()
+
+func relocate_cake():
+	var cake_nodes: Array = get_tree().get_nodes_in_group("cake_nodes")
+	# Randomly place cake spot on board.
+	if cake_nodes.size() > 0:
+		if Global.cake_space >= 0:
+			cake_nodes[Global.cake_space].cake = false
+		Global.cake_space = randi() % cake_nodes.size()
+		var cake_node: Spatial = cake_nodes[Global.cake_space]
+		cake_node.cake = true
 
 # Function to check if the next player can roll or not.
 func _on_Roll_pressed() -> void:
@@ -507,20 +517,21 @@ func continue() -> void:
 # Gets the reference to the node, on which the cake currently can be
 # collected
 func get_cake_space() -> NodeBoard:
-	return get_tree().get_nodes_in_group("cake_nodes")[Global.cookie_space]
+	return get_tree().get_nodes_in_group("cake_nodes")[Global.cake_space]
 
 func buy_cake(player: Spatial) -> void:
 	if player.cookies >= COOKIES_FOR_CAKE:
 		if not player.is_ai:
 			$Screen/Cake.show_cake()
-			yield($Screen/Cake, "cake_shopping_completed")
+			if yield($Screen/Cake, "cake_shopping_completed"):
+				relocate_cake()
 		else:
 			var cakes := int(player.cookies / COOKIES_FOR_CAKE)
 			player.cakes += cakes
 			player.cookies -= COOKIES_FOR_CAKE * cakes
-			yield(get_tree().create_timer(0), "timeout")
-	else:
-		yield(get_tree().create_timer(0), "timeout")
+			if cakes > 0:
+				relocate_cake()
+	yield(get_tree().create_timer(0), "timeout")
 
 # If we end up on a green space at the end of turn, we execute the board event
 # if the board event does a movement, we need to ignore it.

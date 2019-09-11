@@ -20,7 +20,7 @@ class SaveGame:
 	var current_minigame
 
 	var board_path: = ""
-	var cookie_space := 0
+	var cake_space := 0
 	var player_turn := 1
 	var award_type: int = Global.AWARD_TYPE.LINEAR
 
