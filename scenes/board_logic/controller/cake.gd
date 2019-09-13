@@ -1,6 +1,6 @@
 extends Control
 
-signal cake_shopping_completed
+signal cake_shopping_completed(taken)
 
 onready var controller = get_tree().get_nodes_in_group("Controller")[0]
 
@@ -33,7 +33,7 @@ func _on_GetCake_pressed() -> void:
 func _on_GetCake_abort() -> void:
 	$GetCake.hide()
 
-	emit_signal("cake_shopping_completed")
+	emit_signal("cake_shopping_completed", false)
 
 func _on_Buy_pressed() -> void:
 	var amount := int($BuyCake/HSlider.value)
@@ -44,7 +44,7 @@ func _on_Buy_pressed() -> void:
 
 	$BuyCake.hide()
 
-	emit_signal("cake_shopping_completed")
+	emit_signal("cake_shopping_completed", true)
 
 func _on_Abort_pressed() -> void:
 	$BuyCake.hide()

@@ -86,7 +86,7 @@ var current_scene: Node
 
 # Stops the controller from loading information when starting a new game.
 var new_game := true
-var cookie_space := 0
+var cake_space := -1
 var players := [PlayerState.new(), PlayerState.new(), PlayerState.new(),
 		PlayerState.new()]
 var turn := 1
@@ -309,7 +309,7 @@ func load_board_from_savegame(savegame) -> void:
 		players[i].cakes = int(savegame.players[i].cakes)
 		players[i].items = savegame.players[i].items
 
-	cookie_space = int(savegame.cookie_space)
+	cake_space = int(savegame.cake_space)
 	current_minigame = savegame.current_minigame
 	player_turn = int(current_savegame.player_turn)
 	award = int(savegame.award_type)
@@ -523,7 +523,7 @@ func minigame_1v3_win_team_players() -> void:
 func minigame_1v3_win_solo_player() -> void:
 	_goto_board(1)
 
-func load_board_state() -> void:
+func load_board_state(controller: Spatial) -> void:
 	# Current player nodes.
 	var r_players: Array = get_tree().get_nodes_in_group("players")
 
@@ -531,12 +531,9 @@ func load_board_state() -> void:
 
 	if not new_game:
 		# Place cake spot back on the board.
-		var cake_node: Spatial = cake_nodes[cookie_space]
-
+		var cake_node: Spatial = cake_nodes[cake_space]
 		cake_node.cake = true
-		cake_node.get_node("Cake").visible = true
 
-		var controller = current_scene.get_node("Controller")
 		controller.current_minigame = current_minigame
 		current_minigame = null
 
@@ -589,21 +586,14 @@ func load_board_state() -> void:
 		for i in r_players.size():
 			r_players[i].player_name = players[i].player_name
 			r_players[i].is_ai = players[i].is_ai
-
-		# Randomly place cake spot on board.
-		if cake_nodes.size() > 0:
-			cookie_space = randi() % cake_nodes.size()
-			var cake_node: Spatial = cake_nodes[cookie_space]
-			cake_node.cake = true
-			cake_node.get_node("Cake").visible = true
-
+		controller.relocate_cake()
 
 		new_game = false
 
 # Reset game state, used for starting a new game.
 func reset_state() -> void:
 	new_game = true
-	cookie_space = 0
+	cake_space = -1
 	current_board = ""
 	player_turn = 1
 	turn = 1
@@ -647,7 +637,7 @@ func save_game() -> void:
 		current_savegame.players[i].cakes = r_players[i].cakes
 		current_savegame.players[i].items = duplicate_items(r_players[i].items)
 
-	current_savegame.cookie_space = cookie_space
+	current_savegame.cake_space = cake_space
 	current_savegame.current_minigame = current_minigame
 	current_savegame.player_turn = controller.player_turn
 	current_savegame.award_type = award
