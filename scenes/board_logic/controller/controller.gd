@@ -435,6 +435,7 @@ func do_step(player, num: int) -> void:
 		emit_signal("_calculate_step", player, previous_space)
 		if yield(self, "_step_finished"):
 			# Reposition figures.
+			player.destination.pop_back()
 			update_space(previous_space)
 			update_space(player.space)
 
