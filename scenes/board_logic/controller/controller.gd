@@ -26,6 +26,7 @@ const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
 const CAMERA_SPEED = 6
 
 const PLAYER = preload("res://scenes/board_logic/player_board/player_board.gd")
+const PLACEMENT_COLORS := [Color("#FFD700"), Color("#C9C0BB"), Color("#CD7F32"), Color(0.3, 0.3, 0.3)]
 
 export var COOKIES_FOR_CAKE := 30
 export var MAX_TURNS := 10
@@ -563,8 +564,16 @@ func update_player_info() -> void:
 	var i := 1
 
 	for p in players:
+		var placement := 1
+		for p2 in players:
+			if p2.cakes > p.cakes or p2.cakes == p.cakes and p2.cookies > p.cookies:
+				placement += 1
+
+		var pos: Label = get_node("Screen/PlayerInfo%d" % i).get_node("Name/Position")
+		pos.text = str(placement)
+		pos.set("custom_colors/font_color", PLACEMENT_COLORS[placement - 1])
 		var info = get_node("Screen/PlayerInfo" + str(i))
-		info.get_node("Player").text = p.player_name
+		info.get_node("Name/Player").text = p.player_name
 
 		if p.cookies_gui == p.cookies:
 			info.get_node("Cookies/Amount").text = str(p.cookies)
