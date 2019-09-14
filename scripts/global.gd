@@ -586,7 +586,6 @@ func load_board_state(controller: Spatial) -> void:
 		for i in r_players.size():
 			r_players[i].player_name = players[i].player_name
 			r_players[i].is_ai = players[i].is_ai
-		controller.relocate_cake()
 
 		new_game = false
 
