@@ -16,7 +16,7 @@ var character_loader
 var human_players := 0
 
 func _ready() -> void:
-	var award_type = $SelectionBoard/AwardType
+	var award_type = $BoardSettings/Options/Award/AwardType
 	award_type.add_item(tr("MENU_LABEL_LINEAR"), Global.AWARD_TYPE.LINEAR)
 	award_type.add_item(
 			tr("MENU_LABEL_WINNER_TAKES_ALL"), Global.AWARD_TYPE.WINNER_ONLY);
@@ -208,18 +208,31 @@ func _on_SelectionChar_Back_pressed() -> void:
 #*** Board selection menu ***#
 
 func _on_board_select(target: Button) -> void:
-	Global.new_game = true
 	board = board_loader.get_board_path(target.get_text())
 
-	Global.new_savegame()
-	Global.load_board(board, names, characters, human_players)
+	$SelectionBoard.hide()
+	$BoardSettings.show()
+	$BoardSettings/Start.grab_focus()
 
-func _on_AwardType_item_selected(id: int) -> void:
-	match id:
-		Global.AWARD_TYPE.LINEAR:
-			Global.award = id
-		Global.AWARD_TYPE.WINNER_ONLY:
-			Global.award = id
+	var cake_cost: int = 30
+	var turns: int = 10
+
+	var scene: SceneState = load(board).get_state()
+	for i in range(scene.get_node_count()):
+		var instance: PackedScene = scene.get_node_instance(i)
+		if instance:
+			var groups: PoolStringArray = instance.get_state().get_node_groups(0)
+			for group in groups:
+				if group == "Controller":
+					for prop in range(scene.get_node_property_count(i)):
+						match scene.get_node_property_name(i, prop):
+							"COOKIES_FOR_CAKE":
+								cake_cost = int(scene.get_node_property_value(i, prop))
+							"MAX_TURNS":
+								turns = int(scene.get_node_property_value(i, prop))
+
+	$BoardSettings/Options/CakeCost/SpinBox.value = cake_cost
+	$BoardSettings/Options/Turns/SpinBox.value = turns
 
 func _on_Selection_Back_pressed() -> void:
 	$SelectionBoard.hide()
@@ -299,3 +312,21 @@ func _on_LoadGame_Back_pressed() -> void:
 
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_BoardSettings_Back_pressed():
+	$BoardSettings.hide()
+	$SelectionBoard.show()
+
+	if $SelectionBoard/ScrollContainer/Buttons.get_child_count() > 0:
+		$SelectionBoard/ScrollContainer/Buttons.get_child(0).grab_focus()
+	else:
+		$SelectionBoard/Back.grab_focus()
+
+func _on_BoardSettings_Start_pressed():
+	Global.overrides.cake_cost = int($BoardSettings/Options/CakeCost/SpinBox.value)
+	Global.overrides.max_turns = int($BoardSettings/Options/CakeCost/SpinBox.value)
+	Global.overrides.award = $BoardSettings/Options/Award/AwardType.selected
+
+	Global.new_game = true
+	Global.new_savegame()
+	Global.load_board(board, names, characters, human_players)
