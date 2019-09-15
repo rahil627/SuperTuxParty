@@ -544,8 +544,9 @@ func load_board_state(controller: Spatial) -> void:
 		var cake_node: Spatial = cake_nodes[cake_space]
 		cake_node.cake = true
 
-		controller.current_minigame = current_minigame
-		current_minigame = null
+		if current_minigame != null:
+			controller.show_minigame_info(current_minigame)
+			current_minigame = null
 
 		controller.player_turn = player_turn
 

@@ -62,8 +62,6 @@ var splash_ended := false
 # Flag that indicates if the input needs to wait for the animation to finish.
 var wait_for_animation := false
 
-var current_minigame
-
 func check_winner() -> void:
 	if Global.turn > MAX_TURNS:
 		var message = ""
@@ -130,10 +128,7 @@ func _ready() -> void:
 	if Global.cake_space == -1 and not winner:
 		yield(relocate_cake(), "completed")
 
-	# Show "your turn screen" for first player.
-	if current_minigame != null:
-		$Screen/MinigameInformation.show_minigame_info(current_minigame, players)
-	else:
+	if not $Screen/MinigameInformation.visible:
 		_on_Roll_pressed()
 
 func relocate_cake() -> void:
@@ -286,21 +281,22 @@ func roll(steps = null) -> void:
 
 		Global.minigame_teams = [blue_team, red_team]
 
+		var minigame
 		match [blue_team.size(), red_team.size()]:
 			[4, 0]:
 				Global.minigame_type = Global.MINIGAME_TYPES.FREE_FOR_ALL
-				current_minigame = Global.minigame_loader.get_random_ffa()
+				minigame = Global.minigame_loader.get_random_ffa()
 			[3, 1]:
 				Global.minigame_type = Global.MINIGAME_TYPES.ONE_VS_THREE
-				current_minigame = Global.minigame_loader.get_random_1v3()
+				minigame = Global.minigame_loader.get_random_1v3()
 			[2, 2]:
 				Global.minigame_type = Global.MINIGAME_TYPES.TWO_VS_TWO
-				current_minigame = Global.minigame_loader.get_random_2v2()
+				minigame = Global.minigame_loader.get_random_2v2()
 
 		Global.turn += 1
 		player_turn = 1
 		yield(show_minigame_animation(), "completed")
-		$Screen/MinigameInformation.show_minigame_info(current_minigame, players)
+		$Screen/MinigameInformation.show_minigame_info(minigame, players)
 
 func create_choose_path_arrows(player) -> void:
 	var first = null
@@ -407,7 +403,7 @@ func land_on_space(player):
 			var rewards: Array = Global.MINIGAME_DUEL_REWARDS.values()
 
 			Global.minigame_type = Global.MINIGAME_TYPES.DUEL
-			current_minigame = Global.minigame_loader.get_random_duel()
+			var minigame = Global.minigame_loader.get_random_duel()
 			Global.minigame_duel_reward =\
 					rewards[randi() % rewards.size()]
 
@@ -423,7 +419,7 @@ func land_on_space(player):
 						players.size()].player_id], [player.player_id]]
 				yield(minigame_duel_reward_animation(), "completed")
 				yield(show_minigame_animation(), "completed")
-				$Screen/MinigameInformation.show_minigame_info(current_minigame, players)
+				$Screen/MinigameInformation.show_minigame_info(minigame, players)
 			return
 
 	player_turn += 1
@@ -464,6 +460,9 @@ func update_space(space) -> void:
 			walking_state.position = player.space.translation + offset
 			player.destination.append(walking_state)
 			num += 1
+
+func show_minigame_info(minigame: String) -> void:
+	$Screen/MinigameInformation.show_minigame_info(minigame, players)
 
 func raise_event(name: String, pressed: bool) -> void:
 	var event = InputEventAction.new()
