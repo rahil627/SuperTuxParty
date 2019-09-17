@@ -14,7 +14,7 @@ func _ready():
 		new_model.transform = node.global_transform
 		node.replace_by(new_model)
 
-		if Global.placement > 0:
+		if Global.placement != -1:
 			new_model.get_node("AnimationPlayer").play("happy")
 		else:
 			new_model.get_node("AnimationPlayer").play("sad")
