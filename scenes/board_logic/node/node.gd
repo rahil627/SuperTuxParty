@@ -10,6 +10,7 @@ enum NODE_TYPES {
 	SHOP
 }
 
+export(bool) var _visible = true setget set_hidden
 # The setter and getter for this variables ensure that the changes are
 # immediately visible to the editor.
 export(NODE_TYPES) var type: int = NODE_TYPES.BLUE setget set_type
@@ -43,14 +44,9 @@ var material := SpatialMaterial.new()
 # Radius of a node, used for drawing arrows in the editor.
 const NODE_RADIUS = 1
 
-export(bool) var _visible = true setget set_hidden
-
 func set_hidden(v: bool):
 	_visible = v
 	$Model.visible = v
-
-func set_visible(v: bool):
-	set_hidden(v)
 
 func is_visible_space() -> bool:
 	return _visible
@@ -315,10 +311,10 @@ func _process(_delta: float) -> void:
 				if dir.length() == 0:
 					continue
 
-				if node.visible:
-					dir *= (dir.length() - NODE_RADIUS) / dir.length()
 				var offset: Vector3 =\
 						0.25 * Vector3(0, 1, 0).cross(dir.normalized())
+				dir *= (dir.length() - 2*NODE_RADIUS) / dir.length()
+				offset += dir.normalized() * NODE_RADIUS
 				$EditorLines.add_vertex(offset)
 				$EditorLines.add_vertex(dir + offset)
 				$EditorLines.add_vertex(dir + offset)
@@ -339,9 +335,9 @@ func _process(_delta: float) -> void:
 				if dir.length() == 0:
 					continue
 
-				if node.visible:
-					dir *= (dir.length() - NODE_RADIUS) / dir.length()
 				var offset = 0.25 * Vector3(0, 1, 0).cross(dir.normalized())
+				dir *= (dir.length() - 2*NODE_RADIUS) / dir.length()
+				offset += dir.normalized() * NODE_RADIUS
 				$EditorLines.add_vertex(offset)
 				$EditorLines.add_vertex(dir + offset)
 				$EditorLines.add_vertex(dir + offset)
