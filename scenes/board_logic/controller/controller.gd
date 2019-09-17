@@ -127,13 +127,16 @@ func _ready() -> void:
 
 	check_winner()
 
+	if Global.cake_space == -1 and not winner:
+		yield(relocate_cake(), "completed")
+
 	# Show "your turn screen" for first player.
 	if current_minigame != null:
 		$Screen/MinigameInformation.show_minigame_info(current_minigame, players)
 	else:
 		_on_Roll_pressed()
 
-func relocate_cake():
+func relocate_cake() -> void:
 	var cake_nodes: Array = get_tree().get_nodes_in_group("cake_nodes")
 	# Randomly place cake spot on board.
 	if cake_nodes.size() > 0:
@@ -142,6 +145,12 @@ func relocate_cake():
 		Global.cake_space = randi() % cake_nodes.size()
 		var cake_node: Spatial = cake_nodes[Global.cake_space]
 		cake_node.cake = true
+
+		var old_focus = camera_focus
+		camera_focus = cake_node
+		yield(get_tree().create_timer(2.0), "timeout")
+		camera_focus = old_focus
+	yield(get_tree().create_timer(0.0), "timeout")
 
 # Function to check if the next player can roll or not.
 func _on_Roll_pressed() -> void:
@@ -526,13 +535,14 @@ func buy_cake(player: Spatial) -> void:
 		if not player.is_ai:
 			$Screen/Cake.show_cake()
 			if yield($Screen/Cake, "cake_shopping_completed"):
-				relocate_cake()
+				yield(relocate_cake(), "completed")
 		else:
 			var cakes := int(player.cookies / COOKIES_FOR_CAKE)
 			player.cakes += cakes
 			player.cookies -= COOKIES_FOR_CAKE * cakes
+			yield(get_tree().create_timer(1.0), "timeout")
 			if cakes > 0:
-				relocate_cake()
+				yield(relocate_cake(), "completed")
 	yield(get_tree().create_timer(0), "timeout")
 
 # If we end up on a green space at the end of turn, we execute the board event
