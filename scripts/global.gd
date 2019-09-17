@@ -14,6 +14,12 @@ class PlayerState:
 	# Which space on the board the player is standing on.
 	var space
 
+class BoardOverrides:
+	var cake_cost: int
+	var max_turns: int
+	# Option to choose how players are awarded after completing a mini-game.
+	var award: int = AWARD_TYPE.LINEAR
+
 const MINIGAME_REWARD_SCREEN_PATH_FFA =\
 		"res://scenes/board_logic/controller/rewardscreens/ffa.tscn"
 const MINIGAME_REWARD_SCREEN_PATH_DUEL =\
@@ -75,8 +81,7 @@ var pause_window_unfocus := true
 var mute_window_unfocus := true
 var _was_muted := false
 
-# Option to choose how players are awarded after completing a mini-game.
-var award: int = AWARD_TYPE.LINEAR
+var overrides: BoardOverrides = BoardOverrides.new()
 
 # Resource location of the current board.
 var current_board: String
@@ -312,7 +317,9 @@ func load_board_from_savegame(savegame) -> void:
 	cake_space = int(savegame.cake_space)
 	current_minigame = savegame.current_minigame
 	player_turn = int(current_savegame.player_turn)
-	award = int(savegame.award_type)
+	overrides.cake_cost = int(savegame.cake_cost)
+	overrides.max_turns = int(savegame.max_turns)
+	overrides.award = int(savegame.award_type)
 
 	trap_states = savegame.trap_states.duplicate()
 
@@ -400,7 +407,7 @@ func _goto_board(new_placement) -> void:
 	placement = new_placement
 	match minigame_type:
 		MINIGAME_TYPES.FREE_FOR_ALL:
-			match award:
+			match overrides.award:
 				AWARD_TYPE.LINEAR:
 					# Store the current place.
 					var place = 0
@@ -524,6 +531,9 @@ func minigame_1v3_win_solo_player() -> void:
 	_goto_board(1)
 
 func load_board_state(controller: Spatial) -> void:
+	controller.COOKIES_FOR_CAKE = overrides.cake_cost
+	controller.MAX_TURNS = overrides.max_turns
+
 	# Current player nodes.
 	var r_players: Array = get_tree().get_nodes_in_group("players")
 
@@ -639,7 +649,9 @@ func save_game() -> void:
 	current_savegame.cake_space = cake_space
 	current_savegame.current_minigame = current_minigame
 	current_savegame.player_turn = controller.player_turn
-	current_savegame.award_type = award
+	current_savegame.cake_cost = overrides.cake_cost
+	current_savegame.max_turns = overrides.max_turns
+	current_savegame.award_type = overrides.award
 
 	current_savegame.trap_states = []
 

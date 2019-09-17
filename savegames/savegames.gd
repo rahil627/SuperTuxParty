@@ -22,6 +22,8 @@ class SaveGame:
 	var board_path: = ""
 	var cake_space := 0
 	var player_turn := 1
+	var cake_cost := 30
+	var max_turns := 10
 	var award_type: int = Global.AWARD_TYPE.LINEAR
 
 	var trap_states := []

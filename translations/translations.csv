@@ -126,3 +126,5 @@ MENU_OPTIONS_VISUAL,Visual,Vidéo,,Aussehen,Video,Visual,,,,,,,,,,,,,,,,,,,,,,
 MENU_OPTIONS_VSYNC,V-sync,VSync,V-sync,Bildschirmsynchronisation,VSync,Vsync,Vsync,Вертикальная синхронизация,Vsync,Dikey Senkronizasyon (Vsync),Vsync,Vsync,Vsync,Vsync,Vsync,Vsync,垂直同期,垂直同步,垂直同步,수직 동기,Vertikální synchronizace obrazu,V-sync,V-sync,V-sync,Отвесна синхронизация,Vsync,تزامن اللقطات مع الشاشة V-sync,V-sync
 DIALOG_YES,Yes,Oui,,Ja,Sì,,,,,,,,,,,,,,,,,,,,,,,
 DIALOG_NO,No,Non,,Nein,No,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_CAKE_COST,Cake cost:,Cout du gâteaux:,,Kosten eines Kuchen:,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_TURNS,Turns:,Nombre des tours:,,Anzahl Züge:,,,,,,,,,,,,,,,,,,,,,,,,

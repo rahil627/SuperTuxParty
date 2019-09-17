@@ -5,8 +5,8 @@
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/sound_button/sound_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://scenes/sound_button/option_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sound_button/option_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=8]
 [ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=9]
 [ext_resource path="res://assets/music/menus/main menu.ogg" type="AudioStream" id=10]
@@ -265,25 +265,6 @@ margin_right = 512.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
-[node name="LabelAward" type="Label" parent="SelectionBoard"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-margin_top = -105.0
-margin_right = -2.0
-margin_bottom = -70.0
-custom_fonts/font = ExtResource( 5 )
-text = "MENU_LABEL_REWARD_SYSTEM"
-
-[node name="AwardType" parent="SelectionBoard" instance=ExtResource( 6 )]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -70.0
-margin_right = 0.0
-margin_bottom = -35.0
-
 [node name="Back" parent="SelectionBoard" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -316,7 +297,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 align = 1
 
-[node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 7 )]
+[node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 6 )]
 margin_left = 0.0
 margin_top = 120.0
 margin_right = 0.0
@@ -362,6 +343,122 @@ anchor_bottom = 1.0
 margin_top = -35.0
 margin_right = 0.0
 margin_bottom = 0.0
+custom_fonts/font = ExtResource( 5 )
+shortcut_in_tooltip = false
+shortcut = SubResource( 8 )
+text = "MENU_LABEL_BACK"
+custom_click = "res://assets/sounds/ui/click2.wav"
+
+[node name="BoardSettings" type="Control" parent="."]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Options" type="VBoxContainer" parent="BoardSettings"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -255.0
+margin_top = -200.0
+margin_right = 255.0
+margin_bottom = 100.0
+custom_constants/separation = 10
+
+[node name="CakeCost" type="Control" parent="BoardSettings/Options"]
+editor/display_folded = true
+margin_right = 510.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="BoardSettings/Options/CakeCost"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -14.5
+margin_right = 235.0
+margin_bottom = 14.5
+text = "MENU_LABEL_CAKE_COST"
+
+[node name="SpinBox" type="SpinBox" parent="BoardSettings/Options/CakeCost"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -18.5
+margin_bottom = 18.5
+
+[node name="Turns" type="Control" parent="BoardSettings/Options"]
+editor/display_folded = true
+margin_top = 50.0
+margin_right = 510.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="BoardSettings/Options/Turns"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -14.5
+margin_right = 235.0
+margin_bottom = 14.5
+text = "MENU_LABEL_TURNS"
+
+[node name="SpinBox" type="SpinBox" parent="BoardSettings/Options/Turns"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -18.5
+margin_bottom = 18.5
+
+[node name="Spacer" type="Control" parent="BoardSettings/Options"]
+margin_top = 100.0
+margin_right = 510.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Award" type="VBoxContainer" parent="BoardSettings/Options"]
+editor/display_folded = true
+margin_top = 210.0
+margin_right = 510.0
+margin_bottom = 276.0
+
+[node name="LabelAward" type="Label" parent="BoardSettings/Options/Award"]
+margin_right = 510.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 5 )
+text = "MENU_LABEL_REWARD_SYSTEM"
+
+[node name="AwardType" parent="BoardSettings/Options/Award" instance=ExtResource( 7 )]
+margin_top = 33.0
+margin_right = 510.0
+margin_bottom = 66.0
+
+[node name="Start" parent="BoardSettings" instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 484.0
+margin_top = -229.0
+margin_right = -486.0
+margin_bottom = -196.0
+custom_fonts/font = ExtResource( 5 )
+shortcut_in_tooltip = false
+shortcut = SubResource( 8 )
+text = "MENU_LABEL_PLAY"
+custom_click = "res://assets/sounds/ui/click2.wav"
+
+[node name="Back" parent="BoardSettings" instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = -179.0
+margin_right = -386.0
+margin_bottom = -146.0
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 8 )
@@ -522,7 +619,8 @@ bus = "Music"
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Four" to="." method="_select_player_amount" binds= [ 4 ]]
 [connection signal="pressed" from="SelectionPlayers/Buttons/Back" to="." method="_on_Amount_Of_Players_Back_pressed"]
 [connection signal="pressed" from="SelectionChar/Buttons/Back" to="." method="_on_SelectionChar_Back_pressed"]
-[connection signal="item_selected" from="SelectionBoard/AwardType" to="." method="_on_AwardType_item_selected"]
 [connection signal="pressed" from="SelectionBoard/Back" to="." method="_on_Selection_Back_pressed"]
 [connection signal="quit" from="OptionsMenu/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
 [connection signal="pressed" from="LoadGameMenu/Back" to="." method="_on_LoadGame_Back_pressed"]
+[connection signal="pressed" from="BoardSettings/Start" to="." method="_on_BoardSettings_Start_pressed"]
+[connection signal="pressed" from="BoardSettings/Back" to="." method="_on_BoardSettings_Back_pressed"]
