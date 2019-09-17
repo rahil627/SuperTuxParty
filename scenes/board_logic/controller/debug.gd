@@ -151,8 +151,7 @@ func _on_minigame_pressed(minigame, type):
 		Global.MINIGAME_TYPES.DUEL:
 			Global.minigame_teams = [[1], [2]]
 	
-	controller.current_minigame = mg
-	controller.show_minigame_info()
+	controller.show_minigame_info(mg)
 	controller.hide_splash()
 	hide()
 	$List.hide()
