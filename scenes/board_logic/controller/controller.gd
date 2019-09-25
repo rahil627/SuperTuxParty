@@ -461,7 +461,7 @@ func update_space(space) -> void:
 			player.destination.append(walking_state)
 			num += 1
 
-func show_minigame_info(minigame: String) -> void:
+func show_minigame_info(minigame: Object) -> void:
 	$Screen/MinigameInformation.show_minigame_info(minigame, players)
 
 func raise_event(name: String, pressed: bool) -> void:
