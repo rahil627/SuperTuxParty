@@ -3,23 +3,15 @@
 [ext_resource path="res://assets/shaders/water.shader" type="Shader" id=1]
 [ext_resource path="res://assets/textures/water_diffuse.png" type="Texture" id=2]
 
-
-
-
-
-
-
-
-
-
 [resource]
-
-render_priority = 0
 shader = ExtResource( 1 )
-shader_param/amplitude = null
-shader_param/frequency = null
-shader_param/time_factor = null
-shader_param/texture_scale = null
+shader_param/amplitude = Vector2( 0.2, 0.1 )
+shader_param/amplitude2 = Vector2( 0.1, 0.2 )
+shader_param/frequency = Vector2( 3, 2.5 )
+shader_param/frequency2 = Vector2( 0.5, -1.5 )
+shader_param/time_factor = Vector2( 3, 2.5 )
+shader_param/time_factor2 = Vector2( 1, 2 )
+shader_param/texture_scale = Vector2( 30, 30 )
+shader_param/texture_flow1 = Vector2( 0.5, 0.25 )
+shader_param/texture_flow2 = Vector2( -0.5, 1 )
 shader_param/texturemap = ExtResource( 2 )
-_sections_unfolded = [ "shader_param" ]
-
