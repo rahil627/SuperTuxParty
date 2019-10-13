@@ -5,6 +5,7 @@ const SAVEGAME_DIRECTORY = "user://saves/"
 class SaveGamePlayerState:
 	var player_name := ""
 	var is_ai := false
+	var ai_difficulty: int = Global.Difficulty.NORMAL
 	var space: NodePath
 	var character := ""
 	var cookies := 0

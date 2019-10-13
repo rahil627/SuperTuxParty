@@ -1,8 +1,8 @@
 extends Spatial
 
 const NEEDED_BUTTON_PRESSES = 10
-const AI_MIN_WAIT_TIME = 0.5
-const AI_MAX_WAIT_TIME = 1
+var AI_MIN_WAIT_TIME
+var AI_MAX_WAIT_TIME
 
 const ACTIONS = ["up", "down", "left", "right", "action1", "action2", "action3", "action4"]
 
@@ -11,6 +11,7 @@ var presses = 0
 var player_id
 
 var is_ai
+var ai_difficulty
 var ai_wait_time
 
 var next_action
@@ -27,6 +28,17 @@ func _ready():
 	$Model/AnimationPlayer.play("idle")
 	
 	if is_ai:
+		match ai_difficulty:
+			Global.Difficulty.EASY:
+				AI_MIN_WAIT_TIME = 0.6
+				AI_MAX_WAIT_TIME = 0.8
+			Global.Difficulty.HARD:
+				AI_MIN_WAIT_TIME = 0.4
+				AI_MAX_WAIT_TIME = 0.6
+			_:
+				AI_MIN_WAIT_TIME = 0.4
+				AI_MAX_WAIT_TIME = 0.7
+		
 		ai_wait_time = rand_range(AI_MIN_WAIT_TIME, AI_MAX_WAIT_TIME)
 
 func press():
@@ -43,7 +55,13 @@ func _process(delta):
 	if is_ai and next_action != null and not disabled_input:
 		ai_wait_time -= delta
 		if ai_wait_time <= 0:
-			if randi() % 4 != 0:
+			var probability = 6
+			match ai_difficulty:
+				Global.Difficulty.EASY:
+					probability = 2
+				Global.Difficulty.HARD:
+					probability = 10
+			if randi() % probability != 0:
 				press()
 			else:
 				disable_input()

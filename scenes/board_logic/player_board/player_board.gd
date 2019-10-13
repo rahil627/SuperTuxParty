@@ -18,6 +18,7 @@ signal walking_ended
 var player_id := 0
 var player_name := "" # Name that player has chosen
 var is_ai := false
+var ai_difficulty: int = Global.Difficulty.NORMAL
 var space: Spatial # Space on the board the player is on
 var cookies := 0
 var cakes := 0

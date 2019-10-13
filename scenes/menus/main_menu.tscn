@@ -414,17 +414,45 @@ margin_left = -96.0
 margin_top = -18.5
 margin_bottom = 18.5
 
-[node name="Spacer" type="Control" parent="BoardSettings/Options"]
+[node name="Difficulty" type="Control" parent="BoardSettings/Options"]
+editor/display_folded = true
 margin_top = 100.0
 margin_right = 510.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 0, 100 )
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Label" type="Label" parent="BoardSettings/Options/Difficulty"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -14.5
+margin_right = 131.0
+margin_bottom = 14.5
+text = "AI_DIFFICULTY"
+
+[node name="OptionButton" type="OptionButton" parent="BoardSettings/Options/Difficulty"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -16.5
+margin_bottom = 16.5
+grow_horizontal = 0
+text = "DIFFICULTY_NORMAL"
+items = [ "DIFFICULTY_EASY", null, false, 0, null, "DIFFICULTY_NORMAL", null, false, 1, null, "DIFFICULTY_HARD", null, false, 2, null ]
+selected = 1
+
+[node name="Spacer" type="Control" parent="BoardSettings/Options"]
+margin_top = 150.0
+margin_right = 510.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 0, 60 )
 
 [node name="Award" type="VBoxContainer" parent="BoardSettings/Options"]
 editor/display_folded = true
-margin_top = 210.0
+margin_top = 220.0
 margin_right = 510.0
-margin_bottom = 276.0
+margin_bottom = 286.0
 
 [node name="LabelAward" type="Label" parent="BoardSettings/Options/Award"]
 margin_right = 510.0

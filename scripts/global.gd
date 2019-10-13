@@ -5,6 +5,7 @@ class PlayerState:
 	var player_id := 0
 	var player_name := ""
 	var is_ai := false
+	var ai_difficulty: int = Difficulty.NORMAL
 	var character := ""
 	var cookies := 0
 	var cookies_gui := 0
@@ -17,6 +18,7 @@ class PlayerState:
 class BoardOverrides:
 	var cake_cost: int
 	var max_turns: int
+	var ai_difficulty: int
 	# Option to choose how players are awarded after completing a mini-game.
 	var award: int = AWARD_TYPE.LINEAR
 
@@ -65,6 +67,12 @@ enum MINIGAME_TYPES {
 	ONE_VS_THREE,
 	TWO_VS_TWO,
 	FREE_FOR_ALL
+}
+
+enum Difficulty {
+	EASY,
+	NORMAL,
+	HARD
 }
 
 var joypad_display: int = JOYPAD_DISPLAY_TYPE.NUMBERS
@@ -167,6 +175,7 @@ func load_board(board: String, names: Array, characters: Array,
 		players[i].character = characters[i]
 		if i >= human_players:
 			players[i].is_ai = true
+			players[i].ai_difficulty = overrides.ai_difficulty
 	current_board = board
 	call_deferred("_goto_scene_ingame", board)
 
@@ -219,6 +228,9 @@ func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
 			old_model.replace_by(new_model, true)
 
 			player.is_ai = players[i].is_ai
+			
+			if "ai_difficulty" in player:
+				player.ai_difficulty = players[i].ai_difficulty
 
 			if player.has_node("Shape"):
 				var collision_shape = player.get_node("Shape")
@@ -245,6 +257,8 @@ func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
 				old_model.replace_by(new_model, true)
 
 				player.is_ai = players[player_id - 1].is_ai
+				if "ai_difficulty" in player:
+					player.ai_difficulty = players[player_id - 1].ai_difficulty
 				player.player_id = player_id
 
 				var shape: Shape =\
@@ -308,6 +322,7 @@ func load_board_from_savegame(savegame) -> void:
 		players[i].player_id = i + 1
 		players[i].player_name = savegame.players[i].player_name
 		players[i].is_ai = savegame.players[i].is_ai
+		players[i].ai_difficulty = savegame.players[i].ai_difficulty
 		players[i].space = savegame.players[i].space
 		players[i].character = savegame.players[i].character
 		players[i].cookies = int(savegame.players[i].cookies)
@@ -565,6 +580,7 @@ func load_board_state(controller: Spatial) -> void:
 			r_players[i].cakes = players[i].cakes
 			r_players[i].space = current_scene.get_node(players[i].space)
 			r_players[i].is_ai = players[i].is_ai
+			r_players[i].ai_difficulty = players[i].ai_difficulty
 
 			r_players[i].items = deduplicate_items(players[i].items)
 
@@ -597,6 +613,7 @@ func load_board_state(controller: Spatial) -> void:
 		for i in r_players.size():
 			r_players[i].player_name = players[i].player_name
 			r_players[i].is_ai = players[i].is_ai
+			r_players[i].ai_difficulty = players[i].ai_difficulty
 
 		new_game = false
 
@@ -641,6 +658,7 @@ func save_game() -> void:
 	for i in amount_of_players:
 		current_savegame.players[i].player_name = r_players[i].player_name
 		current_savegame.players[i].is_ai = r_players[i].is_ai
+		current_savegame.players[i].ai_difficulty = r_players[i].ai_difficulty
 		current_savegame.players[i].space = r_players[i].space.get_path()
 		current_savegame.players[i].character = players[i].character
 		current_savegame.players[i].cookies = r_players[i].cookies
