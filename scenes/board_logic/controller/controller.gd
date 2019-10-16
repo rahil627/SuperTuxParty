@@ -17,6 +17,7 @@ signal _step_finished(is_visible)
 # 'call_deferred("emit_signal", "_event_completed")'.
 # warning-ignore:unused_signal
 signal _event_completed
+signal _camera_focus_aquired
 
 # If multiple players get on one space, this array decides the translation of
 # each.
@@ -136,6 +137,7 @@ func relocate_cake() -> void:
 	# Randomly place cake spot on board.
 	if cake_nodes.size() > 0:
 		if Global.cake_space >= 0:
+			yield(get_cake_space().play_cake_collection_animation(), "completed")
 			cake_nodes[Global.cake_space].cake = false
 		Global.cake_space = randi() % cake_nodes.size()
 		var cake_node: Spatial = cake_nodes[Global.cake_space]
@@ -143,8 +145,10 @@ func relocate_cake() -> void:
 
 		var old_focus = camera_focus
 		camera_focus = cake_node
-		yield(get_tree().create_timer(2.0), "timeout")
+		yield(self, "_camera_focus_aquired")
+		yield(get_tree().create_timer(1.0), "timeout")
 		camera_focus = old_focus
+		yield(self, "_camera_focus_aquired")
 	yield(get_tree().create_timer(0.0), "timeout")
 
 # Function to check if the next player can roll or not.
@@ -567,6 +571,8 @@ func _process(delta: float) -> void:
 		if dir.length() > 0.01:
 			translation +=\
 					CAMERA_SPEED * dir.length() * dir.normalized() * delta
+		else:
+			emit_signal("_camera_focus_aquired")
 
 # Function that updates the player info shown in the GUI.
 func update_player_info() -> void:

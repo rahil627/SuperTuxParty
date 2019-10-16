@@ -3,7 +3,8 @@
 [ext_resource path="res://scenes/board_logic/node/node.gd" type="Script" id=1]
 [ext_resource path="res://scenes/board_logic/node/node.escn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/board_logic/node/material/node_blue_material.tres" type="Material" id=3]
-[ext_resource path="res://scenes/board_logic/controller/icons/cake.png" type="Texture" id=4]
+[ext_resource path="res://assets/models/cake/cake.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
@@ -24,13 +25,9 @@ editor/display_folded = true
 [node name="Cylinder" parent="Model" index="0"]
 material/0 = ExtResource( 3 )
 
-[node name="Cake" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271818, 0 )
+[node name="Cake" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 1.5, 0 )
 visible = false
-pixel_size = 0.03
-axis = 1
-double_sided = false
-texture = ExtResource( 4 )
 
 [node name="EditorLines" type="ImmediateGeometry" parent="."]
 material_override = SubResource( 1 )
