@@ -9,6 +9,7 @@ const ground_box = AABB(Vector3(-3, -1, -5), Vector3(6, 2, 4))
 const solo_ground_box = AABB(Vector3(-3, -0.25, 3), Vector3(6, 0.5, 2))
 
 var is_ai
+var ai_difficulty
 var player_id
 
 enum STATE {
@@ -95,7 +96,13 @@ func _process(delta):
 				if not active_players.empty():
 					var player = active_players[randi() % active_players.size()]
 					var dir_to_player = player.translation - translation
-					rotation.y = atan2(dir_to_player.x, dir_to_player.z) + rand_range(-PI/8, PI/8)
+					match ai_difficulty:
+						Global.Difficulty.EASY:
+							rotation.y = atan2(dir_to_player.x, dir_to_player.z) + rand_range(-PI/6, PI/6)
+						Global.Difficulty.HARD:
+							rotation.y = atan2(dir_to_player.x, dir_to_player.z) + rand_range(-PI/12, PI/12)
+						_:
+							rotation.y = atan2(dir_to_player.x, dir_to_player.z) + rand_range(-PI/8, PI/8)
 					fire()
 			elif fire_cooldown < FIRE_COOLDOWN_TIME - 0.5:
 				ai_time_dir_change -= delta

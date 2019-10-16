@@ -10,6 +10,7 @@ var player_id = 1
 var jump = JUMP_MAX
 var movement = Vector3()
 var is_ai = false
+var ai_difficulty
 var stop = false
 
 var playing_jump_animation = false
@@ -42,7 +43,13 @@ func _physics_process(delta):
 				var dir = hurdle.translation - self.translation
 				if dir.length() < 2.5 + next_jump_randomness and dir.angle_to(Vector3(0, 0, 1)) < PI/2 and abs(dir.x) < 0.5:
 					movement = JUMP_VECTOR
-					next_jump_randomness = randf() - 0.5
+					match ai_difficulty:
+						Global.Difficulty.EASY:
+							next_jump_randomness = randf() * 2.0 - 0.75
+						Global.Difficulty.HARD:
+							next_jump_randomness = randf() - 0.5
+						_:
+							next_jump_randomness = randf() * 1.5 - 0.5
 	if stop:
 		acceleration = -6
 	

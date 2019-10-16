@@ -325,6 +325,7 @@ func _on_BoardSettings_Back_pressed():
 func _on_BoardSettings_Start_pressed():
 	Global.overrides.cake_cost = int($BoardSettings/Options/CakeCost/SpinBox.value)
 	Global.overrides.max_turns = int($BoardSettings/Options/CakeCost/SpinBox.value)
+	Global.overrides.ai_difficulty = $BoardSettings/Options/Difficulty/OptionButton.get_selected_id()
 	Global.overrides.award = $BoardSettings/Options/Award/AwardType.selected
 
 	Global.new_game = true
