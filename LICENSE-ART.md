@@ -34,6 +34,12 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## assets/models/cake
+### cake.escn | cake.blend | cake.png
+Copyright © 2019 Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## assets/models/door/
 ### WoodenDoor.blend | WoodenDoor.dae
 Copyright Danimal and Yughues

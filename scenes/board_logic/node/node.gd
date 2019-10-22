@@ -95,6 +95,10 @@ func set_cake(enabled: bool) -> void:
 		if Engine.editor_hint and has_node("Cake"):
 			$Cake.hide()
 
+func play_cake_collection_animation():
+	$Cake/AnimationPlayer.play("collect")
+	yield($Cake/AnimationPlayer, "animation_finished")
+
 # Sets wether this node is the currently active cake spot
 func set_active_cake(enabled: bool) -> void:
 	cake = enabled
