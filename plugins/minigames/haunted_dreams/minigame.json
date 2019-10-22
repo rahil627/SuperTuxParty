@@ -1,0 +1,34 @@
+{
+    "name": "Haunted Dreams",
+    "scene_path" : "res://plugins/minigames/haunted_dreams/minigame.tscn",
+    "type": ["Gnu"],
+    "image_path": "res://plugins/minigames/haunted_dreams/screenshot.png",
+
+    "description" : {
+        "en": "The players must protect the child's bed from ghosts.",
+        "de": "Die Spieler müssen das Bett des Kindes vor Geistern schützen.",
+    },
+
+    "used_controls": {
+        "up" : {
+            "en": "Move up",
+            "de": "Nach oben bewegen",
+            "pt_BR": "Mover para cima"
+        },
+        "left": {
+            "en": "Move left",
+            "de": "Nach links bewegen",
+            "pt_BR": "Mover para a esquerda"
+        },
+        "down": {
+            "en": "Move down",
+            "de": "Nach unten bewegen",
+            "pt_BR": "Mover para baixo"
+        },
+        "right": {
+            "en": "Move right",
+            "de": "Nach rechts bewegen",
+            "pt_BR": "Mover para a direita"
+        },
+    }
+}

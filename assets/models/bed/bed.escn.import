@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/godot_chan.dae-b65b37065d490cdc1b7f24838c9b8dc3.scn"
+path="res://.import/bed.escn-7fcbf4c6a531708259b8709627a8271f.scn"
 
 [deps]
 
-source_file="res://plugins/characters/Godette/godot_chan.dae"
-dest_files=[ "res://.import/godot_chan.dae-b65b37065d490cdc1b7f24838c9b8dc3.scn" ]
+source_file="res://assets/models/bed/bed.escn"
+dest_files=[ "res://.import/bed.escn-7fcbf4c6a531708259b8709627a8271f.scn" ]
 
 [params]
 

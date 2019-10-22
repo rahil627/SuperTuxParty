@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/jack-o-lantern_nor.png-77b83e941ddb9c3a1eb1b9995a322409.s3tc.stex"
+path.etc2="res://.import/jack-o-lantern_nor.png-77b83e941ddb9c3a1eb1b9995a322409.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/models/ghost/textures/jack-o-lantern_nor.png"
+dest_files=[ "res://.import/jack-o-lantern_nor.png-77b83e941ddb9c3a1eb1b9995a322409.s3tc.stex", "res://.import/jack-o-lantern_nor.png-77b83e941ddb9c3a1eb1b9995a322409.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
