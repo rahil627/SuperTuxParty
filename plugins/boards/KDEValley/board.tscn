@@ -293,6 +293,7 @@ prev_nodes = [ NodePath("../Node13") ]
 
 [node name="Node15" parent="Nodes" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2303, 1.90818, 10.65 )
+type = 6
 next_nodes = [ NodePath("../Node16") ]
 prev_nodes = [ NodePath("../Node14") ]
 
@@ -327,6 +328,7 @@ prev_nodes = [ NodePath("../Node19") ]
 
 [node name="Node21" parent="Nodes" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4192, 1.80357, 26.9886 )
+type = 6
 next_nodes = [ NodePath("../Node22") ]
 prev_nodes = [ NodePath("../Node20") ]
 
@@ -409,9 +411,9 @@ prev_nodes = [ NodePath("../Node33") ]
 
 [node name="Start" parent="Nodes" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5583, 1.50459, 12.6072 )
+_visible = false
 next_nodes = [ NodePath("../Node2") ]
 prev_nodes = [  ]
-_visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

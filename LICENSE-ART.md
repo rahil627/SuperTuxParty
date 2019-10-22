@@ -80,6 +80,13 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+### heckert_gnu.big.png
+
+Copyright Aurélio A. Heckert
+
+Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
+License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
+
 ## scenes/board_logic/node
 ### node.escn | node.blend
 
@@ -117,6 +124,13 @@ tile_yellow_col.png and tile_purple_col.png are modified versions of tile_red_co
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### tile_gnu_col.png
+
+Based upon the tile_yellow_col.png file and the GNU logo by Aurélio A. Heckert
+
+Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
+License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
 
 ## scenes/speech_dialog
 ### dialog_box.png | dialog_box_focus.png

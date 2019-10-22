@@ -45,453 +45,332 @@ shadow_enabled = true
 
 [node name="Node1" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0137796, -0.0109558, 0.0186167 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node2") ]
 prev_nodes = [ NodePath("../Node25") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node2" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node3") ]
 prev_nodes = [ NodePath("../Node1") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node3" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node4") ]
 prev_nodes = [ NodePath("../Node2") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node4" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3 )
 type = 3
-potential_cake = false
 next_nodes = [ NodePath("../Node5") ]
 prev_nodes = [ NodePath("../Node3") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node5" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09936, 0, 0 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node6") ]
 prev_nodes = [ NodePath("../Node4") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node6" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0758, 0.0101128, -0.0186749 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node7") ]
 prev_nodes = [ NodePath("../Node5") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node7" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0994, 0, 0 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node8") ]
 prev_nodes = [ NodePath("../Node6") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node8" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0994, 0, 0 )
 type = 4
-potential_cake = false
 next_nodes = [ NodePath("../Node9") ]
 prev_nodes = [ NodePath("../Node7") ]
-amount_of_items_sold = 8
-custom_items = [  ]
 
 [node name="Node9" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0994, 0, -2 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node10") ]
 prev_nodes = [ NodePath("../Node8") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node10" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0994, 0, -4 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node11"), NodePath("../Node31") ]
 prev_nodes = [ NodePath("../Node9") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node11" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0994, 0, -0.209747 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node12") ]
 prev_nodes = [ NodePath("../Node10") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node12" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0994, 0, 4.26378 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node13") ]
 prev_nodes = [ NodePath("../Node11") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node13" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2557, 0, 7.98859 )
 type = 3
-potential_cake = false
 next_nodes = [ NodePath("../Node14") ]
 prev_nodes = [ NodePath("../Node12"), NodePath("../Node34") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node14" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9715, 0, 9.98185 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node15") ]
 prev_nodes = [ NodePath("../Node13") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node15" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0994, 0, 8 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node16") ]
 prev_nodes = [ NodePath("../Node14") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node16" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0994, 0, 8 )
-type = 0
-potential_cake = false
+type = 6
 next_nodes = [ NodePath("../Node17") ]
 prev_nodes = [ NodePath("../Node15") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node17" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0994, 0, 10 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node18") ]
 prev_nodes = [ NodePath("../Node16") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node18" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0994, 0, 10 )
-type = 0
 potential_cake = true
 next_nodes = [ NodePath("../Node19") ]
 prev_nodes = [ NodePath("../Node17") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node19" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0994, 0, 10 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node20") ]
 prev_nodes = [ NodePath("../Node18") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node20" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0994, 0, 10 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node21") ]
 prev_nodes = [ NodePath("../Node19") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node21" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9006, 0, 10 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node22") ]
 prev_nodes = [ NodePath("../Node20") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node22" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9006, 0, 7 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node23") ]
 prev_nodes = [ NodePath("../Node21") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node23" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 0.999882, -0.0153777, 0, 0.0153777, 0.999882, 0, 0, 0, 1, -3.9006, 0, 3 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node24") ]
 prev_nodes = [ NodePath("../Node22") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node24" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9006, 0, -1 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node25") ]
 prev_nodes = [ NodePath("../Node23") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node25" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99221, 0, -2.77292 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node1") ]
 prev_nodes = [ NodePath("../Node24") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node26" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35316, 4.76837e-07, -10.0742 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node27") ]
 prev_nodes = [ NodePath("../Node30") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node27" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.085, 0, -9.34553 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node28") ]
 prev_nodes = [ NodePath("../Node26") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node28" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1528, 0, -11.1831 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node29") ]
 prev_nodes = [ NodePath("../Node27") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node29" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5293, 0, -14.2707 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node36") ]
 prev_nodes = [ NodePath("../Node28") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node30" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78371, 0, -15.0823 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node26") ]
 prev_nodes = [ NodePath("../Node40") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node31" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9085, 0, -6.52955 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node35") ]
 prev_nodes = [ NodePath("../Node10") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node32" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0427, 0, -3.00452 )
 type = 3
-potential_cake = false
 next_nodes = [ NodePath("../Node33") ]
 prev_nodes = [ NodePath("../Node35") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node33" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9324, 0, 1.40589 )
-type = 0
 potential_cake = true
 next_nodes = [ NodePath("../Node34") ]
 prev_nodes = [ NodePath("../Node32") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node34" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5561, 0, 6.43954 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node13") ]
 prev_nodes = [ NodePath("../Node33") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node35" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9924, 0, -6.83956 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node32") ]
 prev_nodes = [ NodePath("../Node31") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node36" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2181, 0, -19.9082 )
-type = 0
-potential_cake = false
+type = 6
 next_nodes = [ NodePath("../Node37") ]
 prev_nodes = [ NodePath("../Node29") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node37" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7717, 0, -25.8281 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node38") ]
 prev_nodes = [ NodePath("../Node36") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node38" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9797, 0, -28.7061 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node39") ]
 prev_nodes = [ NodePath("../Node37") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node39" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46914, 0, -25.1057 )
-type = 0
 potential_cake = true
 next_nodes = [ NodePath("../Node40") ]
 prev_nodes = [ NodePath("../Node38") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node40" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29244, 0, -20.0554 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node30") ]
 prev_nodes = [ NodePath("../Node39") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node41" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10939, 0, 20.0415 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node42") ]
 prev_nodes = [ NodePath("../Node50") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node42" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.8807 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node43") ]
 prev_nodes = [ NodePath("../Node41") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node43" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.5495 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node44") ]
 prev_nodes = [ NodePath("../Node42") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node44" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77932, 0, 31.9889 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node45") ]
 prev_nodes = [ NodePath("../Node43") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node45" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37058, 0, 35.0633 )
-type = 0
 potential_cake = true
 next_nodes = [ NodePath("../Node46") ]
 prev_nodes = [ NodePath("../Node44") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node46" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8528, 0, 34.9371 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node47") ]
 prev_nodes = [ NodePath("../Node45") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node47" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2767, 0, 32.8501 )
 type = 1
-potential_cake = false
 next_nodes = [ NodePath("../Node48") ]
 prev_nodes = [ NodePath("../Node46") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node48" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 0.999912, 0, 0.0132474, 0, 1, 0, -0.0132474, 0, 0.999912, 19.2568, 0, 28.4806 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node49") ]
 prev_nodes = [ NodePath("../Node47") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node49" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0498, 0, 22.9917 )
-type = 0
-potential_cake = false
 next_nodes = [ NodePath("../Node50") ]
 prev_nodes = [ NodePath("../Node48") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Node50" parent="Nodes" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0554, 0, 18.1241 )
 type = 2
-potential_cake = false
 next_nodes = [ NodePath("../Node41") ]
 prev_nodes = [ NodePath("../Node49") ]
 amount_of_items_sold = 4
-custom_items = [  ]
 
 [node name="Landscape" type="Spatial" parent="."]
 
