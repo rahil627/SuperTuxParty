@@ -1,8 +1,27 @@
 # Releases
-## Alpha Version - v0.6
+## Alpha Version - v0.7
 ### New features
 
 ### Improved / Changed
+
+## Alpha Version - v0.6
+### New features
+- New minigame: Haunted dreams
+- Barebone implementation of Nolok and GNU spaces
+- Added AI difficulty levels
+- Board settings, such as Cake cost and number of turns can be overridden via the menu
+- The current placement of players is shown in the UI
+- Cake spaces get relocated, when the cake is collected
+- Add italian translation
+- Spaces can now be marked as invisible, which can be used to influence the walking path
+
+### Improved / Changed
+- Added a 3D cake model
+- Improved water
+- Fixed a bug that caused the 2v2 rewardscreen to play the wrong animation if Team1 wins
+- Fixed the buy cake message not being translated
+- Reworked the KDEValley board
+- Fixed a bug that caused the game to get stuck, when a board event from a green space was not handled
 
 ## Alpha Version - v0.5
 ### New features
