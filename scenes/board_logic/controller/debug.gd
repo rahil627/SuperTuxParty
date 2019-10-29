@@ -62,6 +62,24 @@ func setup():
 		
 		$List/Minigames/TabContainer/FFA/VBoxContainer.add_child(button)
 	
+	for game in loader.minigames_nolok:
+		var button = Button.new()
+		
+		button.text = loader.parse_file(game).name
+		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK])
+		
+		$List/Minigames/TabContainer/Nolok/VBoxContainer.add_child(button)
+	
+	for game in loader.minigames_gnu:
+		var button = Button.new()
+		
+		button.text = loader.parse_file(game).name
+		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU])
+		
+		$List/Minigames/TabContainer/Gnu/VBoxContainer.add_child(button)
+	
 	for item in Global.item_loader.get_loaded_items():
 		var button = Button.new()
 		
@@ -137,7 +155,7 @@ func _on_minigame_pressed(minigame, type):
 	var controller = get_tree().get_nodes_in_group("Controller")[0]
 	Global.minigame_type = type
 	match type:
-		Global.MINIGAME_TYPES.FREE_FOR_ALL:
+		Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.NOLOK, Global.MINIGAME_TYPES.GNU:
 			Global.minigame_teams = [[1, 2, 3, 4], []]
 		Global.MINIGAME_TYPES.TWO_VS_TWO:
 			Global.minigame_teams = [[1, 3], [2, 4]]

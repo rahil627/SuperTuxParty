@@ -22,6 +22,9 @@ var minigames_1v3 := []
 var minigames_2v2 := []
 var minigames_ffa := []
 
+var minigames_nolok := []
+var minigames_gnu := []
+
 # Checks the directory for a minigame config file and adds its path to the
 # corresonding array.
 func check_directory(filename: String) -> bool:
@@ -45,6 +48,10 @@ func check_directory(filename: String) -> bool:
 						minigames_2v2.append(complete_filename)
 					"FFA":
 						minigames_ffa.append(complete_filename)
+					"Nolok":
+						minigames_nolok.append(complete_filename)
+					"Gnu":
+						minigames_gnu.append(complete_filename)
 
 			return true
 
@@ -94,6 +101,12 @@ func print_loaded_minigames() -> void:
 		print("\t\t" + parse_file(i).name)
 	print("\tFFA:")
 	for i in minigames_ffa:
+		print("\t\t" + parse_file(i).name)
+	print("\tNolok:")
+	for i in minigames_nolok:
+		print("\t\t" + parse_file(i).name)
+	print("\tGnu:")
+	for i in minigames_gnu:
 		print("\t\t" + parse_file(i).name)
 
 func parse_json_file(file: String):
@@ -221,7 +234,7 @@ func parse_file(file: String):
 			return parse_xml_file(file)
 
 # Utility function that should not be called use
-# get_random_1v3/get_random_2v2/get_random_duel/get_random_ffa.
+# get_random_1v3/get_random_2v2/get_random_duel/get_random_ffa/get_random_nolok/get_random_gnu.
 func _get_random_element(list: Array):
 	return parse_file(list[randi() % list.size()])
 
@@ -236,3 +249,9 @@ func get_random_duel():
 
 func get_random_ffa():
 	return _get_random_element(minigames_ffa)
+
+func get_random_nolok():
+	return _get_random_element(minigames_nolok)
+
+func get_random_gnu():
+	return _get_random_element(minigames_gnu)

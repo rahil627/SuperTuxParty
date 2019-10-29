@@ -14,7 +14,7 @@ FILE_MARKDOWN = '### '
 BLACKLIST = []
 
 LICENSE_FILE = ['LICENSE-ART.md', 'LICENSE-MUSIC.md']
-FILE_EXTENSIONS = ['*.png','*.jpg','*.jpeg','*.escn','*.dae','*.obj','*.hdr','*.ttf','*.blend','*.wav','*.mp3']
+FILE_EXTENSIONS = ['*.png','*.jpg','*.jpeg','*.escn','*.dae','*.obj','*.hdr','*.ttf','*.blend','*.wav','*.mp3', '*.ogg']
 
 def make_expand_shell_filter(shellpath):
     def expand_shell_filter(x):

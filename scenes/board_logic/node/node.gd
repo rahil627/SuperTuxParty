@@ -7,7 +7,9 @@ enum NODE_TYPES {
 	RED,
 	GREEN,
 	YELLOW,
-	SHOP
+	SHOP,
+	NOLOK,
+	GNU
 }
 
 export(bool) var _visible = true setget set_hidden
@@ -255,6 +257,12 @@ func set_material() -> void:
 			$Model/Cylinder.set_surface_material(0, preload(
 			"res://scenes/board_logic/node/material/" +
 			"node_purple_material.tres"))
+		NODE_TYPES.NOLOK:
+			pass # TODO Nolok space texture
+		NODE_TYPES.GNU:
+			$Model/Cylinder.set_surface_material(0, preload(
+			"res://scenes/board_logic/node/material/" +
+			"node_gnu_material.tres"))
 
 func _exit_tree() -> void:
 	for p in next:

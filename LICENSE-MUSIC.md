@@ -34,6 +34,14 @@ Retrieved from [Open Game Art](https://opengameart.org/content/battle-theme-a)
 
 License [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
 
+### haunted dreams.ogg
+
+Copyright Wolfgang
+
+Retrieved from [Open Game Art](https://opengameart.org/content/skeleton-waltz-theme)
+
+License [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ## assets/sounds/sfx
 ### victory.ogg
 

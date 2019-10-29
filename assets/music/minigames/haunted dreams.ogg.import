@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/haunted dreams.ogg-268b9711f4672620e59a8b740c00d4db.oggstr"
+
+[deps]
+
+source_file="res://assets/music/minigames/haunted dreams.ogg"
+dest_files=[ "res://.import/haunted dreams.ogg-268b9711f4672620e59a8b740c00d4db.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

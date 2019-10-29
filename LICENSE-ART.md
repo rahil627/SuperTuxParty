@@ -25,6 +25,15 @@ Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## assets/models/bed
+### bed.escn | bed.blend
+
+Public Domain by Clint Bellanger
+
+Retrieved from [Open Game Art](https://opengameart.org/content/bed-low-poly)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## assets/models/bridge
 ### bridge_mesh.blend | bridge_mesh.obj | bridge_diffuse.png
 
@@ -57,6 +66,25 @@ Retrieved from [Open Game Art](https://opengameart.org/content/wooden-door)
 
 License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
 
+## assets/models/ghost
+### ghost.escn | ghost.blend
+
+Copyright © 2019 Florian Kothmeier
+Based upon the "Jack-o-Lantern" model by ulf
+
+Retrieved from [Open Game Art](https://opengameart.org/content/jack-o-lantern)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## assets/models/ghost/textures
+### jack-o-lantern_\*.png
+
+Copyright ulf
+
+Retrieved from [Open Game Art](https://opengameart.org/content/jack-o-lantern)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## scenes/board_logic/controller/icons
 ### cake.png
 
@@ -85,6 +113,13 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 Copyright © 2018 Florian Kothmeier 
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### heckert_gnu.big.png
+
+Copyright Aurélio A. Heckert
+
+Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
+License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
 
 ## scenes/board_logic/node
 ### node.escn | node.blend
@@ -123,6 +158,13 @@ tile_yellow_col.png and tile_purple_col.png are modified versions of tile_red_co
 Retrived from [CC0 Textures](https://cc0textures.com/home)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### tile_gnu_col.png
+
+Based upon the tile_yellow_col.png file and the GNU logo by Aurélio A. Heckert
+
+Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
+License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
 
 ## scenes/speech_dialog
 ### dialog_box.png | dialog_box_focus.png
@@ -252,7 +294,7 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/characters/Godette
-### palette.png | godete_palette.svg | godot_chan.blend | godot_chan_one_object.blend | godot_chan.dae
+### palette.png | godete_palette.svg | godot_chan.blend | godot_chan_one_object.blend | godot_chan.escn
 
 Copyright © SirRichard94
 
@@ -398,6 +440,20 @@ Public Domain by yughues
 Retrieved from [Open Game Art](https://opengameart.org/content/free-tiling-textures-pack-45-0)
 
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/haunted_dreams
+### room.escn | room.blend
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 
 ## assets/models/fence
 ### fence.escn | picketfence_0.blend

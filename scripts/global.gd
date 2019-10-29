@@ -66,7 +66,9 @@ enum MINIGAME_TYPES {
 	DUEL,
 	ONE_VS_THREE,
 	TWO_VS_TWO,
-	FREE_FOR_ALL
+	FREE_FOR_ALL,
+	NOLOK,
+	GNU
 }
 
 enum Difficulty {
@@ -475,6 +477,19 @@ func _goto_board(new_placement) -> void:
 								other_player_cakes
 
 			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_DUEL)
+		MINIGAME_TYPES.NOLOK:
+			# TODO: Reward
+
+			# TODO: Rewardscreen
+			call_deferred("_goto_scene_ingame", current_board)
+		MINIGAME_TYPES.GNU:
+			# TODO: Better reward
+			if placement:
+				for player in players:
+					player.cookies += 10
+
+			# TODO: Reward screen
+			call_deferred("_goto_scene_ingame", current_board)
 
 func minigame_win_by_points(points: Array) -> void:
 	var players := []
@@ -544,6 +559,18 @@ func minigame_1v3_win_team_players() -> void:
 
 func minigame_1v3_win_solo_player() -> void:
 	_goto_board(1)
+
+func minigame_nolok_win() -> void:
+	_goto_board(true)
+
+func minigame_nolok_loose() -> void:
+	_goto_board(false)
+
+func minigame_gnu_win() -> void:
+	_goto_board(true)
+
+func minigame_gnu_loose() -> void:
+	_goto_board(false)
 
 func load_board_state(controller: Spatial) -> void:
 	controller.COOKIES_FOR_CAKE = overrides.cake_cost

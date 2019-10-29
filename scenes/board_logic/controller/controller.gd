@@ -425,6 +425,33 @@ func land_on_space(player):
 				yield(show_minigame_animation(), "completed")
 				$Screen/MinigameInformation.show_minigame_info(minigame, players)
 			return
+		NodeBoard.NODE_TYPES.NOLOK:
+			# TODO: Different (bad) rewards
+			Global.minigame_type = Global.MINIGAME_TYPES.NOLOK
+			var minigame = Global.minigame_loader.get_random_nolok()
+			var players = []
+			for player in self.players:
+				players.push_back(player.player_id)
+			player_turn += 1
+			Global.minigame_teams = [players, []]
+			yield(show_minigame_animation(), "completed")
+			show_minigame_info(minigame)
+			return
+		NodeBoard.NODE_TYPES.GNU:
+			# TODO: Different rewards
+			Global.minigame_type = Global.MINIGAME_TYPES.GNU
+			var minigame = Global.minigame_loader.get_random_gnu()
+			var players = []
+			for player in self.players:
+				players.push_back(player.player_id)
+			player_turn += 1
+			Global.minigame_teams = [players, []]
+			$Screen/MinigameTypeAnimation/Gnu.show()
+			yield(get_tree().create_timer(2), "timeout")
+			$Screen/MinigameTypeAnimation/Gnu.hide()
+			yield(show_minigame_animation(), "completed")
+			show_minigame_info(minigame)
+			return
 
 	player_turn += 1
 	wait_for_animation = false
@@ -638,6 +665,10 @@ func show_minigame_animation() -> void:
 			$Screen/MinigameTypeAnimation.play("2v2")
 		Global.MINIGAME_TYPES.DUEL:
 			$Screen/MinigameTypeAnimation.play("Duel")
+		Global.MINIGAME_TYPES.NOLOK:
+			$Screen/MinigameTypeAnimation.play("FFA") # TODO better animation
+		Global.MINIGAME_TYPES.GNU:
+			$Screen/MinigameTypeAnimation.play("FFA") # TODO better animation
 
 	$Screen/Dice.hide()
 
