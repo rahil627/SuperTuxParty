@@ -2,7 +2,7 @@ extends Control
 
 onready var controller: Node = get_tree().get_nodes_in_group("Controller")[0]
 
-func select(player, players: Array):
+func select(minigame, player, players: Array):
 	players = players.duplicate()
 	players.remove(players.find(player))
 
@@ -18,18 +18,18 @@ func select(player, players: Array):
 		node.connect("mouse_entered", self, "_on_mouse_entered", [node])
 		node.connect("mouse_exited", self, "_on_mouse_exited", [node])
 		node.connect("pressed", self, "_on_duel_opponent_select",
-							[player.player_id, p.player_id])
+							[minigame, player.player_id, p.player_id])
 		i += 1
 
 	$Player1.grab_focus()
 	show()
 
-func _on_duel_opponent_select(self_id: int, other_id: int) -> void:
+func _on_duel_opponent_select(minigame, self_id: int, other_id: int) -> void:
 	Global.minigame_teams = [[other_id], [self_id]]
 
 	hide()
 	yield(controller.show_minigame_animation(), "completed")
-	controller.get_node("Screen/MinigameInformation").show_minigame_info(controller.current_minigame,
+	controller.get_node("Screen/MinigameInformation").show_minigame_info(minigame,
 		controller.players)
 
 func _on_focus_entered(button) -> void:

@@ -414,7 +414,7 @@ func land_on_space(player):
 			player_turn += 1
 			if not player.is_ai:
 				yield(minigame_duel_reward_animation(), "completed")
-				$Screen/DuelSelection.select(player, players)
+				$Screen/DuelSelection.select(minigame, player, players)
 			else:
 				var players: Array = self.players.duplicate()
 				players.remove(players.find(player))
