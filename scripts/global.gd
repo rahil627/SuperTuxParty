@@ -160,7 +160,7 @@ func load_board(board: String, names: Array, characters: Array,
 		if file_name == "":
 			break
 
-		if file_name.ends_with(".translation"):
+		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
 			var translation = load(dir.get_current_dir() + "/" + file_name)
 			if not translation is Translation:
 				print("Error: file " + file_name +
@@ -307,7 +307,7 @@ func load_board_from_savegame(savegame) -> void:
 		if file_name == "":
 			break
 
-		if file_name.ends_with(".translation"):
+		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
 			var translation = load(dir.get_current_dir() + "/" + file_name)
 			if not translation is Translation:
 				print("Error: file " + file_name +
@@ -352,7 +352,7 @@ func goto_minigame(minigame, try := false) -> void:
 		if file_name == "":
 			break
 
-		if file_name.ends_with(".translation"):
+		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
 			var translation = load(dir.get_current_dir() + "/" + file_name)
 			if not translation is Translation:
 				print("Error: file " + file_name +

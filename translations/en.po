@@ -1,0 +1,418 @@
+
+# Translations template for Super Tux Party.
+# Copyright (C) 2019 Super Tux Party Contributors
+# This file is distributed under the same license as the Super Tux Party project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.7\n"
+"PO-Revision-Date: 2019-10-29 23:16:12.181947\n"
+"Last-Translator: Automatic generated\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "CONTEXT_LABEL_BUY_CAKE"
+msgstr "Buy a cake for %d cookies"
+
+msgid "CONTEXT_LABEL_DUEL_REWARD"
+msgstr "Duel Reward:"
+
+msgid "CONTEXT_LABEL_DUEL_SELECT"
+msgstr "Select Opponent:"
+
+msgid "CONTEXT_LABEL_FINISH"
+msgstr "Finish!"
+
+msgid "CONTEXT_LABEL_GO"
+msgstr "Go!"
+
+msgid "CONTEXT_LABEL_OUTCOME_DRAW"
+msgstr "Draw!"
+
+msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
+msgstr "Game over!"
+
+msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
+msgstr "The winner is %s!"
+
+msgid "CONTEXT_LABEL_PLAYER_ROLLED"
+msgstr "%s rolled %d:"
+
+msgid "CONTEXT_LABEL_PLAYER_WINS"
+msgstr "%s wins!"
+
+msgid "CONTEXT_LABEL_READY_QUESTION"
+msgstr "Ready?"
+
+msgid "CONTEXT_LABEL_ROLL"
+msgstr "Roll"
+
+msgid "CONTEXT_LABEL_ROLL_PLAYER"
+msgstr "Roll %s!"
+
+msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
+msgstr "Winner steals 1 cake"
+
+msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
+msgstr "Winner steals 10 cookies"
+
+msgid "CONTEXT_LABEL_TURN_NUM"
+msgstr "Turn %d"
+
+msgid "CONTEXT_LABEL_VS"
+msgstr "VS."
+
+msgid "CONTEXT_LABEL_YOUR_TURN"
+msgstr "It's your turn!"
+
+msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
+msgstr "You don't have enough cookies to buy that"
+
+msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
+msgstr "You don't have space left in your inventory"
+
+msgid "MENU_CONTROLS_ACTION_1"
+msgstr "Action 1"
+
+msgid "MENU_CONTROLS_ACTION_2"
+msgstr "Action 2"
+
+msgid "MENU_CONTROLS_ACTION_3"
+msgstr "Action 3"
+
+msgid "MENU_CONTROLS_ACTION_4"
+msgstr "Action 4"
+
+msgid "MENU_CONTROLS_AXIS_MINUS"
+msgstr "Axis -"
+
+msgid "MENU_CONTROLS_AXIS_PLUS"
+msgstr "Axis +"
+
+msgid "MENU_CONTROLS_AXIS_UNKNOWN"
+msgstr "Unknown Axis"
+
+msgid "MENU_CONTROLS_AXIS_X_LEFT"
+msgstr "X Left"
+
+msgid "MENU_CONTROLS_AXIS_X_RIGHT"
+msgstr "X Right"
+
+msgid "MENU_CONTROLS_AXIS_Y_LEFT"
+msgstr "Y Left"
+
+msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
+msgstr "Y Right"
+
+msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
+msgstr "Unknown Button"
+
+msgid "MENU_CONTROLS_GAMEPAD"
+msgstr "Gamepad"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+msgstr "Gamepad button"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
+msgstr "Gamepad button 1"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
+msgstr "Gamepad button 2"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
+msgstr "Gamepad button 3"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
+msgstr "Gamepad button 4"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
+msgstr "Gamepad button A"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
+msgstr "Gamepad button B"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
+msgstr "Gamepad button Circle"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
+msgstr "Gamepad button Cross"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
+msgstr "Gamepad button Square"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
+msgstr "Gamepad button Triangle"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
+msgstr "Gamepad button X"
+
+msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
+msgstr "Gamepad button Y"
+
+msgid "MENU_CONTROLS_GAMEPAD_SELECT"
+msgstr "Gamepad Select"
+
+msgid "MENU_CONTROLS_GAMEPAD_START"
+msgstr "Gamepad Start"
+
+msgid "MENU_CONTROLS_MOUSE"
+msgstr "Mouse"
+
+msgid "MENU_CONTROLS_MOUSE_BUTTON"
+msgstr "Mouse button"
+
+msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
+msgstr "Left mouse button"
+
+msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
+msgstr "Middle mouse button"
+
+msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
+msgstr "Right mouse button"
+
+msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
+msgstr "Button wheel down"
+
+msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
+msgstr "Button wheel left"
+
+msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
+msgstr "Button wheel right"
+
+msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
+msgstr "Button wheel up"
+
+msgid "MENU_CONTROLS_TRIGGER_LEFT"
+msgstr "Left Trigger"
+
+msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
+msgstr "Left Trigger 2"
+
+msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
+msgstr "Left Trigger 3"
+
+msgid "MENU_CONTROLS_TRIGGER_RIGHT"
+msgstr "Right Trigger"
+
+msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
+msgstr "Right Trigger 2"
+
+msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
+msgstr "Right Trigger 3"
+
+msgid "MENU_CONTROLS_ACTION_NUM"
+msgstr "Action %d"
+
+msgid "MENU_CONTROLS_DIR_DOWN"
+msgstr "Down"
+
+msgid "MENU_CONTROLS_DIR_LEFT"
+msgstr "Left"
+
+msgid "MENU_CONTROLS_DIR_RIGHT"
+msgstr "Right"
+
+msgid "MENU_CONTROLS_DIR_UP"
+msgstr "Up"
+
+msgid "MENU_IO_ENTER_SAVEGAME_NAME"
+msgstr "Enter savegame name:"
+
+msgid "MENU_IO_LOAD_GAME"
+msgstr "Load Game"
+
+msgid "MENU_IO_SAVE"
+msgstr "Save"
+
+msgid "MENU_IO_SAVE_GAME"
+msgstr "Save Game"
+
+msgid "MENU_LABEL_BACK"
+msgstr "Back"
+
+msgid "MENU_LABEL_CANCEL"
+msgstr "Cancel"
+
+msgid "MENU_LABEL_CHARACTER"
+msgstr "Character:"
+
+msgid "MENU_LABEL_CONTINUE"
+msgstr "Continue"
+
+msgid "MENU_LABEL_DESCRIPTION"
+msgstr "Description"
+
+msgid "MENU_LABEL_DESKTOP"
+msgstr "Exit to Desktop"
+
+msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
+msgstr "Joypad display names:"
+
+msgid "MENU_LABEL_LINEAR"
+msgstr "Linear"
+
+msgid "MENU_LABEL_NEW_GAME"
+msgstr "New Game"
+
+msgid "MENU_LABEL_NINTENDO_DS"
+msgstr "Nintendo DS"
+
+msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
+msgstr "Not ready..."
+
+msgid "MENU_LABEL_NUMBERS"
+msgstr "Numbers"
+
+msgid "MENU_LABEL_NUM_1"
+msgstr "1"
+
+msgid "MENU_LABEL_NUM_2"
+msgstr "2"
+
+msgid "MENU_LABEL_NUM_3"
+msgstr "3"
+
+msgid "MENU_LABEL_NUM_4"
+msgstr "4"
+
+msgid "MENU_LABEL_OK"
+msgstr "Ok"
+
+msgid "MENU_LABEL_PAUSE"
+msgstr "Pause"
+
+msgid "MENU_LABEL_PAUSED"
+msgstr "Paused"
+
+msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
+msgstr "Pause on Window Unfocus"
+
+msgid "MENU_LABEL_PLAY"
+msgstr "Play"
+
+msgid "MENU_LABEL_PLAYER"
+msgstr "Player"
+
+msgid "MENU_LABEL_PLAYSTATION"
+msgstr "Playstation"
+
+msgid "MENU_LABEL_PRESS_ANY_KEY"
+msgstr "Press any key"
+
+msgid "MENU_LABEL_QUIT"
+msgstr "Quit"
+
+msgid "MENU_LABEL_READY"
+msgstr "Ready!"
+
+msgid "MENU_LABEL_RESUME"
+msgstr "Resume"
+
+msgid "MENU_LABEL_RETURN_MENU"
+msgstr "Return to Main Menu"
+
+msgid "MENU_LABEL_REWARD_SYSTEM"
+msgstr "Reward System:"
+
+msgid "MENU_LABEL_SELECT_BOARD"
+msgstr "Select board"
+
+msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
+msgstr "Select a character for Player 1"
+
+msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
+msgstr "Select a character for Player 2"
+
+msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
+msgstr "Select a character for Player 3"
+
+msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
+msgstr "Select a character for Player 4"
+
+msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
+msgstr "Select amount of players"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"
+
+msgid "MENU_LABEL_TRY"
+msgstr "Try"
+
+msgid "MENU_LABEL_WINNER_TAKES_ALL"
+msgstr "Winner takes all"
+
+msgid "MENU_LABEL_XBOX"
+msgstr "XBOX"
+
+msgid "MENU_OPTIONS"
+msgstr "Options"
+
+msgid "MENU_OPTIONS_AUDIO"
+msgstr "Audio"
+
+msgid "MENU_OPTIONS_CONTROLS"
+msgstr "Controls"
+
+msgid "MENU_OPTIONS_EFFECTS"
+msgstr "Effects"
+
+msgid "MENU_OPTIONS_FRAME_CAP"
+msgstr "Frame Cap"
+
+msgid "MENU_OPTIONS_FULLSCREEN"
+msgstr "Fullscreen"
+
+msgid "MENU_OPTIONS_LANGUAGE"
+msgstr "Language"
+
+msgid "MENU_OPTIONS_MASTER"
+msgstr "Master"
+
+msgid "MENU_OPTIONS_MISC"
+msgstr "Misc."
+
+msgid "MENU_OPTIONS_MUSIC"
+msgstr "Music"
+
+msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
+msgstr "Mute on Window Unfocus"
+
+msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
+msgstr "System Default"
+
+msgid "MENU_OPTIONS_VISUAL"
+msgstr "Visual"
+
+msgid "MENU_OPTIONS_VSYNC"
+msgstr "V-sync"
+
+msgid "DIALOG_YES"
+msgstr "Yes"
+
+msgid "DIALOG_NO"
+msgstr "No"
+
+msgid "MENU_LABEL_CAKE_COST"
+msgstr "Cake cost:"
+
+msgid "MENU_LABEL_TURNS"
+msgstr "Turns:"
+
+msgid "AI_DIFFICULTY"
+msgstr "AI difficulty:"
+
+msgid "DIFFICULTY_EASY"
+msgstr "Easy"
+
+msgid "DIFFICULTY_NORMAL"
+msgstr "Normal"
+
+msgid "DIFFICULTY_HARD"
+msgstr "Hard"
+
+msgid "CONTEXT_GNU_MINIGAME"
+msgstr "Gnu minigame!"
+
