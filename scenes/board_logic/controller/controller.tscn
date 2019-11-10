@@ -765,21 +765,6 @@ custom_fonts/font = ExtResource( 7 )
 text = "Roll Player 1!"
 align = 1
 
-[node name="Roll" type="Button" parent="Screen"]
-visible = false
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -64.0
-margin_top = -48.0
-margin_right = 64.0
-margin_bottom = -8.0
-focus_mode = 0
-custom_fonts/font = ExtResource( 7 )
-enabled_focus_mode = 0
-text = "CONTEXT_LABEL_ROLL"
-
 [node name="Turn" type="Label" parent="Screen"]
 anchor_right = 1.0
 margin_top = 16.0
@@ -1183,6 +1168,21 @@ align = 1
 
 [node name="Cake" parent="Screen" instance=ExtResource( 12 )]
 
+[node name="Roll" type="Button" parent="Screen"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -48.0
+margin_right = 140.0
+margin_bottom = -8.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 7 )
+enabled_focus_mode = 0
+text = "CONTEXT_LABEL_ROLL"
+
 [node name="MinigameInformation" parent="Screen" instance=ExtResource( 13 )]
 
 [node name="DuelSelection" parent="Screen" instance=ExtResource( 14 )]
@@ -1223,7 +1223,6 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 current = true
 
 [node name="SelectSpaceHelper" parent="." instance=ExtResource( 17 )]
-[connection signal="pressed" from="Screen/Roll" to="." method="_on_Roll_pressed"]
 [connection signal="pressed" from="Screen/Debug/Row1/Skip" to="Screen/Debug" method="_on_Skip_pressed"]
 [connection signal="pressed" from="Screen/Debug/Row1/AddCookies" to="Screen/Debug" method="_on_AddCookies_pressed"]
 [connection signal="pressed" from="Screen/Debug/Row1/AddCake" to="Screen/Debug" method="_on_AddCake_pressed"]
@@ -1232,3 +1231,4 @@ current = true
 [connection signal="pressed" from="Screen/Debug/Row2/Item" to="Screen/Debug" method="_on_Item_pressed"]
 [connection signal="pressed" from="Screen/Debug/Row3/Move" to="Screen/Debug" method="_on_Move_pressed"]
 [connection signal="pressed" from="Screen/Debug/List/Inputs/Ok" to="Screen/Debug" method="_on_Ok_pressed"]
+[connection signal="pressed" from="Screen/Roll" to="." method="_on_Roll_pressed"]
