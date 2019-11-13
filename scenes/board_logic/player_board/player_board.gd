@@ -76,14 +76,11 @@ func _physics_process(delta: float) -> void:
 
 		var dir: Vector3 = destination[0].position - translation
 		var movement: Vector3 = MOVEMENT_SPEED * dir.normalized() * delta
-		if movement.length_squared() <= dir.length_squared():
-			translation += movement
-		else:
-			translation += dir
+		translation += movement
 
 		target_rotation = atan2(dir.normalized().x, dir.normalized().z)
 
-		if dir.length() < 0.01:
+		if dir.length() < 2 * delta * MOVEMENT_SPEED:
 			var state = destination.pop_front()
 			emit_signal("walking_step", state.space)
 
