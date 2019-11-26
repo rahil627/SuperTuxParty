@@ -2,52 +2,24 @@
 
 [ext_resource path="res://scenes/board_logic/controller/duelselection.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/shaders/outline.shader" type="Shader" id=3]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-uniform float outLineSize  = 0.02;
-uniform vec4  outLineColor = vec4(1.0, 1.0, 1.0, 1.0);
-
-uniform bool enable_shader = false;
-
-void fragment()
-{
-    vec4 tcol = texture(TEXTURE, UV);
-    
-    if (enable_shader && tcol.a == 0.0)
-    {
-        if (texture(TEXTURE, UV + vec2(0.0,          outLineSize)).a  != 0.0 ||
-            texture(TEXTURE, UV + vec2(0.0,         -outLineSize)).a  != 0.0 ||
-            texture(TEXTURE, UV + vec2(outLineSize,  0.0)).a          != 0.0 ||
-            texture(TEXTURE, UV + vec2(-outLineSize, 0.0)).a          != 0.0 ||
-            texture(TEXTURE, UV + vec2(-outLineSize, outLineSize)).a  != 0.0 ||
-            texture(TEXTURE, UV + vec2(-outLineSize, -outLineSize)).a != 0.0 ||
-            texture(TEXTURE, UV + vec2(outLineSize,  outLineSize)).a  != 0.0 ||
-            texture(TEXTURE, UV + vec2(outLineSize,  -outLineSize)).a != 0.0) 
-            tcol = outLineColor;
-    }
-    
-    COLOR = tcol;
-}"
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 3 )
+shader_param/width = 10.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/enable_shader = null
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/outLineSize = 0.02
-shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader = ExtResource( 3 )
+shader_param/width = 10.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 1 )
-shader_param/outLineSize = 0.02
-shader_param/outLineColor = Plane( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 1 )
-shader_param/outLineSize = 0.02
-shader_param/outLineColor = Plane( 1, 1, 1, 1 )
+shader = ExtResource( 3 )
+shader_param/width = 10.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/enable_shader = false
 
 [node name="DuelSelection" type="Control"]
@@ -69,7 +41,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "CONTEXT_LABEL_DUEL_SELECT"
 
 [node name="Player1" type="TextureButton" parent="."]
-material = SubResource( 2 )
+material = SubResource( 4 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -82,7 +54,7 @@ expand = true
 stretch_mode = 5
 
 [node name="Player2" type="TextureButton" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -95,7 +67,7 @@ expand = true
 stretch_mode = 5
 
 [node name="Player3" type="TextureButton" parent="."]
-material = SubResource( 4 )
+material = SubResource( 3 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
