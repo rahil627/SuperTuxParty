@@ -1,0 +1,45 @@
+{
+    "app-id": "org.flatpak.supertuxparty",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "18.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "run.sh",
+    "modules": [
+        {
+            "name": "supertuxparty",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/bin/plugins",
+                "install -D run.sh /app/bin/run.sh",
+                "install -D supertuxparty /app/bin/supertuxparty",
+                "install -D supertuxparty.pck /app/bin/supertuxparty.pck",
+                "install -D default.pck /app/bin/plugins/default.pck"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "run.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "build/supertuxparty"
+                },
+                {
+                    "type": "file",
+                    "path": "build/supertuxparty.pck"
+                },
+                {
+                    "type": "file",
+                    "path": "build/plugins/default.pck"
+                }
+            ]
+        }
+    ],
+    "finish-args": [
+        "--socket=x11",
+        "--socket=pulseaudio",
+        "--filesystem=home",
+        "--device=dri"
+    ]
+}
+
