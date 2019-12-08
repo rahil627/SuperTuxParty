@@ -36,6 +36,7 @@ var items := [preload("res://plugins/items/dice/item.gd").new()]
 func _ready() -> void:
 	if has_node("Model/AnimationPlayer"):
 		$Model/AnimationPlayer.play("idle")
+		$Model/AnimationPlayer.seek(0, true)
 
 func give_item(item: Item) -> bool:
 	if items.size() < MAX_ITEMS:

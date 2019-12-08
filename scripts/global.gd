@@ -31,6 +31,8 @@ const MINIGAME_REWARD_SCREEN_PATH_1V3 =\
 const MINIGAME_REWARD_SCREEN_PATH_2V2 =\
 		"res://scenes/board_logic/controller/rewardscreens/2v2.tscn"
 
+const LOADING_SCREEN = preload("res://scenes/menus/loading_screen.tscn")
+
 const MINIGAME_TEAM_COLORS = [Color(1, 0, 0), Color(0, 0, 1)]
 
 var plugin_system: Object = preload("res://scripts/plugin_system.gd").new()
@@ -128,6 +130,9 @@ var placement
 var _board_loaded_translations := []
 var _minigame_loaded_translations := []
 
+var interactive_loaders := []
+var loaded_scene := null
+
 func _ready() -> void:
 	randomize()
 	var root: Viewport = get_tree().get_root()
@@ -150,6 +155,30 @@ func _notification(what: int) -> void:
 				else:
 					_was_muted = true
 
+func _process(_delta: float):
+	var filtered = []
+	for data in interactive_loaders:
+		var err = data[0].poll()
+		match err:
+			OK:
+				filtered.append(data)
+			ERR_FILE_EOF:
+				data[1].call(data[2], data[0].get_resource(), data[4])
+			_:
+				push_error("Failed to load resource: %s" % data[3])
+	interactive_loaders = filtered
+
+func get_loader_progress():
+	var loaded = 0
+	var stages = 0
+	for data in interactive_loaders:
+		loaded += data[0].get_stage()
+		stages += data[0].get_stage_count()
+	return [loaded, stages]
+
+func _load_interactive(path: String, base: Object, method: String, arg):
+	interactive_loaders.append([ResourceLoader.load_interactive(path), base, method, path, arg])
+
 func load_board(board: String, names: Array, characters: Array,
 		human_players: int) -> void:
 	var dir = Directory.new()
@@ -161,14 +190,7 @@ func load_board(board: String, names: Array, characters: Array,
 			break
 
 		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
-			var translation = load(dir.get_current_dir() + "/" + file_name)
-			if not translation is Translation:
-				print("Error: file " + file_name +
-						" is not a valid translation")
-				continue
-
-			TranslationServer.add_translation(translation)
-			_board_loaded_translations.push_back(translation)
+			_load_interactive(dir.get_current_dir() + "/" + file_name, self, "_install_translation_board", file_name)
 
 	dir.list_dir_end()
 
@@ -181,43 +203,65 @@ func load_board(board: String, names: Array, characters: Array,
 	current_board = board
 	call_deferred("_goto_scene_ingame", board)
 
+func _install_translation_board(translation, file_name: String):
+	if not translation is Translation:
+		push_warning("Error: file " + file_name + " is not a valid translation")
+		return
+
+	TranslationServer.add_translation(translation)
+	_board_loaded_translations.push_back(translation)
+
+func _install_translation_minigame(translation, file_name: String):
+	if not translation is Translation:
+		push_warning("Error: file " + file_name + " is not a valid translation")
+		return
+
+	TranslationServer.add_translation(translation)
+	_minigame_loaded_translations.push_back(translation)
+
+func change_scene():
+	current_scene.free()
+	current_scene = loaded_scene
+	loaded_scene = null
+
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+
 # Goto a specific scene without saving player states.
 func goto_scene(path: String) -> void:
 	call_deferred("_goto_scene", path)
 
 # Internal function for actually changing scene without saving any game state.
 func _goto_scene(path: String) -> void:
-	current_scene.free()
-
-	var s: PackedScene = load(path)
-
-	current_scene = s.instance()
-
+	current_scene.queue_free()
+	current_scene = LOADING_SCREEN.instance()
+	
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
+	_load_interactive(path, self, "_goto_scene_callback", null)
+
+func _goto_scene_callback(s: PackedScene, _arg):
+	loaded_scene = s.instance()
 
 # Internal function for actually changing scene while handling player objects.
 func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
-	current_scene.free()
+	current_scene.queue_free()
+	current_scene = LOADING_SCREEN.instance()
 
-	var loader = ResourceLoader.load_interactive(path)
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+	_load_interactive(path, self, "_goto_scene_ingame_callback", instance_pause_menu)
 
-	if loader == null:
-		print("Error: could not load scene " + path)
-	else:
-		loader.wait()
-
-	var s = loader.get_resource()
-
-	current_scene = s.instance()
+func _goto_scene_ingame_callback(s: PackedScene, instance_pause_menu: bool):
+	loaded_scene = s.instance()
 
 	if instance_pause_menu:
-		current_scene.add_child(
+		loaded_scene.add_child(
 				preload("res://scenes/menus/pause_menu.tscn").instance())
 
 	if minigame_teams == null:
 		for i in players.size():
-			var player = current_scene.get_node("Player" + str(i + 1))
+			var player = loaded_scene.get_node("Player" + str(i + 1))
 
 			var new_model = load(character_loader.get_character_path(
 					players[i].character)).instance()
@@ -245,7 +289,7 @@ func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
 		for team_id in minigame_teams.size():
 			var team = minigame_teams[team_id]
 			for player_id in team:
-				var player = current_scene.get_node("Player" + str(i))
+				var player = loaded_scene.get_node("Player" + str(i))
 
 				var new_model =\
 						load(character_loader.get_character_path(
@@ -286,13 +330,10 @@ func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
 
 		# Remove unnecessary players.
 		while i <= Global.amount_of_players:
-			var player = current_scene.get_node("Player" + str(i))
-			current_scene.remove_child(player)
+			var player = loaded_scene.get_node("Player" + str(i))
+			loaded_scene.remove_child(player)
 			player.queue_free()
 			i += 1
-
-	get_tree().get_root().add_child(current_scene)
-	get_tree().set_current_scene(current_scene)
 
 func load_board_from_savegame(savegame) -> void:
 	current_savegame = savegame
@@ -308,14 +349,7 @@ func load_board_from_savegame(savegame) -> void:
 			break
 
 		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
-			var translation = load(dir.get_current_dir() + "/" + file_name)
-			if not translation is Translation:
-				print("Error: file " + file_name +
-						" is not a valid translation")
-				continue
-
-			TranslationServer.add_translation(translation)
-			_board_loaded_translations.push_back(translation)
+			_load_interactive(dir.get_current_dir() + "/" + file_name, self, "_install_translation_board", file_name)
 
 	dir.list_dir_end()
 
@@ -353,14 +387,7 @@ func goto_minigame(minigame, try := false) -> void:
 			break
 
 		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
-			var translation = load(dir.get_current_dir() + "/" + file_name)
-			if not translation is Translation:
-				print("Error: file " + file_name +
-						" is not a valid translation")
-				continue
-
-			TranslationServer.add_translation(translation)
-			_minigame_loaded_translations.push_back(translation)
+			_load_interactive(dir.get_current_dir() + "/" + file_name, self, "_install_translation_minigame", file_name)
 
 	dir.list_dir_end()
 
