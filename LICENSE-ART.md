@@ -746,13 +746,11 @@ Copyright Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/textures
-### dirt.png | dirt.xcf
+### dirt.png
 
-Copyright © Charlie
+Copyright © Florian Kothmeier
 
-Retrieved from [OpenGameArt](https://opengameart.org/content/tileable-dirt-texture-256x256)
-
-License: [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### water_diffuse.png
 
@@ -760,7 +758,7 @@ Public Domain by Bastiaan Olij
 
 Retrived from [Github](https://github.com/BastiaanOlij/shader_tutorial)
 
-License: [CC0 1.0 UnBastiaan Olijiversal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ### delete_save.png
 
