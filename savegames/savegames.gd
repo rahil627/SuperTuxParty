@@ -21,7 +21,7 @@ class SaveGame:
 	var current_minigame
 
 	var board_path: = ""
-	var cake_space := 0
+	var cake_space := NodePath()
 	var player_turn := 1
 	var cake_cost := 30
 	var max_turns := 10

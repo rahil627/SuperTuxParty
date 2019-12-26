@@ -103,7 +103,7 @@ var current_scene: Node
 
 # Stops the controller from loading information when starting a new game.
 var new_game := true
-var cake_space := -1
+var cake_space := NodePath()
 var players := [PlayerState.new(), PlayerState.new(), PlayerState.new(),
 		PlayerState.new()]
 var turn := 1
@@ -365,7 +365,7 @@ func load_board_from_savegame(savegame) -> void:
 		players[i].cakes = int(savegame.players[i].cakes)
 		players[i].items = savegame.players[i].items
 
-	cake_space = int(savegame.cake_space)
+	cake_space = savegame.cake_space
 	current_minigame = savegame.current_minigame
 	player_turn = int(current_savegame.player_turn)
 	overrides.cake_cost = int(savegame.cake_cost)
@@ -606,11 +606,9 @@ func load_board_state(controller: Spatial) -> void:
 	# Current player nodes.
 	var r_players: Array = get_tree().get_nodes_in_group("players")
 
-	var cake_nodes: Array = get_tree().get_nodes_in_group("cake_nodes")
-
 	if not new_game:
 		# Place cake spot back on the board.
-		var cake_node: Spatial = cake_nodes[cake_space]
+		var cake_node: Spatial = controller.get_node(cake_space)
 		cake_node.cake = true
 
 		if current_minigame != null:
@@ -674,7 +672,7 @@ func load_board_state(controller: Spatial) -> void:
 # Reset game state, used for starting a new game.
 func reset_state() -> void:
 	new_game = true
-	cake_space = -1
+	cake_space = NodePath()
 	current_board = ""
 	player_turn = 1
 	turn = 1
