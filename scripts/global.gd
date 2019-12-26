@@ -358,7 +358,7 @@ func load_board_from_savegame(savegame) -> void:
 		players[i].player_id = i + 1
 		players[i].player_name = savegame.players[i].player_name
 		players[i].is_ai = savegame.players[i].is_ai
-		players[i].ai_difficulty = savegame.players[i].ai_difficulty
+		players[i].ai_difficulty = int(savegame.players[i].ai_difficulty)
 		players[i].space = savegame.players[i].space
 		players[i].character = savegame.players[i].character
 		players[i].cookies = int(savegame.players[i].cookies)
