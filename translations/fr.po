@@ -1,4 +1,3 @@
-
 # Translations template for Super Tux Party.
 # Copyright (C) 2019 Super Tux Party Contributors
 # This file is distributed under the same license as the Super Tux Party project.
@@ -6,52 +5,55 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-10-29 23:16:12.182015\n"
-"Last-Translator: Automatic generated\n"
+"PO-Revision-Date: 2019-12-26 17:30+0000\n"
+"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
+"super-tux-party/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 3.10\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Achète un gateaux à %d biscuits"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr "La récompense de duel:"
+msgstr "La récompense de duel :"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr "Choisis un ennemi:"
+msgstr "Choisis un ennemi :"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr "Fini!"
+msgstr "Fini !"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr "En avant!"
+msgstr "En avant !"
 
 msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr "Match nul!"
+msgstr "Match nul !"
 
 msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr "Jeu terminé!"
+msgstr "Jeu terminé !"
 
 msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr "Le vainqueur du jeu es %s!"
+msgstr "Le vainqueur du jeu es %s !"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr "%s a jeté %d:"
+msgstr "%s a jeté %d :"
 
 msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr "%s a gagné!"
+msgstr "%s a gagné !"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr "Prêts?"
+msgstr "Prêts ?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr "Jete le dé!"
+msgstr "Jete le dé !"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr "%s, jete le dé!"
+msgstr "%s, jete le dé !"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
 msgstr "Le vainqueur vole 1 gâteaux"
@@ -60,13 +62,13 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Le vainqueur vole 10 biscuits"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Tour %d!"
+msgstr "Tour %d !"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "contre"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr "C'èst à toi!"
+msgstr "C'èst à toi !"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
 msgstr "Tu n'as pas assez de buiscuits"
@@ -219,7 +221,7 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Haut"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr "Dicte le nom du partie sauvgarder:"
+msgstr "Dicte le nom du partie sauvgarder :"
 
 msgid "MENU_IO_LOAD_GAME"
 msgstr "Charger partie"
@@ -237,7 +239,7 @@ msgid "MENU_LABEL_CANCEL"
 msgstr "Annuler"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr "Caractère:"
+msgstr "Caractère :"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Continuer"
@@ -249,7 +251,7 @@ msgid "MENU_LABEL_DESKTOP"
 msgstr "Retourner sur le bureau"
 
 msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr "l'indication de nomes de bouton de manette:"
+msgstr "l'indication de nomes de bouton de manette :"
 
 msgid "MENU_LABEL_LINEAR"
 msgstr "linéaire"
@@ -261,7 +263,7 @@ msgid "MENU_LABEL_NINTENDO_DS"
 msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr "N'est pas prête..."
+msgstr "N'est pas prête…"
 
 msgid "MENU_LABEL_NUMBERS"
 msgstr "Nombres"
@@ -306,7 +308,7 @@ msgid "MENU_LABEL_QUIT"
 msgstr "Quitter"
 
 msgid "MENU_LABEL_READY"
-msgstr "Prêts!"
+msgstr "Prêts !"
 
 msgid "MENU_LABEL_RESUME"
 msgstr "Continue"
@@ -315,10 +317,10 @@ msgid "MENU_LABEL_RETURN_MENU"
 msgstr "Retourner au menu principal"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr "Le système de la récompense"
+msgstr "Le système de la récompense :"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr "Choise un damier"
+msgstr "Choise un damier :"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
 msgstr "Choise un caractère pour joueur 1"
@@ -366,7 +368,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Plein écran"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr "langue"
+msgstr "Langue"
 
 msgid "MENU_OPTIONS_MASTER"
 msgstr "Audio générale"
@@ -396,13 +398,13 @@ msgid "DIALOG_NO"
 msgstr "Non"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr "Cout du gâteaux:"
+msgstr "Cout du gâteaux :"
 
 msgid "MENU_LABEL_TURNS"
-msgstr "Nombre des tours:"
+msgstr "Nombre des tours :"
 
 msgid "AI_DIFFICULTY"
-msgstr "Difficulté d‘IA:"
+msgstr "Difficulté d‘IA :"
 
 msgid "DIFFICULTY_EASY"
 msgstr "Facile"
@@ -414,5 +416,4 @@ msgid "DIFFICULTY_HARD"
 msgstr "Difficile"
 
 msgid "CONTEXT_GNU_MINIGAME"
-msgstr "Mini-jeu de gnu!"
-
+msgstr "Mini-jeu de gnu !"
