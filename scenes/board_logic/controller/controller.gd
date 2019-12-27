@@ -126,7 +126,7 @@ func _ready() -> void:
 
 	check_winner()
 
-	if Global.cake_space == -1 and not winner:
+	if not Global.cake_space and not winner:
 		yield(relocate_cake(), "completed")
 
 	if not $Screen/MinigameInformation.visible:
@@ -136,15 +136,20 @@ func relocate_cake() -> void:
 	var cake_nodes: Array = get_tree().get_nodes_in_group("cake_nodes")
 	# Randomly place cake spot on board.
 	if cake_nodes.size() > 0:
-		if Global.cake_space >= 0:
-			yield(get_cake_space().play_cake_collection_animation(), "completed")
-			cake_nodes[Global.cake_space].cake = false
-		Global.cake_space = randi() % cake_nodes.size()
-		var cake_node: Spatial = cake_nodes[Global.cake_space]
-		cake_node.cake = true
+		if Global.cake_space:
+			var old_node = get_cake_space()
+			yield(old_node.play_cake_collection_animation(), "completed")
+			old_node.cake = false
+			if cake_nodes.size() > 1:
+				for i in range(0, len(cake_nodes)-1):
+					if cake_nodes[i] == old_node:
+						cake_nodes.remove(i)
+		var new_node: Node = cake_nodes[randi() % cake_nodes.size()]
+		Global.cake_space = get_path_to(new_node)
+		new_node.cake = true
 
 		var old_focus = camera_focus
-		camera_focus = cake_node
+		camera_focus = new_node
 		yield(self, "_camera_focus_aquired")
 		yield(get_tree().create_timer(1.0), "timeout")
 		camera_focus = old_focus
@@ -558,7 +563,7 @@ func continue() -> void:
 # Gets the reference to the node, on which the cake currently can be
 # collected
 func get_cake_space() -> NodeBoard:
-	return get_tree().get_nodes_in_group("cake_nodes")[Global.cake_space]
+	return get_node(Global.cake_space) as NodeBoard
 
 func buy_cake(player: Spatial) -> void:
 	if player.cookies >= COOKIES_FOR_CAKE:
