@@ -1,7 +1,5 @@
 extends Control
 
-var current_minigame
-
 func setup_character_viewport() -> void:
 	var i := 1
 	for team in Global.minigame_teams:
@@ -59,7 +57,7 @@ func _get_translation(dictionary: Dictionary) -> String:
 		return "Unable to get translation"
 
 func show_minigame_info(minigame, players: Array) -> void:
-	current_minigame = minigame
+	Global.current_minigame = minigame
 	setup_character_viewport()
 
 	$Buttons/Play.grab_focus()
@@ -88,10 +86,10 @@ func show_minigame_info(minigame, players: Array) -> void:
 	show()
 
 func _on_Try_pressed() -> void:
-	Global.goto_minigame(current_minigame, true)
+	Global.goto_minigame(Global.current_minigame, true)
 
 func _on_Play_pressed() -> void:
-	Global.goto_minigame(current_minigame)
+	Global.goto_minigame(Global.current_minigame)
 
 func _on_Controls_tab_changed(tab: int) -> void:
 	var last_tab_selected: int = $Controls.get_previous_tab()

@@ -31,6 +31,6 @@ func _ready():
 		i += 1
 
 func _on_Timer_timeout():
-	Global.minigame_type = null
-	Global.minigame_teams = null
+	Global.minigame_type = -1
+	Global.minigame_teams = []
 	Global.call_deferred("_goto_scene_ingame", Global.current_board)

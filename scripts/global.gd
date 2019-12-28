@@ -114,13 +114,13 @@ var trap_states := []
 
 # The minigame to return to in "try minigame" mode.
 # If it is null, then no minigame is tried and the next turn resumes.
-var current_minigame
-var minigame_type
-var minigame_teams
+var current_minigame: Object
+var minigame_type: int
+var minigame_teams: Array
 
-var minigame_duel_reward
+var minigame_duel_reward: int
 
-var current_savegame
+var current_savegame: Object
 var is_new_savegame := false
 
 # Stores the last placement (not changed when you press "try").
@@ -259,7 +259,7 @@ func _goto_scene_ingame_callback(s: PackedScene, instance_pause_menu: bool):
 		loaded_scene.add_child(
 				preload("res://scenes/menus/pause_menu.tscn").instance())
 
-	if minigame_teams == null:
+	if not minigame_teams:
 		for i in players.size():
 			var player = loaded_scene.get_node("Player" + str(i + 1))
 
@@ -366,8 +366,17 @@ func load_board_from_savegame(savegame) -> void:
 		players[i].items = savegame.players[i].items
 
 	cake_space = savegame.cake_space
-	current_minigame = savegame.current_minigame
+	if savegame.current_minigame:
+		current_minigame = minigame_loader.parse_file(savegame.current_minigame)
+	else:
+		current_minigame = null
+	minigame_type = int(savegame.minigame_type)
+	minigame_teams = savegame.minigame_teams
+	for team in minigame_teams:
+		for i in range(len(team)):
+			team[i] = int(team[i])
 	player_turn = int(current_savegame.player_turn)
+	turn = int(current_savegame.turn)
 	overrides.cake_cost = int(savegame.cake_cost)
 	overrides.max_turns = int(savegame.max_turns)
 	overrides.award = int(savegame.award_type)
@@ -393,8 +402,8 @@ func goto_minigame(minigame, try := false) -> void:
 
 	# Current player nodes.
 	var r_players = get_tree().get_nodes_in_group("players")
-	if try:
-		current_minigame = minigame
+	if not try:
+		current_minigame = null
 
 	player_turn = get_tree().get_nodes_in_group("Controller")[0].player_turn
 
@@ -613,7 +622,6 @@ func load_board_state(controller: Spatial) -> void:
 
 		if current_minigame != null:
 			controller.show_minigame_info(current_minigame)
-			current_minigame = null
 
 		controller.player_turn = player_turn
 
@@ -679,7 +687,7 @@ func reset_state() -> void:
 
 	current_minigame = null
 	minigame_type = -1
-	minigame_teams = null
+	minigame_teams = []
 	minigame_duel_reward = -1
 
 	trap_states = []
@@ -718,8 +726,14 @@ func save_game() -> void:
 		current_savegame.players[i].items = duplicate_items(r_players[i].items)
 
 	current_savegame.cake_space = cake_space
-	current_savegame.current_minigame = current_minigame
+	if current_minigame:
+		current_savegame.current_minigame = current_minigame.file
+	else:
+		current_savegame.current_minigame = null
+	current_savegame.minigame_type = minigame_type
+	current_savegame.minigame_teams = minigame_teams.duplicate()
 	current_savegame.player_turn = controller.player_turn
+	current_savegame.turn = turn
 	current_savegame.cake_cost = overrides.cake_cost
 	current_savegame.max_turns = overrides.max_turns
 	current_savegame.award_type = overrides.award

@@ -19,10 +19,13 @@ class SaveGame:
 			SaveGamePlayerState.new(), SaveGamePlayerState.new()]
 
 	var current_minigame
+	var minigame_type := -1
+	var minigame_teams := []
 
 	var board_path: = ""
 	var cake_space := NodePath()
 	var player_turn := 1
+	var turn := 1
 	var cake_cost := 30
 	var max_turns := 10
 	var award_type: int = Global.AWARD_TYPE.LINEAR

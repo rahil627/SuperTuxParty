@@ -19,7 +19,7 @@ func _ready() -> void:
 			player.replace_by(new_model)
 
 func _on_Timer_timeout() -> void:
-	Global.minigame_type = null
-	Global.minigame_teams = null
-	Global.minigame_duel_reward = null
+	Global.minigame_type = -1
+	Global.minigame_teams = []
+	Global.minigame_duel_reward = -1
 	Global.call_deferred("_goto_scene_ingame", Global.current_board)
