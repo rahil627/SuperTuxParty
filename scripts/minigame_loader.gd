@@ -1,5 +1,7 @@
 # Spec for minigame config files.
 class MinigameConfigFile:
+	var file := ""
+
 	var name := ""
 	var scene_path := ""
 	var image_path: String
@@ -124,6 +126,7 @@ func parse_json_file(file: String):
 		return
 
 	var config := MinigameConfigFile.new()
+	config.file = file
 
 	if not result.result.has("name"):
 		print("Error in file '" + file + "': name entry missing")
@@ -173,6 +176,7 @@ func next_element(parser, parent_element_name):
 
 func parse_xml_file(file: String):
 	var config := MinigameConfigFile.new()
+	config.file = file
 
 	var parser := XMLParser.new()
 	parser.open(file)
