@@ -1,4 +1,3 @@
-
 # Translations template for Super Tux Party.
 # Copyright (C) 2019 Super Tux Party Contributors
 # This file is distributed under the same license as the Super Tux Party project.
@@ -6,205 +5,208 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-10-29 23:16:12.182254\n"
-"Last-Translator: Automatic generated\n"
+"PO-Revision-Date: 2019-12-29 09:29+0000\n"
+"Last-Translator: Erik Peeremand <klerespam@tutanota.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/super-tux-party/"
+"super-tux-party/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "Koop een taart voor %d koekjes"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Beloning Voor Duel:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Selecteer Tegenstander:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Klaar!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Start!"
 
 msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr ""
+msgstr "Gelijkspel!"
 
 msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr ""
+msgstr "Spel is over!"
 
 msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr ""
+msgstr "De winnaar is %s!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "%s heeft %d gerold:"
 
 msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr ""
+msgstr "%s wint!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Klaar?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Rol!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Rol %s!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Winnaar steelt 1 taart"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Winnaar steelt 10 koekjes"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Beurt %d"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "VS."
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Het is jouw beurt!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Je hebt niet genoeg koekjes om dat te kopen"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "Je hebt geen ruimte meer in je inventaris"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Actie 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Actie 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Actie 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Actie 4"
 
 msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr ""
+msgstr "As -"
 
 msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
+msgstr "As +"
 
 msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
+msgstr "Onbekende As"
 
 msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
+msgstr "X Links"
 
 msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
+msgstr "X Rechts"
 
 msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
+msgstr "Y Links"
 
 msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
+msgstr "Y Rechts"
 
 msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr ""
+msgstr "Onbekende Knop"
 
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Controller"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Controller knop"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
+msgstr "Controller knop 1"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
+msgstr "Controller knop 2"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
+msgstr "Controller knop 3"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
+msgstr "Controller knop 4"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
+msgstr "Controller knop A"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
+msgstr "Controller knop B"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
+msgstr "Controller knop Rondje"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
+msgstr "Controller knop Kruisje"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
+msgstr "Controller knop Vierkantje"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
+msgstr "Controller knop Driehoekje"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
+msgstr "Controller knop X"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
+msgstr "Controller knop Y"
 
 msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr ""
+msgstr "Controller Select"
 
 msgid "MENU_CONTROLS_GAMEPAD_START"
-msgstr ""
+msgstr "Controller Start"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Muis"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Muisknop"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Linker muisknop"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Midden muisknop"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Rechter muisknop"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Muiswiel omlaag"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Muiswiel links"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Muiswiel rechts"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Muiswiel omhoog"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Linker Trekker"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Linker Trekker 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Linker Trekker 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Rechter Trekker"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Rechter Trekker 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Rechter Trekker 3"
 
 msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr ""
+msgstr "Actie %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Omlaag"
@@ -219,7 +221,7 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Omhoog"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Voer spelnaam in voor opslaan:"
 
 msgid "MENU_IO_LOAD_GAME"
 msgstr "Spel laden"
@@ -237,49 +239,49 @@ msgid "MENU_LABEL_CANCEL"
 msgstr "Annuleren"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Karakter:"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Doorgaan"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Beschrijving"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Sluiten naar bureaublad"
 
 msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr ""
+msgstr "Controller displaynamen:"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Lineair"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Nieuw spel"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Nog niet klaar…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Nummers"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "OK"
+msgstr "Oké"
 
 msgid "MENU_LABEL_PAUSE"
 msgstr "Pauzeren"
@@ -288,16 +290,16 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "Gepauzeerd"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Pauzeer als venster focus verliest"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Spelen"
 
 msgid "MENU_LABEL_PLAYER"
-msgstr ""
+msgstr "Speler"
 
 msgid "MENU_LABEL_PLAYSTATION"
-msgstr ""
+msgstr "Playstation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
 msgstr "Druk op een knop"
@@ -306,70 +308,70 @@ msgid "MENU_LABEL_QUIT"
 msgstr "Stoppen"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Klaar!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Hervatten"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "Terug naar hoofdmenu"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Beloningssysteem:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Selecteer bord:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Selecteer een karakter voor Speler 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Selecteer een karakter voor Speler 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Selecteer een karakter voor Speler 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Selecteer een karakter voor Speler 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Selecteer het aantal spelers"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Probeer"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Winnaar krijgt alles"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_OPTIONS"
 msgstr "Instellingen"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Geluid"
 
 msgid "MENU_OPTIONS_CONTROLS"
 msgstr "Besturing"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Effecten"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Frame Limiet"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Volledig scherm"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Taal"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Algemeen Volume"
 
 msgid "MENU_OPTIONS_MISC"
 msgstr "Overig"
@@ -378,41 +380,40 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Muziek"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Demp Venster bij Focusverlies"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "Systeem Standaard"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Beeld"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "Vsync"
+msgstr "V-sync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Ja"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Nee"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Prijs taart:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Beurten:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "AI Moeilijkheidsgraad:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Makkelijk"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normaal"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Moeilijk"
 
 msgid "CONTEXT_GNU_MINIGAME"
-msgstr ""
-
+msgstr "Gnu spelletje!"

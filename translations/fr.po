@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-12-26 17:30+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-01-03 14:21+0000\n"
+"Last-Translator: Anne Onyme 017 <anneonyme017@netcourrier.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr "Achète un gateaux à %d biscuits"
+msgstr "Acheter un gâteau pour %d biscuits"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr "La récompense de duel :"
@@ -62,7 +62,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Le vainqueur vole 10 biscuits"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Tour %d !"
+msgstr "Tour %d"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "contre"
