@@ -76,11 +76,13 @@ func _on_Language_item_selected(ID):
 		TranslationServer.set_locale(OS.get_locale())
 		
 		save_option("visual", "language", "")
+		Global.emit_signal("language_changed")
 		return
 	
 	TranslationServer.set_locale(option_meta)
 	
 	save_option("visual", "language", option_meta)
+	Global.emit_signal("language_changed")
 
 func _on_FrameCap_item_selected(ID):
 	match ID:
