@@ -79,6 +79,8 @@ enum Difficulty {
 	HARD
 }
 
+signal language_changed
+
 var joypad_display: int = JOYPAD_DISPLAY_TYPE.NUMBERS
 
 var amount_of_players := 4

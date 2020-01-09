@@ -56,24 +56,16 @@ func _get_translation(dictionary: Dictionary) -> String:
 
 		return "Unable to get translation"
 
-func show_minigame_info(minigame, players: Array) -> void:
-	Global.current_minigame = minigame
-	setup_character_viewport()
-
-	$Buttons/Play.grab_focus()
-
-	$Title.text = minigame.name
+func _load_content(minigame, players):
 	$Description/Text.bbcode_text = _get_translation(minigame.description)
-	if minigame.image_path != null:
-		$Screenshot.texture =\
-				load(minigame.image_path)
 
 	for i in range(1, len(players) + 1):
 		var label: RichTextLabel = $Controls.get_node("Player" + str(i))
 		if not minigame_has_player(i) or players[i - 1].is_ai:
 			# If the player is controlled by an AI, there is no point in
 			# showing controls.
-			label.queue_free()
+			if label:
+				label.queue_free()
 			continue
 
 		label.bbcode_text = ""
@@ -82,6 +74,19 @@ func show_minigame_info(minigame, players: Array) -> void:
 					InputMap.get_action_list("player" + str(i) + "_" +
 					action)[0]) + " - " + _get_translation(
 					minigame.used_controls[action]) + "\n")
+
+func show_minigame_info(minigame, players: Array) -> void:
+	Global.current_minigame = minigame
+	setup_character_viewport()
+
+	$Buttons/Play.grab_focus()
+
+	$Title.text = minigame.name
+	Global.connect("language_changed", self, "_load_content", [minigame, players])
+	_load_content(minigame, players)
+	if minigame.image_path != null:
+		$Screenshot.texture =\
+				load(minigame.image_path)
 
 	show()
 
