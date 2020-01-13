@@ -1,4 +1,3 @@
-
 # Translations template for Super Tux Party.
 # Copyright (C) 2019 Super Tux Party Contributors
 # This file is distributed under the same license as the Super Tux Party project.
@@ -6,28 +5,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-10-29 23:16:12.182036\n"
-"Last-Translator: Automatic generated\n"
+"PO-Revision-Date: 2020-01-13 14:45+0000\n"
+"Last-Translator: Frank Albella <frankstar10@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/super-tux-party/"
+"super-tux-party/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.1\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "Compra un pastel por %d galletas"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr ""
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Seleccionar oponente:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Fin!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Vamos!"
 
 msgid "CONTEXT_LABEL_OUTCOME_DRAW"
 msgstr ""
@@ -36,121 +38,123 @@ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
 msgstr ""
 
 msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr ""
+msgstr "El ganador es %s!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "%s rodó %d:"
 
 msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr ""
+msgstr "%s gano!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Listo?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Tira!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Tira %s!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "El ganador roba 1 pastel"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "El ganador roba 10 galletas"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Turno %d"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "VS."
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Es tu turno!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "No tienes suficientes galletas para comprar eso"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "No te queda espacio en tu inventario"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Acción 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Acción 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Acción 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Acción 4"
 
+#, fuzzy
 msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr ""
+msgstr "Eje -"
 
+#, fuzzy
 msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
+msgstr "Eje +"
 
 msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
+msgstr "Eje desconocido"
 
 msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
+msgstr "X Izquierda"
 
 msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
+msgstr "X Derecha"
 
 msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
+msgstr "Y Izquierda"
 
 msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
+msgstr "Y Derecha"
 
 msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr ""
+msgstr "Botón desconocido"
 
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Mando"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Mando botón"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
+msgstr "Mando botón 1"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
+msgstr "Mando botón 2"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
+msgstr "Mando botón 3"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
+msgstr "Mando botón 4"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
+msgstr "Mando botón A"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
+msgstr "Mando botón B"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
+msgstr "Mando botón Circulo"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
+msgstr "Mando botón Cruz"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
+msgstr "Mando botón Cuadrado"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
+msgstr "Mando botón Triángulo"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
+msgstr "Mando botón X"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
+msgstr "Mando botón Y"
 
 msgid "MENU_CONTROLS_GAMEPAD_SELECT"
 msgstr ""
@@ -204,7 +208,7 @@ msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
 msgstr ""
 
 msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr ""
+msgstr "Acción %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Abajo"
@@ -243,7 +247,7 @@ msgid "MENU_LABEL_CONTINUE"
 msgstr "Continuar"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Descripción"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Salir al escritorio"
@@ -252,31 +256,31 @@ msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
 msgstr ""
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Lineal"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Juego nuevo"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "No está listo…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Números"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
 msgstr "Ok"
@@ -294,10 +298,10 @@ msgid "MENU_LABEL_PLAY"
 msgstr "Jugar"
 
 msgid "MENU_LABEL_PLAYER"
-msgstr ""
+msgstr "Jugador"
 
 msgid "MENU_LABEL_PLAYSTATION"
-msgstr ""
+msgstr "Playstation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
 msgstr "Pulsa cualquier tecla"
@@ -306,7 +310,7 @@ msgid "MENU_LABEL_QUIT"
 msgstr "Cerrar"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Listo!"
 
 msgid "MENU_LABEL_RESUME"
 msgstr ""
@@ -333,31 +337,31 @@ msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
 msgstr ""
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Selecciona la cantidad de jugadores"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Tratar"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
 msgstr ""
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "Xbox"
 
 msgid "MENU_OPTIONS"
 msgstr "Opciones"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Audio"
 
 msgid "MENU_OPTIONS_CONTROLS"
 msgstr "Controles"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Efectos"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
 msgstr ""
@@ -366,7 +370,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Pantalla completa"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Idioma"
 
 msgid "MENU_OPTIONS_MASTER"
 msgstr ""
@@ -384,35 +388,34 @@ msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
 msgstr ""
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Visual"
 
 msgid "MENU_OPTIONS_VSYNC"
 msgstr "V-sync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Si"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "No"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Costo del pastel:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Turnos:"
 
 msgid "AI_DIFFICULTY"
 msgstr ""
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Fácil"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normal"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Difícil"
 
 msgid "CONTEXT_GNU_MINIGAME"
-msgstr ""
-
+msgstr "Gnu mini juego!"
