@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-01-10 12:21+0000\n"
+"PO-Revision-Date: 2020-01-16 10:21+0000\n"
 "Last-Translator: RiderExMachina <riderexmachina@protonmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ja/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.1\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "%dケーキーズにケーキを買う"
@@ -46,14 +46,19 @@ msgstr "%sロール%d:"
 msgid "CONTEXT_LABEL_PLAYER_WINS"
 msgstr "%sは勝ちます!"
 
+#, fuzzy
 msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr ""
+"Ready?\\n"
+"(レージー？)"
 
 msgid "CONTEXT_LABEL_ROLL"
 msgstr ""
+"Roll!\\n"
+"(ロール!)"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "%sのロール!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
 msgstr ""
@@ -65,7 +70,7 @@ msgid "CONTEXT_LABEL_TURN_NUM"
 msgstr "%d回"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "VS."
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
 msgstr "あなたの番ですよ!"
