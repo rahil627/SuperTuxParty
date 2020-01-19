@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-01-18 00:21+0000\n"
+"PO-Revision-Date: 2020-01-19 12:21+0000\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/sv/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.2-dev\n"
+"X-Generator: Weblate 3.10.2\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Köp en tårta för %d kakor"
@@ -41,7 +41,7 @@ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
 msgstr "Vinnaren är %s!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "%s slog %d:"
 
 msgid "CONTEXT_LABEL_PLAYER_WINS"
 msgstr "%s vinner!"
@@ -56,10 +56,10 @@ msgid "CONTEXT_LABEL_ROLL_PLAYER"
 msgstr ""
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Vinnaren stjäl 1 tårta"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Vinnaren stjäl 10 kakor"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
 msgstr ""
@@ -71,7 +71,7 @@ msgid "CONTEXT_LABEL_YOUR_TURN"
 msgstr "Det är din tur!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Du har inte nog många kakor för att köpa det"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
 msgstr ""
@@ -254,7 +254,7 @@ msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
 msgstr ""
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Linjärt"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Nytt spel"
@@ -338,10 +338,10 @@ msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Välj antal spelare"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Försök"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
 msgstr "Vinnaren får allt"
@@ -380,7 +380,7 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Musik"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Tysta då fönster förlorar fokus"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
 msgstr "Systemstandard"
@@ -398,7 +398,7 @@ msgid "DIALOG_NO"
 msgstr "Nej"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Tårtkostnad:"
 
 msgid "MENU_LABEL_TURNS"
 msgstr ""
