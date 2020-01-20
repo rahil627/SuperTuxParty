@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-01-19 12:21+0000\n"
+"PO-Revision-Date: 2020-01-20 11:44+0000\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/sv/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.2\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Köp en tårta för %d kakor"
@@ -26,7 +26,7 @@ msgid "CONTEXT_LABEL_DUEL_SELECT"
 msgstr "Välj motståndare:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Slut!"
 
 msgid "CONTEXT_LABEL_GO"
 msgstr "Gå!"
@@ -77,16 +77,16 @@ msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
 msgstr ""
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Åtgärd 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Åtgärd 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Åtgärd 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Åtgärd 4"
 
 msgid "MENU_CONTROLS_AXIS_MINUS"
 msgstr ""
