@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-12-26 17:30+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-01-21 13:58+0000\n"
+"Last-Translator: Michael Alexsander <michaelalexsander@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Compre um bolo por %d biscoitos"
@@ -392,28 +392,28 @@ msgid "MENU_OPTIONS_VSYNC"
 msgstr "Vsync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Sim"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Não"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Custo de bolo:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Turnos:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Difficuldade da IA:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Fácil"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normal"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Difícil"
 
 msgid "CONTEXT_GNU_MINIGAME"
-msgstr ""
+msgstr "Mini jogo Gnu!"
