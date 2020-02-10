@@ -417,3 +417,18 @@ msgstr "Hard"
 
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Gnu minigame!"
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "Graphic Quality"
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "High"
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr "Medium"
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "Low"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr "Changing the graphic quality only takes effect after a restart"

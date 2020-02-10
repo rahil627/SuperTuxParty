@@ -416,3 +416,17 @@ msgstr ""
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr ""
 
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr ""
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr ""
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr ""
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr ""
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""

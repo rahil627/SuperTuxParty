@@ -171,6 +171,9 @@ func load_options():
 	_on_FrameCap_item_selected(frame_id)
 	$TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
 	
+	var quality = get_option_value_safely("visual", "quality", 0)
+	$TabContainer/Visual/Quality/OptionButton.select(quality)
+	
 	AudioServer.set_bus_mute(0, get_option_value_safely("audio", "master_muted", false))
 	AudioServer.set_bus_mute(1, get_option_value_safely("audio", "music_muted", false))
 	AudioServer.set_bus_mute(2, get_option_value_safely("audio", "effects_muted", false))
@@ -204,3 +207,51 @@ func save_option(section, key, value):
 	if err != OK:
 		print("Error while saving options: " + Utility.error_code_to_string(err))
 
+
+
+func _on_GraphicQuality_item_selected(ID):
+	match ID:
+		0: # High
+			ProjectSettings.set_setting("rendering/quality/shadow_atlas/size", 8192)
+			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 8192)
+			ProjectSettings.set_setting("rendering/quality/shadows/filter_mode", 1)
+			ProjectSettings.set_setting("rendering/quality/shading/force_vertex_shading", false)
+		1: # Medium
+			ProjectSettings.set_setting("rendering/quality/shadow_atlas/size", 4096)
+			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 4096)
+			ProjectSettings.set_setting("rendering/quality/shadows/filter_mode", 1)
+			ProjectSettings.set_setting("rendering/quality/shading/force_vertex_shading", false)
+		2: # Low
+			ProjectSettings.set_setting("rendering/quality/shadow_atlas/size", 2048)
+			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 2048)
+			ProjectSettings.set_setting("rendering/quality/shadows/filter_mode", 0)
+			ProjectSettings.set_setting("rendering/quality/shading/force_vertex_shading", true)
+	$AcceptDialog.dialog_text = "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+	
+	# TODO: Temporary workaround, remove once upgraded to Godot 3.2
+	$AcceptDialog.show()
+	$AcceptDialog.popup_centered()
+	save_option("visual", "quality", ID)
+	
+	# Kind of ugly way to get it working
+	# The graphic options must be loaded before the engine starts up, because
+	# some options can not be changed after initialization
+	#
+	# So the only possibility to change them is to change the value loaded in the project settings
+	# But we don't want to override the local render settings on a new version (it's stored in the pck distributed with the game after all)
+	# 
+	# Luckily, Godot offers a way to load a custom project settings file, which we naturally point to 'user://render_settings.godot'
+	# There we are able to change all settings we like and they will persist
+	# But we should not just save the options with `ProjectSettings.save_custom`
+	# because this will save everything, but we just want the render settings, as the remaining settings could be updated in a new game version
+	#
+	# Therefore we're forging such a file. This is an horrible hack and I hope Godot 4.0 will have a better way to do this
+	#
+	# Idea found here: https://github.com/godotengine/godot/issues/30087#issuecomment-505879289
+	var file = ConfigFile.new()
+	file.set_value("rendering", "quality/shadow_atlas/size", ProjectSettings.get_setting("rendering/quality/shadow_atlas/size"))
+	file.set_value("rendering", "quality/directional_shadow/size", ProjectSettings.get_setting("rendering/quality/directional_shadow/size"))
+	file.set_value("rendering", "quality/shadows/filter_mode", ProjectSettings.get_setting("rendering/quality/shadows/filter_mode"))
+	file.set_value("rendering", "quality/shading/force_vertex_shading", ProjectSettings.get_setting("rendering/quality/shading/force_vertex_shading"))
+
+	file.save("user://render_settings.godot")
