@@ -34,6 +34,7 @@ _global_script_class_icons={
 
 config/name="Super Tux Party"
 run/main_scene="res://scenes/menus/main_menu.tscn"
+config/project_settings_override="user://render_settings.godot"
 config/icon="res://assets/icons/icon-smallest.png"
 
 [autoload]
