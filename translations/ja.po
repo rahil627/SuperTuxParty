@@ -48,14 +48,10 @@ msgstr "%sは勝ちます!"
 
 #, fuzzy
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
-"Ready?\\n"
-"(レージー？)"
+msgstr "Ready?\\n(レージー？)"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
-"Roll!\\n"
-"(ロール!)"
+msgstr "Roll!\\n(ロール!)"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
 msgstr "%sのロール!"
@@ -421,4 +417,25 @@ msgid "DIFFICULTY_HARD"
 msgstr ""
 
 msgid "CONTEXT_GNU_MINIGAME"
+msgstr ""
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_MISC"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "その他"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_MISC"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "その他"
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr ""
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_MISC"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "その他"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""

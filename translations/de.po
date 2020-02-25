@@ -417,3 +417,26 @@ msgstr "Schwer"
 
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Gnu-Minigame!"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_VISUAL"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "Aussehen"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_VISUAL"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "Aussehen"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr "Audio"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "Audio"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""

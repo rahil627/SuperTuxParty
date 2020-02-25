@@ -414,3 +414,24 @@ msgstr ""
 
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr ""
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_MISC"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "Разни"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_MISC"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "Разни"
+
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr ""
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_MISC"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "Разни"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""

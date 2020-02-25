@@ -417,3 +417,26 @@ msgstr "Moeilijk"
 
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Gnu spelletje!"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_VISUAL"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "Beeld"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_VISUAL"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "Beeld"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr "Geluid"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "Geluid"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""

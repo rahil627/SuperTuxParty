@@ -417,3 +417,26 @@ msgstr "Svår"
 
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Gnu-minispel!"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "Ljud"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_LANGUAGE"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "Språk"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr "Ljud"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "Ljud"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""

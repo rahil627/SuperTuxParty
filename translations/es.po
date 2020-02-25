@@ -419,3 +419,26 @@ msgstr "Difícil"
 
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Gnu mini juego!"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_VISUAL"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
+msgstr "Visual"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_VISUAL"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
+msgstr "Visual"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
+msgstr "Audio"
+
+#, fuzzy
+#| msgid "MENU_OPTIONS_AUDIO"
+msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
+msgstr "Audio"
+
+msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""
