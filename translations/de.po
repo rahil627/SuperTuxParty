@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-12-26 17:30+0000\n"
+"PO-Revision-Date: 2020-03-01 19:33+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Kaufe einen Kuchen für %d Kekse"
@@ -418,25 +418,17 @@ msgstr "Schwer"
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Gnu-Minigame!"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Aussehen"
+msgstr "Graphik-Qualität"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Aussehen"
+msgstr "Hoch"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr "Audio"
+msgstr "Mittel"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Audio"
+msgstr "Niedrig"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
-msgstr ""
+msgstr "Änderungen an der Graphik-Qualität werden erst nach Neustart angewendet"

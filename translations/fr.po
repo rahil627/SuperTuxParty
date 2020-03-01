@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-01-03 14:21+0000\n"
-"Last-Translator: Anne Onyme 017 <anneonyme017@netcourrier.com>\n"
+"PO-Revision-Date: 2020-03-01 19:33+0000\n"
+"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Acheter un gâteau pour %d biscuits"
@@ -418,25 +418,19 @@ msgstr "Difficile"
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Mini-jeu de gnu !"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Vidéo"
+msgstr "Qualité de la vidéo"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Vidéo"
+msgstr "Haute"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr "Audio"
+msgstr "Moyen"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Audio"
+msgstr "Basse"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
+"Modifier la qualité de la vidéo fait de l'effet seulement après un "
+"rédémarrage"
