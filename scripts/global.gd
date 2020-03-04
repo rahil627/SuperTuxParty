@@ -197,13 +197,14 @@ func load_board(board: String, names: Array, characters: Array,
 	dir.list_dir_end()
 
 	for i in characters.size():
+		players[i].player_id = i + 1
 		players[i].player_name = names[i]
 		players[i].character = characters[i]
 		if i >= human_players:
 			players[i].is_ai = true
 			players[i].ai_difficulty = overrides.ai_difficulty
 	current_board = board
-	call_deferred("_goto_scene_ingame", board)
+	_goto_scene_board()
 
 func _install_translation_board(translation, file_name: String):
 	if not translation is Translation:
@@ -244,6 +245,12 @@ func _goto_scene(path: String) -> void:
 
 func _goto_scene_callback(s: PackedScene, _arg):
 	loaded_scene = s.instance()
+
+func _goto_scene_board():
+	if turn <= overrides.max_turns:
+		call_deferred("_goto_scene_ingame", current_board)
+	else:
+		goto_scene("res://scenes/menus/victory_screen.tscn")
 
 # Internal function for actually changing scene while handling player objects.
 func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
@@ -385,7 +392,7 @@ func load_board_from_savegame(savegame) -> void:
 
 	trap_states = savegame.trap_states.duplicate()
 
-	call_deferred("_goto_scene_ingame", current_board)
+	_goto_scene_board()
 
 # Change scene to one of the mini-games.
 func goto_minigame(minigame, try := false) -> void:
@@ -456,7 +463,7 @@ func _goto_board(new_placement) -> void:
 
 	# Only award if it's not a test.
 	if current_minigame != null:
-		call_deferred("_goto_scene_ingame", current_board)
+		_goto_scene_board()
 		return
 
 	placement = new_placement
@@ -519,7 +526,7 @@ func _goto_board(new_placement) -> void:
 			# TODO: Reward
 
 			# TODO: Rewardscreen
-			call_deferred("_goto_scene_ingame", current_board)
+			_goto_scene_board()
 		MINIGAME_TYPES.GNU:
 			# TODO: Better reward
 			if placement:
@@ -527,7 +534,7 @@ func _goto_board(new_placement) -> void:
 					player.cookies += 10
 
 			# TODO: Reward screen
-			call_deferred("_goto_scene_ingame", current_board)
+			_goto_scene_board()
 
 func minigame_win_by_points(points: Array) -> void:
 	var players := []

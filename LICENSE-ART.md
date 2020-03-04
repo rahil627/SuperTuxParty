@@ -121,6 +121,14 @@ Copyright Aurélio A. Heckert
 Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
 License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
 
+### sara.png
+
+Copyright © Spring
+
+Retrieved from [Open Game Art](https://opengameart.org/content/sara-sketch-portrait-improvement)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## scenes/board_logic/node
 ### node.escn | node.blend
 
@@ -165,6 +173,12 @@ Based upon the tile_yellow_col.png file and the GNU logo by Aurélio A. Heckert
 
 Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
 License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
+
+## scenes/menus
+### stage.escn | stage.blend
+Copyright © 2020 Florian Kothmeier 
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/speech_dialog
 ### dialog_box.png | dialog_box_focus.png
@@ -775,6 +789,13 @@ Retrieved from [Github](https://github.com/Maujoe/godot-flow-map-shader)
 
 License: [MIT](https://github.com/Maujoe/godot-flow-map-shader/blob/master/LICENSE.md)
 
+### painted_wall.png
+Public domain by XCVG
+
+Retrieved from [OpnGameArt](https://opengameart.org/content/wall/paint/and/colors)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
 ## assets/textures/crate\*
 ### crate\*.png
 Public domain by Luke.RUSTLTD
@@ -800,3 +821,18 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/handpainted-rock-te
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
+## assets/textures/wood_planks
+### wood2_\*.jpg
+Copyright © by kinnybean
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/simple-seamless-hand-painted-wooden-planks-texture)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## assets/textures/wood
+### bump.png | diffuse.png
+Copyright © by cemkalyoncu and Beetree
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/wood-texture)
+
+License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)

@@ -22,4 +22,4 @@ func _on_Timer_timeout() -> void:
 	Global.minigame_type = -1
 	Global.minigame_teams = []
 	Global.minigame_duel_reward = -1
-	Global.call_deferred("_goto_scene_ingame", Global.current_board)
+	Global._goto_scene_board()

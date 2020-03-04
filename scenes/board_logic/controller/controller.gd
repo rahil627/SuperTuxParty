@@ -63,34 +63,6 @@ var splash_ended := false
 # Flag that indicates if the input needs to wait for the animation to finish.
 var wait_for_animation := false
 
-func check_winner() -> void:
-	if Global.turn > MAX_TURNS:
-		var message = ""
-
-		for p in players:
-			if winner == null:
-				winner = p
-			else:
-				if p.cakes > winner.cakes:
-					winner = p
-					message = winner.player_name
-				elif p.cakes == winner.cakes:
-					if p.cookies > winner.cookies:
-						winner = p
-						message = winner.player_name
-					elif p.cookies == winner.cookies:
-						message = tr("CONTEXT_LABEL_OUTCOME_DRAW")
-
-		if message != tr("CONTEXT_LABEL_OUTCOME_DRAW"):
-			message = tr("CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER") %\
-					[winner.player_name]
-
-		$Screen/Turn.text = message
-		$Screen/Dice.text = tr("CONTEXT_LABEL_OUTCOME_GAME_OVER")
-
-		$Screen/Dice.show()
-		$Screen/Roll.hide()
-
 func _ready() -> void:
 	# Give each player a unique id.
 	var i = 1
@@ -123,8 +95,6 @@ func _ready() -> void:
 	update_player_info()
 
 	$Screen/Debug.setup()
-
-	check_winner()
 
 	if not Global.cake_space and not winner:
 		yield(relocate_cake(), "completed")
