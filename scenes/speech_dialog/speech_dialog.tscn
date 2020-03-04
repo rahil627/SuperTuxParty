@@ -55,6 +55,7 @@ margin_bottom = -10.0
 margin_right = 128.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
+expand = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
 margin_left = 132.0

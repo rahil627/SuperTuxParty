@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Steppin Up.ogg-d7c616367f7f948af97cb6ca008fe875.oggstr"
+
+[deps]
+
+source_file="res://assets/music/menus/Steppin Up.ogg"
+dest_files=[ "res://.import/Steppin Up.ogg-d7c616367f7f948af97cb6ca008fe875.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

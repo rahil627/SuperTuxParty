@@ -26,6 +26,21 @@ Retrieved from [Open Game Art](https://opengameart.org/content/happy-arcade-tune
 
 License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 
+### Red Curtain.ogg
+Copyright © Horror Pen
+
+Retrieved from [Open Game Art](https://opengameart.org/content/red-curtain)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### Steppin Up.ogg
+
+Copyright by Dan Knoflicek
+
+Retrieved from [Open Game Art](https://opengameart.org/content/steppin-up)
+
+License [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## assets/music/minigames
 ### escape from lava.ogg
 Public Domain by [cynicmusic] [https://cynicmusic.com(https://cynicmusic.com) [https://pixelsphere.org](https://pixelsphere.org)

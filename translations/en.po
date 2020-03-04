@@ -432,3 +432,27 @@ msgstr "Low"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr "Changing the graphic quality only takes effect after a restart"
+
+msgid "CONTEXT_SPEAKER_SARA"
+msgstr "Sara"
+
+msgid "CONTEXT_WINNER_ANNOUNCEMENT"
+msgstr "I know all of you were fighting hard to win, but now the game is over and we need a winner. And this winner is..."
+
+msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
+msgstr "[color=#ff3300]%s[/color]!"
+
+msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
+msgstr "[color=#ff3300]%s[/color] and [color=#33ff00]%s[/color]!"
+
+msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
+msgstr "[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] and [color=#00ff88]%s[/color]!"
+
+msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
+msgstr "[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], [color=#00ff88]%s[/color] and [color=#ffff33]%s[/color]!"
+
+msgid "CONTEXT_LABEL_CAKES"
+msgstr "Cakes"
+
+msgid "CONTEXT_LABEL_COOKIES"
+msgstr "Cookies"

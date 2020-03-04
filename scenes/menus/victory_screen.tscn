@@ -1,0 +1,479 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scenes/menus/victory_screen.gd" type="Script" id=1]
+[ext_resource path="res://scenes/menus/victory_screen_player.gd" type="Script" id=2]
+[ext_resource path="res://assets/music/menus/Steppin Up.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/music/menus/Red Curtain.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/menus/stage.escn" type="PackedScene" id=5]
+[ext_resource path="res://assets/textures/wood_planks/wood2_COLOR.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/textures/wood_planks/wood2_OCC.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/textures/wood_planks/wood2_SPEC.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/textures/wood_planks/wood2_NRM.jpg" type="Texture" id=9]
+[ext_resource path="res://assets/textures/wood/diffuse.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/wood/bump.png" type="Texture" id=11]
+[ext_resource path="res://assets/textures/painted_wall.png" type="Texture" id=12]
+[ext_resource path="res://scenes/speech_dialog/speech_dialog.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -60.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 4, 2, 2 )
+flag_rotate_y = true
+angular_velocity = 720.0
+angular_velocity_random = 1.0
+radial_accel = 5.0
+radial_accel_random = 1.0
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=3]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 0.05, 0.05, 0 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "closeup"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene/Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.0198516, 3.3163, 11.1262 ), Vector3( 0.02, 0.816, 6.126 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scene/Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -8.799, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 6 )
+metallic_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 7 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+albedo_texture = ExtResource( 6 )
+metallic_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 7 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0, 0, 1 )
+metallic_specular = 0.0
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 10 )
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 1, 0, 0, 1 )
+metallic_specular = 0.0
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.196078, 0.196078, 0.196078, 0.784314 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.392157, 0.352941, 0.313726, 0.784314 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Player1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="Player2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="Player3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="Player4" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer2"]
+anims/fade_out = SubResource( 1 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1464, 0 )
+emitting = false
+amount = 400
+visibility_aabb = AABB( -4, -4, -2, 8, 8, 4 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 4 )
+
+[node name="CameraMovement" type="AnimationPlayer" parent="."]
+anims/closeup = SubResource( 5 )
+
+[node name="Scene" parent="." instance=ExtResource( 5 )]
+
+[node name="Circle" parent="Scene" index="0"]
+material/0 = SubResource( 6 )
+material/1 = SubResource( 7 )
+
+[node name="Plane" parent="Scene" index="1"]
+material/0 = SubResource( 8 )
+
+[node name="Spot" parent="Scene" index="3"]
+transform = Transform( -0.36683, -0.0266074, -0.0731609, -0.0161969, -0.31862, 0.197088, -0.0761455, 0.195955, 0.31053, -1.87004, 5.7874, 9.18669 )
+light_energy = 1.0
+
+[node name="Spot001" parent="Scene" index="4"]
+transform = Transform( -0.36683, 0.0266075, 0.0731609, 0.0161968, -0.31862, 0.197088, 0.0761455, 0.195955, 0.31053, 1.87996, 5.7874, 9.18669 )
+light_energy = 1.0
+
+[node name="Plane001" parent="Scene" index="5"]
+material/0 = SubResource( 9 )
+material/1 = SubResource( 10 )
+material/3 = SubResource( 6 )
+material/4 = SubResource( 6 )
+
+[node name="Camera" parent="Scene" index="6"]
+transform = Transform( 1, 0, 0, 0, 0.988231, 0.152969, 0, -0.152969, 0.988231, 0.0198516, 3.3163, 11.1262 )
+
+[node name="Plane002" parent="Scene" index="7"]
+material/0 = SubResource( 11 )
+
+[node name="SpeechDialog" parent="." instance=ExtResource( 13 )]
+
+[node name="Summary" type="PanelContainer" parent="."]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -389.0
+margin_top = -83.5
+margin_right = 389.0
+margin_bottom = 83.5
+custom_styles/panel = SubResource( 12 )
+
+[node name="Stats" type="VBoxContainer" parent="Summary"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 167.0
+
+[node name="Names" type="PanelContainer" parent="Summary/Stats"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 29.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Entries" type="HBoxContainer" parent="Summary/Stats/Names"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 29.0
+custom_constants/separation = 50
+
+[node name="Player1" type="Label" parent="Summary/Stats/Names/Entries"]
+margin_right = 150.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 1
+clip_text = true
+
+[node name="Player2" type="Label" parent="Summary/Stats/Names/Entries"]
+margin_left = 200.0
+margin_right = 350.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 1
+clip_text = true
+
+[node name="Player3" type="Label" parent="Summary/Stats/Names/Entries"]
+margin_left = 400.0
+margin_right = 550.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 1
+clip_text = true
+
+[node name="Player4" type="Label" parent="Summary/Stats/Names/Entries"]
+margin_left = 600.0
+margin_right = 750.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 1
+clip_text = true
+
+[node name="ColorRect" type="ColorRect" parent="Summary/Stats"]
+margin_top = 33.0
+margin_right = 778.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="CakeLabel" type="PanelContainer" parent="Summary/Stats"]
+editor/display_folded = true
+margin_top = 39.0
+margin_right = 778.0
+margin_bottom = 68.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Entries" type="HBoxContainer" parent="Summary/Stats/CakeLabel"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 29.0
+custom_constants/separation = 50
+
+[node name="Player1" type="Label" parent="Summary/Stats/CakeLabel/Entries"]
+margin_right = 150.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_CAKES"
+clip_text = true
+
+[node name="Player2" type="Label" parent="Summary/Stats/CakeLabel/Entries"]
+margin_left = 200.0
+margin_right = 350.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_CAKES"
+clip_text = true
+
+[node name="Player3" type="Label" parent="Summary/Stats/CakeLabel/Entries"]
+margin_left = 400.0
+margin_right = 550.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_CAKES"
+clip_text = true
+
+[node name="Player4" type="Label" parent="Summary/Stats/CakeLabel/Entries"]
+margin_left = 600.0
+margin_right = 750.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_CAKES"
+clip_text = true
+
+[node name="Cakes" type="PanelContainer" parent="Summary/Stats"]
+editor/display_folded = true
+margin_top = 72.0
+margin_right = 778.0
+margin_bottom = 101.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Entries" type="HBoxContainer" parent="Summary/Stats/Cakes"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 29.0
+custom_constants/separation = 50
+
+[node name="Player1" type="Label" parent="Summary/Stats/Cakes/Entries"]
+margin_right = 150.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="Player2" type="Label" parent="Summary/Stats/Cakes/Entries"]
+margin_left = 200.0
+margin_right = 350.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="Player3" type="Label" parent="Summary/Stats/Cakes/Entries"]
+margin_left = 400.0
+margin_right = 550.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="Player4" type="Label" parent="Summary/Stats/Cakes/Entries"]
+margin_left = 600.0
+margin_right = 750.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="CookieLabel" type="PanelContainer" parent="Summary/Stats"]
+editor/display_folded = true
+margin_top = 105.0
+margin_right = 778.0
+margin_bottom = 134.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Entries" type="HBoxContainer" parent="Summary/Stats/CookieLabel"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 29.0
+custom_constants/separation = 50
+
+[node name="Player1" type="Label" parent="Summary/Stats/CookieLabel/Entries"]
+margin_right = 150.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_COOKIES"
+clip_text = true
+
+[node name="Player2" type="Label" parent="Summary/Stats/CookieLabel/Entries"]
+margin_left = 200.0
+margin_right = 350.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_COOKIES"
+clip_text = true
+
+[node name="Player3" type="Label" parent="Summary/Stats/CookieLabel/Entries"]
+margin_left = 400.0
+margin_right = 550.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_COOKIES"
+clip_text = true
+
+[node name="Player4" type="Label" parent="Summary/Stats/CookieLabel/Entries"]
+margin_left = 600.0
+margin_right = 750.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+text = "CONTEXT_LABEL_COOKIES"
+clip_text = true
+
+[node name="Cookies" type="PanelContainer" parent="Summary/Stats"]
+editor/display_folded = true
+margin_top = 138.0
+margin_right = 778.0
+margin_bottom = 167.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Entries" type="HBoxContainer" parent="Summary/Stats/Cookies"]
+editor/display_folded = true
+margin_right = 778.0
+margin_bottom = 29.0
+custom_constants/separation = 50
+
+[node name="Player1" type="Label" parent="Summary/Stats/Cookies/Entries"]
+margin_right = 150.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="Player2" type="Label" parent="Summary/Stats/Cookies/Entries"]
+margin_left = 200.0
+margin_right = 350.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="Player3" type="Label" parent="Summary/Stats/Cookies/Entries"]
+margin_left = 400.0
+margin_right = 550.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[node name="Player4" type="Label" parent="Summary/Stats/Cookies/Entries"]
+margin_left = 600.0
+margin_right = 750.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 14 )
+align = 2
+clip_text = true
+
+[editable path="Scene"]
