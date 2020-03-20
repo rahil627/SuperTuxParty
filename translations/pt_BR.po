@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-01-21 13:58+0000\n"
-"Last-Translator: Michael Alexsander <michaelalexsander@protonmail.com>\n"
+"PO-Revision-Date: 2020-03-20 13:36+0000\n"
+"Last-Translator: Barbara Tostes <barbaratostes@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Compre um bolo por %d biscoitos"
@@ -418,25 +418,42 @@ msgstr "Difícil"
 msgid "CONTEXT_GNU_MINIGAME"
 msgstr "Mini jogo Gnu!"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Visual"
+msgstr "Qualidade gráfica"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Visual"
+msgstr "Alta"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr "Áudio"
+msgstr "Média"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Áudio"
+msgstr "Baixa"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
+msgstr ""
+"Alterações na qualidade do gráfico só entrará em vigor após a reinicialização"
+
+msgid "CONTEXT_SPEAKER_SARA"
+msgstr ""
+
+msgid "CONTEXT_WINNER_ANNOUNCEMENT"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_LABEL_CAKES"
+msgstr ""
+
+msgid "CONTEXT_LABEL_COOKIES"
 msgstr ""

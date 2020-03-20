@@ -435,3 +435,27 @@ msgstr "Разное"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
+
+msgid "CONTEXT_SPEAKER_SARA"
+msgstr ""
+
+msgid "CONTEXT_WINNER_ANNOUNCEMENT"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
+msgstr ""
+
+msgid "CONTEXT_LABEL_CAKES"
+msgstr ""
+
+msgid "CONTEXT_LABEL_COOKIES"
+msgstr ""
