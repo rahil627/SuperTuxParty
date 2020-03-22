@@ -331,3 +331,82 @@ func _on_BoardSettings_Start_pressed():
 	Global.new_game = true
 	Global.new_savegame()
 	Global.load_board(board, names, characters, human_players)
+
+#*** Credits menu ***#
+func process_hyperlinks(input: String) -> String:
+	var out := ""
+	
+	var pos = input.find("[")
+	while pos != -1:
+		var end = input.find("]")
+		if end != -1 and input[end+1] == "(":
+			var urlend = input.find(")", end+1)
+			out += input.substr(0, pos)
+			out += "[color=#00aaff][url=" + input.substr(end+2, urlend - end - 2) + "]" \
+                    + input.substr(pos + 1, end - pos - 1) + "[/url][/color]"
+			input = input.substr(urlend+1, input.length() - urlend)
+		else:
+			out += input.substr(0, pos+1)
+			input = input.substr(pos+1, input.length() - pos)
+		pos = input.find("[")
+	out += input
+	return out
+
+func print_licenses(f: File) -> String:
+	var text = ""
+	
+	var current_dir := ""
+	var has_files = true
+	while not f.eof_reached():
+		var line := f.get_line()
+		if line.begins_with("## "):
+			current_dir = line.substr(3, line.length() - 3)
+			if not current_dir.ends_with("/"):
+				current_dir += "/"
+			has_files = false
+		elif line.begins_with("### "):
+			var unescaped := line.substr(4, line.length() - 4).replace("\\*", "*")
+			var files = unescaped.split("|")
+			for file in files:
+				text += "[color=#cc00ff]" + current_dir + file.lstrip(" \t\v").rstrip(" \t\v") + ":[/color]\n"
+			has_files = true
+		else:
+			if not has_files: # Special edge case: toplevel entries start with '## '
+				text += "[color=#cc00ff]" + current_dir.substr(0, current_dir.length() - 1) + ":[/color]\n"
+				has_files = true
+			text += "[indent]" + process_hyperlinks(line) + '[/indent]\n'
+	
+	return text
+
+func _on_Credits_pressed():
+	var text = """[center]SuperTuxParty is brought to you by:[/center]
+[color=#ffaa00][center]Dragoncraft89, Antiwrapper, [url=https://yeldham.itch.io]Yeldham[/url], RiderExMachina, hejka26, airon90, swolfschristophe, pastmidnight14 and kratz00[/center][/color]
+
+[center]with [color=#66aa00]ART[/color] by:[/center]
+"""
+	
+	var license_art := File.new()
+	license_art.open("res://LICENSE-ART.md", File.READ)
+	text += print_licenses(license_art)
+	license_art.close()
+	
+	text += "[center]and [color=#66aa00]MUSIC[/color] by:[/center]\n"
+	
+	var license_music := File.new()
+	license_music.open("res://LICENSE-MUSIC.md", File.READ)
+	text += print_licenses(license_music)
+	license_music.close()
+	
+	$CreditsMenu/PanelContainer/RichTextLabel.bbcode_text = text
+	$CreditsMenu.show()
+	$MainMenu.hide()
+	$CreditsMenu/Back.grab_focus()
+
+func _on_Credits_meta_clicked(meta):
+	OS.shell_open(meta) # Open links in the credits
+
+func _on_Credits_Back_pressed():
+	$MainMenu.show()
+	$CreditsMenu.hide()
+	
+	$MainMenu/Buttons/Play.grab_focus()

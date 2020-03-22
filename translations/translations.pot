@@ -347,6 +347,9 @@ msgstr ""
 msgid "MENU_LABEL_XBOX"
 msgstr ""
 
+msgid "MENU_LABEL_CREDITS"
+msgstr ""
+
 msgid "MENU_OPTIONS"
 msgstr ""
 
