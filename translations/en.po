@@ -349,6 +349,9 @@ msgstr "Winner takes all"
 msgid "MENU_LABEL_XBOX"
 msgstr "XBOX"
 
+msgid "MENU_LABEL_CREDITS"
+msgstr "Credits"
+
 msgid "MENU_OPTIONS"
 msgstr "Options"
 
