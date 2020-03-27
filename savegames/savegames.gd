@@ -12,6 +12,7 @@ class SaveGamePlayerState:
 	var cakes := 0
 
 	var items := []
+	var roll_modifiers := []
 
 class SaveGame:
 	var name := ""

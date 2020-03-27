@@ -12,7 +12,7 @@ func _ready():
 	else:
 		var i = 1
 		
-		for team in Global.minigame_teams:
+		for team in Global.minigame_state.minigame_teams:
 			for player_id in team:
 				get_node("Player%dName" % i).text = Global.players[player_id - 1].player_name
 				

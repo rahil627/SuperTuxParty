@@ -17,7 +17,7 @@ var plants
 var rotten_index
 
 func _ready():
-	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
+	if Global.minigame_state.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		plants = [$Area1, $Area2, $Area3, $Area4]
 	else:
 		plants = [$Area2, $Area4]
@@ -47,7 +47,7 @@ func _on_Timer_timeout():
 	$Player1.current_destination = $Player1.translation - $Player1.translation.normalized()
 	$Player2.input_disabled = true
 	$Player2.current_destination = $Player2.translation - $Player2.translation.normalized()
-	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
+	if Global.minigame_state.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Player3.input_disabled = true
 		$Player3.current_destination = $Player3.translation - $Player3.translation.normalized()
 		$Player3.rotation = Vector3(0, -PI/2, 0)
@@ -86,7 +86,7 @@ func _on_Timer_timeout():
 	$Player2.play_animation("idle")
 	$Player2.translation = Vector3(1, 0, -1)
 	$Player2.current_destination = null
-	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
+	if Global.minigame_state.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Player3.input_disabled = false
 		$Player3.play_animation("idle")
 		$Player3.translation = Vector3(1, 0, 1)
@@ -107,7 +107,7 @@ func _on_Timer_timeout():
 	if rounds > 0:
 		spawn_plants()
 	else:
-		match Global.minigame_type:
+		match Global.minigame_state.minigame_type:
 			Global.MINIGAME_TYPES.FREE_FOR_ALL:
 				Global.minigame_win_by_points([$Player1.plants, $Player2.plants, $Player3.plants, $Player4.plants])
 			Global.MINIGAME_TYPES.DUEL:
@@ -118,7 +118,7 @@ func _on_Timer_timeout():
 func update_overlay():
 	$Screen/ScoreOverlay.set_score(1, $Player1.plants)
 	$Screen/ScoreOverlay.set_score(2, $Player2.plants)
-	if Global.minigame_type != Global.MINIGAME_TYPES.DUEL:
+	if Global.minigame_state.minigame_type != Global.MINIGAME_TYPES.DUEL:
 		$Screen/ScoreOverlay.set_score(3, $Player3.plants)
 		$Screen/ScoreOverlay.set_score(4, $Player4.plants)
 

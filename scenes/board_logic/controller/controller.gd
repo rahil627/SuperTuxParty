@@ -95,6 +95,43 @@ func _ready() -> void:
 	update_player_info()
 
 	$Screen/Debug.setup()
+	if Global.minigame_summary:
+		# Do some moderation according to the last minigame type being played
+		match Global.minigame_summary.minigame_type:
+			Global.MINIGAME_TYPES.GNU_SOLO:
+				var player_id = player_turn
+				if Global.minigame_summary.placement:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_SOLO_VICTORY"), player_id)
+					yield($Screen/SpeechDialog, "dialog_finished")
+					players[player_id - 1].give_item(Global.minigame_reward.gnu_solo_item_reward)
+				else:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_SOLO_LOSS"), player_id)
+					yield($Screen/SpeechDialog, "dialog_finished")
+				player_turn += 1
+			Global.MINIGAME_TYPES.GNU_COOP:
+				var player_id = player_turn
+				if Global.minigame_summary.placement:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_COOP_VICTORY"), player_id)
+				else:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_COOP_LOSS"), player_id)
+				yield($Screen/SpeechDialog, "dialog_finished")
+				player_turn += 1
+			Global.MINIGAME_TYPES.NOLOK_SOLO:
+				var player_id = player_turn
+				if Global.minigame_summary.placement:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), tr("CONTEXT_NOLOK_SOLO_VICTORY"), player_id)
+				else:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), tr("CONTEXT_NOLOK_SOLO_LOSS"), player_id)
+				yield($Screen/SpeechDialog, "dialog_finished")
+				player_turn += 1
+			Global.MINIGAME_TYPES.NOLOK_COOP:
+				var player_id = player_turn
+				if Global.minigame_summary.placement:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), tr("CONTEXT_NOLOK_COOP_VICTORY"), player_id)
+				else:
+					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), tr("CONTEXT_NOLOK_COOP_LOSS"), player_id)
+				yield($Screen/SpeechDialog, "dialog_finished")
+				player_turn += 1
 
 	if not Global.cake_space and not winner:
 		yield(relocate_cake(), "completed")
@@ -190,6 +227,9 @@ func roll(steps = null) -> void:
 			Item.TYPES.DICE:
 				var dice = selected_item.activate(player, self)
 
+				dice = max(dice + player.get_total_roll_modifier(), 0)
+				player.roll_modifiers_count_down()
+
 				$Screen/Stepcounter.text = var2str(dice)
 				step_count = dice
 
@@ -258,24 +298,24 @@ func roll(steps = null) -> void:
 			blue_team = red_team
 			red_team = tmp
 
-		Global.minigame_teams = [blue_team, red_team]
+		var state = Global.MinigameState.new()
+		state.minigame_teams = [blue_team, red_team]
 
-		var minigame
 		match [blue_team.size(), red_team.size()]:
 			[4, 0]:
-				Global.minigame_type = Global.MINIGAME_TYPES.FREE_FOR_ALL
-				minigame = Global.minigame_loader.get_random_ffa()
+				state.minigame_type = Global.MINIGAME_TYPES.FREE_FOR_ALL
+				state.minigame_config = Global.minigame_loader.get_random_ffa()
 			[3, 1]:
-				Global.minigame_type = Global.MINIGAME_TYPES.ONE_VS_THREE
-				minigame = Global.minigame_loader.get_random_1v3()
+				state.minigame_type = Global.MINIGAME_TYPES.ONE_VS_THREE
+				state.minigame_config = Global.minigame_loader.get_random_1v3()
 			[2, 2]:
-				Global.minigame_type = Global.MINIGAME_TYPES.TWO_VS_TWO
-				minigame = Global.minigame_loader.get_random_2v2()
+				state.minigame_type = Global.MINIGAME_TYPES.TWO_VS_TWO
+				state.minigame_config = Global.minigame_loader.get_random_2v2()
 
 		Global.turn += 1
 		player_turn = 1
-		yield(show_minigame_animation(), "completed")
-		$Screen/MinigameInformation.show_minigame_info(minigame, players)
+		yield(show_minigame_animation(state), "completed")
+		show_minigame_info(state)
 
 func create_choose_path_arrows(player) -> void:
 	var first = null
@@ -381,51 +421,139 @@ func land_on_space(player):
 		NodeBoard.NODE_TYPES.YELLOW:
 			var rewards: Array = Global.MINIGAME_DUEL_REWARDS.values()
 
-			Global.minigame_type = Global.MINIGAME_TYPES.DUEL
 			var minigame = Global.minigame_loader.get_random_duel()
-			Global.minigame_duel_reward =\
+
+			var state = Global.MinigameState.new()
+			state.minigame_type = Global.MINIGAME_TYPES.DUEL
+			state.minigame_config = minigame
+			
+			Global.minigame_reward = Global.MinigameReward.new()
+			Global.minigame_reward.duel_reward = \
 					rewards[randi() % rewards.size()]
 
 			player_turn += 1
 			if not player.is_ai:
 				yield(minigame_duel_reward_animation(), "completed")
-				$Screen/DuelSelection.select(minigame, player, players)
+				$Screen/DuelSelection.select(state, player, players)
 			else:
 				var players: Array = self.players.duplicate()
 				players.remove(players.find(player))
 
-				Global.minigame_teams = [[players[randi() %\
+				state.minigame_teams = [[players[randi() %\
 						players.size()].player_id], [player.player_id]]
 				yield(minigame_duel_reward_animation(), "completed")
-				yield(show_minigame_animation(), "completed")
-				$Screen/MinigameInformation.show_minigame_info(minigame, players)
+				yield(show_minigame_animation(state), "completed")
+				$Screen/MinigameInformation.show_minigame_info(state, players)
 			return
 		NodeBoard.NODE_TYPES.NOLOK:
-			# TODO: Different (bad) rewards
-			Global.minigame_type = Global.MINIGAME_TYPES.NOLOK
-			var minigame = Global.minigame_loader.get_random_nolok()
+			$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), tr("CONTEXT_NOLOK_EVENT_START"), player.player_id)
+			yield($Screen/SpeechDialog, "dialog_finished")
+
+			var actions = Global.NOLOK_ACTION_TYPES
+			var type = actions.values()[randi() % actions.size()]
+			
+			var state = null
 			var players = []
-			for player in self.players:
-				players.push_back(player.player_id)
-			player_turn += 1
-			Global.minigame_teams = [players, []]
-			yield(show_minigame_animation(), "completed")
-			show_minigame_info(minigame)
-			return
+			
+			var dialog_text
+			
+			match type:
+				Global.NOLOK_ACTION_TYPES.SOLO_MINIGAME:
+					dialog_text = tr("CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION")
+					$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_MINIGAME_SOLO"
+					state = Global.MinigameState.new()
+					state.minigame_type = Global.MINIGAME_TYPES.NOLOK_SOLO
+					state.minigame_config = Global.minigame_loader.get_random_nolok_solo()
+					players.append(player.player_id)
+				Global.NOLOK_ACTION_TYPES.COOP_MINIGAME:
+					dialog_text = tr("CONTEXT_NOLOK_MINIGAME_COOP_MODERATION")
+					$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_MINIGAME_COOP"
+					state = Global.MinigameState.new()
+					state.minigame_type = Global.MINIGAME_TYPES.NOLOK_COOP
+					state.minigame_config = Global.minigame_loader.get_random_nolok_coop()
+					for player in self.players:
+						players.append(player.player_id)
+				Global.NOLOK_ACTION_TYPES.BOARD_EFFECT:
+					# Random negative effect
+					match randi() % 2:
+						0:
+							# Let the player loose cookies depending on rank
+							var cookies = [15, 10, 5, 5]
+							var rank = _get_player_placement(player)
+							
+							var stolen_cookies = min(cookies[rank - 1], player.cookies)
+							
+							# Give them to the last player (that is not yourself)
+							var target = null
+							for p in self.players:
+								if (not target or target.cakes > p.cakes or (target.cakes == p.cakes and target.cookies > p.cookies)) and p != player:
+									target = p
+							
+							player.cookies -= stolen_cookies
+							target.cookies += stolen_cookies
+							dialog_text = tr("CONTEXT_NOLOK_LOSE_COOKIES_MODERATION") % [stolen_cookies, target.player_name]
+							$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_LOSE_COOKIES"
+						1:
+							# The next 5 rolls of the player are reduced by 2
+							player.add_roll_modifier(-2, 5)
+							dialog_text = tr("CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION") % [2, 5]
+							$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_ROLL_MODIFIER"
+
+			$Screen/NolokSelection/AnimationPlayer.play("show")
+			yield($Screen/NolokSelection/AnimationPlayer, "animation_finished")
+			$Screen/NolokSelection.hide()
+
+			$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), dialog_text, player.player_id)
+			yield($Screen/SpeechDialog, "dialog_finished")
+
+			if state:
+				state.minigame_teams = [players, []]
+				yield(show_minigame_animation(state), "completed")
+				show_minigame_info(state)
+				return
 		NodeBoard.NODE_TYPES.GNU:
-			# TODO: Different rewards
-			Global.minigame_type = Global.MINIGAME_TYPES.GNU
-			var minigame = Global.minigame_loader.get_random_gnu()
-			var players = []
-			for player in self.players:
-				players.push_back(player.player_id)
-			player_turn += 1
-			Global.minigame_teams = [players, []]
-			$Screen/MinigameTypeAnimation/Gnu.show()
-			yield(get_tree().create_timer(2), "timeout")
-			$Screen/MinigameTypeAnimation/Gnu.hide()
-			yield(show_minigame_animation(), "completed")
-			show_minigame_info(minigame)
+			$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_EVENT_START"), player.player_id)
+			yield($Screen/SpeechDialog, "dialog_finished")
+			
+			var actions: Array = Global.GNU_ACTION_TYPES.values()
+			var type = actions[randi() % actions.size()]
+			
+			var state = Global.MinigameState.new()
+			var players := []
+			var dialog_text := ""
+			
+			match type:
+				Global.GNU_ACTION_TYPES.SOLO_MINIGAME:
+					var items: Array = Global.item_loader.get_buyable_items()
+					var reward: Item = load(Global.item_loader.get_item_path(items[randi() % len(items)])).new()
+					dialog_text = tr("CONTEXT_GNU_MINIGAME_SOLO_MODERATION") % reward.name
+					$Screen/GNUSelection/Content/Selection.text = "CONTEXT_GNU_MINIGAME_SOLO"
+
+					state.minigame_type = Global.MINIGAME_TYPES.GNU_SOLO
+					state.minigame_config = Global.minigame_loader.get_random_gnu_solo()
+
+					Global.minigame_reward = Global.MinigameReward.new()
+					Global.minigame_reward.gnu_solo_item_reward = reward
+
+					players.push_back(player.player_id)
+				Global.GNU_ACTION_TYPES.COOP_MINIGAME:
+					dialog_text = tr("CONTEXT_GNU_MINIGAME_COOP_MODERATION")
+					$Screen/GNUSelection/Content/Selection.text = "CONTEXT_GNU_MINIGAME_COOP"
+					state.minigame_type = Global.MINIGAME_TYPES.GNU_COOP
+					state.minigame_config = Global.minigame_loader.get_random_gnu_coop()
+					for player in self.players:
+						players.push_back(player.player_id)
+
+			$Screen/GNUSelection/AnimationPlayer.play("show")
+			yield($Screen/GNUSelection/AnimationPlayer, "animation_finished")
+			$Screen/GNUSelection.hide()
+
+			$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), dialog_text, player.player_id)
+			yield($Screen/SpeechDialog, "dialog_finished")
+
+			state.minigame_teams = [players, []]
+			yield(show_minigame_animation(state), "completed")
+			show_minigame_info(state)
 			return
 
 	player_turn += 1
@@ -467,8 +595,8 @@ func update_space(space) -> void:
 			player.destination.append(walking_state)
 			num += 1
 
-func show_minigame_info(minigame: Object) -> void:
-	$Screen/MinigameInformation.show_minigame_info(minigame, players)
+func show_minigame_info(state) -> void:
+	$Screen/MinigameInformation.show_minigame_info(state, players)
 
 func raise_event(name: String, pressed: bool) -> void:
 	var event = InputEventAction.new()
@@ -514,6 +642,14 @@ func get_players_on_space(space) -> int:
 			num += 1
 
 	return num
+
+func _get_player_placement(p: Spatial) -> int:
+	var placement := 1
+	for p2 in players:
+		if p2.cakes > p.cakes or p2.cakes == p.cakes and p2.cookies > p.cookies:
+			placement += 1
+	
+	return placement
 
 func _get_player_offset(space: NodeBoard, num := -1) -> Vector3:
 	var players_on_space = get_players_on_space(space)
@@ -581,10 +717,7 @@ func update_player_info() -> void:
 	var i := 1
 
 	for p in players:
-		var placement := 1
-		for p2 in players:
-			if p2.cakes > p.cakes or p2.cakes == p.cakes and p2.cookies > p.cookies:
-				placement += 1
+		var placement = _get_player_placement(p)
 
 		var pos: Label = get_node("Screen/PlayerInfo%d" % i).get_node("Name/Position")
 		pos.text = str(placement)
@@ -621,9 +754,9 @@ func update_player_info() -> void:
 func hide_splash() -> void:
 	$Screen/Splash/Background.hide()
 
-func show_minigame_animation() -> void:
+func show_minigame_animation(state) -> void:
 	var i := 1
-	for team in Global.minigame_teams:
+	for team in state.minigame_teams:
 		for player_id in team:
 			$Screen/MinigameTypeAnimation/Root.get_node(
 					"Player" + str(i)).texture = load(
@@ -631,7 +764,7 @@ func show_minigame_animation() -> void:
 					Global.players[player_id - 1].character))
 			i += 1
 
-	match Global.minigame_type:
+	match state.minigame_type:
 		Global.MINIGAME_TYPES.FREE_FOR_ALL:
 			$Screen/MinigameTypeAnimation.play("FFA")
 		Global.MINIGAME_TYPES.ONE_VS_THREE:
@@ -640,19 +773,18 @@ func show_minigame_animation() -> void:
 			$Screen/MinigameTypeAnimation.play("2v2")
 		Global.MINIGAME_TYPES.DUEL:
 			$Screen/MinigameTypeAnimation.play("Duel")
-		Global.MINIGAME_TYPES.NOLOK:
-			$Screen/MinigameTypeAnimation.play("FFA") # TODO better animation
-		Global.MINIGAME_TYPES.GNU:
-			$Screen/MinigameTypeAnimation.play("FFA") # TODO better animation
 
 	$Screen/Dice.hide()
 
-	yield($Screen/MinigameTypeAnimation, "animation_finished")
+	if $Screen/MinigameTypeAnimation.is_playing():
+		yield($Screen/MinigameTypeAnimation, "animation_finished")
+	else:
+		yield(get_tree().create_timer(0), "timeout")
 
 func minigame_duel_reward_animation() -> void:
 	var name: String
 	for key in Global.MINIGAME_DUEL_REWARDS.keys():
-		if Global.MINIGAME_DUEL_REWARDS[key] == Global.minigame_duel_reward:
+		if Global.MINIGAME_DUEL_REWARDS[key] == Global.minigame_reward.duel_reward:
 			name = key
 
 	if name == "TEN_COOKIES":

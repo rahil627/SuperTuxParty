@@ -90,7 +90,7 @@ func _process(delta):
 		var farthest_player = null
 		var farthest_distance = INF
 		for p in players:
-			if p != self and (p.team != self.team or Global.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL):
+			if p != self and (p.team != self.team or Global.minigame_state.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL):
 				var distance = get_distance_to_shape(p.translation, ground_edges)
 				if p.is_on_floor() and (farthest_player == null or farthest_distance > distance):
 					farthest_player = p

@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name Item
 
 enum TYPES {
@@ -6,6 +6,8 @@ enum TYPES {
 	PLACABLE,
 	ACTION
 }
+
+var name: String
 
 var type: int = TYPES.ACTION
 var is_consumed := true
@@ -22,8 +24,9 @@ var max_place_distance := 5
 
 var material: Material
 
-func _init(new_type: int) -> void:
+func _init(new_type: int, new_name: String) -> void:
 	type = new_type
+	name = new_name
 
 	load_resources()
 

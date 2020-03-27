@@ -1,0 +1,85 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://plugins/minigames/boat_rally/bomb.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/hit_indicator.png" type="Texture" id=2]
+[ext_resource path="res://assets/models/Bomb/Bomb.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/models/Bomb/materials/Diffuse.png" type="Texture" id=4]
+[ext_resource path="res://assets/models/Bomb/materials/Diffuse_AO.png" type="Texture" id=5]
+[ext_resource path="res://assets/models/Bomb/materials/Diffuse_Normal.png" type="Texture" id=6]
+[ext_resource path="res://assets/models/Bomb/materials/Diffuse_Roughness.png" type="Texture" id=7]
+
+[sub_resource type="SphereShape" id=1]
+radius = 1.5
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+flags_transparent = true
+flags_no_depth_test = true
+albedo_color = Color( 1, 1, 1, 0 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 4 )
+roughness_texture = ExtResource( 7 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 6 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 5 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0.00320482, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996795, 0 ), -3.93792, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+angular_velocity = -1.78754e+32
+scale_curve = SubResource( 5 )
+color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
+size = Vector3( 0.5, 0.5, 0.5 )
+
+[node name="Bomb" type="Area" groups=[
+"bomb",
+]]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+material_override = SubResource( 2 )
+axis = 1
+texture = ExtResource( 2 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 3 )
+material/1 = SubResource( 3 )
+
+[node name="Particles" type="Particles" parent="."]
+pause_mode = 2
+emitting = false
+amount = 200
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 8 )
+[connection signal="body_entered" from="." to="." method="_on_Bomb_body_entered"]

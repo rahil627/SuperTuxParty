@@ -259,7 +259,9 @@ func set_material() -> void:
 			"res://scenes/board_logic/node/material/" +
 			"node_purple_material.tres"))
 		NODE_TYPES.NOLOK:
-			pass # TODO Nolok space texture
+			$Model/Cylinder.set_surface_material(0, preload(
+			"res://scenes/board_logic/node/material/" +
+			"node_nolok_material.tres"))
 		NODE_TYPES.GNU:
 			$Model/Cylinder.set_surface_material(0, preload(
 			"res://scenes/board_logic/node/material/" +

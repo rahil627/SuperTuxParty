@@ -2,7 +2,7 @@ extends Spatial
 
 func _ready():
 	var i = 0
-	for p in Global.placement:
+	for p in Global.minigame_summary.placement:
 		for player_id in p:
 			i += 1
 			var new_model = load(Global.character_loader.get_character_path(Global.players[player_id - 1].character)).instance()
@@ -21,6 +21,4 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	Global.minigame_type = -1
-	Global.minigame_teams = []
 	Global._goto_scene_board()

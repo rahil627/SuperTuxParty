@@ -34,7 +34,7 @@ class Sorter:
 		return players[a - 1].presses > players[b - 1].presses
 
 func _on_Timer_timeout():
-	match Global.minigame_type:
+	match Global.minigame_state.minigame_type:
 		Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
 			var points = []
 			

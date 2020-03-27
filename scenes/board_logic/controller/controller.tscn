@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=2]
@@ -10,12 +10,12 @@
 [ext_resource path="res://scenes/board_logic/controller/icons/splash_background.png" type="Texture" id=8]
 [ext_resource path="res://scenes/board_logic/controller/debug.gd" type="Script" id=9]
 [ext_resource path="res://scenes/menus/pause_menu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/board_logic/controller/icons/heckert_gnu.big.png" type="Texture" id=11]
-[ext_resource path="res://scenes/board_logic/controller/cake.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/board_logic/controller/minigameinformationscreen.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/board_logic/controller/duelselection.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/board_logic/controller/itemselection.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/board_logic/controller/shop.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/board_logic/controller/cake.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/board_logic/controller/minigameinformationscreen.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/board_logic/controller/duelselection.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/board_logic/controller/itemselection.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/board_logic/controller/shop.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/speech_dialog/speech_dialog.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/board_logic/controller/selectspacehelper.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
@@ -355,6 +355,62 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "show"
+length = 3.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Content/Selection:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 33 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "show"
+length = 3.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Content/Selection:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 33 ) ]
 }
 
 [node name="Controller" type="Spatial" groups=[
@@ -983,7 +1039,7 @@ scroll_horizontal_enabled = false
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
-[node name="Nolok" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
+[node name="NolokSolo" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
 editor/display_folded = true
 visible = false
 anchor_right = 1.0
@@ -995,11 +1051,11 @@ margin_bottom = -8.0
 rect_min_size = Vector2( 0, 350 )
 scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/Nolok"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/NolokSolo"]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
-[node name="Gnu" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
+[node name="NolokCoop" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
 editor/display_folded = true
 visible = false
 anchor_right = 1.0
@@ -1011,7 +1067,39 @@ margin_bottom = -8.0
 rect_min_size = Vector2( 0, 350 )
 scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/Gnu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/NolokCoop"]
+margin_right = 600.0
+rect_min_size = Vector2( 600, 0 )
+
+[node name="GnuSolo" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 47.0
+margin_right = -8.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 0, 350 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/GnuSolo"]
+margin_right = 600.0
+rect_min_size = Vector2( 600, 0 )
+
+[node name="GnuCoop" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 47.0
+margin_right = -8.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 0, 350 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debug/List/Minigames/TabContainer/GnuCoop"]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
@@ -1126,47 +1214,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CONTEXT_LABEL_VS"
 
-[node name="Gnu" type="Control" parent="Screen/MinigameTypeAnimation"]
-editor/display_folded = true
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -150.0
-margin_right = 150.0
-margin_bottom = 150.0
-
-[node name="TextureRect" type="TextureRect" parent="Screen/MinigameTypeAnimation/Gnu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -87.5
-margin_top = -150.0
-margin_right = 87.5
-margin_bottom = 21.0
-texture = ExtResource( 11 )
-expand = true
-stretch_mode = 1
-
-[node name="Label" type="Label" parent="Screen/MinigameTypeAnimation/Gnu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -232.5
-margin_top = 50.0
-margin_right = 232.5
-margin_bottom = 108.0
-grow_horizontal = 2
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "CONTEXT_GNU_MINIGAME"
-align = 1
-
-[node name="Cake" parent="Screen" instance=ExtResource( 12 )]
+[node name="Cake" parent="Screen" instance=ExtResource( 11 )]
 
 [node name="Roll" type="Button" parent="Screen"]
 visible = false
@@ -1183,11 +1231,11 @@ custom_fonts/font = ExtResource( 7 )
 enabled_focus_mode = 0
 text = "CONTEXT_LABEL_ROLL"
 
-[node name="MinigameInformation" parent="Screen" instance=ExtResource( 13 )]
+[node name="MinigameInformation" parent="Screen" instance=ExtResource( 12 )]
 
-[node name="DuelSelection" parent="Screen" instance=ExtResource( 14 )]
+[node name="DuelSelection" parent="Screen" instance=ExtResource( 13 )]
 
-[node name="ItemSelection" parent="Screen" instance=ExtResource( 15 )]
+[node name="ItemSelection" parent="Screen" instance=ExtResource( 14 )]
 
 [node name="DuelReward" type="Control" parent="Screen"]
 editor/display_folded = true
@@ -1216,7 +1264,108 @@ margin_bottom = 29.0
 custom_fonts/font = ExtResource( 3 )
 align = 1
 
-[node name="Shop" parent="Screen" instance=ExtResource( 16 )]
+[node name="GNUSelection" type="ColorRect" parent="Screen"]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.5
+margin_right = 150.0
+margin_bottom = 36.5
+color = Color( 0.521569, 0, 0, 1 )
+
+[node name="Content" type="Control" parent="Screen/GNUSelection"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.5
+margin_right = 150.0
+margin_bottom = 36.5
+
+[node name="Title" type="Label" parent="Screen/GNUSelection/Content"]
+editor/display_folded = true
+margin_right = 300.0
+margin_bottom = 29.0
+text = "CONTEXT_GNU_ACTION_TYPE"
+align = 1
+
+[node name="ColorRect" type="ColorRect" parent="Screen/GNUSelection/Content/Title"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.396078, 0, 0, 1 )
+
+[node name="Selection" type="Label" parent="Screen/GNUSelection/Content"]
+show_behind_parent = true
+margin_right = 300.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+text = "TEST"
+align = 1
+clip_text = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen/GNUSelection"]
+anims/show = SubResource( 9 )
+
+[node name="NolokSelection" type="ColorRect" parent="Screen"]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.5
+margin_right = 150.0
+margin_bottom = 36.5
+color = Color( 0.521569, 0, 0, 1 )
+
+[node name="Content" type="Control" parent="Screen/NolokSelection"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -36.5
+margin_right = 150.0
+margin_bottom = 36.5
+
+[node name="Title" type="Label" parent="Screen/NolokSelection/Content"]
+editor/display_folded = true
+margin_right = 300.0
+margin_bottom = 29.0
+text = "CONTEXT_NOLOK_ACTION_TYPE"
+align = 1
+
+[node name="ColorRect" type="ColorRect" parent="Screen/NolokSelection/Content/Title"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.396078, 0, 0, 1 )
+
+[node name="Selection" type="Label" parent="Screen/NolokSelection/Content"]
+show_behind_parent = true
+margin_right = 300.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+text = "TEST"
+align = 1
+clip_text = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen/NolokSelection"]
+anims/show = SubResource( 10 )
+
+[node name="Shop" parent="Screen" instance=ExtResource( 15 )]
+
+[node name="SpeechDialog" parent="Screen" instance=ExtResource( 16 )]
+visible = false
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 4 )

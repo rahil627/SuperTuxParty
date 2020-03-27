@@ -60,17 +60,10 @@ func handle_event(player: Spatial, space: NodeBoard):
 		load("res://plugins/boards/KDEValley/dragons/%s_icon.png" % space.name)
 	var text := tr("KDE_VALLEY_TAKE_TO_CAKE")
 	
-	$SpeechDialog.show_accept_dialog(name, icon, text, player.player_id)
-	if not player.is_ai:
-		if not yield($SpeechDialog, "dialog_option_taken"):
-			$Controller.continue()
-			return
-	else:
-		yield(get_tree().create_timer(1), "timeout")
-		$SpeechDialog.hide()
-		if player.cookies < $Controller.COOKIES_FOR_CAKE:
-			$Controller.continue()
-			return
+	$SpeechDialog.show_accept_dialog(name, icon, text, player.player_id, player.cookies >= $Controller.COOKIES_FOR_CAKE)
+	if not yield($SpeechDialog, "dialog_option_taken"):
+		$Controller.continue()
+		return
 
 	var dragon_anim: AnimationPlayer =\
 		space.get_node("Dragon/AnimationPlayer")

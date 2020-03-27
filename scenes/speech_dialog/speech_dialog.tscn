@@ -71,14 +71,14 @@ patch_margin_bottom = 64
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 32.0
-margin_right = -15.0
-margin_bottom = -15.0
+margin_left = 5.0
+margin_top = 22.0
+margin_right = -5.0
+margin_bottom = -5.0
 
 [node name="Text" type="RichTextLabel" parent="HBoxContainer/NinePatchRect/MarginContainer"]
-margin_right = 1098.0
-margin_bottom = 81.0
+margin_right = 1118.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/bold_italics_font = SubResource( 1 )
@@ -95,21 +95,22 @@ margin_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
 custom_fonts/font = SubResource( 5 )
+align = 1
 valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/NinePatchRect/Name"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -5.0
-margin_top = -5.0
-margin_right = 5.0
-margin_bottom = 5.0
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/NinePatchRect/Name/MarginContainer"]
 show_behind_parent = true
-margin_right = 168.0
-margin_bottom = 64.0
+margin_right = 178.0
+margin_bottom = 74.0
 rect_min_size = Vector2( 128, 64 )
 texture = ExtResource( 2 )
 patch_margin_left = 32
