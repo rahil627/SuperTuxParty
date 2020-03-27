@@ -1,10 +1,36 @@
 # Releases
-## Alpha Version - v0.7
+## Alpha Version - v0.7 - 2020-04-01
 ### New features
+
+- Added loading screens
+- Added music to "Haunted Dreams" minigame
+- Added Graphic options
+  - Requires game restart
+- Added victory screen with game summary
+- Added 3 new minigame types:
+  - Gnu Solo: Single player challenge that is rewarded with an item
+  - Nolok Solo: Single player challenge to avoid a cake getting stolen
+  - Nolok Coop: All players have to work together to win the minigame or loose 10 cookies each
+- Added 3 new minigames:
+  - Forest Run: Jump and run platformer (Gnu Solo minigame)
+  - Dungeon Parcour: Jump and run platformer (Nolok Solo minigame)
+  - Boat Rally: Steer a boat through rocks and avoid getting hit by falling bombs (Nolok Coop)
+- Added Credits screen
 
 ### Improved / Changed
 
-## Alpha Version - v0.6
+- Smoother player movement on boards
+- Fixed roll button not clickable
+- Fixed missing translations
+- Improved outlines when selecting items/players
+- Better dirt texture
+- Cakes don't respawn at the same location (if possible)
+- Fixed the ai diffculty setting in savegames
+- Saving when prompted with a minigame will no longer skip said minigame after loading
+- Fixed crash when loading the "Haunted Dreams" minigame
+- Fixed the board turns setting being ignored
+
+## Alpha Version - v0.6 - 2019-10-29
 ### New features
 - New minigame: Haunted dreams
 - Barebone implementation of Nolok and GNU spaces
@@ -23,7 +49,7 @@
 - Reworked the KDEValley board
 - Fixed a bug that caused the game to get stuck, when a board event from a green space was not handled
 
-## Alpha Version - v0.5
+## Alpha Version - v0.5 - 2019-08-02
 ### New features
 - Support for localization in the minigame information screen
 - Support for localization in minigame descriptions
@@ -47,7 +73,7 @@
 - Fixed the black outline on the green tux texture
 - Fixed the descriptions in the main menu back buttons
 
-## Alpha Version - v0.4
+## Alpha Version - v0.4 - 2019-06-08
 ### New features
 - Support for localization (except plugins)
   - Currently supported languages:
