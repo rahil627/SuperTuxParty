@@ -1,6 +1,8 @@
 extends Control
 
+#warning-ignore: unused_signal
 signal dialog_finished
+#warning-ignore: unused_signal
 signal dialog_option_taken(accepted)
 
 const CLICK_SOUND = preload("res://assets/sounds/ui/rollover2.wav")
@@ -11,28 +13,25 @@ var player_id: int
 func _ready() -> void:
 	hide()
 
+func _accept_dialog(type: String, data):
+	hide()
+	UISound.stream = CLICK_SOUND
+	UISound.play()
+	emit_signal(type, data)
+
 func _gui_input(event: InputEvent) -> void:
 	var is_action: bool = event.is_action_pressed("player%d_ok" % player_id)
 	var is_mouse: bool = event.is_action_pressed("left_mouse_pressed")
 	if (is_action or is_mouse) and visible:
 		if has_focus():
 			accept_event()
-			hide()
-			UISound.stream = CLICK_SOUND
-			UISound.play()
-			emit_signal("dialog_finished")
+			_accept_dialog("dialog_finished", null)
 		elif $HBoxContainer/NinePatchRect/Buttons/Yes.has_focus():
 			accept_event()
-			hide()
-			UISound.stream = CLICK_SOUND
-			UISound.play()
-			emit_signal("dialog_option_taken", true)
+			_accept_dialog("dialog_option_taken", true)
 		elif $HBoxContainer/NinePatchRect/Buttons/No.has_focus():
 			accept_event()
-			hide()
-			UISound.stream = CLICK_SOUND
-			UISound.play()
-			emit_signal("dialog_option_taken", false)
+			_accept_dialog("dialog_option_taken", false)
 
 func show_dialog(speaker: String, texture: Texture, text: String, player_id: int) -> void:
 	$HBoxContainer/TextureRect.texture = texture
@@ -41,8 +40,11 @@ func show_dialog(speaker: String, texture: Texture, text: String, player_id: int
 	grab_focus()
 	$HBoxContainer/NinePatchRect/Name.text = speaker
 	$HBoxContainer/NinePatchRect/MarginContainer/Text.bbcode_text = text
+	
+	if Global.players[player_id - 1].is_ai:
+		get_tree().create_timer(2).connect("timeout", self, "_accept_dialog", ["dialog_finished", null])
 
-func show_accept_dialog(speaker: String, texture: Texture, text: String, player_id: int) -> void:
+func show_accept_dialog(speaker: String, texture: Texture, text: String, player_id: int, ai_default: bool) -> void:
 	$HBoxContainer/TextureRect.texture = texture
 	self.player_id = player_id
 	show()
@@ -50,6 +52,9 @@ func show_accept_dialog(speaker: String, texture: Texture, text: String, player_
 	$HBoxContainer/NinePatchRect/MarginContainer/Text.bbcode_text = text
 	$HBoxContainer/NinePatchRect/Buttons.show()
 	$HBoxContainer/NinePatchRect/Buttons/Yes.grab_focus()
+	
+	if Global.players[player_id - 1].is_ai:
+		get_tree().create_timer(2).connect("timeout", self, "_accept_dialog", ["dialog_option_taken", ai_default])
 
 func _on_focus_entered(node: String) -> void:
 	(get_node(node) as NinePatchRect).texture = load("res://scenes/speech_dialog/dialog_box_focus.png")

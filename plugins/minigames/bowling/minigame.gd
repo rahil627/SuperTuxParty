@@ -27,7 +27,7 @@ func knockout(player):
 	if winner != null:
 		return
 	
-	if player.player_id == Global.minigame_teams[1][0]:
+	if player.player_id == Global.minigame_state.minigame_teams[1][0]:
 		winner = 0
 		
 		end_timer()

@@ -66,3 +66,34 @@ Retrieved from [Open Game Art](https://opengameart.org/content/51-ui-sound-effec
 
 License [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 
+## plugins/minigames/dungeon_parkour/
+### Wind Run.ogg
+Copyright TAD
+
+Retrieved from: [OpenGameArt](https://opengameart.org/content/wind-run)
+
+License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## plugins/minigames/boat_rally/
+### cannon-shot.wav
+Public Domain by qubodup
+Cut by Florian Kothmeier
+
+Retrieved from: [Freesound.org](https://freesound.org/people/qubodup/sounds/187767/)
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### thunderchild.ogg
+Copyright Otto Halmén
+
+Retrieved from: [OpenGameArt](https://opengameart.org/content/airship-thunderchild)
+
+License: [OGA-BY 3.0](http://static.opengameart.org/OGA-BY-3.0.txt)
+
+## plugins/minigames/forest_run/
+### Avgvst - Mushrooms.ogg
+Copyright t4ngr4m
+
+Retrieved from: [OpenGameArt](https://opengameart.org/content/mushrooms-0)
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)

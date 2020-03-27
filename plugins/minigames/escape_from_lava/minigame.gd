@@ -15,7 +15,7 @@ func _ready():
 	process_stage($Stage2)
 	process_stage($Stage3)
 	
-	if Global.minigame_type == Global.MINIGAME_TYPES.DUEL:
+	if Global.minigame_state.minigame_type == Global.MINIGAME_TYPES.DUEL:
 		winners = [0, 0]
 		num_players_alive = 2
 
@@ -67,7 +67,7 @@ func end_game():
 	$EndTimer.start()
 
 func _on_EndTimer_timeout():
-	if Global.minigame_type == Global.MINIGAME_TYPES.DUEL or Global.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL:
+	if Global.minigame_state.minigame_type == Global.MINIGAME_TYPES.DUEL or Global.minigame_state.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL:
 		Global.minigame_win_by_position(winners)
 	else:
 		Global.minigame_team_win_by_player(winners[0])

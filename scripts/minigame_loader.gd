@@ -24,8 +24,10 @@ var minigames_1v3 := []
 var minigames_2v2 := []
 var minigames_ffa := []
 
-var minigames_nolok := []
-var minigames_gnu := []
+var minigames_nolok_solo := []
+var minigames_nolok_coop := []
+var minigames_gnu_solo := []
+var minigames_gnu_coop := []
 
 # Checks the directory for a minigame config file and adds its path to the
 # corresonding array.
@@ -50,10 +52,16 @@ func check_directory(filename: String) -> bool:
 						minigames_2v2.append(complete_filename)
 					"FFA":
 						minigames_ffa.append(complete_filename)
-					"Nolok":
-						minigames_nolok.append(complete_filename)
-					"Gnu":
-						minigames_gnu.append(complete_filename)
+					"NolokSolo":
+						minigames_nolok_solo.append(complete_filename)
+					"NolokCoop":
+						minigames_nolok_coop.append(complete_filename)
+					"GnuSolo":
+						minigames_gnu_solo.append(complete_filename)
+					"GnuCoop":
+						minigames_gnu_coop.append(complete_filename)
+					_:
+						push_warning("Unknown minigame type: '" + type + "'")
 
 			return true
 
@@ -104,11 +112,17 @@ func print_loaded_minigames() -> void:
 	print("\tFFA:")
 	for i in minigames_ffa:
 		print("\t\t" + parse_file(i).name)
-	print("\tNolok:")
-	for i in minigames_nolok:
+	print("\tNolok Solo:")
+	for i in minigames_nolok_solo:
 		print("\t\t" + parse_file(i).name)
-	print("\tGnu:")
-	for i in minigames_gnu:
+	print("\tNolok Coop:")
+	for i in minigames_nolok_coop:
+		print("\t\t" + parse_file(i).name)
+	print("\tGnu Solo:")
+	for i in minigames_gnu_solo:
+		print("\t\t" + parse_file(i).name)
+	print("\tGnu Coop:")
+	for i in minigames_gnu_coop:
 		print("\t\t" + parse_file(i).name)
 
 func parse_json_file(file: String):
@@ -254,8 +268,14 @@ func get_random_duel():
 func get_random_ffa():
 	return _get_random_element(minigames_ffa)
 
-func get_random_nolok():
-	return _get_random_element(minigames_nolok)
+func get_random_nolok_solo():
+	return _get_random_element(minigames_nolok_solo)
 
-func get_random_gnu():
-	return _get_random_element(minigames_gnu)
+func get_random_nolok_coop():
+	return _get_random_element(minigames_nolok_coop)
+
+func get_random_gnu_solo():
+	return _get_random_element(minigames_gnu_solo)
+
+func get_random_gnu_coop():
+	return _get_random_element(minigames_gnu_coop)

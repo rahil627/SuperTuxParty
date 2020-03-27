@@ -32,6 +32,7 @@ onready var controller := get_tree().get_nodes_in_group("Controller")[0]\
 var is_walking := false
 
 var items := [preload("res://plugins/items/dice/item.gd").new()]
+var roll_modifiers := []
 
 func _ready() -> void:
 	if has_node("Model/AnimationPlayer"):
@@ -54,6 +55,25 @@ func remove_item(item: Item) -> bool:
 		return true
 
 	return false
+
+func add_roll_modifier(amount: int, num_rounds: int):
+	roll_modifiers.push_back([amount, num_rounds])
+
+func get_total_roll_modifier():
+	var res := 0
+	for mod in roll_modifiers:
+		res += mod[0]
+
+	return res
+
+func roll_modifiers_count_down():
+	var newarr = []
+	for mod in roll_modifiers:
+		mod[1] -= 1
+		if mod[1] > 0:
+			newarr.push_back(mod)
+	
+	roll_modifiers = newarr
 
 func walk_to(new_space: Spatial) -> void:
 	var old_space: NodeBoard = space

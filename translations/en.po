@@ -418,9 +418,6 @@ msgstr "Normal"
 msgid "DIFFICULTY_HARD"
 msgstr "Hard"
 
-msgid "CONTEXT_GNU_MINIGAME"
-msgstr "Gnu minigame!"
-
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
 msgstr "Graphic Quality"
 
@@ -459,3 +456,81 @@ msgstr "Cakes"
 
 msgid "CONTEXT_LABEL_COOKIES"
 msgstr "Cookies"
+
+msgid "CONTEXT_GNU_NAME"
+msgstr "GNU"
+
+msgid "CONTEXT_GNU_ACTION_TYPE"
+msgstr "GNU Action"
+
+msgid "CONTEXT_GNU_EVENT_START"
+msgstr "Hey there, need some help? Let me see, what I can do for you today..."
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
+msgstr "It's a solo minigame! Show me your skills and I'll give you a [color=#dd44ff]%s[/color]"
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO"
+msgstr "Solo Minigame"
+
+msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
+msgstr "Let's play together! I'm sure this will be fun"
+
+msgid "CONTEXT_GNU_MINIGAME_COOP"
+msgstr "Coop Minigame"
+
+msgid "CONTEXT_GNU_SOLO_VICTORY"
+msgstr "Well done. Here's your reward!"
+
+msgid "CONTEXT_GNU_SOLO_LOSS"
+msgstr "That didn't work out. Maybe next time."
+
+msgid "CONTEXT_GNU_COOP_VICTORY"
+msgstr "You did it. I'll look forward to the next time."
+
+msgid "CONTEXT_GNU_COOP_LOSS"
+msgstr "Although you didn't make it, you practiced your teamwork. I'm sure next time will work out for you!"
+
+msgid "CONTEXT_NOLOK_NAME"
+msgstr "Nolok"
+
+msgid "CONTEXT_NOLOK_ACTION_TYPE"
+msgstr "Nolok Action"
+
+msgid "CONTEXT_NOLOK_EVENT_START"
+msgstr "It's my turn! I know exactly, what to do..."
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
+msgstr "I challenge you to a minigame! If you can defeat me, you can keep your stuff. If not I'll take one of your cakes..."
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
+msgstr "Solo Minigame"
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
+msgstr "Me vs all of you? Do you even think you stand a chance against me?"
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP"
+msgstr "Coop Minigame"
+
+msgid "CONTEXT_NOLOK_SOLO_VICTORY"
+msgstr "Be grateful that I spared you!"
+
+msgid "CONTEXT_NOLOK_SOLO_LOSS"
+msgstr "Looking forward to beat you again!"
+
+msgid "CONTEXT_NOLOK_COOP_VICTORY"
+msgstr "Next time you won't win."
+
+msgid "CONTEXT_NOLOK_COOP_LOSS"
+msgstr "Haha, what an easy win."
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
+msgstr "Haha, there go [color=#00aaff]%d[/color] of your cookies. I'm sure [color=#dd44ff]%s[/color] has a use for them"
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES"
+msgstr "Lose your cookies"
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
+msgstr "Maybe you should slow down a bit. Let's see how you do with [color=#00aaff]%d[/color] less movement for the next [color=#dd44ff]%d[/color] throws"
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
+msgstr "Cursed die"

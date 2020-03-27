@@ -62,23 +62,41 @@ func setup():
 		
 		$List/Minigames/TabContainer/FFA/VBoxContainer.add_child(button)
 	
-	for game in loader.minigames_nolok:
+	for game in loader.minigames_nolok_solo:
 		var button = Button.new()
 		
 		button.text = loader.parse_file(game).name
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK])
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK_SOLO])
 		
-		$List/Minigames/TabContainer/Nolok/VBoxContainer.add_child(button)
+		$List/Minigames/TabContainer/NolokSolo/VBoxContainer.add_child(button)
 	
-	for game in loader.minigames_gnu:
+	for game in loader.minigames_nolok_coop:
 		var button = Button.new()
 		
 		button.text = loader.parse_file(game).name
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU])
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK_COOP])
 		
-		$List/Minigames/TabContainer/Gnu/VBoxContainer.add_child(button)
+		$List/Minigames/TabContainer/NolokCoop/VBoxContainer.add_child(button)
+	
+	for game in loader.minigames_gnu_solo:
+		var button = Button.new()
+		
+		button.text = loader.parse_file(game).name
+		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU_SOLO])
+		
+		$List/Minigames/TabContainer/GnuSolo/VBoxContainer.add_child(button)
+	
+	for game in loader.minigames_gnu_coop:
+		var button = Button.new()
+		
+		button.text = loader.parse_file(game).name
+		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
+		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU_COOP])
+		
+		$List/Minigames/TabContainer/GnuCoop/VBoxContainer.add_child(button)
 	
 	for item in Global.item_loader.get_loaded_items():
 		var button = Button.new()
@@ -153,27 +171,30 @@ func _on_player_pressed(id):
 func _on_minigame_pressed(minigame, type):
 	var mg = Global.minigame_loader.parse_file(minigame)
 	var controller = get_tree().get_nodes_in_group("Controller")[0]
-	Global.minigame_type = type
+	var state = Global.MinigameState.new()
+	state.minigame_config = mg
+	state.minigame_type = type
 	match type:
-		Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.NOLOK, Global.MINIGAME_TYPES.GNU:
-			Global.minigame_teams = [[1, 2, 3, 4], []]
+		Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.NOLOK_COOP, Global.MINIGAME_TYPES.GNU_COOP:
+			state.minigame_teams = [[1, 2, 3, 4], []]
 		Global.MINIGAME_TYPES.TWO_VS_TWO:
-			Global.minigame_teams = [[1, 3], [2, 4]]
+			state.minigame_teams = [[1, 3], [2, 4]]
 		Global.MINIGAME_TYPES.ONE_VS_THREE:
 			# Randomly place player to either solo or group team
 			# TODO: Add a dialog to choose which side to join
 			if randi() % 2 == 0:
-				Global.minigame_teams = [[1, 2, 3], [4]]
+				state.minigame_teams = [[1, 2, 3], [4]]
 			else:
-				Global.minigame_teams = [[2, 3, 4], [1]]
+				state.minigame_teams = [[2, 3, 4], [1]]
 		Global.MINIGAME_TYPES.DUEL:
-			Global.minigame_teams = [[1], [2]]
+			state.minigame_teams = [[1], [2]]
+		Global.MINIGAME_TYPES.NOLOK_SOLO, Global.MINIGAME_TYPES.GNU_SOLO:
+			state.minigame_teams = [[1], []]
 	
-	controller.show_minigame_info(mg)
+	controller.show_minigame_info(state)
 	controller.hide_splash()
 	hide()
 	$List.hide()
-	
 
 func _on_Item_pressed():
 	hide_lists()

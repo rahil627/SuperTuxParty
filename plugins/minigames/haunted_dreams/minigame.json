@@ -1,7 +1,7 @@
 {
     "name": "Haunted Dreams",
     "scene_path" : "res://plugins/minigames/haunted_dreams/minigame.tscn",
-    "type": ["Gnu"],
+    "type": ["GnuCoop"],
     "image_path": "res://plugins/minigames/haunted_dreams/screenshot.png",
 
     "description" : {

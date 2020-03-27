@@ -25,6 +25,23 @@ Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
+## assets/models/Bomb
+### Bomb.obj
+Copyright © Blender3D
+
+Retrieved from: [Sketchfab](https://sketchfab.com/3d-models/simple-bomb-49ab3dbdfa6347dfb6e2b633c9c7f1c2)
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## assets/models/Bomb/materials
+### \*.png
+Copyright © Blender3D
+Downscaled and converted to png by Florian Kothmeier
+
+Retrieved from: [Sketchfab](https://sketchfab.com/3d-models/simple-bomb-49ab3dbdfa6347dfb6e2b633c9c7f1c2)
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ## assets/models/bed
 ### bed.escn | bed.blend
 
@@ -114,12 +131,19 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-### heckert_gnu.big.png
+### gnu_icon.png
 
-Copyright Aurélio A. Heckert
+Copyright Néd J. Édoire
 
-Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
-License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
+Retrieved from: [OpenGameArt](https://opengameart.org/content/gnu-mascots-and-friends-iconset)
+License: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+### nolokicon.png
+
+Copyright Anthony Carré (yekcim)
+
+Retrieved from: [Super Tux Kart Sourceforge](https://sourceforge.net/p/supertuxkart/code/HEAD/tree/media/trunk/karts/nolok/nolokicon.png)
+License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ### sara.png
 
@@ -169,10 +193,17 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 
 ### tile_gnu_col.png
 
-Based upon the tile_yellow_col.png file and the GNU logo by Aurélio A. Heckert
+Based upon the tile_yellow_col.png file and the gnu_icon.png file by Néd J. Édoire
 
-Retrieved from: [GNU.org](https://www.gnu.org/graphics/heckert_gnu.html)
-License: [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/legalcode)
+Retrieved from: [OpenGameArt](https://opengameart.org/content/gnu-mascots-and-friends-iconset)
+License: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+### tile_nolok_col.jpg
+
+Based upon the tile_yellow_col.png file and the nolok icon by Anthony Carré (yekcim)
+
+Retrieved from: [Super Tux Kart Sourceforge](https://sourceforge.net/p/supertuxkart/code/HEAD/tree/media/trunk/karts/nolok/nolokicon.png)
+License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ## scenes/menus
 ### stage.escn | stage.blend
@@ -468,6 +499,71 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
+## plugins/minigames/dungeon_parkour/
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/dungeon_parkour/Dungeon Arena
+### ColorPaletteRED.png | Dungeon Arena.blend
+
+Public Domain by AurynSky
+
+Retrieved from: [OpenGameart](https://opengameart.org/content/dungeon-low-poly-toon-battle-arena-tower-defense-pack)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/dungeon_parkour/Dungeon Arena/exported
+### \*.escn
+
+Public Domain by AurynSky
+
+Retrieved from: [OpenGameart](https://opengameart.org/content/dungeon-low-poly-toon-battle-arena-tower-defense-pack)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/boat_rally/
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/boat_rally/pirate_kit
+### \*.gltf
+
+Public Domain by Kenney
+
+Retrieved from: [OpenGameart](https://opengameart.org/content/pirate-kit)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/forest_run
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/forest_run/Forest Arena
+### ColorPaletteNormal.png | Forest Arena Blend.blend
+
+Public Domain by AurynSky
+
+Retrieved from: [OpenGameart](https://opengameart.org/content/forest-low-poly-toon-battle-arena-tower-defense-pack)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## plugins/minigames/forest_run/Forest Arena/exported
+### \*.escn
+
+Public Domain by AurynSky
+
+Retrieved from: [OpenGameart](https://opengameart.org/content/forest-low-poly-toon-battle-arena-tower-defense-pack)
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/fence
 ### fence.escn | picketfence_0.blend
@@ -795,6 +891,23 @@ Public domain by XCVG
 Retrieved from [OpnGameArt](https://opengameart.org/content/wall/paint/and/colors)
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+### fire.png
+Public domain by Kenney
+
+Retrieved from [kenney.nl](https://www.kenney.nl/assets/particle-pack)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+### finish.png
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### hit_indicator.png
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/textures/crate\*
 ### crate\*.png

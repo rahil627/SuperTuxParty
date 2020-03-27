@@ -11,9 +11,28 @@ class PlayerState:
 	var cookies_gui := 0
 	var cakes := 0
 	var items := []
+	var roll_modifiers := []
 
 	# Which space on the board the player is standing on.
 	var space
+
+class MinigameState:
+	var minigame_config
+	var minigame_teams: Array = []
+	var minigame_type: int = -1
+	
+	# Whether the current minigame was meant to be tried only
+	var is_try: bool = false
+
+class MinigameReward:
+	var duel_reward: int = -1
+	var gnu_solo_item_reward: Item = null
+
+class MinigameSummary:
+	var minigame_config
+	var minigame_teams: Array = []
+	var minigame_type: int = -1
+	var placement
 
 class BoardOverrides:
 	var cake_cost: int
@@ -30,6 +49,14 @@ const MINIGAME_REWARD_SCREEN_PATH_1V3 =\
 		"res://scenes/board_logic/controller/rewardscreens/1v3.tscn"
 const MINIGAME_REWARD_SCREEN_PATH_2V2 =\
 		"res://scenes/board_logic/controller/rewardscreens/2v2.tscn"
+const MINIGAME_REWARD_SCREEN_PATH_NOLOK_SOLO =\
+		"res://scenes/board_logic/controller/rewardscreens/nolok_solo.tscn"
+const MINIGAME_REWARD_SCREEN_PATH_NOLOK_COOP =\
+		"res://scenes/board_logic/controller/rewardscreens/nolok_coop.tscn"
+const MINIGAME_REWARD_SCREEN_PATH_GNU_SOLO =\
+		"res://scenes/board_logic/controller/rewardscreens/gnu_solo.tscn"
+const MINIGAME_REWARD_SCREEN_PATH_GNU_COOP =\
+		"res://scenes/board_logic/controller/rewardscreens/gnu_coop.tscn"
 
 const LOADING_SCREEN = preload("res://scenes/menus/loading_screen.tscn")
 
@@ -57,6 +84,17 @@ enum MINIGAME_DUEL_REWARDS {
 	ONE_CAKE
 }
 
+enum NOLOK_ACTION_TYPES {
+	SOLO_MINIGAME,
+	COOP_MINIGAME,
+	BOARD_EFFECT
+}
+
+enum GNU_ACTION_TYPES {
+	SOLO_MINIGAME,
+	COOP_MINIGAME
+}
+
 enum JOYPAD_DISPLAY_TYPE {
 	NUMBERS,
 	XBOX,
@@ -69,8 +107,10 @@ enum MINIGAME_TYPES {
 	ONE_VS_THREE,
 	TWO_VS_TWO,
 	FREE_FOR_ALL,
-	NOLOK,
-	GNU
+	NOLOK_SOLO,
+	NOLOK_COOP,
+	GNU_SOLO,
+	GNU_COOP,
 }
 
 enum Difficulty {
@@ -114,20 +154,22 @@ var player_turn := 1
 # Stores where a trap is placed and what item and player created it.
 var trap_states := []
 
-# The minigame to return to in "try minigame" mode.
-# If it is null, then no minigame is tried and the next turn resumes.
-var current_minigame: Object
-var minigame_type: int
-var minigame_teams: Array
+# The minigame that is currently being played.
+# If we're returning to the game and this is not null, then
+# we've been in the "try minigame" mode.
+# Therefore we need to show the minigame screen again to
+# do the actual minigame
+var minigame_state: MinigameState = null
 
-var minigame_duel_reward: int
+# Hold's the reward type for the current minigame:
+# Only used in Duel and Gnu Solo minigames
+var minigame_reward: MinigameReward = null
+
+# Hold's information regarding the last played minigame
+var minigame_summary: MinigameSummary = null
 
 var current_savegame: Object
 var is_new_savegame := false
-
-# Stores the last placement (not changed when you press "try").
-# Used in rewardscreen.gd.
-var placement
 
 var _board_loaded_translations := []
 var _minigame_loaded_translations := []
@@ -246,103 +288,89 @@ func _goto_scene(path: String) -> void:
 func _goto_scene_callback(s: PackedScene, _arg):
 	loaded_scene = s.instance()
 
-func _goto_scene_board():
-	if turn <= overrides.max_turns:
-		call_deferred("_goto_scene_ingame", current_board)
-	else:
-		goto_scene("res://scenes/menus/victory_screen.tscn")
-
-# Internal function for actually changing scene while handling player objects.
-func _goto_scene_ingame(path: String, instance_pause_menu := false) -> void:
+# Internal function for changing scene to a minigame while handling player objects.
+func _goto_scene_minigame(path: String) -> void:
 	current_scene.queue_free()
 	current_scene = LOADING_SCREEN.instance()
 
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
-	_load_interactive(path, self, "_goto_scene_ingame_callback", instance_pause_menu)
+	_load_interactive(path, self, "_goto_scene_minigame_callback", null)
 
-func _goto_scene_ingame_callback(s: PackedScene, instance_pause_menu: bool):
+# Internal function for changing scene to a board while handling player objects.
+func _goto_scene_board() -> void:
+	if turn > overrides.max_turns:
+		goto_scene("res://scenes/menus/victory_screen.tscn")
+		return
+	current_scene.queue_free()
+	current_scene = LOADING_SCREEN.instance()
+
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+	_load_interactive(current_board, self, "_goto_scene_board_callback", null)
+
+# Internal function for loading a character's model and other data into the Spatial nodes used by the loaded scene
+func _load_player(player: Spatial, state: PlayerState):
+	var new_model = load(character_loader.get_character_path(state.character)).instance()
+	new_model.set_name("Model")
+
+	var old_model = player.get_node("Model")
+	new_model.translation = old_model.translation
+	new_model.scale = old_model.scale
+	new_model.rotation = old_model.rotation
+	old_model.replace_by(new_model, true)
+
+	player.player_id = state.player_id
+	player.is_ai = state.is_ai
+	
+	if "ai_difficulty" in player:
+		player.ai_difficulty = state.ai_difficulty
+
+	if player.has_node("Shape"):
+		var collision_shape = player.get_node("Shape")
+		collision_shape.translation += new_model.translation
+		collision_shape.shape = load(character_loader.get_collision_shape_path(state.character))
+
+func _goto_scene_minigame_callback(s: PackedScene, _arg):
 	loaded_scene = s.instance()
 
-	if instance_pause_menu:
-		loaded_scene.add_child(
-				preload("res://scenes/menus/pause_menu.tscn").instance())
+	loaded_scene.add_child(preload("res://scenes/menus/pause_menu.tscn").instance())
 
-	if not minigame_teams:
-		for i in players.size():
-			var player = loaded_scene.get_node("Player" + str(i + 1))
+	var i := 1
+	for team_id in minigame_state.minigame_teams.size():
+		var team = minigame_state.minigame_teams[team_id]
+		for player_id in team:
+			var player = loaded_scene.get_node("Player" + str(i))
+			_load_player(player, players[player_id - 1])
 
-			var new_model = load(character_loader.get_character_path(
-					players[i].character)).instance()
-			new_model.set_name("Model")
+			if minigame_state.minigame_type == MINIGAME_TYPES.TWO_VS_TWO:
+				var shape = load(character_loader.get_collision_shape_path(players[player_id - 1].character))
+				var bbox : AABB = Utility.get_aabb_from_shape(shape)
 
-			var old_model = player.get_node("Model")
-			new_model.translation = old_model.translation
-			new_model.scale = old_model.scale
-			new_model.rotation = old_model.rotation
-			old_model.replace_by(new_model, true)
+				var indicator = preload(\
+						"res://scenes/team_indicator/team_indicator.tscn"\
+						).instance()
+				indicator.material_override.albedo_color =\
+						MINIGAME_TEAM_COLORS[team_id]
+				indicator.translation.y = bbox.size.y + 0.05
+				player.get_node("Model").add_child(indicator)
 
-			player.is_ai = players[i].is_ai
-			
-			if "ai_difficulty" in player:
-				player.ai_difficulty = players[i].ai_difficulty
+			i += 1
 
-			if player.has_node("Shape"):
-				var collision_shape = player.get_node("Shape")
-				collision_shape.translation += new_model.translation
-				collision_shape.shape = load(
-						character_loader.get_collision_shape_path(
-						players[i].character))
-	else:
-		var i := 1
-		for team_id in minigame_teams.size():
-			var team = minigame_teams[team_id]
-			for player_id in team:
-				var player = loaded_scene.get_node("Player" + str(i))
-
-				var new_model =\
-						load(character_loader.get_character_path(
-						players[player_id - 1].character)).instance()
-				new_model.set_name("Model")
-
-				var old_model = player.get_node("Model")
-				new_model.translation = old_model.translation
-				new_model.scale = old_model.scale
-				new_model.rotation = old_model.rotation
-				old_model.replace_by(new_model, true)
-
-				player.is_ai = players[player_id - 1].is_ai
-				if "ai_difficulty" in player:
-					player.ai_difficulty = players[player_id - 1].ai_difficulty
-				player.player_id = player_id
-
-				var shape: Shape =\
-						load(character_loader.get_collision_shape_path(
-						players[player_id - 1].character))
-				if minigame_type == MINIGAME_TYPES.TWO_VS_TWO:
-					var bbox : AABB = Utility.get_aabb_from_shape(shape)
-
-					var indicator = preload(\
-							"res://scenes/team_indicator/team_indicator.tscn"\
-							).instance()
-					indicator.material_override.albedo_color =\
-							MINIGAME_TEAM_COLORS[team_id]
-					indicator.translation.y = bbox.size.y + 0.05
-					new_model.add_child(indicator)
-
-				if player.has_node("Shape"):
-					var collision_shape = player.get_node("Shape")
-					collision_shape.translation += new_model.translation
-					collision_shape.shape = shape
-
-				i += 1
-
-		# Remove unnecessary players.
-		while i <= Global.amount_of_players:
+	# Remove unnecessary players.
+	while i <= Global.amount_of_players:
+		if loaded_scene.has_node("Player" + str(i)):
 			var player = loaded_scene.get_node("Player" + str(i))
 			loaded_scene.remove_child(player)
 			player.queue_free()
-			i += 1
+		i += 1
+
+func _goto_scene_board_callback(s: PackedScene, _arg):
+	loaded_scene = s.instance()
+
+	for i in players.size():
+		var player = loaded_scene.get_node("Player" + str(i + 1))
+		_load_player(player, players[i])
 
 func load_board_from_savegame(savegame) -> void:
 	current_savegame = savegame
@@ -373,17 +401,19 @@ func load_board_from_savegame(savegame) -> void:
 		players[i].cookies = int(savegame.players[i].cookies)
 		players[i].cakes = int(savegame.players[i].cakes)
 		players[i].items = savegame.players[i].items
+		players[i].roll_modifiers = savegame.players[i].roll_modifiers
 
 	cake_space = savegame.cake_space
 	if savegame.current_minigame:
-		current_minigame = minigame_loader.parse_file(savegame.current_minigame)
+		minigame_state = MinigameState.new()
+		minigame_state.current_minigame = minigame_loader.parse_file(savegame.current_minigame)
+		minigame_state.minigame_type = int(savegame.minigame_type)
+		minigame_state.minigame_teams = savegame.minigame_teams
+		for team in minigame_state.minigame_teams:
+			for i in range(len(team)):
+				team[i] = int(team[i])
 	else:
-		current_minigame = null
-	minigame_type = int(savegame.minigame_type)
-	minigame_teams = savegame.minigame_teams
-	for team in minigame_teams:
-		for i in range(len(team)):
-			team[i] = int(team[i])
+		minigame_state = null
 	player_turn = int(current_savegame.player_turn)
 	turn = int(current_savegame.turn)
 	overrides.cake_cost = int(savegame.cake_cost)
@@ -395,9 +425,11 @@ func load_board_from_savegame(savegame) -> void:
 	_goto_scene_board()
 
 # Change scene to one of the mini-games.
-func goto_minigame(minigame, try := false) -> void:
+func goto_minigame(minigame_state) -> void:
+	self.minigame_state = minigame_state
+	
 	var dir := Directory.new()
-	dir.open(minigame.translation_directory)
+	dir.open(minigame_state.minigame_config.translation_directory)
 	dir.list_dir_begin(true)
 	while true:
 		var file_name: String = dir.get_next()
@@ -411,8 +443,6 @@ func goto_minigame(minigame, try := false) -> void:
 
 	# Current player nodes.
 	var r_players = get_tree().get_nodes_in_group("players")
-	if not try:
-		current_minigame = null
 
 	player_turn = get_tree().get_nodes_in_group("Controller")[0].player_turn
 
@@ -434,10 +464,12 @@ func goto_minigame(minigame, try := false) -> void:
 		players[i].cookies_gui = r_players[i].cookies_gui
 		players[i].cakes = r_players[i].cakes
 		players[i].space = r_players[i].space.get_path()
+		
+		players[i].roll_modifiers = r_players[i].roll_modifiers
 
 		players[i].items = duplicate_items(r_players[i].items)
 
-	call_deferred("_goto_scene_ingame", minigame.scene_path, true)
+	call_deferred("_goto_scene_minigame", minigame_state.minigame_config.scene_path)
 
 func duplicate_items(items: Array) -> Array:
 	var list := []
@@ -456,17 +488,26 @@ func deduplicate_items(items: Array) -> Array:
 	return list
 
 # Go back to board from mini-game, placement is an array with the players' ids.
-func _goto_board(new_placement) -> void:
+func _goto_board(placement) -> void:
 	for t in _minigame_loaded_translations:
 		TranslationServer.remove_translation(t)
 	_minigame_loaded_translations.clear()
 
 	# Only award if it's not a test.
-	if current_minigame != null:
+	if minigame_state.is_try:
 		_goto_scene_board()
 		return
 
-	placement = new_placement
+	var minigame_type = minigame_state.minigame_type
+	var minigame_teams= minigame_state.minigame_teams
+	
+	minigame_summary = MinigameSummary.new()
+	minigame_summary.minigame_config = minigame_state.minigame_config
+	minigame_summary.minigame_teams = minigame_state.minigame_teams
+	minigame_summary.minigame_type = minigame_state.minigame_type
+	minigame_summary.placement = placement
+	minigame_state = null
+	
 	match minigame_type:
 		MINIGAME_TYPES.FREE_FOR_ALL:
 			match overrides.award:
@@ -505,7 +546,7 @@ func _goto_board(new_placement) -> void:
 			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_1V3)
 		MINIGAME_TYPES.DUEL:
 			if len(placement) == 2:
-				match minigame_duel_reward:
+				match minigame_reward.duel_reward:
 					MINIGAME_DUEL_REWARDS.TEN_COOKIES:
 						var other_player_cookies := int(
 								min(players[placement[1][0] - 1].cookies, 10))
@@ -522,19 +563,29 @@ func _goto_board(new_placement) -> void:
 								other_player_cakes
 
 			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_DUEL)
-		MINIGAME_TYPES.NOLOK:
-			# TODO: Reward
+		MINIGAME_TYPES.NOLOK_SOLO:
+			if not placement:
+				var player = players[minigame_teams[0][0] - 1]
+				player.cakes = max(player.cakes - 1, 0)
 
-			# TODO: Rewardscreen
-			_goto_scene_board()
-		MINIGAME_TYPES.GNU:
-			# TODO: Better reward
-			if placement:
+			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_NOLOK_SOLO)
+		MINIGAME_TYPES.NOLOK_COOP:
+			if not placement:
+				for player in players:
+					player.cookies = max(player.cookies - 10, 0)
+
+			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_NOLOK_COOP)
+		MINIGAME_TYPES.GNU_SOLO:
+			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_GNU_SOLO)
+		MINIGAME_TYPES.GNU_COOP:
+			if typeof(placement) == TYPE_ARRAY:
+				for i in len(players):
+					players[i].cookies += placement[i]
+			elif placement:
 				for player in players:
 					player.cookies += 10
 
-			# TODO: Reward screen
-			_goto_scene_board()
+			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_GNU_COOP)
 
 func minigame_win_by_points(points: Array) -> void:
 	var players := []
@@ -548,15 +599,15 @@ func minigame_win_by_points(points: Array) -> void:
 		# If yes we need to insert a new entry.
 		if insert_index == p.size() or p[insert_index] != points[i]:
 			p.insert(insert_index, points[i])
-			if minigame_type == MINIGAME_TYPES.FREE_FOR_ALL:
-				players.insert(insert_index, [minigame_teams[0][i]])
+			if minigame_state.minigame_type == MINIGAME_TYPES.FREE_FOR_ALL:
+				players.insert(insert_index, [minigame_state.minigame_teams[0][i]])
 			else:
-				players.insert(insert_index, [minigame_teams[i][0]])
+				players.insert(insert_index, [minigame_state.minigame_teams[i][0]])
 		else:
-			if minigame_type == MINIGAME_TYPES.FREE_FOR_ALL:
-				players[insert_index].append(minigame_teams[0][i])
+			if minigame_state.minigame_type == MINIGAME_TYPES.FREE_FOR_ALL:
+				players[insert_index].append(minigame_state.minigame_teams[0][i])
 			else:
-				players[insert_index].append(minigame_teams[i][0])
+				players[insert_index].append(minigame_state.minigame_teams[i][0])
 
 	# We need to sort from high to low.
 	players.invert()
@@ -573,7 +624,7 @@ func minigame_win_by_position(players: Array) -> void:
 	_goto_board(placement)
 
 func minigame_duel_draw() -> void:
-	_goto_board([[minigame_teams[0][0], minigame_teams[1][0]]])
+	_goto_board([[minigame_state.minigame_teams[0][0], minigame_state.minigame_teams[1][0]]])
 
 func minigame_team_win(team) -> void:
 	_goto_board(team)
@@ -587,8 +638,8 @@ func minigame_team_win_by_points(points: Array) -> void:
 		_goto_board(1)
 
 func minigame_team_win_by_player(player) -> void:
-	for i in minigame_teams.size():
-		if minigame_teams[i].has(player):
+	for i in minigame_state.minigame_teams.size():
+		if minigame_state.minigame_teams[i].has(player):
 			_goto_board(i)
 
 			return
@@ -629,8 +680,8 @@ func load_board_state(controller: Spatial) -> void:
 		var cake_node: Spatial = controller.get_node(cake_space)
 		cake_node.cake = true
 
-		if current_minigame != null:
-			controller.show_minigame_info(current_minigame)
+		if minigame_state:
+			controller.show_minigame_info(minigame_state)
 
 		controller.player_turn = player_turn
 
@@ -650,6 +701,7 @@ func load_board_state(controller: Spatial) -> void:
 			r_players[i].space = current_scene.get_node(players[i].space)
 			r_players[i].is_ai = players[i].is_ai
 			r_players[i].ai_difficulty = players[i].ai_difficulty
+			r_players[i].roll_modifiers = players[i].roll_modifiers
 
 			r_players[i].items = deduplicate_items(players[i].items)
 
@@ -694,10 +746,9 @@ func reset_state() -> void:
 	player_turn = 1
 	turn = 1
 
-	current_minigame = null
-	minigame_type = -1
-	minigame_teams = []
-	minigame_duel_reward = -1
+	minigame_state = null
+	minigame_reward = null
+	minigame_summary = null
 
 	trap_states = []
 
@@ -733,14 +784,15 @@ func save_game() -> void:
 		current_savegame.players[i].cookies = r_players[i].cookies
 		current_savegame.players[i].cakes = r_players[i].cakes
 		current_savegame.players[i].items = duplicate_items(r_players[i].items)
+		current_savegame.players[i].roll_modifiers = r_players[i].roll_modifiers
 
 	current_savegame.cake_space = cake_space
-	if current_minigame:
-		current_savegame.current_minigame = current_minigame.file
+	if minigame_state:
+		current_savegame.current_minigame = minigame_state.minigame_config
+		current_savegame.minigame_type = minigame_state.minigame_type
+		current_savegame.minigame_teams = minigame_state.minigame_teams.duplicate()
 	else:
 		current_savegame.current_minigame = null
-	current_savegame.minigame_type = minigame_type
-	current_savegame.minigame_teams = minigame_teams.duplicate()
 	current_savegame.player_turn = controller.player_turn
 	current_savegame.turn = turn
 	current_savegame.cake_cost = overrides.cake_cost

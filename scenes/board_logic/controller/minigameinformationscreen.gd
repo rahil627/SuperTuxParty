@@ -1,8 +1,10 @@
 extends Control
 
+var state
+
 func setup_character_viewport() -> void:
 	var i := 1
-	for team in Global.minigame_teams:
+	for team in state.minigame_teams:
 		for player_id in team:
 			var player =\
 					$Characters/Viewport.get_node(
@@ -32,7 +34,7 @@ func setup_character_viewport() -> void:
 		i += 1
 
 func minigame_has_player(id: int) -> bool:
-	for team in Global.minigame_teams:
+	for team in state.minigame_teams:
 		for player_id in team:
 			if player_id == id:
 				return true
@@ -75,26 +77,27 @@ func _load_content(minigame, players):
 					action)[0]) + " - " + _get_translation(
 					minigame.used_controls[action]) + "\n")
 
-func show_minigame_info(minigame, players: Array) -> void:
-	Global.current_minigame = minigame
+func show_minigame_info(state, players: Array) -> void:
+	self.state = state
 	setup_character_viewport()
 
 	$Buttons/Play.grab_focus()
 
-	$Title.text = minigame.name
-	Global.connect("language_changed", self, "_load_content", [minigame, players])
-	_load_content(minigame, players)
-	if minigame.image_path != null:
+	$Title.text = state.minigame_config.name
+	Global.connect("language_changed", self, "_load_content", [state.minigame_config, players])
+	_load_content(state.minigame_config, players)
+	if state.minigame_config.image_path != null:
 		$Screenshot.texture =\
-				load(minigame.image_path)
+				load(state.minigame_config.image_path)
 
 	show()
 
 func _on_Try_pressed() -> void:
-	Global.goto_minigame(Global.current_minigame, true)
+	state.is_try = true
+	Global.goto_minigame(state)
 
 func _on_Play_pressed() -> void:
-	Global.goto_minigame(Global.current_minigame)
+	Global.goto_minigame(state)
 
 func _on_Controls_tab_changed(tab: int) -> void:
 	var last_tab_selected: int = $Controls.get_previous_tab()

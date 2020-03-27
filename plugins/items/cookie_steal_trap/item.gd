@@ -1,6 +1,6 @@
 extends Item
 
-func _init().(TYPES.PLACABLE) -> void:
+func _init().(TYPES.PLACABLE, "Cookie Steal Trap") -> void:
 	is_consumed = true
 
 	can_be_bought = true

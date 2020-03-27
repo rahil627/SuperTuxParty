@@ -1,0 +1,39 @@
+{
+    "name": "Forest Run",
+    "scene_path" : "res://plugins/minigames/forest_run/minigame.tscn",
+    "type": ["GnuSolo"],
+    "image_path": "res://plugins/minigames/forest_run/screenshot.png",
+
+    "description" : {
+        "en": "Jump and Run your way to the finish line",
+				"de": "Erreiche das Ziel in diesem Jump and Run minigame"
+    },
+
+    "used_controls": {
+        "up": {
+            "en": "Move up",
+            "de": "Nach oben bewegen",
+            "pt_BR": "Mover para cima",
+        },
+        "left": {
+            "en": "Move left",
+            "de": "Nach links bewegen",
+            "pt_BR": "Mover para a esquerda"
+        },
+        "down": {
+            "en": "Move down",
+            "de": "Nach unten bewegen",
+            "pt_BR": "Mover para baixo"
+        },
+        "right": {
+            "en": "Move right",
+            "de": "Nach rechts bewegen",
+            "pt_BR": "Mover para a direita"
+        },
+        "action1": {
+            "en": "Jump",
+            "de": "Springen",
+            "pt_BR": "Pular"
+        },
+    }
+}
