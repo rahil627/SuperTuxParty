@@ -1,6 +1,6 @@
 extends Spatial
 
-var fireball = preload("res://plugins/minigames/dungeon_parcour/fireball.tscn")
+var fireball = preload("res://plugins/minigames/dungeon_parkour/fireball.tscn")
 
 func _ready():
 	create_fireballs()

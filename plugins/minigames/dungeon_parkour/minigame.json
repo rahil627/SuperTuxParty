@@ -1,8 +1,8 @@
 {
     "name": "Dungeon Parkour",
-    "scene_path" : "res://plugins/minigames/dungeon_parcour/minigame.tscn",
+    "scene_path" : "res://plugins/minigames/dungeon_parkour/minigame.tscn",
     "type": ["NolokSolo"],
-    "image_path": "res://plugins/minigames/dungeon_parcour/screenshot.png",
+    "image_path": "res://plugins/minigames/dungeon_parkour/screenshot.png",
 
     "description" : {
         "en": "Jump and Run your way to the finish line",

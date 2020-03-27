@@ -40,7 +40,7 @@ func _process(delta):
 	if ai_rand_start > 0:
 		return
 	var jump = false
-	if is_ai:
+	if not is_ai:
 		acceleration.x = calc_movement(acceleration.x, (Input.get_action_strength("player%d_right" % player_id) - Input.get_action_strength("player%d_left" % player_id)) * SPEED)
 		acceleration.z = calc_movement(acceleration.z, (Input.get_action_strength("player%d_down" % player_id) - Input.get_action_strength("player%d_up" % player_id)) * SPEED)
 		jump = Input.is_action_pressed("player%d_action1" % player_id)
