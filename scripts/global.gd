@@ -41,22 +41,22 @@ class BoardOverrides:
 	# Option to choose how players are awarded after completing a mini-game.
 	var award: int = AWARD_TYPE.LINEAR
 
-const MINIGAME_REWARD_SCREEN_PATH_FFA =\
-		"res://scenes/board_logic/controller/rewardscreens/ffa.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_DUEL =\
-		"res://scenes/board_logic/controller/rewardscreens/duel.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_1V3 =\
-		"res://scenes/board_logic/controller/rewardscreens/1v3.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_2V2 =\
-		"res://scenes/board_logic/controller/rewardscreens/2v2.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_NOLOK_SOLO =\
-		"res://scenes/board_logic/controller/rewardscreens/nolok_solo.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_NOLOK_COOP =\
-		"res://scenes/board_logic/controller/rewardscreens/nolok_coop.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_GNU_SOLO =\
-		"res://scenes/board_logic/controller/rewardscreens/gnu_solo.tscn"
-const MINIGAME_REWARD_SCREEN_PATH_GNU_COOP =\
-		"res://scenes/board_logic/controller/rewardscreens/gnu_coop.tscn"
+const MINIGAME_REWARD_SCREEN_FFA =\
+		preload("res://scenes/board_logic/controller/rewardscreens/ffa.tscn")
+const MINIGAME_REWARD_SCREEN_DUEL =\
+		preload("res://scenes/board_logic/controller/rewardscreens/duel.tscn")
+const MINIGAME_REWARD_SCREEN_1V3 =\
+		preload("res://scenes/board_logic/controller/rewardscreens/1v3.tscn")
+const MINIGAME_REWARD_SCREEN_2V2 =\
+		preload("res://scenes/board_logic/controller/rewardscreens/2v2.tscn")
+const MINIGAME_REWARD_SCREEN_NOLOK_SOLO =\
+		preload("res://scenes/board_logic/controller/rewardscreens/nolok_solo.tscn")
+const MINIGAME_REWARD_SCREEN_NOLOK_COOP =\
+		preload("res://scenes/board_logic/controller/rewardscreens/nolok_coop.tscn")
+const MINIGAME_REWARD_SCREEN_GNU_SOLO =\
+		preload("res://scenes/board_logic/controller/rewardscreens/gnu_solo.tscn")
+const MINIGAME_REWARD_SCREEN_GNU_COOP =\
+		preload("res://scenes/board_logic/controller/rewardscreens/gnu_coop.tscn")
 
 const LOADING_SCREEN = preload("res://scenes/menus/loading_screen.tscn")
 
@@ -275,6 +275,13 @@ func change_scene():
 # Goto a specific scene without saving player states.
 func goto_scene(path: String) -> void:
 	call_deferred("_goto_scene", path)
+
+func _goto_scene_instant(scene: PackedScene) -> void:
+	current_scene.queue_free()
+	current_scene = scene.instance()
+
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
 
 # Internal function for actually changing scene without saving any game state.
 func _goto_scene(path: String) -> void:
@@ -527,13 +534,13 @@ func _goto_board(placement) -> void:
 					for p in placement[0]:
 						players[p - 1].cookies += 10
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_FFA)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_FFA)
 		MINIGAME_TYPES.TWO_VS_TWO:
 			if placement != -1:
 				for player_id in minigame_teams[placement]:
 					players[player_id - 1].cookies += 10
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_2V2)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_2V2)
 		MINIGAME_TYPES.ONE_VS_THREE:
 			if placement != -1:
 				for player_id in minigame_teams[placement]:
@@ -543,7 +550,7 @@ func _goto_board(placement) -> void:
 					else:
 						players[player_id - 1].cookies += 5
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_1V3)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_1V3)
 		MINIGAME_TYPES.DUEL:
 			if len(placement) == 2:
 				match minigame_reward.duel_reward:
@@ -562,21 +569,21 @@ func _goto_board(placement) -> void:
 						players[placement[1][0] - 1].cakes -=\
 								other_player_cakes
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_DUEL)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_DUEL)
 		MINIGAME_TYPES.NOLOK_SOLO:
 			if not placement:
 				var player = players[minigame_teams[0][0] - 1]
 				player.cakes = max(player.cakes - 1, 0)
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_NOLOK_SOLO)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_NOLOK_SOLO)
 		MINIGAME_TYPES.NOLOK_COOP:
 			if not placement:
 				for player in players:
 					player.cookies = max(player.cookies - 10, 0)
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_NOLOK_COOP)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_NOLOK_COOP)
 		MINIGAME_TYPES.GNU_SOLO:
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_GNU_SOLO)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_GNU_SOLO)
 		MINIGAME_TYPES.GNU_COOP:
 			if typeof(placement) == TYPE_ARRAY:
 				for i in len(players):
@@ -585,7 +592,7 @@ func _goto_board(placement) -> void:
 				for player in players:
 					player.cookies += 10
 
-			call_deferred("_goto_scene", MINIGAME_REWARD_SCREEN_PATH_GNU_COOP)
+			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_GNU_COOP)
 
 func minigame_win_by_points(points: Array) -> void:
 	var players := []
