@@ -349,6 +349,9 @@ msgstr "Il vincitore prende tutto"
 msgid "MENU_LABEL_XBOX"
 msgstr "XBox"
 
+msgid "MENU_LABEL_CREDITS"
+msgstr ""
+
 msgid "MENU_OPTIONS"
 msgstr "Opzioni"
 
@@ -415,8 +418,8 @@ msgstr "Normale"
 msgid "DIFFICULTY_HARD"
 msgstr "Difficile"
 
-msgid "CONTEXT_GNU_MINIGAME"
-msgstr "Minigioco GNU!"
+msgid "CONTEXT_GNU_ACTION_TYPE"
+msgstr ""
 
 #, fuzzy
 #| msgid "MENU_OPTIONS_VISUAL"
@@ -464,3 +467,81 @@ msgstr ""
 
 msgid "CONTEXT_LABEL_COOKIES"
 msgstr ""
+
+msgid "CONTEXT_GNU_NAME"
+msgstr ""
+
+msgid "CONTEXT_GNU_EVENT_START"
+msgstr ""
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
+msgstr ""
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO"
+msgstr ""
+
+msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
+msgstr ""
+
+msgid "CONTEXT_GNU_MINIGAME_COOP"
+msgstr ""
+
+msgid "CONTEXT_GNU_SOLO_VICTORY"
+msgstr ""
+
+msgid "CONTEXT_GNU_SOLO_LOSS"
+msgstr ""
+
+msgid "CONTEXT_GNU_COOP_VICTORY"
+msgstr ""
+
+msgid "CONTEXT_GNU_COOP_LOSS"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_NAME"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_ACTION_TYPE"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_EVENT_START"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_SOLO_VICTORY"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_SOLO_LOSS"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_COOP_VICTORY"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_COOP_LOSS"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
+msgstr ""
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
+msgstr ""
+
+#~ msgid "CONTEXT_GNU_MINIGAME"
+#~ msgstr "Minigioco GNU!"
