@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-29 16:59+0000\n"
+"PO-Revision-Date: 2020-03-29 18:42+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr "Fertig?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr "Würfeln"
+msgstr "Würfeln!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
 msgstr "Würfel, %s!"

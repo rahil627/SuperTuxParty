@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-01 19:33+0000\n"
+"PO-Revision-Date: 2020-03-29 18:42+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
@@ -436,25 +436,125 @@ msgstr ""
 "rédémarrage"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Je sais que vous a jouté fort pour gagner. Le jeu est fini et nous a besoin "
+"d'un gagneur. Ce-lui est..."
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color] !"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color] et [color=#33ff00]%s[/color] !"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] et "
+"[color=#00ff88]%s[/color] !"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], "
+"[color=#00ff88]%s[/color] et [color=#ffff33]%s[/color] !"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Gâteau"
 
 msgid "CONTEXT_LABEL_COOKIES"
+msgstr "Biscuit"
+
+msgid "CONTEXT_NOLOK_NAME"
+msgstr "Nolok"
+
+msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""
+"Bonjour, voulez vous un peux de l'aide ? Qu'est-ce que je peut faire pour "
+"toi aujourd'hui..."
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
+msgstr "Cube maudit"
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
+msgstr ""
+"Vous devriez peut-être y aller un peu plus lentement. Voyons comment vous "
+"faites [color=#00aaff]%d[/color] mouvement de moins pour les "
+"[color=#dd44ff]%d[/color] prochains coups"
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES"
+msgstr "Perdez vos biscuits"
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
+msgstr ""
+"Haha, [color=#00aaff]%d[/color] de vos cookies disparaîtront. Je suis sûr "
+"que [color=#dd44ff]%s[/color] peut bien l'utiliser"
+
+msgid "CONTEXT_NOLOK_COOP_LOSS"
+msgstr "Haha, quelle victoire facile."
+
+msgid "CONTEXT_NOLOK_COOP_VICTORY"
+msgstr "Vous ne gagnerez pas la prochaine fois."
+
+msgid "CONTEXT_NOLOK_SOLO_LOSS"
+msgstr "J'ai hâte de te battre la prochaine fois !"
+
+msgid "CONTEXT_NOLOK_SOLO_VICTORY"
+msgstr "Soyez heureux que je vous ai épargné !"
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP"
+msgstr "Jeu coopérant"
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
+msgstr "Moi contre vous tous ? Pensez-vous que vous avez une chance ?"
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
+msgstr "Jeu en solo"
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
+msgstr ""
+"Je vous mets au défi pour un mini-jeu ! Si vous pouvez me battre, vous "
+"pouvez garder vos affaires. Sinon, je prendrai un de tes gâteaux..."
+
+msgid "CONTEXT_NOLOK_EVENT_START"
+msgstr "C'est mon tour ! Je sais exactement quoi faire..."
+
+msgid "CONTEXT_NOLOK_ACTION_TYPE"
+msgstr "L'action de Nolok"
+
+msgid "CONTEXT_GNU_COOP_LOSS"
+msgstr ""
+"Même si vous n'y êtes pas parvenu, vous avez amélioré votre travail "
+"d'équipe. La prochaine fois, vous y arriverez certainement !"
+
+msgid "CONTEXT_GNU_COOP_VICTORY"
+msgstr "Tu l'as fait. J'ai hâte à la prochain fois."
+
+msgid "CONTEXT_GNU_SOLO_VICTORY"
+msgstr "Bravo. Voici votre récompense !"
+
+msgid "CONTEXT_GNU_SOLO_LOSS"
+msgstr "Ça n'a pas marché. Peut-être la prochaine fois."
+
+msgid "CONTEXT_GNU_MINIGAME_COOP"
+msgstr "Jeu coopérant"
+
+msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
+msgstr "On joue ensemble ! Je pense qu'on va aurai beaucoup de plaisir"
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO"
+msgstr "Jeu en solo"
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
+msgstr ""
+"Il est un jeu en solo ! Fait preuve votre moyen et je te donne un "
+"[color=#dd44ff]%s[/color]"
+
+msgid "CONTEXT_GNU_ACTION_TYPE"
+msgstr "L'action de GNU"
+
+msgid "CONTEXT_GNU_NAME"
+msgstr "GNU"
+
+msgid "MENU_LABEL_CREDITS"
+msgstr "Remerciements"
