@@ -97,6 +97,7 @@ func _on_Try_pressed() -> void:
 	Global.goto_minigame(state)
 
 func _on_Play_pressed() -> void:
+	state.is_try = false
 	Global.goto_minigame(state)
 
 func _on_Controls_tab_changed(tab: int) -> void:
