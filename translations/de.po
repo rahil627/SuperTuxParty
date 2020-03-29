@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-01 19:33+0000\n"
+"PO-Revision-Date: 2020-03-29 16:59+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
@@ -435,25 +435,126 @@ msgstr ""
 "Änderungen an der Graphik-Qualität werden erst nach Neustart angewendet"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Ich weiß, dass ihr all hart gekämpft habt, aber das Spiel ist vorbei und wir "
+"benötigen einen Sieger. Und dieser ist..."
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color] und [color=#33ff00]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] und "
+"[color=#00ff88]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], "
+"[color=#00ff88]%s[/color] und [color=#ffff33]%s[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Kuchen"
 
 msgid "CONTEXT_LABEL_COOKIES"
+msgstr "Kekse"
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO"
+msgstr "Solo Minispiel"
+
+msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Es ist ein Solo Minispiel! Zeige mir dein Können und ich gebe dir ein "
+"[color=#dd44ff]%s[/color]"
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
+msgstr "Verfluchter Würfel"
+
+msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
+msgstr ""
+"Vielleicht solltest du das ganze mal etwas langsamer angehen lassen. Sehen "
+"wir mal wie du dich mit [color=#00aaff]%d[/color] weniger Bewegung für die "
+"nächsten [color=#dd44ff]%d[/color] schlägst"
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES"
+msgstr "Verliere deine Kekse"
+
+msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
+msgstr ""
+"Haha, da gehen [color=#00aaff]%d[/color] deiner Kekse. Ich bin mir sicher "
+"[color=#dd44ff]%s[/color] wird sich darüber freuen"
+
+msgid "CONTEXT_NOLOK_COOP_LOSS"
+msgstr "Haha, was für ein einfacher Sieg."
+
+msgid "CONTEXT_NOLOK_COOP_VICTORY"
+msgstr "Nächstes mal werdet ihr nicht gewinnen."
+
+msgid "CONTEXT_NOLOK_SOLO_LOSS"
+msgstr "Ich freue mich darauf, dich das nächste mal zu besiegen!"
+
+msgid "CONTEXT_NOLOK_SOLO_VICTORY"
+msgstr "Sei froh, dass ich dich verschont habe!"
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP"
+msgstr "Kooperatives Minispiel"
+
+msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
+msgstr "Ich gegen alle von euch? Denkt ihr, ihr habt überhaupt eine Chance?"
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
+msgstr "Solo Minispiel"
+
+msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
+msgstr ""
+"Ich fordere dich zu einem Minispiel heraus! Wenn du mich besiegen kannst, "
+"darfst du dein Zeug behalten. Wenn nicht, dann nehme ich mir einen deiner "
+"Kuchen..."
+
+msgid "CONTEXT_NOLOK_EVENT_START"
+msgstr "Ich bin dran! Und ich weiß genau was zu tun ist..."
+
+msgid "CONTEXT_NOLOK_ACTION_TYPE"
+msgstr "Nolok Ereignis"
+
+msgid "CONTEXT_NOLOK_NAME"
+msgstr "Nolok"
+
+msgid "CONTEXT_GNU_COOP_LOSS"
+msgstr ""
+"Leider habt ihr es nicht geschafft. Aber dafür habt ihr an eurem Teamwork "
+"gearbeitet. Nächstes mal schafft ihr es sicher!"
+
+msgid "CONTEXT_GNU_COOP_VICTORY"
+msgstr "Ihr habt es geschafft. Bis zum nächsten mal."
+
+msgid "CONTEXT_GNU_SOLO_LOSS"
+msgstr "Das hat nicht funktioniert. Vielleicht nächsten mal."
+
+msgid "CONTEXT_GNU_SOLO_VICTORY"
+msgstr "Gut gemacht. Hier ist deine Belohnung!"
+
+msgid "CONTEXT_GNU_MINIGAME_COOP"
+msgstr "Kooperatives Minispiel"
+
+msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
+msgstr "Lasst uns zusammen spielen! Das wird sicher lustig"
+
+msgid "CONTEXT_GNU_EVENT_START"
+msgstr ""
+"Hallo, brauchst du Hilfe? Lass mich mal sehen, was ich heute für dich tuen "
+"kann..."
+
+msgid "CONTEXT_GNU_ACTION_TYPE"
+msgstr "GNU Ereignis"
+
+msgid "CONTEXT_GNU_NAME"
+msgstr "GNU"
+
+msgid "MENU_LABEL_CREDITS"
+msgstr "Danksagungen"
