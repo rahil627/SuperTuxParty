@@ -456,6 +456,7 @@ msgid "CONTEXT_LABEL_CAKES"
 msgstr ""
 
 msgid "CONTEXT_LABEL_COOKIES"
+msgstr ""
 
 msgid "CONTEXT_GNU_NAME"
 msgstr ""
