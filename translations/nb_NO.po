@@ -5,528 +5,565 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-10-29 23:16:12.181795\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2020-03-31 00:09+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"super-tux-party/super-tux-party/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "Kjøp en kake for %d kjeks"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Duellbelønning:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Velg motstander:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Slutt!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Start!"
 
 msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr ""
+msgstr "Uavgjort!"
 
 msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr ""
+msgstr "Spill over!"
 
 msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr ""
+msgstr "Vinneren er %s!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "%s rullet %d:"
 
 msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr ""
+msgstr "%s har vunnet!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Klar?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Kast terningen."
 
+#, fuzzy
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Rull %s!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Vinneren stjeler én kake"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Vinneren stjeler 10 kjeks"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Tur %d"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "mot"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Det er din tur!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Du har ikke nok kjeks til å kjøpe dette"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "Du har ikke nok plass igjen i ansamlingslageret"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Handling 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Handling 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Handling 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Handling 4"
 
 msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr ""
+msgstr "Akse -"
 
 msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
+msgstr "Akse +"
 
 msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
+msgstr "Ukjent akse"
 
 msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
+msgstr "X venstre"
 
 msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
+msgstr "X høyre"
 
 msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
+msgstr "Y venstre"
 
 msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
+msgstr "Y høyre"
 
 msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr ""
+msgstr "Ukjent knapp"
 
 msgid "MENU_CONTROLS_GAMEPAD"
-msgstr ""
+msgstr "Spillkontroller"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Spillkontrollerknapp"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
+msgstr "Spillkontrollerknapp 1"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
+msgstr "Spillkontrollerknapp 2"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
+msgstr "Spillkontrollerknapp 3"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
+msgstr "Spillkontrollerknapp 4"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
+msgstr "Spillkontrollerknapp A"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
+msgstr "Spillkontrollerknapp B"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
+msgstr "Spillkontrollerknapp sirkel"
 
+#, fuzzy
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
+msgstr "Spillkontrollerknapp kryss"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
+msgstr "Spillkontrollerknapp firkant"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
+msgstr "Spillkontrollerknapp triangel"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
+msgstr "Spillkontrollerknapp X"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
+msgstr "Spillkontrollerknapp Y"
 
 msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr ""
+msgstr "Spillkontrollerknapp velg"
 
 msgid "MENU_CONTROLS_GAMEPAD_START"
-msgstr ""
+msgstr "Spillkontrollerknapp start"
 
 msgid "MENU_CONTROLS_MOUSE"
-msgstr ""
+msgstr "Mus"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Museknapp"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Venstre museknapp"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Midtre museknapp"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Høyre museknapp"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Knappehjulstrykk"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Knappehjul venstre"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Knappehjul høyre"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Knappehjul oppover"
 
+#, fuzzy
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Venstreklaff"
 
+#, fuzzy
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Venstreklaff 2"
 
+#, fuzzy
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Venstreklaff 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Høyreklaff"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Høyreklaff 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Høyreklaff 3"
 
 msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr ""
+msgstr "Handling %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
-msgstr ""
+msgstr "Nedover"
 
 msgid "MENU_CONTROLS_DIR_LEFT"
-msgstr ""
+msgstr "Venstre"
 
 msgid "MENU_CONTROLS_DIR_RIGHT"
-msgstr ""
+msgstr "Høyre"
 
 msgid "MENU_CONTROLS_DIR_UP"
-msgstr ""
+msgstr "Oppover"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Skriv inn navn på lagret spill:"
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr ""
+msgstr "Last inn spill"
 
 msgid "MENU_IO_SAVE"
-msgstr ""
+msgstr "Lagre"
 
 msgid "MENU_IO_SAVE_GAME"
-msgstr ""
+msgstr "Lagre spill"
 
 msgid "MENU_LABEL_BACK"
-msgstr ""
+msgstr "Tilbake"
 
 msgid "MENU_LABEL_CANCEL"
-msgstr ""
+msgstr "Avbryt"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Karakter:"
 
 msgid "MENU_LABEL_CONTINUE"
-msgstr ""
+msgstr "Fortsett"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Beskrivelse"
 
 msgid "MENU_LABEL_DESKTOP"
-msgstr ""
+msgstr "Avslutt til skrivebord"
 
 msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr ""
+msgstr "Spillkontrollvisningsnavn:"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Lineær"
 
 msgid "MENU_LABEL_NEW_GAME"
-msgstr ""
+msgstr "Nytt spill"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Ikke klar enda…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Tall"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
+#, fuzzy
 msgid "MENU_LABEL_OK"
-msgstr ""
+msgstr "OK"
 
 msgid "MENU_LABEL_PAUSE"
-msgstr ""
+msgstr "Pause"
 
 msgid "MENU_LABEL_PAUSED"
-msgstr ""
+msgstr "Pauset"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Pause ved tap av vindusfokus"
 
 msgid "MENU_LABEL_PLAY"
-msgstr ""
+msgstr "Spill"
 
 msgid "MENU_LABEL_PLAYER"
-msgstr ""
+msgstr "Spiller"
 
 msgid "MENU_LABEL_PLAYSTATION"
-msgstr ""
+msgstr "PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
-msgstr ""
+msgstr "Trykk vilkårlig tast"
 
 msgid "MENU_LABEL_QUIT"
-msgstr ""
+msgstr "Avslutt"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Klar!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Fortsett"
 
 msgid "MENU_LABEL_RETURN_MENU"
-msgstr ""
+msgstr "Tilbake til hovedmeny"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Belønningssystem:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Velg kart:"
 
+#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Velg en karakter for spiller 1"
 
+#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Velg en karakter for spiller 2"
 
+#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Velg en karakter for spiller 3"
 
+#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Velg en karakter for spiller 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Velg antall spillere"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Prøv"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Vinneren står igjen med alt"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Æreshenvisninger"
 
 msgid "MENU_OPTIONS"
-msgstr ""
+msgstr "Innstillinger"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Lyd"
 
 msgid "MENU_OPTIONS_CONTROLS"
-msgstr ""
+msgstr "Kontroller"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Effekter"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Rammetaktsbegrensning"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
-msgstr ""
+msgstr "Fullskjermsvisning"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Språk"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Hovedlydstyrke"
 
 msgid "MENU_OPTIONS_MISC"
-msgstr ""
+msgstr "Ymse"
 
 msgid "MENU_OPTIONS_MUSIC"
-msgstr ""
+msgstr "Musikk"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Forstum ved tap av vindusfokus"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "Systemforvalg"
 
+#, fuzzy
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Visuelt"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr ""
+msgstr "VSynk"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Ja"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Nei"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Kakekostnad:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Turer:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Maskinvanskelighetsgrad:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Lett"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normal"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Vanskelig"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "GNU-handling"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr ""
+msgstr "Grafikk-kvalitet"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr ""
+msgstr "Høy"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "Middels"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr ""
+msgstr "Lav"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
-msgstr ""
+msgstr "Endring av grafikkvalitet inntreffer ved neste omstart av spillet"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
+#, fuzzy
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Jeg vet at dere kjempet tappert om seieren, men nå er spillet over og vi "
+"trenger en vinner. Vinneren er…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color] og [color=#33ff00]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] og "
+"[color=#00ff88]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], "
+"[color=#00ff88]%s[/color] og [color=#ffff33]%s[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Kaker"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Kjeks"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
+#, fuzzy
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr ""
+msgstr "Hei der, trenger du hjelp? La meg se, hva jeg kan gjøre for deg i dag…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Dette er et alene-minispill! Vis meg alle dine ferdigheter, og jeg vil gi "
+"deg en [color=#dd44ff]%s[/color]."
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "Alene-minispill"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "La oss spille sammen! Jeg er sikker på at dette blir gøy"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "Samspills-minispill"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Godt jobbet. Her har du belønningen din!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Det gikk ikke. Lykke til neste gang."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "Du klarte det. Jeg gleder meg til neste gang."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"Selv om du ikke klarte det, trente du på lagarbeid. Jeg er sikker på at det "
+"lykkes for deg neste gang."
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "Nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "Nolok-handling"
 
+#, fuzzy
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "Det er min tur! Jeg vet akkurat hva jeg skal gjøre…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Jeg utfordrer deg til et minispill! Hvis du kan slå meg kan du beholde "
+"greiene dine. Hvis ikke forsyner jeg meg av én av kakene dine…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "Alene-minispill"
 
+#, fuzzy
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Meg mot alle dere? Tror dere engang dere har en sjanse mot meg?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "Samspills-minispill"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "Vær takknemmelig for at jeg forskånet deg tapet!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "Ser frem til å slå deg igjen!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "Neste gang kommer du ikke til å vinne."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "Haha, enkel seier."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"Haha, der forsvinner [color=#00aaff]%d[/color] av kjeksene dine. Jeg er "
+"sikker på at [color=#dd44ff]%s[/color] har nytte av dem."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "Tap av kakene dine"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"Kanskje du skal ta det litt rolig. La oss se hva du får til med "
+"[color=#00aaff]%d[/color] mindre bevegelse de neste [color=#dd44ff]%d[/color]"
+" kastene."
 
+#, fuzzy
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr ""
+msgstr "Forbannet død"

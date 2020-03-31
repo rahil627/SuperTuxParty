@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-12-26 17:30+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-03-31 00:09+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/en/>\n"
 "Language: en\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Buy a cake for %d cookies"
@@ -281,7 +281,7 @@ msgid "MENU_LABEL_NUM_4"
 msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "Ok"
+msgstr "OK"
 
 msgid "MENU_LABEL_PAUSE"
 msgstr "Pause"
@@ -299,7 +299,7 @@ msgid "MENU_LABEL_PLAYER"
 msgstr "Player"
 
 msgid "MENU_LABEL_PLAYSTATION"
-msgstr "Playstation"
+msgstr "PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
 msgstr "Press any key"
@@ -323,16 +323,16 @@ msgid "MENU_LABEL_SELECT_BOARD"
 msgstr "Select board:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr "Select a character for Player 1"
+msgstr "Select a character for player 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr "Select a character for Player 2"
+msgstr "Select a character for player 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr "Select a character for Player 3"
+msgstr "Select a character for player 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr "Select a character for Player 4"
+msgstr "Select a character for player 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Select amount of players"
@@ -392,7 +392,7 @@ msgid "MENU_OPTIONS_VISUAL"
 msgstr "Visual"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "V-sync"
+msgstr "VSync"
 
 msgid "DIALOG_YES"
 msgstr "Yes"
@@ -442,7 +442,7 @@ msgstr "Sara"
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
 "I know all of you were fighting hard to win, but now the game is over and we "
-"need a winner. And this winner is..."
+"need a winner. And this winner is…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
 msgstr "[color=#ff3300]%s[/color]!"
@@ -470,7 +470,7 @@ msgid "CONTEXT_GNU_NAME"
 msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr "Hey there, need some help? Let me see, what I can do for you today..."
+msgstr "Hey there, need some help? Let me see, what I can do for you today…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
@@ -507,18 +507,18 @@ msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Nolok Action"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr "It's my turn! I know exactly, what to do..."
+msgstr "It's my turn! I know exactly, what to do…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
 "I challenge you to a minigame! If you can defeat me, you can keep your "
-"stuff. If not I'll take one of your cakes..."
+"stuff. If not I'll take one of your cakes…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
 msgstr "Solo Minigame"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
-msgstr "Me vs all of you? Do you even think you stand a chance against me?"
+msgstr "Me vs. all of you? Do you even think you stand a chance against me?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
 msgstr "Coop Minigame"
