@@ -119,6 +119,7 @@ enum Difficulty {
 	HARD
 }
 
+# warning-ignore:unused_signal
 signal language_changed
 
 var joypad_display: int = JOYPAD_DISPLAY_TYPE.NUMBERS
@@ -175,7 +176,7 @@ var _board_loaded_translations := []
 var _minigame_loaded_translations := []
 
 var interactive_loaders := []
-var loaded_scene := null
+var loaded_scene: Node = null
 
 func _ready() -> void:
 	randomize()

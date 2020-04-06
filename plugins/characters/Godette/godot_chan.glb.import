@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/godot_chan.escn-b8a4a4d6f746a39f56c65f12d5a8ffd0.scn"
+path="res://.import/godot_chan.glb-6e85dfab4d5f5bd812d476f0929312e4.scn"
 
 [deps]
 
-source_file="res://plugins/characters/Godette/godot_chan.escn"
-dest_files=[ "res://.import/godot_chan.escn-b8a4a4d6f746a39f56c65f12d5a8ffd0.scn" ]
+source_file="res://plugins/characters/Godette/godot_chan.glb"
+dest_files=[ "res://.import/godot_chan.glb-6e85dfab4d5f5bd812d476f0929312e4.scn" ]
 
 [params]
 
@@ -35,7 +35,7 @@ animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
 animation/optimizer/max_angular_error=0.01
 animation/optimizer/max_angle=22
-animation/optimizer/remove_unused_tracks=true
+animation/optimizer/remove_unused_tracks=false
 animation/clips/amount=0
 animation/clip_1/name=""
 animation/clip_1/start_frame=0

@@ -21,7 +21,7 @@ func read_content_packs() -> void:
 		elif not dir.current_is_dir() and (file.ends_with(".pck") or\
 				file.ends_with(".zip")):
 			if ProjectSettings.load_resource_pack(
-					PLUGIN_DIRECTORY + "/" + file):
+					PLUGIN_DIRECTORY + "/" + file, true):
 				print("Successfully loaded plugin: " + file)
 			else:
 				print("Error while loading plugin: " + file)

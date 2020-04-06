@@ -343,7 +343,7 @@ func process_hyperlinks(input: String) -> String:
 			var urlend = input.find(")", end+1)
 			out += input.substr(0, pos)
 			out += "[color=#00aaff][url=" + input.substr(end+2, urlend - end - 2) + "]" \
-                    + input.substr(pos + 1, end - pos - 1) + "[/url][/color]"
+					+ input.substr(pos + 1, end - pos - 1) + "[/url][/color]"
 			input = input.substr(urlend+1, input.length() - urlend)
 		else:
 			out += input.substr(0, pos+1)
