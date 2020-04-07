@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
+"PO-Revision-Date: 2020-04-07 10:00+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/nb_NO/>\n"
@@ -285,7 +285,6 @@ msgstr "3"
 msgid "MENU_LABEL_NUM_4"
 msgstr "4"
 
-#, fuzzy
 msgid "MENU_LABEL_OK"
 msgstr "OK"
 
@@ -328,19 +327,15 @@ msgstr "Belønningssystem:"
 msgid "MENU_LABEL_SELECT_BOARD"
 msgstr "Velg kart:"
 
-#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
 msgstr "Velg en karakter for spiller 1"
 
-#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
 msgstr "Velg en karakter for spiller 2"
 
-#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
 msgstr "Velg en karakter for spiller 3"
 
-#, fuzzy
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
 msgstr "Velg en karakter for spiller 4"
 
@@ -398,7 +393,6 @@ msgstr "Forstum ved tap av vindusfokus"
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
 msgstr "Systemforvalg"
 
-#, fuzzy
 msgid "MENU_OPTIONS_VISUAL"
 msgstr "Visuelt"
 
@@ -450,7 +444,6 @@ msgstr "Endring av grafikkvalitet inntreffer ved neste omstart av spillet"
 msgid "CONTEXT_SPEAKER_SARA"
 msgstr "Sara"
 
-#, fuzzy
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
 "Jeg vet at dere kjempet tappert om seieren, men nå er spillet over og vi "
@@ -481,7 +474,6 @@ msgstr "Kjeks"
 msgid "CONTEXT_GNU_NAME"
 msgstr "GNU"
 
-#, fuzzy
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr "Hei der, trenger du hjelp? La meg se, hva jeg kan gjøre for deg i dag…"
 
@@ -519,7 +511,6 @@ msgstr "Nolok"
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr "Nolok-handling"
 
-#, fuzzy
 msgid "CONTEXT_NOLOK_EVENT_START"
 msgstr "Det er min tur! Jeg vet akkurat hva jeg skal gjøre…"
 
@@ -531,7 +522,6 @@ msgstr ""
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
 msgstr "Alene-minispill"
 
-#, fuzzy
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
 msgstr "Meg mot alle dere? Tror dere engang dere har en sjanse mot meg?"
 
@@ -564,6 +554,5 @@ msgstr ""
 "[color=#00aaff]%d[/color] mindre bevegelse de neste [color=#dd44ff]%d[/color]"
 " kastene."
 
-#, fuzzy
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr "Forbannet død"
+msgstr "Forbannet terning"

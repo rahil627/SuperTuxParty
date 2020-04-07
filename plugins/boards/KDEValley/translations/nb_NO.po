@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-03-23 03:48+0000\n"
+"PO-Revision-Date: 2020-04-07 10:00+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/boards-KDEValley/nb_NO/>\n"
@@ -11,7 +11,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.0-dev\n"
 
-#, fuzzy
 msgid "KDE_VALLEY_DRAGON_NAME"
 msgstr "KDE-dragen"
 

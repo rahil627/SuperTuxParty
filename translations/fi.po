@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-04-02 01:55+0000\n"
+"Last-Translator: Tuomas Lähteenmäki <lahtis@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fi/>\n"
 "Language: fi\n"
@@ -17,196 +17,196 @@ msgstr ""
 "X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "Osta kakku %d keksille"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Duel-palkinto:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Valitse vastustaja:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Maali!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Mene!"
 
 msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr ""
+msgstr "Piirrä!"
 
 msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr ""
+msgstr "Peli ohi!"
 
 msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr ""
+msgstr "Ja voittaja on %s!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "%s rullattu %d:"
 
 msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr ""
+msgstr "%s voittoja!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Valmis?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Pyöri!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Pyöri %s!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Voittaja varasti yhden kakun"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Voittaja varasti 10 keksiä"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Vuoro %d"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "VS."
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Sinun vuorosi!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Sinulla ei ole tarpeeksi keksejä ostaaksesi sitä"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "Varastossasi ei ole tilaa"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Toiminta 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Toiminta 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Toiminta 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Toiminta 4"
 
 msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr ""
+msgstr "Axis -"
 
 msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
+msgstr "Axis +"
 
 msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
+msgstr "Tuntematon Axis"
 
 msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
+msgstr "X Vasen"
 
 msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
+msgstr "X Oikea"
 
 msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
+msgstr "Y Vasen"
 
 msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
+msgstr "Y Oikea"
 
 msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr ""
+msgstr "Tuntematon painike"
 
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Peliohjain"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Gamepad painike"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
+msgstr "Gamepad painike 1"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
+msgstr "Gamepad painike 2"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
+msgstr "Gamepad painike 3"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
+msgstr "Gamepad painike 4"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
+msgstr "Gamepad painike A"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
+msgstr "Gamepad painike B"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
+msgstr "Gamepad ympyrä painike"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
+msgstr "Gamepad ristipainike"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
+msgstr "Gamepad neliöpainike"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
+msgstr "Gamepad kolmiopainike"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
+msgstr "Gamepad painike X"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
+msgstr "Gamepad painike Y"
 
 msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr ""
+msgstr "Gamepad Valitse"
 
 msgid "MENU_CONTROLS_GAMEPAD_START"
-msgstr ""
+msgstr "Gamepad käynnistä"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Hiiri"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Hiiren painike"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Hiiren vasen painike"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Hiiren keskipainike"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Hiiren oikea painike"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Painike pyörä alas"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Painikepyörä vasemmalla"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Painikepyörä oikealla"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Painikepyörä ylös"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Vasen liipaisin"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Vasen liipaisin 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Vasen liipaisin 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Oikea liipaisin"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Oikea liipaisin 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Oikea liipaisin 3"
 
 msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr ""
+msgstr "Toiminto %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Alas"
@@ -221,7 +221,7 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Ylös"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Anna tallennetun pelin nimi:"
 
 msgid "MENU_IO_LOAD_GAME"
 msgstr "Lataa peli"
@@ -239,46 +239,46 @@ msgid "MENU_LABEL_CANCEL"
 msgstr "Peruuta"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Hahmo:"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Jatka"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Kuvaus"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Poistu työpöydälle"
 
 msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr ""
+msgstr "Joypadin näyttönimet:"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Lineaarinen"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Uusi peli"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Ei valmis…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Numerot"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
 msgstr "OK"
@@ -290,15 +290,14 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "Pysäytetty"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Tauko ikkunan tarkennuksessa"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Pelaa"
 
 msgid "MENU_LABEL_PLAYER"
-msgstr ""
+msgstr "Pelaaja"
 
-#, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
@@ -309,235 +308,249 @@ msgid "MENU_LABEL_QUIT"
 msgstr "Lopeta"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Valmis!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Jatka"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "Palaa päävalikkoon"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Palkitsemisjärjestelmä:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Valitse taulu:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Valitse hahmo pelaajalle 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Valitse hahmo pelaajalle 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Valitse hahmo pelaajalle 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Valitse hahmo pelaajalle 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Valitse pelaajien määrä"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Kokeile"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Voittaja vie kaiken"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "Xbox"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Tekijät"
 
 msgid "MENU_OPTIONS"
 msgstr "Asetukset"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Audio"
 
 msgid "MENU_OPTIONS_CONTROLS"
 msgstr "Ohjausasetukset"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Tehosteet"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Frame Cap"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Kokoruutu"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Kieli"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Mestari"
 
 msgid "MENU_OPTIONS_MISC"
-msgstr "Sekalaiset"
+msgstr "Muut."
 
 msgid "MENU_OPTIONS_MUSIC"
 msgstr "Musiikki"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Mykistä ikkunan tarkennus"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "Järjestelmän oletus"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Visuaalinen"
 
 msgid "MENU_OPTIONS_VSYNC"
 msgstr "Vsync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Kyllä"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Ei"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Kakun hinta:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Vuoroja:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Tekoälyn vaikeustaso:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Helppo"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normaali"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Kova"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "GNU-toiminto"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Sekalaiset"
+msgstr "Graafinen laatu"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Sekalaiset"
+msgstr "Korkea"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "Keskitaso"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Sekalaiset"
+msgstr "Matala"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
+"Grafiikan laadun muuttaminen tulee voimaan vasta uudelleenkäynnistyksen "
+"jälkeen"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Tiedän, että kaikki taistelit kovasti voittaaksesi, mutta nyt peli on ohi ja "
+"tarvitsemme voittajan. Ja tämä voittaja on…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]%s[/color] ja [color=#33ff00]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] ja "
+"[color=#00ff88]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], "
+"[color=#00ff88]%s[/color] ja [color=#ffff33]%s[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Kakkuja"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Keksejä"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr ""
+msgstr "Hei siellä, tarvitsetko apua? Anna kun katson, mitä voin tehdä tänään…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Se on yksin minipeli! Näytä minulle taitosi ja minä annan sinulle "
+"[color=#dd44ff]%s[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "Pienoispeli yksin"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Pelataan yhdessä! Olen varma, että tästä tulee hauskaa"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "Yhteistyöminipeli"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Hyvin tehty. Tässä on palkkiosi!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Siitä ei tullut mitään. Ehkä ensi kerralla."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "Sinä teit sen. Odotan innolla seuraavaa kertaa."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"Vaikka et selvinnytkään, harjoittelit yhteistyötä. Olen varma, että ensi "
+"kerralla se onnistuu!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "Nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "Nolok-toiminto"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "On minun vuoroni! Tiedän tarkalleen, mitä tehdä…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Haastan sinut minipeliin! Jos voitat minut, voit pitää tavarasi. Jos häviät, "
+"otan yhden kakkuistasi…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "Pienoispeli yksin"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
 msgstr ""
+"Minä vastaan sinä? Luuletko edes, että sinulla on mahdollisuus minua vastaan?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "Yhteistyöminipeli"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "Ole kiitollinen, että säästin sinut!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "Odotan innolla voittavani sinut taas!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "Ensi kerralla et voita."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "Haha, mikä helppo voitto."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"Haha, siellä menee [color=#00aaff]%d[/color] keksisi. Olen varma, että "
+"[color=#dd44ff]%s[/color] keksin niille käyttöä"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "Hävityt keksisi"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"Ehkä sinun pitäisi hidastaa hieman. Katsotaan, mitä teet "
+"[color=#00aaff]%d[/color] vähemmän liikettä seuraaville "
+"[color=#dd44ff]%d[/color] heitoille"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr ""
+msgstr "Kirottu kuolema"
