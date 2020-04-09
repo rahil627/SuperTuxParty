@@ -35,13 +35,13 @@ action = "ui_cancel"
 [sub_resource type="ShortCut" id=8]
 shortcut = SubResource( 7 )
 
-[sub_resource type="InputEventAction" id=10]
+[sub_resource type="InputEventAction" id=9]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=11]
-shortcut = SubResource( 10 )
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
 
-[sub_resource type="ShaderMaterial" id=9]
+[sub_resource type="ShaderMaterial" id=11]
 shader = ExtResource( 8 )
 
 [node name="Menus" type="Control"]
@@ -51,7 +51,6 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="MainMenu" type="Control" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -71,7 +70,6 @@ text = "MENU_LABEL_TITLE"
 align = 1
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 200.0
@@ -110,7 +108,6 @@ custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_QUIT"
 
 [node name="SelectionPlayers" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -131,14 +128,12 @@ text = "MENU_LABEL_SELECT_NUM_PLAYERS"
 align = 1
 
 [node name="Buttons" type="VBoxContainer" parent="SelectionPlayers"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 200.0
 custom_constants/separation = 0
 
 [node name="VScrollBar" type="ScrollContainer" parent="SelectionPlayers/Buttons"]
-editor/display_folded = true
 margin_right = 512.0
 margin_bottom = 105.0
 rect_min_size = Vector2( 512, 105 )
@@ -146,8 +141,8 @@ size_flags_horizontal = 3
 scroll_horizontal_enabled = false
 
 [node name="Grid" type="GridContainer" parent="SelectionPlayers/Buttons/VScrollBar"]
-editor/display_folded = true
 margin_right = 512.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 columns = 2
 
@@ -194,7 +189,6 @@ text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="SelectionChar" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -215,7 +209,6 @@ text = "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
 align = 1
 
 [node name="Buttons" type="VBoxContainer" parent="SelectionChar"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 200.0
@@ -244,7 +237,6 @@ text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="SelectionBoard" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -291,7 +283,6 @@ text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="OptionsMenu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -316,7 +307,6 @@ margin_right = 0.0
 margin_bottom = 27.0
 
 [node name="LoadGameMenu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -337,7 +327,6 @@ text = "MENU_IO_LOAD_GAME"
 align = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="LoadGameMenu"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 183.0
@@ -362,13 +351,11 @@ text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="BoardSettings" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Options" type="VBoxContainer" parent="BoardSettings"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -380,7 +367,6 @@ margin_bottom = 100.0
 custom_constants/separation = 10
 
 [node name="CakeCost" type="Control" parent="BoardSettings/Options"]
-editor/display_folded = true
 margin_right = 510.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
@@ -403,7 +389,6 @@ margin_top = -18.5
 margin_bottom = 18.5
 
 [node name="Turns" type="Control" parent="BoardSettings/Options"]
-editor/display_folded = true
 margin_top = 50.0
 margin_right = 510.0
 margin_bottom = 90.0
@@ -427,7 +412,6 @@ margin_top = -18.5
 margin_bottom = 18.5
 
 [node name="Difficulty" type="Control" parent="BoardSettings/Options"]
-editor/display_folded = true
 margin_top = 100.0
 margin_right = 510.0
 margin_bottom = 140.0
@@ -461,7 +445,6 @@ margin_bottom = 210.0
 rect_min_size = Vector2( 0, 60 )
 
 [node name="Award" type="VBoxContainer" parent="BoardSettings/Options"]
-editor/display_folded = true
 margin_top = 220.0
 margin_right = 510.0
 margin_bottom = 286.0
@@ -537,11 +520,10 @@ margin_top = 290.0
 margin_right = 59.0
 margin_bottom = 323.0
 shortcut_in_tooltip = false
-shortcut = SubResource( 11 )
+shortcut = SubResource( 10 )
 text = "MENU_LABEL_BACK"
 
 [node name="PlayerInfo1" type="VBoxContainer" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 8.0
 margin_top = 8.0
@@ -569,7 +551,6 @@ custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 
 [node name="PlayerInfo2" type="VBoxContainer" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
@@ -602,7 +583,6 @@ text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 align = 2
 
 [node name="PlayerInfo3" type="VBoxContainer" parent="."]
-editor/display_folded = true
 visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -634,7 +614,6 @@ custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 
 [node name="PlayerInfo4" type="VBoxContainer" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -673,7 +652,7 @@ align = 2
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color( 0.184314, 0.729412, 0.85098, 1 )
 show_behind_parent = true
-material = SubResource( 9 )
+material = SubResource( 11 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

@@ -119,17 +119,9 @@ func _on_shop_item(player, item, cost: int) -> void:
 		player.cookies -= cost
 	elif player.cookies < cost:
 		$Notification.dialog_text = tr("CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES")
-		# Make it visible or else Godot does not recalculate the size
-		# Temporary until fixed in Godot.
-		$Notification.show()
-
 		$Notification.popup_centered()
 	else:
 		$Notification.dialog_text = tr("CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE")
-		# Make it visible or else Godot does not recalculate the size
-		# Temporary until fixed in Godot.
-		$Notification.show()
-
 		$Notification.popup_centered()
 
 func _on_Shop_Back_pressed() -> void:

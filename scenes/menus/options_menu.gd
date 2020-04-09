@@ -228,8 +228,6 @@ func _on_GraphicQuality_item_selected(ID):
 			ProjectSettings.set_setting("rendering/quality/shading/force_vertex_shading", true)
 	$AcceptDialog.dialog_text = "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 	
-	# TODO: Temporary workaround, remove once upgraded to Godot 3.2
-	$AcceptDialog.show()
 	$AcceptDialog.popup_centered()
 	save_option("visual", "quality", ID)
 	
