@@ -87,12 +87,9 @@ func load_characters() -> void:
 		var character_list_entry: Button = button_template.instance()
 		character_list_entry.size_flags_horizontal = SIZE_EXPAND_FILL
 
-		var image: Image = load(
-				character_loader.get_character_splash(character)).get_data()
-		image.resize(32, 32)
 		character_list_entry.set_text(character)
-		character_list_entry.icon = ImageTexture.new()
-		character_list_entry.icon.create_from_image(image)
+		character_list_entry.icon = character_loader.load_character_splash(character)
+		character_list_entry.expand_icon = true
 		character_list_entry.connect("pressed", self, "_on_character_select",
 				[character_list_entry])
 

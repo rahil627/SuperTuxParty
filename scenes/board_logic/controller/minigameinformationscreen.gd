@@ -9,8 +9,8 @@ func setup_character_viewport() -> void:
 			var player =\
 					$Characters/Viewport.get_node(
 					"Player" + var2str(i))
-			var new_model = load(Global.character_loader.get_character_path(
-					Global.players[player_id - 1].character)).instance()
+			var character = Global.players[player_id - 1].character
+			var new_model = Global.character_loader.load_character(character)
 
 			new_model.name = player.name
 			new_model.translation = player.translation

@@ -214,7 +214,6 @@ material/0 = SubResource( 11 )
 [node name="SpeechDialog" parent="." instance=ExtResource( 13 )]
 
 [node name="Summary" type="PanelContainer" parent="."]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -227,18 +226,15 @@ margin_bottom = 83.5
 custom_styles/panel = SubResource( 12 )
 
 [node name="Stats" type="VBoxContainer" parent="Summary"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 167.0
 
 [node name="Names" type="PanelContainer" parent="Summary/Stats"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 29.0
 custom_styles/panel = SubResource( 13 )
 
 [node name="Entries" type="HBoxContainer" parent="Summary/Stats/Names"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 29.0
 custom_constants/separation = 50
@@ -285,14 +281,12 @@ margin_bottom = 35.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="CakeLabel" type="PanelContainer" parent="Summary/Stats"]
-editor/display_folded = true
 margin_top = 39.0
 margin_right = 778.0
 margin_bottom = 68.0
 custom_styles/panel = SubResource( 14 )
 
 [node name="Entries" type="HBoxContainer" parent="Summary/Stats/CakeLabel"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 29.0
 custom_constants/separation = 50
@@ -333,14 +327,12 @@ text = "CONTEXT_LABEL_CAKES"
 clip_text = true
 
 [node name="Cakes" type="PanelContainer" parent="Summary/Stats"]
-editor/display_folded = true
 margin_top = 72.0
 margin_right = 778.0
 margin_bottom = 101.0
 custom_styles/panel = SubResource( 13 )
 
 [node name="Entries" type="HBoxContainer" parent="Summary/Stats/Cakes"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 29.0
 custom_constants/separation = 50
@@ -381,14 +373,12 @@ align = 2
 clip_text = true
 
 [node name="CookieLabel" type="PanelContainer" parent="Summary/Stats"]
-editor/display_folded = true
 margin_top = 105.0
 margin_right = 778.0
 margin_bottom = 134.0
 custom_styles/panel = SubResource( 14 )
 
 [node name="Entries" type="HBoxContainer" parent="Summary/Stats/CookieLabel"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 29.0
 custom_constants/separation = 50
@@ -429,14 +419,12 @@ text = "CONTEXT_LABEL_COOKIES"
 clip_text = true
 
 [node name="Cookies" type="PanelContainer" parent="Summary/Stats"]
-editor/display_folded = true
 margin_top = 138.0
 margin_right = 778.0
 margin_bottom = 167.0
 custom_styles/panel = SubResource( 13 )
 
 [node name="Entries" type="HBoxContainer" parent="Summary/Stats/Cookies"]
-editor/display_folded = true
 margin_right = 778.0
 margin_bottom = 29.0
 custom_constants/separation = 50

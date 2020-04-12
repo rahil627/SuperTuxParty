@@ -40,13 +40,13 @@ transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065
 current = true
 
 [node name="Ground" type="StaticBody" parent="."]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
 shape = SubResource( 5 )
 
 [node name="Player1" parent="." instance=ExtResource( 4 )]
@@ -65,7 +65,6 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0, 
 transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -3.94703, 2.45993, 0.184541 )
 
 [node name="Area1" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area1"]
@@ -73,7 +72,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 shape = SubResource( 6 )
 
 [node name="Area2" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area2"]
@@ -81,7 +79,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
 shape = SubResource( 6 )
 
 [node name="Area3" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area3"]
@@ -89,7 +86,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
 shape = SubResource( 6 )
 
 [node name="Area4" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area4"]
@@ -133,7 +129,6 @@ align = 1
 valign = 1
 
 [node name="Fences" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Fence" parent="Fences" instance=ExtResource( 8 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.51461, 0.536983, -4.49385 )

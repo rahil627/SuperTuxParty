@@ -317,27 +317,45 @@ func _goto_scene_board() -> void:
 	get_tree().set_current_scene(current_scene)
 	_load_interactive(current_board, self, "_goto_scene_board_callback", null)
 
-# Internal function for loading a character's model and other data into the Spatial nodes used by the loaded scene
-func _load_player(player: Spatial, state: PlayerState):
-	var new_model = load(character_loader.get_character_path(state.character)).instance()
-	new_model.set_name("Model")
+# Internal function for loading a character's model and other data
+# into the nodes used by the loaded scene
+func _load_player(player: Node, state: PlayerState) -> void:
+	var character := state.character
+	var wants_model := player.has_node("Model")
+	var wants_shape := player.has_node("Shape")
+	
+	if wants_model:
+		var model: Spatial = character_loader.load_character(character)
+		model.set_name("Model")
 
-	var old_model = player.get_node("Model")
-	new_model.translation = old_model.translation
-	new_model.scale = old_model.scale
-	new_model.rotation = old_model.rotation
-	old_model.replace_by(new_model, true)
+		var shape: Spatial = model.get_node_or_null("Shape")
+		if shape:
+			model.remove_child(shape)
+		else:
+			push_warning("Character `{0}` has no shape".format([character]))
+
+		var placeholder: Spatial = player.get_node("Model")
+		# The model should be at the place, the placeholder was originally
+		model.transform = placeholder.transform * model.transform
+		# The shape should be at the same position as the model
+		if shape:
+			shape.transform = model.transform * shape.transform
+
+		placeholder.replace_by(model, true)
+		if wants_shape:
+			# shape must be a direct child of kinematicBody and similar
+			# Therefore we need to move it one up in the scene tree
+			player.add_child(shape)
+	elif wants_shape:
+		push_warning(
+			"`{0}` in scene `{1}`".format([player.name, player.owner.filename])
+			+ " has a `Shape` child, but no `Model` child.\n"
+			+ "This is not allowed. Ignoring `Shape`")
 
 	player.player_id = state.player_id
 	player.is_ai = state.is_ai
-	
-	if "ai_difficulty" in player:
-		player.ai_difficulty = state.ai_difficulty
-
-	if player.has_node("Shape"):
-		var collision_shape = player.get_node("Shape")
-		collision_shape.translation += new_model.translation
-		collision_shape.shape = load(character_loader.get_collision_shape_path(state.character))
+	# Non mandatory field. `set` raises no error, when a property does not exist
+	player.set("ai_difficulty", state.ai_difficulty)
 
 func _goto_scene_minigame_callback(s: PackedScene, _arg):
 	loaded_scene = s.instance()
