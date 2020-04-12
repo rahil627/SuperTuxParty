@@ -545,6 +545,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
-
-#~ msgid "CONTEXT_GNU_MINIGAME"
-#~ msgstr "Gnu mini juego!"

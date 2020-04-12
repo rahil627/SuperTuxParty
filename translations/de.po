@@ -555,6 +555,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Verfluchter Würfel"
-
-#~ msgid "CONTEXT_GNU_MINIGAME"
-#~ msgstr "Gnu-Minigame!"
