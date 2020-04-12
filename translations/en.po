@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Weblate 4.0-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr "Buy a cake for %d cookies"
+msgstr "Buy a cake for {amount} cookies"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr "Duel Reward:"
@@ -31,20 +31,8 @@ msgstr "Finish!"
 msgid "CONTEXT_LABEL_GO"
 msgstr "Go!"
 
-msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr "Draw!"
-
-msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr "Game over!"
-
-msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr "The winner is %s!"
-
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr "%s rolled %d:"
-
-msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr "%s wins!"
+msgstr "{name} rolled {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr "Ready?"
@@ -53,7 +41,7 @@ msgid "CONTEXT_LABEL_ROLL"
 msgstr "Roll!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr "Roll %s!"
+msgstr "Roll {name}!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
 msgstr "Winner steals 1 cake"
@@ -62,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Winner steals 10 cookies"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Turn %d"
+msgstr "Turn {turn}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "VS."
@@ -204,9 +192,6 @@ msgstr "Right Trigger 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
 msgstr "Right Trigger 3"
-
-msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr "Action %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Down"
@@ -445,20 +430,20 @@ msgstr ""
 "need a winner. And this winner is…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr "[color=#ff3300]%s[/color]!"
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr "[color=#ff3300]%s[/color] and [color=#33ff00]%s[/color]!"
+msgstr "[color=#ff3300]{0}[/color] and [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
-"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] and [color=#00ff88]%s[/"
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] and [color=#00ff88]{2}[/"
 "color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
-"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], [color=#00ff88]%s[/"
-"color] and [color=#ffff33]%s[/color]!"
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], [color=#00ff88]{2}[/"
+"color] and [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
 msgstr "Cakes"
@@ -475,7 +460,7 @@ msgstr "Hey there, need some help? Let me see, what I can do for you today…"
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
 "It's a solo minigame! Show me your skills and I'll give you a "
-"[color=#dd44ff]%s[/color]"
+"[color=#dd44ff]{reward}[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
 msgstr "Solo Minigame"
@@ -537,8 +522,8 @@ msgstr "Haha, what an easy win."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
-"Haha, there go [color=#00aaff]%d[/color] of your cookies. I'm sure "
-"[color=#dd44ff]%s[/color] has a use for them"
+"Haha, there go [color=#00aaff]{amount}[/color] of your cookies. I'm sure "
+"[color=#dd44ff]{player}[/color] has a use for them"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
 msgstr "Lose your cookies"
@@ -546,7 +531,7 @@ msgstr "Lose your cookies"
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
 "Maybe you should slow down a bit. Let's see how you do with "
-"[color=#00aaff]%d[/color] less movement for the next [color=#dd44ff]%d[/"
+"[color=#00aaff]{amount}[/color] less movement for the next [color=#dd44ff]{duration}[/"
 "color] throws"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"

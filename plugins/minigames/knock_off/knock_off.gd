@@ -57,9 +57,9 @@ func _process(delta):
 			Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.DUEL:
 				for p in Global.players:
 					if p.player_id == placement[0]:
-						$Environment/Screen/Message.text = tr("KNOCK_OFF_PLAYER_WINS_MSG") % p.player_name
+						$Environment/Screen/Message.text = tr("KNOCK_OFF_PLAYER_WINS_MSG").format({"player": p.player_name})
 			Global.MINIGAME_TYPES.TWO_VS_TWO:
-				$Environment/Screen/Message.text = tr("KNOCK_OFF_TEAM_WINS_MSG") % (winner_team + 1)
+				$Environment/Screen/Message.text = tr("KNOCK_OFF_TEAM_WINS_MSG").format({"team": winner_team + 1})
 		
 		$Environment/Screen/Message.show()
 	

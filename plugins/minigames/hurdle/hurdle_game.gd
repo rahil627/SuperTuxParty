@@ -117,7 +117,7 @@ func _process(delta):
 		
 		for p in Global.players:
 			if p.player_id == placement[0]:
-				$Environment/Screen/Message.text = tr("HURDLE_PLAYER_WINS_MSG") % p.player_name
+				$Environment/Screen/Message.text = tr("HURDLE_PLAYER_WINS_MSG").format({"player": p.player_name})
 		
 		$Environment/Screen/Message.show()
 	

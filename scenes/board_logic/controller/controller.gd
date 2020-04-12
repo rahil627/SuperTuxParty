@@ -88,9 +88,9 @@ func _ready() -> void:
 
 	# Initialize GUI.
 	if player_turn <= Global.amount_of_players:
-		$Screen/Turn.text = tr("CONTEXT_LABEL_TURN_NUM") % [Global.turn]
-		$Screen/Dice.text = tr("CONTEXT_LABEL_ROLL_PLAYER") %\
-				[players[player_turn - 1].player_name]
+		$Screen/Turn.text = tr("CONTEXT_LABEL_TURN_NUM").format({"turn": Global.turn})
+		$Screen/Dice.text = tr("CONTEXT_LABEL_ROLL_PLAYER").format(
+				{"name": players[player_turn - 1].player_name})
 
 	update_player_info()
 
@@ -218,8 +218,8 @@ func roll(steps = null) -> void:
 			emit_signal("rolled", player, dice)
 
 			# Show which number was rolled
-			$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") %\
-					[player.player_name, dice]
+			$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED").format(
+					{"name": player.player_name, "value": dice})
 			$Screen/Dice.show()
 			return
 
@@ -236,8 +236,8 @@ func roll(steps = null) -> void:
 				emit_signal("rolled", player, dice)
 
 				# Show which number was rolled.
-				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") %\
-						[player.player_name, dice]
+				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED").format(
+						{"name": player.player_name, "value": dice})
 				$Screen/Dice.show()
 			Item.TYPES.PLACABLE:
 				$SelectSpaceHelper.select_space(player, selected_item.max_place_distance)
@@ -258,8 +258,8 @@ func roll(steps = null) -> void:
 				emit_signal("rolled", player, dice)
 
 				# Show which number was rolled
-				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") %\
-						[player.player_name, dice]
+				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED").format(
+						{"name": player.player_name, "value": dice})
 				$Screen/Dice.show()
 			Item.TYPES.ACTION:
 				selected_item.activate(player, self)
@@ -273,8 +273,8 @@ func roll(steps = null) -> void:
 				emit_signal("rolled", player, dice)
 
 				# Show which number was rolled
-				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED") %\
-						[player.player_name, dice]
+				$Screen/Dice.text = tr("CONTEXT_LABEL_PLAYER_ROLLED").format(
+						{"name": player.player_name, "value": dice})
 				$Screen/Dice.show()
 	else:
 		# All players have had their turn, goto mini-game.
@@ -491,12 +491,12 @@ func land_on_space(player):
 							
 							player.cookies -= stolen_cookies
 							target.cookies += stolen_cookies
-							dialog_text = tr("CONTEXT_NOLOK_LOSE_COOKIES_MODERATION") % [stolen_cookies, target.player_name]
+							dialog_text = tr("CONTEXT_NOLOK_LOSE_COOKIES_MODERATION").format({"amount": stolen_cookies, "player": target.player_name})
 							$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_LOSE_COOKIES"
 						1:
 							# The next 5 rolls of the player are reduced by 2
 							player.add_roll_modifier(-2, 5)
-							dialog_text = tr("CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION") % [2, 5]
+							dialog_text = tr("CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION").format({"amount": 2, "duration": 5})
 							$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_ROLL_MODIFIER"
 
 			$Screen/NolokSelection/AnimationPlayer.play("show")
@@ -526,7 +526,7 @@ func land_on_space(player):
 				Global.GNU_ACTION_TYPES.SOLO_MINIGAME:
 					var items: Array = Global.item_loader.get_buyable_items()
 					var reward: Item = load(Global.item_loader.get_item_path(items[randi() % len(items)])).new()
-					dialog_text = tr("CONTEXT_GNU_MINIGAME_SOLO_MODERATION") % reward.name
+					dialog_text = tr("CONTEXT_GNU_MINIGAME_SOLO_MODERATION").format({"reward": reward.name})
 					$Screen/GNUSelection/Content/Selection.text = "CONTEXT_GNU_MINIGAME_SOLO"
 
 					state.minigame_type = Global.MINIGAME_TYPES.GNU_SOLO

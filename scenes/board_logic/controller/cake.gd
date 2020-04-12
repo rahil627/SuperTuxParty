@@ -7,7 +7,7 @@ onready var controller = get_tree().get_nodes_in_group("Controller")[0]
 var cookies_for_cake: int
 
 func init(cookies_for_cake: int) -> void:
-	$GetCake/Label.text = tr("CONTEXT_LABEL_BUY_CAKE") % cookies_for_cake
+	$GetCake/Label.text = tr("CONTEXT_LABEL_BUY_CAKE").format({"amount": cookies_for_cake})
 	self.cookies_for_cake = cookies_for_cake
 
 func show_cake() -> void:

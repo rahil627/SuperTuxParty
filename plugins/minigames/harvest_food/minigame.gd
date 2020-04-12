@@ -67,7 +67,7 @@ func _on_Timer_timeout():
 			for collider in colliders:
 				if collider.is_in_group("players"):
 					collider.play_animation("sad")
-					$Screen/Message.text = tr("HARVEST_FOOD_SELECT_ROTTEN_PLANT_MSG") % Global.players[collider.player_id - 1].player_name
+					$Screen/Message.text = tr("HARVEST_FOOD_SELECT_ROTTEN_PLANT_MSG").format({"player": Global.players[collider.player_id - 1].player_name})
 		
 		var animationplayer = plants[i].get_node("Plant/AnimationPlayer")
 		animationplayer.play("show")

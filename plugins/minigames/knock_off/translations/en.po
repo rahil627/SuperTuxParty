@@ -15,8 +15,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "KNOCK_OFF_PLAYER_WINS_MSG"
-msgstr "%s wins!"
+msgstr "{player} wins!"
 
 msgid "KNOCK_OFF_TEAM_WINS_MSG"
-msgstr "Team %s wins!"
+msgstr "Team {team} wins!"
 

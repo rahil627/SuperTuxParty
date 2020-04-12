@@ -15,5 +15,5 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "HARVEST_FOOD_SELECT_ROTTEN_PLANT_MSG"
-msgstr "%s has chosen the rotten plant!"
+msgstr "{player} has chosen the rotten plant!"
 
