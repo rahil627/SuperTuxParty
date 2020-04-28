@@ -179,17 +179,18 @@ func _on_Roll_pressed() -> void:
 	else:
 		splash_ended = true
 
+		var player = players[player_turn - 1]
+		var character = Global.players[player_turn - 1].character
 		$Screen/Splash/Background/Player.texture =\
-				load(Global.character_loader.get_character_splash(\
-				Global.players[player_turn - 1].character))
+				Global.character_loader.load_character_splash(character)
 		$Screen/Splash.play("show")
 
-		if players[player_turn - 1].is_ai:
+		if player.is_ai:
 			get_tree().create_timer(1).connect("timeout", self, "_on_Roll_pressed")
 		else:
 			$Screen/Roll.show()
 
-		camera_focus = players[player_turn - 1]
+		camera_focus = player
 
 		$Screen/Dice.hide()
 
@@ -758,10 +759,9 @@ func show_minigame_animation(state) -> void:
 	var i := 1
 	for team in state.minigame_teams:
 		for player_id in team:
-			$Screen/MinigameTypeAnimation/Root.get_node(
-					"Player" + str(i)).texture = load(
-					Global.character_loader.get_character_splash(
-					Global.players[player_id - 1].character))
+			var character = Global.players[player_id - 1].character
+			var texture = Global.character_loader.load_character_splash(character)
+			$Screen/MinigameTypeAnimation/Root.get_node("Player" + str(i)).texture = texture
 			i += 1
 
 	match state.minigame_type:

@@ -5,7 +5,8 @@ func _ready():
 	for p in Global.minigame_summary.placement:
 		for player_id in p:
 			i += 1
-			var new_model = load(Global.character_loader.get_character_path(Global.players[player_id - 1].character)).instance()
+			var character = Global.players[player_id - 1].character
+			var new_model = Global.character_loader.load_character(character)
 			new_model.name = "Player" + var2str(i)
 			
 			add_child(new_model)

@@ -1,6 +1,5 @@
 const CHARACTER_FILENAME = "character.tscn"
 const CHARACTER_SPLASHNAME = "splash.png"
-const COLLISION_SHAPE_FILENAME = "collision.tres"
 
 const NEEDED_FILES = [CHARACTER_FILENAME]
 const CHARACTER_PATH = "res://plugins/characters"
@@ -49,19 +48,16 @@ func _init():
 	
 	print_loaded_characters()
 
-func print_loaded_characters():
+func print_loaded_characters() -> void:
 	print("Loaded characters:")
 	for i in characters:
 		print("\t" + i)
 
-func get_loaded_characters():
+func get_loaded_characters() -> Array:
 	return characters.duplicate()
 
-func get_character_path(name):
-	return CHARACTER_PATH + "/" + name + "/" + CHARACTER_FILENAME
+func load_character(name: String) -> Spatial:
+	return load(CHARACTER_PATH + "/" + name + "/" + CHARACTER_FILENAME).instance()
 
-func get_character_splash(name):
-	return CHARACTER_PATH + "/" + name + "/" + CHARACTER_SPLASHNAME
-
-func get_collision_shape_path(name):
-	return CHARACTER_PATH + "/" + name + "/" + COLLISION_SHAPE_FILENAME
+func load_character_splash(name) -> Resource:
+	return load(CHARACTER_PATH + "/" + name + "/" + CHARACTER_SPLASHNAME)

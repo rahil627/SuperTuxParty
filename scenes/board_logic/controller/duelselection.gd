@@ -9,9 +9,9 @@ func select(state, player, players: Array):
 	var i := 1
 	for p in players:
 		var node = get_node("Player" + str(i))
-		node.texture_normal = load(Global.\
-							character_loader.get_character_splash(
-							Global.players[p.player_id - 1].character))
+		var character = Global.players[p.player_id - 1].character
+		var texture = Global.character_loader.load_character_splash(character)
+		node.texture_normal = texture
 
 		node.connect("focus_entered", self, "_on_focus_entered", [node])
 		node.connect("focus_exited", self, "_on_focus_exited", [node])

@@ -2,7 +2,9 @@ extends Spatial
 
 func _ready():
 	var node = $Player1
-	var new_model = load(Global.character_loader.get_character_path(Global.players[Global.minigame_teams[0][0] - 1].character)).instance()
+	var player_id = Global.minigame_teams[0][0]
+	var character = Global.players[player_id - 1].character
+	var new_model = Global.character_loader.load_character(character)
 
 	new_model.name = "Player1"
 	new_model.transform = node.global_transform

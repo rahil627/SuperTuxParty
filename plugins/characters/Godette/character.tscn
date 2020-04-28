@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://plugins/characters/Godette/PaletteTexture.material" type="Material" id=2]
 
@@ -3822,10 +3822,14 @@ tracks/56/imported = false
 tracks/56/enabled = true
 tracks/56/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.04167, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
+[sub_resource type="CapsuleShape" id=12]
+radius = 0.3
+height = 0.5
+
 [node name="Model" type="Spatial"]
 
 [node name="Armature" type="Spatial" parent="."]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.04, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="Armature"]
 bones/0/name = "root"
@@ -4129,3 +4133,7 @@ anims/punch = SubResource( 8 )
 anims/run = SubResource( 9 )
 anims/sad = SubResource( 10 )
 anims/walk = SubResource( 11 )
+
+[node name="Shape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.55, 0 )
+shape = SubResource( 12 )
