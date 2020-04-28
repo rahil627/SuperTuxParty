@@ -89,7 +89,7 @@ deploy_nightly:
     - cd ..
     - export PATH=$(realpath .ci-bin):$PATH
     - chmod +x release.sh
-    - ./release.sh supertuxparty/super-tux-party-nightly $CI_COMMIT_SHORT_SHA
+    - ./release.sh nightly $CI_COMMIT_SHORT_SHA
   only:
     - dev@SuperTuxParty/SuperTuxParty
 
@@ -109,6 +109,6 @@ deploy_release:
     - cd ..
     - export PATH=$(realpath .ci-bin):$PATH
     - chmod +x release.sh
-    - ./release.sh anti/super-tux-party $CI_COMMIT_REF_NAME
+    - ./release.sh release $CI_COMMIT_REF_NAME
   only:
     - tags
