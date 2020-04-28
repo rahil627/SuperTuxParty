@@ -9,13 +9,13 @@ func get_mousebutton_name(index: int) -> String:
 		BUTTON_MIDDLE:
 			return tr("MENU_CONTROLS_MOUSE_BUTTON_MIDDLE")
 		BUTTON_WHEEL_UP:
-			return tr("MENU_CONTROLS_WHEEL_UP")
+			return tr("MENU_CONTROLS_MOUSE_WHEEL_UP")
 		BUTTON_WHEEL_DOWN:
-			return tr("MENU_CONTROLS_WHEEL_DOWN")
+			return tr("MENU_CONTROLS_MOUSE_WHEEL_DOWN")
 		BUTTON_WHEEL_LEFT:
-			return tr("MENU_CONTROLS_WHEEL_LEFT")
+			return tr("MENU_CONTROLS_MOUSE_WHEEL_LEFT")
 		BUTTON_WHEEL_RIGHT:
-			return tr("MENU_CONTROLS_WHEEL_RIGHT")
+			return tr("MENU_CONTROLS_MOUSE_WHEEL_RIGHT")
 		_:
 			return tr("MENU_CONTROLS_MOUSE_BUTTON") + " " + str(index)
 

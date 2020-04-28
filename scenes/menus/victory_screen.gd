@@ -54,10 +54,10 @@ func _ready():
 		pos.x += 1.0
 	
 	match len(winner):
-		1: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_ONE_PLAYER") % winner_names, 1)
-		2: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_TWO_PLAYER") % winner_names, 1)
-		3: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_THREE_PLAYER") % winner_names, 1)
-		4: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_FOUR_PLAYER") % winner_names, 1)
+		1: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_ONE_PLAYER").format(winner_names), 1)
+		2: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_TWO_PLAYER").format(winner_names), 1)
+		3: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_THREE_PLAYER").format(winner_names), 1)
+		4: $SpeechDialog.show_dialog("CONTEXT_SPEAKER_SARA", sara_tex, tr("CONTEXT_WINNER_REVEAL_FOUR_PLAYER").format(winner_names), 1)
 	$CameraMovement.play("closeup")
 	
 	yield($SpeechDialog, "dialog_finished")
