@@ -437,8 +437,8 @@ msgstr "[color=#ff3300]{0}[/color] and [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
-"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] and [color=#00ff88]{2}[/"
-"color]!"
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] and [color=#00ff88]{2}"
+"[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
@@ -459,8 +459,8 @@ msgstr "Hey there, need some help? Let me see, what I can do for you today…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
-"It's a solo minigame! Show me your skills and I'll give you a "
-"[color=#dd44ff]{reward}[/color]"
+"It's a solo minigame! Show me your skills and I'll give you a [color=#dd44ff]"
+"{reward}[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
 msgstr "Solo Minigame"
@@ -530,8 +530,8 @@ msgstr "Lose your cookies"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
-"Maybe you should slow down a bit. Let's see how you do with "
-"[color=#00aaff]{amount}[/color] less movement for the next [color=#dd44ff]{duration}[/"
+"Maybe you should slow down a bit. Let's see how you do with [color=#00aaff]"
+"{amount}[/color] less movement for the next [color=#dd44ff]{duration}[/"
 "color] throws"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"

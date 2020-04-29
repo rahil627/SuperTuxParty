@@ -31,20 +31,8 @@ msgstr ""
 msgid "CONTEXT_LABEL_GO"
 msgstr ""
 
-msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr ""
-
-msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr ""
-
-msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr "%sは勝ちます!"
-
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr "%sロール%d:"
-
-msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr "%sは勝ちます!"
 
 #, fuzzy
 msgid "CONTEXT_LABEL_READY_QUESTION"
@@ -204,9 +192,6 @@ msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
 msgstr ""
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
-
-msgid "MENU_CONTROLS_ACTION_NUM"
 msgstr ""
 
 msgid "MENU_CONTROLS_DIR_DOWN"
@@ -542,3 +527,9 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
+#~ msgstr "%sは勝ちます!"
+
+#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
+#~ msgstr "%sは勝ちます!"

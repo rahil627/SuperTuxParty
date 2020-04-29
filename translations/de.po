@@ -31,20 +31,8 @@ msgstr "Ende!"
 msgid "CONTEXT_LABEL_GO"
 msgstr "Los!"
 
-msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr "Unentschieden!"
-
-msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr "Spiel vorbei!"
-
-msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr "%s hat gewonnen!"
-
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr "%s hat %d gewürfelt:"
-
-msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr "%s gewinnt!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr "Fertig?"
@@ -204,9 +192,6 @@ msgstr "Rechte Schultertaste 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
 msgstr "Rechte Schultertaste 3"
-
-msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr "Aktion %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Unten"
@@ -555,3 +540,18 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Verfluchter Würfel"
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
+#~ msgstr "Unentschieden!"
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
+#~ msgstr "Spiel vorbei!"
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
+#~ msgstr "%s hat gewonnen!"
+
+#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
+#~ msgstr "%s gewinnt!"
+
+#~ msgid "MENU_CONTROLS_ACTION_NUM"
+#~ msgstr "Aktion %d"

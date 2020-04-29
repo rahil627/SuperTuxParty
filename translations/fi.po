@@ -31,20 +31,8 @@ msgstr "Maali!"
 msgid "CONTEXT_LABEL_GO"
 msgstr "Mene!"
 
-msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr "Piirrä!"
-
-msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr "Peli ohi!"
-
-msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr "Ja voittaja on %s!"
-
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr "%s rullattu %d:"
-
-msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr "%s voittoja!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr "Valmis?"
@@ -204,9 +192,6 @@ msgstr "Oikea liipaisin 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
 msgstr "Oikea liipaisin 3"
-
-msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr "Toiminto %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Alas"
@@ -454,13 +439,13 @@ msgstr "[color=#ff3300]%s[/color] ja [color=#33ff00]%s[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
-"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] ja "
-"[color=#00ff88]%s[/color]!"
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color] ja [color=#00ff88]%s[/"
+"color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
-"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], "
-"[color=#00ff88]%s[/color] ja [color=#ffff33]%s[/color]!"
+"[color=#ff3300]%s[/color], [color=#33ff00]%s[/color], [color=#00ff88]%s[/"
+"color] ja [color=#ffff33]%s[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
 msgstr "Kakkuja"
@@ -548,9 +533,23 @@ msgstr "Hävityt keksisi"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
-"Ehkä sinun pitäisi hidastaa hieman. Katsotaan, mitä teet "
-"[color=#00aaff]%d[/color] vähemmän liikettä seuraaville "
-"[color=#dd44ff]%d[/color] heitoille"
+"Ehkä sinun pitäisi hidastaa hieman. Katsotaan, mitä teet [color=#00aaff]%d[/"
+"color] vähemmän liikettä seuraaville [color=#dd44ff]%d[/color] heitoille"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Kirottu kuolema"
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
+#~ msgstr "Piirrä!"
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
+#~ msgstr "Peli ohi!"
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
+#~ msgstr "Ja voittaja on %s!"
+
+#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
+#~ msgstr "%s voittoja!"
+
+#~ msgid "MENU_CONTROLS_ACTION_NUM"
+#~ msgstr "Toiminto %d"

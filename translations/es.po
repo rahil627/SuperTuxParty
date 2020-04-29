@@ -31,20 +31,8 @@ msgstr "Fin!"
 msgid "CONTEXT_LABEL_GO"
 msgstr "Vamos!"
 
-msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-msgstr ""
-
-msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-msgstr ""
-
-msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-msgstr "El ganador es %s!"
-
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr "%s rodó %d:"
-
-msgid "CONTEXT_LABEL_PLAYER_WINS"
-msgstr "%s gano!"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr "Listo?"
@@ -206,9 +194,6 @@ msgstr ""
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
 msgstr ""
-
-msgid "MENU_CONTROLS_ACTION_NUM"
-msgstr "Acción %d"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Abajo"
@@ -545,3 +530,12 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
+
+#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
+#~ msgstr "El ganador es %s!"
+
+#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
+#~ msgstr "%s gano!"
+
+#~ msgid "MENU_CONTROLS_ACTION_NUM"
+#~ msgstr "Acción %d"
