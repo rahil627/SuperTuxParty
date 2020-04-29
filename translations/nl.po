@@ -527,18 +527,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-#~ msgstr "Gelijkspel!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-#~ msgstr "Spel is over!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-#~ msgstr "De winnaar is %s!"
-
-#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
-#~ msgstr "%s wint!"
-
-#~ msgid "MENU_CONTROLS_ACTION_NUM"
-#~ msgstr "Actie %d"

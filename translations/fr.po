@@ -540,18 +540,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Cube maudit"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-#~ msgstr "Match nul !"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-#~ msgstr "Jeu terminé !"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-#~ msgstr "Le vainqueur du jeu es %s !"
-
-#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
-#~ msgstr "%s a gagné !"
-
-#~ msgid "MENU_CONTROLS_ACTION_NUM"
-#~ msgstr "Action %d"

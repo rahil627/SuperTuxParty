@@ -527,15 +527,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-#~ msgstr "Oavgjort!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-#~ msgstr "Spelet är slut!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-#~ msgstr "Vinnaren är %s!"
-
-#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
-#~ msgstr "%s vinner!"

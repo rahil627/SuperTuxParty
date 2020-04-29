@@ -530,12 +530,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-#~ msgstr "El ganador es %s!"
-
-#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
-#~ msgstr "%s gano!"
-
-#~ msgid "MENU_CONTROLS_ACTION_NUM"
-#~ msgstr "Acción %d"

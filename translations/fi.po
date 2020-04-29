@@ -538,18 +538,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Kirottu kuolema"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-#~ msgstr "Piirrä!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-#~ msgstr "Peli ohi!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-#~ msgstr "Ja voittaja on %s!"
-
-#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
-#~ msgstr "%s voittoja!"
-
-#~ msgid "MENU_CONTROLS_ACTION_NUM"
-#~ msgstr "Toiminto %d"

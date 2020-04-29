@@ -520,18 +520,3 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_DRAW"
-#~ msgstr "Empate!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_GAME_OVER"
-#~ msgstr "Fim de jogo!"
-
-#~ msgid "CONTEXT_LABEL_OUTCOME_WINNER_IS_PLAYER"
-#~ msgstr "O vencedor é %s!"
-
-#~ msgid "CONTEXT_LABEL_PLAYER_WINS"
-#~ msgstr "%s vence!"
-
-#~ msgid "MENU_CONTROLS_ACTION_NUM"
-#~ msgstr "Ação %d"
