@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-04-30 12:11+0000\n"
+"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ja/>\n"
 "Language: ja\n"
@@ -14,10 +14,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.0.2\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr "%dケーキーズにケーキを買う"
+msgstr "{amount}ケーキーズにケーキを買う"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr ""
@@ -32,7 +32,7 @@ msgid "CONTEXT_LABEL_GO"
 msgstr ""
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr "%sロール%d:"
+msgstr "{name}ロール{value}:"
 
 #, fuzzy
 msgid "CONTEXT_LABEL_READY_QUESTION"
@@ -42,7 +42,7 @@ msgid "CONTEXT_LABEL_ROLL"
 msgstr "Roll!\\n(ロール!)"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr "%sのロール!"
+msgstr "{name}のロール!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
 msgstr ""
@@ -51,7 +51,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr ""
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "%d回"
+msgstr "{turn}回"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "VS."
