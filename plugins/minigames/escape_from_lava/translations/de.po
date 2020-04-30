@@ -14,6 +14,24 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "MINIGAME_NAME"
+msgstr "Flieh vor der Lava"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Die Spieler liefern sich ein Wettrennen.\nSie müssen mehrere Türen passieren, um nicht von der steigenden Lava verschlungen zu werden. Eine dieser Türen ist jedoch blockiert, wodurch sie sich nicht öffnen lässt.\nDer erste Spieler, der sicher am oberen Ende ankommt, gewinnt!"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Nach oben bewegen"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Nach unten bewegen"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Nach links bewegen"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Nach rechts bewegen"
+
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Fertig!"
 

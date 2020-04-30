@@ -9,14 +9,15 @@ class MinigameConfigFile:
 
 	# BBCode (or anything that works in Richtextlabel) inside a dictionary,
 	# e.g. { "en" : "English description goes here" }.
-	var description := {}
+	# Or a plain string, which will be the description for every language
+	var description = ""
 	# Dictionary with { "action_name" : { ...translations...} }.
-	var used_controls := {}
+	var controls := {}
 	var type := []
 
 # This is the entry point filename to every minigame.
-const MINIGAME_CONFIG_FILENAME = ["minigame.json", "minigame.xml"]
-const MINIGAME_PATH = "res://plugins/minigames"
+const MINIGAME_CONFIG_FILENAME := [ "minigame.json" ]
+const MINIGAME_PATH := "res://plugins/minigames"
 
 # Stores the full path to found minigames of each type.
 var minigames_duel := []
@@ -29,71 +30,38 @@ var minigames_nolok_coop := []
 var minigames_gnu_solo := []
 var minigames_gnu_coop := []
 
-# Checks the directory for a minigame config file and adds its path to the
-# corresonding array.
-func check_directory(filename: String) -> bool:
-	var new_dir := Directory.new()
-	new_dir.open(filename)
-
-	for config_file in MINIGAME_CONFIG_FILENAME:
-		var complete_filename = filename + "/" + config_file
-		if new_dir.file_exists(config_file):
-			var config = parse_file(complete_filename)
-			if config == null:
-				continue
-
-			for type in config.type:
-				match type:
-					"Duel":
-						minigames_duel.append(complete_filename)
-					"1v3":
-						minigames_1v3.append(complete_filename)
-					"2v2":
-						minigames_2v2.append(complete_filename)
-					"FFA":
-						minigames_ffa.append(complete_filename)
-					"NolokSolo":
-						minigames_nolok_solo.append(complete_filename)
-					"NolokCoop":
-						minigames_nolok_coop.append(complete_filename)
-					"GnuSolo":
-						minigames_gnu_solo.append(complete_filename)
-					"GnuCoop":
-						minigames_gnu_coop.append(complete_filename)
-					_:
-						push_warning("Unknown minigame type: '" + type + "'")
-
-			return true
-
-	return false
-
-# Checks for each file in the directory, if it is a directory and calls
-# check_directory to read the config file.
-func read_directory(filename: String) -> void:
-	var dir := Directory.new()
-
-	var err: int = dir.open(filename)
-	if err != OK:
-		print("Unable to open directory '" + filename + "'. Reason: " +
-				Utility.error_code_to_string(err))
+func discover_minigame(complete_filename: String):
+	var config = parse_file(complete_filename)
+	if not config:
 		return
 
-	dir.list_dir_begin(true) # Parameter indicates to skip "." and "..".
+	for type in config.type:
+		match type:
+			"Duel":
+				minigames_duel.append(complete_filename)
+			"1v3":
+				minigames_1v3.append(complete_filename)
+			"2v2":
+				minigames_2v2.append(complete_filename)
+			"FFA":
+				minigames_ffa.append(complete_filename)
+			"NolokSolo":
+				minigames_nolok_solo.append(complete_filename)
+			"NolokCoop":
+				minigames_nolok_coop.append(complete_filename)
+			"GnuSolo":
+				minigames_gnu_solo.append(complete_filename)
+			"GnuCoop":
+				minigames_gnu_coop.append(complete_filename)
+			_:
+				push_warning("Unknown minigame type: '" + type + "'")
 
-	while true:
-		var file: String = dir.get_next()
-
-		if file == "":
-			break
-		elif dir.current_is_dir():
-			if !check_directory(filename + "/" + file):
-				print("Error: No config file found for minigame: " + file)
-
-	dir.list_dir_end()
+	return true
 
 func _init() -> void:
 	print("Loading minigames...")
-	read_directory(MINIGAME_PATH)
+	PluginSystem.load_files_from_path(MINIGAME_PATH, MINIGAME_CONFIG_FILENAME,
+			self, "discover_minigame")
 
 	print("Loading minigames finished")
 	print_loaded_minigames()
@@ -125,131 +93,98 @@ func print_loaded_minigames() -> void:
 	for i in minigames_gnu_coop:
 		print("\t\t" + parse_file(i).name)
 
-func parse_json_file(file: String):
+func parse_file(file: String) -> MinigameConfigFile:
 	var f := File.new()
 	f.open(file, File.READ)
 	var result: JSONParseResult = JSON.parse(f.get_as_text())
 	f.close()
 
 	if result.error != OK:
-		print("Error in file '" + file + "': " + result.error_string +
-				" on line " + var2str(result.error_line))
-		return
+		push_error("Error in file '{0}': {1} on line {2}".format([file,
+				result.error_string, result.error_line]))
+		return null
 
-	if typeof(result.result) != TYPE_DICTIONARY:
-		return
+	if not result.result is Dictionary:
+		push_error("Error in file '{0}': content type is not a dictionary".format([file]))
+		return null
 
 	var config := MinigameConfigFile.new()
 	config.file = file
 
 	if not result.result.has("name"):
-		print("Error in file '" + file + "': name entry missing")
-		return
+		push_error("Error in file '{0}': entry 'name' missing".format([file]))
+		return null
+	
+	if not (result.result.name is String or result.result.name is Dictionary):
+		push_error("Error in file '{0}': entry 'name' is not a String" +
+				" or dictionary".format([file]))
+		return null
 
 	config.name = result.result.name
 
 	if not result.result.has("scene_path"):
-		print("Error in file '" + file + "': scene_path entry missing")
-		return
+		push_error("Error in file '{0}': entry 'scene_path' missing".format([
+					file]))
+		return null
 
+	if not result.result.scene_path is String:
+		push_error("Error in file '{0}': entry 'scene_path'" +
+				" is not of type String".format([file]))
+		return null
 	config.scene_path = result.result.scene_path
 
 	if not result.result.has("type"):
-		print("Error in file '" + file + "': type entry missing")
-		return
+		push_error("Error in file '{0}': entry 'type' missing".format([file]))
+		return null
 
 	config.type = result.result.type
 
 	if result.result.has("image_path"):
-		config.image_path = result.result.image_path
+		if result.result.image_path is String:
+			config.image_path = result.result.image_path
+		else:
+			push_error("Error in file '{0}': entry 'image_path'" +
+					" is not of type String".format([file]))
 
 	if result.result.has("translation_directory"):
-		config.translation_directory = result.result.translation_directory
+		var translation_directory = result.result.translation_directory
+		if translation_directory is String:
+			config.translation_directory = translation_directory
+		else:
+			push_error("Error in file '{0}': entry 'translation_directory'" +
+					" is not a String. Ignoring".format([file]))
 
 	if result.result.has("description"):
-		config.description = result.result.description
-	if result.result.has("used_controls"):
-		config.used_controls = result.result.used_controls
+		var description = result.result.description
+		if description is String or description is Dictionary:
+			config.description = description
+		else:
+			push_error("Error in file '{0}': entry 'description'" +
+					" is neither a String nor a dictionary. Ignoring".format([
+						file]))
 
+	if result.result.has("controls"):
+		var controls = result.result.controls
+		if controls is Dictionary:
+			var valid = true
+			for key in controls.keys():
+				var value = controls[key]
+				if not key is String:
+					valid = false
+					push_error("Error in file '{0} in entry 'controls':" + 
+							" dictionary key '{1}' is not a string".format([
+								file, str(key)]))
+				if not value is String:
+					valid = false
+					push_error("Error in file '{0}' in entry 'controls':" +
+							" dictionary value '{1}' is not a string".format([
+								file, str(value)]))
+			if valid:
+				config.controls = result.result.controls
+		else:
+			push_error("Error in file '{0}': entry 'controls'" +
+					" is not a dictionary".format([file]))
 	return config
-
-func next_element(parser, parent_element_name):
-	# There is currently now do-while in gdscript :(
-	if parser.read() != OK:
-		return false
-
-	while parser.get_node_type() != XMLParser.NODE_ELEMENT:
-		if parser.get_node_type() == XMLParser.NODE_ELEMENT_END and parser.get_node_name() == parent_element_name:
-			# The element was closed
-			return false
-
-		if parser.read() != OK:
-			return false
-
-	return true
-
-func parse_xml_file(file: String):
-	var config := MinigameConfigFile.new()
-	config.file = file
-
-	var parser := XMLParser.new()
-	parser.open(file)
-	while parser.get_node_name() != "minigame":
-		next_element(parser, "")
-
-	if not parser.has_attribute("name"):
-		return
-
-	config.name = parser.get_named_attribute_value("name")
-
-	if not parser.has_attribute("scene_path"):
-		return
-
-	config.scene_path = parser.get_named_attribute_value("scene_path")
-
-	if not parser.has_attribute("type"):
-		return
-
-	config.type = parser.get_named_attribute_value("type").split(",", false)
-
-	# Optional.
-	if parser.has_attribute("image_path"):
-		config.image_path = parser.get_named_attribute_value("image_path")
-
-	if parser.has_attribute("translation_directory"):
-		config.translation_directory =\
-				parser.get_named_attribute_value("translation_directory")
-
-	while next_element(parser, "minigame"):
-		match parser.get_node_name():
-			"description":
-				while next_element(parser, "description"):
-					var name: String = parser.get_node_name()
-					parser.read()
-					config.description[name] = parser.get_node_data()
-			"used_controls":
-				while next_element(parser, "used_controls"):
-					if parser.get_node_name() != "control":
-						continue
-
-					var control_name: String =\
-							parser.get_named_attribute_value("name")
-
-					config.used_controls[control_name] = {}
-					while next_element(parser, "control"):
-						var language: String = parser.get_node_name()
-						parser.read()
-						config.used_controls[control_name][language] =\
-								parser.get_node_data()
-
-	return config
-
-func parse_file(file: String):
-	match file.get_extension():
-		"json":
-			return parse_json_file(file)
-		"xml":
-			return parse_xml_file(file)
 
 # Utility function that should not be called use
 # get_random_1v3/get_random_2v2/get_random_duel/get_random_ffa/get_random_nolok/get_random_gnu.

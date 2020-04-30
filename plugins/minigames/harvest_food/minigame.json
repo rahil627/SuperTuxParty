@@ -1,21 +1,13 @@
 {
-    "name": "Harvest Food",
+    "name": "MINIGAME_NAME",
     "scene_path" : "res://plugins/minigames/harvest_food/minigame.tscn",
     "type": ["FFA", "2v2", "Duel"],
     "image_path": "res://plugins/minigames/harvest_food/screenshot.png",
     "translation_directory": "res://plugins/minigames/harvest_food/translations",
 
-    "description" : {
-        "en": "The players select a fruit until the time is up. Every player that has selected a healthy fruit gets a point. The catch is: One of those fruits is rotten and gives no points.\n\nThe player that gets the most non-rotten plants wins!",
-        "de": "Jeder Spieler wählt eine der Pflanzen aus, bevor die Zeit ausläuft. Für jede gesammelte Pflanze gibt es einen Punkt.\nJedoch Vorsicht: Eine der Pflanzen ist verrottet und bringt keine Punkte.\n\nDer Spieler, der die meisten gesunden Pflanzen sammelt, gewinnt!",
-        "pt_BR": "Os jogadores selecionam uma fruta até que o tempo acabe. Todo jogador que selecionou uma fruta saudável ganha um ponto. Mas atenção: Uma destas frutas está podre e não dará nenhum ponto.\n\nO jogador que conseguir mais plantas saudáveis ganha!"
-    },
+    "description" : "MINIGAME_DESCRIPTION",
 
-    "used_controls": {
-        "action1": {
-            "en": "Jump",
-            "de": "Springen",
-            "pt_BR": "Pular"
-        }
+    "controls": {
+        "action1": "MINIGAME_ACTION_JUMP"
     }
 }

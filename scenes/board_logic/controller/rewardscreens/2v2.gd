@@ -9,7 +9,7 @@ func _ready():
 	for p_id in Global.minigame_summary.minigame_teams[placement]:
 		var node = get_node("Player" + var2str(i))
 		var character = Global.players[p_id - 1].character
-		var new_model = Global.character_loader.load_character(character)
+		var new_model = PluginSystem.character_loader.load_character(character)
 		new_model.name = "Player" + var2str(i + 1)
 
 		new_model.transform = node.global_transform
@@ -25,7 +25,7 @@ func _ready():
 	for p_id in Global.minigame_summary.minigame_teams[1 - placement]:
 		var node = get_node("Player"+var2str(i))
 		var character = Global.players[p_id - 1].character
-		var new_model = Global.character_loader.load_character(character)
+		var new_model = PluginSystem.character_loader.load_character(character)
 		new_model.name = "Player" + var2str(i + 1)
 
 		new_model.transform = node.global_transform

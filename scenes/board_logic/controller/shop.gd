@@ -6,12 +6,12 @@ onready var controller = get_tree().get_nodes_in_group("Controller")[0]
 
 func generate_shop_items(space, items: Array, icons: Array, cost: Array) ->\
 		void:
-	var buyable_item_info: Array = Global.item_loader.get_buyable_items()
+	var buyable_item_info: Array = PluginSystem.item_loader.get_buyable_items()
 
 	var buyable_items := []
 
 	for item in buyable_item_info:
-		buyable_items.append(Global.item_loader.get_item_path(item))
+		buyable_items.append(item)
 
 	for file in space.custom_items:
 		buyable_items.erase(file)

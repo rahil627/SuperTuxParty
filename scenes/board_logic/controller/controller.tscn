@@ -426,12 +426,10 @@ mouse_filter = 2
 theme = ExtResource( 2 )
 
 [node name="PlayerInfo1" type="VBoxContainer" parent="Screen"]
-editor/display_folded = true
 margin_right = 186.0
 margin_bottom = 232.0
 
 [node name="Name" type="HBoxContainer" parent="Screen/PlayerInfo1"]
-editor/display_folded = true
 margin_right = 186.0
 margin_bottom = 72.0
 custom_constants/separation = 20
@@ -452,7 +450,6 @@ custom_fonts/font = SubResource( 1 )
 text = "1"
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo1"]
-editor/display_folded = true
 margin_top = 76.0
 margin_right = 186.0
 margin_bottom = 134.0
@@ -471,7 +468,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "0"
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo1"]
-editor/display_folded = true
 margin_top = 138.0
 margin_right = 186.0
 margin_bottom = 196.0
@@ -490,7 +486,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "0"
 
 [node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo1"]
-editor/display_folded = true
 margin_top = 200.0
 margin_right = 186.0
 margin_bottom = 232.0
@@ -516,7 +511,6 @@ rect_min_size = Vector2( 32, 32 )
 expand = true
 
 [node name="PlayerInfo2" type="VBoxContainer" parent="Screen"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -186.0
@@ -524,7 +518,6 @@ margin_bottom = 232.0
 grow_horizontal = 0
 
 [node name="Name" type="HBoxContainer" parent="Screen/PlayerInfo2"]
-editor/display_folded = true
 margin_right = 186.0
 margin_bottom = 72.0
 custom_constants/separation = 20
@@ -546,7 +539,6 @@ text = "Player 2"
 align = 2
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo2"]
-editor/display_folded = true
 margin_top = 76.0
 margin_right = 186.0
 margin_bottom = 134.0
@@ -567,7 +559,6 @@ texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo2"]
-editor/display_folded = true
 margin_top = 138.0
 margin_right = 186.0
 margin_bottom = 196.0
@@ -588,7 +579,6 @@ texture = ExtResource( 6 )
 stretch_mode = 4
 
 [node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo2"]
-editor/display_folded = true
 margin_top = 200.0
 margin_right = 186.0
 margin_bottom = 232.0
@@ -614,7 +604,6 @@ rect_min_size = Vector2( 32, 32 )
 expand = true
 
 [node name="PlayerInfo3" type="VBoxContainer" parent="Screen"]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -232.0
@@ -623,7 +612,6 @@ grow_vertical = 0
 alignment = 2
 
 [node name="Name" type="HBoxContainer" parent="Screen/PlayerInfo3"]
-editor/display_folded = true
 margin_right = 186.0
 margin_bottom = 72.0
 custom_constants/separation = 20
@@ -645,7 +633,6 @@ text = "3"
 valign = 2
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo3"]
-editor/display_folded = true
 margin_top = 76.0
 margin_right = 186.0
 margin_bottom = 134.0
@@ -664,7 +651,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "0"
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo3"]
-editor/display_folded = true
 margin_top = 138.0
 margin_right = 186.0
 margin_bottom = 196.0
@@ -683,7 +669,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "0"
 
 [node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo3"]
-editor/display_folded = true
 margin_top = 200.0
 margin_right = 186.0
 margin_bottom = 232.0
@@ -709,7 +694,6 @@ rect_min_size = Vector2( 32, 32 )
 expand = true
 
 [node name="PlayerInfo4" type="VBoxContainer" parent="Screen"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -721,7 +705,6 @@ grow_vertical = 0
 alignment = 2
 
 [node name="Name" type="HBoxContainer" parent="Screen/PlayerInfo4"]
-editor/display_folded = true
 margin_right = 186.0
 margin_bottom = 72.0
 grow_vertical = 0
@@ -745,7 +728,6 @@ text = "Player 4"
 align = 2
 
 [node name="Cookies" type="HBoxContainer" parent="Screen/PlayerInfo4"]
-editor/display_folded = true
 margin_top = 76.0
 margin_right = 186.0
 margin_bottom = 134.0
@@ -766,7 +748,6 @@ texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="Cakes" type="HBoxContainer" parent="Screen/PlayerInfo4"]
-editor/display_folded = true
 margin_top = 138.0
 margin_right = 186.0
 margin_bottom = 196.0
@@ -787,7 +768,6 @@ texture = ExtResource( 6 )
 stretch_mode = 4
 
 [node name="Items" type="HBoxContainer" parent="Screen/PlayerInfo4"]
-editor/display_folded = true
 margin_top = 200.0
 margin_right = 186.0
 margin_bottom = 232.0
@@ -837,7 +817,6 @@ custom_fonts/font = ExtResource( 3 )
 align = 1
 
 [node name="Splash" type="AnimationPlayer" parent="Screen"]
-editor/display_folded = true
 root_node = NodePath("Background")
 anims/hide = SubResource( 2 )
 anims/show = SubResource( 3 )
@@ -876,7 +855,6 @@ custom_fonts/font = SubResource( 4 )
 text = "CONTEXT_LABEL_YOUR_TURN"
 
 [node name="Debug" type="WindowDialog" parent="Screen"]
-editor/display_folded = true
 margin_top = 20.0
 margin_right = 512.0
 margin_bottom = 256.0
@@ -884,7 +862,6 @@ window_title = "Debug"
 script = ExtResource( 9 )
 
 [node name="Row1" type="HBoxContainer" parent="Screen/Debug"]
-editor/display_folded = true
 anchor_right = 1.0
 margin_bottom = 40.0
 
@@ -912,7 +889,6 @@ custom_fonts/font = ExtResource( 7 )
 text = "Add cakes"
 
 [node name="Row2" type="HBoxContainer" parent="Screen/Debug"]
-editor/display_folded = true
 anchor_right = 1.0
 margin_top = 40.0
 margin_bottom = 80.0
@@ -940,7 +916,6 @@ custom_fonts/font = ExtResource( 7 )
 text = "Give item"
 
 [node name="Row3" type="HBoxContainer" parent="Screen/Debug"]
-editor/display_folded = true
 anchor_right = 1.0
 margin_top = 80.0
 margin_bottom = 120.0
@@ -953,7 +928,6 @@ custom_fonts/font = ExtResource( 7 )
 text = "Move"
 
 [node name="List" type="WindowDialog" parent="Screen/Debug"]
-editor/display_folded = true
 margin_left = 354.0
 margin_top = 130.0
 margin_right = 986.0
@@ -965,19 +939,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Minigames" type="VBoxContainer" parent="Screen/Debug/List"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TabContainer" type="TabContainer" parent="Screen/Debug/List/Minigames"]
-editor/display_folded = true
 margin_right = 632.0
 margin_bottom = 403.0
 tab_align = 0
 
 [node name="Duel" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -992,7 +963,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="1v3" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1008,7 +978,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="2v2" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1024,7 +993,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="FFA" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1040,7 +1008,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="NolokSolo" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1056,7 +1023,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="NolokCoop" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1072,7 +1038,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="GnuSolo" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1088,7 +1053,6 @@ margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 
 [node name="GnuCoop" type="ScrollContainer" parent="Screen/Debug/List/Minigames/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1108,7 +1072,6 @@ visible = false
 anchor_right = 1.0
 
 [node name="Inputs" type="VBoxContainer" parent="Screen/Debug/List"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 
@@ -1133,14 +1096,12 @@ text = "Ok"
 can_save_game = true
 
 [node name="MinigameTypeAnimation" type="AnimationPlayer" parent="Screen"]
-editor/display_folded = true
 anims/1v3 = SubResource( 5 )
 anims/2v2 = SubResource( 6 )
 anims/Duel = SubResource( 7 )
 anims/FFA = SubResource( 8 )
 
 [node name="Root" type="Control" parent="Screen/MinigameTypeAnimation"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1238,7 +1199,6 @@ text = "CONTEXT_LABEL_ROLL"
 [node name="ItemSelection" parent="Screen" instance=ExtResource( 14 )]
 
 [node name="DuelReward" type="Control" parent="Screen"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1265,7 +1225,6 @@ custom_fonts/font = ExtResource( 3 )
 align = 1
 
 [node name="GNUSelection" type="ColorRect" parent="Screen"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1278,7 +1237,6 @@ margin_bottom = 36.5
 color = Color( 0.521569, 0, 0, 1 )
 
 [node name="Content" type="Control" parent="Screen/GNUSelection"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1289,7 +1247,6 @@ margin_right = 150.0
 margin_bottom = 36.5
 
 [node name="Title" type="Label" parent="Screen/GNUSelection/Content"]
-editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 29.0
 text = "CONTEXT_GNU_ACTION_TYPE"
@@ -1314,7 +1271,6 @@ clip_text = true
 anims/show = SubResource( 9 )
 
 [node name="NolokSelection" type="ColorRect" parent="Screen"]
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1327,7 +1283,6 @@ margin_bottom = 36.5
 color = Color( 0.521569, 0, 0, 1 )
 
 [node name="Content" type="Control" parent="Screen/NolokSelection"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1338,7 +1293,6 @@ margin_right = 150.0
 margin_bottom = 36.5
 
 [node name="Title" type="Label" parent="Screen/NolokSelection/Content"]
-editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 29.0
 text = "CONTEXT_NOLOK_ACTION_TYPE"

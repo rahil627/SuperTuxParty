@@ -1,34 +1,16 @@
 {
-    "name": "Haunted Dreams",
+    "name": "MINIGAME_NAME",
     "scene_path" : "res://plugins/minigames/haunted_dreams/minigame.tscn",
     "type": ["GnuCoop"],
     "image_path": "res://plugins/minigames/haunted_dreams/screenshot.png",
+	"translation_directory": "res://plugins/minigames/haunted_dreams/translations",
 
-    "description" : {
-        "en": "The players must protect the child's bed from ghosts.",
-        "de": "Die Spieler müssen das Bett des Kindes vor Geistern schützen.",
-    },
+    "description" : "MINIGAME_DESCRIPTION",
 
-    "used_controls": {
-        "up" : {
-            "en": "Move up",
-            "de": "Nach oben bewegen",
-            "pt_BR": "Mover para cima"
-        },
-        "left": {
-            "en": "Move left",
-            "de": "Nach links bewegen",
-            "pt_BR": "Mover para a esquerda"
-        },
-        "down": {
-            "en": "Move down",
-            "de": "Nach unten bewegen",
-            "pt_BR": "Mover para baixo"
-        },
-        "right": {
-            "en": "Move right",
-            "de": "Nach rechts bewegen",
-            "pt_BR": "Mover para a direita"
-        },
+    "controls": {
+        "up" : "MINIGAME_ACTION_UP",
+        "left": "MINIGAME_ACTION_LEFT",
+        "down": "MINIGAME_ACTION_DOWN",
+        "right": "MINIGAME_ACTION_RIGHT",
     }
 }

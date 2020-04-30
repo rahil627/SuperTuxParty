@@ -14,6 +14,15 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "MINIGAME_NAME"
+msgstr "Hürdenlauf"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Die Spieler nehmen an einem Hindernislauf teil.\n\nLass dich nicht von den Hindernissen treffen! Der letzte, der übrig ist, gewinnt."
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Springen"
+
 msgid "HURDLE_PLAYER_WINS_MSG"
 msgstr "%s gewinnt!"
 

@@ -14,6 +14,24 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "MINIGAME_NAME"
+msgstr "Knock Off"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "O objetivo do jogo é tentar derrubar todos os oponentes para fora do iceberg.\nA última pessoa restante vence!"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Mover para cima"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Mover para baixo"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Mover para a esquerda"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Mover para a direita"
+
 msgid "KNOCK_OFF_PLAYER_WINS_MSG"
 msgstr "%s vence!"
 

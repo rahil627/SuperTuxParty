@@ -14,6 +14,33 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "MINIGAME_NAME"
+msgstr "Escape from Lava"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Players race against each other to reach the top, while the lava_1v3 is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nThe first player that makes it safe to the top wins!"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Move Up"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Move Down"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Move Left"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Move Right"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_ONE"
+msgstr "Obstruct door 1 - Solo player only"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_TWO"
+msgstr "Obstruct door 2 - solo player only"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_THREE"
+msgstr "Obstruct door 3 - solo player only"
+
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Finish!"
 

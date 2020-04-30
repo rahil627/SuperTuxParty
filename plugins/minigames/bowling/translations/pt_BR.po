@@ -14,6 +14,27 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "MINIGAME_DESCRIPTION"
+msgstr "O jogador solo tenta derrubar todos os outros jogadores da plataforma.\nSe ele conseguir, ele vence. Se o tempo acabar, o grupo vence."
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Mover para cima"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Mover para baixo"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Mover para a esquerda"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Mover para a direita"
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Pular"
+
+msgid "MINIGAME_ACTION_THROW"
+msgstr "Lançar bola - Somente o jogador solo"
+
 msgid "BOWLING_FINISH_MSG"
 msgstr "Acabou!"
 

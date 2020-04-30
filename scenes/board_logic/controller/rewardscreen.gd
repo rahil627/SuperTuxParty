@@ -3,7 +3,7 @@ extends Spatial
 func _ready():
 	for i in range(Global.amount_of_players):
 		var character = Global.players[i].character
-		var new_model = Global.character_loader.load_character(character)
+		var new_model = PluginSystem.character_loader.load_character(character)
 		new_model.name = "Player" + var2str(i+1)
 		
 		add_child(new_model)
