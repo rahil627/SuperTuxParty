@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/kdevalley.dae-1d2e9dbbb74ea2d9ed807df328224a9f.scn"
+path="res://.import/kdevalley.escn-4bec18f6d81d3b6840f96f653ed6a02d.scn"
 
 [deps]
 
-source_file="res://plugins/boards/KDEValley/landscape/kdevalley.dae"
-dest_files=[ "res://.import/kdevalley.dae-1d2e9dbbb74ea2d9ed807df328224a9f.scn" ]
+source_file="res://plugins/boards/KDEValley/landscape/kdevalley.escn"
+dest_files=[ "res://.import/kdevalley.escn-4bec18f6d81d3b6840f96f653ed6a02d.scn" ]
 
 [params]
 
@@ -24,6 +24,7 @@ meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15

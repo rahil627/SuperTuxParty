@@ -226,7 +226,7 @@ Copyright © 2019 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/boards/KDEValley/landscape
-### kdevalley.blend | kdevalley.dae
+### kdevalley.blend | kdevalley.escn
 
 Copyright © Florian Kothmeier
 
