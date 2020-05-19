@@ -1,39 +1,16 @@
 {
-    "name": "Dungeon Parkour",
+    "name": "MINIGAME_NAME",
     "scene_path" : "res://plugins/minigames/dungeon_parkour/minigame.tscn",
     "type": ["NolokSolo"],
     "image_path": "res://plugins/minigames/dungeon_parkour/screenshot.png",
 
-    "description" : {
-        "en": "Jump and Run your way to the finish line",
-				"de": "Erreiche das Ziel in diesem Jump and Run minigame"
-    },
+    "description" : "MINIGAME_DESCRIPTION",
 
-    "used_controls": {
-        "up": {
-            "en": "Move up",
-            "de": "Nach oben bewegen",
-            "pt_BR": "Mover para cima",
-        },
-        "left": {
-            "en": "Move left",
-            "de": "Nach links bewegen",
-            "pt_BR": "Mover para a esquerda"
-        },
-        "down": {
-            "en": "Move down",
-            "de": "Nach unten bewegen",
-            "pt_BR": "Mover para baixo"
-        },
-        "right": {
-            "en": "Move right",
-            "de": "Nach rechts bewegen",
-            "pt_BR": "Mover para a direita"
-        },
-        "action1": {
-            "en": "Jump",
-            "de": "Springen",
-            "pt_BR": "Pular"
-        },
+    "controls": {
+        "up": "MINIGAME_ACTION_UP"
+        "left": "MINIGAME_ACTION_LEFT"
+        "down": "MINIGAME_ACTION_DOWN"
+        "right": "MINIGAME_ACTION_RIGHT"
+        "action1": "MINIGAME_ACTION_JUMP"
     }
 }

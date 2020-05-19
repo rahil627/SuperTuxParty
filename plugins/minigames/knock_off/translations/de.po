@@ -16,6 +16,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.0.2\n"
 
+msgid "MINIGAME_NAME"
+msgstr "Knock Off"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Die Spieler versuchen sich gegenseitig von der Plattform zu stoßen.\nDer letzte, der noch übrig ist, gewinnt!"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Nach oben bewegen"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Nach unten bewegen"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Nach links bewegen"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Nach rechts bewegen"
+
 msgid "KNOCK_OFF_PLAYER_WINS_MSG"
 msgstr "{player} gewinnt!"
 

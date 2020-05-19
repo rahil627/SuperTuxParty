@@ -62,14 +62,6 @@ const LOADING_SCREEN = preload("res://scenes/menus/loading_screen.tscn")
 
 const MINIGAME_TEAM_COLORS = [Color(1, 0, 0), Color(0, 0, 1)]
 
-var plugin_system: Object = preload("res://scripts/plugin_system.gd").new()
-
-var board_loader: Object = preload("res://scripts/board_loader.gd").new()
-var minigame_loader: Object = preload("res://scripts/minigame_loader.gd").new()
-var character_loader: Object =\
-		preload("res://scripts/character_loader.gd").new()
-var item_loader: Object = preload("res://scripts/item_loader.gd").new()
-
 var savegame_loader := SaveGameLoader.new()
 
 # linear, 1st: 15, 2nd: 10, 3rd: 5, 4th: 0
@@ -325,7 +317,7 @@ func _load_player(player: Node, state: PlayerState) -> void:
 	var wants_shape := player.has_node("Shape")
 	
 	if wants_model:
-		var model: Spatial = character_loader.load_character(character)
+		var model: Spatial = PluginSystem.character_loader.load_character(character)
 		model.set_name("Model")
 
 		var shape: Spatial = model.get_node_or_null("Shape")
@@ -370,7 +362,7 @@ func _goto_scene_minigame_callback(s: PackedScene, _arg):
 			_load_player(player, players[player_id - 1])
 
 			if minigame_state.minigame_type == MINIGAME_TYPES.TWO_VS_TWO:
-				var shape = load(character_loader.get_collision_shape_path(players[player_id - 1].character))
+				var shape = load(PluginSystem.character_loader.get_collision_shape_path(players[player_id - 1].character))
 				var bbox : AABB = Utility.get_aabb_from_shape(shape)
 
 				var indicator = preload(\
@@ -432,7 +424,7 @@ func load_board_from_savegame(savegame) -> void:
 	cake_space = savegame.cake_space
 	if savegame.current_minigame:
 		minigame_state = MinigameState.new()
-		minigame_state.current_minigame = minigame_loader.parse_file(savegame.current_minigame)
+		minigame_state.current_minigame = PluginSystem.minigame_loader.parse_file(savegame.current_minigame)
 		minigame_state.minigame_type = int(savegame.minigame_type)
 		minigame_state.minigame_teams = savegame.minigame_teams
 		for team in minigame_state.minigame_teams:
@@ -450,12 +442,9 @@ func load_board_from_savegame(savegame) -> void:
 
 	_goto_scene_board()
 
-# Change scene to one of the mini-games.
-func goto_minigame(minigame_state) -> void:
-	self.minigame_state = minigame_state
-	
+func load_minigame_translations(minigame_config) -> void:
 	var dir := Directory.new()
-	dir.open(minigame_state.minigame_config.translation_directory)
+	dir.open(minigame_config.translation_directory)
 	dir.list_dir_begin(true)
 	while true:
 		var file_name: String = dir.get_next()
@@ -463,9 +452,13 @@ func goto_minigame(minigame_state) -> void:
 			break
 
 		if file_name.ends_with(".translation") or file_name.ends_with(".po"):
-			_load_interactive(dir.get_current_dir() + "/" + file_name, self, "_install_translation_minigame", file_name)
+			_install_translation_minigame(load(dir.get_current_dir() + "/" + file_name), file_name)
 
 	dir.list_dir_end()
+
+# Change scene to one of the mini-games.
+func goto_minigame(minigame_state) -> void:
+	self.minigame_state = minigame_state
 
 	# Current player nodes.
 	var r_players = get_tree().get_nodes_in_group("players")

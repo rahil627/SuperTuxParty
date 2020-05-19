@@ -1,18 +1,12 @@
 {
-    "name": "Boat Rally",
+    "name": "MINIGAME_NAME",
     "scene_path" : "res://plugins/minigames/boat_rally/minigame.tscn",
     "type": ["NolokCoop"],
     "image_path": "res://plugins/minigames/boat_rally/screenshot.png",
 
-    "description" : {
-        "en": "",
-    },
+    "description" : "MINIGAME_DESCRIPTION",
 
-    "used_controls": {
-				"action1": {
-						"en": "Paddle",
-						"de": "Paddeln",
-						"fr": "Pagayer"
-				}
+    "controls": {
+		"action1": "MINIGAME_ACTION_PADDLE",
     }
 }

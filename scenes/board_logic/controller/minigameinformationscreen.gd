@@ -7,10 +7,9 @@ func setup_character_viewport() -> void:
 	for team in state.minigame_teams:
 		for player_id in team:
 			var player =\
-					$Characters/Viewport.get_node(
-					"Player" + var2str(i))
+					$Characters/Viewport.get_node("Player" + var2str(i))
 			var character = Global.players[player_id - 1].character
-			var new_model = Global.character_loader.load_character(character)
+			var new_model = PluginSystem.character_loader.load_character(character)
 
 			new_model.name = player.name
 			new_model.translation = player.translation
@@ -41,18 +40,20 @@ func minigame_has_player(id: int) -> bool:
 
 	return false
 
-func _get_translation(dictionary: Dictionary) -> String:
+func _get_translation(source) -> String:
+	if source is String:
+		return tr(source)
 	var locale: String = TranslationServer.get_locale()
 
-	if dictionary.has(locale):
-		return dictionary.get(locale)
-	elif dictionary.has(locale.substr(0, 2)):
+	if source.has(locale):
+		return source.get(locale)
+	elif source.has(locale.substr(0, 2)):
 		# Check if, e.g. de is present if locale is de_DE.
-		return dictionary.get(locale.substr(0, 2))
-	elif dictionary.has("en"):
-		return dictionary.en
+		return source.get(locale.substr(0, 2))
+	elif source.has("en"):
+		return source.en
 	else:
-		var values = dictionary.values()
+		var values = source.values()
 		if values.size() > 0:
 			return values[0]
 
@@ -71,13 +72,14 @@ func _load_content(minigame, players):
 			continue
 
 		label.bbcode_text = ""
-		for action in minigame.used_controls:
+		for action in minigame.controls:
 			label.append_bbcode(ControlHelper.get_button_name(
 					InputMap.get_action_list("player" + str(i) + "_" +
 					action)[0]) + " - " + _get_translation(
-					minigame.used_controls[action]) + "\n")
+					minigame.controls[action]) + "\n")
 
 func show_minigame_info(state, players: Array) -> void:
+	Global.load_minigame_translations(state.minigame_config)
 	self.state = state
 	setup_character_viewport()
 

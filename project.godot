@@ -40,6 +40,7 @@ config/icon="res://assets/icons/icon-smallest.png"
 [autoload]
 
 Utility="*res://scripts/utility.gd"
+PluginSystem="*res://scripts/plugin_system.gd"
 Global="*res://scripts/global.gd"
 ControlHelper="*res://scripts/control_helper.gd"
 UISound="*res://scenes/sound_button/ui_sound.tscn"

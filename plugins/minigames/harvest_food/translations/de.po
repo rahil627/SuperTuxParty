@@ -16,5 +16,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.0.2\n"
 
+msgid "MINIGAME_NAME"
+msgstr "Harvest Food"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Jeder Spieler wählt eine der Pflanzen aus, bevor die Zeit ausläuft. Für jede gesammelte Pflanze gibt es einen Punkt.\nJedoch Vorsicht: Eine der Pflanzen ist verrottet und bringt keine Punkte.\n\nDer Spieler, der die meisten gesunden Pflanzen sammelt, gewinnt!"
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Springen"
+
 msgid "HARVEST_FOOD_SELECT_ROTTEN_PLANT_MSG"
 msgstr "{player} hat die verdorbene Pflanze gewählt!"

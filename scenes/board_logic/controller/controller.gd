@@ -182,7 +182,7 @@ func _on_Roll_pressed() -> void:
 		var player = players[player_turn - 1]
 		var character = Global.players[player_turn - 1].character
 		$Screen/Splash/Background/Player.texture =\
-				Global.character_loader.load_character_splash(character)
+				PluginSystem.character_loader.load_character_splash(character)
 		$Screen/Splash.play("show")
 
 		if player.is_ai:
@@ -305,13 +305,13 @@ func roll(steps = null) -> void:
 		match [blue_team.size(), red_team.size()]:
 			[4, 0]:
 				state.minigame_type = Global.MINIGAME_TYPES.FREE_FOR_ALL
-				state.minigame_config = Global.minigame_loader.get_random_ffa()
+				state.minigame_config = PluginSystem.minigame_loader.get_random_ffa()
 			[3, 1]:
 				state.minigame_type = Global.MINIGAME_TYPES.ONE_VS_THREE
-				state.minigame_config = Global.minigame_loader.get_random_1v3()
+				state.minigame_config = PluginSystem.minigame_loader.get_random_1v3()
 			[2, 2]:
 				state.minigame_type = Global.MINIGAME_TYPES.TWO_VS_TWO
-				state.minigame_config = Global.minigame_loader.get_random_2v2()
+				state.minigame_config = PluginSystem.minigame_loader.get_random_2v2()
 
 		Global.turn += 1
 		player_turn = 1
@@ -422,7 +422,7 @@ func land_on_space(player):
 		NodeBoard.NODE_TYPES.YELLOW:
 			var rewards: Array = Global.MINIGAME_DUEL_REWARDS.values()
 
-			var minigame = Global.minigame_loader.get_random_duel()
+			var minigame = PluginSystem.minigame_loader.get_random_duel()
 
 			var state = Global.MinigameState.new()
 			state.minigame_type = Global.MINIGAME_TYPES.DUEL
@@ -464,14 +464,14 @@ func land_on_space(player):
 					$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_MINIGAME_SOLO"
 					state = Global.MinigameState.new()
 					state.minigame_type = Global.MINIGAME_TYPES.NOLOK_SOLO
-					state.minigame_config = Global.minigame_loader.get_random_nolok_solo()
+					state.minigame_config = PluginSystem.minigame_loader.get_random_nolok_solo()
 					players.append(player.player_id)
 				Global.NOLOK_ACTION_TYPES.COOP_MINIGAME:
 					dialog_text = tr("CONTEXT_NOLOK_MINIGAME_COOP_MODERATION")
 					$Screen/NolokSelection/Content/Selection.text = "CONTEXT_NOLOK_MINIGAME_COOP"
 					state = Global.MinigameState.new()
 					state.minigame_type = Global.MINIGAME_TYPES.NOLOK_COOP
-					state.minigame_config = Global.minigame_loader.get_random_nolok_coop()
+					state.minigame_config = PluginSystem.minigame_loader.get_random_nolok_coop()
 					for player in self.players:
 						players.append(player.player_id)
 				Global.NOLOK_ACTION_TYPES.BOARD_EFFECT:
@@ -525,13 +525,13 @@ func land_on_space(player):
 			
 			match type:
 				Global.GNU_ACTION_TYPES.SOLO_MINIGAME:
-					var items: Array = Global.item_loader.get_buyable_items()
-					var reward: Item = load(Global.item_loader.get_item_path(items[randi() % len(items)])).new()
+					var items: Array = PluginSystem.item_loader.get_buyable_items()
+					var reward: Item = load(items[randi() % len(items)]).new()
 					dialog_text = tr("CONTEXT_GNU_MINIGAME_SOLO_MODERATION").format({"reward": reward.name})
 					$Screen/GNUSelection/Content/Selection.text = "CONTEXT_GNU_MINIGAME_SOLO"
 
 					state.minigame_type = Global.MINIGAME_TYPES.GNU_SOLO
-					state.minigame_config = Global.minigame_loader.get_random_gnu_solo()
+					state.minigame_config = PluginSystem.minigame_loader.get_random_gnu_solo()
 
 					Global.minigame_reward = Global.MinigameReward.new()
 					Global.minigame_reward.gnu_solo_item_reward = reward
@@ -541,7 +541,7 @@ func land_on_space(player):
 					dialog_text = tr("CONTEXT_GNU_MINIGAME_COOP_MODERATION")
 					$Screen/GNUSelection/Content/Selection.text = "CONTEXT_GNU_MINIGAME_COOP"
 					state.minigame_type = Global.MINIGAME_TYPES.GNU_COOP
-					state.minigame_config = Global.minigame_loader.get_random_gnu_coop()
+					state.minigame_config = PluginSystem.minigame_loader.get_random_gnu_coop()
 					for player in self.players:
 						players.push_back(player.player_id)
 
@@ -760,7 +760,7 @@ func show_minigame_animation(state) -> void:
 	for team in state.minigame_teams:
 		for player_id in team:
 			var character = Global.players[player_id - 1].character
-			var texture = Global.character_loader.load_character_splash(character)
+			var texture = PluginSystem.character_loader.load_character_splash(character)
 			$Screen/MinigameTypeAnimation/Root.get_node("Player" + str(i)).texture = texture
 			i += 1
 

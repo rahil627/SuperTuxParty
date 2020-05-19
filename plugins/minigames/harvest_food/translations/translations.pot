@@ -13,6 +13,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "MINIGAME_NAME"
+msgstr ""
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr ""
 
 msgid "HARVEST_FOOD_SELECT_ROTTEN_PLANT_MSG"
 msgstr ""

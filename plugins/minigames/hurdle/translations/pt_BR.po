@@ -16,5 +16,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.0.2\n"
 
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Os jogadores participam em uma corrida.\n\nNão seja atingido pelos obstáculos! O último jogador restante vence!"
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Pular"
+
 msgid "HURDLE_PLAYER_WINS_MSG"
 msgstr "{player} vence!"

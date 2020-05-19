@@ -60,8 +60,8 @@ func _ready() -> void:
 		prepare_player_states()
 
 func load_boards() -> void:
-	board_loader = Global.board_loader
-	character_loader = Global.character_loader
+	board_loader = PluginSystem.board_loader
+	character_loader = PluginSystem.character_loader
 
 	var selection_board_list := $SelectionBoard/ScrollContainer/Buttons as\
 			VBoxContainer
@@ -165,7 +165,7 @@ func _on_character_select(target: Button) -> void:
 	characters[current_player - 1] = target.get_text()
 	current_player += 1
 
-	if Global.character_loader.get_loaded_characters().size() >=\
+	if PluginSystem.character_loader.get_loaded_characters().size() >=\
 			Global.amount_of_players:
 		target.disabled = true
 

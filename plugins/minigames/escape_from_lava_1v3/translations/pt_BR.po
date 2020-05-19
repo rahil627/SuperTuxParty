@@ -14,6 +14,30 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "MINIGAME_DESCRIPTION"
+msgstr "Os jogadores correm contra uns aos outros para chegar ao topo, enquanto a lava_1v3 sobe logo abaixo.\nEles tem que percorrer por múltiplas portas. Em cada uma destas portas está trancada e não abrirá.\n O primeiro jogador que chegar ao topo são e salvo vence!"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Mover para cima"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Mover para baixo"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Mover para a esquerda"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Mover para a direita"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_ONE"
+msgstr "Obstruir porta 1 - Somente o jogador solo"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_TWO"
+msgstr "Obstruir porta 2 - Somente o jogador solo"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_THREE"
+msgstr "Obstruir porta 3 - Somente o jogador solo"
+
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Acabou!"
 

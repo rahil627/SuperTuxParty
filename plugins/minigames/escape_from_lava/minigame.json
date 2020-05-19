@@ -1,36 +1,16 @@
 {
-    "name": "Escape from lava",
+    "name": "MINIGAME_NAME",
     "scene_path": "res://plugins/minigames/escape_from_lava/minigame.tscn",
     "type": ["FFA", "2v2", "Duel"],
     "image_path": "res://plugins/minigames/escape_from_lava/screenshot.png",
     "translation_directory": "res://plugins/minigames/escape_from_lava/translations",
 
-    "description": {
-        "en": "Players race against each other to reach the top, while the lava is rising beneath.\nThey have to pass through multiple doors. One of each these doors is blocked and won't open.\nThe first player that makes it safe to the top wins!",
-        "de": "Die Spieler liefern sich ein Wettrennen.\nSie müssen mehrere Türen passieren, um nicht von der steigenden Lava verschlungen zu werden. Eine dieser Türen ist jedoch blockiert, wodurch sie sich nicht öffnen lässt.\nDer erste Spieler, der sicher am oberen Ende ankommt, gewinnt!",
-        "pt_BR": "Os jogadores correm contra uns aos outros para chegar ao topo, enquanto a lava sobe logo abaixo.\nEles tem que percorrer por múltiplas portas. Em cada uma destas portas está trancada e não abrirá.\n O primeiro jogador que chegar ao topo são e salvo vence!"
-    },
+    "description": "MINIGAME_DESCRIPTION",
 
-    "used_controls": {
-        "up" : {
-            "en": "Move up",
-            "de": "Nach oben bewegen",
-            "pt_BR": "Mover para cima"
-        },
-        "left": {
-            "en": "Move left",
-            "de": "Nach links bewegen",
-            "pt_BR": "Mover para a esquerda"
-        },
-        "down": {
-            "en": "Move down",
-            "de": "Nach unten bewegen",
-            "pt_BR": "Mover para baixo"
-        },
-        "right": {
-            "en": "Move right",
-            "de": "Nach rechts bewegen",
-            "pt_BR": "Mover para a direita"
-        },
+    "controls": {
+        "up" : "MINIGAME_ACTION_UP",
+        "left": "MINIGAME_ACTION_LEFT",
+        "down": "MINIGAME_ACTION_DOWN",
+        "right": "MINIGAME_ACTION_RIGHT"
     }
 }

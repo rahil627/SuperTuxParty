@@ -24,12 +24,12 @@ func setup():
 		
 		$List/Players.add_child(button)
 	
-	var loader = Global.minigame_loader
+	var loader = PluginSystem.minigame_loader
 	
 	for game in loader.minigames_duel:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.DUEL])
 		
@@ -38,7 +38,7 @@ func setup():
 	for game in loader.minigames_1v3:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.ONE_VS_THREE])
 		
@@ -47,7 +47,7 @@ func setup():
 	for game in loader.minigames_2v2:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.TWO_VS_TWO])
 		
@@ -56,7 +56,7 @@ func setup():
 	for game in loader.minigames_ffa:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.FREE_FOR_ALL])
 		
@@ -65,7 +65,7 @@ func setup():
 	for game in loader.minigames_nolok_solo:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK_SOLO])
 		
@@ -74,7 +74,7 @@ func setup():
 	for game in loader.minigames_nolok_coop:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK_COOP])
 		
@@ -83,7 +83,7 @@ func setup():
 	for game in loader.minigames_gnu_solo:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU_SOLO])
 		
@@ -92,16 +92,16 @@ func setup():
 	for game in loader.minigames_gnu_coop:
 		var button = Button.new()
 		
-		button.text = loader.parse_file(game).name
+		button.text = game.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU_COOP])
 		
 		$List/Minigames/TabContainer/GnuCoop/VBoxContainer.add_child(button)
 	
-	for item in Global.item_loader.get_loaded_items():
+	for item in PluginSystem.item_loader.get_loaded_items():
 		var button = Button.new()
 		
-		button.text = item
+		button.text = item.split('/')[-2]
 		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
 		button.connect("pressed", self, "_on_item_selected", [item])
 		
@@ -169,7 +169,7 @@ func _on_player_pressed(id):
 	$"../..".update_player_info()
 
 func _on_minigame_pressed(minigame, type):
-	var mg = Global.minigame_loader.parse_file(minigame)
+	var mg = PluginSystem.minigame_loader.parse_file(minigame)
 	var controller = get_tree().get_nodes_in_group("Controller")[0]
 	var state = Global.MinigameState.new()
 	state.minigame_config = mg
@@ -204,7 +204,7 @@ func _on_Item_pressed():
 	state = STATES.ADD_ITEMS
 
 func _on_item_selected(item):
-	selected_player.give_item(load(Global.item_loader.get_item_path(item)).new())
+	selected_player.give_item(load(item).new())
 	$List.hide()
 	hide()
 
