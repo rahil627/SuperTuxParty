@@ -439,13 +439,13 @@ msgstr "[color=#ff3300]{0}[/color] et [color=#33ff00]{1}[/color] !"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
-"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] et "
-"[color=#00ff88]{2}[/color] !"
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] et [color=#00ff88]{2}"
+"[/color] !"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
-"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], "
-"[color=#00ff88]{2}[/color] et [color=#ffff33]{3}[/color] !"
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], [color=#00ff88]{2}[/"
+"color] et [color=#ffff33]{3}[/color] !"
 
 msgid "CONTEXT_LABEL_CAKES"
 msgstr "Gâteau"
