@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-30 12:11+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-05-19 12:36+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/minigamesknock_off/nb_NO/>\n"
 "Language: nb_NO\n"
@@ -9,10 +9,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 msgid "KNOCK_OFF_TEAM_WINS_MSG"
 msgstr "{team}-laget har vunnet!"
 
 msgid "KNOCK_OFF_PLAYER_WINS_MSG"
 msgstr "{player} er vinneren!"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+"Skubb er et spill der hver spiller prøver å skyve alle andre motstandere av "
+"isberget.\n"
+"Siste person igjen vinner."
+
+msgid "MINIGAME_NAME"
+msgstr "Skubb"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Flytt til høyre"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Flytt til venstre"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Flytt nedover"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Flytt oppover"
