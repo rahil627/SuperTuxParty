@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/comma.png-92186da4e2d9672537dad728d1d9e503.stex"
+path="res://.import/dpad_down.png-4e855176fa8b4beab7f8dc97c25c9584.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/controls/keyboard/comma.png"
-dest_files=[ "res://.import/comma.png-92186da4e2d9672537dad728d1d9e503.stex" ]
+source_file="res://assets/textures/controls/gamepad/dpad_down.png"
+dest_files=[ "res://.import/dpad_down.png-4e855176fa8b4beab7f8dc97c25c9584.stex" ]
 
 [params]
 

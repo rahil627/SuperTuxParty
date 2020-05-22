@@ -73,10 +73,32 @@ func _load_content(minigame, players):
 
 		label.bbcode_text = ""
 		for action in minigame.controls:
-			label.append_bbcode(ControlHelper.get_button_name(
-					InputMap.get_action_list("player" + str(i) + "_" +
-					action)[0]) + " - " + _get_translation(
-					minigame.controls[action]) + "\n")
+			var action_name = "player{num}_{action}".format({"num": i, "action": action})
+			var input = InputMap.get_action_list(action_name)[0]
+			var control = ControlHelper.get_from_event(input)
+			if control is String:
+				if input is InputEventKey:
+					# There isn't a special image for all keys.
+					# For ones such as 'a' we generally impose the character
+					# over a blank texture. This doesn't work in RichTextLabels
+					# So we forge such a texture with a viewport
+					var img = load("res://scenes/board_logic/controller/inputevent_key_viewport.tscn").instance()
+					img.get_node("TextureRect/Label").text = control
+					label.add_child(img)
+					control = img.get_texture()
+				else:
+					label.add_text(control)
+			if control is Texture:
+				var image_height := 32
+				var font_height = label.get_font("normal_font").get_ascent()
+				var font := BitmapFont.new()
+				# Wrapping an image in a font allows to offset it vertically
+				# Documentation here: https://docs.godotengine.org/de/latest/tutorials/gui/bbcode_in_richtextlabel.html#image-vertical-offset
+				font.ascent = (image_height - font_height) / 2
+				label.push_font(font)
+				label.add_image(control, 0, image_height)
+				label.pop()
+			label.append_bbcode(" - " + _get_translation(minigame.controls[action]) + "\n")
 
 func show_minigame_info(state, players: Array) -> void:
 	Global.load_minigame_translations(state.minigame_config)

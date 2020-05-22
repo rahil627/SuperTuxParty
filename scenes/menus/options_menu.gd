@@ -5,8 +5,6 @@ const USER_OPTIONS_FILE = "user://options.cfg"
 var _options_file = ConfigFile.new()
 var _is_loading_options = false
 
-var control_remapper = preload("res://scenes/menus/control_remapper.gd").new(self)
-
 #warning-ignore:unused_signal
 signal quit
 
@@ -19,43 +17,18 @@ func _ready():
 				TranslationServer.get_locale_name(languages[i]), i + 1)
 		language_control.set_item_metadata(i + 1, languages[i])
 	
-	var joypad_display_types = $TabContainer/Controls/JoypadDisplayType
-	joypad_display_types.add_item(tr("MENU_LABEL_NUMBERS"), Global.JOYPAD_DISPLAY_TYPE.NUMBERS)
-	joypad_display_types.add_item(tr("MENU_LABEL_XBOX"), Global.JOYPAD_DISPLAY_TYPE.XBOX)
-	joypad_display_types.add_item(tr("MENU_LABEL_NINTENDO_DS"), Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS)
-	joypad_display_types.add_item(tr("MENU_LABEL_PLAYSTATION"), Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION)
 	load_options()
-	
-	control_remapper.controls_remapping_setup()
 
 func _input(event):
 	if get_focus_owner() != $Back:
-		if get_focus_owner() != null and $TabContainer/Controls/TabContainer.is_a_parent_of(get_focus_owner()):
-			if event.is_action_pressed("ui_focus_prev"):
-				$TabContainer/Controls/TabContainer.current_tab = ($TabContainer/Controls/TabContainer.current_tab + $TabContainer/Controls/TabContainer.get_tab_count() - 1) % $TabContainer/Controls/TabContainer.get_tab_count()
-				$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
-				get_tree().set_input_as_handled()
-			elif event.is_action_pressed("ui_focus_next"):
-				$TabContainer/Controls/TabContainer.current_tab = ($TabContainer/Controls/TabContainer.current_tab + 1) % $TabContainer/Controls/TabContainer.get_tab_count()
-				$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
-				get_tree().set_input_as_handled()
-		else:
-			if event.is_action_pressed("ui_focus_prev"):
-				$TabContainer.current_tab = ($TabContainer.current_tab + $TabContainer.get_tab_count() - 1) % $TabContainer.get_tab_count()
-				if $TabContainer.current_tab == 2:
-					$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
-				else:
-					$TabContainer.get_current_tab_control().get_child(0).grab_focus()
-				get_tree().set_input_as_handled()
-			elif event.is_action_pressed("ui_focus_next"):
-				$TabContainer.current_tab = ($TabContainer.current_tab + 1) % $TabContainer.get_tab_count()
-				if $TabContainer.current_tab == 2:
-					$TabContainer/Controls/TabContainer.get_current_tab_control().get_node("up/Button").grab_focus()
-				else:
-					$TabContainer.get_current_tab_control().get_child(0).grab_focus()
-				get_tree().set_input_as_handled()
-	
-	control_remapper._input(event)
+		if event.is_action_pressed("ui_focus_prev"):
+			$TabContainer.current_tab = ($TabContainer.current_tab + $TabContainer.get_tab_count() - 1) % $TabContainer.get_tab_count()
+			$TabContainer.get_current_tab_control().get_child(0).grab_focus()
+			get_tree().set_input_as_handled()
+		elif event.is_action_pressed("ui_focus_next"):
+			$TabContainer.current_tab = ($TabContainer.current_tab + 1) % $TabContainer.get_tab_count()
+			$TabContainer.get_current_tab_control().get_child(0).grab_focus()
+			get_tree().set_input_as_handled()
 
 func _on_Fullscreen_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
@@ -125,13 +98,6 @@ func _on_MuteUnfocus_toggled(button_pressed):
 	
 	save_option("audio", "mute_window_unfocus", button_pressed)
 
-func _on_JoypadDisplayType_item_selected(ID):
-	Global.joypad_display = ID
-	
-	control_remapper.controls_remapping_setup()
-	
-	save_option("controls", "joypad_display_type", ID)
-
 func _on_PauseUnfocus_toggled(button_pressed):
 	Global.pause_window_unfocus = button_pressed
 	
@@ -190,11 +156,10 @@ func load_options():
 	$TabContainer/Audio/MusicVolume.value = get_option_value_safely("audio", "music_volume", 0.0, -80, 0)
 	$TabContainer/Audio/EffectsVolume.value = get_option_value_safely("audio", "effects_volume", 0.0, -80, 0)
 	
-	Global.joypad_display = get_option_value_safely("controls", "joypad_display_type", Global.JOYPAD_DISPLAY_TYPE.NUMBERS, 0, Global.JOYPAD_DISPLAY_TYPE.size() - 1)
-	$TabContainer/Controls/JoypadDisplayType.select(Global.joypad_display)
-	
 	Global.pause_window_unfocus = get_option_value_safely("misc", "pause_window_unfocus", true)
 	$TabContainer/Misc/PauseUnfocus.pressed = Global.pause_window_unfocus
+	
+	$CanvasLayer/ControlRemapper.load_controls()
 	
 	_is_loading_options = false
 
@@ -206,8 +171,6 @@ func save_option(section, key, value):
 	var err = _options_file.save(USER_OPTIONS_FILE)
 	if err != OK:
 		print("Error while saving options: " + Utility.error_code_to_string(err))
-
-
 
 func _on_GraphicQuality_item_selected(ID):
 	match ID:
@@ -253,3 +216,13 @@ func _on_GraphicQuality_item_selected(ID):
 	file.set_value("rendering", "quality/shading/force_vertex_shading", ProjectSettings.get_setting("rendering/quality/shading/force_vertex_shading"))
 
 	file.save("user://render_settings.godot")
+
+func _on_change_controls_pressed(player_id: int):
+	hide()
+	$CanvasLayer/ControlRemapper.player_id = player_id
+	$CanvasLayer/ControlRemapper.show()
+
+func _on_ControlRemapper_quit():
+	show()
+	var button := $TabContainer/Controls.get_child($CanvasLayer/ControlRemapper.player_id - 1)
+	button.grab_focus()

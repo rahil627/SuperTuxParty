@@ -82,8 +82,8 @@ msgstr "Axis -"
 msgid "MENU_CONTROLS_AXIS_PLUS"
 msgstr "Axis +"
 
-msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr "Unknown Axis"
+msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
+msgstr "Unknown Axis {axis}"
 
 msgid "MENU_CONTROLS_AXIS_X_LEFT"
 msgstr "X Left"
@@ -104,7 +104,7 @@ msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Gamepad"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
-msgstr "Gamepad button"
+msgstr "Gamepad button {button}"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
 msgstr "Gamepad button 1"
@@ -235,9 +235,6 @@ msgstr "Description"
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Exit to Desktop"
 
-msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr "Joypad display names:"
-
 msgid "MENU_LABEL_LINEAR"
 msgstr "Linear"
 
@@ -280,8 +277,17 @@ msgstr "Pause when window focus is lost"
 msgid "MENU_LABEL_PLAY"
 msgstr "Play"
 
-msgid "MENU_LABEL_PLAYER"
-msgstr "Player"
+msgid "MENU_LABEL_PLAYER1"
+msgstr "Player1"
+
+msgid "MENU_LABEL_PLAYER2"
+msgstr "Player2"
+
+msgid "MENU_LABEL_PLAYER3"
+msgstr "Player3"
+
+msgid "MENU_LABEL_PLAYER4"
+msgstr "Player4"
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"

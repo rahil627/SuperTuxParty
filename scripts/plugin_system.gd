@@ -11,6 +11,7 @@ onready var item_loader = preload("res://scripts/item_loader.gd").new()
 
 func load_files_from_path(path: String, filename: Array, object: Object,
 		method: String):
+	print("load_files_from_path: " + path)
 	var dir := Directory.new()
 
 	var err: int = dir.open(path)
@@ -23,6 +24,7 @@ func load_files_from_path(path: String, filename: Array, object: Object,
 
 	while true:
 		var entry: String = dir.get_next()
+		print(entry)
 
 		if entry == "":
 			break
@@ -51,7 +53,7 @@ func read_content_packs() -> void:
 		elif not dir.current_is_dir() and (file.ends_with(".pck") or\
 				file.ends_with(".zip")):
 			if ProjectSettings.load_resource_pack(
-					PLUGIN_DIRECTORY + "/" + file, true):
+					PLUGIN_DIRECTORY + "/" + file, false):
 				print("Successfully loaded plugin: " + file)
 			else:
 				print("Error while loading plugin: " + file)
