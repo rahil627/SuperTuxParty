@@ -7,10 +7,10 @@
     "description" : "MINIGAME_DESCRIPTION",
 
     "controls": {
-        "up": "MINIGAME_ACTION_UP"
-        "left": "MINIGAME_ACTION_LEFT"
-        "down": "MINIGAME_ACTION_DOWN"
-        "right": "MINIGAME_ACTION_RIGHT"
+        "up": "MINIGAME_ACTION_UP",
+        "left": "MINIGAME_ACTION_LEFT",
+        "down": "MINIGAME_ACTION_DOWN",
+        "right": "MINIGAME_ACTION_RIGHT",
         "action1": "MINIGAME_ACTION_JUMP"
     }
 }
