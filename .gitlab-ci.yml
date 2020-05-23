@@ -1,60 +1,51 @@
 image: ioribranford/godot-docker:3.2.1
 
+.job_template: &build_base
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - build
+      - super-tux-party-sources.zip
+  only:
+    - dev@SuperTuxParty/SuperTuxParty
+    - tags
+
 stages:
   - build_and_test
   - deploy
 
 build:linux:
   stage: build_and_test
-  artifacts:
-    paths:
-      - build
+  <<: *build_base
   script:
     - mkdir build
     - godot --export "Linux/X11" "build/supertuxparty"
-  only:
-    - dev@SuperTuxParty/SuperTuxParty
-    - tags
 
 build:windows:
   stage: build_and_test
-  artifacts:
-    paths:
-      - build
+  <<: *build_base
   script:
     - mkdir build
     - godot --export "Windows Desktop" "build/Supertuxparty.exe"
-  only:
-    - dev@SuperTuxParty/SuperTuxParty
-    - tags
 
 build:osx:
   stage: build_and_test
-  artifacts:
-    paths:
-      - build
+  <<: *build_base
   script:
     - mkdir build
     - godot --export "Mac OSX" "build/supertuxparty.app"
-  only:
-    - dev@SuperTuxParty/SuperTuxParty
-    - tags
 
 build:plugins:
   stage: build_and_test
-  artifacts:
-    paths:
-      - build/plugins
+  <<: *build_base
   script:
     - mkdir -p build/plugins
     - godot --export "Resources" "build/plugins/default.pck"
-  only:
-    - dev@SuperTuxParty/SuperTuxParty
-    - tags
 
 build:sources:
   stage: build_and_test
   artifacts:
+    expire_in: 1 week
     paths:
       - super-tux-party-sources.zip
   script:
