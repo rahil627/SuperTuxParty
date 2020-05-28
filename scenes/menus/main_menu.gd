@@ -88,7 +88,7 @@ func load_characters() -> void:
 		character_list_entry.size_flags_horizontal = SIZE_EXPAND_FILL
 
 		character_list_entry.set_text(character)
-		character_list_entry.icon = character_loader.load_character_splash(character)
+		character_list_entry.icon = character_loader.load_character_icon(character)
 		character_list_entry.expand_icon = true
 		character_list_entry.connect("pressed", self, "_on_character_select",
 				[character_list_entry])

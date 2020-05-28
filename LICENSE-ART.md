@@ -290,9 +290,17 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### splash.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2020 Paulius Danelius
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+### icon.png
+
+Copyright © 2019 Néd J
+
+Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-friends-iconset-1)
+
+License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/characters/Green Tux
 ### character.escn | tux.escn
@@ -317,9 +325,19 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### splash.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2020 Paulius Danelius
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+### icon.png
+
+Copyright © 2019 Néd J
+
+Modified by Florian Kothmeier
+
+Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-friends-iconset-1)
+
+License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/characters/Beastie
 ### beastie_tex.png | beastie.blend | beastie.dae | character.escn
@@ -334,9 +352,15 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 
 ### splash.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2020 Paulius Danelius
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+### icon.png
+
+Copyright © 2020 Paulius Danelius
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/characters/Godette
 ### palette.png | godete_palette.svg | godot_chan.blend | godot_chan_one_object.blend | godot_chan.escn
@@ -351,9 +375,15 @@ License: [CC BY 3.0](https://github.com/SirRichard94/low-poly-godette/blob/maste
 
 ### splash.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2020 Paulius Danelius
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+### icon.png
+
+Copyright © 2020 Paulius Danelius
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/items/cookie_steal_trap
 ### icon.png | icon.xcf

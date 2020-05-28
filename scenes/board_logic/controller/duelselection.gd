@@ -10,7 +10,7 @@ func select(state, player, players: Array):
 	for p in players:
 		var node = get_node("Player" + str(i))
 		var character = Global.players[p.player_id - 1].character
-		var texture = PluginSystem.character_loader.load_character_splash(character)
+		var texture = PluginSystem.character_loader.load_character_icon(character)
 		node.texture_normal = texture
 
 		node.connect("focus_entered", self, "_on_focus_entered", [node])

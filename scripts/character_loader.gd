@@ -1,5 +1,6 @@
 const CHARACTER_FILENAME := "character.tscn"
 const CHARACTER_SPLASHNAME := "splash.png"
+const CHARACTER_ICONNAME := "icon.png"
 
 const NEEDED_FILES := [ CHARACTER_FILENAME ]
 const CHARACTER_PATH := "res://plugins/characters"
@@ -30,5 +31,8 @@ func get_loaded_characters() -> Array:
 func load_character(name: String) -> Spatial:
 	return load(CHARACTER_PATH + "/" + name + "/" + CHARACTER_FILENAME).instance()
 
-func load_character_splash(name) -> Resource:
+func load_character_splash(name: String) -> Resource:
 	return load(CHARACTER_PATH + "/" + name + "/" + CHARACTER_SPLASHNAME)
+
+func load_character_icon(name: String) -> Resource:
+	return load(CHARACTER_PATH + "/" + name + "/" + CHARACTER_ICONNAME)

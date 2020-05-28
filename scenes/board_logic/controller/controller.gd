@@ -760,7 +760,7 @@ func show_minigame_animation(state) -> void:
 	for team in state.minigame_teams:
 		for player_id in team:
 			var character = Global.players[player_id - 1].character
-			var texture = PluginSystem.character_loader.load_character_splash(character)
+			var texture = PluginSystem.character_loader.load_character_icon(character)
 			$Screen/MinigameTypeAnimation/Root.get_node("Player" + str(i)).texture = texture
 			i += 1
 
