@@ -489,15 +489,21 @@ License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 ## plugins/minigames/haunted_dreams
 ### room.escn | room.blend
 
-Copyright © Florian Kothmeier
+Copyright © Vytautas Butėnas, Florian Kothmeier
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ### screenshot.png
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## plugins/minigames/haunted_dreams/images
+### Blood.png | Web.png
+Public Domain by Vytautas Butėnas
+
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## plugins/minigames/dungeon_parkour/
 ### screenshot.png
