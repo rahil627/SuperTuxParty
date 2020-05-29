@@ -28,7 +28,7 @@ func load_files_from_path(path: String, filename: Array, object: Object,
 			break
 		elif dir.current_is_dir():
 			for file in filename:
-				if dir.file_exists(entry + "/" + file):
+				if dir.file_exists(path + "/" + entry + "/" + file):
 					object.call(method, path + "/" + entry + "/" + file)
 
 	dir.list_dir_end()
