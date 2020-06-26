@@ -192,6 +192,15 @@ func _notification(what: int) -> void:
 				else:
 					_was_muted = true
 
+func _input(event):
+	if event.is_action_pressed("screenshot"):
+		var time = OS.get_datetime()
+		var image = get_tree().root.get_texture().get_data()
+		image.flip_y()
+		var directory = Directory.new()
+		directory.make_dir("user://screenshots")
+		image.save_png("user://screenshots/{year}-{month}-{day}-{hour}:{minute}:{second}.png".format(time))
+
 func _process(_delta: float):
 	var filtered = []
 	for data in interactive_loaders:
