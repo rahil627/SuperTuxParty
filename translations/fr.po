@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-04-30 12:11+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-07-05 21:21+0000\n"
+"Last-Translator: Yannick A. <yannick.armand@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
 "Language: fr\n"
@@ -14,13 +14,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Acheter un gâteau pour {amount} biscuits"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr "La récompense de duel :"
+msgstr "La récompense du duel :"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
 msgstr "Choisis un ennemi :"
@@ -38,13 +38,13 @@ msgid "CONTEXT_LABEL_READY_QUESTION"
 msgstr "Prêts ?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr "Jete le dé !"
+msgstr "Jette le dé !"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr "{name}, jete le dé !"
+msgstr "{name} jette le dé !"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr "Le vainqueur vole 1 gâteaux"
+msgstr "Le vainqueur vole 1 gâteau"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Le vainqueur vole 10 biscuits"
@@ -56,13 +56,13 @@ msgid "CONTEXT_LABEL_VS"
 msgstr "contre"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr "C'èst à toi !"
+msgstr "C'est ton tour !"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr "Tu n'as pas assez de buiscuits"
+msgstr "Tu n'as pas assez de cookies pour acheter ça"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr "Tu n'as pas assez encore de place"
+msgstr "Tu n'as plus de place disponible dans ton inventaire"
 
 msgid "MENU_CONTROLS_ACTION_1"
 msgstr "Action 1"
@@ -77,13 +77,13 @@ msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Action 4"
 
 msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr "l'axe -"
+msgstr "Axe -"
 
 msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr "l'axe +"
+msgstr "Axe +"
 
 msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr "l'axe inconnu"
+msgstr "Axe inconnu"
 
 msgid "MENU_CONTROLS_AXIS_X_LEFT"
 msgstr "X gauche"
@@ -98,7 +98,7 @@ msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
 msgstr "Y droite"
 
 msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr "bouton inconnu"
+msgstr "Bouton inconnu"
 
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Manette"
@@ -155,16 +155,16 @@ msgid "MENU_CONTROLS_MOUSE_BUTTON"
 msgstr "Bouton de souris"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr "Bouton gauche de souris"
+msgstr "Bouton gauche de la souris"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr "Bouton troisième de souris"
+msgstr "Bouton du milieu de la souris"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr "Bouton droite de souris"
+msgstr "Bouton droite de la souris"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr "Roulette de défilement en bas"
+msgstr "Roulette de défilement vers le bas"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
 msgstr "Roulette de défilement à gauche"
@@ -206,16 +206,16 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Haut"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr "Dicte le nom du partie sauvgarder :"
+msgstr "Nom de la sauvegarde :"
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr "Charger partie"
+msgstr "Charger une partie"
 
 msgid "MENU_IO_SAVE"
 msgstr "Sauvegarder"
 
 msgid "MENU_IO_SAVE_GAME"
-msgstr "Sauvegarder partie"
+msgstr "Sauvegarder la partie"
 
 msgid "MENU_LABEL_BACK"
 msgstr "Retour"
@@ -236,10 +236,10 @@ msgid "MENU_LABEL_DESKTOP"
 msgstr "Retourner sur le bureau"
 
 msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr "l'indication de nomes de bouton de manette :"
+msgstr "Les noms affichés sur le Joypad :"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr "linéaire"
+msgstr "Linéaire"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Nouvelle partie"
@@ -248,7 +248,7 @@ msgid "MENU_LABEL_NINTENDO_DS"
 msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr "N'est pas prête…"
+msgstr "N'est pas prêt…"
 
 msgid "MENU_LABEL_NUMBERS"
 msgstr "Nombres"
@@ -275,7 +275,7 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "En pause"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr "Pause en changer de fênetre"
+msgstr "Pause lorsque le focus de la fenêtre est perdu"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Jouer"
@@ -296,43 +296,43 @@ msgid "MENU_LABEL_READY"
 msgstr "Prêts !"
 
 msgid "MENU_LABEL_RESUME"
-msgstr "Continue"
+msgstr "Reprendre"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "Retourner au menu principal"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr "Le système de la récompense :"
+msgstr "Système de récompense :"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr "Choise un damier :"
+msgstr "Choisi un damier :"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr "Choise un caractère pour joueur 1"
+msgstr "Sélectionne un personnage pour le joueur 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr "Choise un caractère pour joueur 2"
+msgstr "Sélectionne un personnage pour le joueur 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr "Choise un caractère pour joueur 3"
+msgstr "Sélectionne un personnage pour le joueur 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr "Choise un caractère pour joueur 4"
+msgstr "Sélectionne un personnage pour le joueur 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr "Choise le nombre des joueurs"
+msgstr "Sélectionner le nombre de joueurs"
 
 msgid "MENU_LABEL_TITLE"
 msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr "Tente"
+msgstr "Essayer"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr "Le vainqueur gagnes tout"
+msgstr "Le vainqueur gagne tout"
 
 msgid "MENU_LABEL_XBOX"
-msgstr "XBOX"
+msgstr "Xbox"
 
 msgid "MENU_LABEL_CREDITS"
 msgstr "Remerciements"
@@ -347,7 +347,7 @@ msgid "MENU_OPTIONS_CONTROLS"
 msgstr "Contrôles"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr "Effets d'audio"
+msgstr "Effets audio"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
 msgstr "Limite d'IPS"
@@ -368,13 +368,13 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Musique"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr "Muet en changer de fênetre"
+msgstr "Rendre muet lorsque le focus de la fenêtre est perdu"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr "défaut du système"
+msgstr "Valeur par défaut du système"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr "Vidéo"
+msgstr "Visuel"
 
 msgid "MENU_OPTIONS_VSYNC"
 msgstr "VSync"
@@ -386,13 +386,13 @@ msgid "DIALOG_NO"
 msgstr "Non"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr "Cout du gâteaux :"
+msgstr "Coût du gâteau :"
 
 msgid "MENU_LABEL_TURNS"
-msgstr "Nombre des tours :"
+msgstr "Nombre de tours :"
 
 msgid "AI_DIFFICULTY"
-msgstr "Difficulté d‘IA :"
+msgstr "Difficulté de l'IA :"
 
 msgid "DIFFICULTY_EASY"
 msgstr "Facile"
@@ -404,7 +404,7 @@ msgid "DIFFICULTY_HARD"
 msgstr "Difficile"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr "L'action de GNU"
+msgstr "Action de GNU"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
 msgstr "Qualité de la vidéo"
@@ -413,23 +413,23 @@ msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
 msgstr "Haute"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr "Moyen"
+msgstr "Moyenne"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
 msgstr "Basse"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
-"Modifier la qualité de la vidéo fait de l'effet seulement après un "
-"rédémarrage"
+"Changer la qualité de la vidéo n'a effet seulement qu'après un redémarrage "
+"du jeu"
 
 msgid "CONTEXT_SPEAKER_SARA"
 msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
-"Je sais que vous a jouté fort pour gagner. Le jeu est fini et nous a besoin "
-"d'un gagneur. Ce-lui est…"
+"Je sais que vous vous êtes tous battus pour gagner, mais maintenant le jeu "
+"est terminé et nous avons besoin d'un gagnant. Et ce gagnant est…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
 msgstr "[color=#ff3300]{0}[/color] !"
@@ -448,41 +448,41 @@ msgstr ""
 "color] et [color=#ffff33]{3}[/color] !"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr "Gâteau"
+msgstr "Gâteaux"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr "Biscuit"
+msgstr "Biscuits"
 
 msgid "CONTEXT_GNU_NAME"
 msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""
-"Bonjour, voulez vous un peux de l'aide ? Qu'est-ce que je peut faire pour "
-"toi aujourd'hui…"
+"Hé, vous avez besoin d'aide ? Laissez-moi voir ce que je peux faire pour "
+"vous aujourd'hui…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
-"Il est un jeu en solo ! Fait preuve votre moyen et je te donne un "
-"[color=#dd44ff]{reward}[/color]"
+"C'est un mini-jeu en solo ! Montrez-moi vos compétences et je vous donnerai "
+"un [color=#dd44ff]{reward}[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
 msgstr "Jeu en solo"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr "On joue ensemble ! Je pense qu'on va aurai beaucoup de plaisir"
+msgstr "Jouons ensemble ! Je suis sûr que ce sera amusant"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr "Jeu coopérant"
+msgstr "Jeu en coopération"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr "Bravo. Voici votre récompense !"
+msgstr "Bravo. Voici ta récompense !"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
 msgstr "Ça n'a pas marché. Peut-être la prochaine fois."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr "Tu l'as fait. J'ai hâte à la prochain fois."
+msgstr "Tu l'as fait. J'attends la prochaine fois avec impatience."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
@@ -493,7 +493,7 @@ msgid "CONTEXT_NOLOK_NAME"
 msgstr "Nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr "L'action de Nolok"
+msgstr "Action de Nolok"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
 msgstr "C'est mon tour ! Je sais exactement quoi faire…"
@@ -501,7 +501,7 @@ msgstr "C'est mon tour ! Je sais exactement quoi faire…"
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
 "Je vous mets au défi pour un mini-jeu ! Si vous pouvez me battre, vous "
-"pouvez garder vos affaires. Sinon, je prendrai un de tes gâteaux…"
+"pouvez garder vos affaires. Sinon, je prendrais un de tes gâteaux…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
 msgstr "Jeu en solo"
@@ -510,13 +510,13 @@ msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
 msgstr "Moi contre vous tous ? Pensez-vous que vous avez une chance ?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr "Jeu coopérant"
+msgstr "Jeu en coopération"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
 msgstr "Soyez heureux que je vous ai épargné !"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr "J'ai hâte de te battre la prochaine fois !"
+msgstr "J'ai hâte de vous battre la prochaine fois !"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
 msgstr "Vous ne gagnerez pas la prochaine fois."
@@ -527,7 +527,7 @@ msgstr "Haha, quelle victoire facile."
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
 "Haha, [color=#00aaff]{amount}[/color] de vos cookies disparaîtront. Je suis "
-"sûr que [color=#dd44ff]{player}[/color] peut bien l'utiliser"
+"sûr que [color=#dd44ff]{player}[/color] pourra bien les utiliser"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
 msgstr "Perdez vos biscuits"
@@ -535,7 +535,7 @@ msgstr "Perdez vos biscuits"
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
 "Vous devriez peut-être y aller un peu plus lentement. Voyons comment vous "
-"faites [color=#00aaff]{amount}[/color] mouvement de moins pour les "
+"faites [color=#00aaff]{amount}[/color] mouvements de moins pour les "
 "[color=#dd44ff]{duration}[/color] prochains coups"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"

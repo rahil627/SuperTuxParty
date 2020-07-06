@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-01-03 14:21+0000\n"
-"Last-Translator: Anne Onyme 017 <anneonyme017@netcourrier.com>\n"
+"PO-Revision-Date: 2020-07-04 18:41+0000\n"
+"Last-Translator: Yannick A. <yannick.armand@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "minigamesbowling/fr/>\n"
 "Language: fr\n"
@@ -14,7 +14,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "BOWLING_FINISH_MSG"
 msgstr "Fini !"
+
+msgid "MINIGAME_ACTION_THROW"
+msgstr "Lancer la balle - uniquement en solo"
+
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Sauter"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Se déplacer vers la droite"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Se déplacer vers la gauche"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Se déplacer vers le bas"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Se déplacer vers le haut"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+"Le joueur seul peut faire tomber tous les autres joueurs de sa plateforme "
+"pour gagner.\n"
+"Si le temps est écoulé, le groupe gagne."
+
+msgid "MINIGAME_NAME"
+msgstr "Bowling"

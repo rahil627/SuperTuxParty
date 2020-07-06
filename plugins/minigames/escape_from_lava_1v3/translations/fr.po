@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-12-29 09:30+0000\n"
-"Last-Translator: Anne Onyme 017 <anneonyme017@netcourrier.com>\n"
+"PO-Revision-Date: 2020-07-06 21:41+0000\n"
+"Last-Translator: Yannick A. <yannick.armand@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "minigamesescape_from_lava_1v3/fr/>\n"
 "Language: fr\n"
@@ -14,7 +14,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Fini !"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+"Les joueurs s'affrontent pour atteindre le sommet, tandis que la lave monte "
+"en dessous.\n"
+"Ils doivent passer par de multiples portes. Une de ces portes est bloquée et "
+"ne s'ouvre pas.\n"
+"Le premier joueur qui parvient à atteindre le sommet en toute sécurité gagne "
+"!"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Se déplacer vers la droite"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Se déplacer vers la gauche"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Se déplacer vers le bas"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Se déplacer vers le haut"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_THREE"
+msgstr "Obstruction de la porte 3 - joueur solo uniquement"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_TWO"
+msgstr "Obstruction de la porte 2 - joueur solo uniquement"
+
+msgid "MINIGAME_ACTION_OBSTRUCT_ONE"
+msgstr "Obstruction de la porte 1 - joueur solo uniquement"
+
+msgid "MINIGAME_NAME"
+msgstr "Échapper à la lave"

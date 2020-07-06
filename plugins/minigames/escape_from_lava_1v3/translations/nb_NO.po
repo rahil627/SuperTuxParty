@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-19 12:37+0000\n"
+"PO-Revision-Date: 2020-05-26 17:41+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/minigamesescape_from_lava_1v3/nb_NO/>\n"
@@ -34,14 +34,18 @@ msgstr "Blokker dør 1 - kun enkeltspiller"
 msgid "MINIGAME_NAME"
 msgstr "Flykt fra lava"
 
+#, fuzzy
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr "Flytt til høyre"
 
+#, fuzzy
 msgid "MINIGAME_ACTION_LEFT"
 msgstr "Flytt til venstre"
 
+#, fuzzy
 msgid "MINIGAME_ACTION_DOWN"
 msgstr "Flytt nedover"
 
+#, fuzzy
 msgid "MINIGAME_ACTION_UP"
 msgstr "Flytt oppover"
