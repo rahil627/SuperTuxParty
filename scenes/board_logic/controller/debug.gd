@@ -188,6 +188,11 @@ func _on_minigame_pressed(minigame, type):
 				state.minigame_teams = [[2, 3, 4], [1]]
 		Global.MINIGAME_TYPES.DUEL:
 			state.minigame_teams = [[1], [2]]
+			
+			# Set a minigame reward or else, the game will crash when returning
+			# to the board
+			Global.minigame_reward = Global.MinigameReward.new()
+			Global.minigame_reward.duel_reward = -1
 		Global.MINIGAME_TYPES.NOLOK_SOLO, Global.MINIGAME_TYPES.GNU_SOLO:
 			state.minigame_teams = [[1], []]
 	
