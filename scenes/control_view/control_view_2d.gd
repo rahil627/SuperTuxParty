@@ -6,95 +6,101 @@ func _ready():
 func display_key(event):
 	match event.scancode:
 		KEY_UP:
-			$TextureRect.texture = load("res://assets/textures/controls/up.png")
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/up.png")
 		KEY_LEFT:
-			$TextureRect.texture = load("res://assets/textures/controls/left.png")
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/left.png")
 		KEY_DOWN:
-			$TextureRect.texture = load("res://assets/textures/controls/down.png")
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/down.png")
 		KEY_RIGHT:
-			$TextureRect.texture = load("res://assets/textures/controls/right.png")
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/right.png")
+		KEY_TAB:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/tab.png")
+		KEY_SHIFT:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/shift.png")
+		KEY_ALT:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/alt.png")
+		KEY_CAPSLOCK:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/caps.png")
+		KEY_CONTROL:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/control.png")
+		KEY_ENTER:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/enter.png")
+		KEY_SPACE:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/space.png")
+		KEY_ESCAPE:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/escape.png")
+		KEY_NUMLOCK:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/numlock.png")
+		KEY_KP_0:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_0.png")
+		KEY_KP_1:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_1.png")
+		KEY_KP_2:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_2.png")
+		KEY_KP_3:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_3.png")
+		KEY_KP_4:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_4.png")
+		KEY_KP_5:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_5.png")
+		KEY_KP_6:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_6.png")
+		KEY_KP_7:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_7.png")
+		KEY_KP_8:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_8.png")
+		KEY_KP_9:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_9.png")
+		KEY_KP_ADD:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_plus.png")
+		KEY_KP_DIVIDE:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_slash.png")
+		KEY_KP_ENTER:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_enter.png")
+		KEY_KP_MULTIPLY:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_asterisk.png")
+		KEY_KP_PERIOD:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_period.png")
+		KEY_KP_SUBTRACT:
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/kp_minus.png")
 		_:
-			$Label.text = OS.get_scancode_string(event.scancode)
-			$TextureRect.texture = load("res://assets/textures/controls/key_background.png")
+			if event.scancode < 127:
+				# Scancodes < 127 are actually ASCII
+				$Label.text = char(event.scancode)
+			else:
+				# TODO: Support for non-ascii keys
+				$Label.text = OS.get_scancode_string(event.scancode)
+			$TextureRect.texture = load("res://assets/textures/controls/keyboard/key_blank.png")
 
 func display_mouse_button(event):
 	match event.button_index:
 		BUTTON_LEFT:
-			$TextureRect.texture = load("res://assets/textures/controls/left_mouse.png")
+			$TextureRect.texture = load("res://assets/textures/controls/mouse/left_mouse.png")
 		BUTTON_RIGHT:
-			$TextureRect.texture = load("res://assets/textures/controls/right_mouse.png")
+			$TextureRect.texture = load("res://assets/textures/controls/mouse/right_mouse.png")
 		BUTTON_MIDDLE:
-			$TextureRect.texture = load("res://assets/textures/controls/middle_mouse.png")
+			$TextureRect.texture = load("res://assets/textures/controls/mouse/middle_mouse.png")
 		_:
 			$Label.text = tr("MENU_CONTROLS_MOUSE") + " " + var2str(event.button_index)
 
 func display_joypad_button(event):
 	match event.button_index:
-		# Joystick button indizes:
-		#      3
-		#    2   1
-		#      0
-		# How it will be displayed (depending on Game Options):
-		#   Numbers:    XBOX:      DS:      PS:
-		#      1          Y         X        /\
-		#    4   2      X   B     Y   A   []    ()
-		#      3          A         B        X
 		JOY_BUTTON_0:
-			match Global.joypad_display:
-				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					$TextureRect.texture = load("res://assets/textures/controls/button3.png")
-				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonA.png")
-				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonB.png")
-				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonX.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/button_down.png")
 		JOY_BUTTON_1:
-			match Global.joypad_display:
-				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					$TextureRect.texture = load("res://assets/textures/controls/button2.png")
-				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonB.png")
-				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonA.png")
-				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonCircle.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/button_right.png")
 		JOY_BUTTON_2:
-			match Global.joypad_display:
-				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					$TextureRect.texture = load("res://assets/textures/controls/button4.png")
-				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonX.png")
-				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonY.png")
-				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonSquare.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/button_left.png")
 		JOY_BUTTON_3:
-			match Global.joypad_display:
-				Global.JOYPAD_DISPLAY_TYPE.NUMBERS:
-					$TextureRect.texture = load("res://assets/textures/controls/button3.png")
-				Global.JOYPAD_DISPLAY_TYPE.XBOX:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonY.png")
-				Global.JOYPAD_DISPLAY_TYPE.NINTENDO_DS:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonX.png")
-				Global.JOYPAD_DISPLAY_TYPE.PLAYSTATION:
-					$TextureRect.texture = load("res://assets/textures/controls/buttonTriangle.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/button_up.png")
 		JOY_SELECT:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonSelect.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/buttonSelect.png")
 		JOY_START:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonStart.png")
-		JOY_L2:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonL.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/buttonStart.png")
 		JOY_L:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonL1.png")
-		JOY_L3:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonL2.png")
-		JOY_R2:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonR.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/buttonL.png")
 		JOY_R:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonR1.png")
-		JOY_R3:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonR2.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/buttonR.png")
 		_:
 			$Label.text = tr("MENU_CONTROLS_GAMEPAD") + " " + var2str(event.button_index)
 
@@ -102,28 +108,28 @@ func display_joypad_axis(event):
 	match event.axis:
 		JOY_ANALOG_LX:
 			if event.axis_value < 0:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowLeft.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowLeft.png")
 			else:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowRight.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowRight.png")
 		JOY_ANALOG_LY:
 			if event.axis_value < 0:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowUp.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowUp.png")
 			else:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowDown.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowDown.png")
 		JOY_ANALOG_RX:
 			if event.axis_value < 0:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowLeft.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowLeft.png")
 			else:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowRight.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowRight.png")
 		JOY_ANALOG_RY:
 			if event.axis_value < 0:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowUp.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowUp.png")
 			else:
-				$TextureRect.texture = load("res://assets/textures/controls/arrowDown.png")
+				$TextureRect.texture = load("res://assets/textures/controls/gamepad/arrowDown.png")
 		JOY_ANALOG_L2:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonL.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/buttonL.png")
 		JOY_ANALOG_R2:
-			$TextureRect.texture = load("res://assets/textures/controls/buttonR.png")
+			$TextureRect.texture = load("res://assets/textures/controls/gamepad/buttonR.png")
 		_:
 			if event.axis_value < 0:
 				$Label.text = tr("MENU_CONTROLS_AXIS_MINUS") + var2str(event.axis)

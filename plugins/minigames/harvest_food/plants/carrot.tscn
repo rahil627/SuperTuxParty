@@ -2,11 +2,13 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0.2, 0.05, 1 )
-roughness = 0.0
+metallic_specular = 0.0
+roughness = 0.5
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.15, 0.8, 0.307692, 1 )
-roughness = 0.0
+metallic_specular = 0.0
+roughness = 0.5
 
 [sub_resource type="ArrayMesh" id=3]
 surfaces/0 = {
@@ -58,4 +60,3 @@ material/1 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/show = SubResource( 4 )
-

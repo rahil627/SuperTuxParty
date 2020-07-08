@@ -4,26 +4,34 @@ Copyright © 2018 Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## assets/textures/controls
-### down.png | left.png | left_mouse.png | middle_mouse.png | right.png | right_mouse.png | up.png | key_background.png
+## assets/textures/controls/gamepad
+### *.png
 
-Public domain by qubodup
+Public domain by Terazilla
 
-key_background.png is a modified version of left.png by Florian Kothmeier
-
-Retrieved from [Open Game Art](https://opengameart.org/content/mouse-buttons-arrow-keys)
+Retrieved from [Open Game Art](https://opengameart.org/content/free-controller-prompts-xbox-ps4-switch)
 
 License: [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-### arrowDown.png | arrowLeft.png | arrowRight.png | arrowUp.png | buttonA.png | buttonB.png | buttonL.png | buttonL1.png | buttonL2.png | buttonR.png | buttonR1.png | buttonR2.png | buttonSelect.png | buttonStart.png | buttonX.png | buttonY.png | button1.png | button2.png | button3.png | button4.png | buttonCircle.png | buttonSquare.png | buttonTriangle.png
+## assets/textures/controls/keyboard
+### *.png
 
-Public domain by Kenney
+Public domain by Terazilla
 
-button4.png, buttonCircle.png, buttonSquare.png and buttonTriangle.png are a modified versions of button1.png by Florian Kothmeier
+key_blank.png is a modified version of left.png by Florian Kothmeier
 
-Retrieved from [Open Game Art](https://opengameart.org/content/game-icons)
+Retrieved from [Open Game Art](https://opengameart.org/content/free-controller-prompts-xbox-ps4-switch)
 
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+License: [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+## assets/textures/controls/mouse
+### *.png
+
+Public domain by Terazilla
+
+Retrieved from [Open Game Art](https://opengameart.org/content/free-controller-prompts-xbox-ps4-switch)
+
+License: [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/Bomb
 ### Bomb.obj
@@ -493,28 +501,32 @@ Copyright © Florian Kothmeier
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/minigames/harvest_food/background
-### panorama.blend | panorama.png
+### farm2_textured.escn | FarmDiffuseMap.png
 
-Copyright © Florian Kothmeier
+Copyright © DeadKir
+
+Retrieved from [Open Game Art](https://opengameart.org/content/farm-0)
+
+License: [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)
+
+### background.escn | background.blend
+
+Copyright © 2020 Florian Kothmeier
+
+Uses cornStalk1.fbx and plantLot1.fbx by DeadKir
+
+Retrieved from [Open Game Art](https://opengameart.org/content/simple-farm-assets)
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-### asphalt.png
+## plugins/minigames/harvest_food/background/farmAssets
+### *.escn | pallette.png
 
-Copyright © PagDev
+Copyright © DeadKir
 
-Retrieved from [Open Game Art](https://opengameart.org/content/asphalt)
+Retrieved from [Open Game Art](https://opengameart.org/content/simple-farm-assets)
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-## plugins/minigames/harvest_food/background/wood_tex/pattern_\*
-### diffuse.tga | normal.tga | specular.tga
-
-Public Domain by yughues
-
-Retrieved from [Open Game Art](https://opengameart.org/content/free-tiling-textures-pack-45-0)
-
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## plugins/minigames/haunted_dreams
 ### room.escn | room.blend
@@ -602,21 +614,14 @@ Retrieved from: [OpenGameart](https://opengameart.org/content/forest-low-poly-to
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/fence
-### fence.escn | picketfence_0.blend
+### fence.escn | texture.png
 
-Exported model of Public Domain Model by WeaponGuy
+Copyright © DeadKir
+Fence model extracted by Florian Kothmeier
 
-Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
+Retrieved from [Open Game Art](https://opengameart.org/content/farm-0)
 
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-### BarrelWoodUV.jpg
-
-Texture of fence model by WeaponGuy
-
-Retrieved from [OpenGameArt.org](https://opengameart.org/content/basic-wooden-fence)
-
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+License: [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)
 
 ## plugins/minigames/harvest_food/plants
 ### potato.blend | potato.escn
