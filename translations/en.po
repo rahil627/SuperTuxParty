@@ -337,6 +337,9 @@ msgstr "XBOX"
 msgid "MENU_LABEL_CREDITS"
 msgstr "Credits"
 
+msgid "MENU_LABEL_SCREENSHOTS"
+msgstr "Show screenshots"
+
 msgid "MENU_OPTIONS"
 msgstr "Options"
 

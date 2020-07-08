@@ -407,3 +407,6 @@ func _on_Credits_Back_pressed():
 	$CreditsMenu.hide()
 	
 	$MainMenu/Buttons/Play.grab_focus()
+
+func _on_Screenshots_pressed():
+	OS.shell_open("file://{0}/screenshots".format([OS.get_user_data_dir()]))
