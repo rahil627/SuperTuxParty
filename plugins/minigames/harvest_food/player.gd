@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const MOVEMENT_SPEED = 2
+const MOVEMENT_SPEED = 2.5
 
 var is_ai
 var player_id

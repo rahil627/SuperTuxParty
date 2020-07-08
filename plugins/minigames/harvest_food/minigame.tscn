@@ -1,53 +1,49 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://plugins/minigames/harvest_food/minigame.gd" type="Script" id=1]
-[ext_resource path="res://plugins/minigames/harvest_food/background/panorama.png" type="Texture" id=2]
-[ext_resource path="res://assets/textures/dirt.png" type="Texture" id=3]
+[ext_resource path="res://plugins/minigames/harvest_food/background/farm2_textured.escn" type="PackedScene" id=2]
 [ext_resource path="res://plugins/minigames/harvest_food/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/overlays/score_overlay.tscn" type="PackedScene" id=5]
 [ext_resource path="res://plugins/minigames/harvest_food/carrot.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=7]
 [ext_resource path="res://assets/models/fence/fence.tscn" type="PackedScene" id=8]
+[ext_resource path="res://plugins/minigames/harvest_food/background/FarmDiffuseMap.png" type="Texture" id=12]
+[ext_resource path="res://plugins/minigames/harvest_food/background/farmAssets/well.escn" type="PackedScene" id=13]
+[ext_resource path="res://plugins/minigames/harvest_food/background/farmAssets/cobbleStonePath1.escn" type="PackedScene" id=14]
+[ext_resource path="res://plugins/minigames/harvest_food/background/farmAssets/parkBench.escn" type="PackedScene" id=17]
+[ext_resource path="res://plugins/minigames/harvest_food/background/background.escn" type="PackedScene" id=2577]
 
-[sub_resource type="PanoramaSky" id=1]
-panorama = ExtResource( 2 )
+[sub_resource type="SpatialMaterial" id=1]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 12 )
 
-[sub_resource type="Environment" id=2]
-background_mode = 2
-background_sky = SubResource( 1 )
-
-[sub_resource type="PlaneMesh" id=3]
-size = Vector2( 10, 10 )
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 3 )
-uv1_scale = Vector3( 2.5, 2.5, 2.5 )
-
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 5, 0.1, 5 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.25, 0.1, 0.25 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
-
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -5, 3, 0 )
+transform = Transform( -1.62921e-07, 0.642787, -0.766044, 0, 0.766044, 0.642787, 1, 1.04723e-07, -1.24804e-07, -6, 4, 0 )
 current = true
+
+[node name="farm2_textured" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 15, 0, 2 )
+
+[node name="house1" parent="farm2_textured" index="0"]
+material/0 = SubResource( 1 )
 
 [node name="Ground" type="StaticBody" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="Ground"]
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
+
+[node name="ground" parent="Ground" instance=ExtResource( 2577 )]
 
 [node name="Player1" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0.2, -1 )
@@ -63,34 +59,36 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0, 
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -3.94703, 2.45993, 0.184541 )
+light_bake_mode = 2
+shadow_enabled = true
 
 [node name="Area1" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Area2" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Area3" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Area4" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -131,62 +129,142 @@ valign = 1
 [node name="Fences" type="Spatial" parent="."]
 
 [node name="Fence" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.51461, 0.536983, -4.49385 )
+transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, -5.33091, 0, -3.99664 )
 
 [node name="Fence2" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.77198, 0.536983, -4.49385 )
+transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, -5.33091, 0, -1.31664 )
 
 [node name="Fence3" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.0023495, 0.536983, -4.49385 )
+transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, -5.33091, 0, 1.36336 )
 
 [node name="Fence4" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.78754, 0.536983, -4.49385 )
+transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, -5.33091, 0, 4.02978 )
 
 [node name="Fence5" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.5569, 0.536983, -4.49385 )
+transform = Transform( -0.5, 0, -1.03316e-07, 0, 0.5, 0, 1.03316e-07, 0, -0.5, -3.95882, 0, 5.32362 )
 
 [node name="Fence6" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -3.54565 )
+transform = Transform( -0.5, 0, -1.03316e-07, 0, 0.5, 0, 1.03316e-07, 0, -0.5, -1.27882, 0, 5.32362 )
 
 [node name="Fence7" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -1.77788 )
+transform = Transform( -0.5, 0, -1.03316e-07, 0, 0.5, 0, 1.03316e-07, 0, -0.5, 1.40118, 0, 5.32362 )
 
 [node name="Fence8" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, -0.0080117 )
-
-[node name="Fence9" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, 1.77062 )
-
-[node name="Fence10" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -4.38326, 0.536983, 3.55992 )
-
-[node name="Fence11" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, -3.42424, 0.536983, 4.37628 )
+transform = Transform( -0.5, 0, -1.03316e-07, 0, 0.5, 0, 1.03316e-07, 0, -0.5, 4.0676, 0, 5.32362 )
 
 [node name="Fence12" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, -1.68655, 0.536983, 4.37628 )
+transform = Transform( 1.25172e-07, 0, -0.5, 0, 0.5, 0, 0.5, 0, 1.25172e-07, 5.45479, 0, 4.01364 )
 
-[node name="Fence13" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 0.0589688, 0.536983, 4.37628 )
+[node name="Fence11" parent="Fences" instance=ExtResource( 8 )]
+transform = Transform( 1.25172e-07, 0, -0.5, 0, 0.5, 0, 0.5, 0, 1.25172e-07, 5.45479, 0, 1.33364 )
 
-[node name="Fence14" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 1.80712, 0.536983, 4.37628 )
+[node name="Fence10" parent="Fences" instance=ExtResource( 8 )]
+transform = Transform( 1.25172e-07, 0, -0.5, 0, 0.5, 0, 0.5, 0, 1.25172e-07, 5.45479, 0, -1.34636 )
 
-[node name="Fence15" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( -0.25, 0, -8.14603e-08, 0, 0.25, 0, 8.14603e-08, 0, -0.25, 3.54376, 0.536983, 4.37628 )
+[node name="Fence9" parent="Fences" instance=ExtResource( 8 )]
+transform = Transform( 1.25172e-07, 0, -0.5, 0, 0.5, 0, 0.5, 0, 1.25172e-07, 5.45479, 0, -4.01279 )
 
 [node name="Fence16" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, 3.42397 )
+transform = Transform( 0.5, 0, 1.47027e-07, 0, 0.5, 0, -1.47027e-07, 0, 0.5, 4.098, 0, -5.34435 )
 
-[node name="Fence17" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, 1.65518 )
+[node name="Fence15" parent="Fences" instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 1.47027e-07, 0, 0.5, 0, -1.47027e-07, 0, 0.5, 1.41799, 0, -5.34435 )
 
-[node name="Fence18" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -0.0895427 )
+[node name="Fence14" parent="Fences" instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 1.47027e-07, 0, 0.5, 0, -1.47027e-07, 0, 0.5, -1.26201, 0, -5.34435 )
 
-[node name="Fence19" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -1.84788 )
+[node name="Fence13" parent="Fences" instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 1.47027e-07, 0, 0.5, 0, -1.47027e-07, 0, 0.5, -3.92843, 0, -5.34435 )
 
-[node name="Fence20" parent="Fences" instance=ExtResource( 8 )]
-transform = Transform( 1.22191e-07, 0, 0.25, 0, 0.25, 0, -0.25, 0, 1.22191e-07, 4.35863, 0.536983, -3.58013 )
+[node name="well" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 10, 0.5, 4 )
+
+[node name="cobbleStonePath1" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 10, 0, 1.60314 )
+
+[node name="cobbleStonePath2" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 8.40698, 0, 1.18751 )
+
+[node name="cobbleStonePath13" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.40698, 0, 2.68751 )
+
+[node name="cobbleStonePath14" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.40698, 0, 4.18751 )
+
+[node name="cobbleStonePath15" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.40698, 0, 5.68751 )
+
+[node name="cobbleStonePath16" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 6.40698, 0, 7.18751 )
+
+[node name="cobbleStonePath17" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 4.90698, 0, 7.18751 )
+
+[node name="cobbleStonePath18" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.90698, 0, 7.18751 )
+
+[node name="cobbleStonePath19" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.40698, 0, 7.18751 )
+
+[node name="cobbleStonePath20" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0930204, 0, 7.18751 )
+
+[node name="cobbleStonePath25" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.34302, 0, 7.43751 )
+
+[node name="cobbleStonePath26" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.59302, 0, 7.68751 )
+
+[node name="cobbleStonePath27" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.84302, 0, 7.68751 )
+
+[node name="cobbleStonePath3" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.63178, 0, 0.0212941 )
+
+[node name="cobbleStonePath4" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.63178, 0, -1.23535 )
+
+[node name="cobbleStonePath5" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.63178, 0, -2.98088 )
+
+[node name="cobbleStonePath6" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.63178, 0, -4.41815 )
+
+[node name="cobbleStonePath7" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.63178, 0, -6.03317 )
+
+[node name="cobbleStonePath8" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 7.07838, 0, -7.39266 )
+
+[node name="cobbleStonePath9" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.61286, 0, -7.39266 )
+
+[node name="cobbleStonePath10" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 4.02806, 0, -7.79598 )
+
+[node name="cobbleStonePath11" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.63685, 0, -8.15031 )
+
+[node name="cobbleStonePath12" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.21354, 0, -8.15031 )
+
+[node name="cobbleStonePath21" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.28646, 0, -8.40031 )
+
+[node name="cobbleStonePath22" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.78646, 0, -8.65031 )
+
+[node name="cobbleStonePath23" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.03646, 0, -8.65031 )
+
+[node name="cobbleStonePath24" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.28646, 0, -8.90031 )
+
+[node name="parkBench" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.5, 0.5, -9 )
+
+[node name="parkBench2" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.25, 0, -1.49012e-08, 0, 0.25, 0, 1.49012e-08, 0, -0.25, 3, 0.5, 9 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="farm2_textured"]
