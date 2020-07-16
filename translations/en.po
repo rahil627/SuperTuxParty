@@ -539,3 +539,54 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Cursed die"
+
+msgid "CONTEXT_SHOW_TUTORIAL"
+msgstr "It looks like this is your first time playing. Do you want me to explain the rules?"
+
+msgid "CONTEXT_TUTORIAL_DICE"
+msgstr "The game is played in turns. During your turn, you roll a die and move the number it shows forward."
+
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr "There are different types of spaces you can land on: Blue spaces give you cookies, while red spaces take your cookies."
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr "Green spaces start board specific events. While Battle spaces let you challenge another player to a duel minigame."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr "After every player had their turn, a minigame will be played. There are three different flavours of minigames:"
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr "Free for all, where everyone competes with everyone to win."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr "Two vs two, where you play in teams of two."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr "And one vs three, where one competes with the rest. The solo player gets a bonus to even things up."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr "Special minigames will be played when a player lands on a GNU or NOLOK space. GNU minigames are good, while NOLOK minigames are bad for you. So better stay away from the latter!"
+
+msgid "CONTEXT_TUTORIAL_COOKIES"
+msgstr "The currency is cookies. You earn cookies by winning minigames. With cookies you can buy items when passing the shop spaces."
+
+msgid "CONTEXT_TUTORIAL_CAKES"
+msgstr "To win, you need to collect the most cakes. Cookies will be used as a tiebreaker. You can buy cakes at special places on the board. If you buy one, the cake will move to another location."
+
+msgid "CONTEXT_TUTORIAL_END"
+msgstr "That's it, now you're ready to go! Have fun!"
+
+msgid "CONTEXT_CAKE_PLACED"
+msgstr "Here's the cake, come and get it!"
+
+msgid "CONTEXT_CAKE_WANT_BUY"
+msgstr "Do you want to buy a cake?"
+
+msgid "CONTEXT_CAKE_BUY_AMOUNT"
+msgstr "How many cakes do you want to buy?"
+
+msgid "CONTEXT_CAKE_COLLECTED"
+msgstr "Well done, [color=#00aaff]{player}[/color]. That's [color=#dd44ff]{amount}[/color] cake(s) for you."
+
+msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr "I'm sorry but you don't have enough cookies to buy a cake."

@@ -84,8 +84,6 @@ func _ready() -> void:
 	if player_turn <= players.size():
 		camera_focus = players[player_turn - 1]
 
-	$Screen/Cake.init(COOKIES_FOR_CAKE)
-
 	# Initialize GUI.
 	if player_turn <= Global.amount_of_players:
 		$Screen/Turn.text = tr("CONTEXT_LABEL_TURN_NUM").format({"turn": Global.turn})
@@ -133,11 +131,48 @@ func _ready() -> void:
 				yield($Screen/SpeechDialog, "dialog_finished")
 				player_turn += 1
 
+	if Global.storage.get_value("Controller", "show_tutorial", true):
+		if yield(ask_yes_no(tr("CONTEXT_SHOW_TUTORIAL"), false), "completed"):
+			yield(show_tutorial(), "completed")
+		Global.storage.set_value("Controller", "show_tutorial", false)
+		Global.save_storage()
+
 	if not Global.cake_space and not winner:
 		yield(relocate_cake(), "completed")
 
 	if not $Screen/MinigameInformation.visible:
 		_on_Roll_pressed()
+
+func announce(text: String):
+	var current_player = players[player_turn - 1]
+	var sara_icon := preload("res://scenes/board_logic/controller/icons/sara.png")
+	$Screen/SpeechDialog.show_dialog(tr("CONTEXT_SPEAKER_SARA"), sara_icon, text, current_player.player_id)
+	yield($Screen/SpeechDialog, "dialog_finished")
+
+func ask_yes_no(text: String, ai_default: bool) -> bool:
+	var current_player = players[player_turn - 1]
+	var sara_icon := preload("res://scenes/board_logic/controller/icons/sara.png")
+	$Screen/SpeechDialog.show_accept_dialog(tr("CONTEXT_SPEAKER_SARA"), sara_icon, text, current_player.player_id, ai_default)
+	return yield($Screen/SpeechDialog, "dialog_option_taken")
+
+func query_range(text: String, minimum: int, maximum: int, start_value: int, ai_default: int) -> int:
+	var current_player = players[player_turn - 1]
+	var sara_icon := preload("res://scenes/board_logic/controller/icons/sara.png")
+	$Screen/SpeechDialog.show_query_dialog(tr("CONTEXT_SPEAKER_SARA"), sara_icon, text, current_player.player_id, minimum, maximum, start_value, ai_default)
+	return yield($Screen/SpeechDialog, "dialog_option_taken")
+
+func show_tutorial():
+	yield(announce(tr("CONTEXT_TUTORIAL_DICE")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_SPACES_NORMAL")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_SPACES_SPECIAL")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_MINIGAMES")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_MINIGAMES_FFA")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_MINIGAMES_2V2")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_MINIGAMES_1V3")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_MINIGAMES_SPECIAL")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_COOKIES")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_CAKES")), "completed")
+	yield(announce(tr("CONTEXT_TUTORIAL_END")), "completed")
 
 func relocate_cake() -> void:
 	var cake_nodes: Array = get_tree().get_nodes_in_group("cake_nodes")
@@ -148,9 +183,7 @@ func relocate_cake() -> void:
 			yield(old_node.play_cake_collection_animation(), "completed")
 			old_node.cake = false
 			if cake_nodes.size() > 1:
-				for i in range(0, len(cake_nodes)-1):
-					if cake_nodes[i] == old_node:
-						cake_nodes.remove(i)
+				cake_nodes.remove(cake_nodes.find(old_node))
 		var new_node: Node = cake_nodes[randi() % cake_nodes.size()]
 		Global.cake_space = get_path_to(new_node)
 		new_node.cake = true
@@ -158,7 +191,7 @@ func relocate_cake() -> void:
 		var old_focus = camera_focus
 		camera_focus = new_node
 		yield(self, "_camera_focus_aquired")
-		yield(get_tree().create_timer(1.0), "timeout")
+		yield(announce(tr("CONTEXT_CAKE_PLACED")), "completed")
 		camera_focus = old_focus
 		yield(self, "_camera_focus_aquired")
 	yield(get_tree().create_timer(0.0), "timeout")
@@ -371,7 +404,7 @@ func _step(player, previous_space: NodeBoard) -> void:
 		player.space = player.space.next[0]
 
 	# If player passes a cake-spot.
-	if player.space.cake and player.cookies >= COOKIES_FOR_CAKE:
+	if player.space.cake:
 		update_space(previous_space)
 		update_space(player.space)
 
@@ -674,17 +707,20 @@ func get_cake_space() -> NodeBoard:
 
 func buy_cake(player: Spatial) -> void:
 	if player.cookies >= COOKIES_FOR_CAKE:
-		if not player.is_ai:
-			$Screen/Cake.show_cake()
-			if yield($Screen/Cake, "cake_shopping_completed"):
-				yield(relocate_cake(), "completed")
-		else:
-			var cakes := int(player.cookies / COOKIES_FOR_CAKE)
-			player.cakes += cakes
-			player.cookies -= COOKIES_FOR_CAKE * cakes
-			yield(get_tree().create_timer(1.0), "timeout")
-			if cakes > 0:
-				yield(relocate_cake(), "completed")
+		if yield(ask_yes_no(tr("CONTEXT_CAKE_WANT_BUY"), true), "completed"):
+			var max_cakes := int(player.cookies / COOKIES_FOR_CAKE)
+			var amount := max_cakes
+			if amount != 1:
+				amount = yield(query_range(tr("CONTEXT_CAKE_BUY_AMOUNT"), 1, max_cakes, max_cakes, max_cakes), "completed")
+			player.cakes += amount
+			player.cookies -= COOKIES_FOR_CAKE * amount
+			yield(get_tree().create_timer(0.5), "timeout")
+			var text := tr("CONTEXT_CAKE_COLLECTED"). \
+				format({"player": player.name, "amount": amount})
+			yield(announce(text), "completed")
+			yield(relocate_cake(), "completed")
+	else:
+		yield(announce(tr("CONTEXT_CAKE_CANT_AFFORD")), "completed")
 	yield(get_tree().create_timer(0), "timeout")
 
 # If we end up on a green space at the end of turn, we execute the board event
