@@ -1,4 +1,4 @@
-image: ioribranford/godot-docker:3.2.1
+image: ioribranford/godot-docker:3.2.2
 
 .job_template: &build_base
   artifacts:
@@ -44,10 +44,7 @@ build:plugins:
 
 build:sources:
   stage: build_and_test
-  artifacts:
-    expire_in: 1 week
-    paths:
-      - super-tux-party-sources.zip
+  <<: *build_base
   script:
     - zip -r super-tux-party-sources.zip *
   only:
