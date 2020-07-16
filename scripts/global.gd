@@ -60,6 +60,8 @@ const MINIGAME_REWARD_SCREEN_GNU_COOP =\
 
 const LOADING_SCREEN = preload("res://scenes/menus/loading_screen.tscn")
 
+const USER_STORAGE_FILE = "user://data.cfg"
+
 const MINIGAME_TEAM_COLORS = [Color(1, 0, 0), Color(0, 0, 1)]
 
 var savegame_loader := SaveGameLoader.new()
@@ -136,6 +138,9 @@ var current_board: String
 # Pointer to top-level node in current scene.
 var current_scene: Node
 
+# ConfigFile to store custom data between sessions
+var storage: ConfigFile = ConfigFile.new()
+
 # Stops the controller from loading information when starting a new game.
 var new_game := true
 var cake_space := NodePath()
@@ -172,6 +177,10 @@ var loaded_scene: Node = null
 
 func _ready() -> void:
 	randomize()
+	var err = storage.load(USER_STORAGE_FILE)
+	if err != OK:
+		print("Error while loading saved data: " + Utility.error_code_to_string(err))
+
 	var root: Viewport = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
@@ -839,3 +848,6 @@ func save_game() -> void:
 		current_savegame.trap_states.push_back(state)
 
 	savegame_loader.save(current_savegame)
+
+func save_storage():
+	storage.save(USER_STORAGE_FILE)

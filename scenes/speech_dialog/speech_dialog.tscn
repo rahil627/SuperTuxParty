@@ -40,7 +40,11 @@ font_data = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 focus_mode = 2
+mouse_filter = 1
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_top = 1.0
@@ -50,6 +54,9 @@ margin_left = 10.0
 margin_top = -138.0
 margin_right = -10.0
 margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 margin_right = 128.0
@@ -61,6 +68,7 @@ expand = true
 margin_left = 132.0
 margin_right = 1260.0
 margin_bottom = 128.0
+mouse_filter = 0
 size_flags_horizontal = 3
 texture = ExtResource( 2 )
 patch_margin_left = 64
@@ -75,10 +83,15 @@ margin_left = 5.0
 margin_top = 22.0
 margin_right = -5.0
 margin_bottom = -5.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Text" type="RichTextLabel" parent="HBoxContainer/NinePatchRect/MarginContainer"]
 margin_right = 1118.0
-margin_bottom = 91.0
+margin_bottom = 101.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/bold_italics_font = SubResource( 1 )
@@ -97,6 +110,9 @@ size_flags_vertical = 5
 custom_fonts/font = SubResource( 5 )
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/NinePatchRect/Name"]
 show_behind_parent = true
@@ -122,18 +138,23 @@ patch_margin_bottom = 32
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -128.0
-margin_top = -84.0
+margin_left = -207.0
+margin_top = -104.0
 margin_right = -20.0
-margin_bottom = 16.0
+margin_bottom = 26.0
 grow_horizontal = 0
-grow_vertical = 2
-custom_constants/separation = 12
+grow_vertical = 0
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Yes" type="Label" parent="HBoxContainer/NinePatchRect/Buttons"]
 margin_right = 187.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 0, 54 )
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath(".")
@@ -142,8 +163,8 @@ focus_next = NodePath("../No")
 focus_previous = NodePath(".")
 focus_mode = 2
 mouse_filter = 0
-size_flags_horizontal = 3
-size_flags_vertical = 5
+size_flags_horizontal = 9
+size_flags_vertical = 9
 custom_fonts/font = SubResource( 6 )
 text = "DIALOG_YES"
 align = 1
@@ -153,17 +174,15 @@ valign = 1
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -5.0
-margin_top = -5.0
-margin_right = 5.0
-margin_bottom = 5.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/NinePatchRect/Buttons/Yes/MarginContainer"]
 show_behind_parent = true
-margin_right = 197.0
+margin_right = 187.0
 margin_bottom = 64.0
-rect_min_size = Vector2( 128, 64 )
 texture = ExtResource( 2 )
 patch_margin_left = 32
 patch_margin_top = 32
@@ -173,8 +192,8 @@ patch_margin_bottom = 32
 [node name="No" type="Label" parent="HBoxContainer/NinePatchRect/Buttons"]
 margin_top = 66.0
 margin_right = 187.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 0, 54 )
+margin_bottom = 130.0
+rect_min_size = Vector2( 64, 64 )
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../Yes")
 focus_neighbour_right = NodePath(".")
@@ -183,8 +202,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath("../Yes")
 focus_mode = 2
 mouse_filter = 0
-size_flags_horizontal = 3
-size_flags_vertical = 5
+size_flags_horizontal = 9
+size_flags_vertical = 9
 custom_fonts/font = SubResource( 7 )
 text = "DIALOG_NO"
 align = 1
@@ -194,29 +213,48 @@ valign = 1
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -5.0
-margin_top = -5.0
-margin_right = 5.0
-margin_bottom = 5.0
 mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/NinePatchRect/Buttons/No/MarginContainer"]
 show_behind_parent = true
-margin_right = 197.0
+margin_right = 187.0
 margin_bottom = 64.0
-rect_min_size = Vector2( 128, 64 )
 texture = ExtResource( 2 )
 patch_margin_left = 32
 patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
+
+[node name="Range" type="SpinBox" parent="HBoxContainer/NinePatchRect"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -153.0
+margin_top = -40.0
+margin_right = -3.0
+rect_min_size = Vector2( 150, 40 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/NinePatchRect/Range"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="HBoxContainer/NinePatchRect" to="." method="_click_input"]
 [connection signal="focus_entered" from="HBoxContainer/NinePatchRect/Buttons/Yes" to="." method="_on_focus_entered" binds= [ "HBoxContainer/NinePatchRect/Buttons/Yes/MarginContainer/NinePatchRect" ]]
 [connection signal="focus_exited" from="HBoxContainer/NinePatchRect/Buttons/Yes" to="." method="_on_focus_exited" binds= [ "HBoxContainer/NinePatchRect/Buttons/Yes/MarginContainer/NinePatchRect" ]]
-[connection signal="gui_input" from="HBoxContainer/NinePatchRect/Buttons/Yes" to="." method="_gui_input"]
+[connection signal="gui_input" from="HBoxContainer/NinePatchRect/Buttons/Yes" to="." method="_click_input"]
 [connection signal="mouse_entered" from="HBoxContainer/NinePatchRect/Buttons/Yes" to="." method="_on_mouse_entered" binds= [ "HBoxContainer/NinePatchRect/Buttons/Yes/MarginContainer/NinePatchRect" ]]
 [connection signal="mouse_exited" from="HBoxContainer/NinePatchRect/Buttons/Yes" to="." method="_on_mouse_exited" binds= [ "HBoxContainer/NinePatchRect/Buttons/Yes" ]]
 [connection signal="focus_entered" from="HBoxContainer/NinePatchRect/Buttons/No" to="." method="_on_focus_entered" binds= [ "HBoxContainer/NinePatchRect/Buttons/No/MarginContainer/NinePatchRect" ]]
 [connection signal="focus_exited" from="HBoxContainer/NinePatchRect/Buttons/No" to="." method="_on_focus_exited" binds= [ "HBoxContainer/NinePatchRect/Buttons/No/MarginContainer/NinePatchRect" ]]
-[connection signal="gui_input" from="HBoxContainer/NinePatchRect/Buttons/No" to="." method="_gui_input"]
+[connection signal="gui_input" from="HBoxContainer/NinePatchRect/Buttons/No" to="." method="_click_input"]
 [connection signal="mouse_entered" from="HBoxContainer/NinePatchRect/Buttons/No" to="." method="_on_mouse_entered" binds= [ "HBoxContainer/NinePatchRect/Buttons/No/MarginContainer/NinePatchRect" ]]
 [connection signal="mouse_exited" from="HBoxContainer/NinePatchRect/Buttons/No" to="." method="_on_mouse_exited" binds= [ "HBoxContainer/NinePatchRect/Buttons/No" ]]

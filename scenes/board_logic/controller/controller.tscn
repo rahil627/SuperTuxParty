@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://scenes/board_logic/controller/icons/splash_background.png" type="Texture" id=8]
 [ext_resource path="res://scenes/board_logic/controller/debug.gd" type="Script" id=9]
 [ext_resource path="res://scenes/menus/pause_menu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/board_logic/controller/cake.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/board_logic/controller/minigameinformationscreen.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/board_logic/controller/duelselection.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/board_logic/controller/itemselection.tscn" type="PackedScene" id=14]
@@ -424,6 +423,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayerInfo1" type="VBoxContainer" parent="Screen"]
 margin_right = 186.0
@@ -825,9 +827,9 @@ anims/show = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1600.0
-margin_top = -2000.0
+margin_top = 2000.0
 margin_right = -1600.0
-margin_bottom = -2000.0
+margin_bottom = 2000.0
 mouse_filter = 2
 texture = ExtResource( 8 )
 stretch_mode = 4
@@ -1102,7 +1104,7 @@ anims/Duel = SubResource( 7 )
 anims/FFA = SubResource( 8 )
 
 [node name="Root" type="Control" parent="Screen/MinigameTypeAnimation"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1117,9 +1119,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -192.0
+margin_left = -64.0
 margin_top = -64.0
-margin_right = -64.0
+margin_right = 64.0
 margin_bottom = 64.0
 expand = true
 stretch_mode = 6
@@ -1129,9 +1131,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 64.0
+margin_left = -64.0
 margin_top = -64.0
-margin_right = 192.0
+margin_right = 64.0
 margin_bottom = 64.0
 expand = true
 stretch_mode = 6
@@ -1141,10 +1143,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = -138.0
-margin_right = 192.0
-margin_bottom = -10.0
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
 expand = true
 stretch_mode = 6
 
@@ -1153,10 +1155,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = 10.0
-margin_right = 192.0
-margin_bottom = 138.0
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
 expand = true
 stretch_mode = 6
 
@@ -1174,8 +1176,6 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "CONTEXT_LABEL_VS"
-
-[node name="Cake" parent="Screen" instance=ExtResource( 11 )]
 
 [node name="Roll" type="Button" parent="Screen"]
 visible = false

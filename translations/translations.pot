@@ -520,3 +520,39 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
+
+msgid "CONTEXT_SHOW_TUTORIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_DICE"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_COOKIES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_CAKES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_WINNING"
+msgstr ""
+
+msgid "CONTEXT_CAKE_PLACED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_WANT_BUY"
+msgstr ""
+
+msgid "CONTEXT_CAKE_BUY_AMOUNT"
+msgstr ""
+
+msgid "CONTEXT_CAKE_COLLECTED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr ""
