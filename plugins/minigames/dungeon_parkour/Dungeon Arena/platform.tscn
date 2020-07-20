@@ -4,16 +4,14 @@
 [ext_resource path="res://plugins/minigames/dungeon_parkour/Dungeon Arena/exported/Floor01.escn" type="PackedScene" id=2]
 [ext_resource path="res://plugins/minigames/dungeon_parkour/Dungeon Arena/ColorPaletteRED.png" type="Texture" id=3]
 
-
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 1, 1.1, 1 )
+extents = Vector3( 3, 1.1, 3 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 1, 0.1, 1 )
+extents = Vector3( 3, 0.1, 3 )
 
 [node name="Platform" type="Spatial"]
 script = ExtResource( 1 )
@@ -24,6 +22,62 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="Floor01" parent="Body/Scene Root" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root9" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2 )
+
+[node name="Floor01" parent="Body/Scene Root9" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root5" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 0 )
+
+[node name="Floor01" parent="Body/Scene Root5" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root8" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -2 )
+
+[node name="Floor01" parent="Body/Scene Root8" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root4" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2 )
+
+[node name="Floor01" parent="Body/Scene Root4" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root6" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 2 )
+
+[node name="Floor01" parent="Body/Scene Root6" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root2" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0 )
+
+[node name="Floor01" parent="Body/Scene Root2" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root7" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -2 )
+
+[node name="Floor01" parent="Body/Scene Root7" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="Scene Root3" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 2 )
+
+[node name="Floor01" parent="Body/Scene Root3" index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 material/0 = SubResource( 1 )
 
@@ -39,3 +93,19 @@ shape = SubResource( 3 )
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 
 [editable path="Body/Scene Root"]
+
+[editable path="Body/Scene Root9"]
+
+[editable path="Body/Scene Root5"]
+
+[editable path="Body/Scene Root8"]
+
+[editable path="Body/Scene Root4"]
+
+[editable path="Body/Scene Root6"]
+
+[editable path="Body/Scene Root2"]
+
+[editable path="Body/Scene Root7"]
+
+[editable path="Body/Scene Root3"]

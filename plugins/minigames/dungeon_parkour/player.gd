@@ -32,6 +32,8 @@ func calc_movement(previous: float, next: float) -> float:
 		return next
 	elif sign(previous) == sign(next):
 		return clamp(next, min(previous, 0), max(previous, 0))
+	elif sign(previous) == -sign(next) or previous == 0:
+		return next * 0.75
 	else:
 		return previous * 0.9
 
@@ -50,7 +52,8 @@ func _process(delta):
 		dir.y = 0
 		
 		if dir.length() < randf() * 0.5:
-			jump = true
+			if not ai_current_waypoint.is_in_group("dont_jump"):
+				jump = true
 			ai_current_waypoint = ai_current_waypoint.get_node(ai_current_waypoint.get_nodes()[0])
 		
 		if abs(dir.x) < 0.05:
@@ -58,7 +61,7 @@ func _process(delta):
 		if abs(dir.z) < 0.05:
 			dir.z = 0
 		
-		if get_floor_velocity().length() < 0.1:
+		if not ai_current_waypoint.is_in_group("dont_move"):
 			dir = dir.normalized()
 			dir.x = dir.x * SPEED
 			dir.z = dir.z * SPEED
