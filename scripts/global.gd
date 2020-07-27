@@ -89,13 +89,6 @@ enum GNU_ACTION_TYPES {
 	COOP_MINIGAME
 }
 
-enum JOYPAD_DISPLAY_TYPE {
-	NUMBERS,
-	XBOX,
-	NINTENDO_DS,
-	PLAYSTATION
-}
-
 enum MINIGAME_TYPES {
 	DUEL,
 	ONE_VS_THREE,
@@ -115,8 +108,6 @@ enum Difficulty {
 
 # warning-ignore:unused_signal
 signal language_changed
-
-var joypad_display: int = JOYPAD_DISPLAY_TYPE.NUMBERS
 
 var amount_of_players := 4
 

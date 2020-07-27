@@ -1,14 +1,40 @@
-const USER_CONFIG_FILE = "user://controls.cfg"
+extends Control
+
+const USER_CONFIG_FILE := "user://controls.cfg"
+
+const ACTIONS := ["up", "left", "down", "right", "ok", "pause",
+		"action1", "action2", "action3", "action4"]
+
+signal quit
+
+var player_id setget set_player_id
 
 # The eventname that is currently remapped
 var control_remap_event
 # The button which triggered the remap
 var control_remap_button
 
-var main_menu
+func set_player_id(id: int):
+	player_id = id
+	
+	for action in ACTIONS:
+		var entry := "player{num}_{action}".format({"num": player_id, "action": action})
+		var list := InputMap.get_action_list(entry)
+		
+		var node := $PanelContainer/VBoxContainer/Grid/Column1.get_node_or_null(action)
+		if not node:
+			node = $PanelContainer/VBoxContainer/Grid/Column2.get_node_or_null(action)
+		ControlHelper.set_button_to_event(node.get_node("Button"), list[0])
+	
+	$Back.grab_focus()
 
-func _init(main_menu):
-	self.main_menu = main_menu
+func _ready():
+	for action in ACTIONS:
+		var node := $PanelContainer/VBoxContainer/Grid/Column1.get_node_or_null(action)
+		if not node:
+			node = $PanelContainer/VBoxContainer/Grid/Column2.get_node_or_null(action)
+		var button := node.get_node("Button")
+		button.connect("pressed", self, "_control_remap_pressed", [action, button])
 
 # Taken and adapted from the Godot demos
 func load_controls():
@@ -77,49 +103,23 @@ func save_controls():
 		config.set_value("input", action_name, value)
 	config.save(USER_CONFIG_FILE)
 
-# loads for every player an instance of player_controls_template.tscn and assigns a click handler to every button
-func controls_remapping_setup():
-	load_controls()
-	var controls_tab = main_menu.get_node("TabContainer/Controls/TabContainer")
-	for child in controls_tab.get_children():
-		child.queue_free()
-		controls_tab.remove_child(child)
-	
-	for player_id in range(4):
-		var template = preload("player_controls_template.tscn")
-		var instance = template.instance()
-		instance.set_name(tr("MENU_LABEL_PLAYER") + var2str(player_id+1))
-		controls_tab.add_child(instance)
-		
-		# Iterating over all direct children of our template
-		# Every child's name should be the event, e.g. up for event player1_up
-		# and it must have a Button named child
-		for child in instance.get_children():
-			if child.has_node("Button"):
-				var button = child.get_node("Button")
-				var event_name = "player" + var2str(player_id + 1) + "_" + child.get_name()
-				var input_event = InputMap.get_action_list(event_name)[0]
-				if input_event != null:
-					button.text = ControlHelper.get_button_name(input_event)
-					button.connect("pressed", self, "_control_remap_pressed", [event_name, button])
-
-func _control_remap_pressed(event, button):
-	control_remap_event = event
+func _control_remap_pressed(event: String, button: Button):
+	control_remap_event = "player{num}_{action}".format({"num": player_id, "action": event})
 	control_remap_button = button
-	button.set_text(tr("MENU_LABEL_PRESS_ANY_KEY"))
+	button.set_text("MENU_LABEL_PRESS_ANY_KEY")
 
 # The min value of the axis to get chosen during remap
-# prevents choosing the axis with a little value over one with a large vlaue
+# prevents choosing the axis with a little value over one with a large value
 const JOYPAD_DEADZONE_REMAP = 0.5
 
-func _input(event):
-	var valid_type = event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadMotion or event is InputEventJoypadButton
-	var mousebutton_pressed_check = ((not event is InputEventMouseButton) or event.pressed)
-	var joypad_deadzone_check = ((not event is InputEventJoypadMotion) or abs(event.axis_value) >= JOYPAD_DEADZONE_REMAP)
+func _input(event: InputEvent):
+	var valid_type := event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadMotion or event is InputEventJoypadButton
+	var mousebutton_pressed_check := ((not event is InputEventMouseButton) or (event as InputEventMouseButton).pressed)
+	var joypad_deadzone_check := ((not event is InputEventJoypadMotion) or abs(event.axis_value) >= JOYPAD_DEADZONE_REMAP)
 	
-	if valid_type and control_remap_event != null and mousebutton_pressed_check and joypad_deadzone_check:
-		main_menu.get_tree().set_input_as_handled()
-		control_remap_button.text = ControlHelper.get_button_name(event)
+	if valid_type and control_remap_event and mousebutton_pressed_check and joypad_deadzone_check:
+		get_tree().set_input_as_handled()
+		ControlHelper.set_button_to_event(control_remap_button, event)
 		
 		# Remove old keybindings
 		for old_event in InputMap.get_action_list(control_remap_event):
@@ -131,3 +131,7 @@ func _input(event):
 		
 		control_remap_event = null
 		control_remap_button = null
+
+func _on_Back_pressed():
+	hide()
+	emit_signal("quit")

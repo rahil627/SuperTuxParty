@@ -74,76 +74,10 @@ msgstr ""
 msgid "MENU_CONTROLS_ACTION_4"
 msgstr ""
 
-msgid "MENU_CONTROLS_AXIS_MINUS"
+msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
 msgstr ""
 
-msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
-
-msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_START"
+msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr ""
 
 msgid "MENU_CONTROLS_MOUSE"
@@ -233,9 +167,6 @@ msgstr ""
 msgid "MENU_LABEL_DESKTOP"
 msgstr ""
 
-msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr ""
-
 msgid "MENU_LABEL_LINEAR"
 msgstr ""
 
@@ -278,7 +209,16 @@ msgstr ""
 msgid "MENU_LABEL_PLAY"
 msgstr ""
 
-msgid "MENU_LABEL_PLAYER"
+msgid "MENU_LABEL_PLAYER1"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER2"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER3"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER4"
 msgstr ""
 
 msgid "MENU_LABEL_PLAYSTATION"

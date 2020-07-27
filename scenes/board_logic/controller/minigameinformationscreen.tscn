@@ -51,7 +51,6 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Description" type="Panel" parent="."]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 125.0
@@ -60,7 +59,6 @@ margin_right = 425.0
 margin_bottom = -51.0
 
 [node name="Header" type="Panel" parent="Description"]
-editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 29.0
 
@@ -85,7 +83,6 @@ custom_fonts/normal_font = ExtResource( 6 )
 bbcode_enabled = true
 
 [node name="Controls" type="TabContainer" parent="."]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -221,11 +218,9 @@ environment = SubResource( 2 )
 current = true
 
 [node name="Indicator" type="Spatial" parent="Characters/Viewport"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, -2 )
 
 [node name="Sprite" type="Sprite3D" parent="Characters/Viewport/Indicator"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 material_override = SubResource( 3 )
 pixel_size = 0.002

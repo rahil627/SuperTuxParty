@@ -5,9 +5,13 @@ Copyright © 2018 Jakob Sinclair
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## assets/textures/controls/gamepad
-### *.png
+### arrow*.png | button*.png | dpad*.png
 
 Public domain by Terazilla
+
+buttonSelect.png is a modified version of kb_space.png by Florian Kothmeier
+
+dpad_left, dpad_right, dpad_up and dpad_down are modified versions of switch_dpad_all.png
 
 Retrieved from [Open Game Art](https://opengameart.org/content/free-controller-prompts-xbox-ps4-switch)
 
