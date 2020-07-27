@@ -247,6 +247,8 @@ func load_board(board: String, names: Array, characters: Array,
 		if i >= human_players:
 			players[i].is_ai = true
 			players[i].ai_difficulty = overrides.ai_difficulty
+		else:
+			players[i].is_ai = false
 	current_board = board
 	_goto_scene_board()
 
