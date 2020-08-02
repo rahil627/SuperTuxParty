@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/84322__splashdust__flipcard.wav-d902c205403b332f09a2443253c1e937.sample"
+
+[deps]
+
+source_file="res://plugins/minigames/memory/84322__splashdust__flipcard.wav"
+dest_files=[ "res://.import/84322__splashdust__flipcard.wav-d902c205403b332f09a2443253c1e937.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

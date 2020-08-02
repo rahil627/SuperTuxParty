@@ -1,52 +1,105 @@
+tool
 extends Control
 
-export(int, 1, 8) var max_health = 1
+# The maximum health a teams has, this is also the starting health
+# This is measured in "half"-hearts, e.g. the value 2 is a full heart in display
+export(int, 1, 8) var max_health = 2
+
+var playerid_index = [-1, -1, -1, -1]
+
+func _load_character(player_id: int, team_index: int):
+	playerid_index[player_id - 1] = team_index
+
+	var character = Global.players[player_id - 1].character
+	var icon = PluginSystem.character_loader.load_character_icon(character)
+
+	var texture = TextureRect.new()
+	texture.rect_min_size = Vector2(64, 64)
+	texture.expand = true
+	texture.stretch_mode = TextureRect.STRETCH_SCALE
+	texture.texture = icon
+
+	var parent = get_node("Player{0}/Icons".format([team_index]))
+	parent.add_child(texture)
+
+func _load_health(team_index: int):
+	var parent = get_node("Player{0}/Health".format([team_index]))
+	for _j in range((max_health + 1) / 2):
+		var heart_container = load("res://scenes/overlays/player_health.tscn").instance()
+
+		# If it's on the right side, make it being used up from the middle
+		if team_index % 2 == 0:
+			heart_container.fill_mode = TextureProgress.FILL_RIGHT_TO_LEFT
+
+		parent.add_child(heart_container)
 
 func _ready():
 	if Engine.editor_hint:
 		for i in range(4):
-			get_node("Player%dName" % i).text = "Player%d" % i
-			for _j in range(max_health):
-				var heart_container = load("res://scenes/overlays/player_health.tscn").instance()
-				get_node("Player%dHealth" % i).add_child(heart_container)
+			_load_health(i + 1)
 	else:
 		var i = 1
 		
-		for team in Global.minigame_teams:
-			for player_id in team:
-				get_node("Player%dName" % i).text = Global.players[player_id - 1].player_name
-				for _j in range(max_health):
-					var heart_container = load("res://scenes/overlays/player_health.tscn").instance()
-					# If it's on the right side, make it being used up from the middle
-					if i % 2 == 0:
-						heart_container.fill_mode = TextureProgress.FILL_RIGHT_TO_LEFT
-					
-					get_node("Player%dHealth" % i).add_child(heart_container)
-				
-				i += 1
+		match Global.minigame_state.minigame_type:
+			Global.MINIGAME_TYPES.FREE_FOR_ALL:
+				for player_id in Global.minigame_state.minigame_teams[0]:
+					_load_character(player_id, i)
+					_load_health(i)
+					i += 1
+			_:
+				for team in Global.minigame_state.minigame_teams:
+					for player_id in team:
+						_load_character(player_id, i)
+					_load_health(i)
+					i += 1
 		
-		while i < Global.amount_of_players:
-			get_node("Player%dName" % i).queue_free()
-			get_node("Player%dHealth" % i).queue_free()
-			
+		# Remove entries that aren't needed
+		while i <= Global.amount_of_players:
+			get_node("Player{0}".format([i])).queue_free()
 			i += 1
 
-func set_health(player_id, health):
-	var children = get_node("Player%dHealth" % player_id).get_children()
-	
+# Takes away or recovers (if negative) amount of health of the team with the player `player_id`
+# This is measured in "half"-hearts, e.g. the value 2 is a full heart in display
+func _update_damage(player_id: int, amount: int):
+	var index = playerid_index[player_id - 1]
+	var children = get_node("Player{0}/Health".format([index])).get_children()
+
 	# Make the hearts be used in reverse order if its on the right side
 	# This makes the heart being used up from the center
 	# Sadly there is no possibility to reverse the HBoxContainer layout order
 	if player_id % 2 == 0:
 		children.invert()
-	
-	for child in children:
-		child.value = clamp(health, 0, 1)
-		health -= 1
 
-func get_health(player_id):
-	var health = 0
-	for child in get_node("Player%dHealth" % player_id).get_children():
-		health += child.value
-	
+	# A team's health can't fall outside of range
+	var health = get_health(player_id) - amount
+
+	for child in children:
+		child.value = clamp(health, 0, 2)
+		health -= 2
+
+# Removes amount of health from the team with the player `player_id`
+# This is measured in "half"-hearts, e.g. the value 2 is a full heart in display
+# A team's health cannot drop below zero
+# Amount must be >= 0
+func take_damage(player_id: int, amount: int):
+	assert(amount >= 0, "HealthOverlay: Amount of damage is < 0")
+	_update_damage(player_id, amount)
+
+# Recovers amount of health from the team with the player `player_id`
+# This is measured in "half"-hearts, e.g. the value 2 is a full heart in display
+# Amount must be >= 0
+func heal_damage(player_id: int, amount: int):
+	assert(amount >= 0, "HealthOverlay: Amount of heal is < 0")
+	_update_damage(player_id, -amount)
+
+# Returns the amount of health a team with the player `player_id` has
+# This is measured in "half"-hearts, e.g. the value 2 is a full heart in display
+func get_health(player_id: int) -> int:
+	var index = playerid_index[player_id - 1]
+	var children = get_node("Player{0}/Health".format([index])).get_children()
+
+	var health := 0
+	for child in children:
+		health += int(child.value)
+
 	return health

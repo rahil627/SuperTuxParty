@@ -482,6 +482,46 @@ Retrieved from [Open Game Art](https://opengameart.org/content/pixel-art-food-pa
 
 License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
+## plugins/minigames/memory
+### screenshot.png
+
+Copyright © Florian Kothmeier
+
+License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+### montage.ogg
+
+Public Domain by wipics
+
+Retrieved from [Open Game Art](https://opengameart.org/content/montage)
+
+License: [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### 84322__splashdust__flipcard.wav
+
+Public Domain by Splashdust
+
+Retrieved from [FreeSound](https://freesound.org/people/Splashdust/sounds/84322/)
+
+License: [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
+### 342751__rhodesmas__coins-purchase-3.wav
+
+Public Domain by rhodesmas
+
+Retrieved from [FreeSound](https://freesound.org/people/rhodesmas/sounds/342751/)
+
+License: [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/memory/cards
+### card_\*.png
+
+Public Domain by mehrasaur
+
+Retrieved from [Open Game Art](https://opengameart.org/content/playing-card-assets-52-cards-deck-chips)
+
+License: [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## plugins/minigames/bowling
 ### screenshot.png
 

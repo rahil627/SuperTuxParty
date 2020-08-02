@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/icon.png-a24f921459877b5a0830dffe6ec72389.s3tc.stex"
-path.etc2="res://.import/icon.png-a24f921459877b5a0830dffe6ec72389.etc2.stex"
+path.s3tc="res://.import/card_back.png-c017f12fecb3e5826454f00123de5293.s3tc.stex"
+path.etc2="res://.import/card_back.png-c017f12fecb3e5826454f00123de5293.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://plugins/characters/Green Tux/icon.png"
-dest_files=[ "res://.import/icon.png-a24f921459877b5a0830dffe6ec72389.s3tc.stex", "res://.import/icon.png-a24f921459877b5a0830dffe6ec72389.etc2.stex" ]
+source_file="res://plugins/minigames/memory/cards/card_back.png"
+dest_files=[ "res://.import/card_back.png-c017f12fecb3e5826454f00123de5293.s3tc.stex", "res://.import/card_back.png-c017f12fecb3e5826454f00123de5293.etc2.stex" ]
 
 [params]
 
