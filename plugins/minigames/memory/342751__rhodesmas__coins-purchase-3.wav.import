@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/342751__rhodesmas__coins-purchase-3.wav-46028ab47154d8e7d45fe41bb295a8c0.sample"
+
+[deps]
+
+source_file="res://plugins/minigames/memory/342751__rhodesmas__coins-purchase-3.wav"
+dest_files=[ "res://.import/342751__rhodesmas__coins-purchase-3.wav-46028ab47154d8e7d45fe41bb295a8c0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

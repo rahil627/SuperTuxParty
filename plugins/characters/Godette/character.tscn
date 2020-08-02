@@ -3824,7 +3824,7 @@ tracks/56/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.04167, 1, 
 
 [sub_resource type="CapsuleShape" id=12]
 radius = 0.3
-height = 0.5
+height = 0.45
 
 [node name="Model" type="Spatial"]
 
@@ -4135,5 +4135,5 @@ anims/sad = SubResource( 10 )
 anims/walk = SubResource( 11 )
 
 [node name="Shape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.55, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.525, 0 )
 shape = SubResource( 12 )

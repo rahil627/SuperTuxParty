@@ -322,7 +322,7 @@ func _goto_scene_board() -> void:
 
 # Internal function for loading a character's model and other data
 # into the nodes used by the loaded scene
-func _load_player(player: Node, state: PlayerState) -> void:
+func _load_player(player: Node, state: PlayerState, team_id: int) -> void:
 	var character := state.character
 	var wants_model := player.has_node("Model")
 	var wants_shape := player.has_node("Shape")
@@ -331,11 +331,21 @@ func _load_player(player: Node, state: PlayerState) -> void:
 		var model: Spatial = PluginSystem.character_loader.load_character(character)
 		model.set_name("Model")
 
-		var shape: Spatial = model.get_node_or_null("Shape")
+		var shape: CollisionShape = model.get_node_or_null("Shape")
 		if shape:
 			model.remove_child(shape)
 		else:
 			push_warning("Character `{0}` has no shape".format([character]))
+
+		if team_id >= 0 and shape and minigame_state.minigame_type == MINIGAME_TYPES.TWO_VS_TWO:
+			var bbox := Utility.get_aabb_from_shape(shape.shape)
+			var indicator: Sprite3D = preload(\
+					"res://scenes/team_indicator/team_indicator.tscn"\
+					).instance()
+			indicator.material_override.albedo_color =\
+					MINIGAME_TEAM_COLORS[team_id]
+			indicator.translation.y = bbox.size.y / 2 + shape.translation.y + 0.1
+			player.get_node("Model").add_child(indicator)
 
 		var placeholder: Spatial = player.get_node("Model")
 		# The model should be at the place, the placeholder was originally
@@ -370,19 +380,7 @@ func _goto_scene_minigame_callback(s: PackedScene, _arg):
 		var team = minigame_state.minigame_teams[team_id]
 		for player_id in team:
 			var player = loaded_scene.get_node("Player" + str(i))
-			_load_player(player, players[player_id - 1])
-
-			if minigame_state.minigame_type == MINIGAME_TYPES.TWO_VS_TWO:
-				var shape = load(PluginSystem.character_loader.get_collision_shape_path(players[player_id - 1].character))
-				var bbox : AABB = Utility.get_aabb_from_shape(shape)
-
-				var indicator = preload(\
-						"res://scenes/team_indicator/team_indicator.tscn"\
-						).instance()
-				indicator.material_override.albedo_color =\
-						MINIGAME_TEAM_COLORS[team_id]
-				indicator.translation.y = bbox.size.y + 0.05
-				player.get_node("Model").add_child(indicator)
+			_load_player(player, players[player_id - 1], team_id)
 
 			i += 1
 
@@ -399,7 +397,7 @@ func _goto_scene_board_callback(s: PackedScene, _arg):
 
 	for i in players.size():
 		var player = loaded_scene.get_node("Player" + str(i + 1))
-		_load_player(player, players[i])
+		_load_player(player, players[i], -1)
 
 func load_board_from_savegame(savegame) -> void:
 	current_savegame = savegame
@@ -525,7 +523,7 @@ func _goto_board(placement) -> void:
 
 	# Only award if it's not a test.
 	if minigame_state.is_try:
-		_goto_scene_board()
+		call_deferred("_goto_scene_board")
 		return
 
 	var minigame_type = minigame_state.minigame_type

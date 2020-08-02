@@ -116,11 +116,11 @@ func _on_Timer_timeout():
 				Global.minigame_team_win_by_points([$Player1.plants + $Player2.plants, $Player3.plants + $Player4.plants])
 
 func update_overlay():
-	$Screen/ScoreOverlay.set_score(1, $Player1.plants)
-	$Screen/ScoreOverlay.set_score(2, $Player2.plants)
+	$Screen/ScoreOverlay.set_score($Player1.player_id, $Player1.plants)
+	$Screen/ScoreOverlay.set_score($Player2.player_id, $Player2.plants)
 	if Global.minigame_state.minigame_type != Global.MINIGAME_TYPES.DUEL:
-		$Screen/ScoreOverlay.set_score(3, $Player3.plants)
-		$Screen/ScoreOverlay.set_score(4, $Player4.plants)
+		$Screen/ScoreOverlay.set_score($Player3.player_id, $Player3.plants)
+		$Screen/ScoreOverlay.set_score($Player4.player_id, $Player4.plants)
 
 func _process(_delta):
 	$Screen/Time.text = var2str(stepify($Timer.time_left, 0.01))

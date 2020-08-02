@@ -1,0 +1,17 @@
+{
+	"name": "MINIGAME_NAME",
+	"image_path": "res://plugins/minigames/memory/screenshot.png",
+	"scene_path": "res://plugins/minigames/memory/minigame.tscn",
+    "translation_directory": "res://plugins/minigames/memory/translations",
+
+    "type": ["2v2"],
+
+	"description": "MINIGAME_DESCRIPTION",
+
+	"controls": {
+		"up": "MINIGAME_ACTION_UP",
+		"down": "MINIGAME_ACTION_DOWN",
+		"left": "MINIGAME_ACTION_LEFT",
+		"right": "MINIGAME_ACTION_RIGHT"
+	}
+}
