@@ -1,16 +1,36 @@
 {
-    "name": "MINIGAME_NAME",
-    "scene_path" : "res://plugins/minigames/haunted_dreams/minigame.tscn",
-    "type": ["GnuCoop"],
-    "image_path": "res://plugins/minigames/haunted_dreams/screenshot.png",
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/haunted_dreams/minigame.tscn",
+	"image_path": "res://plugins/minigames/haunted_dreams/screenshot.png",
 	"translation_directory": "res://plugins/minigames/haunted_dreams/translations",
-
-    "description" : "MINIGAME_DESCRIPTION",
-
-    "controls": {
-        "up" : "MINIGAME_ACTION_UP",
-        "left": "MINIGAME_ACTION_LEFT",
-        "down": "MINIGAME_ACTION_DOWN",
-        "right": "MINIGAME_ACTION_RIGHT",
-    }
+	"type": [
+		"GnuCoop"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"up"
+			],
+			"text": "MINIGAME_ACTION_UP"
+		},
+		{
+			"actions": [
+				"left"
+			],
+			"text": "MINIGAME_ACTION_LEFT"
+		},
+		{
+			"actions": [
+				"down"
+			],
+			"text": "MINIGAME_ACTION_DOWN"
+		},
+		{
+			"actions": [
+				"right"
+			],
+			"text": "MINIGAME_ACTION_RIGHT"
+		}
+	]
 }

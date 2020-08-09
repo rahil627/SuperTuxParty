@@ -1,16 +1,42 @@
 {
-    "name": "MINIGAME_NAME",
-    "scene_path" : "res://plugins/minigames/dungeon_parkour/minigame.tscn",
-    "type": ["NolokSolo"],
-    "image_path": "res://plugins/minigames/dungeon_parkour/screenshot.png",
-
-    "description" : "MINIGAME_DESCRIPTION",
-
-    "controls": {
-        "up": "MINIGAME_ACTION_UP",
-        "left": "MINIGAME_ACTION_LEFT",
-        "down": "MINIGAME_ACTION_DOWN",
-        "right": "MINIGAME_ACTION_RIGHT",
-        "action1": "MINIGAME_ACTION_JUMP"
-    }
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/dungeon_parkour/minigame.tscn",
+	"image_path": "res://plugins/minigames/dungeon_parkour/screenshot.png",
+	"translation_directory": "res://plugins/minigames/dungeon_parkour/translations",
+	"type": [
+		"NolokSolo"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"up"
+			],
+			"text": "MINIGAME_ACTION_UP"
+		},
+		{
+			"actions": [
+				"left"
+			],
+			"text": "MINIGAME_ACTION_LEFT"
+		},
+		{
+			"actions": [
+				"down"
+			],
+			"text": "MINIGAME_ACTION_DOWN"
+		},
+		{
+			"actions": [
+				"right"
+			],
+			"text": "MINIGAME_ACTION_RIGHT"
+		},
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_JUMP"
+		}
+	]
 }

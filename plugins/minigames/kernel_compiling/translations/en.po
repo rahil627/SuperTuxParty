@@ -19,3 +19,6 @@ msgstr "Kernel Compiling"
 
 msgid "MINIGAME_DESCRIPTION"
 msgstr "The players generate energy to compile the Linux kernel. The key to press is shown on a screen.\nThe fastest player wins!"
+
+msgid "MINIGAME_ACTION_PRESS_BUTTON"
+msgstr "Press the button"

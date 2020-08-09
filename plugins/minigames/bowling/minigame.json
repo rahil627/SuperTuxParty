@@ -1,18 +1,48 @@
 {
-    "name": "MINIGAME_NAME",
-    "scene_path": "res://plugins/minigames/bowling/minigame.tscn",
-    "image_path": "res://plugins/minigames/bowling/screenshot.png",
-    "translation_directory": "res://plugins/minigames/bowling/translations",
-    "type": ["1v3"],
-
-    "description": "MINIGAME_DESCRIPTION",
-
-    "controls": {
-        "up": "MINIGAME_ACTION_UP",
-        "left": "MINIGAME_ACTION_LEFT",
-        "down": "MINIGAME_ACTION_DOWN",
-        "right": "MINIGAME_ACTION_RIGHT",
-        "action1": "MINIGAME_ACTION_JUMP",
-        "action2": "MINIGAME_ACTION_THROW",
-    }
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/bowling/minigame.tscn",
+	"image_path": "res://plugins/minigames/bowling/screenshot.png",
+	"translation_directory": "res://plugins/minigames/bowling/translations",
+	"type": [
+		"1v3"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"up"
+			],
+			"text": "MINIGAME_ACTION_UP"
+		},
+		{
+			"actions": [
+				"down"
+			],
+			"text": "MINIGAME_ACTION_DOWN"
+		},
+		{
+			"actions": [
+				"left"
+			],
+			"text": "MINIGAME_ACTION_LEFT"
+		},
+		{
+			"actions": [
+				"right"
+			],
+			"text": "MINIGAME_ACTION_RIGHT"
+		},
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_JUMP"
+		},
+		{
+			"actions": [
+				"action2"
+			],
+			"text": "MINIGAME_ACTION_THROW"
+		}
+	]
 }
