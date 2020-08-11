@@ -479,9 +479,6 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 
-msgid "CONTEXT_TUTORIAL_WINNING"
-msgstr ""
-
 msgid "CONTEXT_CAKE_PLACED"
 msgstr ""
 

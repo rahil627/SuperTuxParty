@@ -103,7 +103,7 @@ msgstr "Unknown Button"
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Gamepad"
 
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr "Gamepad button {button}"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"

@@ -103,7 +103,7 @@ msgstr "Tuntematon painike"
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Peliohjain"
 
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr "Gamepad painike"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
