@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-04-30 12:11+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-08-08 03:33+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/en/>\n"
 "Language: en\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Buy a cake for {amount} cookies"
@@ -76,77 +76,11 @@ msgstr "Action 3"
 msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Action 4"
 
-msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr "Axis -"
-
-msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr "Axis +"
-
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
 msgstr "Unknown Axis {axis}"
 
-msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr "X Left"
-
-msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr "X Right"
-
-msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr "Y Left"
-
-msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr "Y Right"
-
-msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr "Unknown Button"
-
-msgid "MENU_CONTROLS_GAMEPAD"
-msgstr "Gamepad"
-
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr "Gamepad button {button}"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr "Gamepad button 1"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr "Gamepad button 2"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr "Gamepad button 3"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr "Gamepad button 4"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr "Gamepad button A"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr "Gamepad button B"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr "Gamepad button Circle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr "Gamepad button Cross"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr "Gamepad button Square"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr "Gamepad button Triangle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr "Gamepad button X"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr "Gamepad button Y"
-
-msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr "Gamepad Select"
-
-msgid "MENU_CONTROLS_GAMEPAD_START"
-msgstr "Gamepad Start"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Mouse"
@@ -547,40 +481,38 @@ msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Cursed die"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
-msgstr "It looks like this is your first time playing. Do you want me to explain the rules?"
+msgstr ""
+"It looks like this is your first time playing. Do you want me to explain the "
+"rules?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
-msgstr "The game is played in turns. During your turn, you roll a die and move the number it shows forward."
-
-msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
-msgstr "There are different types of spaces you can land on: Blue spaces give you cookies, while red spaces take your cookies."
-
-msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
-msgstr "Green spaces start board specific events. While Battle spaces let you challenge another player to a duel minigame."
-
-msgid "CONTEXT_TUTORIAL_MINIGAMES"
-msgstr "After every player had their turn, a minigame will be played. There are three different flavours of minigames:"
-
-msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-msgstr "Free for all, where everyone competes with everyone to win."
-
-msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr "Two vs two, where you play in teams of two."
-
-msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
-msgstr "And one vs three, where one competes with the rest. The solo player gets a bonus to even things up."
-
-msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
-msgstr "Special minigames will be played when a player lands on a GNU or NOLOK space. GNU minigames are good, while NOLOK minigames are bad for you. So better stay away from the latter!"
+msgstr ""
+"The game is played in turns. During your turn, you roll a die and move the "
+"number it shows forward."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
-msgstr "The currency is cookies. You earn cookies by winning minigames. With cookies you can buy items when passing the shop spaces."
+msgstr ""
+"The currency is cookies. You earn cookies by winning minigames. With cookies "
+"you can buy items when passing the shop spaces."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
-msgstr "To win, you need to collect the most cakes. Cookies will be used as a tiebreaker. You can buy cakes at special places on the board. If you buy one, the cake will move to another location."
+msgstr ""
+"To win, you need to collect the most cakes. Cookies will be used as a "
+"tiebreaker. You can buy cakes at special places on the board. If you buy "
+"one, the cake will move to another location."
 
-msgid "CONTEXT_TUTORIAL_END"
-msgstr "That's it, now you're ready to go! Have fun!"
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr ""
+"There are different types of spaces you can land on: Blue spaces give you "
+"cookies, while red spaces take your cookies."
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr ""
+"Green spaces start board specific events. Battle spaces let you challenge "
+"another player to a duel minigame."
+
+msgid "CONTEXT_TUTORIAL_WINNING"
+msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"
 msgstr "Here's the cake, come and get it!"
@@ -592,7 +524,103 @@ msgid "CONTEXT_CAKE_BUY_AMOUNT"
 msgstr "How many cakes do you want to buy?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
-msgstr "Well done, [color=#00aaff]{player}[/color]. That's [color=#dd44ff]{amount}[/color] cake(s) for you."
+msgstr ""
+"Well done, [color=#00aaff]{player}[/color]. That's [color=#dd44ff]{amount}[/"
+"color] cake(s) for you."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "I'm sorry but you don't have enough cookies to buy a cake."
+
+#~ msgid "MENU_CONTROLS_AXIS_MINUS"
+#~ msgstr "Axis -"
+
+#~ msgid "MENU_CONTROLS_AXIS_PLUS"
+#~ msgstr "Axis +"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_LEFT"
+#~ msgstr "X Left"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_RIGHT"
+#~ msgstr "X Right"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_LEFT"
+#~ msgstr "Y Left"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
+#~ msgstr "Y Right"
+
+#~ msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
+#~ msgstr "Unknown Button"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD"
+#~ msgstr "Gamepad"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+#~ msgstr "Gamepad button {button}"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
+#~ msgstr "Gamepad button 1"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
+#~ msgstr "Gamepad button 2"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
+#~ msgstr "Gamepad button 3"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
+#~ msgstr "Gamepad button 4"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
+#~ msgstr "Gamepad button A"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
+#~ msgstr "Gamepad button B"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
+#~ msgstr "Gamepad button Circle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
+#~ msgstr "Gamepad button Cross"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
+#~ msgstr "Gamepad button Square"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
+#~ msgstr "Gamepad button Triangle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
+#~ msgstr "Gamepad button X"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
+#~ msgstr "Gamepad button Y"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_SELECT"
+#~ msgstr "Gamepad Select"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_START"
+#~ msgstr "Gamepad Start"
+
+#~ msgid "CONTEXT_TUTORIAL_MINIGAMES"
+#~ msgstr ""
+#~ "After every player had their turn, a minigame will be played. There are "
+#~ "three different flavours of minigames:"
+
+#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+#~ msgstr "Free for all, where everyone competes with everyone to win."
+
+#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+#~ msgstr "Two vs two, where you play in teams of two."
+
+#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+#~ msgstr ""
+#~ "And one vs three, where one competes with the rest. The solo player gets "
+#~ "a bonus to even things up."
+
+#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+#~ msgstr ""
+#~ "Special minigames will be played when a player lands on a GNU or NOLOK "
+#~ "space. GNU minigames are good, while NOLOK minigames are bad for you. So "
+#~ "better stay away from the latter!"
+
+#~ msgid "CONTEXT_TUTORIAL_END"
+#~ msgstr "That's it, now you're ready to go! Have fun!"

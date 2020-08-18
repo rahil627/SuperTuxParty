@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-26 17:41+0000\n"
+"PO-Revision-Date: 2020-08-08 03:33+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/minigamesescape_from_lava_1v3/nb_NO/>\n"
@@ -9,15 +9,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Slutt!"
 
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
-"Spillere kappes mot hverandre i et løp til toppen, mens lava_1v3 stiger "
-"under dem.\n"
+"Spillere kappes mot hverandre i et løp til toppen, mens lava stiger under "
+"dem.\n"
 "De må forsere flere dører. Én av disse dørene er blokkert og vil ikke åpne "
 "seg.\n"
 "Den første spilleren som kommer seg trygt til toppen vinner."
@@ -34,18 +34,14 @@ msgstr "Blokker dør 1 - kun enkeltspiller"
 msgid "MINIGAME_NAME"
 msgstr "Flykt fra lava"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr "Flytt til høyre"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_LEFT"
 msgstr "Flytt til venstre"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_DOWN"
 msgstr "Flytt nedover"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_UP"
 msgstr "Flytt oppover"

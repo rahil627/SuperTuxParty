@@ -76,77 +76,11 @@ msgstr "Ação 3"
 msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Ação 4"
 
-msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr "Eixo -"
-
-msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr "Eixo +"
-
-msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr "Axis Desconhecida"
-
-msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr "X Esquerdo"
-
-msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr "X Direito"
-
-msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr "Y Esquerdo"
-
-msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr "Y Direito"
-
-msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr "Botão Desconhecido"
-
-msgid "MENU_CONTROLS_GAMEPAD"
-msgstr "Comando"
+msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
+msgstr ""
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr "Botão do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr "Botão 1 do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr "Botão 2 do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr "Botão 3 do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr "Botão 4 do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr "Botão A do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr "Botão B do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr "Botão Circulo do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr "Botão Cruz do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr "Botão Quadrado do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr "Botão Triangulo do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr "Botão X do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr "Botão Y do controle"
-
-msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr "Controle Selecionar"
-
-msgid "MENU_CONTROLS_GAMEPAD_START"
-msgstr "Controle Começar"
+msgstr ""
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Rato"
@@ -235,9 +169,6 @@ msgstr "Descrição"
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Sair para o ambiente de trabalho"
 
-msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr "Nomeação dos controles:"
-
 msgid "MENU_LABEL_LINEAR"
 msgstr "Linear"
 
@@ -280,8 +211,17 @@ msgstr "Pausar ao Desfocar a Janela"
 msgid "MENU_LABEL_PLAY"
 msgstr "Jogar"
 
-msgid "MENU_LABEL_PLAYER"
-msgstr "Jogador"
+msgid "MENU_LABEL_PLAYER1"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER2"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER3"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER4"
+msgstr ""
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -335,6 +275,9 @@ msgid "MENU_LABEL_XBOX"
 msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
+msgstr ""
+
+msgid "MENU_LABEL_SCREENSHOTS"
 msgstr ""
 
 msgid "MENU_OPTIONS"
@@ -527,3 +470,108 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
+
+msgid "CONTEXT_SHOW_TUTORIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_DICE"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_COOKIES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_CAKES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_WINNING"
+msgstr ""
+
+msgid "CONTEXT_CAKE_PLACED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_WANT_BUY"
+msgstr ""
+
+msgid "CONTEXT_CAKE_BUY_AMOUNT"
+msgstr ""
+
+msgid "CONTEXT_CAKE_COLLECTED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr ""
+
+#~ msgid "MENU_CONTROLS_AXIS_MINUS"
+#~ msgstr "Eixo -"
+
+#~ msgid "MENU_CONTROLS_AXIS_PLUS"
+#~ msgstr "Eixo +"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_LEFT"
+#~ msgstr "X Esquerdo"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_RIGHT"
+#~ msgstr "X Direito"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_LEFT"
+#~ msgstr "Y Esquerdo"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
+#~ msgstr "Y Direito"
+
+#~ msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
+#~ msgstr "Botão Desconhecido"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD"
+#~ msgstr "Comando"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+#~ msgstr "Botão do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
+#~ msgstr "Botão 1 do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
+#~ msgstr "Botão 2 do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
+#~ msgstr "Botão 3 do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
+#~ msgstr "Botão 4 do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
+#~ msgstr "Botão A do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
+#~ msgstr "Botão B do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
+#~ msgstr "Botão Circulo do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
+#~ msgstr "Botão Cruz do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
+#~ msgstr "Botão Quadrado do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
+#~ msgstr "Botão Triangulo do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
+#~ msgstr "Botão X do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
+#~ msgstr "Botão Y do controle"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_SELECT"
+#~ msgstr "Controle Selecionar"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_START"
+#~ msgstr "Controle Começar"

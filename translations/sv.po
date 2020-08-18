@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-04-30 12:11+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2020-07-31 18:42+0000\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/sv/>\n"
 "Language: sv\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Köp en tårta för {amount} kakor"
@@ -35,7 +35,7 @@ msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr "{name} slog {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Redo?"
 
 msgid "CONTEXT_LABEL_ROLL"
 msgstr ""
@@ -76,76 +76,10 @@ msgstr "Åtgärd 3"
 msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Åtgärd 4"
 
-msgid "MENU_CONTROLS_AXIS_MINUS"
+msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
 msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
-
-msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr "Okänd knapp"
-
-msgid "MENU_CONTROLS_GAMEPAD"
-msgstr "Handkontroll"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_START"
 msgstr ""
 
 msgid "MENU_CONTROLS_MOUSE"
@@ -235,9 +169,6 @@ msgstr "Beskrivning"
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Avsluta till skrivbordet"
 
-msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr ""
-
 msgid "MENU_LABEL_LINEAR"
 msgstr "Linjärt"
 
@@ -280,8 +211,17 @@ msgstr "Pausa då fönster förlorar fokus"
 msgid "MENU_LABEL_PLAY"
 msgstr "Spela"
 
-msgid "MENU_LABEL_PLAYER"
-msgstr "Spelare"
+msgid "MENU_LABEL_PLAYER1"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER2"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER3"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER4"
+msgstr ""
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -335,6 +275,9 @@ msgid "MENU_LABEL_XBOX"
 msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
+msgstr ""
+
+msgid "MENU_LABEL_SCREENSHOTS"
 msgstr ""
 
 msgid "MENU_OPTIONS"
@@ -527,3 +470,45 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr ""
+
+msgid "CONTEXT_SHOW_TUTORIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_DICE"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_COOKIES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_CAKES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_WINNING"
+msgstr ""
+
+msgid "CONTEXT_CAKE_PLACED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_WANT_BUY"
+msgstr ""
+
+msgid "CONTEXT_CAKE_BUY_AMOUNT"
+msgstr ""
+
+msgid "CONTEXT_CAKE_COLLECTED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr ""
+
+#~ msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
+#~ msgstr "Okänd knapp"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD"
+#~ msgstr "Handkontroll"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-26 17:41+0000\n"
+"PO-Revision-Date: 2020-08-08 03:33+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/minigamesforest_run/nb_NO/>\n"
@@ -9,21 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr "Flytt til høyre"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_LEFT"
 msgstr "Flytt til venstre"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_DOWN"
 msgstr "Flytt nedover"
 
-#, fuzzy
 msgid "MINIGAME_ACTION_UP"
 msgstr "Flytt oppover"
 

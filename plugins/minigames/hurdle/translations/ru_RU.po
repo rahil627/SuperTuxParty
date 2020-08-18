@@ -1,4 +1,3 @@
-
 # Translations template for Super Tux Party.
 # Copyright (C) 2019 Super Tux Party Contributors
 # This file is distributed under the same license as the Super Tux Party project.
@@ -6,14 +5,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-10-29 23:15:29.691124\n"
-"Last-Translator: Automatic generated\n"
+"PO-Revision-Date: 2020-07-19 13:41+0000\n"
+"Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/super-tux-party/"
+"minigameshurdle/ru/>\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru_RU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "HURDLE_PLAYER_WINS_MSG"
-msgstr ""
+msgstr "{player} побеждает!"
 
+msgid "MINIGAME_ACTION_JUMP"
+msgstr "Прыжок"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+"Игроки участвуют в гонке.\n"
+"\n"
+"Не пострадай от препятствий! Последний стоящий игрок выигрывает."
+
+msgid "MINIGAME_NAME"
+msgstr "Препятствия"

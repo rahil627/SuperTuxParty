@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-08-18 13:32+0000\n"
+"Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ru/>\n"
 "Language: ru_RU\n"
@@ -14,184 +14,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "Купить торт на {amount} печенек"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Награда за дуэль:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Выберите оппонента:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Финиш!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Вперёд!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "{name} бросил {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Готовы?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Бросай!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Бросил {name}!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Победитель украл 1 торт"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Победитель украл 10 печенья"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Поверните {turn}"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "против"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Твоя очередь!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "У тебя не хватает печенья, чтобы купить это"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "У тебя не осталось места в инвентаре"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Действие 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Действие 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Действие 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Действие 4"
 
-msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr ""
-
-msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr ""
-
-msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD"
-msgstr "Геймпад"
+msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
+msgstr "Неизвестная ось {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr ""
-
-msgid "MENU_CONTROLS_GAMEPAD_START"
 msgstr ""
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Мышь"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Кнопка мыши"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Левая кнопка мыши"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Средняя кнопка мыши"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Правая кнопка мыши"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Колесо прокрутки вниз"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Колесо прокрутки влево"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Колесо прокрутки вправо"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Колесо прокрутки вверх"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Левый триггер"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Левый триггер 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Левый триггер 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Правый триггер"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Правый триггер 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Правый триггер 3"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Вниз"
@@ -206,7 +140,7 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Вверх"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Введите имя сохранения:"
 
 msgid "MENU_IO_LOAD_GAME"
 msgstr "Загрузить игру"
@@ -224,49 +158,46 @@ msgid "MENU_LABEL_CANCEL"
 msgstr "Отмена"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Персонаж:"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Продолжить игру"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Описание"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Выйти на рабочий стол"
 
-msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr ""
-
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Линейная"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Новая игра"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Не готов…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Числа"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "ОК"
+msgstr "OK"
 
 msgid "MENU_LABEL_PAUSE"
 msgstr "Пауза"
@@ -275,15 +206,23 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "Приостановлено"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Пауза при потере фокуса окна"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Играть"
 
-msgid "MENU_LABEL_PLAYER"
-msgstr ""
+msgid "MENU_LABEL_PLAYER1"
+msgstr "Игрок1"
 
-#, fuzzy
+msgid "MENU_LABEL_PLAYER2"
+msgstr "Игрок2"
+
+msgid "MENU_LABEL_PLAYER3"
+msgstr "Игрок3"
+
+msgid "MENU_LABEL_PLAYER4"
+msgstr "Игрок4"
+
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
@@ -294,73 +233,76 @@ msgid "MENU_LABEL_QUIT"
 msgstr "Выход"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Готов!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Продолжить"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "Вернуться в главное меню"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Система наград:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Выберите доску:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Выберите персонажа для игрока 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Выберите персонажа для игрока 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Выберите персонажа для игрока 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Выберите персонажа для игрока 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Выбрать количество игроков"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Попробовать"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Победитель получает всё"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Титры"
+
+msgid "MENU_LABEL_SCREENSHOTS"
+msgstr "Показать скриншоты"
 
 msgid "MENU_OPTIONS"
 msgstr "Настройки"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Аудио"
 
 msgid "MENU_OPTIONS_CONTROLS"
 msgstr "Управление"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Эффекты"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Ограничение кадров"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Во весь экран"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Язык"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Общее аудио"
 
 msgid "MENU_OPTIONS_MISC"
 msgstr "Разное"
@@ -369,160 +311,293 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Музыка"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Отключение звука при потере фокуса окна"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "По умолчанию"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Визуал"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "Вертикальная синхронизация"
+msgstr "VSync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Да"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Нет"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Стоимость торта:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Ходов:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Сложность AI:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Легко"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Нормально"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Сложно"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "Обращение GNU"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Разное"
+msgstr "Качество графики"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Разное"
+msgstr "Высокие"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "Средние"
 
-#, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Разное"
+msgstr "Низкие"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
-msgstr ""
+msgstr "Изменение качества графики вступает в силу только после перезагрузки"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Сара"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Я знаю, что все вы боролись за победу, но теперь игра окончена, и нам нужен "
+"победитель. И этот победитель…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color] и [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] и [color=#00ff88]{2}[/"
+"color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], [color=#00ff88]{2}[/"
+"color] и [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Торты"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Печенья"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""
+"Привет, нужна помощь? Дайте мне посмотреть, что я могу сделать для вас "
+"сегодня…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Это одиночная мини-игра! Покажите мне свои навыки, и я дам вам "
+"[color=#dd44ff]{reward}[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "Одиночная мини-игра"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Давайте играть вместе! Уверен, будет весело"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "Кооперативная мини-игра"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Молодец. Вот твоя награда!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Ничего не вышло. Может, в следующий раз."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "Ты сделал это. Я буду с нетерпением ждать следующего раза."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"Хотя у тебя не получилось, вы практиковали свою командную работу. Я уверен, "
+"что в следующий раз всё получится!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "Nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "Обращение Nolok"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "Моя очередь! Я точно знаю, что делать…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Я вызываю тебя на мини-игру! Если ты можешь победить меня, можешь оставить "
+"свои вещи себе. Если нет, я возьму один из твоих тортов…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "Одиночная мини-игра"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
 msgstr ""
+"Я против всех вас? Ты вообще думаешь, что у тебя есть шанс против меня?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "Кооперативная мини-игра"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "Будьте благодарны, что я пощадил вас!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "С нетерпением жду, чтобы снова победить тебя!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "В следующий раз ты не победишь."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "Ха-ха, какая лёгкая победа."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"Ха-ха, вот и [color=#00aaff]{amount}[/color] ваших печенек. Я уверен, что "
+"[color=#dd44ff]{player}[/color] найдёт для них применение"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "Потеряйте печенье"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"Может, тебе стоит немного притормозить. Посмотрим, как ты справишься с "
+"[color=#00aaff]{amount}[/color] меньшими движениями в следующих "
+"[color=#dd44ff]{duration}[/color] бросках"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
+msgstr "Проклятая смерть"
+
+msgid "CONTEXT_SHOW_TUTORIAL"
+msgstr "Похоже, вы играете впервые. Вы хотите, чтобы я объяснил правила?"
+
+msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"Игра ведется по очереди. Во время своего хода вы бросаете кубик и "
+"перемещаетесь на указанное число вперёд."
+
+msgid "CONTEXT_TUTORIAL_COOKIES"
+msgstr ""
+"Валюта - печенье. Вы зарабатываете печенье, выигрывая мини-игры. С помощью "
+"печенья вы можете покупать товары, проходя мимо магазинов."
+
+msgid "CONTEXT_TUTORIAL_CAKES"
+msgstr ""
+"Чтобы выиграть, нужно собрать как можно больше тортов. Печенье будет "
+"использоваться для разрешения конфликтов. Купить торты можно в специальных "
+"местах на доске. Если вы купите один, то торт переместится в другое место."
+
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr ""
+"Существуют разные типы пространств, на которые вы можете попасть: синие "
+"пространства - дадут вам печенье, а красные пространства - заберут ваши "
+"печенья."
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr ""
+"Зеленые пространства служат началом специальных мероприятий. Боевые "
+"пространства позволяют вам бросить вызов другому игроку в мини-игре на дуэль."
+
+msgid "CONTEXT_TUTORIAL_WINNING"
+msgstr ""
+
+msgid "CONTEXT_CAKE_PLACED"
+msgstr "Вот торт, подойди и возьми!"
+
+msgid "CONTEXT_CAKE_WANT_BUY"
+msgstr "Вы хотите купить торт?"
+
+msgid "CONTEXT_CAKE_BUY_AMOUNT"
+msgstr "Сколько тортов вы хотите купить?"
+
+msgid "CONTEXT_CAKE_COLLECTED"
+msgstr ""
+"Молодец, [color=#00aaff]{player}[/color]. Это [color=#dd44ff]{amount}[/color]"
+" торт(ов) для тебя."
+
+msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr "Извините, но у вас недостаточно печенья, чтобы купить торт."
+
+#~ msgid "MENU_CONTROLS_AXIS_MINUS"
+#~ msgstr "Ось -"
+
+#~ msgid "MENU_CONTROLS_AXIS_PLUS"
+#~ msgstr "Ось +"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_LEFT"
+#~ msgstr "Х левый"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_RIGHT"
+#~ msgstr "X правый"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_LEFT"
+#~ msgstr "Y левый"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
+#~ msgstr "Y правый"
+
+#~ msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
+#~ msgstr "Неизвестная кнопка"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD"
+#~ msgstr "Геймпад"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+#~ msgstr "Кнопка геймпада"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
+#~ msgstr "Кнопка геймпада 1"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
+#~ msgstr "Кнопка геймпада 2"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
+#~ msgstr "Кнопка геймпада 3"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
+#~ msgstr "Кнопка геймпада 4"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
+#~ msgstr "Кнопка геймпада A"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
+#~ msgstr "Кнопка геймпада B"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
+#~ msgstr "Кнопка геймпада Круг"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
+#~ msgstr "Кнопка геймпада Крест"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
+#~ msgstr "Кнопка геймпада Квадрат"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
+#~ msgstr "Кнопка геймпада Треугольник"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
+#~ msgstr "Кнопка геймпада X"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
+#~ msgstr "Кнопка геймпада Y"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_SELECT"
+#~ msgstr "Кнопка геймпада Select"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_START"
+#~ msgstr "Кнопка гейпада Start"

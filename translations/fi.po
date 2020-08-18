@@ -76,77 +76,11 @@ msgstr "Toiminta 3"
 msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Toiminta 4"
 
-msgid "MENU_CONTROLS_AXIS_MINUS"
-msgstr "Axis -"
-
-msgid "MENU_CONTROLS_AXIS_PLUS"
-msgstr "Axis +"
-
-msgid "MENU_CONTROLS_AXIS_UNKNOWN"
-msgstr "Tuntematon Axis"
-
-msgid "MENU_CONTROLS_AXIS_X_LEFT"
-msgstr "X Vasen"
-
-msgid "MENU_CONTROLS_AXIS_X_RIGHT"
-msgstr "X Oikea"
-
-msgid "MENU_CONTROLS_AXIS_Y_LEFT"
-msgstr "Y Vasen"
-
-msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
-msgstr "Y Oikea"
-
-msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
-msgstr "Tuntematon painike"
-
-msgid "MENU_CONTROLS_GAMEPAD"
-msgstr "Peliohjain"
+msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
+msgstr ""
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr "Gamepad painike"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
-msgstr "Gamepad painike 1"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
-msgstr "Gamepad painike 2"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
-msgstr "Gamepad painike 3"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
-msgstr "Gamepad painike 4"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
-msgstr "Gamepad painike A"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
-msgstr "Gamepad painike B"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
-msgstr "Gamepad ympyrä painike"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
-msgstr "Gamepad ristipainike"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
-msgstr "Gamepad neliöpainike"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
-msgstr "Gamepad kolmiopainike"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
-msgstr "Gamepad painike X"
-
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
-msgstr "Gamepad painike Y"
-
-msgid "MENU_CONTROLS_GAMEPAD_SELECT"
-msgstr "Gamepad Valitse"
-
-msgid "MENU_CONTROLS_GAMEPAD_START"
-msgstr "Gamepad käynnistä"
+msgstr ""
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Hiiri"
@@ -235,9 +169,6 @@ msgstr "Kuvaus"
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Poistu työpöydälle"
 
-msgid "MENU_LABEL_GAMEPAD_DISPLAY_NAMES"
-msgstr "Joypadin näyttönimet:"
-
 msgid "MENU_LABEL_LINEAR"
 msgstr "Lineaarinen"
 
@@ -280,8 +211,17 @@ msgstr "Keskeytä, kun ikkunan kohdistus menetetään"
 msgid "MENU_LABEL_PLAY"
 msgstr "Pelaa"
 
-msgid "MENU_LABEL_PLAYER"
-msgstr "Pelaaja"
+msgid "MENU_LABEL_PLAYER1"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER2"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER3"
+msgstr ""
+
+msgid "MENU_LABEL_PLAYER4"
+msgstr ""
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -336,6 +276,9 @@ msgstr "Xbox"
 
 msgid "MENU_LABEL_CREDITS"
 msgstr "Tekijät"
+
+msgid "MENU_LABEL_SCREENSHOTS"
+msgstr ""
 
 msgid "MENU_OPTIONS"
 msgstr "Asetukset"
@@ -539,3 +482,108 @@ msgstr ""
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
 msgstr "Kirottu kuolema"
+
+msgid "CONTEXT_SHOW_TUTORIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_DICE"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_COOKIES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_CAKES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_WINNING"
+msgstr ""
+
+msgid "CONTEXT_CAKE_PLACED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_WANT_BUY"
+msgstr ""
+
+msgid "CONTEXT_CAKE_BUY_AMOUNT"
+msgstr ""
+
+msgid "CONTEXT_CAKE_COLLECTED"
+msgstr ""
+
+msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr ""
+
+#~ msgid "MENU_CONTROLS_AXIS_MINUS"
+#~ msgstr "Axis -"
+
+#~ msgid "MENU_CONTROLS_AXIS_PLUS"
+#~ msgstr "Axis +"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_LEFT"
+#~ msgstr "X Vasen"
+
+#~ msgid "MENU_CONTROLS_AXIS_X_RIGHT"
+#~ msgstr "X Oikea"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_LEFT"
+#~ msgstr "Y Vasen"
+
+#~ msgid "MENU_CONTROLS_AXIS_Y_RIGHT"
+#~ msgstr "Y Oikea"
+
+#~ msgid "MENU_CONTROLS_BUTTON_UNKNOWN"
+#~ msgstr "Tuntematon painike"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD"
+#~ msgstr "Peliohjain"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+#~ msgstr "Gamepad painike"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
+#~ msgstr "Gamepad painike 1"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_2"
+#~ msgstr "Gamepad painike 2"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_3"
+#~ msgstr "Gamepad painike 3"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_4"
+#~ msgstr "Gamepad painike 4"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_A"
+#~ msgstr "Gamepad painike A"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_B"
+#~ msgstr "Gamepad painike B"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CIRCLE"
+#~ msgstr "Gamepad ympyrä painike"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_CROSS"
+#~ msgstr "Gamepad ristipainike"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_SQUARE"
+#~ msgstr "Gamepad neliöpainike"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_TRIANGLE"
+#~ msgstr "Gamepad kolmiopainike"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_X"
+#~ msgstr "Gamepad painike X"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_BUTTON_Y"
+#~ msgstr "Gamepad painike Y"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_SELECT"
+#~ msgstr "Gamepad Valitse"
+
+#~ msgid "MENU_CONTROLS_GAMEPAD_START"
+#~ msgstr "Gamepad käynnistä"
