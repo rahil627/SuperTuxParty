@@ -103,7 +103,7 @@ msgstr "Botão Desconhecido"
 msgid "MENU_CONTROLS_GAMEPAD"
 msgstr "Comando"
 
-msgid "MENU_CONTROLS_GAMEPAD_BUTTON"
+msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr "Botão do controle"
 
 msgid "MENU_CONTROLS_GAMEPAD_BUTTON_1"
