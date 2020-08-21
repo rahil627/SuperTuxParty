@@ -16,6 +16,8 @@ var character_loader
 var human_players := 0
 
 func _ready() -> void:
+	# Wait with main menu music until audio options have been loaded
+	$AudioStreamPlayer.play()
 	var award_type = $BoardSettings/Options/Award/AwardType
 	award_type.add_item(tr("MENU_LABEL_LINEAR"), Global.AWARD_TYPE.LINEAR)
 	award_type.add_item(
