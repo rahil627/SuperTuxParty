@@ -1,6 +1,6 @@
 # Spec for minigame config files.
 class MinigameConfigFile:
-	var file := ""
+	var filename := ""
 
 	var name := ""
 	var scene_path := ""
@@ -19,44 +19,15 @@ class MinigameConfigFile:
 const MINIGAME_CONFIG_FILENAME := [ "minigame.json" ]
 const MINIGAME_PATH := "res://plugins/minigames"
 
-# Stores the full path to found minigames of each type.
-var minigames_duel := []
-var minigames_1v3 := []
-var minigames_2v2 := []
-var minigames_ffa := []
-
-var minigames_nolok_solo := []
-var minigames_nolok_coop := []
-var minigames_gnu_solo := []
-var minigames_gnu_coop := []
+var minigames := []
+var played := []
 
 func discover_minigame(complete_filename: String):
 	var config = parse_file(complete_filename)
 	if not config:
 		return
-
-	for type in config.type:
-		match type:
-			"Duel":
-				minigames_duel.append(complete_filename)
-			"1v3":
-				minigames_1v3.append(complete_filename)
-			"2v2":
-				minigames_2v2.append(complete_filename)
-			"FFA":
-				minigames_ffa.append(complete_filename)
-			"NolokSolo":
-				minigames_nolok_solo.append(complete_filename)
-			"NolokCoop":
-				minigames_nolok_coop.append(complete_filename)
-			"GnuSolo":
-				minigames_gnu_solo.append(complete_filename)
-			"GnuCoop":
-				minigames_gnu_coop.append(complete_filename)
-			_:
-				push_warning("Unknown minigame type: '" + type + "'")
-
-	return true
+	
+	minigames.push_back(config)
 
 func _init() -> void:
 	print("Loading minigames...")
@@ -65,33 +36,42 @@ func _init() -> void:
 
 	print("Loading minigames finished")
 	print_loaded_minigames()
+	minigames.shuffle()
 
 func print_loaded_minigames() -> void:
 	print("Loaded minigames:")
 	print("\t1v3:")
-	for i in minigames_1v3:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "1v3" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\t2v2:")
-	for i in minigames_2v2:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "2v2" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\tDuel:")
-	for i in minigames_duel:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "Duel" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\tFFA:")
-	for i in minigames_ffa:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "FFA" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\tNolok Solo:")
-	for i in minigames_nolok_solo:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "NolokSolo" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\tNolok Coop:")
-	for i in minigames_nolok_coop:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "NolokCoop" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\tGnu Solo:")
-	for i in minigames_gnu_solo:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "GnuSolo" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 	print("\tGnu Coop:")
-	for i in minigames_gnu_coop:
-		print("\t\t" + parse_file(i).name)
+	for minigame in minigames:
+		if "GnuCoop" in minigame.type:
+			print("\t\t" + minigame.filename.split("/")[-2])
 
 func parse_file(file: String) -> MinigameConfigFile:
 	var f := File.new()
@@ -109,7 +89,7 @@ func parse_file(file: String) -> MinigameConfigFile:
 		return null
 
 	var config := MinigameConfigFile.new()
-	config.file = file
+	config.filename = file
 
 	if not result.result.has("name"):
 		push_error("Error in file '{0}': entry 'name' missing".format([file]))
@@ -188,29 +168,42 @@ func parse_file(file: String) -> MinigameConfigFile:
 
 # Utility function that should not be called use
 # get_random_1v3/get_random_2v2/get_random_duel/get_random_ffa/get_random_nolok/get_random_gnu.
-func _get_random_element(list: Array):
-	return parse_file(list[randi() % list.size()])
+func _get_random_minigame(type: String):
+	for i in range(len(minigames)):
+		if type in minigames[i].type:
+			var minigame = minigames[i]
+			minigames.remove(i)
+			played.append(minigame)
+			return minigame
+	# There's no minigame that has the needed type
+	# If we're at the start of the queue, then there's no minigame of that type,
+	# because we just looked at all of them
+	assert(len(played) > 0, "No minigame for type: " + type)
+	# Rebuild a new queue, but keep the unused elements at the start
+	played.shuffle()
+	minigames += played
+	return _get_random_minigame(type)
 
 func get_random_1v3():
-	return _get_random_element(minigames_1v3)
+	return _get_random_minigame("1v3")
 
 func get_random_2v2():
-	return _get_random_element(minigames_2v2)
+	return _get_random_minigame("2v2")
 
 func get_random_duel():
-	return _get_random_element(minigames_duel)
+	return _get_random_minigame("Duel")
 
 func get_random_ffa():
-	return _get_random_element(minigames_ffa)
+	return _get_random_minigame("FFA")
 
 func get_random_nolok_solo():
-	return _get_random_element(minigames_nolok_solo)
+	return _get_random_minigame("NolokSolo")
 
 func get_random_nolok_coop():
-	return _get_random_element(minigames_nolok_coop)
+	return _get_random_minigame("NolokCoop")
 
 func get_random_gnu_solo():
-	return _get_random_element(minigames_gnu_solo)
+	return _get_random_minigame("GnuSolo")
 
 func get_random_gnu_coop():
-	return _get_random_element(minigames_gnu_coop)
+	return _get_random_minigame("GnuCoop")

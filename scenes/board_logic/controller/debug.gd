@@ -26,77 +26,39 @@ func setup():
 	
 	var loader = PluginSystem.minigame_loader
 	
-	for game in loader.minigames_duel:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.DUEL])
-		
-		$List/Minigames/TabContainer/Duel/VBoxContainer.add_child(button)
-	
-	for game in loader.minigames_1v3:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.ONE_VS_THREE])
-		
-		$List/Minigames/TabContainer/"1v3"/VBoxContainer.add_child(button)
-		
-	for game in loader.minigames_2v2:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.TWO_VS_TWO])
-		
-		$List/Minigames/TabContainer/"2v2"/VBoxContainer.add_child(button)
-	
-	for game in loader.minigames_ffa:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.FREE_FOR_ALL])
-		
-		$List/Minigames/TabContainer/FFA/VBoxContainer.add_child(button)
-	
-	for game in loader.minigames_nolok_solo:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK_SOLO])
-		
-		$List/Minigames/TabContainer/NolokSolo/VBoxContainer.add_child(button)
-	
-	for game in loader.minigames_nolok_coop:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.NOLOK_COOP])
-		
-		$List/Minigames/TabContainer/NolokCoop/VBoxContainer.add_child(button)
-	
-	for game in loader.minigames_gnu_solo:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU_SOLO])
-		
-		$List/Minigames/TabContainer/GnuSolo/VBoxContainer.add_child(button)
-	
-	for game in loader.minigames_gnu_coop:
-		var button = Button.new()
-		
-		button.text = game.split('/')[-2]
-		button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
-		button.connect("pressed", self, "_on_minigame_pressed", [game, Global.MINIGAME_TYPES.GNU_COOP])
-		
-		$List/Minigames/TabContainer/GnuCoop/VBoxContainer.add_child(button)
+	for minigame in loader.minigames:
+		for type in minigame.type:
+			var button = Button.new()
+			
+			button.text = minigame.filename.split('/')[-2]
+			button.add_font_override("font", preload("res://assets/fonts/button_font.tres"))
+			match type:
+				"Duel":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.DUEL])
+					$List/Minigames/TabContainer/Duel/VBoxContainer.add_child(button)
+				"1v3":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.ONE_VS_THREE])
+					$List/Minigames/TabContainer/"1v3"/VBoxContainer.add_child(button)
+				"2v2":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.TWO_VS_TWO])
+					$List/Minigames/TabContainer/"2v2"/VBoxContainer.add_child(button)
+				"FFA":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.FREE_FOR_ALL])
+					$List/Minigames/TabContainer/FFA/VBoxContainer.add_child(button)
+				"NolokSolo":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.NOLOK_SOLO])
+					$List/Minigames/TabContainer/NolokSolo/VBoxContainer.add_child(button)
+				"NolokCoop":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.NOLOK_COOP])
+					$List/Minigames/TabContainer/NolokCoop/VBoxContainer.add_child(button)
+				"GnuSolo":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.GNU_SOLO])
+					$List/Minigames/TabContainer/GnuSolo/VBoxContainer.add_child(button)
+				"GnuCoop":
+					button.connect("pressed", self, "_on_minigame_pressed", [minigame, Global.MINIGAME_TYPES.GNU_COOP])
+					$List/Minigames/TabContainer/GnuCoop/VBoxContainer.add_child(button)
+				_:
+					push_warning("No such minigame type: " + type)
 	
 	for item in PluginSystem.item_loader.get_loaded_items():
 		var button = Button.new()
@@ -169,10 +131,9 @@ func _on_player_pressed(id):
 	$"../..".update_player_info()
 
 func _on_minigame_pressed(minigame, type):
-	var mg = PluginSystem.minigame_loader.parse_file(minigame)
 	var controller = get_tree().get_nodes_in_group("Controller")[0]
 	var state = Global.MinigameState.new()
-	state.minigame_config = mg
+	state.minigame_config = minigame
 	state.minigame_type = type
 	match type:
 		Global.MINIGAME_TYPES.FREE_FOR_ALL, Global.MINIGAME_TYPES.NOLOK_COOP, Global.MINIGAME_TYPES.GNU_COOP:
