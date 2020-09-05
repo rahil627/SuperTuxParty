@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-08-22 16:36+0000\n"
+"PO-Revision-Date: 2020-08-30 19:36+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/pt_PT/>\n"
@@ -77,10 +77,10 @@ msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Ação 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "Eixo desconhecido {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Botão gamepad {button}"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Rato"
@@ -197,7 +197,7 @@ msgid "MENU_LABEL_NUM_4"
 msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "Ok"
+msgstr "OK"
 
 msgid "MENU_LABEL_PAUSE"
 msgstr "Pausa"
@@ -206,22 +206,22 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "Em Pausa"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr "Pausar ao Desfocar a Janela"
+msgstr "Pausa quando o foco da janela for perdido"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Jogar"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Jogador1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Jogador 2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Jogador3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Jogador4"
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -248,16 +248,16 @@ msgid "MENU_LABEL_SELECT_BOARD"
 msgstr "Selecione o tabuleiro:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr "Selecione a personagem para o Jogador 1"
+msgstr "Selecione a personagem para o jogador 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr "Selecione a personagem para o Jogador 2"
+msgstr "Selecione a personagem para o jogador 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr "Selecione a personagem para o Jogador 3"
+msgstr "Selecione a personagem para o jogador 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr "Selecione a personagem para o Jogador 4"
+msgstr "Selecione a personagem para o jogador 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Selecione a quantidade de jogadores"
