@@ -182,6 +182,7 @@ func _get_random_minigame(type: String):
 	# Rebuild a new queue, but keep the unused elements at the start
 	played.shuffle()
 	minigames += played
+	played = []
 	return _get_random_minigame(type)
 
 func get_random_1v3():
