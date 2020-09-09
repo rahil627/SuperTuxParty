@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/tile_yellow_col.png-07c43e92f912ce81603a5a39d6f02d95.s3tc.stex"
-path.etc2="res://.import/tile_yellow_col.png-07c43e92f912ce81603a5a39d6f02d95.etc2.stex"
+path="res://.import/tile_yellow_col.png-07c43e92f912ce81603a5a39d6f02d95.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://scenes/board_logic/node/material/tile_yellow_col.png"
-dest_files=[ "res://.import/tile_yellow_col.png-07c43e92f912ce81603a5a39d6f02d95.s3tc.stex", "res://.import/tile_yellow_col.png-07c43e92f912ce81603a5a39d6f02d95.etc2.stex" ]
+dest_files=[ "res://.import/tile_yellow_col.png-07c43e92f912ce81603a5a39d6f02d95.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

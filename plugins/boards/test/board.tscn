@@ -12,8 +12,9 @@
 [ext_resource path="res://assets/music/boards/test board bgm.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
+params_diffuse_mode = 4
+params_specular_mode = 4
 albedo_texture = ExtResource( 6 )
-roughness = 0.0
 
 [sub_resource type="PlaneMesh" id=2]
 size = Vector2( 100, 100 )
@@ -39,6 +40,7 @@ start_node = NodePath("../Nodes/Node1")
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.642788, 0.627507, -0.439385, 0, 0.573576, 0.819152, 0.766044, -0.526541, 0.368688, -6, 4, 3 )
+light_energy = 0.35
 shadow_enabled = true
 
 [node name="Nodes" type="Spatial" parent="."]
@@ -155,27 +157,27 @@ prev_nodes = [ NodePath("../Node16") ]
 amount_of_items_sold = 4
 
 [node name="Node18" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0994, 0, 10 )
+transform = Transform( 0.824274, 0, -0.56619, 0, 1, 0, 0.56619, 0, 0.824274, 7.0994, 0, 10 )
 potential_cake = true
 next_nodes = [ NodePath("../Node19") ]
 prev_nodes = [ NodePath("../Node17") ]
 amount_of_items_sold = 4
 
 [node name="Node19" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0994, 0, 10 )
+transform = Transform( 0.876239, 0, -0.481876, 0, 1, 0, 0.481876, 0, 0.876239, 4.0994, 0, 10 )
 type = 2
 next_nodes = [ NodePath("../Node20") ]
 prev_nodes = [ NodePath("../Node18") ]
 amount_of_items_sold = 4
 
 [node name="Node20" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0994, 0, 10 )
+transform = Transform( 0.855969, 0, -0.517026, 0, 1, 0, 0.517026, 0, 0.855969, 1.0994, 0, 10 )
 next_nodes = [ NodePath("../Node21") ]
 prev_nodes = [ NodePath("../Node19") ]
 amount_of_items_sold = 4
 
 [node name="Node21" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9006, 0, 10 )
+transform = Transform( 0.869055, 0, -0.494716, 0, 1, 0, 0.494716, 0, 0.869055, -1.9006, 0, 10 )
 type = 1
 next_nodes = [ NodePath("../Node22") ]
 prev_nodes = [ NodePath("../Node20") ]
@@ -195,40 +197,40 @@ prev_nodes = [ NodePath("../Node22") ]
 amount_of_items_sold = 4
 
 [node name="Node24" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9006, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9006, 0, -0.363348 )
 next_nodes = [ NodePath("../Node25") ]
 prev_nodes = [ NodePath("../Node23") ]
 amount_of_items_sold = 4
 
 [node name="Node25" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99221, 0, -2.77292 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18215, 0, -2.49445 )
 type = 2
 next_nodes = [ NodePath("../Node1") ]
 prev_nodes = [ NodePath("../Node24") ]
 amount_of_items_sold = 4
 
 [node name="Node26" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35316, 4.76837e-07, -10.0742 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76597, 4.76837e-07, -10.4927 )
 type = 2
 next_nodes = [ NodePath("../Node27") ]
 prev_nodes = [ NodePath("../Node30") ]
 amount_of_items_sold = 4
 
 [node name="Node27" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.085, 0, -9.34553 )
+transform = Transform( 0.870759, 0, -0.491709, 0, 1, 0, 0.491709, 0, 0.870759, 10.347, 0, -10.5825 )
 type = 2
 next_nodes = [ NodePath("../Node28") ]
 prev_nodes = [ NodePath("../Node26") ]
 amount_of_items_sold = 4
 
 [node name="Node28" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1528, 0, -11.1831 )
+transform = Transform( 0.9829, 0, -0.18414, 0, 1, 0, 0.18414, 0, 0.9829, 14.5701, 0, -11.7753 )
 next_nodes = [ NodePath("../Node29") ]
 prev_nodes = [ NodePath("../Node27") ]
 amount_of_items_sold = 4
 
 [node name="Node29" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5293, 0, -14.2707 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2964, 0, -14.9524 )
 type = 2
 next_nodes = [ NodePath("../Node36") ]
 prev_nodes = [ NodePath("../Node28") ]
@@ -242,7 +244,7 @@ prev_nodes = [ NodePath("../Node40") ]
 amount_of_items_sold = 4
 
 [node name="Node31" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9085, 0, -6.52955 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3011, 0, -5.93074 )
 type = 2
 next_nodes = [ NodePath("../Node35") ]
 prev_nodes = [ NodePath("../Node10") ]
@@ -269,7 +271,7 @@ prev_nodes = [ NodePath("../Node33") ]
 amount_of_items_sold = 4
 
 [node name="Node35" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9924, 0, -6.83956 )
+transform = Transform( 0.864871, 0, -0.501994, 0, 1, 0, 0.501994, 0, 0.864871, 27.8165, 0, -6.06359 )
 next_nodes = [ NodePath("../Node32") ]
 prev_nodes = [ NodePath("../Node31") ]
 amount_of_items_sold = 4
@@ -360,13 +362,13 @@ prev_nodes = [ NodePath("../Node47") ]
 amount_of_items_sold = 4
 
 [node name="Node49" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0498, 0, 22.9917 )
+transform = Transform( 0.883201, 0, -0.468994, 0, 1, 0, 0.468994, 0, 0.883201, 18.0498, 0, 22.9917 )
 next_nodes = [ NodePath("../Node50") ]
 prev_nodes = [ NodePath("../Node48") ]
 amount_of_items_sold = 4
 
 [node name="Node50" parent="Nodes" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0554, 0, 18.1241 )
+transform = Transform( 0.919094, 0, -0.394038, 0, 1, 0, 0.394038, 0, 0.919094, 14.0554, 0, 18.1241 )
 type = 2
 next_nodes = [ NodePath("../Node41") ]
 prev_nodes = [ NodePath("../Node49") ]
@@ -380,7 +382,7 @@ mesh = ExtResource( 5 )
 material/0 = SubResource( 1 )
 
 [node name="Bridge2" type="MeshInstance" parent="Landscape"]
-transform = Transform( 0.994198, 0, -0.107569, 0, 1, 0, 0.107569, 0, 0.994198, 9.63905, 0.285242, -4.73589 )
+transform = Transform( 0.994198, 0, -0.107569, 0, 1, 0, 0.107569, 0, 0.994198, 9.77071, 0.285242, -5.19669 )
 mesh = ExtResource( 5 )
 material/0 = SubResource( 1 )
 

@@ -34,7 +34,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 4 )
 is_solo_player = true
 
 [node name="Ground" type="StaticBody" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
@@ -45,7 +44,6 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="Ground2" type="StaticBody" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground2"]
@@ -60,6 +58,7 @@ transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.58048, 6.14296 )
+light_energy = 0.35
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

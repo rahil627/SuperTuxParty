@@ -13,6 +13,8 @@
 size = Vector2( 128, 128 )
 
 [sub_resource type="SpatialMaterial" id=2]
+params_diffuse_mode = 4
+params_specular_mode = 4
 albedo_texture = ExtResource( 3 )
 roughness = 0.0
 uv1_scale = Vector3( 4, 4, 4 )
@@ -43,7 +45,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -26 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -26 )
 
 [node name="Lava" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 collision_layer = 2
 
@@ -59,7 +60,6 @@ shape = SubResource( 3 )
 transform = Transform( 4.88762e-07, 0, -1, 0, 1, 0, 1, 0, 4.88762e-07, 0, 0, -32 )
 
 [node name="Navigation" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Waypoint" parent="Navigation" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.084275, -27 )
@@ -165,10 +165,10 @@ nodes = null
 transform = Transform( -1, 1.37706e-07, -2.95313e-07, 0, 0.906308, 0.422618, 3.25841e-07, 0.422618, -0.906308, 0, 4, -30 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.244635, 0.809901, -0.533117, -0.140853, 0.573675, 0.806881, 0.95933, -0.1223, 0.254418, -16.1204, 4.31411, 0 )
+transform = Transform( -0.6522, 0.559396, -0.511577, -0.140856, 0.573679, 0.806878, 0.744845, 0.598305, -0.295359, -16.1204, 4.31411, 0 )
+light_energy = 0.35
 
 [node name="Stage1" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16 )
 
 [node name="Door" parent="Stage1" instance=ExtResource( 6 )]
@@ -181,7 +181,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.990371, 0.508965, 1.29821 )
 transform = Transform( 0.845698, 0, -0.533662, 0, 1, 0, 0.533662, 0, 0.845698, 3.86756, 0.389152, 1.8705 )
 
 [node name="Stage2" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
 
 [node name="Door" parent="Stage2" instance=ExtResource( 6 )]
@@ -194,7 +193,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104514, 1.77055, 3.50319 )
 transform = Transform( 0.82975, 0, -0.558135, 0, 1, 0, 0.558135, 0, 0.82975, 3.45657, 1.96211, 4.19291 )
 
 [node name="Stage3" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
 
 [node name="Door" parent="Stage3" instance=ExtResource( 6 )]
@@ -207,7 +205,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146158, 3.40687, 4.56786 )
 transform = Transform( 0.961371, 0, -0.275255, 0, 1, 0, 0.275255, 0, 0.961371, 4.49052, 3.39487, 4.56296 )
 
 [node name="Finish" type="Area" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.5, 17 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Finish"]
@@ -232,7 +229,6 @@ valign = 1
 pause_mode = 2
 stream = ExtResource( 8 )
 autoplay = true
-
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]
 [connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]

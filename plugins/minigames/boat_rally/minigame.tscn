@@ -11,7 +11,6 @@
 [ext_resource path="res://plugins/minigames/boat_rally/cannon-shot.wav" type="AudioStream" id=9]
 [ext_resource path="res://plugins/minigames/boat_rally/thunderchild.ogg" type="AudioStream" id=10]
 
-
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
@@ -77,9 +76,9 @@ flip_paddle = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 9, 17 )
+light_energy = 0.35
 
 [node name="Scene Root" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 
 [node name="boat_large_8angles" parent="Scene Root" index="0"]
 transform = Transform( -3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0, -0.5, 1.25 )
@@ -542,7 +541,6 @@ mesh = SubResource( 3 )
 material/0 = ExtResource( 5 )
 
 [node name="Area" type="Area" parent="Ground"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 110 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/Area"]

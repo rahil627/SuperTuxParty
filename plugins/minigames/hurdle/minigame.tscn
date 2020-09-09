@@ -83,7 +83,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.2, 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.2, 4 )
 
 [node name="Ground" type="StaticBody" parent="."]
-editor/display_folded = true
 
 [node name="Plane" type="CollisionShape" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6.5 )
@@ -109,6 +108,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 16 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.642788, 0.627507, -0.439385, 0, 0.573576, 0.819152, 0.766044, -0.526541, 0.368688, -6, 4, 3 )
+light_energy = 0.35
 shadow_enabled = true
 
 [editable path="Ground/Mesh"]

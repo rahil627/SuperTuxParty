@@ -22,8 +22,9 @@ color_ramp = SubResource( 2 )
 
 [sub_resource type="SpatialMaterial" id=4]
 flags_transparent = true
-flags_unshaded = true
 vertex_color_use_as_albedo = true
+params_diffuse_mode = 4
+params_specular_mode = 4
 params_blend_mode = 1
 params_billboard_mode = 1
 albedo_color = Color( 1, 0.521569, 0, 1 )
