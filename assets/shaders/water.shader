@@ -1,4 +1,5 @@
 shader_type spatial;
+render_mode diffuse_toon, specular_disabled;
 
 uniform vec2 amplitude = vec2(0.2, 0.1);
 uniform vec2 amplitude2 = vec2(0.1, 0.2);

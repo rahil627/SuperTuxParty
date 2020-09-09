@@ -85,6 +85,13 @@ func _ready() -> void:
 				prev = [nodes[pos - 1]]
 	else:
 		$EditorLines.queue_free()
+		# Only the node model should be rotated/scaled.
+		# Because it's an instanced scene, only modifications to the root model
+		# are saved.
+		# Therefore we can't just forward the transformation in the editor.
+		# That's why we do it here.
+		$Model.transform.basis = self.transform.basis * $Model.transform.basis
+		self.transform.basis = Basis()
 
 # Updates the changes in the editor when potential_cake is changes
 func set_cake(enabled: bool) -> void:
@@ -294,14 +301,6 @@ func _enter_tree() -> void:
 		$Cake.queue_free()
 		$EditorLines.queue_free()
 
-	# Set up the material for the linking arrows rendered in the editor.
-	if  Engine.editor_hint:
-		material.flags_unshaded = true
-		material.flags_use_point_size = true
-		material.vertex_color_use_as_albedo = true
-		material.flags_vertex_lighting = true
-		$EditorLines.set_material_override(material)
-
 const SHOW_NEXT_NODES = 1
 const SHOW_PREV_NODES = 2
 const SHOW_ALL = 3
@@ -309,6 +308,16 @@ const SHOW_ALL = 3
 # Renders the linking arrows.
 func _process(_delta: float) -> void:
 	if Engine.editor_hint:
+		# Only the node model should be rotated/scaled
+		# Because the root node is being edited, we can't just forward
+		# Those transformation to the node model and keep the rest normal.
+		# If we'd try, it won't be saved as it's an instanced scene
+		var inverse_rotation = -self.transform.basis.get_euler()
+		var inverse_scale = self.scale.inverse()
+		$Cake.rotation = inverse_rotation
+		$Cake.scale = inverse_scale
+		$EditorLines.rotation = inverse_rotation
+		$EditorLines.scale = inverse_scale
 		var controllers: Array = get_tree().get_nodes_in_group("Controller")
 		var show_linking_type: int = SHOW_ALL
 		if controllers.size() > 0:

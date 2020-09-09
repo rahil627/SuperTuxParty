@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/kdevalley.escn-4bec18f6d81d3b6840f96f653ed6a02d.scn"
+path="res://.import/node.glb-c7b330dedc7a19ab47cc2e3b0e1f7d38.scn"
 
 [deps]
 
-source_file="res://plugins/boards/KDEValley/landscape/kdevalley.escn"
-dest_files=[ "res://.import/kdevalley.escn-4bec18f6d81d3b6840f96f653ed6a02d.scn" ]
+source_file="res://scenes/board_logic/node/node.glb"
+dest_files=[ "res://.import/node.glb-c7b330dedc7a19ab47cc2e3b0e1f7d38.scn" ]
 
 [params]
 

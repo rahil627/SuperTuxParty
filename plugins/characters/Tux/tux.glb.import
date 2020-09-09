@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/node.escn-9082e3b7e14e5d507ca6758c00f619e8.scn"
+path="res://.import/tux.glb-66eb463dd357836d5955da7802959a8d.scn"
 
 [deps]
 
-source_file="res://scenes/board_logic/node/node.escn"
-dest_files=[ "res://.import/node.escn-9082e3b7e14e5d507ca6758c00f619e8.scn" ]
+source_file="res://plugins/characters/Tux/tux.glb"
+dest_files=[ "res://.import/tux.glb-66eb463dd357836d5955da7802959a8d.scn" ]
 
 [params]
 
@@ -24,11 +24,12 @@ meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
-external_files/store_in_subdir=false
+skins/use_named_skins=true
+external_files/store_in_subdir=true
 animation/import=true
 animation/fps=15
 animation/filter_script=""
-animation/storage=false
+animation/storage=2
 animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05

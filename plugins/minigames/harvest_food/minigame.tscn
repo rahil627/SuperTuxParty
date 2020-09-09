@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://plugins/minigames/harvest_food/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/harvest_food/background/farm2_textured.escn" type="PackedScene" id=2]
@@ -13,7 +13,16 @@
 [ext_resource path="res://plugins/minigames/harvest_food/background/farmAssets/parkBench.escn" type="PackedScene" id=17]
 [ext_resource path="res://plugins/minigames/harvest_food/background/background.escn" type="PackedScene" id=2577]
 
+[sub_resource type="SpatialMaterial" id=4]
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.5
+albedo_color = Color( 0, 0, 0, 1 )
+
 [sub_resource type="SpatialMaterial" id=1]
+next_pass = SubResource( 4 )
+params_diffuse_mode = 4
+params_specular_mode = 4
 params_use_alpha_scissor = true
 params_alpha_scissor_threshold = 0.98
 albedo_texture = ExtResource( 12 )
@@ -59,6 +68,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1, 0, 
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.8213e-07, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 1.41065e-07, -2.44332e-07, -3.94703, 2.45993, 0.184541 )
+light_energy = 0.5
 light_bake_mode = 2
 shadow_enabled = true
 

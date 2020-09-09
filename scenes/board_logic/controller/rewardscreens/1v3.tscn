@@ -23,6 +23,7 @@ environment = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.541675, 0.707107, -0.454519, 0.541675, 0.707107, 0.454519, 0.642788, 0, -0.766044, 0, 1.91365, 0 )
+light_energy = 0.35
 
 [node name="Player1" type="Spatial" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 2 )
@@ -35,5 +36,4 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0
 
 [node name="Player4" type="Spatial" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -2 )
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

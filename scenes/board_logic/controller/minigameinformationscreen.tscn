@@ -244,6 +244,7 @@ transform = Transform( 0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, 1.5
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Characters/Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 1, 0 )
+light_energy = 0.35
 [connection signal="tab_changed" from="Controls" to="." method="_on_Controls_tab_changed"]
 [connection signal="pressed" from="Buttons/Try" to="." method="_on_Try_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]

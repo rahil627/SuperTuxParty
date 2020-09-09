@@ -21,9 +21,9 @@ signal _camera_focus_aquired
 
 # If multiple players get on one space, this array decides the translation of
 # each.
-const PLAYER_TRANSLATION = [Vector3(0, 0.25, -0.75), Vector3(0.75, 0.25, 0),
-		Vector3(0, 0.25, 0.75), Vector3(-0.75, 0.25, 0)]
-const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.25, 0)
+const PLAYER_TRANSLATION = [Vector3(0, 0, -0.75), Vector3(0.75, 0, 0),
+		Vector3(0, 0, 0.75), Vector3(-0.75, 0, 0)]
+const EMPTY_SPACE_PLAYER_TRANSLATION = Vector3(0, 0.05, 0)
 const CAMERA_SPEED = 6
 
 const PLAYER = preload("res://scenes/board_logic/player_board/player_board.gd")

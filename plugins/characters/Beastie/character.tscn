@@ -1035,6 +1035,7 @@ bones/14/enabled = true
 bones/14/bound_children = [  ]
 
 [node name="Beastie" type="MeshInstance" parent="Armature/Skeleton"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )

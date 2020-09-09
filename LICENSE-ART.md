@@ -166,9 +166,9 @@ Retrieved from [Open Game Art](https://opengameart.org/content/sara-sketch-portr
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/board_logic/node
-### node.escn | node.blend
+### node.blend | node.glb
 
-Copyright © Florian Kothmeier based on an idea by Jakob Sinclair
+Copyright © 2020 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -193,26 +193,32 @@ Copyright © 2018 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/board_logic/node/material
-### tile_blue_col.jpg | tile_red_col.png | tile_yellow_col.png | tile_green_col.png | tile_purple_col.png | tile_nrm.jpg | tile_rgh.jpg
+### tile_blue_col.png | tile_red_col.png | tile_yellow_col.png | tile_green_col.png
 
-Public Domain by StruffelProductions
+Copyright © 2020 Florian Kothmeier 
 
-tile_yellow_col.png and tile_purple_col.png are modified versions of tile_red_col.png by Florian Kothmeier
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-Retrived from [CC0 Textures](https://cc0textures.com/home)
+### tile_purple_col.png
 
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+Copyright © 2020 Florian Kothmeier
+
+Uses "Free Any House" shop icon by strongicon
+
+Retrieved from [iconfinder](https://www.iconfinder.com/iconsets/free-any-house)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### tile_gnu_col.png
 
-Based upon the tile_yellow_col.png file and the gnu_icon.png file by Néd J. Édoire
+Based upon the gnu icon file by Néd J. Édoire
 
 Retrieved from: [OpenGameArt](https://opengameart.org/content/gnu-mascots-and-friends-iconset)
 License: [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ### tile_nolok_col.jpg
 
-Based upon the tile_yellow_col.png file and the nolok icon by Anthony Carré (yekcim)
+Based upon the nolok icon by Anthony Carré (yekcim)
 
 Retrieved from: [Super Tux Kart Sourceforge](https://sourceforge.net/p/supertuxkart/code/HEAD/tree/media/trunk/karts/nolok/nolokicon.png)
 License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
@@ -238,7 +244,7 @@ Copyright © 2019 Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/boards/KDEValley/landscape
-### kdevalley.blend | kdevalley.escn
+### kdevalley.blend | kdevalley.glb
 
 Copyright © Florian Kothmeier
 
@@ -282,15 +288,8 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/sand-texture-pack)
 
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-## plugins/boards/KDEValley/landscape
-### kdevalley.dae
-
-Copyright © Florian Kothmeier
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
 ## plugins/characters/Tux
-### character.dae | tux_texture.png | tux.blend | tux.escn
+### tux_texture.png | tux.blend | tux.glb
 
 Copyright © 2010 durmieu 
 
@@ -315,16 +314,6 @@ Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-frien
 License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/characters/Green Tux
-### character.escn | tux.escn
-
-Copyright © 2010 durmieu 
-
-Modified by Florian Kothmeier 2018
-
-Retrived from [Open Game Art](https://opengameart.org/content/tux)
-
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
 ### tux_texture.png
 
 Copyright © 2010 durmieu 
@@ -352,7 +341,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-frien
 License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/characters/Beastie
-### beastie_tex.png | beastie.blend | beastie.dae | character.escn
+### beastie_tex.png | beastie.blend
 
 Copyright © 2010 durmieu 
 
@@ -375,7 +364,7 @@ Copyright © 2020 Paulius Danelius
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/characters/Godette
-### palette.png | godete_palette.svg | godot_chan.blend | godot_chan_one_object.blend | godot_chan.escn
+### palette.png | godot_chan.blend | godot_chan_one_object.blend
 
 Copyright © SirRichard94
 

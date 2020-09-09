@@ -188,7 +188,7 @@ func _on_GraphicQuality_item_selected(ID):
 			ProjectSettings.set_setting("rendering/quality/shadow_atlas/size", 2048)
 			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 2048)
 			ProjectSettings.set_setting("rendering/quality/shadows/filter_mode", 0)
-			ProjectSettings.set_setting("rendering/quality/shading/force_vertex_shading", true)
+			ProjectSettings.set_setting("rendering/quality/shading/force_vertex_shading", false)
 	$AcceptDialog.dialog_text = "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 	
 	$AcceptDialog.popup_centered()
