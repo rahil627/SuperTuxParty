@@ -5,18 +5,19 @@ const MAX_TIME = 4
 
 var time = 0
 
-func _process(delta):
+func _physics_process(delta):
 	time += delta
 	
 	if time > MAX_TIME:
 		queue_free()
 		return
 	
-	var forward = Vector3(sin(rotation.y), 0, cos(rotation.y))
+	var forward = Vector3(0, 0, -1)
 	
 	var collider = move_and_collide(forward * SPEED * delta)
 	
 	if collider != null and collider.collider != null:
-		if collider.collider.is_in_group("players"):
+		var object = collider.collider
+		if object.is_in_group("players") or object.is_in_group("box"):
 			queue_free()
-			collider.collider.knockout(Vector3(0, 3.5, -8))
+			object.knockout(Vector3(0, 3.5, -8))
