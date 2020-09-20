@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tux.glb-66eb463dd357836d5955da7802959a8d.scn"
+path="res://.import/beastie.glb-6309a7043a6a0f0084615ec39b2d59af.scn"
 
 [deps]
 
-source_file="res://plugins/characters/Tux/tux.glb"
-dest_files=[ "res://.import/tux.glb-66eb463dd357836d5955da7802959a8d.scn" ]
+source_file="res://plugins/characters/Beastie/beastie.glb"
+dest_files=[ "res://.import/beastie.glb-6309a7043a6a0f0084615ec39b2d59af.scn" ]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
-materials/storage=1
+materials/storage=2
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
@@ -27,9 +27,9 @@ meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
-animation/fps=24.0
+animation/fps=15
 animation/filter_script=""
-animation/storage=0
+animation/storage=false
 animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05

@@ -5,9 +5,6 @@ const SPEED := 3
 var player_id: int
 var is_ai: bool
 
-func _ready():
-	$Model/AnimationPlayer.play("idle")
-
 func _process(_delta):
 	var dir: Vector3
 	if not is_ai:
@@ -30,8 +27,8 @@ func _process(_delta):
 	if dir.length_squared() > 0:
 		dir = dir.normalized() * SPEED
 		rotation.y = atan2(dir.x, dir.z)
-		$Model/AnimationPlayer.play("run")
+		$Model.play_animation("run")
 	else:
-		$Model/AnimationPlayer.play("idle")
+		$Model.play_animation("idle")
 	
 	move_and_slide(dir + Vector3(0, -1, 0))

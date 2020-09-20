@@ -16,9 +16,9 @@ func _ready():
 			new_model.transform = node.global_transform
 			if new_model.has_node("AnimationPlayer"):
 				if i < 4:
-					new_model.get_node("AnimationPlayer").play("happy")
+					new_model.play_animation("happy")
 				else:
-					new_model.get_node("AnimationPlayer").play("sad")
+					new_model.play_animation("sad")
 
 
 func _on_Timer_timeout():

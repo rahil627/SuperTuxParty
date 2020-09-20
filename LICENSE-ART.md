@@ -341,7 +341,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-frien
 License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/characters/Beastie
-### beastie_tex.png | beastie.blend
+### beastie_tex.png | beastie.blend | beastie.glb
 
 Copyright © 2010 durmieu 
 
@@ -364,7 +364,7 @@ Copyright © 2020 Paulius Danelius
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/characters/Godette
-### palette.png | godot_chan.blend | godot_chan_one_object.blend
+### palette.png | godot_chan.blend | godot_chan.glb
 
 Copyright © SirRichard94
 
@@ -979,6 +979,11 @@ Copyright © Florian Kothmeier
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### hit_indicator.png
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### stun.png
 Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)

@@ -34,11 +34,6 @@ var is_walking := false
 var items := [preload("res://plugins/items/dice/item.gd").new()]
 var roll_modifiers := []
 
-func _ready() -> void:
-	if has_node("Model/AnimationPlayer"):
-		$Model/AnimationPlayer.play("idle")
-		$Model/AnimationPlayer.seek(0, true)
-
 func give_item(item: Item) -> bool:
 	if items.size() < MAX_ITEMS:
 		items.push_back(item)
@@ -91,8 +86,8 @@ func teleport_to(new_space: Spatial) -> void:
 
 func _physics_process(delta: float) -> void:
 	if destination.size() > 0:
-		if not is_walking and has_node("Model/AnimationPlayer"):
-			$Model/AnimationPlayer.play("walk")
+		if not is_walking:
+			$Model.play_animation("walk")
 			is_walking = true
 
 		var dir: Vector3 = destination[0].position - translation
@@ -108,9 +103,8 @@ func _physics_process(delta: float) -> void:
 		if destination.size() == 0:
 			target_rotation = 0
 
-			if has_node("Model/AnimationPlayer"):
-				$Model/AnimationPlayer.play("idle")
-				is_walking = false
+			$Model.play_animation("idle")
+			is_walking = false
 
 			controller.update_player_info()
 			emit_signal("walking_ended")

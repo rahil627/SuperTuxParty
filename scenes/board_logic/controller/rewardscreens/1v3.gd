@@ -12,9 +12,9 @@ func _ready():
 		node.replace_by(new_model)
 
 		if Global.minigame_summary.placement == 0:
-			new_model.get_node("AnimationPlayer").play("happy")
+			new_model.play_animation("happy")
 		else:
-			new_model.get_node("AnimationPlayer").play("sad")
+			new_model.play_animation("sad")
 		i += 1
 
 	for p_id in Global.minigame_summary.minigame_teams[1]:
@@ -27,9 +27,9 @@ func _ready():
 		node.replace_by(new_model)
 
 		if Global.minigame_summary.placement == 1:
-			new_model.get_node("AnimationPlayer").play("happy")
+			new_model.play_animation("happy")
 		else:
-			new_model.get_node("AnimationPlayer").play("sad")
+			new_model.play_animation("sad")
 		i += 1
 
 func _on_Timer_timeout():

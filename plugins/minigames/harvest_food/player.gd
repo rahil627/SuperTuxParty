@@ -18,8 +18,6 @@ var plant_spots
 var current_destination = null
 
 func _ready():
-	$Model/AnimationPlayer.play("idle")
-	
 	if Global.minigame_state.minigame_type == Global.MINIGAME_TYPES.DUEL:
 		plant_spots = [$"../Area2", $"../Area4"]
 	else:
@@ -72,14 +70,14 @@ func _physics_process(delta):
 		rotation.y = atan2(dir.x, dir.z)
 	
 	if dir.length_squared() > 0 and not is_walking:
-		$Model/AnimationPlayer.play("run")
+		$Model.play_animation("run")
 		is_walking = true
 	elif dir.length_squared() == 0 and is_walking:
-		$Model/AnimationPlayer.play("idle")
+		$Model.play_animation("idle")
 		is_walking = false
 	
 	if is_on_floor():
 		movement = Vector3()
 
 func play_animation(name):
-	$Model/AnimationPlayer.play(name)
+	$Modelr.play_animation(name)

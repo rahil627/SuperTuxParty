@@ -9,9 +9,18 @@ const CHARACTER_PATH := "res://plugins/characters"
 var characters := []
 
 func discover_character(filename: String) -> void:
-	# Get the second last path entry
-	# e.g. res://plugins/characters/Tux/character.tscn -> Tux
-	characters.append(filename.split('/')[-2])
+	var scene = load(filename).instance()
+	
+	# Check if the character has the necessary script attached
+	if preload("res://scripts/character.gd").instance_has(scene):
+		# Get the second last path entry
+		# e.g. res://plugins/characters/Tux/character.tscn -> Tux
+		characters.append(filename.split('/')[-2])
+	else:
+		var msg = "Character `{0}` does not have the script " + \
+				"`res://scripts/character.gd` attached. " + \
+				"The character will not be loaded"
+		push_warning(msg.format([filename]))
 
 func _init():
 	print("Loading characters...")

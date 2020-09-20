@@ -9,7 +9,6 @@ export var force_dir: Vector3
 export var flip_paddle: bool
 
 func _ready():
-	$Model/AnimationPlayer.play("idle")
 	if flip_paddle:
 		$"Scene Root".rotation.y *= -1
 		$"Scene Root".scale.x *= -1
@@ -17,8 +16,8 @@ func _ready():
 
 func fire():
 	if get_parent().fire(self.translation, force_dir):
-		$Model/AnimationPlayer.play("punch")
-		$Model/AnimationPlayer.queue("idle")
+		$Model.play_animation("punch")
+		$Model.play_animation("idle")
 		$AnimationPlayer.play("paddle")
 		paddle_cooldown = 1 if not is_ai else 2
 

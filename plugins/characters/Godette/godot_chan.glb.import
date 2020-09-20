@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tux.glb-66eb463dd357836d5955da7802959a8d.scn"
+path="res://.import/godot_chan.glb-6e85dfab4d5f5bd812d476f0929312e4.scn"
 
 [deps]
 
-source_file="res://plugins/characters/Tux/tux.glb"
-dest_files=[ "res://.import/tux.glb-66eb463dd357836d5955da7802959a8d.scn" ]
+source_file="res://plugins/characters/Godette/godot_chan.glb"
+dest_files=[ "res://.import/godot_chan.glb-6e85dfab4d5f5bd812d476f0929312e4.scn" ]
 
 [params]
 
@@ -29,7 +29,7 @@ external_files/store_in_subdir=false
 animation/import=true
 animation/fps=24.0
 animation/filter_script=""
-animation/storage=0
+animation/storage=false
 animation/keep_custom_tracks=false
 animation/optimizer/enabled=true
 animation/optimizer/max_linear_error=0.05
