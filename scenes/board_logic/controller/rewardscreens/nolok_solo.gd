@@ -3,7 +3,7 @@ extends Spatial
 func _ready():
 	var node = $Player1
 	var player_id = Global.minigame_summary.minigame_teams[0][0]
-	var character = Global.players[player_id - 1]
+	var character = Global.players[player_id - 1].character
 	var new_model = PluginSystem.character_loader.load_character(character)
 
 	new_model.name = "Player1"
