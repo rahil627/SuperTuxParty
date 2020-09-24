@@ -479,6 +479,24 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
+msgstr ""
+
 msgid "CONTEXT_CAKE_PLACED"
 msgstr ""
 
