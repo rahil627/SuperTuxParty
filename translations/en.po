@@ -139,6 +139,12 @@ msgstr "Right"
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Up"
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr "Take screenshot"
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr "Open developer menu"
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Enter savegame name:"
 

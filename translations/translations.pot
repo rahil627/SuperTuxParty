@@ -137,6 +137,12 @@ msgstr ""
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr ""
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr ""
 
