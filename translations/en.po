@@ -517,8 +517,30 @@ msgstr ""
 "Green spaces start board specific events. Battle spaces let you challenge "
 "another player to a duel minigame."
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"After every player had their turn, a minigame will be played. There are "
+"three different flavours of minigames:"
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr "Free for all, where everyone competes with everyone to win."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr "Two vs two, where you play in teams of two."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+"And one vs three, where one competes with the rest. The solo player gets "
+"a bonus to even things up."
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+"Special minigames will be played when a player lands on a GNU or NOLOK "
+"space. GNU minigames are good, while NOLOK minigames are bad for you. So "
+"better stay away from the latter!"
+
+msgid "CONTEXT_TUTORIAL_END"
+msgstr "That's it, now you're ready to go! Have fun!"
 
 msgid "CONTEXT_CAKE_PLACED"
 msgstr "Here's the cake, come and get it!"
@@ -605,28 +627,3 @@ msgstr "I'm sorry but you don't have enough cookies to buy a cake."
 
 #~ msgid "MENU_CONTROLS_GAMEPAD_START"
 #~ msgstr "Gamepad Start"
-
-#~ msgid "CONTEXT_TUTORIAL_MINIGAMES"
-#~ msgstr ""
-#~ "After every player had their turn, a minigame will be played. There are "
-#~ "three different flavours of minigames:"
-
-#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-#~ msgstr "Free for all, where everyone competes with everyone to win."
-
-#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-#~ msgstr "Two vs two, where you play in teams of two."
-
-#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
-#~ msgstr ""
-#~ "And one vs three, where one competes with the rest. The solo player gets "
-#~ "a bonus to even things up."
-
-#~ msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
-#~ msgstr ""
-#~ "Special minigames will be played when a player lands on a GNU or NOLOK "
-#~ "space. GNU minigames are good, while NOLOK minigames are bad for you. So "
-#~ "better stay away from the latter!"
-
-#~ msgid "CONTEXT_TUTORIAL_END"
-#~ msgstr "That's it, now you're ready to go! Have fun!"
