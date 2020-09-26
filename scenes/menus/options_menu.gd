@@ -159,8 +159,6 @@ func load_options():
 	Global.pause_window_unfocus = get_option_value_safely("misc", "pause_window_unfocus", true)
 	$TabContainer/Misc/PauseUnfocus.pressed = Global.pause_window_unfocus
 	
-	$CanvasLayer/ControlRemapper.load_controls()
-	
 	_is_loading_options = false
 
 func save_option(section, key, value):

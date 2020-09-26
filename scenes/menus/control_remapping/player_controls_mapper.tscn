@@ -2,9 +2,10 @@
 
 [ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/sound_button/sound_button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/fonts/button_font_small.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/menus/control_remapper.gd" type="Script" id=4]
+[ext_resource path="res://scenes/menus/control_remapping/control_remapper.gd" type="Script" id=4]
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/menus/control_remapping/control_remap_button.tscn" type="PackedScene" id=6]
+
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
@@ -63,14 +64,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_DIR_UP"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/up" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/up" instance=ExtResource( 6 )]
 margin_left = 272.0
 margin_right = 301.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_right = NodePath("../../../Column2/action1/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="left" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Grid/Column1"]
 margin_top = 33.0
@@ -85,14 +83,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_DIR_LEFT"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/left" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/left" instance=ExtResource( 6 )]
 margin_left = 272.0
 margin_right = 301.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_right = NodePath("../../../Column2/action2/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="down" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Grid/Column1"]
 margin_top = 66.0
@@ -107,14 +102,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_DIR_DOWN"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/down" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/down" instance=ExtResource( 6 )]
 margin_left = 272.0
 margin_right = 301.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_right = NodePath("../../../Column2/action3/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="right" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Grid/Column1"]
 margin_top = 99.0
@@ -129,15 +121,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_DIR_RIGHT"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/right" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/right" instance=ExtResource( 6 )]
 margin_left = 272.0
 margin_right = 301.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_right = NodePath("../../../Column2/action4/Button")
-focus_next = NodePath("../../action4/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="Spacer" type="Control" parent="PanelContainer/VBoxContainer/Grid/Column1"]
 margin_top = 132.0
@@ -158,14 +146,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_LABEL_CONTINUE"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/ok" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column1/ok" instance=ExtResource( 6 )]
 margin_left = 272.0
 margin_right = 301.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_right = NodePath("../../../Column2/pause/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="Column2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Grid"]
 margin_left = 331.0
@@ -185,14 +170,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_ACTION_1"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action1" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action1" instance=ExtResource( 6 )]
 margin_left = 264.0
 margin_right = 293.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_left = NodePath("../../../Column1/up/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="action2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Grid/Column2"]
 margin_top = 33.0
@@ -207,14 +189,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_ACTION_2"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action2" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action2" instance=ExtResource( 6 )]
 margin_left = 264.0
 margin_right = 293.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_left = NodePath("../../../Column1/left/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="action3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Grid/Column2"]
 margin_top = 66.0
@@ -229,15 +208,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_ACTION_3"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action3" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action3" instance=ExtResource( 6 )]
 margin_left = 264.0
 margin_right = 293.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_left = NodePath("../../../Column1/down/Button")
-focus_previous = NodePath("../../down/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="action4" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Grid/Column2"]
 margin_top = 99.0
@@ -252,15 +227,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_CONTROLS_ACTION_4"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action4" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/action4" instance=ExtResource( 6 )]
 margin_left = 264.0
 margin_right = 293.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_left = NodePath("../../../Column1/right/Button")
-focus_previous = NodePath("../../right/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer/Grid/Column2"]
 margin_top = 132.0
@@ -281,14 +252,11 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "MENU_LABEL_PAUSE"
 
-[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/pause" instance=ExtResource( 2 )]
+[node name="Button" parent="PanelContainer/VBoxContainer/Grid/Column2/pause" instance=ExtResource( 6 )]
 margin_left = 264.0
 margin_right = 293.0
-margin_bottom = 29.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 29, 0 )
-focus_neighbour_left = NodePath("../../../Column1/ok/Button")
-custom_fonts/font = ExtResource( 3 )
-expand_icon = true
 
 [node name="Spacer2" type="Control" parent="."]
 margin_top = 203.0
