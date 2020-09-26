@@ -9,6 +9,7 @@ func _input(event):
 func _ready():
 	for i in range(1, Global.amount_of_players+1):
 		var new_model = PluginSystem.character_loader.load_character(Global.players[i - 1].character)
+		new_model.name = "Model"
 		
 		get_node("Player" + str(i)).add_child(new_model)
 		
