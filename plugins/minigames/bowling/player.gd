@@ -17,7 +17,7 @@ enum STATE {
 	DEAD
 }
 
-const FIRE_COOLDOWN_TIME := 0.7
+const FIRE_COOLDOWN_TIME := 0.85
 var fire_cooldown := 0.5
 
 onready var MAX_DIR_CHANGE_TIME := 1.0 if is_solo_player else 2.0
