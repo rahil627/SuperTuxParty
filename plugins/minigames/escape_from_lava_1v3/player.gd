@@ -27,8 +27,6 @@ var state = STATE.IDLE
 func _ready():
 	if is_solo_player:
 		remove_from_group("players")
-	else:
-		$Model/AnimationPlayer.play("idle")
 
 func _process(delta):
 	if not is_solo_player:
@@ -51,10 +49,10 @@ func _process(delta):
 			rotation.y = atan2(dir.x, dir.z)
 			if state == STATE.IDLE:
 				state = STATE.RUNNING
-				$Model/AnimationPlayer.play("run")
+				$Model.play_animation("run")
 		elif dir.length_squared() == 0 and state == STATE.RUNNING:
 			state = STATE.IDLE
-			$Model/AnimationPlayer.play("idle")
+			$Model.play_animation("idle")
 		
 		movement += GRAVITY_DIR * GRAVITY * delta
 		if state != STATE.DEAD:
@@ -78,7 +76,7 @@ func _unhandled_input(event):
 
 func die():
 	state = STATE.DEAD
-	$Model/AnimationPlayer.play("idle")
+	$Model.play_animation("idle")
 
 func is_dead():
 	return state == STATE.DEAD

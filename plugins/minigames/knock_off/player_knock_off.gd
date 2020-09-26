@@ -17,13 +17,10 @@ func set_winner(win):
 	winner = win
 	
 	if not is_walking and win and has_node("Model/AnimationPlayer"):
-		$Model/AnimationPlayer.play("happy")
+		$Model.play_animation("happy")
 
 func _ready():
 	$Model.set_as_toplevel(true)
-	
-	if has_node("Model/AnimationPlayer"):
-		$Model/AnimationPlayer.play("idle")
 	
 	precompute_ground_edges()
 
@@ -118,14 +115,14 @@ func _process(delta):
 			$Model.rotation.y += diff2 * delta * 3
 		
 		if not is_walking and has_node("Model/AnimationPlayer"):
-			$Model/AnimationPlayer.play("walk")
+			$Model.play_animation("walk")
 			is_walking = true
 	else:
 		if is_walking and has_node("Model/AnimationPlayer"):
 			if winner:
-				$Model/AnimationPlayer.play("happy")
+				$Model.play_animation("happy")
 			else:
-				$Model/AnimationPlayer.play("idle")
+				$Model.play_animation("idle")
 			is_walking = false
 	
 	if angular_velocity.length() > MAX_SPEED:

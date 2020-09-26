@@ -18,10 +18,9 @@ func setup_character_viewport() -> void:
 
 			player.replace_by(new_model)
 
-			if new_model.has_node("AnimationPlayer"):
-				new_model.get_node("AnimationPlayer").play("idle")
-				if i > 0:
-					new_model.get_node("AnimationPlayer").playback_speed = 0
+			new_model.play_animation("idle")
+			if i > 0:
+				new_model.freeze_animation()
 
 			i += 1
 
@@ -131,12 +130,9 @@ func _on_Controls_tab_changed(tab: int) -> void:
 	var player = $Characters/Viewport.get_node(
 			"Player" + str(tab + 1))
 
-	if last_player.has_node("AnimationPlayer"):
-		# Pause the animation, when it is no longer selected
-		last_player.get_node("AnimationPlayer").seek(0, true)
-		last_player.get_node("AnimationPlayer").playback_speed = 0
+	# Pause the animation, when it is no longer selected
+	last_player.freeze_animation()
 
-	if player.has_node("AnimationPlayer"):
-		player.get_node("AnimationPlayer").playback_speed = 1
+	player.resume_animation()
 
 	$Characters/Viewport/Indicator.translation = player.translation + Vector3(0, 1.5, 0)

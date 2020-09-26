@@ -331,9 +331,14 @@ func _load_player(player: Node, state: PlayerState, team_id: int) -> void:
 		var model: Spatial = PluginSystem.character_loader.load_character(character)
 		model.set_name("Model")
 
-		var shape: CollisionShape = model.get_node_or_null("Shape")
+		var shape: CollisionShape = model.get_node_or_null(model.collision_shape)
 		if shape:
-			model.remove_child(shape)
+			var parent := shape.get_parent()
+			while parent != null:
+				if parent is Spatial:
+					shape.transform = parent.transform * shape.transform
+				parent = parent.get_parent()
+			shape.get_parent().remove_child(shape)
 		else:
 			push_warning("Character `{0}` has no shape".format([character]))
 

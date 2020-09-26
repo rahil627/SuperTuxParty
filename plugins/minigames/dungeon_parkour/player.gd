@@ -21,7 +21,6 @@ var ai_rand_start: float
 
 func _ready():
 	$CameraTracker.set_as_toplevel(true)
-	$Model/AnimationPlayer.play("idle")
 	
 	if is_ai:
 		ai_current_waypoint = $"../Ground/Waypoint"
@@ -73,26 +72,26 @@ func _process(delta):
 
 	if acceleration.x or acceleration.z:
 		if state == State.IDLE:
-			$Model/AnimationPlayer.play("run")
+			$Model.play_animation("run")
 			state = State.RUN
 		$Model.rotation.y = atan2(acceleration.x, acceleration.z)
 	elif state == State.RUN:
-		$Model/AnimationPlayer.play("idle")
+		$Model.play_animation("idle")
 		state = State.IDLE
 	
 	if is_on_floor():
 		if state == State.JUMP:
 			if acceleration.x:
-				$Model/AnimationPlayer.play("run")
+				$Model.play_animation("run")
 				state = State.RUN
 			else:
-				$Model/AnimationPlayer.play("idle")
+				$Model.play_animation("idle")
 				state = State.IDLE
 		else:
 			acceleration.y = 0
 			if jump:
 				acceleration.y = JUMP_POWER
-				$Model/AnimationPlayer.play("jump")
+				$Model.play_animation("jump")
 				state = State.JUMP
 	acceleration.y -= GRAVITY * delta
 	

@@ -14,7 +14,6 @@ var ai_difficulty
 var stop = false
 
 var playing_jump_animation = false
-var walking_animation_position = 0
 
 var next_jump_randomness = 0
 
@@ -27,8 +26,7 @@ var collision_disabled = 0
 var visibility_material;
 
 func _ready():
-	if has_node("Model/AnimationPlayer"):
-		get_node("Model/AnimationPlayer").play("run")
+	$Model.play_animation("run")
 	
 	visibility_material = load("res://plugins/minigames/hurdle/visibility.tres").duplicate()
 	
@@ -61,9 +59,8 @@ func _physics_process(delta):
 	
 	movement += GRAVITY * GRAVITY_DIR * delta
 	
-	if jump < JUMP_MAX and not playing_jump_animation and has_node("Model/AnimationPlayer"):
-		walking_animation_position = $Model/AnimationPlayer.current_animation_position
-		$Model/AnimationPlayer.play("jump")
+	if movement.y > 0.01 and jump < JUMP_MAX and not playing_jump_animation:
+		$Model.play_animation("jump")
 		playing_jump_animation = true
 	
 	move_and_slide(movement, Vector3(0.0, 1.0, 0.0))
@@ -86,13 +83,11 @@ func _physics_process(delta):
 		if disable_jump_immunity == 0 and collision.collider.is_in_group("hurdles") and collision.normal.angle_to(Vector3(0, 1, 0)) > deg2rad(20):
 			disable_jump = 0.25
 			disable_jump_immunity = 1.0
-			if has_node("Model/AnimationPlayer"):
-				$Model/AnimationPlayer.stop()
+			$Model.freeze_animation()
 	
 	if is_on_floor():
 		if playing_jump_animation and has_node("Model/AnimationPlayer"):
-			$Model/AnimationPlayer.play("run")
-			$Model/AnimationPlayer.seek(walking_animation_position)
+			$Model.play_animation("run")
 			playing_jump_animation = false
 		movement = Vector3()
 		jump = JUMP_MAX

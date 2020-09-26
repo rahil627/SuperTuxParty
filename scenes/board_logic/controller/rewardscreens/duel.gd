@@ -12,9 +12,9 @@ func _ready() -> void:
 			var player = get_node("Player" + str(i))
 			new_model.transform = player.global_transform
 			if i == 1 and len(Global.minigame_summary.placement) == 2:
-				new_model.get_node("AnimationPlayer").play("happy")
+				new_model.play_animation("happy")
 			else:
-				new_model.get_node("AnimationPlayer").play("sad")
+				new_model.play_animation("sad")
 
 			player.replace_by(new_model)
 

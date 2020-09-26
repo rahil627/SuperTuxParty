@@ -78,6 +78,22 @@ Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
+## assets/models/cannon
+### scene.glb
+Copyright © furkan
+
+Retrieved from [Sketchfab](https://sketchfab.com/3d-models/stylized-cannon-033aedfdfd5d4060bdbc9c77e859edbd)
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## assets/models/cannon/textures
+### blinn1\*
+Copyright © furkan
+
+Retrieved from [Sketchfab](https://sketchfab.com/3d-models/stylized-cannon-033aedfdfd5d4060bdbc9c77e859edbd)
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ## assets/models/door/
 ### WoodenDoor.blend | WoodenDoor.dae
 Copyright Danimal and Yughues
@@ -341,7 +357,7 @@ Retrieved from [Open Game Art](https://opengameart.org/content/mascots-and-frien
 License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## plugins/characters/Beastie
-### beastie_tex.png | beastie.blend
+### beastie_tex.png | beastie.blend | beastie.glb
 
 Copyright © 2010 durmieu 
 
@@ -364,7 +380,7 @@ Copyright © 2020 Paulius Danelius
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/characters/Godette
-### palette.png | godot_chan.blend | godot_chan_one_object.blend
+### palette.png | godot_chan.blend | godot_chan.glb
 
 Copyright © SirRichard94
 
@@ -512,11 +528,26 @@ Retrieved from [Open Game Art](https://opengameart.org/content/playing-card-asse
 License: [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## plugins/minigames/bowling
+### ball.glb
+Copyright © kaito
+
+Simplified model by Florian Kothmeier
+
+Retrieved from [Sketchfab](https://sketchfab.com/3d-models/bowling-cc9ef646d4bc4896aef52bae07e8b544)
+
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
 ### screenshot.png
 
-Copyright © Michael Alexsander Silva Dias
+Copyright © Florian Kothmeier
 
-License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/bowling/room
+### room.blend | room.glb
+Copyright © Florian Kothmeier
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/minigames/harvest_food
 ### carrot.png
@@ -979,6 +1010,16 @@ Copyright © Florian Kothmeier
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### hit_indicator.png
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### stun.png
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### metal.png
 Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)

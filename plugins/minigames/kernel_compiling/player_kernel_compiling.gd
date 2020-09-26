@@ -20,13 +20,11 @@ var idx
 var disabled_input = false
 
 func disable_input():
-	$Model/AnimationPlayer.play("sad")
+	$Model.play_animation("sad")
 	disabled_input = true
 	$PenalityTimer.start()
 
 func _ready():
-	$Model/AnimationPlayer.play("idle")
-	
 	if is_ai:
 		match ai_difficulty:
 			Global.Difficulty.EASY:
@@ -42,8 +40,8 @@ func _ready():
 		ai_wait_time = rand_range(AI_MIN_WAIT_TIME, AI_MAX_WAIT_TIME)
 
 func press():
-	$Model/AnimationPlayer.play("punch")
-	$Model/AnimationPlayer.queue("idle")
+	$Model.play_animation("punch")
+	$Model.play_animation("idle")
 	presses += 1
 	$Battery/Cylinder.get_surface_material(0).set_shader_param("percentage", float(presses) / NEEDED_BUTTON_PRESSES)
 	if presses < NEEDED_BUTTON_PRESSES:
@@ -80,4 +78,4 @@ func _input(event):
 
 func _on_PenalityTimer_timeout():
 	disabled_input = false
-	$Model/AnimationPlayer.play("idle")
+	$Model.play_animation("idle")
