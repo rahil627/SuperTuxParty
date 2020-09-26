@@ -1,19 +1,54 @@
 {
-    "name" : "MINIGAME_NAME",
-    "scene_path" : "res://plugins/minigames/escape_from_lava_1v3/minigame.tscn",
-    "type" : ["1v3"],
-    "image_path" : "res://plugins/minigames/escape_from_lava_1v3/screenshot.png",
-    "translation_directory" : "res://plugins/minigames/escape_from_lava_1v3/translations",
-
-    "description": "MINIGAME_DESCRIPTION",
-
-    "controls" : {
-        "up" : "MINIGAME_ACTION_UP",
-        "left" : "MINIGAME_ACTION_LEFT",
-        "down" : "MINIGAME_ACTION_DOWN",
-        "right" : "MINIGAME_ACTION_RIGHT",
-        "action1" : "MINIGAME_ACTION_OBSTRUCT_ONE",
-        "action2" : "MINIGAME_ACTION_OBSTRUCT_TWO",
-        "action3" : "MINIGAME_ACTION_OBSTRUCT_THREE",
-    }
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/escape_from_lava_1v3/minigame.tscn",
+	"image_path": "res://plugins/minigames/escape_from_lava_1v3/screenshot.png",
+	"translation_directory": "res://plugins/minigames/escape_from_lava_1v3/translations",
+	"type": [
+		"1v3"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"up"
+			],
+			"text": "MINIGAME_ACTION_UP"
+		},
+		{
+			"actions": [
+				"left"
+			],
+			"text": "MINIGAME_ACTION_LEFT"
+		},
+		{
+			"actions": [
+				"down"
+			],
+			"text": "MINIGAME_ACTION_DOWN"
+		},
+		{
+			"actions": [
+				"right"
+			],
+			"text": "MINIGAME_ACTION_RIGHT"
+		},
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_OBSTRUCT_ONE"
+		},
+		{
+			"actions": [
+				"action2"
+			],
+			"text": "MINIGAME_ACTION_OBSTRUCT_TWO"
+		},
+		{
+			"actions": [
+				"action3"
+			],
+			"text": "MINIGAME_ACTION_OBSTRUCT_THREE"
+		}
+	]
 }

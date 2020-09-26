@@ -7,17 +7,17 @@ class MinigameConfigFile:
 	var image_path: String
 	var translation_directory := ""
 
-	# BBCode (or anything that works in Richtextlabel) inside a dictionary,
-	# e.g. { "en" : "English description goes here" }.
-	# Or a plain string, which will be the description for every language
+	# BBCode (or anything that works in RichTextLabel)
 	var description = ""
-	# Dictionary with { "action_name" : { ...translations...} }.
-	var controls := {}
+	# Contains Dictionaries with { "actions" : [... list of actions ...], "text": "Description" }.
+	var controls := []
 	var type := []
 
 # This is the entry point filename to every minigame.
 const MINIGAME_CONFIG_FILENAME := [ "minigame.json" ]
 const MINIGAME_PATH := "res://plugins/minigames"
+
+const ACTIONS := ["up", "left", "down", "right", "action1", "action2", "action3", "action4"]
 
 var minigames := []
 var played := []
@@ -73,7 +73,7 @@ func print_loaded_minigames() -> void:
 		if "GnuCoop" in minigame.type:
 			print("\t\t" + minigame.filename.split("/")[-2])
 
-func parse_file(file: String) -> MinigameConfigFile:
+static func parse_file(file: String) -> MinigameConfigFile:
 	var f := File.new()
 	f.open(file, File.READ)
 	var result: JSONParseResult = JSON.parse(f.get_as_text())
@@ -95,9 +95,9 @@ func parse_file(file: String) -> MinigameConfigFile:
 		push_error("Error in file '{0}': entry 'name' missing".format([file]))
 		return null
 	
-	if not (result.result.name is String or result.result.name is Dictionary):
-		push_error("Error in file '{0}': entry 'name' is not a String" +
-				" or dictionary".format([file]))
+	if not result.result.name is String:
+		push_error("Error in file '{0}': entry 'name' is not a string".format([
+					file]))
 		return null
 
 	config.name = result.result.name
@@ -108,8 +108,8 @@ func parse_file(file: String) -> MinigameConfigFile:
 		return null
 
 	if not result.result.scene_path is String:
-		push_error("Error in file '{0}': entry 'scene_path'" +
-				" is not of type String".format([file]))
+		push_error("Error in file '{0}': entry 'scene_path' is not a string".format([
+					file]))
 		return null
 	config.scene_path = result.result.scene_path
 
@@ -123,47 +123,57 @@ func parse_file(file: String) -> MinigameConfigFile:
 		if result.result.image_path is String:
 			config.image_path = result.result.image_path
 		else:
-			push_error("Error in file '{0}': entry 'image_path'" +
-					" is not of type String".format([file]))
+			push_error("Error in file '{0}': entry 'image_path' is not a string".format([
+						file]))
 
 	if result.result.has("translation_directory"):
 		var translation_directory = result.result.translation_directory
 		if translation_directory is String:
 			config.translation_directory = translation_directory
 		else:
-			push_error("Error in file '{0}': entry 'translation_directory'" +
-					" is not a String. Ignoring".format([file]))
+			push_error("Error in file '{0}': entry 'translation_directory' is not a string. Ignoring".format([
+				file]))
 
 	if result.result.has("description"):
 		var description = result.result.description
-		if description is String or description is Dictionary:
+		if description is String:
 			config.description = description
 		else:
-			push_error("Error in file '{0}': entry 'description'" +
-					" is neither a String nor a dictionary. Ignoring".format([
+			push_error("Error in file '{0}': entry 'description' is not a string. Ignoring".format([
 						file]))
 
 	if result.result.has("controls"):
 		var controls = result.result.controls
-		if controls is Dictionary:
-			var valid = true
-			for key in controls.keys():
-				var value = controls[key]
-				if not key is String:
-					valid = false
-					push_error("Error in file '{0} in entry 'controls':" + 
-							" dictionary key '{1}' is not a string".format([
-								file, str(key)]))
-				if not value is String:
-					valid = false
-					push_error("Error in file '{0}' in entry 'controls':" +
-							" dictionary value '{1}' is not a string".format([
-								file, str(value)]))
-			if valid:
-				config.controls = result.result.controls
+		if controls is Array:
+			var validated_controls := []
+			for dict in controls:
+				if not "actions" in dict:
+					push_error("Error in file '{0}' in entry 'controls': Control is missing the 'actions' entry".format([
+								file]))
+					continue
+				if not "text" in dict:
+					push_error("Error in file '{0}' in entry 'controls': Control is missing the 'text' entry".format([
+								file]))
+					continue
+				if not dict["actions"] is Array:
+					push_error("Error in file '{0}' in entry 'controls': 'actions' entry is not an array".format([
+								file]))
+					continue
+				if not dict["text"] is String:
+					push_error("Error in file '{0}' in entry 'controls': 'text' entry is not a string".format([
+								file]))
+					continue
+				var valid = true
+				for action in dict["actions"]:
+					if not action in ACTIONS:
+						push_error("Error in file '{0}' in entry 'controls': 'actions' entry contains an invalid action: {1}".format([
+									file, str(action)]))
+						break
+				if valid:
+					validated_controls.append({"actions": dict["actions"], "text": dict["text"]})
+			config.controls = validated_controls
 		else:
-			push_error("Error in file '{0}': entry 'controls'" +
-					" is not a dictionary".format([file]))
+			push_error("Error in file '{0}': entry 'controls' is not an array".format([file]))
 	return config
 
 # Utility function that should not be called use

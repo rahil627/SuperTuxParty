@@ -39,65 +39,70 @@ func minigame_has_player(id: int) -> bool:
 
 	return false
 
-func _get_translation(source) -> String:
-	if source is String:
-		return tr(source)
-	var locale: String = TranslationServer.get_locale()
-
-	if source.has(locale):
-		return source.get(locale)
-	elif source.has(locale.substr(0, 2)):
-		# Check if, e.g. de is present if locale is de_DE.
-		return source.get(locale.substr(0, 2))
-	elif source.has("en"):
-		return source.en
-	else:
-		var values = source.values()
-		if values.size() > 0:
-			return values[0]
-
-		return "Unable to get translation"
-
 func _load_content(minigame, players):
-	$Description/Text.bbcode_text = _get_translation(minigame.description)
+	$Description/Text.bbcode_text = tr(minigame.description)
 
 	for i in range(1, len(players) + 1):
-		var label: RichTextLabel = $Controls.get_node("Player" + str(i))
+		var container: VBoxContainer = $Controls.get_node_or_null("Player" + str(i) + "/Rows")
 		if not minigame_has_player(i) or players[i - 1].is_ai:
 			# If the player is controlled by an AI, there is no point in
 			# showing controls.
-			if label:
-				label.queue_free()
+			if container:
+				container.get_parent().queue_free()
 			continue
+		for child in container.get_children():
+			child.queue_free()
 
-		label.bbcode_text = ""
-		for action in minigame.controls:
-			var action_name = "player{num}_{action}".format({"num": i, "action": action})
-			var input = InputMap.get_action_list(action_name)[0]
-			var control = ControlHelper.get_from_event(input)
-			if control is String:
-				if input is InputEventKey:
-					# There isn't a special image for all keys.
-					# For ones such as 'a' we generally impose the character
-					# over a blank texture. This doesn't work in RichTextLabels
-					# So we forge such a texture with a viewport
-					var img = load("res://scenes/board_logic/controller/inputevent_key_viewport.tscn").instance()
-					img.get_node("TextureRect/Label").text = control
-					label.add_child(img)
-					control = img.get_texture()
+		for entry in minigame.controls:
+			var row := HBoxContainer.new()
+			row.alignment = BoxContainer.ALIGN_CENTER
+			
+			var controls := VBoxContainer.new()
+			var first_row := HBoxContainer.new()
+			var second_row := HBoxContainer.new()
+			controls.size_flags_vertical = SIZE_SHRINK_CENTER
+			controls.add_child(first_row)
+			controls.add_child(second_row)
+			row.add_child(controls)
+			container.add_child(row)
+			var first_row_count: int
+			if len(entry.actions) > 2:
+				# Put half of the entries in the first row, rounded up
+				first_row_count = (len(entry.actions) + 1) / 2
+			else:
+				first_row_count = len(entry.actions)
+			for index in range(len(entry.actions)):
+				var action = entry.actions[index]
+				var action_name = "player{num}_{action}".format({"num": i, "action": action})
+				var input = InputMap.get_action_list(action_name)[0]
+				var control = ControlHelper.get_from_event(input)
+				var parent
+				if index < first_row_count:
+					parent = first_row
 				else:
-					label.add_text(control)
-			if control is Texture:
-				var image_height := 32
-				var font_height = label.get_font("normal_font").get_ascent()
-				var font := BitmapFont.new()
-				# Wrapping an image in a font allows to offset it vertically
-				# Documentation here: https://docs.godotengine.org/de/latest/tutorials/gui/bbcode_in_richtextlabel.html#image-vertical-offset
-				font.ascent = (image_height - font_height) / 2
-				label.push_font(font)
-				label.add_image(control, 0, image_height)
-				label.pop()
-			label.append_bbcode(" - " + _get_translation(minigame.controls[action]) + "\n")
+					parent = second_row
+				if control is Texture:
+					var texture = preload("res://scenes/board_logic/controller/templates/control_image.tscn").instance()
+					texture.texture = control
+					parent.add_child(texture)
+				elif control is String:
+					if input is InputEventKey:
+						# There isn't a special image for all keys.
+						# For ones such as 'a' we generally impose the character
+						# over a blank texture.
+						var img = preload("res://scenes/board_logic/controller/templates/control_image.tscn").instance()
+						img.get_node("Label").text = control
+						parent.add_child(img)
+					else:
+						var text := Label.new()
+						text.text = control
+						parent.add_child(text)
+			var seperator := Label.new()
+			seperator.text = "-"
+			row.add_child(seperator)
+			var label := preload("res://scenes/board_logic/controller/templates/control_text.tscn").instance()
+			label.bbcode_text = tr(entry.text)
+			row.add_child(label)
 
 func show_minigame_info(state, players: Array) -> void:
 	Global.load_minigame_translations(state.minigame_config)

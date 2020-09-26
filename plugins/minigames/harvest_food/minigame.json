@@ -1,13 +1,20 @@
 {
-    "name": "MINIGAME_NAME",
-    "scene_path" : "res://plugins/minigames/harvest_food/minigame.tscn",
-    "type": ["FFA", "2v2", "Duel"],
-    "image_path": "res://plugins/minigames/harvest_food/screenshot.png",
-    "translation_directory": "res://plugins/minigames/harvest_food/translations",
-
-    "description" : "MINIGAME_DESCRIPTION",
-
-    "controls": {
-        "action1": "MINIGAME_ACTION_JUMP"
-    }
+	"name": "MINIGAME_NAME",
+	"scene_path": "res://plugins/minigames/harvest_food/minigame.tscn",
+	"image_path": "res://plugins/minigames/harvest_food/screenshot.png",
+	"translation_directory": "res://plugins/minigames/harvest_food/translations",
+	"type": [
+		"2v2",
+		"Duel",
+		"FFA"
+	],
+	"description": "MINIGAME_DESCRIPTION",
+	"controls": [
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_JUMP"
+		}
+	]
 }
