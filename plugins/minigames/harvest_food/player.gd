@@ -80,4 +80,4 @@ func _physics_process(delta):
 		movement = Vector3()
 
 func play_animation(name):
-	$Modelr.play_animation(name)
+	$Model.play_animation(name)
