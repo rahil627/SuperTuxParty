@@ -22,7 +22,7 @@ msgstr "Memory"
 
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
-"Players must find find matching card pairs.\n"
+"Players must find matching card pairs.\n"
 "The team with more pairs wins!"
 
 msgid "MINIGAME_ACTION_UP"
