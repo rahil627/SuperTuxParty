@@ -139,6 +139,12 @@ msgstr "Prawo"
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Góra"
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr ""
 
@@ -351,12 +357,10 @@ msgid "CONTEXT_GNU_ACTION_TYPE"
 msgstr ""
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
 msgstr "Różne"
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
 msgstr "Różne"
 
@@ -364,7 +368,6 @@ msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
 msgstr ""
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
 msgstr "Różne"
 
@@ -488,7 +491,22 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"

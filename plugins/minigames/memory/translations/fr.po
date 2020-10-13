@@ -1,2 +1,32 @@
 msgid ""
-msgstr "X-Generator: Weblate\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit"
+msgstr ""
+"PO-Revision-Date: 2020-10-05 21:26+0000\n"
+"Last-Translator: Brian Gaucher <brianphineasgaucher@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
+"minigamesmemory/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+"Les joueurs doivent trouver les paires.\n"
+"L'équipe avec le plus de paires gagne !"
+
+msgid "MINIGAME_NAME"
+msgstr "Mémoire"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Se déplacer vers la droite"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Se déplacer vers la gauche"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Se déplacer vers le bas"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Se déplacer vers le haut"

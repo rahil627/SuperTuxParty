@@ -139,6 +139,12 @@ msgstr "Derecha"
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Arriba"
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr ""
 
@@ -351,22 +357,18 @@ msgid "CONTEXT_GNU_ACTION_TYPE"
 msgstr ""
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
 msgstr "Visual"
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_VISUAL"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
 msgstr "Visual"
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
 msgstr "Audio"
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_AUDIO"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
 msgstr "Audio"
 
@@ -490,7 +492,22 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"

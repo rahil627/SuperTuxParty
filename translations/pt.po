@@ -5,139 +5,139 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"super-tux-party/super-tux-party/zh_Hans/>\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2020-09-29 13:41+0000\n"
+"Last-Translator: ssantos <ssantos@web.de>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/super-tux-"
+"party/super-tux-party/pt/>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0-dev\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "Compre um bolo por {amount} biscoitos"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Recompensa do Duelo:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Selecione Oponente:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Acabou!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Começar!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "{name} jogou {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Pronto?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Jogue!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Jogue {name}!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "O vencedor rouba 1 bolo"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "O vencedor rouba 10 biscoitos"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Rodada {turn}"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "VS."
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "É a sua vez!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Não tem biscoitos o suficiente para comprar isto"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "Não tem espaço o suficiente no seu inventário"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Ação 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Ação 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Ação 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Ação 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "Eixo desconhecido {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Botão gamepad {button}"
 
 msgid "MENU_CONTROLS_MOUSE"
-msgstr "鼠标"
+msgstr "Rato"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Botão 1 do rato"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Botão esquerdo do rato"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Botão do meio do rato"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Botão direito do rato"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Botão de rolagem abaixo"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Botão de rolagem esquerda"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Botão de rolagem direita"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Botão de rolagem acima"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Gatilho Esquerdo"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Gatilho Esquerdo 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Gatilho Esquerdo 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Gatilho Direito"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Gatilho Direito 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Gatilho Direito 3"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
-msgstr "下"
+msgstr "Baixo"
 
 msgid "MENU_CONTROLS_DIR_LEFT"
-msgstr "左"
+msgstr "Esquerda"
 
 msgid "MENU_CONTROLS_DIR_RIGHT"
-msgstr "右"
+msgstr "Direita"
 
 msgid "MENU_CONTROLS_DIR_UP"
-msgstr "上"
+msgstr "Cima"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
 msgstr ""
@@ -146,140 +146,139 @@ msgid "MENU_CONTROLS_DEV_MENU"
 msgstr ""
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Insira o nome do jogo á gravar:"
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr "载入游戏"
+msgstr "Carregar Jogo"
 
 msgid "MENU_IO_SAVE"
-msgstr "保存"
+msgstr "Gravar"
 
 msgid "MENU_IO_SAVE_GAME"
-msgstr "保存游戏"
+msgstr "Gravar Jogo"
 
 msgid "MENU_LABEL_BACK"
-msgstr "返回"
+msgstr "Atrás"
 
 msgid "MENU_LABEL_CANCEL"
-msgstr "取消"
+msgstr "Cancelar"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Personagem:"
 
 msgid "MENU_LABEL_CONTINUE"
-msgstr "继续"
+msgstr "Continuar"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Descrição"
 
 msgid "MENU_LABEL_DESKTOP"
-msgstr "退出至桌面"
+msgstr "Sair para o ambiente de trabalho"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Linear"
 
 msgid "MENU_LABEL_NEW_GAME"
-msgstr "新游戏"
+msgstr "Novo Jogo"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Não preparado…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Números"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
 msgstr "OK"
 
 msgid "MENU_LABEL_PAUSE"
-msgstr "暂停"
+msgstr "Pausa"
 
 msgid "MENU_LABEL_PAUSED"
-msgstr "暂停中"
+msgstr "Em Pausa"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Pausa quando o foco da janela for perdido"
 
 msgid "MENU_LABEL_PLAY"
-msgstr "开始"
+msgstr "Jogar"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Jogador1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Jogador 2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Jogador3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Jogador4"
 
-#, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
-msgstr "按下任意键"
+msgstr "Carregue em qualquer tecla"
 
 msgid "MENU_LABEL_QUIT"
-msgstr "退出"
+msgstr "Sair"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Pronto!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Resumir"
 
 msgid "MENU_LABEL_RETURN_MENU"
-msgstr "返回至主界面"
+msgstr "Regressar ao Menu Principal"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Sistema de Recompensa:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Selecione o tabuleiro:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Selecione a personagem para o jogador 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Selecione a personagem para o jogador 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Selecione a personagem para o jogador 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Selecione a personagem para o jogador 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Selecione a quantidade de jogadores"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Tentar"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Vencedor leva tudo"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
 msgstr ""
@@ -288,88 +287,85 @@ msgid "MENU_LABEL_SCREENSHOTS"
 msgstr ""
 
 msgid "MENU_OPTIONS"
-msgstr "设置"
+msgstr "Opções"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Áudio"
 
 msgid "MENU_OPTIONS_CONTROLS"
-msgstr "操作模式"
+msgstr "Controlos"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Efeitos"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Limite de Frames"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
-msgstr "全屏"
+msgstr "Ecrã inteiro"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Idoima"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Mestre"
 
 msgid "MENU_OPTIONS_MISC"
-msgstr "其它"
+msgstr "Diversos"
 
 msgid "MENU_OPTIONS_MUSIC"
-msgstr "音乐"
+msgstr "Música"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
 msgstr ""
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "Predefinição do Sistema"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Visual"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "垂直同步"
+msgstr ""
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Sim"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Não"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Custo do bolo:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Voltas:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Dificuldade das IA:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Fácil"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normal"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Difícil"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
 msgstr ""
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "其它"
+msgstr ""
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "其它"
+msgstr ""
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
 msgstr ""
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "其它"
+msgstr ""
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
@@ -523,6 +519,3 @@ msgstr ""
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr ""
-
-#~ msgid "MENU_CONTROLS_GAMEPAD"
-#~ msgstr "游戏手柄"

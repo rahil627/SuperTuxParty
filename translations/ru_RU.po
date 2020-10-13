@@ -139,6 +139,12 @@ msgstr "Вправо"
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Вверх"
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Введите имя сохранения:"
 
@@ -513,7 +519,22 @@ msgstr ""
 "Зеленые пространства служат началом специальных мероприятий. Боевые "
 "пространства позволяют вам бросить вызов другому игроку в мини-игре на дуэль."
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"
@@ -527,8 +548,8 @@ msgstr "Сколько тортов вы хотите купить?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
-"Молодец, [color=#00aaff]{player}[/color]. Это [color=#dd44ff]{amount}[/color]"
-" торт(ов) для тебя."
+"Молодец, [color=#00aaff]{player}[/color]. Это [color=#dd44ff]{amount}[/"
+"color] торт(ов) для тебя."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "Извините, но у вас недостаточно печенья, чтобы купить торт."

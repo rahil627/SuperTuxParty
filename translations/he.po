@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-10-12 20:26+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/he/>\n"
 "Language: he\n"
@@ -14,31 +14,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "רכישת עוגה תמורת {amount} עוגיות"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "פרס בדו־קרב:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "נא לבחור יריב:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "סיום!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "קדימה!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "{name} הטיל/ה בקובייה {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "מוכן/ה?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "להטיל!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
 msgstr ""
@@ -53,28 +53,28 @@ msgid "CONTEXT_LABEL_TURN_NUM"
 msgstr ""
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "נגד"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "זה התור שלך!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "אין לך מספיק עוגיות כדי לקנות את זה"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
 msgstr ""
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "פעולה 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "פעולה 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "פעולה 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "פעולה 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
 msgstr ""
@@ -86,16 +86,16 @@ msgid "MENU_CONTROLS_MOUSE"
 msgstr "עכבר"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "לחצן בעכבר"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "הלחצן השמאלי בעכבר"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "הלחצן האמצעי בעכבר"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "הלחצן הימני בעכבר"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
 msgstr ""
@@ -139,17 +139,23 @@ msgstr "ימינה"
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "למעלה"
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr ""
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr "טען משחק שמור"
+msgstr "טעינת משחק שמור"
 
 msgid "MENU_IO_SAVE"
-msgstr "שמור"
+msgstr "שמירה"
 
 msgid "MENU_IO_SAVE_GAME"
-msgstr "שמור משחק"
+msgstr "שמירת המשחק"
 
 msgid "MENU_LABEL_BACK"
 msgstr "חזרה"
@@ -158,13 +164,13 @@ msgid "MENU_LABEL_CANCEL"
 msgstr "ביטול"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "דמות:"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "המשך"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "תיאור"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "יציאה לשולחן העבודה"
@@ -179,28 +185,28 @@ msgid "MENU_LABEL_NINTENDO_DS"
 msgstr ""
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "לא מוכן/ה…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "מספרים"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "טוב"
+msgstr "אישור"
 
 msgid "MENU_LABEL_PAUSE"
-msgstr "השהה"
+msgstr "השהיה"
 
 msgid "MENU_LABEL_PAUSED"
 msgstr "מושהה"
@@ -209,65 +215,65 @@ msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
 msgstr ""
 
 msgid "MENU_LABEL_PLAY"
-msgstr "התחל"
+msgstr "התחלה"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "שחקן/ית1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "שחקן/ית2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "שחקן/ית3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "שחקן/ית4"
 
 #, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
-msgstr "כדי להתחיל לחץ על אחד מהמקשים"
+msgstr "יש ללחוץ על מקש כלשהו"
 
 msgid "MENU_LABEL_QUIT"
-msgstr "הפסק"
+msgstr "יציאה"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "מוכן/ה!"
 
 msgid "MENU_LABEL_RESUME"
 msgstr ""
 
 msgid "MENU_LABEL_RETURN_MENU"
-msgstr "חזור למסך הראשי"
+msgstr "חזרה לתפריט הראשי"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "מערכת תגמול:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "יש לבחור לוח:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "יש לבחור דמות עבור שחקן/ית 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "יש לבחור דמות עבור שחקן/ית 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "יש לבחור דמות עבור שחקן/ית 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "יש לבחור דמות עבור שחקן/ית 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "יש לבחור את כמות השחקנים"
 
 msgid "MENU_LABEL_TITLE"
 msgstr ""
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "לנסות"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
 msgstr ""
@@ -276,7 +282,7 @@ msgid "MENU_LABEL_XBOX"
 msgstr ""
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "שבחים"
 
 msgid "MENU_LABEL_SCREENSHOTS"
 msgstr ""
@@ -306,7 +312,7 @@ msgid "MENU_OPTIONS_MASTER"
 msgstr ""
 
 msgid "MENU_OPTIONS_MISC"
-msgstr "משחק שונות"
+msgstr "שונות"
 
 msgid "MENU_OPTIONS_MUSIC"
 msgstr "מוזיקה"
@@ -351,12 +357,10 @@ msgid "CONTEXT_GNU_ACTION_TYPE"
 msgstr ""
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
 msgstr "משחק שונות"
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
 msgstr "משחק שונות"
 
@@ -364,7 +368,6 @@ msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
 msgstr ""
 
 #, fuzzy
-#| msgid "MENU_OPTIONS_MISC"
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
 msgstr "משחק שונות"
 
@@ -488,7 +491,22 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-07-05 21:21+0000\n"
-"Last-Translator: Yannick A. <yannick.armand@protonmail.com>\n"
+"PO-Revision-Date: 2020-10-07 02:26+0000\n"
+"Last-Translator: Brian Gaucher <brianphineasgaucher@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Acheter un gâteau pour {amount} biscuits"
@@ -138,6 +138,12 @@ msgstr "Droite"
 
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Haut"
+
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Nom de la sauvegarde :"
@@ -502,11 +508,26 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr ""
+msgstr "par"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-09-05 20:35+0000\n"
+"PO-Revision-Date: 2020-09-06 21:36+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
@@ -139,6 +139,12 @@ msgstr "Rechts"
 msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Oben"
 
+msgid "MENU_CONTROLS_SCREENSHOT"
+msgstr ""
+
+msgid "MENU_CONTROLS_DEV_MENU"
+msgstr ""
+
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Spielstand Name:"
 
@@ -212,16 +218,16 @@ msgid "MENU_LABEL_PLAY"
 msgstr "Spielen"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Spieler 1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Spieler 2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Spieler 3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Spieler 4"
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -278,7 +284,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Danksagungen"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "Bildschirmfotos anzeigen"
 
 msgid "MENU_OPTIONS"
 msgstr "Optionen"
@@ -486,39 +492,71 @@ msgstr "Verfluchter Würfel"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
 msgstr ""
+"Es scheint, als spielst du das erste mal Super Tux Party. Darf ich dir die "
+"Regeln erklären?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"Das Spiel wird in Zügen gespielt. Während deines Zuges wirfst du einen "
+"Würfel und ziehst dementsprechend voran."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
+"Die Währung sind Kekse. Du verdienst dir Kekse, indem du Minispiele "
+"gewinnst. Mit Keksen kannst du Gegenstände im Shop kaufen, wenn du an einem "
+"vorbei kommst."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
+"Um zu gewinnen musst du die meisten Kuchen sammeln. Im Falle eines "
+"Gleichstandes . Kuchen kannst du an speziellen Plätzen auf dem Brett kaufen. "
+"Wird der Kuchen gekauft, bewegt er sich auf ein anderes Feld."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
+"Es gibt verschiedene Arten von Feldern: Blaue Felder schenken dir Kekse. "
+"Rote Felder nehmen dir Kekse."
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
+"Grüne Felder lösen Ereignisse auf dem Spielfeld aus. Kampf-Felder lassen "
+"dich einen anderen Spieler zum Duell in einem Minispiel herausfordern."
 
-msgid "CONTEXT_TUTORIAL_WINNING"
+msgid "CONTEXT_TUTORIAL_MINIGAMES"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
+msgstr ""
+
+msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr ""
+msgstr "Hier ist der Kuchen. Hol ihn dir!"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
-msgstr ""
+msgstr "Möchtest du einen Kuchen kaufen?"
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "Wie viele Kuchen möchtest du kaufen?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
+"Gut gemacht, [color=#00aaff]{player}[/color]. Das sind [color=#dd44ff]"
+"{amount}[/color] Kuchen für dich."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr ""
+"Es tut mir Leid, aber du hast nicht genug Kekse um einen Kuchen zu kaufen."
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Achse -"

@@ -1,4 +1,3 @@
-
 # Translations template for Super Tux Party.
 # Copyright (C) 2019 Super Tux Party Contributors
 # This file is distributed under the same license as the Super Tux Party project.
@@ -6,13 +5,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2019-10-29 23:15:05.546453\n"
-"Last-Translator: Automatic generated\n"
+"PO-Revision-Date: 2020-10-10 11:26+0000\n"
+"Last-Translator: S <t0kie@mailbox.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
+"minigamesescape_from_lava_1v3/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 msgid "MINIGAME_NAME"
 msgstr "Flieh vor der Lava"
@@ -36,11 +38,10 @@ msgid "MINIGAME_ACTION_OBSTRUCT_ONE"
 msgstr "Die erste Türe verriegeln - Nur der Einzelspieler"
 
 msgid "MINIGAME_ACTION_OBSTRUCT_TWO"
-msgstr "Die zweite Tür verriegeln -  Nur der Einzelspieler"
+msgstr "Die zweite Tür verriegeln -  Nur Einzelspieler"
 
 msgid "MINIGAME_ACTION_OBSTRUCT_THREE"
 msgstr "Die dritte Tür verriegeln - Nur der Einzelspieler"
 
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"
 msgstr "Fertig!"
-
