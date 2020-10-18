@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/speech_dialog/speech_dialog.gd" type="Script" id=1]
 [ext_resource path="res://scenes/speech_dialog/dialog_box.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/fonts/IBM-Plex-Sans/IBMPlexSans-Medium.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/fonts/NotoSans/NotoSans-Bold.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -27,6 +28,7 @@ font_data = ExtResource( 6 )
 [sub_resource type="DynamicFont" id=5]
 size = 40
 font_data = ExtResource( 7 )
+fallback/0 = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 30
