@@ -86,7 +86,7 @@ func _physics_process(delta):
 			$Model.freeze_animation()
 	
 	if is_on_floor():
-		if playing_jump_animation and has_node("Model/AnimationPlayer"):
+		if playing_jump_animation:
 			$Model.play_animation("run")
 			playing_jump_animation = false
 		movement = Vector3()
