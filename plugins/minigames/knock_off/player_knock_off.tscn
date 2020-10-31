@@ -4,7 +4,8 @@
 [ext_resource path="res://plugins/minigames/knock_off/player_ball_material/player_knock_off_ball_material.tres" type="Material" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
-friction = 0.9
+friction = 0.0
+bounce = 0.8
 
 [sub_resource type="SphereMesh" id=2]
 radius = 0.5
@@ -16,6 +17,7 @@ radius = 0.5
 [node name="Player" type="RigidBody" groups=[
 "players",
 ]]
+mass = 0.1
 physics_material_override = SubResource( 1 )
 can_sleep = false
 script = ExtResource( 1 )
@@ -25,6 +27,7 @@ mesh = SubResource( 2 )
 material/0 = ExtResource( 2 )
 
 [node name="Model" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 
 [node name="Sphere" type="CollisionShape" parent="."]
 shape = SubResource( 3 )

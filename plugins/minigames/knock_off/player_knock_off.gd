@@ -1,60 +1,42 @@
 extends RigidBody
 
-const MAX_SPEED = 4
+var max_speed = 2
+var accel = 10
 
 var team
 var player_id = 0
-var accel = 15
 var is_ai = false
+var ai_difficulty: int
 
 var winner = false setget set_winner
 
 var is_walking = false
 
-var ground_edges = {}
-
 func set_winner(win):
 	winner = win
 	
-	if not is_walking and win and has_node("Model/AnimationPlayer"):
+	if not is_walking and win:
 		$Model.play_animation("happy")
 
 func _ready():
 	$Model.set_as_toplevel(true)
 	
-	precompute_ground_edges()
+	if is_ai:
+		match ai_difficulty:
+			Global.Difficulty.EASY:
+				accel = 7
+				max_speed *= 0.8
+			Global.Difficulty.NORMAL:
+				accel = 10
+				max_speed *= 0.9
+			Global.Difficulty.HARD:
+				accel = 11
 
-func precompute_ground_edges():
-	var faces = $"../Ground/StaticBody/CollisionShape".shape.get_faces()
-	var inward_edges = {}
-	
-	var i = 0
-	while i < faces.size():
-		var p1 = faces[i]
-		for x in range(3):
-			i += 1
-			var p2
-			
-			# Triangles, e.g. 0 -> 1 -> 2 form a triangle
-			# This method calculates the distance to the edges, therefore needed edges 0 -> 1, 1 -> 2, 2 -> 0
-			if x == 2:
-				p2 = faces[i - 3]
-			else:
-				p2 = faces[i]
-			
-			var edge = [p1, p2]
-			var value_hash = edge.hash()
-			if not inward_edges.has(value_hash):
-				if ground_edges.has(value_hash):
-					inward_edges[value_hash] = edge
-					ground_edges.erase(value_hash)
-				else:
-					ground_edges[value_hash] = edge
-
-func get_distance_to_shape(point, edges):
+func get_distance_to_shape(point):
+	var edges = get_parent().ground_edges
 	var distance = INF
 	
-	for e in edges.values():
+	for e in edges:
 		var p1 = e[0]
 		var p2 = e[1]
 		
@@ -88,7 +70,7 @@ func _process(delta):
 		var farthest_distance = INF
 		for p in players:
 			if p != self and (p.team != self.team or Global.minigame_state.minigame_type == Global.MINIGAME_TYPES.FREE_FOR_ALL):
-				var distance = get_distance_to_shape(p.translation, ground_edges)
+				var distance = get_distance_to_shape(p.translation)
 				if p.is_on_floor() and (farthest_player == null or farthest_distance > distance):
 					farthest_player = p
 					farthest_distance = distance
@@ -99,11 +81,14 @@ func _process(delta):
 			# Everybody knocked off the board?
 			# Move towards the center
 			dir = self.translation.rotated(Vector3(0, 1, 0), -PI/2)
+			
+			if dir.length_squared() < 0.1:
+				dir = Vector3()
 	
 	dir = dir.normalized()
 	
 	if dir.length_squared() > 0:
-		angular_velocity += dir * accel * delta
+		add_torque(dir * accel)
 		var target_rotation = atan2(-dir.z, dir.x)
 		
 		var diff1 = (target_rotation - $Model.rotation.y)
@@ -114,16 +99,16 @@ func _process(delta):
 		else:
 			$Model.rotation.y += diff2 * delta * 3
 		
-		if not is_walking and has_node("Model/AnimationPlayer"):
+		if not is_walking:
 			$Model.play_animation("walk")
 			is_walking = true
 	else:
-		if is_walking and has_node("Model/AnimationPlayer"):
+		if is_walking:
 			if winner:
 				$Model.play_animation("happy")
 			else:
 				$Model.play_animation("idle")
 			is_walking = false
 	
-	if angular_velocity.length() > MAX_SPEED:
-		angular_velocity = MAX_SPEED * angular_velocity.normalized()
+	if angular_velocity.length() > max_speed:
+		angular_velocity = max_speed * angular_velocity.normalized()
