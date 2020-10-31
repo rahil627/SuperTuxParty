@@ -17,10 +17,10 @@ func _ready():
 		$Summary/Stats/Cakes/Entries.get_node("Player" + str(i)).text = str(Global.players[i - 1].cakes)
 		$Summary/Stats/Cookies/Entries.get_node("Player" + str(i)).text = str(Global.players[i - 1].cookies)
 	
-	$Player1.play_animation("happy")
-	$Player2.play_animation("happy")
-	$Player3.play_animation("happy")
-	$Player4.play_animation("happy")
+	$Player1/Model.play_animation("happy")
+	$Player2/Model.play_animation("happy")
+	$Player3/Model.play_animation("happy")
+	$Player4/Model.play_animation("happy")
 	
 	var winner = []
 	for player in Global.players:
@@ -51,7 +51,7 @@ func _ready():
 	for w in winner:
 		var player = get_node("Player" + str(w.player_id))
 		player.destination = pos
-		player.play_animation("run")
+		player.get_node("Model").play_animation("run")
 		pos.x += 1.0
 	
 	match len(winner):
