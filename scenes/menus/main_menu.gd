@@ -19,9 +19,8 @@ func _ready() -> void:
 	# Wait with main menu music until audio options have been loaded
 	$AudioStreamPlayer.play()
 	var award_type = $BoardSettings/Options/Award/AwardType
-	award_type.add_item(tr("MENU_LABEL_LINEAR"), Global.AWARD_TYPE.LINEAR)
-	award_type.add_item(
-			tr("MENU_LABEL_WINNER_TAKES_ALL"), Global.AWARD_TYPE.WINNER_ONLY);
+	award_type.add_item("MENU_LABEL_LINEAR", Global.AWARD_TYPE.LINEAR)
+	award_type.add_item("MENU_LABEL_WINNER_TAKES_ALL", Global.AWARD_TYPE.WINNER_ONLY);
 	load_boards()
 	load_characters()
 	characters.resize(Global.amount_of_players)

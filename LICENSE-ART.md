@@ -430,6 +430,7 @@ http://scripts.sil.org/OFL
 See assets/fonts/OFL for full license.
 
 ## assets/fonts/IBM-Plex-Sans/
+### *.otf
 Copyright (c) 2018, IBM
 v1.1.6 Retrieved from https://github.com/IBM/plex/releases
 
@@ -438,6 +439,13 @@ This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL
 
 See assets/fonts/OFL for full license.
+
+## assets/fonts/NotoSans/
+### *.ttf
+Copyright (c) Google
+Retrieved from [Google fonts](https://fonts.google.com/specimen/Noto+Sans)
+
+Licensed: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 ## assets/icons/blender
 ### icon.blend

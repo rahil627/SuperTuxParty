@@ -66,11 +66,16 @@ margin_bottom = 216.0
 [node name="Title" type="Label" parent="MainMenu"]
 anchor_right = 1.0
 margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_TITLE"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu"]
 anchor_right = 1.0
@@ -90,14 +95,12 @@ text = "MENU_LABEL_NEW_GAME"
 margin_top = 37.0
 margin_right = 512.0
 margin_bottom = 70.0
-custom_fonts/font = ExtResource( 5 )
 text = "MENU_IO_LOAD_GAME"
 
 [node name="Options" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_top = 74.0
 margin_right = 512.0
 margin_bottom = 107.0
-custom_fonts/font = ExtResource( 5 )
 text = "MENU_OPTIONS"
 
 [node name="Screenshots" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
@@ -116,7 +119,6 @@ text = "MENU_LABEL_CREDITS"
 margin_top = 185.0
 margin_right = 512.0
 margin_bottom = 218.0
-custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_QUIT"
 
 [node name="SelectionPlayers" type="Control" parent="."]
@@ -133,6 +135,8 @@ margin_bottom = 216.0
 [node name="Title" type="Label" parent="SelectionPlayers"]
 anchor_right = 1.0
 margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
@@ -214,6 +218,8 @@ margin_bottom = 216.0
 [node name="Title" type="Label" parent="SelectionChar"]
 anchor_right = 1.0
 margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
@@ -262,6 +268,8 @@ margin_bottom = 216.0
 [node name="Title" type="Label" parent="SelectionBoard"]
 anchor_right = 1.0
 margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
@@ -308,6 +316,8 @@ margin_bottom = 216.0
 [node name="Title" type="Label" parent="OptionsMenu"]
 anchor_right = 1.0
 margin_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 align = 1
@@ -332,6 +342,8 @@ margin_bottom = 216.0
 [node name="Title" type="Label" parent="LoadGameMenu"]
 anchor_right = 1.0
 margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
