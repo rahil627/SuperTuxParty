@@ -4,6 +4,7 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
+render_priority = 10
 flags_transparent = true
 flags_unshaded = true
 params_billboard_mode = 3
@@ -19,4 +20,3 @@ offset = Vector2( -512, 0 )
 pixel_size = 0.0002
 alpha_cut = 2
 texture = ExtResource( 1 )
-
