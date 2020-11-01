@@ -37,6 +37,9 @@ func load_resources() -> void:
 		material = load(
 				get_script().resource_path.get_base_dir() + "/material.tres")
 
+func get_description() -> String:
+	return "SHOP_ITEM_NO_DESCRIPTION"
+
 func activate(_player, _controller):
 	push_error("activate(Player, Controller) not overriden in item: %s" %
 			get_path())

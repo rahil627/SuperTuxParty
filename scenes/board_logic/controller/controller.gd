@@ -422,6 +422,7 @@ func _step(player, previous_space: NodeBoard) -> void:
 			yield($Screen/Shop, "shopping_completed")
 		else:
 			$Screen/Shop.ai_do_shopping(player)
+			yield(get_tree().create_timer(1), "timeout")
 	else:
 		var offset: Vector3 = _get_player_offset(player.space)
 

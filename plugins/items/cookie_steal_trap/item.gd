@@ -6,6 +6,9 @@ func _init().(TYPES.PLACABLE, "Cookie Steal Trap") -> void:
 	can_be_bought = true
 	item_cost = 2
 
+func get_description() -> String:
+	return "Place this trap on a space to rob cookies from the player who lands on it"
+
 func activate_trap(from_player: Spatial, trap_player: Spatial,
 		_controller: Spatial):
 	var cookies = int(min(from_player.cookies, 10))

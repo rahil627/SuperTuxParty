@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/board_logic/controller/icons/cookie.png" type="Texture" id=2]
+[ext_resource path="res://assets/shaders/outline.shader" type="Shader" id=3]
+[ext_resource path="res://scenes/board_logic/controller/shop_item.gd" type="Script" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/width = 5.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/enable_shader = false
+
+[node name="Item" type="VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 164.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="TextureButton" parent="."]
+material = SubResource( 1 )
+margin_right = 132.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 132, 128 )
+expand = true
+stretch_mode = 5
+
+[node name="Cost" type="HBoxContainer" parent="."]
+margin_top = 132.0
+margin_right = 132.0
+margin_bottom = 164.0
+
+[node name="Amount" type="Label" parent="Cost"]
+margin_top = 1.0
+margin_right = 96.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 96, 0 )
+custom_fonts/font = ExtResource( 1 )
+align = 2
+
+[node name="Panel" type="Panel" parent="Cost/Amount"]
+show_behind_parent = true
+margin_top = -1.0
+margin_right = 132.0
+margin_bottom = 31.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currency" type="TextureRect" parent="Cost"]
+margin_left = 100.0
+margin_right = 132.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+[connection signal="focus_entered" from="Image" to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="Image" to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Image" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Image" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Image" to="." method="_on_pressed"]

@@ -20,7 +20,7 @@ func _ready():
 	load_options()
 
 func _input(event):
-	if get_focus_owner() != $Back:
+	if get_focus_owner() and $TabContainer.is_a_parent_of(get_focus_owner()):
 		if event.is_action_pressed("ui_focus_prev"):
 			$TabContainer.current_tab = ($TabContainer.current_tab + $TabContainer.get_tab_count() - 1) % $TabContainer.get_tab_count()
 			$TabContainer.get_current_tab_control().get_child(0).grab_focus()
