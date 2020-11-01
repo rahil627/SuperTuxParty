@@ -1,491 +1,151 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/shop.gd" type="Script" id=1]
-[ext_resource path="res://assets/shaders/outline.shader" type="Shader" id=2]
-[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/board_logic/controller/icons/cookie.png" type="Texture" id=4]
+[ext_resource path="res://scenes/board_logic/controller/shop_item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=5]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
+[sub_resource type="InputEventAction" id=1]
+action = "ui_cancel"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=6]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
 
 [node name="Shop" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Item1" type="VBoxContainer" parent="."]
-editor/display_folded = true
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -178.5
+margin_top = 175.0
+margin_right = 178.5
+margin_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 5 )
+text = "SHOP_LABEL_TITLE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Items" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -322.0
-margin_top = -210.0
-margin_right = -190.0
-margin_bottom = -46.0
+margin_left = -446.0
+margin_top = -82.0
+margin_right = 446.0
+margin_bottom = 82.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Image" type="TextureButton" parent="Item1"]
-material = SubResource( 1 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item4/Image")
-focus_neighbour_top = NodePath("../../Back")
-focus_neighbour_right = NodePath("../../Item2/Image")
-focus_neighbour_bottom = NodePath("../../Item5/Image")
-focus_next = NodePath("../../Item2/Image")
-focus_previous = NodePath("../../Back")
-expand = true
+[node name="Item1" parent="Items" instance=ExtResource( 2 )]
 
-[node name="Cost" type="HBoxContainer" parent="Item1"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
+[node name="Item2" parent="Items" instance=ExtResource( 2 )]
+margin_left = 152.0
+margin_right = 284.0
 
-[node name="Amount" type="Label" parent="Item1/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
+[node name="Item3" parent="Items" instance=ExtResource( 2 )]
+margin_left = 304.0
+margin_right = 436.0
 
-[node name="Panel" type="Panel" parent="Item1/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
+[node name="Item4" parent="Items" instance=ExtResource( 2 )]
+margin_left = 456.0
+margin_right = 588.0
 
-[node name="Currency" type="TextureRect" parent="Item1/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
+[node name="Item5" parent="Items" instance=ExtResource( 2 )]
+margin_left = 608.0
+margin_right = 740.0
 
-[node name="Item2" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -156.0
-margin_top = -210.0
-margin_right = -24.0
-margin_bottom = -46.0
-
-[node name="Image" type="TextureButton" parent="Item2"]
-material = SubResource( 2 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item1/Image")
-focus_neighbour_top = NodePath("../../Back")
-focus_neighbour_right = NodePath("../../Item3/Image")
-focus_neighbour_bottom = NodePath("../../Item6/Image")
-focus_next = NodePath("../../Item3/Image")
-focus_previous = NodePath("../../Item1/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item2"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item2/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item2/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item2/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="Item3" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 24.0
-margin_top = -210.0
-margin_right = 156.0
-margin_bottom = -46.0
-
-[node name="Image" type="TextureButton" parent="Item3"]
-material = SubResource( 3 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item2/Image")
-focus_neighbour_top = NodePath("../../Back")
-focus_neighbour_right = NodePath("../../Item4/Image")
-focus_neighbour_bottom = NodePath("../../Item7/Image")
-focus_next = NodePath("../../Item4/Image")
-focus_previous = NodePath("../../Item2/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item3"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item3/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item3/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item3/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="Item4" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 190.0
-margin_top = -210.0
-margin_right = 322.0
-margin_bottom = -46.0
-
-[node name="Image" type="TextureButton" parent="Item4"]
-material = SubResource( 4 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item3/Image")
-focus_neighbour_top = NodePath("../../Back")
-focus_neighbour_right = NodePath("../../Item1/Image")
-focus_neighbour_bottom = NodePath("../../Item8/Image")
-focus_next = NodePath("../../Item5/Image")
-focus_previous = NodePath("../../Item3/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item4"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item4/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item4/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item4/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="Item5" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -322.0
-margin_top = -10.0
-margin_right = -190.0
-margin_bottom = 154.0
-
-[node name="Image" type="TextureButton" parent="Item5"]
-material = SubResource( 5 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item8/Image")
-focus_neighbour_top = NodePath("../../Item1/Image")
-focus_neighbour_right = NodePath("../../Item6/Image")
-focus_neighbour_bottom = NodePath("../../Back")
-focus_next = NodePath("../../Item6/Image")
-focus_previous = NodePath("../../Item4/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item5"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item5/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item5/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item5/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="Item6" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -156.0
-margin_top = -10.0
-margin_right = -24.0
-margin_bottom = 154.0
-
-[node name="Image" type="TextureButton" parent="Item6"]
-material = SubResource( 6 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item5/Image")
-focus_neighbour_top = NodePath("../../Item2/Image")
-focus_neighbour_right = NodePath("../../Item7/Image")
-focus_neighbour_bottom = NodePath("../../Back")
-focus_next = NodePath("../../Item7/Image")
-focus_previous = NodePath("../../Item5/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item6"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item6/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item6/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item6/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="Item7" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 24.0
-margin_top = -10.0
-margin_right = 156.0
-margin_bottom = 154.0
-
-[node name="Image" type="TextureButton" parent="Item7"]
-material = SubResource( 7 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item6/Image")
-focus_neighbour_top = NodePath("../../Item3/Image")
-focus_neighbour_right = NodePath("../../Item8/Image")
-focus_neighbour_bottom = NodePath("../../Back")
-focus_next = NodePath("../../Item8/Image")
-focus_previous = NodePath("../../Item6/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item7"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item7/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item7/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item7/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
-
-[node name="Item8" type="VBoxContainer" parent="."]
-editor/display_folded = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 190.0
-margin_top = -10.0
-margin_right = 322.0
-margin_bottom = 154.0
-
-[node name="Image" type="TextureButton" parent="Item8"]
-material = SubResource( 8 )
-margin_right = 132.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
-focus_neighbour_left = NodePath("../../Item7/Image")
-focus_neighbour_top = NodePath("../../Item4/Image")
-focus_neighbour_right = NodePath("../../Item5/Image")
-focus_neighbour_bottom = NodePath("../../Back")
-focus_next = NodePath("../../Back")
-focus_previous = NodePath("../../Item7/Image")
-expand = true
-
-[node name="Cost" type="HBoxContainer" parent="Item8"]
-editor/display_folded = true
-margin_top = 132.0
-margin_right = 132.0
-margin_bottom = 164.0
-
-[node name="Amount" type="Label" parent="Item8/Cost"]
-editor/display_folded = true
-margin_top = 1.0
-margin_right = 96.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 96, 0 )
-custom_fonts/font = ExtResource( 3 )
-align = 2
-
-[node name="Panel" type="Panel" parent="Item8/Cost/Amount"]
-show_behind_parent = true
-margin_top = -1.0
-margin_right = 132.0
-margin_bottom = 31.0
-
-[node name="Currency" type="TextureRect" parent="Item8/Cost"]
-margin_left = 100.0
-margin_right = 132.0
-margin_bottom = 32.0
-texture = ExtResource( 4 )
+[node name="Item6" parent="Items" instance=ExtResource( 2 )]
+margin_left = 760.0
+margin_right = 892.0
 
 [node name="Back" type="Button" parent="."]
 anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -83.0
+margin_right = 68.0
+margin_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_in_tooltip = false
+shortcut = SubResource( 2 )
+text = "MENU_LABEL_BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -23.0
-margin_top = 208.0
-margin_right = 22.0
-margin_bottom = 241.0
-focus_neighbour_left = NodePath("../Item4/Image")
-focus_neighbour_top = NodePath("../Item6/Image")
-focus_neighbour_right = NodePath("../Item6/Image")
-focus_neighbour_bottom = NodePath("../Item2/Image")
-focus_next = NodePath("../Item1/Image")
-focus_previous = NodePath("../Item8/Image")
-text = "MENU_LABEL_BACK"
+margin_left = -382.0
+margin_top = 140.0
+margin_right = 382.0
+margin_bottom = 229.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 757.0
+margin_bottom = 100.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_right = 750.0
+margin_bottom = 14.0
+text = "SHOP_LABEL_DESCRIPTION"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 750.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 750, 75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Notification" type="AcceptDialog" parent="."]
 margin_right = 53.0
 margin_bottom = 86.0
 window_title = ""
+[connection signal="item_bought" from="Items/Item1" to="." method="_on_shop_item"]
+[connection signal="show_description" from="Items/Item1" to="." method="_on_show_description"]
+[connection signal="item_bought" from="Items/Item2" to="." method="_on_shop_item"]
+[connection signal="show_description" from="Items/Item2" to="." method="_on_show_description"]
+[connection signal="item_bought" from="Items/Item3" to="." method="_on_shop_item"]
+[connection signal="show_description" from="Items/Item3" to="." method="_on_show_description"]
+[connection signal="item_bought" from="Items/Item4" to="." method="_on_shop_item"]
+[connection signal="show_description" from="Items/Item4" to="." method="_on_show_description"]
+[connection signal="item_bought" from="Items/Item5" to="." method="_on_shop_item"]
+[connection signal="show_description" from="Items/Item5" to="." method="_on_show_description"]
+[connection signal="item_bought" from="Items/Item6" to="." method="_on_shop_item"]
+[connection signal="show_description" from="Items/Item6" to="." method="_on_show_description"]
 [connection signal="pressed" from="Back" to="." method="_on_Shop_Back_pressed"]

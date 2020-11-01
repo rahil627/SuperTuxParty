@@ -804,6 +804,9 @@ margin_top = -96.0
 custom_fonts/font = ExtResource( 7 )
 text = "Roll Player 1!"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Turn" type="Label" parent="Screen"]
 anchor_right = 1.0
@@ -1192,15 +1195,15 @@ custom_constants/shadow_as_outline = 1
 text = "CONTEXT_LABEL_VS"
 
 [node name="Roll" type="Button" parent="Screen"]
-visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -64.0
-margin_top = -48.0
-margin_right = 140.0
-margin_bottom = -8.0
+margin_left = -102.0
+margin_top = -47.9999
+margin_right = 102.0
+margin_bottom = -7.99994
+grow_horizontal = 2
 focus_mode = 0
 custom_fonts/font = ExtResource( 7 )
 enabled_focus_mode = 0
@@ -1331,6 +1334,7 @@ clip_text = true
 anims/show = SubResource( 10 )
 
 [node name="Shop" parent="Screen" instance=ExtResource( 15 )]
+visible = false
 
 [node name="SpeechDialog" parent="Screen" instance=ExtResource( 16 )]
 visible = false

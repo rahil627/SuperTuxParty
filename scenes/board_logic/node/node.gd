@@ -24,11 +24,11 @@ export(Array, NodePath) var next_nodes setget set_next, get_next
 export(Array, NodePath) var prev_nodes setget set_prev, get_prev
 
 # Settings for shop node.
-const MAX_STORE_SIZE = 8
+const MAX_STORE_SIZE = 6
 
 # "const" properties are not valid in export declarations, therefore the
-# content MAX_STORE_SIZE is repeat as upper bound here.
-export(int, 1, 8) var amount_of_items_sold = 8
+# content MAX_STORE_SIZE is repeated as upper bound here.
+export(int, 1, 6) var amount_of_items_sold = 8
 export(Array, String, FILE, "*.gd") var custom_items = []
 
 var next
