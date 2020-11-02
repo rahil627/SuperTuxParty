@@ -395,6 +395,13 @@ func _on_Credits_pressed():
 	text += print_licenses(license_music)
 	license_music.close()
 	
+	text += "[center][color=#66aa00]SHADERS[/color] by:[/center]\n"
+
+	var license_shader := File.new()
+	license_shader.open("res://LICENSE-SHADER.md", File.READ)
+	text += print_licenses(license_shader)
+	license_shader.close()
+	
 	$CreditsMenu/PanelContainer/RichTextLabel.bbcode_text = text
 	$CreditsMenu.show()
 	$MainMenu.hide()
