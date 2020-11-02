@@ -1,4 +1,42 @@
 # Releases
+## Alpha Version - v0.8 - 2020-11-02
+### New features
+
+- Screenshot key (Default: F2)
+- Show licenses for shaders in the credits screen
+- New 2v2 minigame: Memory
+  - Find matching card pairs!
+- Added Sarah as the boards' host
+  - Gives tutorial on first start, explaining the basic mechanics
+	- Can be skipped
+  - Announces what happens on the board (e.g. the cake is bought and moves to another space)
+- Translation progress from our project on [Hosted Weblate](hosted.weblate.org/projects/super-tux-party)
+  - Added Translation for Norwegian Bokmål (98% complete) to the game
+  - Added Translation for Russian (100% complete) to the game
+  - Added Translation for Turkish (100% complete) to the game
+
+### Improved / Changed
+
+- Lots of visual improvements
+  - New Harvest Food minigame background
+  - Added furniture to Haunted Dreams minigame
+  - Added a bowling alley theme to the Bowling minigame
+	- Boxes fall from the sky, stunning players hit, while also blocking the bowling ball
+	- Easier movement controls for the solo player
+  - Better and gamepad type agnostic control icons
+  - Cell shaded everything
+  - Hexagon board spaces
+  - New character splash art
+  - Fixed floating spaces on the KDEValley board
+  - Better Shop UI
+- Reorganized the control mapping menu
+  - Makes it easier to navigate the options with a gamepad
+- Fixed a bug that caused newly added human players to become AI players after leaving and starting a new game
+- The randomization algorithms avoids playing the same minigame multiple times in a row
+  - Doesn't work between sessions
+- The main menu music now starts to play *after* the audio volume options are loaded
+
+
 ## Alpha Version - v0.7 - 2020-04-01
 ### New features
 
