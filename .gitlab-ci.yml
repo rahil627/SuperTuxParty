@@ -91,6 +91,7 @@ deploy_release:
     - build:sources
   script:
     - mkdir .ci-bin && cd .ci-bin
+    - apt -qq update && apt -qq install -y curl
     - wget -O butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
     - unzip butler.zip
     - chmod +x butler
