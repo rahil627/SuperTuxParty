@@ -7,7 +7,7 @@ replicate the feel of games such as Mario Party.
 ![Mini-game Screenshot](screenshot.png)
 
 ## Download
-You can download SuperTuxParty from [Itch.io] (https://anti.itch.io/super-tux-party) or from the [official website](https://supertux.party/download).
+You can download SuperTuxParty from [Itch.io](https://anti.itch.io/super-tux-party) or from the [official website](https://supertux.party/download).
 ## Engine
 SuperTuxParty is built with the [Godot Engine](https://godotengine.org/).
 The latest stable version, 3.2.2, is used.
