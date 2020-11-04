@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-10-23 16:26+0000\n"
+"Last-Translator: marklin0913 <marklin0913@protonmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.3.1\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr ""
@@ -23,10 +23,10 @@ msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr ""
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "選擇對手："
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "完成！"
 
 msgid "CONTEXT_LABEL_GO"
 msgstr ""
@@ -35,7 +35,7 @@ msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr ""
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "準備好了嗎？"
 
 msgid "CONTEXT_LABEL_ROLL"
 msgstr ""
@@ -53,13 +53,13 @@ msgid "CONTEXT_LABEL_TURN_NUM"
 msgstr ""
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "VS."
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "換你了！"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "你沒有足夠的餅乾買那個"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
 msgstr ""
@@ -86,16 +86,16 @@ msgid "MENU_CONTROLS_MOUSE"
 msgstr "鼠標"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "滑鼠按鍵"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "滑鼠左鍵"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "滑鼠中鍵"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "滑鼠右鍵"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
 msgstr ""
@@ -140,10 +140,10 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "上"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "螢幕截圖"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "開啟開發者目錄"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr ""
@@ -170,7 +170,7 @@ msgid "MENU_LABEL_CONTINUE"
 msgstr "繼續"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "退出至桌面"
@@ -191,16 +191,16 @@ msgid "MENU_LABEL_NUMBERS"
 msgstr ""
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
 msgstr "OK"
@@ -218,18 +218,17 @@ msgid "MENU_LABEL_PLAY"
 msgstr "開始"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "玩家1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "玩家2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "玩家3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "玩家4"
 
-#, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
@@ -243,7 +242,7 @@ msgid "MENU_LABEL_READY"
 msgstr ""
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "繼續"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "返回至主界面"
@@ -267,25 +266,25 @@ msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
 msgstr ""
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "選擇玩家數量"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
 msgstr ""
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "贏者全拿"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
 msgstr ""
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "顯示截圖"
 
 msgid "MENU_OPTIONS"
 msgstr "設置"
@@ -297,7 +296,7 @@ msgid "MENU_OPTIONS_CONTROLS"
 msgstr "操作模式"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "效果"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
 msgstr ""
@@ -306,7 +305,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "全屏"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "語言"
 
 msgid "MENU_OPTIONS_MASTER"
 msgstr ""
@@ -321,7 +320,7 @@ msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
 msgstr ""
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "系統預設"
 
 msgid "MENU_OPTIONS_VISUAL"
 msgstr ""
@@ -345,58 +344,59 @@ msgid "AI_DIFFICULTY"
 msgstr ""
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "簡單"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "普通"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "困難"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
 msgstr ""
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "其它"
+msgstr "影像品質"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "其它"
+msgstr "高"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "中"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "其它"
+msgstr "低"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "莎拉"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color] and [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] and [color=#00ff88]{2}"
+"[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], [color=#00ff88]{2}[/"
+"color] and [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "蛋糕"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "餅乾"
 
 msgid "CONTEXT_GNU_NAME"
 msgstr ""
@@ -459,7 +459,7 @@ msgid "CONTEXT_NOLOK_COOP_VICTORY"
 msgstr ""
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "哈哈，那場真是容易。"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
@@ -516,12 +516,21 @@ msgid "CONTEXT_CAKE_WANT_BUY"
 msgstr ""
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "你想買多少蛋糕呢？"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr "我很抱歉，但你沒有足夠的餅乾買蛋糕。"
+
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD"

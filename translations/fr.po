@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-07 02:26+0000\n"
-"Last-Translator: Brian Gaucher <brianphineasgaucher@gmail.com>\n"
+"PO-Revision-Date: 2020-10-14 21:26+0000\n"
+"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
 "Language: fr\n"
@@ -77,10 +77,10 @@ msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Action 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "Axe inconnu {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Bouton de la manette de jeu {button}"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Souris"
@@ -218,16 +218,16 @@ msgid "MENU_LABEL_PLAY"
 msgstr "Jouer"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Joueur1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Joueur 2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Joueur 3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Joueur 4"
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -284,7 +284,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Remerciements"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "Afficher les captures d'écrans"
 
 msgid "MENU_OPTIONS"
 msgstr "Options"
@@ -492,21 +492,35 @@ msgstr "Cube maudit"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
 msgstr ""
+"Il semble que ce soit votre première fois. Voulez-vous que je vous explique "
+"les règles ?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"Le jeu se joue chacun son tour. Pendant votre tour, vous lancez un dé et "
+"vous avancez le nombre qu'il indique."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
+"La monnaie est le biscuit. Vous obtenez des biscuits en remportant des mini-"
+"jeux. Vous pouvez acheter des articles grâce aux biscuits en passant par les "
+"espaces du magasin."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
+"Celui qui terminera avec le plus de biscuits sera couronné. Les biscuits "
+"serviront de bris d'égalité. Vous pouvez acheter des gâteaux à des endroits "
+"spéciaux du tableau. Après l'achat, le gâteau sera déplacer vers un autre "
+"endroit."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
+"Les espaces verts commencent des événements spécifiques au tableau. Les "
+"espaces de combat vous permettent de défier un autre joueur dans un mini-jeu "
+"de duel."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
@@ -527,18 +541,30 @@ msgid "CONTEXT_TUTORIAL_END"
 msgstr ""
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr "par"
+msgstr "Voici le gâteau, venez le récupérer !"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
-msgstr ""
+msgstr "Vous voulez acheter un gâteau ?"
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "Combien de gâteaux voulez-vous acheter ?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
+"Bien joué, [color=#00aaff]{player}[/color]. C'est [color=#dd44ff]{amount}[/"
+"color] gâteau(x) pour vous."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr ""
+"Je m'excuse, mais vous n'avez pas assez de biscuits pour acheter un gâteau."
+
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr ""
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"

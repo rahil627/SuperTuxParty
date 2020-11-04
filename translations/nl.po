@@ -524,6 +524,15 @@ msgstr ""
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr ""
 
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr ""
+
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "As -"
 

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-19 12:37+0000\n"
+"PO-Revision-Date: 2020-10-16 02:26+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "super-tux-party/minigameskernel_compiling/nb_NO/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
@@ -19,3 +19,6 @@ msgstr ""
 
 msgid "MINIGAME_NAME"
 msgstr "Kjernekompilering"
+
+msgid "MINIGAME_ACTION_PRESS_BUTTON"
+msgstr "Trykk på knappen"

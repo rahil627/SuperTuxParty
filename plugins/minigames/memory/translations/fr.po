@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-10-05 21:26+0000\n"
+"PO-Revision-Date: 2020-10-14 21:26+0000\n"
 "Last-Translator: Brian Gaucher <brianphineasgaucher@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "minigamesmemory/fr/>\n"
@@ -13,8 +13,8 @@ msgstr ""
 
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
-"Les joueurs doivent trouver les paires.\n"
-"L'équipe avec le plus de paires gagne !"
+"Les joueurs doivent trouver les paires de cartes correspondantes.\n"
+"L'équipe qui a le plus de paires gagne !"
 
 msgid "MINIGAME_NAME"
 msgstr "Mémoire"

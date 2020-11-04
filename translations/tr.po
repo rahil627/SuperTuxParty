@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-10-24 18:26+0000\n"
+"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/tr/>\n"
 "Language: tr\n"
@@ -14,118 +14,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.3.2-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr ""
+msgstr "{amount} kurabiye karşılığında bir pasta satın al"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Düello Ödülü:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Rakip Seç:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Bitiş!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Başla!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "{name}, {value} değerini attı:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Hazır?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "At!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "{name} at!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Kazanan 1 pasta çalar"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Kazanan 10 kurabiye çalar"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Sıra {turn}"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "karşı"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Sıra sende!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Bunu satın almak için yeterli kurabiyen yok"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "Çantanda yer kalmadı"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Eylem 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Eylem 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Eylem 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Eylem 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "Bilinmeyen Eksen {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Oyun kumandası düğmesi {button}"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Fare"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Fare düğmesi"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Farenin sol düğmesi"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Farenin orta düğmesi"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Farenin sağ düğmesi"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Düğme tekerleği aşağı"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Düğme tekerleği sol"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Düğme tekerleği sağ"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Düğme tekerleği yukarı"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Sol Tetik"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Sol Tetik 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Sol Tetik 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Sağ Tetik"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Sağ Tetik 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Sağ Tetik 3"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "Aşağı"
@@ -140,13 +140,13 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Yukarı"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "Ekran görüntüsü al"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Geliştirici menüsünü aç"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Oyun kayıt adını gir:"
 
 msgid "MENU_IO_LOAD_GAME"
 msgstr "Oyunu Yükle"
@@ -164,72 +164,71 @@ msgid "MENU_LABEL_CANCEL"
 msgstr "İptal"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Karakter:"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Devam Et"
 
 msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Açıklama"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Masaüstüne Çıkış"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Doğrusal"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "Yeni Oyun"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Hazır değil…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Numaralar"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "TAMAM"
+msgstr "Tamam"
 
 msgid "MENU_LABEL_PAUSE"
-msgstr "Durdur"
+msgstr "Duraklat"
 
 msgid "MENU_LABEL_PAUSED"
-msgstr "Durduruldu"
+msgstr "Duraklatıldı"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Pencere odağı kaybolduğunda duraklat"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Oyna"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Oyuncu1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Oyuncu2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Oyuncu3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Oyuncu4"
 
-#, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
@@ -237,79 +236,79 @@ msgid "MENU_LABEL_PRESS_ANY_KEY"
 msgstr "Herhangi bir tuşa bas"
 
 msgid "MENU_LABEL_QUIT"
-msgstr "Oyunu Kapat"
+msgstr "Çıkış"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Hazır!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Devam Ettir"
 
 msgid "MENU_LABEL_RETURN_MENU"
-msgstr "Ana Menü'ye geri dön"
+msgstr "Ana Menüye Geri Dön"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Ödül Sistemi:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Tahta seç:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Oyuncu 1 için bir karakter seç"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Oyuncu 2 için bir karakter seç"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Oyuncu 3 için bir karakter seç"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Oyuncu 4 için bir karakter seç"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Oyuncu miktarını seç"
 
 msgid "MENU_LABEL_TITLE"
-msgstr ""
+msgstr "Super Tux Party"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Dene"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Kazanan hepsini alır"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Emeği geçenler"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "Ekran görüntülerini göster"
 
 msgid "MENU_OPTIONS"
-msgstr "Ayarlar"
+msgstr "Seçenekler"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Ses"
 
 msgid "MENU_OPTIONS_CONTROLS"
-msgstr "Kontroller"
+msgstr "Denetimler"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Efektler"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Çerçeve Sınırı"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Tam ekran"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Dil"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Ana Ses"
 
 msgid "MENU_OPTIONS_MISC"
 msgstr "Çeşitli"
@@ -318,210 +317,260 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Müzik"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Pencere odağı kaybolduğunda sesi kapat"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "Sistem Öntanımlı Değeri"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Görsel"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "Dikey Senkronizasyon (Vsync)"
+msgstr "Dikey Eşzamanlama"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Evet"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Hayır"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Pasta maliyeti:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Sıra:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Yapay zeka zorluk düzeyi:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Kolay"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Normal"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Zor"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "GNU Eylemi"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Çeşitli"
+msgstr "Grafik Kalitesi"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Çeşitli"
+msgstr "Yüksek"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "Orta"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Çeşitli"
+msgstr "Düşük"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
+"Grafik kalitesinin değiştirilmesi yalnızca yeniden başlatmadan sonra etkili "
+"olur"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Hepinizin kazanmak için çok mücadele ettiğini biliyorum, ama şimdi oyun "
+"bitti ve bir kazanana ihtiyacımız var. Ve bu kazanan…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color] ve [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] ve [color=#00ff88]{2}"
+"[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], [color=#00ff88]{2}[/"
+"color] ve [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Pastalar"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Kurabiyeler"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""
+"Hey oradaki, yardıma ihtiyacın var mı? Bakalım bugün senin için ne "
+"yapabilirim…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Bu tek kişilik küçük bir oyun! Bana becerilerini göster, sana bir "
+"[color=#dd44ff]{reward}[/color] vereyim"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "Tek Kişilik Küçük Oyun"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Haydi birlikte oynayalım! Eminim eğlenceli olacak"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "Ortaklaşa Küçük Oyun"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Aferin. İşte ödülün!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Bu işe yaramadı. Belki bir dahaki sefere."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "Başardınız. Bir dahaki seferi sabırsızlıkla bekleyeceğim."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"Başaramasanız da takım çalışmasını uyguladınız. Eminim bir dahaki sefere "
+"işinize yarayacak!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "Nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "Nolok Eylemi"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "Benim sıram! Tam olarak ne yapacağımı biliyorum…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Seni küçük bir oyuna davet ediyorum! Beni yenebilirsen eşyaların sende "
+"kalır. Yenemezsen pastalarından birini alırım…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "Tek Kişilik Küçük Oyun"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
 msgstr ""
+"Hepinize karşı ben mi? Bana karşı bir şansınız olduğunu mu düşünüyorsunuz?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "Ortaklaşa Küçük Oyun"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "Seni bağışladığıma şükret!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "Seni tekrar yenmeyi dört gözle bekliyorum!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "Bir dahaki sefere kazanamayacaksınız."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "Haha, ne kadar kolay bir galibiyet."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"Haha, [color=#00aaff]{amount}[/color] tane kurabiyen gitti. Eminim "
+"[color=#dd44ff]{player}[/color] için faydalı olacaklar"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "Kurabiyelerini kaybet"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"Belki biraz yavaşlamalısın. Bakalım sonraki [color=#dd44ff]{duration}[/"
+"color] atış için [color=#00aaff]{amount}[/color] daha az hareketle ne "
+"yapacaksın"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr ""
+msgstr "Lanetli zarlar"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
-msgstr ""
+msgstr "Görünüşe göre ilk defa oynuyorsun. Kuralları açıklamamı ister misin?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"Oyun sırayla oynanır. Sıra sana geldiğinde bir zar atarsın ve gösterdiği "
+"sayı kadar ileri gidersin."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
+"Para birimi kurabiyelerdir. Küçük oyunları kazanarak kurabiyeler elde "
+"edersin. Kurabiyeler ile mağaza alanlarından geçerken bir şeyler satın "
+"alabilirsin."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
+"Kazanmak için en çok pastayı toplamalısın. Eşitlik olması durumunda "
+"kurabiyeler kullanılacaktır. Tahtadaki özel yerlerden pastalar satın "
+"alabilirsin. Bir tane alırsan, pasta başka bir yere taşınacaktır."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
+"Gidebileceğin farklı türde alanlar vardır: Mavi alanlar sana kurabiyeler "
+"verir, kırmızı alanlar senden kurabiyelerini alır."
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
+"Yeşil alanlar tahtaya özgü olayları başlatır. Savaş alanları başka bir "
+"oyuncuya küçük bir düello oyunda meydan okuma imkanı verir."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"Her oyuncu sırasını aldıktan sonra küçük bir oyun oynanacaktır. Üç farklı "
+"küçük oyun çeşidi vardır:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
 msgstr ""
+"Herkes herkese karşı, burada tüm oyuncular kazanmak için birbiriyle yarışır."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "İkiye karşı iki, burada ikişerli takımlar halinde oynarsınız."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"Ve bire karşı üç, burada bir kişi geri kalanlarla yarışır. Dengelemek için "
+"tek olan oyuncu ek bir şeyler alır."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Bir oyuncu GNU veya NOLOK alanına gittiğinde özel küçük oyunlar "
+"oynanacaktır. Senin için GNU küçük oyunları iyidir, NOLOK küçük oyunları ise "
+"kötüdür. Bu yüzden ikinciden uzak dursan iyi olur!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "Hepsi bu kadar, artık gitmeye hazırsın! İyi eğlenceler!"
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr ""
+msgstr "Pasta burada, gel ve al!"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
-msgstr ""
+msgstr "Pasta almak ister misin?"
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "Kaç tane pasta almak istiyorsun?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
+"Aferin, [color=#00aaff]{player}[/color]. İşte sana [color=#dd44ff]{amount}[/"
+"color] pasta."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
+msgstr "Üzgünüm ama pasta alacak kadar kurabiyen yok."
+
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD"

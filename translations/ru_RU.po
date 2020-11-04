@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-08-30 19:36+0000\n"
+"PO-Revision-Date: 2020-10-14 21:26+0000\n"
 "Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ru/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.2.1-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Купить торт на {amount} печенек"
@@ -140,10 +140,10 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Вверх"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "Сделать скриншот"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Открыть меню разработчика"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Введите имя сохранения:"
@@ -521,21 +521,28 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"После того, как у каждого игрока будет свой ход, будет разыграна мини-игра. "
+"Есть три вида мини-игр:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-msgstr ""
+msgstr "Свободный со всеми, где все соревнуются со всеми за победу."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "Два на два, где вы играете в командах по двое."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"И один против трёх, где один соревнуется с остальными. Одиночный игрок "
+"получает бонус, чтобы сравнять счёт."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Специальные мини-игры будут разыграны, когда игрок приземлится в "
+"пространстве GNU или NOLOK. Мини-игры GNU хороши, а мини-игры NOLOK вредны "
+"для вас. Так что лучше держитесь подальше от последнего!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "Вот так, теперь ты готов! Развлекайся!"
 
 msgid "CONTEXT_CAKE_PLACED"
 msgstr "Вот торт, подойди и возьми!"
@@ -553,6 +560,15 @@ msgstr ""
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "Извините, но у вас недостаточно печенья, чтобы купить торт."
+
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr ""
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Ось -"

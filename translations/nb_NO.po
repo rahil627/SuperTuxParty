@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-09-08 01:36+0000\n"
+"PO-Revision-Date: 2020-10-16 02:26+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/super-"
 "tux-party/super-tux-party/nb_NO/>\n"
@@ -143,10 +143,10 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Oppover"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "Utfør skjermavbildning"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Åpne utviklermeny"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Skriv inn navn på lagret spill:"
@@ -522,21 +522,28 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"Etter at hver spiller har hatt sin tur, vil et minispill bli avholdt. Det er "
+"tre forskjellige varianter av minispill:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-msgstr ""
+msgstr "Alle mot alle, der alle kjemper om seieren mot alle andre."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "To mot to, der det spilles i lag med to spillere i hver."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"Én mot tre, der én spiller konkurrerer mot resten. Enkeltspilleren får en "
+"bonus for å fremskynde spillet."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Spesielle minispill vil bli avholdt når en spiller lander på GNU eller NOLOK-"
+"felt. GNU-minispill er bra for deg, og NOLOK-minispill skader deg. Hold deg "
+"unna sistnevnte!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "Takk for nå, du er klar til å spille. Spill og vinn med samme sinn."
 
 msgid "CONTEXT_CAKE_PLACED"
 msgstr "Her er en kake, kom og ta den!"
@@ -554,6 +561,15 @@ msgstr ""
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "Du har ikke nok kjeks til å kjøpe en kake."
+
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr ""
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Akse -"

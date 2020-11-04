@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-09-06 21:36+0000\n"
+"PO-Revision-Date: 2020-10-14 21:26+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
@@ -80,7 +80,7 @@ msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
 msgstr "Unbekannte Achse {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr "Gamepad Knopf {button}"
+msgstr "Gamepad Taste {button}"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "Maus"
@@ -140,10 +140,10 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Oben"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "Bildschirmfoto aufnehmen"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Entwicklermenü öffnen"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Spielstand Name:"
@@ -524,21 +524,28 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"Nachdem jeder Spieler am Zug war, wird ein Minigspiel gespielt. Es "
+"existieren drei verschieden Arten von Minispielen:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-msgstr ""
+msgstr "Jeder gegen Jeden, dort treten alle Spieler gegeinander an."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "Zwei gegen Zwei, in welchem Zweierteams gegeneinander antreten."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"Und Eins gegen Drei. Dort tritt ein Spieler gegen den Rest an. Der "
+"Solospieler erhält einen Bonus, um den Wettbewerb fair zu halten."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Besondere Minispiele werdn gespielt, wenn ein Spieler auf einem GNU- oder "
+"einem NOLOK-Feld landet. GNU Minispiele sind gut für dich, während NOLOK "
+"Minispiele schlechte Folgen haben. Halte dich also von letzterem fern!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "Das war es dann auch schon. Viel Spaß beim Spielen!"
 
 msgid "CONTEXT_CAKE_PLACED"
 msgstr "Hier ist der Kuchen. Hol ihn dir!"
@@ -557,6 +564,15 @@ msgstr ""
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr ""
 "Es tut mir Leid, aber du hast nicht genug Kekse um einen Kuchen zu kaufen."
+
+msgid "SHOP_LABEL_TITLE"
+msgstr ""
+
+msgid "SHOP_LABEL_DESCRIPTION"
+msgstr ""
+
+msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr ""
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Achse -"
