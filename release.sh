@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -eu
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: release <target> <version>"
