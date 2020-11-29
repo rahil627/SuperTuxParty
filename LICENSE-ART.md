@@ -853,7 +853,7 @@ Copyright © Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/minigames/kernel_compiling/background
-### background.blend | background.png
+### background.blend | background.jpg
 
 Copyright © Florian Kothmeier
 
