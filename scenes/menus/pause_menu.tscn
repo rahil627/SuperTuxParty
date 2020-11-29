@@ -63,32 +63,32 @@ clip_text = true
 [node name="Options" parent="Container" instance=ExtResource( 4 )]
 margin_top = 198.0
 margin_right = 518.0
-margin_bottom = 293.0
+margin_bottom = 294.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 clip_text = true
 
 [node name="SaveGame" parent="Container" instance=ExtResource( 4 )]
-margin_top = 297.0
+margin_top = 298.0
 margin_right = 518.0
-margin_bottom = 392.0
+margin_bottom = 393.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_IO_SAVE_GAME"
 clip_text = true
 
 [node name="ExitMenu" parent="Container" instance=ExtResource( 4 )]
-margin_top = 396.0
+margin_top = 397.0
 margin_right = 518.0
-margin_bottom = 491.0
+margin_bottom = 492.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_RETURN_MENU"
 clip_text = true
 
 [node name="ExitDesktop" parent="Container" instance=ExtResource( 4 )]
-margin_top = 495.0
+margin_top = 496.0
 margin_right = 518.0
 margin_bottom = 592.0
 size_flags_vertical = 3
@@ -97,7 +97,6 @@ text = "MENU_LABEL_DESKTOP"
 clip_text = true
 
 [node name="SavegameNameInput" type="WindowDialog" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -109,7 +108,6 @@ margin_bottom = 296.0
 window_title = "MENU_IO_SAVE_GAME"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SavegameNameInput"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -148,6 +146,7 @@ margin_left = -259.0
 margin_top = -296.0
 margin_right = 259.0
 margin_bottom = 296.0
+window_title = "Bitte bestätigen..."
 dialog_text = "Another save has the same name. Do you want to override it?"
 
 [node name="OptionsWindow" type="PopupPanel" parent="."]
@@ -174,10 +173,6 @@ text = "MENU_OPTIONS"
 align = 1
 
 [node name="OptionsMenu" parent="OptionsWindow/Control" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = -246.5
 margin_top = -80.0
 margin_right = 246.5

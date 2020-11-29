@@ -2,7 +2,7 @@
 
 [ext_resource path="res://plugins/minigames/kernel_compiling/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/kernel_compiling/player_kernel_compiling.tscn" type="PackedScene" id=2]
-[ext_resource path="res://plugins/minigames/kernel_compiling/background/background.png" type="Texture" id=3]
+[ext_resource path="res://plugins/minigames/kernel_compiling/background/background.jpg" type="Texture" id=3]
 [ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_col.jpg" type="Texture" id=4]
 [ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_nrm.jpg" type="Texture" id=5]
 [ext_resource path="res://plugins/minigames/kernel_compiling/background/[4K]Concrete16/Concrete16_rgh.jpg" type="Texture" id=6]
