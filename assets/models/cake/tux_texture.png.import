@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/cake.png-b87906059baf37252427bd511d87c156.s3tc.stex"
-path.etc2="res://.import/cake.png-b87906059baf37252427bd511d87c156.etc2.stex"
+path.s3tc="res://.import/tux_texture.png-f155a650e95b01d3fcf3053c7138b9ff.s3tc.stex"
+path.etc2="res://.import/tux_texture.png-f155a650e95b01d3fcf3053c7138b9ff.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/cake/cake.png"
-dest_files=[ "res://.import/cake.png-b87906059baf37252427bd511d87c156.s3tc.stex", "res://.import/cake.png-b87906059baf37252427bd511d87c156.etc2.stex" ]
+source_file="res://assets/models/cake/tux_texture.png"
+dest_files=[ "res://.import/tux_texture.png-f155a650e95b01d3fcf3053c7138b9ff.s3tc.stex", "res://.import/tux_texture.png-f155a650e95b01d3fcf3053c7138b9ff.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

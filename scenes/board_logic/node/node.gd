@@ -114,6 +114,7 @@ func set_active_cake(enabled: bool) -> void:
 	if cake:
 		$Cake.show()
 		$Cake/AnimationPlayer.play_backwards("collect")
+		$Cake/AnimationPlayer.queue("float")
 	else:
 		$Cake.hide()
 

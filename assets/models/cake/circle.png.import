@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.s3tc.stex"
-path.etc2="res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.etc2.stex"
+path.s3tc="res://.import/circle.png-74fff87532da8dd369eb733ba1892403.s3tc.stex"
+path.etc2="res://.import/circle.png-74fff87532da8dd369eb733ba1892403.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/icons/blender/tux_texture.png"
-dest_files=[ "res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.s3tc.stex", "res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.etc2.stex" ]
+source_file="res://assets/models/cake/circle.png"
+dest_files=[ "res://.import/circle.png-74fff87532da8dd369eb733ba1892403.s3tc.stex", "res://.import/circle.png-74fff87532da8dd369eb733ba1892403.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

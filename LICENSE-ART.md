@@ -73,7 +73,7 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/wooden-bridge-0)
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/cake
-### cake.escn | cake.blend | cake.png
+### cake.png
 Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
@@ -1072,3 +1072,19 @@ Copyright © by cemkalyoncu and Beetree
 Retrieved from [OpenGameArt](https://opengameart.org/content/wood-texture)
 
 License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
+
+## assets/models/cake
+### circle.png | cake.blend | cake.escn
+Public domain by Vytautas Butėnas
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+### tux_texture.png
+
+Copyright © 2010 durmieu 
+
+Modified by Florian Kothmeier 2018
+
+Retrieved from [Open Game Art](https://opengameart.org/content/tux)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
