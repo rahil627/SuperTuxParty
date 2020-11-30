@@ -101,7 +101,7 @@ func load_characters() -> void:
 func _on_Options_pressed() -> void:
 	$MainMenu.hide()
 	$OptionsMenu.show()
-	$OptionsMenu/OptionsMenu/Back.grab_focus()
+	$OptionsMenu/OptionsMenu/Menu/Back.grab_focus()
 
 func _on_OptionsMenu_quit() -> void:
 	$MainMenu.show()

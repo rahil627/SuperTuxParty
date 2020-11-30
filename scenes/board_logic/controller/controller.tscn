@@ -417,7 +417,6 @@ tracks/1/keys = {
 [node name="Controller" type="Spatial" groups=[
 "Controller",
 ]]
-pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Screen" type="Control" parent="."]
