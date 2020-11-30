@@ -153,10 +153,6 @@ dialog_text = "Another save has the same name. Do you want to override it?"
 visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Control" type="Control" parent="OptionsWindow"]
@@ -173,11 +169,6 @@ text = "MENU_OPTIONS"
 align = 1
 
 [node name="OptionsMenu" parent="OptionsWindow/Control" instance=ExtResource( 6 )]
-margin_left = -246.5
-margin_top = -80.0
-margin_right = 246.5
-margin_bottom = 154.0
-theme = null
 
 [node name="Background" type="TextureRect" parent="OptionsWindow/Control"]
 self_modulate = Color( 0.184314, 0.729412, 0.85098, 1 )
@@ -185,8 +176,6 @@ show_behind_parent = true
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 754.0
-margin_bottom = 120.0
 mouse_filter = 2
 texture = ExtResource( 8 )
 stretch_mode = 2
