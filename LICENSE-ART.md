@@ -1074,7 +1074,7 @@ Retrieved from [OpenGameArt](https://opengameart.org/content/wood-texture)
 License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
 
 ## assets/models/cake
-### circle.png | cake.blend | cake.escn
+### circle.png | cake.blend | cake.glb
 Public domain by Vytautas Butėnas
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cake.escn-77027ddd36555bb52ab1e3f1a1d76230.scn"
+path="res://.import/cake.glb-bfac708dc3a41c61f6896676042fa9ad.scn"
 
 [deps]
 
-source_file="res://assets/models/cake/cake.escn"
-dest_files=[ "res://.import/cake.escn-77027ddd36555bb52ab1e3f1a1d76230.scn" ]
+source_file="res://assets/models/cake/cake.glb"
+dest_files=[ "res://.import/cake.glb-bfac708dc3a41c61f6896676042fa9ad.scn" ]
 
 [params]
 
