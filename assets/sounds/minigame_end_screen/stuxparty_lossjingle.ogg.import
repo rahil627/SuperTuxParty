@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/stuxparty_lossjingle.ogg-2a27cf93be43bc669260b8eef4ee81b4.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/minigame_end_screen/stuxparty_lossjingle.ogg"
+dest_files=[ "res://.import/stuxparty_lossjingle.ogg-2a27cf93be43bc669260b8eef4ee81b4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

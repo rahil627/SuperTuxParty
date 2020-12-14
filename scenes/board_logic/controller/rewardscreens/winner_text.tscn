@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=1]
+
+[node name="WinnerText" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -334.5
+margin_right = 334.5
+margin_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "REWARDSCREEN_MINIGAME_WINNER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

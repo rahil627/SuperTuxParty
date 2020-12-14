@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/cookie_text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/rewardscreen_background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/nolok_solo/nolok_solo.gd" type="Script" id=3]
+[ext_resource path="res://scenes/board_logic/controller/icons/cake.png" type="Texture" id=4]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/winner_text.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/continue_check.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.5
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="UIUpdate" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -5, 0.7, 0 )
+environment = SubResource( 1 )
+fov = 37.0
+
+[node name="OmniLight" type="OmniLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0 )
+light_energy = 0.3
+shadow_enabled = true
+omni_range = 400.0
+omni_attenuation = 9.9152e-05
+
+[node name="Placement" type="Position3D" parent="ViewportContainer/Viewport"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CookieText" parent="ViewportContainer/Viewport/Placement/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 130.0
+margin_bottom = 134.0
+icon = ExtResource( 4 )
+
+[node name="ContinueCheck" parent="ViewportContainer/Viewport/Placement/VBoxContainer" instance=ExtResource( 6 )]
+
+[node name="WinnerText" parent="ViewportContainer/Viewport/Placement" instance=ExtResource( 5 )]
+[connection signal="timeout" from="UIUpdate" to="ViewportContainer/Viewport/Placement/VBoxContainer/CookieText" method="countdown"]

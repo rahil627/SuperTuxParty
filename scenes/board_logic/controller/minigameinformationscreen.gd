@@ -75,28 +75,10 @@ func _load_content(minigame, players):
 				var action = entry.actions[index]
 				var action_name = "player{num}_{action}".format({"num": i, "action": action})
 				var input = InputMap.get_action_list(action_name)[0]
-				var control = ControlHelper.get_from_event(input)
-				var parent
 				if index < first_row_count:
-					parent = first_row
+					first_row.add_child(ControlHelper.ui_from_event(input))
 				else:
-					parent = second_row
-				if control is Texture:
-					var texture = preload("res://scenes/board_logic/controller/templates/control_image.tscn").instance()
-					texture.texture = control
-					parent.add_child(texture)
-				elif control is String:
-					if input is InputEventKey:
-						# There isn't a special image for all keys.
-						# For ones such as 'a' we generally impose the character
-						# over a blank texture.
-						var img = preload("res://scenes/board_logic/controller/templates/control_image.tscn").instance()
-						img.get_node("Label").text = control
-						parent.add_child(img)
-					else:
-						var text := Label.new()
-						text.text = control
-						parent.add_child(text)
+					second_row.add_child(ControlHelper.ui_from_event(input))
 			var seperator := Label.new()
 			seperator.text = "-"
 			row.add_child(seperator)

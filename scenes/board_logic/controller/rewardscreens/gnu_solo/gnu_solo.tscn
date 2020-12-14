@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/gnu_solo/gnu_solo.gd" type="Script" id=2]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/rewardscreen_background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/winner_text.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/continue_check.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.5
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="UIUpdate" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -5, 0.7, 0 )
+environment = SubResource( 1 )
+fov = 37.0
+
+[node name="OmniLight" type="OmniLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0 )
+light_energy = 0.3
+shadow_enabled = true
+omni_range = 400.0
+omni_attenuation = 9.9152e-05
+
+[node name="Placement" type="Position3D" parent="ViewportContainer/Viewport"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement"]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Item" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 128 )
+
+[node name="Label" type="Label" parent="ViewportContainer/Viewport/Placement/VBoxContainer/Item"]
+visible = false
+margin_right = 677.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 1 )
+text = "REWARDSCREEN_MINIGAME_REWARD"
+
+[node name="Icon" type="TextureRect" parent="ViewportContainer/Viewport/Placement/VBoxContainer/Item"]
+visible = false
+margin_left = 306.0
+margin_right = 370.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 4
+expand = true
+stretch_mode = 6
+
+[node name="ContinueCheck" parent="ViewportContainer/Viewport/Placement/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 132.0
+margin_bottom = 192.0
+
+[node name="WinnerText" parent="ViewportContainer/Viewport/Placement" instance=ExtResource( 4 )]

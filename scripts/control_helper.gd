@@ -237,3 +237,25 @@ func set_button(button: Button, value):
 
 func set_button_to_event(button: Button, event: InputEvent):
 	set_button(button, get_from_event(event))
+
+func ui_from_event(event: InputEvent) -> Control:
+	var control = get_from_event(event)
+	if control is Texture:
+		var texture = preload("res://scenes/board_logic/controller/templates/control_image.tscn").instance()
+		texture.texture = control
+		return texture
+	elif control is String:
+		if event is InputEventKey:
+			# There isn't a special image for all keys.
+			# For ones such as 'a' we generally impose the character
+			# over a blank texture.
+			var img = preload("res://scenes/board_logic/controller/templates/control_image.tscn").instance()
+			img.get_node("Label").text = control
+			return img
+		else:
+			var text := Label.new()
+			text.text = control
+			return text
+	else:
+		push_error("get_from_event() returned neither a texture nor a string")
+		return null

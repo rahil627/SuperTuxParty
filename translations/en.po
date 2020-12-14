@@ -568,6 +568,18 @@ msgstr "Item description"
 msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr "No description"
 
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
+msgstr "Minigame Results"
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr "Winner!"
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr "Reward:"
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr "Press"
+
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Axis -"
 
