@@ -66,6 +66,33 @@ Retrieved from [Open Game Art](https://opengameart.org/content/51-ui-sound-effec
 
 License [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 
+## assets/sounds/minigame_end_screen
+### stuxparty_endjingle.ogg
+
+Copyright franzopow
+
+License [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+### stuxparty_winjingle.ogg
+
+Copyright franzopow
+
+License [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+### stuxparty_lossjingle.ogg
+
+Copyright franzopow
+
+License [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+### 528865__eponn__beep-1.wav
+
+Public Domain by Eponn
+
+Retrieved from [Freesound](https://freesound.org/people/Eponn/sounds/528865/)
+
+License [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+
 ## plugins/minigames/dungeon_parkour/
 ### Wind Run.ogg
 Copyright TAD

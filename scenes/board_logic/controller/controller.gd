@@ -101,7 +101,7 @@ func _ready() -> void:
 				if Global.minigame_summary.placement:
 					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_SOLO_VICTORY"), player_id)
 					yield($Screen/SpeechDialog, "dialog_finished")
-					players[player_id - 1].give_item(Global.minigame_reward.gnu_solo_item_reward)
+					players[player_id - 1].give_item(Global.minigame_summary.reward)
 				else:
 					$Screen/SpeechDialog.show_dialog(tr("CONTEXT_GNU_NAME"), preload("res://scenes/board_logic/controller/icons/gnu_icon.png"), tr("CONTEXT_GNU_SOLO_LOSS"), player_id)
 					yield($Screen/SpeechDialog, "dialog_finished")

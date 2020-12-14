@@ -153,9 +153,15 @@ func _on_minigame_pressed(minigame, type):
 			# Set a minigame reward or else, the game will crash when returning
 			# to the board
 			Global.minigame_reward = Global.MinigameReward.new()
-			Global.minigame_reward.duel_reward = -1
+			Global.minigame_reward.duel_reward = Global.MINIGAME_DUEL_REWARDS.TEN_COOKIES
 		Global.MINIGAME_TYPES.NOLOK_SOLO, Global.MINIGAME_TYPES.GNU_SOLO:
 			state.minigame_teams = [[1], []]
+	
+	if type == Global.MINIGAME_TYPES.GNU_SOLO:
+		var items: Array = PluginSystem.item_loader.get_buyable_items()
+		var reward: Item = load(items[randi() % len(items)]).new()
+		Global.minigame_reward = Global.MinigameReward.new()
+		Global.minigame_reward.gnu_solo_item_reward = reward
 	
 	controller.show_minigame_info(state)
 	controller.hide_splash()

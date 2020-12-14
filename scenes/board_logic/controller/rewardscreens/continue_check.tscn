@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/continue_check.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/sounds/minigame_end_screen/528865__eponn__beep-1.wav" type="AudioStream" id=3]
+
+[node name="ContinueCheck" type="HBoxContainer" groups=[
+"continue_check",
+]]
+visible = false
+margin_right = 603.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_constants/separation = 10
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 1.0
+margin_right = 593.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 2 )
+text = "REWARDSCREEN_PRESS_BUTTON"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 603.0
+margin_right = 603.0
+margin_bottom = 60.0
+alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

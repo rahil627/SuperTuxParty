@@ -33,6 +33,7 @@ class MinigameSummary:
 	var minigame_teams: Array = []
 	var minigame_type: int = -1
 	var placement
+	var reward
 
 class BoardOverrides:
 	var cake_cost: int
@@ -42,21 +43,21 @@ class BoardOverrides:
 	var award: int = AWARD_TYPE.LINEAR
 
 const MINIGAME_REWARD_SCREEN_FFA =\
-		preload("res://scenes/board_logic/controller/rewardscreens/ffa.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/ffa/ffa.tscn")
 const MINIGAME_REWARD_SCREEN_DUEL =\
-		preload("res://scenes/board_logic/controller/rewardscreens/duel.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/duel/duel.tscn")
 const MINIGAME_REWARD_SCREEN_1V3 =\
-		preload("res://scenes/board_logic/controller/rewardscreens/1v3.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/1v3/1v3.tscn")
 const MINIGAME_REWARD_SCREEN_2V2 =\
-		preload("res://scenes/board_logic/controller/rewardscreens/2v2.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/2v2/2v2.tscn")
 const MINIGAME_REWARD_SCREEN_NOLOK_SOLO =\
-		preload("res://scenes/board_logic/controller/rewardscreens/nolok_solo.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/nolok_solo/nolok_solo.tscn")
 const MINIGAME_REWARD_SCREEN_NOLOK_COOP =\
-		preload("res://scenes/board_logic/controller/rewardscreens/nolok_coop.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/nolok_coop/nolok_coop.tscn")
 const MINIGAME_REWARD_SCREEN_GNU_SOLO =\
-		preload("res://scenes/board_logic/controller/rewardscreens/gnu_solo.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/gnu_solo/gnu_solo.tscn")
 const MINIGAME_REWARD_SCREEN_GNU_COOP =\
-		preload("res://scenes/board_logic/controller/rewardscreens/gnu_coop.tscn")
+		preload("res://scenes/board_logic/controller/rewardscreens/gnu_coop/gnu_coop.tscn")
 
 const LOADING_SCREEN = preload("res://scenes/menus/loading_screen.tscn")
 
@@ -520,6 +521,17 @@ func deduplicate_items(items: Array) -> Array:
 
 	return list
 
+func get_ffa_reward(pos: int):
+	assert(1 <= pos and pos <= 4, "Invalid position for FFA reward")
+	match Global.overrides.award:
+		Global.AWARD_TYPE.LINEAR:
+			return 20 - pos * 5
+		Global.AWARD_TYPE.WINNER_ONLY:
+			if pos == 1:
+				return 10
+			else:
+				return 0
+
 # Go back to board from mini-game, placement is an array with the players' ids.
 func _goto_board(placement) -> void:
 	for t in _minigame_loaded_translations:
@@ -543,80 +555,80 @@ func _goto_board(placement) -> void:
 	
 	match minigame_type:
 		MINIGAME_TYPES.FREE_FOR_ALL:
-			match overrides.award:
-				AWARD_TYPE.LINEAR:
-					# Store the current place.
-					var place = 0
-					for i in placement.size():
-						for j in placement[i].size():
-							players[placement[i][j] - 1].cookies +=\
-									15 - place*5
-						# If placement looks like this: [[1, 2], [3], [4]].
-						# Then the placement is 1, 2 are 1st, 3 is 3rd,
-						# 4 is 4th. Therefore we need to increase the place by
-						# the amount of players on that place.
-						place += placement[i].size()
-				AWARD_TYPE.WINNER_ONLY:
-					for p in placement[0]:
-						players[p - 1].cookies += 10
-
+			var place = 1
+			minigame_summary.reward = []
+			for position in placement:
+				for player_id in position:
+					minigame_summary.reward.append(get_ffa_reward(place))
+					players[player_id - 1].cookies += get_ffa_reward(place)
+				place += len(position)
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_FFA)
 		MINIGAME_TYPES.TWO_VS_TWO:
 			if placement != -1:
+				minigame_summary.reward = [10, 10, 0, 0]
 				for player_id in minigame_teams[placement]:
 					players[player_id - 1].cookies += 10
-
+			else:
+				minigame_summary.reward = [0, 0, 0, 0]
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_2V2)
 		MINIGAME_TYPES.ONE_VS_THREE:
-			if placement != -1:
-				for player_id in minigame_teams[placement]:
-					# Has the solo player won?
-					if placement == 1:
-						players[player_id - 1].cookies += 10
-					else:
-						players[player_id - 1].cookies += 5
+			if placement == 1: # Solo player won
+				minigame_summary.reward = [0, 0, 0, 10]
+			elif placement == 0:
+				minigame_summary.reward = [5, 5, 5, 0]
+			else:
+				minigame_summary.reward = [0, 0, 0, 0]
+			
+			for i in range(len(minigame_teams[0])):
+				players[minigame_teams[0][i] - 1].cookies += minigame_summary.reward[i]
+			players[minigame_teams[1][0] - 1].cookies += minigame_summary.reward[3]
 
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_1V3)
 		MINIGAME_TYPES.DUEL:
 			if len(placement) == 2:
+				var winning_player = players[placement[0][0] - 1]
+				var losing_player = players[placement[1][0] - 1]
 				match minigame_reward.duel_reward:
 					MINIGAME_DUEL_REWARDS.TEN_COOKIES:
-						var other_player_cookies := int(
-								min(players[placement[1][0] - 1].cookies, 10))
-						players[placement[0][0] - 1].cookies +=\
-								other_player_cookies
-						players[placement[1][0] - 1].cookies -=\
-								other_player_cookies
+						var cookies := int(min(losing_player.cookies, 10))
+						winning_player.cookies += cookies
+						losing_player.cookies -= cookies
+						minigame_summary.reward = cookies
 					MINIGAME_DUEL_REWARDS.ONE_CAKE:
-						var other_player_cakes := int(
-								min(players[placement[1][0] - 1].cakes, 1))
-						players[placement[0][0] - 1].cakes +=\
-								other_player_cakes
-						players[placement[1][0] - 1].cakes -=\
-								other_player_cakes
+						var cakes := int(min(losing_player.cakes, 1))
+						winning_player.cakes += cakes
+						losing_player.cakes -= cakes
+						minigame_summary.reward = cakes
 
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_DUEL)
 		MINIGAME_TYPES.NOLOK_SOLO:
 			if not placement:
 				var player = players[minigame_teams[0][0] - 1]
-				player.cakes = max(player.cakes - 1, 0)
+				minigame_summary.reward = min(player.cakes, 1)
+				player.cakes -= minigame_summary.reward
+			else:
+				minigame_summary.reward = 0
 
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_NOLOK_SOLO)
 		MINIGAME_TYPES.NOLOK_COOP:
+			minigame_summary.reward = [0, 0, 0, 0]
 			if not placement:
-				for player in players:
-					player.cookies = max(player.cookies - 10, 0)
-
+				for i in range(len(players)):
+					minigame_summary.reward[i] = min(players[i].cookies, 10)
+					players[i].cookies -= minigame_summary.reward[i]
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_NOLOK_COOP)
 		MINIGAME_TYPES.GNU_SOLO:
+			minigame_summary.reward = minigame_reward.gnu_solo_item_reward
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_GNU_SOLO)
 		MINIGAME_TYPES.GNU_COOP:
-			if typeof(placement) == TYPE_ARRAY:
-				for i in len(players):
-					players[i].cookies += placement[i]
-			elif placement:
-				for player in players:
-					player.cookies += 10
+			if placement == true:
+				minigame_summary.reward = [10, 10, 10, 10]
+			elif placement == false:
+				minigame_summary.reward = [0, 0, 0, 0]
+			else:
+				minigame_summary.reward = placement
+			for i in range(len(players)):
+				players[i].cookies += minigame_summary.reward[i]
 
 			call_deferred("_goto_scene_instant", MINIGAME_REWARD_SCREEN_GNU_COOP)
 

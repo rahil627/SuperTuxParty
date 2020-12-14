@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/cookie_text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/1v3/1v3.gd" type="Script" id=2]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/winner_text.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/rewardscreen_background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/board_logic/controller/rewardscreens/continue_check.tscn" type="PackedScene" id=5]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="UIUpdate" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+render_target_update_mode = 3
+shadow_atlas_size = 4096
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -5, 0.7, 0 )
+fov = 37.0
+
+[node name="OmniLight" type="OmniLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0 )
+light_energy = 0.3
+shadow_enabled = true
+omni_range = 400.0
+omni_attenuation = 9.9152e-05
+
+[node name="Placement1" type="Position3D" parent="ViewportContainer/Viewport"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.25, 0, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement1"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CookieText" parent="ViewportContainer/Viewport/Placement1/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 130.0
+margin_bottom = 134.0
+
+[node name="ContinueCheck" parent="ViewportContainer/Viewport/Placement1/VBoxContainer" instance=ExtResource( 5 )]
+
+[node name="WinnerText" parent="ViewportContainer/Viewport/Placement1" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Placement2" type="Position3D" parent="ViewportContainer/Viewport"]
+transform = Transform( -0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, 0.2, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CookieText" parent="ViewportContainer/Viewport/Placement2/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 130.0
+margin_bottom = 134.0
+
+[node name="ContinueCheck" parent="ViewportContainer/Viewport/Placement2/VBoxContainer" instance=ExtResource( 5 )]
+
+[node name="WinnerText" parent="ViewportContainer/Viewport/Placement2" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Placement3" type="Position3D" parent="ViewportContainer/Viewport"]
+transform = Transform( -0.342021, 0, -0.939693, 0, 1, 0, 0.939693, 0, -0.342021, 0, 0, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement3"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CookieText" parent="ViewportContainer/Viewport/Placement3/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 130.0
+margin_bottom = 134.0
+
+[node name="ContinueCheck" parent="ViewportContainer/Viewport/Placement3/VBoxContainer" instance=ExtResource( 5 )]
+
+[node name="WinnerText" parent="ViewportContainer/Viewport/Placement3" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Placement4" type="Position3D" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 0, 0, -2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewportContainer/Viewport/Placement4"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CookieText" parent="ViewportContainer/Viewport/Placement4/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 130.0
+margin_bottom = 134.0
+
+[node name="ContinueCheck" parent="ViewportContainer/Viewport/Placement4/VBoxContainer" instance=ExtResource( 5 )]
+margin_bottom = 100.0
+
+[node name="WinnerText" parent="ViewportContainer/Viewport/Placement4" instance=ExtResource( 3 )]
+visible = false
+[connection signal="timeout" from="UIUpdate" to="ViewportContainer/Viewport/Placement3/VBoxContainer/CookieText" method="countdown"]
+[connection signal="timeout" from="UIUpdate" to="ViewportContainer/Viewport/Placement2/VBoxContainer/CookieText" method="countdown"]
+[connection signal="timeout" from="UIUpdate" to="ViewportContainer/Viewport/Placement1/VBoxContainer/CookieText" method="countdown"]
+[connection signal="timeout" from="UIUpdate" to="ViewportContainer/Viewport/Placement4/VBoxContainer/CookieText" method="countdown"]
