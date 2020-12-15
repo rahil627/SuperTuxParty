@@ -347,8 +347,7 @@ func _load_player(player: Node, state: PlayerState, team_id: int) -> void:
 			var indicator: Sprite3D = preload(\
 					"res://scenes/team_indicator/team_indicator.tscn"\
 					).instance()
-			indicator.material_override.albedo_color =\
-					MINIGAME_TEAM_COLORS[team_id]
+			indicator.modulate = MINIGAME_TEAM_COLORS[team_id]
 			indicator.translation.y = bbox.size.y / 2 + shape.translation.y + 0.1
 			player.get_node("Model").add_child(indicator)
 
