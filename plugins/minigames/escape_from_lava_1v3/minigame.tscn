@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://plugins/minigames/escape_from_lava_1v3/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/escape_from_lava_1v3/player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/control_view/control_view_2d.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/music/minigames/escape from lava.ogg" type="AudioStream" id=9]
+[ext_resource path="res://scenes/countdown/countdown.tscn" type="PackedScene" id=10]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 128, 128 )
@@ -289,6 +290,8 @@ margin_bottom = -64.0
 pause_mode = 2
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="Countdown" parent="." instance=ExtResource( 10 )]
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]
 [connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Stage1/Area" to="." method="enter_stage" binds= [ 1 ]]

@@ -37,7 +37,7 @@ func _process(delta):
 	$"Ground/Scene Root3".translation.z = self.translation.z + 40
 	countdown -= delta
 	if countdown <= 0 and translation.z <= 85:
-		for _i in range(5):
+		for _i in range(4):
 			var bomb = BOMB.instance()
 			bomb.translation = Vector3((randf() - 0.5) * 16, 20, 10 + randf() * 10 + translation.z)
 			$Ground.add_child(bomb)

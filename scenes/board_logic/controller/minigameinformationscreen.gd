@@ -97,7 +97,7 @@ func show_minigame_info(state, players: Array) -> void:
 	Global.connect("language_changed", self, "_load_content", [state.minigame_config, players])
 	_load_content(state.minigame_config, players)
 	if state.minigame_config.image_path != null:
-		$Screenshot.texture =\
+		$Description/Screenshot.texture =\
 				load(state.minigame_config.image_path)
 
 	show()
