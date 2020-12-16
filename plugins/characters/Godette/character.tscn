@@ -5,7 +5,6 @@
 [ext_resource path="res://scripts/character.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
-resource_name = "stun"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Armature/Skeleton/BoneAttachment/Sprite3D:rotation_degrees")
@@ -21,7 +20,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "stun_sprite_invisible"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Armature/Skeleton/BoneAttachment/Sprite3D:visible")
@@ -37,7 +35,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "stun_sprite_visible"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Armature/Skeleton/BoneAttachment/Sprite3D:visible")
@@ -185,7 +182,7 @@ states/walk/node = SubResource( 20 )
 states/walk/position = Vector2( 37, 165.86 )
 transitions = [ "stun-end", "idle", SubResource( 21 ), "stun", "stun_sprite_invisible", SubResource( 22 ), "stun_sprite_invisible", "stun-end", SubResource( 23 ), "idle", "stun_sprite_visible", SubResource( 24 ), "stun_sprite_visible", "stun-begin", SubResource( 25 ), "stun-begin", "stun", SubResource( 26 ), "idle", "sad", SubResource( 27 ), "sad", "idle", SubResource( 28 ), "idle", "happy", SubResource( 29 ), "happy", "idle", SubResource( 30 ), "idle", "punch", SubResource( 31 ), "punch", "idle", SubResource( 32 ), "idle", "kick", SubResource( 33 ), "kick", "idle", SubResource( 34 ), "idle", "jump", SubResource( 35 ), "jump", "idle", SubResource( 36 ), "idle", "walk", SubResource( 37 ), "walk", "idle", SubResource( 38 ), "idle", "run", SubResource( 39 ), "run", "idle", SubResource( 40 ) ]
 start_node = "idle"
-graph_offset = Vector2( -11.0182, -76.8681 )
+graph_offset = Vector2( -360, 11.1319 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=42]
 
@@ -194,11 +191,14 @@ script = ExtResource( 3 )
 animations = NodePath("AnimationTree")
 collision_shape = NodePath("Shape")
 
+[node name="Armature" parent="." index="0"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.06, -0.035 )
+
 [node name="Skeleton" parent="Armature" index="0"]
 bones/5/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="23"]
-transform = Transform( 1, 3.0667e-11, -2.62901e-11, -2.62084e-11, 0.989499, 0.144541, 3.0326e-11, -0.144541, 0.989499, 0.0252826, 2.67601, 0.252162 )
+transform = Transform( 1, 3.06528e-11, -2.63327e-11, -2.61977e-11, 0.989499, 0.144541, 3.03544e-11, -0.144541, 0.989499, 6.91268e-07, 2.86363, 0.0597792 )
 bone_name = "head"
 
 [node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton/BoneAttachment" index="0"]
