@@ -185,7 +185,7 @@ states/walk/node = SubResource( 20 )
 states/walk/position = Vector2( 37, 165.86 )
 transitions = [ "stun-end", "idle", SubResource( 21 ), "stun", "stun_sprite_invisible", SubResource( 22 ), "stun_sprite_invisible", "stun-end", SubResource( 23 ), "idle", "stun_sprite_visible", SubResource( 24 ), "stun_sprite_visible", "stun-begin", SubResource( 25 ), "stun-begin", "stun", SubResource( 26 ), "idle", "sad", SubResource( 27 ), "sad", "idle", SubResource( 28 ), "idle", "happy", SubResource( 29 ), "happy", "idle", SubResource( 30 ), "idle", "punch", SubResource( 31 ), "punch", "idle", SubResource( 32 ), "idle", "kick", SubResource( 33 ), "kick", "idle", SubResource( 34 ), "idle", "jump", SubResource( 35 ), "jump", "idle", SubResource( 36 ), "idle", "walk", SubResource( 37 ), "walk", "idle", SubResource( 38 ), "idle", "run", SubResource( 39 ), "run", "idle", SubResource( 40 ) ]
 start_node = "idle"
-graph_offset = Vector2( -207.314, -134.883 )
+graph_offset = Vector2( -375.314, 18.117 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=42]
 
@@ -194,11 +194,14 @@ script = ExtResource( 2 )
 animations = NodePath("AnimationTree")
 collision_shape = NodePath("Shape")
 
+[node name="Armature" parent="." index="0"]
+transform = Transform( 0.296262, 0, 0, 0, 0.296262, 0, 0, 0, 0.296262, -0.038, 0.22, 0.034 )
+
 [node name="Skeleton" parent="Armature" index="0"]
 bones/5/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.991418, -0.0341035, 0.126205, -3.25521e-08, 0.965375, 0.260866, -0.130732, -0.258627, 0.95709, -5.27037e-15, 1, -4.42111e-08 )
+transform = Transform( 0.991418, -0.0341035, 0.126205, -2.70165e-08, 0.965375, 0.260866, -0.130732, -0.258627, 0.95709, -5.27037e-15, 1, -4.42111e-08 )
 bone_name = "head"
 
 [node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton/BoneAttachment" index="0"]
