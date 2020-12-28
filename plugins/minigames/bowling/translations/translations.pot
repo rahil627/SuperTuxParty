@@ -19,18 +19,6 @@ msgstr ""
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
 
-msgid "MINIGAME_ACTION_UP"
-msgstr ""
-
-msgid "MINIGAME_ACTION_DOWN"
-msgstr ""
-
-msgid "MINIGAME_ACTION_LEFT"
-msgstr ""
-
-msgid "MINIGAME_ACTION_RIGHT"
-msgstr ""
-
 msgid "MINIGAME_ACTION_JUMP"
 msgstr ""
 

@@ -3,28 +3,41 @@
 [node name="HBoxContainer" type="HBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -1118.0
+margin_right = -836.0
 margin_bottom = -696.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Actions" type="ItemList" parent="."]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-items = [ "Up", null, false, "Left", null, false, "Down", null, false, "Right", null, false, "Action1", null, false, "Action 2", null, false, "Action 3", null, false, "Action 4", null, false ]
-select_mode = 1
+[node name="Actions" type="GridContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+
+[node name="Add" type="MenuButton" parent="."]
+margin_left = 254.0
+margin_right = 274.0
+margin_bottom = 24.0
+text = "+"
+items = [ "spacer", null, 0, false, false, 0, 0, null, "", false, "up", null, 0, false, false, 1, 0, null, "", false, "down", null, 0, false, false, 2, 0, null, "", false, "left", null, 0, false, false, 3, 0, null, "", false, "right", null, 0, false, false, 4, 0, null, "", false, "action1", null, 0, false, false, 5, 0, null, "", false, "action2", null, 0, false, false, 6, 0, null, "", false, "action3", null, 0, false, false, 7, 0, null, "", false, "action4", null, 0, false, false, 8, 0, null, "", false ]
 
 [node name="Text" type="LineEdit" parent="."]
-margin_left = 104.0
-margin_right = 162.0
-margin_bottom = 100.0
+margin_left = 278.0
+margin_right = 336.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 
+[node name="Team" type="OptionButton" parent="."]
+margin_left = 340.0
+margin_right = 445.0
+margin_bottom = 24.0
+text = "Both Teams"
+items = [ "Both Teams", null, false, 0, null, "Team Red", null, false, 1, null, "Team Blue", null, false, 2, null ]
+selected = 0
+
 [node name="Remove" type="Button" parent="."]
-margin_left = 166.0
-margin_right = 185.0
-margin_bottom = 100.0
+margin_left = 449.0
+margin_right = 468.0
+margin_bottom = 24.0
 text = "x"
 [connection signal="pressed" from="Remove" to="." method="queue_free"]

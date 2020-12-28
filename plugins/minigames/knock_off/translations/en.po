@@ -24,6 +24,9 @@ msgstr ""
 "Each player attempts to knock all opponents off the iceberg.\n"
 "Last person standing wins!"
 
+msgid "MINIGAME_ACTION_MOVE"
+msgstr "Move"
+
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"
 

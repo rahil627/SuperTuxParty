@@ -478,7 +478,7 @@ func land_on_space(player):
 						players.size()].player_id], [player.player_id]]
 				yield(minigame_duel_reward_animation(), "completed")
 				yield(show_minigame_animation(state), "completed")
-				$Screen/MinigameInformation.show_minigame_info(state, players)
+				show_minigame_info(state)
 			return
 		NodeBoard.NODE_TYPES.NOLOK:
 			$Screen/SpeechDialog.show_dialog(tr("CONTEXT_NOLOK_NAME"), preload("res://scenes/board_logic/controller/icons/nolokicon.png"), tr("CONTEXT_NOLOK_EVENT_START"), player.player_id)

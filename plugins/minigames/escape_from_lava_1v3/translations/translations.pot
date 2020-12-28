@@ -31,13 +31,7 @@ msgstr ""
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr ""
 
-msgid "MINIGAME_ACTION_OBSTRUCT_ONE"
-msgstr ""
-
-msgid "MINIGAME_ACTION_OBSTRUCT_TWO"
-msgstr ""
-
-msgid "MINIGAME_ACTION_OBSTRUCT_THREE"
+msgid "MINIGAME_ACTION_OBSTRUCT"
 msgstr ""
 
 msgid "ESCAPE_FROM_LAVA_FINISH_MSG"

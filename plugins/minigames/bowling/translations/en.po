@@ -25,6 +25,9 @@ msgstr ""
 "If the time runs out, the group wins.\n"
 "Keep an eye out for falling boxes. They stun if you get hit, but also block bullets."
 
+msgid "MINIGAME_ACTION_MOVE"
+msgstr "Move"
+
 msgid "MINIGAME_ACTION_UP"
 msgstr "Move Up"
 
@@ -41,7 +44,7 @@ msgid "MINIGAME_ACTION_JUMP"
 msgstr "Jump"
 
 msgid "MINIGAME_ACTION_THROW"
-msgstr "Throw ball - only solo player"
+msgstr "Throw ball"
 
 msgid "BOWLING_FINISH_MSG"
 msgstr "Finish!"

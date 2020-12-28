@@ -169,9 +169,6 @@ msgstr "Character:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Continue"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Description"
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Exit to Desktop"
 
@@ -579,6 +576,33 @@ msgstr "Reward:"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
 msgstr "Press"
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr "Move"
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr "Free for all minigame"
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr "Two vs two minigame"
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr "One vs three minigame"
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr "Duel minigame"
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr "GNU Coop minigame"
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr "GNU Solo minigame"
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr "Nolok Coop minigame"
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr "Nolok Solo minigame"
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Axis -"

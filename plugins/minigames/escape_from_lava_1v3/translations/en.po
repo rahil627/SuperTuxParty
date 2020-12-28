@@ -39,8 +39,8 @@ msgstr "Move Left"
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr "Move Right"
 
-msgid "MINIGAME_ACTION_OBSTRUCT_ONE"
-msgstr "Obstruct door 1 - solo player only"
+msgid "MINIGAME_ACTION_OBSTRUCT"
+msgstr "Obstruct door"
 
 msgid "MINIGAME_ACTION_OBSTRUCT_TWO"
 msgstr "Obstruct door 2 - solo player only"

@@ -3,8 +3,9 @@
 [ext_resource path="res://addons/minigame_config_dialog/edit.gd" type="Script" id=1]
 
 [node name="PopupPanel" type="PopupPanel"]
-margin_right = 511.0
-margin_bottom = 518.0
+visible = true
+margin_right = 811.0
+margin_bottom = 600.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -13,34 +14,34 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 507.0
-margin_bottom = 534.0
+margin_right = 807.0
+margin_bottom = 634.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 20.0
 alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer8"]
 margin_top = 3.0
-margin_right = 480.0
+margin_right = 780.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "Edit Minigame Configuration"
 align = 1
 
 [node name="Close" type="Button" parent="VBoxContainer/HBoxContainer8"]
-margin_left = 484.0
-margin_right = 503.0
+margin_left = 784.0
+margin_right = 803.0
 margin_bottom = 20.0
 text = "x"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 24.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 48.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -51,13 +52,13 @@ text = "Name:"
 
 [node name="Name" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_left = 46.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 52.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -68,7 +69,7 @@ text = "Main Scene:"
 
 [node name="MainScene" type="Button" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 81.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "..."
@@ -76,7 +77,7 @@ clip_text = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 76.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 96.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
@@ -87,7 +88,7 @@ text = "Screenshot:"
 
 [node name="Screenshot" type="Button" parent="VBoxContainer/HBoxContainer3"]
 margin_left = 79.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "..."
@@ -95,7 +96,7 @@ clip_text = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 100.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 120.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
@@ -106,7 +107,7 @@ text = "Translations:"
 
 [node name="Translations" type="Button" parent="VBoxContainer/HBoxContainer4"]
 margin_left = 85.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "..."
@@ -114,17 +115,17 @@ clip_text = true
 
 [node name="HBoxContainer5" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 124.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 242.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 14.0
 text = "Type:"
 
 [node name="Type" type="ItemList" parent="VBoxContainer/HBoxContainer5"]
 margin_top = 18.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 118.0
 rect_min_size = Vector2( 0, 100 )
 items = [ "1v3", null, false, "2v2", null, false, "Duel", null, false, "Free for all", null, false, "Gnu Coop", null, false, "Gnu Solo", null, false, "Nolok Coop", null, false, "Nolok Solo", null, false ]
@@ -132,71 +133,80 @@ select_mode = 1
 
 [node name="HBoxContainer6" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 246.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 364.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "Description:"
 
 [node name="Description" type="TextEdit" parent="VBoxContainer/HBoxContainer6"]
 margin_top = 18.0
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 118.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="HBoxContainer7" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 368.0
-margin_right = 503.0
-margin_bottom = 492.0
+margin_right = 803.0
+margin_bottom = 592.0
+size_flags_vertical = 3
 
 [node name="Toolbox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer7"]
-margin_right = 503.0
+margin_right = 803.0
 margin_bottom = 20.0
 alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7/Toolbox"]
 margin_top = 3.0
-margin_right = 479.0
+margin_right = 693.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 text = "Controls:"
 
+[node name="Presets" type="MenuButton" parent="VBoxContainer/HBoxContainer7/Toolbox"]
+margin_left = 697.0
+margin_right = 779.0
+margin_bottom = 20.0
+text = "Add preset"
+items = [ "Movement Controls", null, 0, false, false, 0, 0, null, "", false ]
+
 [node name="Add" type="Button" parent="VBoxContainer/HBoxContainer7/Toolbox"]
-margin_left = 483.0
-margin_right = 503.0
+margin_left = 783.0
+margin_right = 803.0
 margin_bottom = 20.0
 text = "+"
 
 [node name="List" type="VBoxContainer" parent="VBoxContainer/HBoxContainer7"]
 margin_top = 24.0
-margin_right = 503.0
-margin_bottom = 124.0
+margin_right = 803.0
+margin_bottom = 224.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer7/List"]
-margin_right = 503.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
+margin_right = 803.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer7/List/ScrollContainer"]
-margin_right = 503.0
+margin_right = 803.0
 size_flags_horizontal = 3
+custom_constants/separation = 20
 
 [node name="Control" type="Control" parent="VBoxContainer"]
-margin_top = 496.0
-margin_right = 503.0
-margin_bottom = 506.0
+margin_top = 596.0
+margin_right = 803.0
+margin_bottom = 606.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Save" type="Button" parent="VBoxContainer"]
-margin_top = 510.0
-margin_right = 503.0
-margin_bottom = 530.0
+margin_top = 610.0
+margin_right = 803.0
+margin_bottom = 630.0
 text = "Save"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -205,8 +215,8 @@ __meta__ = {
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 112.0
-margin_bottom = 62.0
+margin_right = 807.0
+margin_bottom = 634.0
 window_title = "Warnung!"
 [connection signal="about_to_show" from="." to="." method="_on_PopupPanel_about_to_show"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer8/Close" to="." method="_on_Close_pressed"]
