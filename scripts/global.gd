@@ -200,7 +200,7 @@ func _input(event):
 		image.flip_y()
 		var directory = Directory.new()
 		directory.make_dir("user://screenshots")
-		image.save_png("user://screenshots/{year}-{month}-{day}-{hour}:{minute}:{second}.png".format(time))
+		image.save_png("user://screenshots/%04dY-%02dM-%02dD %02dh-%02dm-%02ds.png" % [time.year, time.month, time.day, time.hour, time.minute, time.second])
 
 func _process(_delta: float):
 	var filtered = []
