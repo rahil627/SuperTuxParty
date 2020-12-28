@@ -9,6 +9,7 @@ func _init():
 func load_controls():
 	var config = ConfigFile.new()
 	var err = config.load(USER_CONFIG_FILE)
+	var old_config_format = false
 	if err: # ConfigFile probably not present, create it
 		save_controls()
 	else: # ConfigFile was properly loaded, initialize InputMap
@@ -18,35 +19,40 @@ func load_controls():
 			
 			# Get the key scancode corresponding to the saved human-readable string
 			var entry = config.get_value("input", action_name)
+			var event = str2var(entry)
 			
-			entry = entry.split(" ", false)
-			var event
-			# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
-			match entry[1]:
-				"Keyboard":
-					event = InputEventKey.new()
-					event.scancode = int(entry[2])
-					event.pressed = true
-				"Mouse":
-					event = InputEventMouseButton.new()
-					event.button_index = int(entry[2])
-					event.pressed = true
-				"JoypadAxis":
-					event = InputEventJoypadMotion.new()
-					event.axis = int(entry[2])
-					event.axis_value = int(entry[3])
-				"JoypadButton":
-					event = InputEventJoypadButton.new()
-					event.button_index = int(entry[2])
-					event.pressed = true
-			
-			event.device = int(entry[0])
+			# TODO: remove compability in the future (maybe after 1.0?)
+			if not event is InputEvent:
+				push_warning("Invalid control remap entry. Trying to read from old config format")
+				old_config_format = true
+				entry = entry.split(" ", false)
+				# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
+				match entry[1]:
+					"Keyboard":
+						event = InputEventKey.new()
+						event.scancode = int(entry[2])
+						event.pressed = true
+					"Mouse":
+						event = InputEventMouseButton.new()
+						event.button_index = int(entry[2])
+						event.pressed = true
+					"JoypadAxis":
+						event = InputEventJoypadMotion.new()
+						event.axis = int(entry[2])
+						event.axis_value = float(entry[3])
+					"JoypadButton":
+						event = InputEventJoypadButton.new()
+						event.button_index = int(entry[2])
+						event.pressed = true
+				event.device = int(entry[0])
 			
 			# Replace old action (key) events by the new one
 			for old_event in InputMap.get_action_list(action_name):
 				if old_event is InputEventKey:
 					InputMap.action_erase_event(action_name, old_event)
 			InputMap.action_add_event(action_name, event)
+	if old_config_format:
+		save_controls()
 
 # Taken and adapted from the godot demos
 func save_controls():
@@ -57,19 +63,7 @@ func save_controls():
 			continue
 		
 		var event = InputMap.get_action_list(action_name)[0]
-		
-		# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
-		var value = var2str(event.device)
-		if event is InputEventKey:
-			value += " Keyboard " + var2str(event.scancode)
-		elif event is InputEventMouseButton:
-			value += " Mouse " + var2str(event.button_index)
-		elif event is InputEventJoypadMotion:
-			value += " JoypadAxis " + var2str(event.axis) + " " + var2str(event.axis_value)
-		elif event is InputEventJoypadButton:
-			value += " JoypadButton " + var2str(event.button_index)
-		
-		config.set_value("input", action_name, value)
+		config.set_value("input", action_name, var2str(event))
 	config.save(USER_CONFIG_FILE)
 
 func get_from_key(event: InputEventKey):
