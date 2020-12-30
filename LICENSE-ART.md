@@ -1088,3 +1088,28 @@ Modified by Florian Kothmeier 2018
 Retrieved from [Open Game Art](https://opengameart.org/content/tux)
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## assets/textures/title
+### Title.png
+Public domain by Vytautas Butėnas
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+## assets/tux
+### tux.glb
+
+Copyright © 2010 durmieu 
+
+Modified by Florian Kothmeier 2018
+
+Retrived from [Open Game Art](https://opengameart.org/content/tux)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## assets/icons
+### off.svg | off.png
+
+Copyright © Google
+Retrieved from [Material Design](https://material.io/resources/icons/?search=power_settings_new&icon=power_settings_new&style=round)
+
+Licensed: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
