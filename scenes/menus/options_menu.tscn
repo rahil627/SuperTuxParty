@@ -14,11 +14,11 @@
 [ext_resource path="res://scenes/menus/control_remapping/player_controls_mapper.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/menus/control_remapping/control_remap_button.tscn" type="PackedScene" id=13]
 
-[sub_resource type="InputEventAction" id=1]
+[sub_resource type="InputEventAction" id=3]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 1 )
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
 
 [node name="OptionsMenu" type="CenterContainer"]
 anchor_right = 1.0
@@ -30,9 +30,9 @@ __meta__ = {
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 265.0
-margin_top = 224.0
+margin_top = 362.0
 margin_right = 1015.0
-margin_bottom = 495.0
+margin_bottom = 454.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 750, 0 )
@@ -43,12 +43,13 @@ __meta__ = {
 
 [node name="TabContainer" type="TabContainer" parent="Menu"]
 margin_right = 750.0
-margin_bottom = 234.0
+margin_bottom = 55.0
 custom_fonts/font = ExtResource( 3 )
 tab_align = 0
 script = ExtResource( 4 )
 
 [node name="Visual" type="VBoxContainer" parent="Menu/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -322,19 +323,34 @@ margin_right = -8.0
 margin_bottom = -8.0
 
 [node name="PauseUnfocus" parent="Menu/TabContainer/Misc" instance=ExtResource( 7 )]
-margin_right = 496.0
+margin_right = 734.0
 margin_bottom = 36.0
 custom_fonts/font = ExtResource( 3 )
 pressed = true
 text = "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
 
+[node name="Credits" type="VBoxContainer" parent="Menu/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 47.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/TabContainer/Credits"]
+margin_right = 734.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 734, 360 )
+bbcode_enabled = true
+
 [node name="Back" parent="Menu" instance=ExtResource( 11 )]
-margin_top = 238.0
+margin_top = 59.0
 margin_right = 750.0
-margin_bottom = 271.0
+margin_bottom = 92.0
 custom_fonts/font = ExtResource( 3 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 2 )
+shortcut = SubResource( 4 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -349,18 +365,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 548.0
-margin_top = 317.0
-margin_right = 732.0
-margin_bottom = 402.0
+margin_left = 265.0
+margin_top = 365.0
+margin_right = 1015.0
+margin_bottom = 450.0
+[connection signal="tab_selected" from="Menu/TabContainer" to="." method="_on_TabContainer_tab_selected"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/Language/OptionButton" to="." method="_on_Language_item_selected"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/VSync" to="." method="_on_VSync_toggled"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/FrameCap/OptionButton" to="." method="_on_FrameCap_item_selected"]
 [connection signal="button_down" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_cancel_sound"]
 [connection signal="item_focused" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_select_with_arg"]
-[connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="." method="_on_GraphicQuality_item_selected"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click_with_arg"]
+[connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="." method="_on_GraphicQuality_item_selected"]
 [connection signal="pressed" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click"]
 [connection signal="toggled" from="Menu/TabContainer/Audio/Master/CheckBox" to="." method="_on_bus_toggled" binds= [ 0 ]]
 [connection signal="value_changed" from="Menu/TabContainer/Audio/MasterVolume" to="." method="_on_volume_changed" binds= [ 0 ]]

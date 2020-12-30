@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/main_menu.gd" type="Script" id=2]
@@ -10,6 +10,11 @@
 [ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=8]
 [ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=9]
 [ext_resource path="res://assets/music/menus/main menu.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/tux/tux.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/tux/ArmatureAction.anim" type="Animation" id=12]
+[ext_resource path="res://assets/tux/CylinderAction.anim" type="Animation" id=13]
+[ext_resource path="res://assets/textures/title/Title.png" type="Texture" id=14]
+[ext_resource path="res://assets/icons/off.png" type="Texture" id=16]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
@@ -35,13 +40,7 @@ action = "ui_cancel"
 [sub_resource type="ShortCut" id=8]
 shortcut = SubResource( 7 )
 
-[sub_resource type="InputEventAction" id=9]
-action = "ui_cancel"
-
-[sub_resource type="ShortCut" id=10]
-shortcut = SubResource( 9 )
-
-[sub_resource type="ShaderMaterial" id=11]
+[sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 8 )
 
 [node name="Menus" type="Control"]
@@ -58,68 +57,117 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = -216.0
-margin_right = 256.0
-margin_bottom = 216.0
-
-[node name="Title" type="Label" parent="MainMenu"]
-anchor_right = 1.0
-margin_top = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-custom_fonts/font = ExtResource( 3 )
-text = "MENU_LABEL_TITLE"
-align = 1
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buttons" type="VBoxContainer" parent="MainMenu"]
-anchor_right = 1.0
+[node name="Quit" parent="MainMenu" instance=ExtResource( 4 )]
+anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = 200.0
-custom_constants/separation = 4
+margin_left = 10.0
+margin_top = -49.9999
+margin_right = 46.0
+margin_bottom = -13.9999
+rect_min_size = Vector2( 40, 40 )
+icon = ExtResource( 16 )
+align = 0
+expand_icon = true
+
+[node name="Buttons" type="GridContainer" parent="MainMenu"]
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 412.0
+margin_right = 633.0
+margin_bottom = -208.0
+rect_min_size = Vector2( 400, 100 )
+columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Play" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_right = 512.0
-margin_bottom = 33.0
+margin_right = 200.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
 text = "MENU_LABEL_NEW_GAME"
+clip_text = true
 
 [node name="Load" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_top = 37.0
-margin_right = 512.0
-margin_bottom = 70.0
+margin_left = 204.0
+margin_right = 467.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
 text = "MENU_IO_LOAD_GAME"
 
 [node name="Options" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_top = 74.0
-margin_right = 512.0
-margin_bottom = 107.0
+margin_top = 44.0
+margin_right = 200.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 200, 40 )
 text = "MENU_OPTIONS"
 
 [node name="Screenshots" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_top = 111.0
-margin_right = 512.0
-margin_bottom = 144.0
+margin_left = 204.0
+margin_top = 44.0
+margin_right = 467.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 200, 40 )
 text = "MENU_LABEL_SCREENSHOTS"
 
-[node name="Credits" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_top = 148.0
-margin_right = 512.0
-margin_bottom = 181.0
-text = "MENU_LABEL_CREDITS"
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 152.0
+margin_right = 1152.0
+margin_bottom = 72.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Quit" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_top = 185.0
-margin_right = 512.0
-margin_bottom = 218.0
-text = "MENU_LABEL_QUIT"
+[node name="ViewportContainer" type="ViewportContainer" parent="MainMenu"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -564.0
+margin_top = 104.0
+margin_right = -52.0
+margin_bottom = -104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="MainMenu/ViewportContainer"]
+size = Vector2( 512, 512 )
+transparent_bg = true
+handle_input_locally = false
+msaa = 2
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="MainMenu/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.892 )
+keep_aspect = 0
+fov = 23.4
+
+[node name="tux" parent="MainMenu/ViewportContainer/Viewport" instance=ExtResource( 11 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainMenu/ViewportContainer/Viewport/tux"]
+autoplay = "ArmatureAction"
+anims/ArmatureAction = ExtResource( 12 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MainMenu/ViewportContainer/Viewport/tux"]
+autoplay = "CylinderAction"
+anims/CylinderAction = ExtResource( 13 )
+
+[node name="OmniLight" type="OmniLight" parent="MainMenu/ViewportContainer/Viewport/tux"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13843, 1.50051, 2.54785 )
+light_energy = 6.75
+omni_range = 8.5
 
 [node name="SelectionPlayers" type="Control" parent="."]
 visible = false
@@ -171,7 +219,8 @@ custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_1"
 
 [node name="Two" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
-margin_right = 254.0
+margin_left = 258.0
+margin_right = 512.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -179,16 +228,19 @@ custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_2"
 
 [node name="Three" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
+margin_top = 37.0
 margin_right = 254.0
-margin_bottom = 33.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_3"
 
 [node name="Four" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
-margin_right = 254.0
-margin_bottom = 33.0
+margin_left = 258.0
+margin_top = 37.0
+margin_right = 512.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
@@ -504,41 +556,6 @@ shortcut = SubResource( 8 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
-[node name="CreditsMenu" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="PanelContainer" type="PanelContainer" parent="CreditsMenu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -500.0
-margin_top = -257.0
-margin_right = 500.0
-margin_bottom = 257.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsMenu/PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 993.0
-margin_bottom = 507.0
-bbcode_enabled = true
-
-[node name="Back" parent="CreditsMenu" instance=ExtResource( 4 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -59.0
-margin_top = 290.0
-margin_right = 59.0
-margin_bottom = 323.0
-shortcut_in_tooltip = false
-shortcut = SubResource( 10 )
-text = "MENU_LABEL_BACK"
-
 [node name="PlayerInfo1" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 8.0
@@ -668,22 +685,24 @@ align = 2
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color( 0.184314, 0.729412, 0.85098, 1 )
 show_behind_parent = true
-material = SubResource( 11 )
+material = SubResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 9 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 bus = "Music"
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Screenshots" to="." method="_on_Screenshots_pressed"]
-[connection signal="pressed" from="MainMenu/Buttons/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="MainMenu/Buttons/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/One" to="." method="_select_player_amount" binds= [ 1 ]]
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Two" to="." method="_select_player_amount" binds= [ 2 ]]
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Three" to="." method="_select_player_amount" binds= [ 3 ]]
@@ -695,5 +714,3 @@ bus = "Music"
 [connection signal="pressed" from="LoadGameMenu/Back" to="." method="_on_LoadGame_Back_pressed"]
 [connection signal="pressed" from="BoardSettings/Start" to="." method="_on_BoardSettings_Start_pressed"]
 [connection signal="pressed" from="BoardSettings/Back" to="." method="_on_BoardSettings_Back_pressed"]
-[connection signal="meta_clicked" from="CreditsMenu/PanelContainer/RichTextLabel" to="." method="_on_Credits_meta_clicked"]
-[connection signal="pressed" from="CreditsMenu/Back" to="." method="_on_Credits_Back_pressed"]
