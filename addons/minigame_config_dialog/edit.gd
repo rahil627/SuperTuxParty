@@ -2,7 +2,12 @@ tool
 extends PopupPanel
 
 const MINIGAME_TYPES := ["1v3", "2v2", "Duel", "FFA", "GnuCoop", "GnuSolo", "NolokCoop", "NolokSolo"]
-const CONTROL_ACTIONS := ["up", "left", "down", "right", "action1", "action2", "action3", "action4"]
+
+const PRESETS := [
+	{
+		"actions": ["spacer", "up", "spacer", "left", "down", "right"],
+		"text": "MINIGAME_ACTION_MOVEMENT"
+	}]
 
 var path: String
 var file_dialog: EditorFileDialog
@@ -17,6 +22,7 @@ func _ready():
 	$VBoxContainer/HBoxContainer2/MainScene.connect("pressed", self, "_set_file", [$VBoxContainer/HBoxContainer2/MainScene, FileDialog.MODE_OPEN_FILE])
 	$VBoxContainer/HBoxContainer3/Screenshot.connect("pressed", self, "_set_file", [$VBoxContainer/HBoxContainer3/Screenshot, FileDialog.MODE_OPEN_FILE])
 	$VBoxContainer/HBoxContainer4/Translations.connect("pressed", self, "_set_file", [$VBoxContainer/HBoxContainer4/Translations, FileDialog.MODE_OPEN_DIR])
+	$VBoxContainer/HBoxContainer7/Toolbox/Presets.get_popup().connect("index_pressed", self, "_add_preset")
 
 func load_from_file():
 	var minigame_loader = load("res://scripts/minigame_loader.gd")
@@ -44,14 +50,31 @@ func load_from_file():
 	for child in $VBoxContainer/HBoxContainer7/List/ScrollContainer/VBoxContainer.get_children():
 		child.free()
 	for control in config.controls:
-		var template = load("res://addons/minigame_config_dialog/control_entry.tscn").instance()
+		add_control(control)
+
+func fix_columns(parent: GridContainer):
+	parent.columns = (parent.get_child_count() + 1) / 2
+
+func add_action(parent: GridContainer, name: String):
+	var entry = load("res://addons/minigame_config_dialog/action_entry.tscn").instance()
+	entry.get_node("Name").text = name
+	entry.connect("tree_exited", self, "fix_columns", [parent])
+	parent.add_child(entry)
+	fix_columns(parent)
+
+func add_control(control: Dictionary):
+	var template = load("res://addons/minigame_config_dialog/control_entry.tscn").instance()
+	var popup = template.get_node("Add").get_popup()
+	popup.connect("index_pressed", self, "_add_action", [template.get_node("Actions"), popup])
+	if "actions" in control:
+		var parent = template.get_node("Actions")
 		for action in control.actions:
-			var idx = CONTROL_ACTIONS.find(action);
-			if idx < 0:
-				continue
-			template.get_node("Actions").select(idx, false)
+			add_action(parent, action)
+	if "text" in control:
 		template.get_node("Text").text = control.text
-		$VBoxContainer/HBoxContainer7/List/ScrollContainer/VBoxContainer.add_child(template)
+	if "team" in control:
+		template.get_node("Team").select(control.team + 1)
+	$VBoxContainer/HBoxContainer7/List/ScrollContainer/VBoxContainer.add_child(template)
 
 func _set_file(button, mode):
 	file_dialog.mode = mode
@@ -88,17 +111,24 @@ func _on_Save_pressed():
 	var controls := []
 	for child in $VBoxContainer/HBoxContainer7/List/ScrollContainer/VBoxContainer.get_children():
 		var actions := []
-		for i in child.get_node("Actions").get_selected_items():
-			actions.append(CONTROL_ACTIONS[i])
+		for action in child.get_node("Actions").get_children():
+			actions.append(action.get_node("Name").text)
 		controls.append({"actions": actions, "text": child.get_node("Text").text})
+		if child.get_node("Team").selected != 0:
+			controls[-1].team = child.get_node("Team").selected - 1
 	dict["controls"] = controls
 	file.store_string(JSON.print(dict, "\t"))
 	file.close()
 	hide()
 
+func _add_action(idx: int, parent, popup):
+	add_action(parent, popup.get_item_text(idx))
+
+func _add_preset(idx: int):
+	add_control(PRESETS[idx])
+
 func _on_Add_pressed():
-	var template = load("res://addons/minigame_config_dialog/control_entry.tscn").instance()
-	$VBoxContainer/HBoxContainer7/List/ScrollContainer/VBoxContainer.add_child(template)
+	add_control({})
 
 func _on_PopupPanel_about_to_show():
 	$VBoxContainer/HBoxContainer/Name.grab_click_focus()

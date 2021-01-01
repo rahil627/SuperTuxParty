@@ -10,45 +10,27 @@
 	"controls": [
 		{
 			"actions": [
-				"up"
-			],
-			"text": "MINIGAME_ACTION_UP"
-		},
-		{
-			"actions": [
-				"left"
-			],
-			"text": "MINIGAME_ACTION_LEFT"
-		},
-		{
-			"actions": [
-				"down"
-			],
-			"text": "MINIGAME_ACTION_DOWN"
-		},
-		{
-			"actions": [
+				"spacer",
+				"up",
+				"spacer",
+				"left",
+				"down",
 				"right"
 			],
-			"text": "MINIGAME_ACTION_RIGHT"
+			"text": "MINIGAME_ACTION_MOVEMENT",
+			"team": 0
 		},
 		{
 			"actions": [
-				"action1"
+				"action1",
+				"action2",
+				"action3",
+				"spacer",
+				"spacer",
+				"spacer"
 			],
-			"text": "MINIGAME_ACTION_OBSTRUCT_ONE"
-		},
-		{
-			"actions": [
-				"action2"
-			],
-			"text": "MINIGAME_ACTION_OBSTRUCT_TWO"
-		},
-		{
-			"actions": [
-				"action3"
-			],
-			"text": "MINIGAME_ACTION_OBSTRUCT_THREE"
+			"text": "MINIGAME_ACTION_OBSTRUCT",
+			"team": 1
 		}
 	]
 }

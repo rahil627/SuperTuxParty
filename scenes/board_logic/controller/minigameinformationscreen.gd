@@ -2,69 +2,106 @@ extends Control
 
 var state
 
-func setup_character_viewport() -> void:
-	var i := 1
-	for team in state.minigame_teams:
-		for player_id in team:
-			var player =\
-					$Characters/Viewport.get_node("Player" + var2str(i))
-			var character = Global.players[player_id - 1].character
-			var new_model = PluginSystem.character_loader.load_character(character)
+func _ready():
+	hide()
+	self.modulate = Color.transparent
 
-			new_model.name = player.name
-			new_model.translation = player.translation
-			new_model.scale = player.scale
-			new_model.rotation = player.rotation
-
-			player.replace_by(new_model)
-
-			new_model.play_animation("idle")
-			if i > 0:
-				new_model.freeze_animation()
-
-			i += 1
-
-	while i <= Global.amount_of_players:
-		var player = $Characters/Viewport.get_node(
-				"Player" + var2str(i))
-		player.hide()
-
-		i += 1
-
-func minigame_has_player(id: int) -> bool:
-	for team in state.minigame_teams:
-		for player_id in team:
-			if player_id == id:
-				return true
-
-	return false
+func get_team(id: int) -> int:
+	for i in range(len(state.minigame_teams)):
+		if id in state.minigame_teams[i]:
+			return i
+	return -1
 
 func _load_content(minigame, players):
-	$Description/Text.bbcode_text = tr(minigame.description)
+	var TEAM_COLOR = [Color(0xEE3E39FF), Color(0x3030AAFF)]
+	var TEAM_MINIGAMES = [Global.MINIGAME_TYPES.ONE_VS_THREE,
+			Global.MINIGAME_TYPES.TWO_VS_TWO]
 
-	for i in range(1, len(players) + 1):
-		var container: VBoxContainer = $Controls.get_node_or_null("Player" + str(i) + "/Rows")
-		if not minigame_has_player(i) or players[i - 1].is_ai:
-			# If the player is controlled by an AI, there is no point in
-			# showing controls.
-			if container:
-				container.get_parent().queue_free()
-			continue
-		for child in container.get_children():
-			child.queue_free()
+	$Content/Rows/Description/Text.bbcode_text = tr(minigame.description)
 
-		for entry in minigame.controls:
-			var row := HBoxContainer.new()
-			row.alignment = BoxContainer.ALIGN_CENTER
-			
+	var container: GridContainer = $Content/Rows/Controls
+	container.columns = 2 * len(players) + 1
+	for child in container.get_children():
+		child.queue_free()
+	# A spacer where the control description is
+	container.add_child(Control.new())
+	# Add the player names
+	for player in players:
+		container.add_child(VSeparator.new())
+		var header := PanelContainer.new()
+		header.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var box = HBoxContainer.new()
+		var label = Label.new()
+		match state.minigame_type:
+			Global.MINIGAME_TYPES.ONE_VS_THREE, Global.MINIGAME_TYPES.TWO_VS_TWO:
+				var style = StyleBoxFlat.new()
+				style.bg_color = TEAM_COLOR[get_team(player.player_id)]
+				style.expand_margin_left = 2
+				style.expand_margin_right = 2
+				style.expand_margin_top = 2
+				style.expand_margin_bottom = 8
+				style.corner_radius_top_left = 5
+				style.corner_radius_top_right = 5
+				if minigame.controls.empty():
+					style.expand_margin_bottom = 2
+					style.corner_radius_bottom_left = 5
+					style.corner_radius_bottom_right = 5
+				header.add_stylebox_override("panel", style)
+			_:
+				header.add_stylebox_override("panel", StyleBoxEmpty.new())
+		label.text = player.player_name
+		var texture = TextureRect.new()
+		var character = Global.players[player.player_id - 1].character
+		texture.texture = PluginSystem.character_loader.load_character_icon(character)
+		texture.size_flags_vertical = SIZE_EXPAND_FILL
+		texture.size_flags_horizontal = SIZE_EXPAND_FILL
+		texture.expand = true
+		texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+		box.add_child(label)
+		box.add_child(texture)
+		header.add_child(box)
+		container.add_child(header)
+	for entry in minigame.controls:
+		for i in range(2 * len(players) + 1):
+			if i % 2 == 0:
+				container.add_child(HSeparator.new())
+			else:
+				container.add_child(Control.new())
+		var label := preload("res://scenes/board_logic/controller/templates/control_text.tscn").instance()
+		label.bbcode_text = tr(entry.text)
+		container.add_child(label)
+		for player in players:
+			container.add_child(VSeparator.new())
+			var panel = PanelContainer.new()
+			match state.minigame_type:
+				Global.MINIGAME_TYPES.ONE_VS_THREE, Global.MINIGAME_TYPES.TWO_VS_TWO:
+					var style = StyleBoxFlat.new()
+					style.bg_color = TEAM_COLOR[get_team(player.player_id)]
+					style.expand_margin_left = 2
+					style.expand_margin_right = 2
+					style.expand_margin_top = 5
+					style.expand_margin_bottom = 8
+					if entry == minigame.controls[-1]:
+						style.corner_radius_bottom_left = 5
+						style.corner_radius_bottom_right = 5
+						style.expand_margin_bottom = 2
+					panel.add_stylebox_override("panel", style)
+				_:
+					panel.add_stylebox_override("panel", StyleBoxEmpty.new())
 			var controls := VBoxContainer.new()
 			var first_row := HBoxContainer.new()
 			var second_row := HBoxContainer.new()
 			controls.size_flags_vertical = SIZE_SHRINK_CENTER
+			first_row.alignment = BoxContainer.ALIGN_CENTER
+			second_row.alignment = BoxContainer.ALIGN_CENTER
 			controls.add_child(first_row)
 			controls.add_child(second_row)
-			row.add_child(controls)
-			container.add_child(row)
+			if not "team" in entry:
+				panel.add_child(controls)
+			elif state.minigame_type in TEAM_MINIGAMES:
+				if get_team(player.player_id) == entry.team:
+					panel.add_child(controls)
+			container.add_child(panel)
 			var first_row_count: int
 			if len(entry.actions) > 2:
 				# Put half of the entries in the first row, rounded up
@@ -73,33 +110,56 @@ func _load_content(minigame, players):
 				first_row_count = len(entry.actions)
 			for index in range(len(entry.actions)):
 				var action = entry.actions[index]
-				var action_name = "player{num}_{action}".format({"num": i, "action": action})
-				var input = InputMap.get_action_list(action_name)[0]
-				if index < first_row_count:
-					first_row.add_child(ControlHelper.ui_from_event(input))
+				var element
+				if action == "spacer":
+					element = preload("res://scenes/board_logic/controller/templates/control_spacer.tscn").instance()
 				else:
-					second_row.add_child(ControlHelper.ui_from_event(input))
-			var seperator := Label.new()
-			seperator.text = "-"
-			row.add_child(seperator)
-			var label := preload("res://scenes/board_logic/controller/templates/control_text.tscn").instance()
-			label.bbcode_text = tr(entry.text)
-			row.add_child(label)
+					var action_name = "player{num}_{action}".format({"num": player.player_id, "action": action})
+					var input = InputMap.get_action_list(action_name)[0]
+					element = ControlHelper.ui_from_event(input)
+				if index < first_row_count:
+					first_row.add_child(element)
+				else:
+					second_row.add_child(element)
 
 func show_minigame_info(state, players: Array) -> void:
 	Global.load_minigame_translations(state.minigame_config)
 	self.state = state
-	setup_character_viewport()
 
 	$Buttons/Play.grab_focus()
 
 	$Title.text = state.minigame_config.name
-	Global.connect("language_changed", self, "_load_content", [state.minigame_config, players])
-	_load_content(state.minigame_config, players)
+	match state.minigame_type:
+		Global.MINIGAME_TYPES.DUEL:
+			$Mode.text = "MINIGAME_TYPE_DUEL"
+		Global.MINIGAME_TYPES.FREE_FOR_ALL:
+			$Mode.text = "MINIGAME_TYPE_FFA"
+		Global.MINIGAME_TYPES.GNU_COOP:
+			$Mode.text = "MINIGAME_TYPE_GNU_COOP"
+		Global.MINIGAME_TYPES.GNU_SOLO:
+			$Mode.text = "MINIGAME_TYPE_GNU_SOLO"
+		Global.MINIGAME_TYPES.NOLOK_COOP:
+			$Mode.text = "MINIGAME_TYPE_NOLOK_COOP"
+		Global.MINIGAME_TYPES.NOLOK_SOLO:
+			$Mode.text = "MINIGAME_TYPE_NOLOK_SOLO"
+		Global.MINIGAME_TYPES.ONE_VS_THREE:
+			$Mode.text = "MINIGAME_TYPE_1v3"
+		Global.MINIGAME_TYPES.TWO_VS_TWO:
+			$Mode.text = "MINIGAME_TYPE_2v2"
+	var filtered_players = []
+	for team in state.minigame_teams:
+		for player_id in team:
+			for player in players:
+				if player.player_id == player_id:
+					filtered_players.append(player)
+	Global.connect("language_changed", self, "_load_content",
+			[state.minigame_config, filtered_players])
+	_load_content(state.minigame_config, filtered_players)
 	if state.minigame_config.image_path != null:
-		$Description/Screenshot.texture =\
+		$Content/Rows/Description/Screenshot.texture = \
 				load(state.minigame_config.image_path)
 
+	$AnimationPlayer.play("fade_in")
 	show()
 
 func _on_Try_pressed() -> void:
@@ -109,17 +169,3 @@ func _on_Try_pressed() -> void:
 func _on_Play_pressed() -> void:
 	state.is_try = false
 	Global.goto_minigame(state)
-
-func _on_Controls_tab_changed(tab: int) -> void:
-	var last_tab_selected: int = $Controls.get_previous_tab()
-	var last_player = $Characters/Viewport.get_node(
-			"Player" + str(last_tab_selected + 1))
-	var player = $Characters/Viewport.get_node(
-			"Player" + str(tab + 1))
-
-	# Pause the animation, when it is no longer selected
-	last_player.freeze_animation()
-
-	player.resume_animation()
-
-	$Characters/Viewport/Indicator.translation = player.translation + Vector3(0, 1.5, 0)

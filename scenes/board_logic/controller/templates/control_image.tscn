@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/fonts/RichTextLabel-Normal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/ui_control_text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/textures/controls/keyboard/key_blank.png" type="Texture" id=2]
+
+
 
 [node name="TextureRect" type="TextureRect"]
 rect_min_size = Vector2( 32, 32 )

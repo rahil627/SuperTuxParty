@@ -17,7 +17,7 @@ class MinigameConfigFile:
 const MINIGAME_CONFIG_FILENAME := [ "minigame.json" ]
 const MINIGAME_PATH := "res://plugins/minigames"
 
-const ACTIONS := ["up", "left", "down", "right", "action1", "action2", "action3", "action4"]
+const ACTIONS := ["up", "left", "down", "right", "action1", "action2", "action3", "action4", "spacer"]
 
 var minigames := []
 var played := []
@@ -163,14 +163,19 @@ static func parse_file(file: String) -> MinigameConfigFile:
 					push_error("Error in file '{0}' in entry 'controls': 'text' entry is not a string".format([
 								file]))
 					continue
+				if "team" in dict and not dict["team"] in [0, 1]:
+					push_error("Error in file '{0}' in entry 'controls': 'team' entry is neither 0 nor 1".format([
+								file]))
+					continue
 				var valid = true
 				for action in dict["actions"]:
 					if not action in ACTIONS:
+						valid = false
 						push_error("Error in file '{0}' in entry 'controls': 'actions' entry contains an invalid action: {1}".format([
 									file, str(action)]))
 						break
 				if valid:
-					validated_controls.append({"actions": dict["actions"], "text": dict["text"]})
+					validated_controls.append(dict)
 			config.controls = validated_controls
 		else:
 			push_error("Error in file '{0}': entry 'controls' is not an array".format([file]))
