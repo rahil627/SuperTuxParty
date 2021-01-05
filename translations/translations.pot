@@ -299,6 +299,9 @@ msgstr ""
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr ""
 
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
+
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr ""
 
