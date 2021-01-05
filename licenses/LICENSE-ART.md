@@ -418,35 +418,6 @@ Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## assets/fonts
-### Boogaloo-Regular.ttf
-Copyright (c) 2011, John Vargas Beltr�n� (www.johnvargasbeltran.com|john.vargasbeltran@gmail.com),
-with Reserved Font Name Boogaloo.
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-http://scripts.sil.org/OFL
-
-See assets/fonts/OFL for full license.
-
-## assets/fonts/IBM-Plex-Sans/
-### *.otf
-Copyright (c) 2018, IBM
-v1.1.6 Retrieved from https://github.com/IBM/plex/releases
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-http://scripts.sil.org/OFL
-
-See assets/fonts/OFL for full license.
-
-## assets/fonts/NotoSans/
-### *.ttf
-Copyright (c) Google
-Retrieved from [Google fonts](https://fonts.google.com/specimen/Noto+Sans)
-
-Licensed: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
-
 ## assets/icons/blender
 ### icon.blend
 
@@ -1113,3 +1084,17 @@ Copyright © Google
 Retrieved from [Material Design](https://material.io/resources/icons/?search=power_settings_new&icon=power_settings_new&style=round)
 
 Licensed: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+## assets/defaults/theme_icons
+### Disabled.svg | GraberPress.svg | Graper.svg | NotSelected.svg | Off.svg | On.svg | Scroll.svg | Selected.svg
+
+Copyright © 2020 Independent-Eye
+
+License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+## plugins/minigames/memory
+### background_blue.svg | background_red.svg
+
+Copyright © 2020 Florian Kothmeier
+
+License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)

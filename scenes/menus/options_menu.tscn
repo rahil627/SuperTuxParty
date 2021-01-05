@@ -14,11 +14,11 @@
 [ext_resource path="res://scenes/menus/control_remapping/player_controls_mapper.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/menus/control_remapping/control_remap_button.tscn" type="PackedScene" id=13]
 
-[sub_resource type="InputEventAction" id=3]
+[sub_resource type="InputEventAction" id=1]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=4]
-shortcut = SubResource( 3 )
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
 
 [node name="OptionsMenu" type="CenterContainer"]
 anchor_right = 1.0
@@ -30,9 +30,9 @@ __meta__ = {
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 265.0
-margin_top = 362.0
+margin_top = 231.0
 margin_right = 1015.0
-margin_bottom = 454.0
+margin_bottom = 488.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 750, 0 )
@@ -43,13 +43,12 @@ __meta__ = {
 
 [node name="TabContainer" type="TabContainer" parent="Menu"]
 margin_right = 750.0
-margin_bottom = 55.0
+margin_bottom = 222.0
 custom_fonts/font = ExtResource( 3 )
 tab_align = 0
 script = ExtResource( 4 )
 
 [node name="Visual" type="VBoxContainer" parent="Menu/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -62,13 +61,13 @@ margin_right = 734.0
 margin_bottom = 29.0
 
 [node name="Label" type="Label" parent="Menu/TabContainer/Visual/Language"]
-margin_right = 505.0
+margin_right = 509.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 text = "MENU_OPTIONS_LANGUAGE"
 
 [node name="OptionButton" parent="Menu/TabContainer/Visual/Language" instance=ExtResource( 5 )]
-margin_left = 509.0
+margin_left = 513.0
 margin_right = 734.0
 margin_bottom = 29.0
 focus_neighbour_bottom = NodePath("../../Fullscreen")
@@ -81,32 +80,32 @@ selected = 0
 [node name="Fullscreen" parent="Menu/TabContainer/Visual" instance=ExtResource( 7 )]
 margin_top = 33.0
 margin_right = 734.0
-margin_bottom = 69.0
+margin_bottom = 64.0
 focus_neighbour_top = NodePath("../Language/OptionButton")
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS_FULLSCREEN"
 
 [node name="VSync" parent="Menu/TabContainer/Visual" instance=ExtResource( 7 )]
-margin_top = 73.0
+margin_top = 68.0
 margin_right = 734.0
-margin_bottom = 109.0
+margin_bottom = 99.0
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS_VSYNC"
 
 [node name="FrameCap" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
-margin_top = 113.0
+margin_top = 103.0
 margin_right = 734.0
-margin_bottom = 142.0
+margin_bottom = 132.0
 
 [node name="Label" type="Label" parent="Menu/TabContainer/Visual/FrameCap"]
-margin_right = 696.0
+margin_right = 700.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS_FRAME_CAP"
 
 [node name="OptionButton" parent="Menu/TabContainer/Visual/FrameCap" instance=ExtResource( 5 )]
-margin_left = 700.0
+margin_left = 704.0
 margin_right = 734.0
 margin_bottom = 29.0
 focus_neighbour_top = NodePath("../../VSync")
@@ -117,21 +116,21 @@ items = [ "30", null, false, 0, null, "60", null, false, 1, null, "120", null, f
 selected = 1
 
 [node name="Quality" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
-margin_top = 146.0
+margin_top = 136.0
 margin_right = 734.0
-margin_bottom = 179.0
+margin_bottom = 167.0
 
 [node name="Label" type="Label" parent="Menu/TabContainer/Visual/Quality"]
-margin_top = 2.0
-margin_right = 335.0
-margin_bottom = 31.0
+margin_top = 1.0
+margin_right = 339.0
+margin_bottom = 30.0
 size_flags_horizontal = 3
 text = "MENU_OPTIONS_GRAPHIC_QUALITY"
 
 [node name="OptionButton" type="OptionButton" parent="Menu/TabContainer/Visual/Quality"]
-margin_left = 339.0
+margin_left = 343.0
 margin_right = 734.0
-margin_bottom = 33.0
+margin_bottom = 31.0
 text = "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
 items = [ "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH", null, false, 0, null, "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM", null, false, 1, null, "MENU_OPTIONS_GRAPHIC_QUALITY_LOW", null, false, 2, null ]
 selected = 0
@@ -142,7 +141,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 47.0
+margin_top = 39.0
 margin_right = -8.0
 margin_bottom = -8.0
 
@@ -248,7 +247,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 47.0
+margin_top = 39.0
 margin_right = -8.0
 margin_bottom = -8.0
 
@@ -318,7 +317,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 47.0
+margin_top = 39.0
 margin_right = -8.0
 margin_bottom = -8.0
 
@@ -334,7 +333,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 47.0
+margin_top = 39.0
 margin_right = -8.0
 margin_bottom = -8.0
 
@@ -345,12 +344,12 @@ rect_min_size = Vector2( 734, 360 )
 bbcode_enabled = true
 
 [node name="Back" parent="Menu" instance=ExtResource( 11 )]
-margin_top = 59.0
+margin_top = 226.0
 margin_right = 750.0
-margin_bottom = 92.0
+margin_bottom = 257.0
 custom_fonts/font = ExtResource( 3 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 4 )
+shortcut = SubResource( 2 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -366,9 +365,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 265.0
-margin_top = 365.0
+margin_top = 318.0
 margin_right = 1015.0
-margin_bottom = 450.0
+margin_bottom = 401.0
 [connection signal="tab_selected" from="Menu/TabContainer" to="." method="_on_TabContainer_tab_selected"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/Language/OptionButton" to="." method="_on_Language_item_selected"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
@@ -376,8 +375,8 @@ margin_bottom = 450.0
 [connection signal="item_selected" from="Menu/TabContainer/Visual/FrameCap/OptionButton" to="." method="_on_FrameCap_item_selected"]
 [connection signal="button_down" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_cancel_sound"]
 [connection signal="item_focused" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_select_with_arg"]
-[connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click_with_arg"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="." method="_on_GraphicQuality_item_selected"]
+[connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click_with_arg"]
 [connection signal="pressed" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click"]
 [connection signal="toggled" from="Menu/TabContainer/Audio/Master/CheckBox" to="." method="_on_bus_toggled" binds= [ 0 ]]
 [connection signal="value_changed" from="Menu/TabContainer/Audio/MasterVolume" to="." method="_on_volume_changed" binds= [ 0 ]]

@@ -18,11 +18,12 @@ please report that under Issues.
 
 ## License
 All code is licensed under the [GNU GPL V3.0](https://www.gnu.org/licenses/gpl.html) or, at your option, any later version.
-See the [**LICENSE**](LICENSE) file for more information.
+See the [**LICENSE**](licenses/LICENSE) file for more information.
 
 All other data such as art, sound, music, and etc. is released under a bunch
 of different licenses.
-See the [**LICENSE-ART**](LICENSE-ART.md) file , the [**LICENSE-MUSIC**](LICENSE-MUSIC.md) file and the [**LICENSE-SHADER**](LICENSE-SHADER.md) file for details.
+See the [**LICENSE-ART**](licenses/LICENSE-ART.md) file , the [**LICENSE-MUSIC**](licenses/LICENSE-MUSIC.md) file , the [**LICENSE-SHADER**](licenses/LICENSE-SHADER.md) file and
+the [**LICENSE-FONTS**](licenses/LICENSE-FONTS.md) file for more details.
 
 ## Translation
 All translation is done on [Hosted Weblate](https://hosted.weblate.org/projects/super-tux-party/)
