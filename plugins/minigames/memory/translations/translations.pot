@@ -1,4 +1,3 @@
-
 # Translations template for Super Tux Party.
 # Copyright (C) 2019 Super Tux Party Contributors
 # This file is distributed under the same license as the Super Tux Party project.
@@ -32,3 +31,5 @@ msgstr ""
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr ""
 
+msgid "MINIGAME_ACTION_FLIP_CARD"
+msgstr ""

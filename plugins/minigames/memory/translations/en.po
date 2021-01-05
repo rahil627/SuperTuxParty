@@ -36,3 +36,6 @@ msgstr "Move Left"
 
 msgid "MINIGAME_ACTION_RIGHT"
 msgstr "Move Right"
+
+msgid "MINIGAME_ACTION_FLIP_CARD"
+msgstr "Flip Card"

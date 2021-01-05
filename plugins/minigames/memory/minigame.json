@@ -18,6 +18,12 @@
 				"right"
 			],
 			"text": "MINIGAME_ACTION_MOVEMENT"
-		}
+		},
+		{
+			"actions": [
+				"action1"
+			],
+			"text": "MINIGAME_ACTION_FLIP_CARD"
+		},
 	]
 }
