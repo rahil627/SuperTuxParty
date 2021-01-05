@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/main_menu.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/sound_button/option_button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=8]
 [ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=9]
 [ext_resource path="res://assets/music/menus/main menu.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/tux/tux.tscn" type="PackedScene" id=11]
@@ -40,15 +39,13 @@ action = "ui_cancel"
 [sub_resource type="ShortCut" id=8]
 shortcut = SubResource( 7 )
 
-[sub_resource type="ShaderMaterial" id=9]
-shader = ExtResource( 8 )
-
 [node name="Menus" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -61,6 +58,20 @@ margin_left = -640.0
 margin_top = -360.0
 margin_right = 640.0
 margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="MainMenu"]
+anchor_right = 1.0
+margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+text = "MENU_LABEL_TITLE"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,7 +109,7 @@ clip_text = true
 
 [node name="Load" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_left = 204.0
-margin_right = 467.0
+margin_right = 463.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 200, 40 )
 text = "MENU_IO_LOAD_GAME"
@@ -113,7 +124,7 @@ text = "MENU_OPTIONS"
 [node name="Screenshots" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_left = 204.0
 margin_top = 44.0
-margin_right = 467.0
+margin_right = 463.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 200, 40 )
 text = "MENU_LABEL_SCREENSHOTS"
@@ -206,7 +217,7 @@ scroll_horizontal_enabled = false
 
 [node name="Grid" type="GridContainer" parent="SelectionPlayers/Buttons/VScrollBar"]
 margin_right = 512.0
-margin_bottom = 70.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 columns = 2
 
@@ -358,6 +369,9 @@ custom_click = "res://assets/sounds/ui/click2.wav"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="OptionsMenu"]
 anchor_right = 1.0
@@ -367,10 +381,13 @@ grow_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 6 )]
-margin_top = 120.0
-margin_bottom = 27.0
+margin_top = -133.5
+margin_bottom = 133.5
 
 [node name="LoadGameMenu" type="Control" parent="."]
 visible = false
@@ -446,6 +463,9 @@ margin_top = -14.5
 margin_right = 235.0
 margin_bottom = 14.5
 text = "MENU_LABEL_CAKE_COST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SpinBox" type="SpinBox" parent="BoardSettings/Options/CakeCost"]
 anchor_left = 1.0
@@ -469,6 +489,9 @@ margin_top = -14.5
 margin_right = 235.0
 margin_bottom = 14.5
 text = "MENU_LABEL_TURNS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SpinBox" type="SpinBox" parent="BoardSettings/Options/Turns"]
 anchor_left = 1.0
@@ -492,6 +515,9 @@ margin_top = -14.5
 margin_right = 131.0
 margin_bottom = 14.5
 text = "AI_DIFFICULTY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OptionButton" type="OptionButton" parent="BoardSettings/Options/Difficulty"]
 anchor_left = 1.0
@@ -685,13 +711,13 @@ align = 2
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color( 0.184314, 0.729412, 0.85098, 1 )
 show_behind_parent = true
-material = SubResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 9 )
 stretch_mode = 2
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

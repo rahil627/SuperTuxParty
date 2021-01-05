@@ -261,11 +261,11 @@ func print_licenses(f: File) -> String:
 			var unescaped := line.substr(4, line.length() - 4).replace("\\*", "*")
 			var files = unescaped.split("|")
 			for file in files:
-				text += "[color=#cc00ff]" + current_dir + file.lstrip(" \t\v").rstrip(" \t\v") + ":[/color]\n"
+				text += "[color=#ffffff]" + current_dir + file.lstrip(" \t\v").rstrip(" \t\v") + ":[/color]\n"
 			has_files = true
 		else:
 			if not has_files: # Special edge case: toplevel entries start with '## '
-				text += "[color=#cc00ff]" + current_dir.substr(0, current_dir.length() - 1) + ":[/color]\n"
+				text += "[color=#ffffff]" + current_dir.substr(0, current_dir.length() - 1) + ":[/color]\n"
 				has_files = true
 			text += "[indent]" + process_hyperlinks(line) + '[/indent]\n'
 	
@@ -273,32 +273,37 @@ func print_licenses(f: File) -> String:
 
 func _on_TabContainer_tab_selected(tab):
 	if tab == 4:
-		var text = """[center]SuperTuxParty is brought to you by:[/center]
-[color=#ffaa00][center]Dragoncraft89, Antiwrapper, [url=https://yeldham.itch.io]Yeldham[/url], RiderExMachina, hejka26, airon90, swolfschristophe, pastmidnight14 and kratz00[/center][/color]
+		var text = """[color=#ffffff][center]SuperTuxParty is brought to you by:[/center]
+[color=#ffaa00][center][url=https://gitlab.com/Dragoncraft89]Dragoncraft89[/url], [url=https://gitlab.com/Antiwrapper]Antiwrapper[/url], [url=https://yeldham.itch.io]Yeldham[/url], [url=https://gitlab.com/RiderExMachina]RiderExMachina[/url], [url=https://gitlab.com/Hejka26]Hejka26[/url], [url=https://gitlab.com/airon90]airon90[/url], [url=https://gitlab.com/swolfschristophe]swolfschristophe[/url], [url=https://gitlab.com/pastmidnight14]pastmidnight14[/url], [url=https://gitlab.com/kratz00]kratz00[/url], [url=https://gitlab.com/Independent-Eye]Independent-Eye[/url] and [url=https://gitlab.com/doggoofspeed]DoggoOfSpeed[/url][/center][color=#e5e5e5]
 
 [center]with [color=#66aa00]ART[/color] by:[/center]
 """
-		print('hello')
 		var license_art := File.new()
-		license_art.open("res://LICENSE-ART.md", File.READ)
+		license_art.open("res://licenses/LICENSE-ART.md", File.READ)
 		text += print_licenses(license_art)
 		license_art.close()
 	
 		text += "[center]and [color=#66aa00]MUSIC[/color] by:[/center]\n"
 	
 		var license_music := File.new()
-		license_music.open("res://LICENSE-MUSIC.md", File.READ)
+		license_music.open("res://licenses/LICENSE-MUSIC.md", File.READ)
 		text += print_licenses(license_music)
 		license_music.close()
 	
 		text += "[center][color=#66aa00]SHADERS[/color] by:[/center]\n"
-
+	
 		var license_shader := File.new()
-		license_shader.open("res://LICENSE-SHADER.md", File.READ)
+		license_shader.open("res://licenses/LICENSE-SHADER.md", File.READ)
 		text += print_licenses(license_shader)
 		license_shader.close()
 	
+		var license_fonts := File.new()
+		license_fonts.open("res://licenses/LICENSE-FONTS.md", File.READ)
+		text += print_licenses(license_fonts)
+		license_shader.close()
+		
 		$Menu/TabContainer/Credits/RichTextLabel.bbcode_text = text
-	
+
 func _on_Credits_meta_clicked(meta):
 	OS.shell_open(meta) # Open links in the credits
+	
