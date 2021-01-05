@@ -12,9 +12,14 @@
 	"controls": [
 		{
 			"actions": [
-				"action1"
+				"spacer",
+				"up",
+				"spacer",
+				"left",
+				"down",
+				"right"
 			],
-			"text": "MINIGAME_ACTION_JUMP"
+			"text": "MINIGAME_ACTION_MOVEMENT"
 		}
 	]
 }
