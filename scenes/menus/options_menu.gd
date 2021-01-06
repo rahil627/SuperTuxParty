@@ -74,6 +74,21 @@ func _on_FrameCap_item_selected(ID):
 	
 	save_option("visual", "frame_cap", ID)
 
+func _on_MSAA_item_selected(ID):
+	match ID:
+		0:
+			get_viewport().set_msaa(0) #MSAA_DISABLED
+		1:
+			get_viewport().set_msaa(1) #MSAA_2X
+		2:
+			get_viewport().set_msaa(2) #MSAA_4X
+		3:
+			get_viewport().set_msaa(3) #MSAA_8X
+		4:
+			get_viewport().set_msaa(4) #MSAA_16X
+	
+	save_option("visual", "msaa", ID)
+
 func _on_bus_toggled(enabled, index):
 	AudioServer.set_bus_mute(index, not enabled)
 	
@@ -136,6 +151,9 @@ func load_options():
 	var frame_id = get_option_value_safely("visual", "frame_cap", 1, 0, 5)
 	_on_FrameCap_item_selected(frame_id)
 	$Menu/TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
+	
+	var msaa = get_option_value_safely("visual", "msaa", 0)
+	$Menu/TabContainer/Visual/Anti_Aliasing/OptionButton.select(msaa)
 	
 	var quality = get_option_value_safely("visual", "quality", 0)
 	$Menu/TabContainer/Visual/Quality/OptionButton.select(quality)

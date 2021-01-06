@@ -301,6 +301,9 @@ msgstr "Frame Cap"
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Fullscreen"
 
+msgid "MENU_OPTIONS_MSAA"
+msgstr "Multisample anti-aliasing (MSAA)"
+
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Language"
 
