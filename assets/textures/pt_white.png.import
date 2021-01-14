@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.s3tc.stex"
-path.etc2="res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.etc2.stex"
+path.s3tc="res://.import/pt_white.png-2bcad0f2af60058ac53eaf3cc1ebfa04.s3tc.stex"
+path.etc2="res://.import/pt_white.png-2bcad0f2af60058ac53eaf3cc1ebfa04.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/icons/blender/tux_texture.png"
-dest_files=[ "res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.s3tc.stex", "res://.import/tux_texture.png-2d042e3c8a7c69f134e9c59502c3fd2c.etc2.stex" ]
+source_file="res://assets/textures/pt_white.png"
+dest_files=[ "res://.import/pt_white.png-2bcad0f2af60058ac53eaf3cc1ebfa04.s3tc.stex", "res://.import/pt_white.png-2bcad0f2af60058ac53eaf3cc1ebfa04.etc2.stex" ]
 
 [params]
 

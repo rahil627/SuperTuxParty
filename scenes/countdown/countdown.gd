@@ -9,8 +9,10 @@ var time_left
 var timer_finished
 
 func _force_animation_update(node):
-	if node is AnimationPlayer:
-		node.seek(0, true)
+	if node is AnimationPlayer and node.is_playing():
+		node.seek(node.current_animation_position, true)
+	if node is AnimationTree and node.active:
+		node.advance(0)
 
 	for child in node.get_children():
 		_force_animation_update(child)
