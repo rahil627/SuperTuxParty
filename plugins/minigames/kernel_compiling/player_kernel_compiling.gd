@@ -1,6 +1,6 @@
 extends Spatial
 
-const NEEDED_BUTTON_PRESSES := 50
+var NEEDED_BUTTON_PRESSES := 25 if Global.minigame_state.minigame_type != Global.MINIGAME_TYPES.TWO_VS_TWO else 50
 var AI_MIN_WAIT_TIME: float
 var AI_MAX_WAIT_TIME: float
 
