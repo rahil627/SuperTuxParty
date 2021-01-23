@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/pause_menu.gd" type="Script" id=2]
@@ -8,6 +8,20 @@
 [ext_resource path="res://scenes/menus/options_menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/menus/main_menu_bg.shader" type="Shader" id=7]
 [ext_resource path="res://assets/icons/cookie-grayscale.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.654902, 0.12549, 0.12549, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.654902, 0.12549, 0.12549, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.352941, 0.788235, 0.866667, 1 )
@@ -28,6 +42,7 @@ margin_top = -300.0
 margin_right = 220.0
 margin_bottom = 300.0
 theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 3 )
 popup_exclusive = true
 script = ExtResource( 2 )
 
@@ -36,10 +51,13 @@ anchor_left = 0.1
 anchor_top = 0.1
 anchor_right = 0.9
 anchor_bottom = 0.9
-margin_left = -48.6
-margin_top = -56.0
-margin_right = 48.6
-margin_bottom = 56.0
+margin_left = -51.8
+margin_top = -60.0
+margin_right = 51.8
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Container"]
 margin_right = 518.0
@@ -52,45 +70,45 @@ align = 1
 clip_text = true
 
 [node name="Resume" parent="Container" instance=ExtResource( 4 )]
-margin_top = 99.0
+margin_top = 100.0
 margin_right = 518.0
-margin_bottom = 194.0
+margin_bottom = 197.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_RESUME"
 clip_text = true
 
 [node name="Options" parent="Container" instance=ExtResource( 4 )]
-margin_top = 198.0
+margin_top = 201.0
 margin_right = 518.0
-margin_bottom = 294.0
+margin_bottom = 297.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS"
 clip_text = true
 
 [node name="SaveGame" parent="Container" instance=ExtResource( 4 )]
-margin_top = 298.0
+margin_top = 301.0
 margin_right = 518.0
-margin_bottom = 393.0
+margin_bottom = 398.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_IO_SAVE_GAME"
 clip_text = true
 
 [node name="ExitMenu" parent="Container" instance=ExtResource( 4 )]
-margin_top = 397.0
+margin_top = 402.0
 margin_right = 518.0
-margin_bottom = 492.0
+margin_bottom = 499.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_RETURN_MENU"
 clip_text = true
 
 [node name="ExitDesktop" parent="Container" instance=ExtResource( 4 )]
-margin_top = 496.0
+margin_top = 503.0
 margin_right = 518.0
-margin_bottom = 592.0
+margin_bottom = 600.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_DESKTOP"
@@ -102,9 +120,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -259.0
-margin_top = -296.0
+margin_top = -300.0
 margin_right = 259.0
-margin_bottom = 296.0
+margin_bottom = 300.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 4 )
 window_title = "MENU_IO_SAVE_GAME"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SavegameNameInput"]
@@ -116,7 +136,7 @@ margin_right = -8.0
 margin_bottom = -8.0
 
 [node name="Label" type="Label" parent="SavegameNameInput/VBoxContainer"]
-margin_right = 389.0
+margin_right = 502.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_IO_ENTER_SAVEGAME_NAME"
@@ -124,15 +144,15 @@ align = 1
 
 [node name="LineEdit" type="LineEdit" parent="SavegameNameInput/VBoxContainer"]
 margin_top = 33.0
-margin_right = 389.0
+margin_right = 502.0
 margin_bottom = 70.0
 custom_fonts/font = ExtResource( 5 )
 context_menu_enabled = false
 
 [node name="Button" parent="SavegameNameInput/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 74.0
-margin_right = 389.0
-margin_bottom = 107.0
+margin_right = 502.0
+margin_bottom = 105.0
 custom_fonts/font = ExtResource( 5 )
 disabled = true
 text = "MENU_IO_SAVE"
@@ -143,9 +163,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -259.0
-margin_top = -296.0
+margin_top = -300.0
 margin_right = 259.0
-margin_bottom = 296.0
+margin_bottom = 300.0
 window_title = "Bitte bestätigen..."
 dialog_text = "Another save has the same name. Do you want to override it?"
 
@@ -179,6 +199,7 @@ anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 8 )
 stretch_mode = 2
+
 [connection signal="pressed" from="Container/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Container/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Container/SaveGame" to="." method="_on_SaveGame_pressed"]

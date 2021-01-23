@@ -263,7 +263,7 @@ msgstr ""
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr ""
 
-msgid "MENU_LABEL_TITLE"
+msgid "MENU_LABEL_BOARD_SETTINGS"
 msgstr ""
 
 msgid "MENU_LABEL_TRY"

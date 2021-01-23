@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/menus/main_menu.gd" type="Script" id=2]
@@ -15,29 +15,485 @@
 [ext_resource path="res://assets/textures/title/Title.png" type="Texture" id=14]
 [ext_resource path="res://assets/icons/off.png" type="Texture" id=16]
 
-[sub_resource type="InputEventAction" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "BoardSettings"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoardSettings/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.6 ),
+"transitions": PoolRealArray( 5.46415, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoardSettings/Options:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 385, -299 ), Vector2( 385, 224 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BoardSettings/Start:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 484, 723.5 ), Vector2( 484, 473.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BoardSettings/Start:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 310, 33 ), Vector2( 310, 33 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BoardSettings/Back:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 510, 33 ), Vector2( 510, 33 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BoardSettings/Back:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 384, 773.5 ), Vector2( 384, 523.5 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("LoadGameMenu/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LoadGameMenu/Back:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -901, 397 ), Vector2( 0, 397 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LoadGameMenu/ScrollContainer:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -913, 183 ), Vector2( 0, 183 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LoadGameMenu/Back:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 35.0001 ), Vector2( 512, 35.0001 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMenu/Buttons:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -464, 412 ), Vector2( -464, 412 ), Vector2( 128, 412 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu/TextureRect:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, -248 ), Vector2( 128, -248 ), Vector2( 128, 152 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SelectionPlayers/Title:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SelectionBoard/Title:percent_visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SelectionPlayers/Buttons:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -900, 200 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SelectionBoard/ScrollContainer:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -900, 120 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("BoardSettings/Title:percent_visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BoardSettings/Start:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 484, 723.5 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BoardSettings/Back:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 384, 773.5 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("BoardSettings/Options:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 385, -299 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("OptionsMenu/OptionsMenu:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1018, -133.5 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("OptionsMenu/Title:percent_visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("SelectionBoard/Back:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -920, 277 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("SelectionChar/Buttons:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -900, 200 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("SelectionChar/Title:percent_visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("LoadGameMenu/Back:rect_position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -901, 397 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "OptionsMenu"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("OptionsMenu/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("OptionsMenu/OptionsMenu:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1018, -133.5 ), Vector2( 0, -133.5 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("SelectionBoard/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SelectionBoard/ScrollContainer:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -900, 120 ), Vector2( 0, 120 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SelectionBoard/Back:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -920, 277 ), Vector2( 0, 277 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SelectionBoard/Back:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 35 ), Vector2( 512, 35 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("SelectionChar/Title:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SelectionChar/Buttons:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -900, 200 ), Vector2( 0, 200 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("SelectionPlayers/Buttons:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -900, 200 ), Vector2( 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SelectionPlayers/Title:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="InputEventAction" id=8]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 1 )
+[sub_resource type="ShortCut" id=9]
+shortcut = SubResource( 8 )
 
-[sub_resource type="InputEventAction" id=3]
+[sub_resource type="InputEventAction" id=10]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=4]
-shortcut = SubResource( 3 )
+[sub_resource type="ShortCut" id=11]
+shortcut = SubResource( 10 )
 
-[sub_resource type="InputEventAction" id=5]
+[sub_resource type="InputEventAction" id=12]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=6]
-shortcut = SubResource( 5 )
+[sub_resource type="ShortCut" id=13]
+shortcut = SubResource( 12 )
 
-[sub_resource type="InputEventAction" id=7]
+[sub_resource type="InputEventAction" id=14]
 action = "ui_cancel"
 
-[sub_resource type="ShortCut" id=8]
-shortcut = SubResource( 7 )
+[sub_resource type="ShortCut" id=15]
+shortcut = SubResource( 14 )
 
 [node name="Menus" type="Control"]
 anchor_right = 1.0
@@ -49,6 +505,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "MainMenu"
+anims/BoardSettings = SubResource( 1 )
+anims/LoadGameMenu = SubResource( 2 )
+anims/MainMenu = SubResource( 3 )
+anims/OptionsMenu = SubResource( 4 )
+anims/SelectionBoard = SubResource( 5 )
+anims/SelectionChar = SubResource( 6 )
+anims/SelectionPlayers = SubResource( 7 )
+
 [node name="MainMenu" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -58,20 +524,6 @@ margin_left = -640.0
 margin_top = -360.0
 margin_right = 640.0
 margin_bottom = 360.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="MainMenu"]
-anchor_right = 1.0
-margin_top = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-custom_fonts/font = ExtResource( 3 )
-text = "MENU_LABEL_TITLE"
-align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,7 +545,7 @@ anchor_bottom = 1.0
 margin_left = 128.0
 margin_top = 412.0
 margin_right = 633.0
-margin_bottom = -208.0
+margin_bottom = -136.0
 rect_min_size = Vector2( 400, 100 )
 columns = 2
 __meta__ = {
@@ -145,9 +597,9 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -564.0
+margin_left = -562.0
 margin_top = 104.0
-margin_right = -52.0
+margin_right = -50.0
 margin_bottom = -104.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -190,10 +642,16 @@ margin_left = -256.0
 margin_top = -216.0
 margin_right = 256.0
 margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="SelectionPlayers"]
 anchor_right = 1.0
-margin_top = 40.0
+margin_left = -81.0
+margin_top = -9.0
+margin_right = 81.0
+margin_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -201,12 +659,19 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_SELECT_NUM_PLAYERS"
 align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Buttons" type="VBoxContainer" parent="SelectionPlayers"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 200.0
 custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VScrollBar" type="ScrollContainer" parent="SelectionPlayers/Buttons"]
 margin_right = 512.0
@@ -223,7 +688,7 @@ columns = 2
 
 [node name="One" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
 margin_right = 254.0
-margin_bottom = 33.0
+margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
@@ -232,16 +697,16 @@ text = "MENU_LABEL_NUM_1"
 [node name="Two" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
 margin_left = 258.0
 margin_right = 512.0
-margin_bottom = 33.0
+margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NUM_2"
 
 [node name="Three" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
-margin_top = 37.0
+margin_top = 35.0
 margin_right = 254.0
-margin_bottom = 70.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
@@ -249,9 +714,9 @@ text = "MENU_LABEL_NUM_3"
 
 [node name="Four" parent="SelectionPlayers/Buttons/VScrollBar/Grid" instance=ExtResource( 4 )]
 margin_left = 258.0
-margin_top = 37.0
+margin_top = 35.0
 margin_right = 512.0
-margin_bottom = 70.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
@@ -260,10 +725,10 @@ text = "MENU_LABEL_NUM_4"
 [node name="Back" parent="SelectionPlayers/Buttons" instance=ExtResource( 4 )]
 margin_top = 105.0
 margin_right = 512.0
-margin_bottom = 138.0
+margin_bottom = 136.0
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 2 )
+shortcut = SubResource( 9 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -277,6 +742,9 @@ margin_left = -256.0
 margin_top = -216.0
 margin_right = 256.0
 margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="SelectionChar"]
 anchor_right = 1.0
@@ -288,12 +756,18 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Buttons" type="VBoxContainer" parent="SelectionChar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 200.0
 custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VScrollBar" type="ScrollContainer" parent="SelectionChar/Buttons"]
 margin_right = 512.0
@@ -310,10 +784,10 @@ columns = 2
 [node name="Back" parent="SelectionChar/Buttons" instance=ExtResource( 4 )]
 margin_top = 105.0
 margin_right = 512.0
-margin_bottom = 138.0
+margin_bottom = 136.0
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 4 )
+shortcut = SubResource( 11 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -324,13 +798,22 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -256.0
-margin_top = -216.0
+margin_top = -184.0
 margin_right = 256.0
-margin_bottom = 216.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="SelectionBoard"]
-anchor_right = 1.0
-margin_top = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.5
+margin_top = -196.0
+margin_right = 267.5
+margin_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -338,14 +821,20 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_SELECT_BOARD"
 align = 1
+percent_visible = 0.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SelectionBoard"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -900.0
 margin_top = 120.0
-margin_bottom = -158.0
+margin_right = -900.0
+margin_bottom = -52.0
 rect_min_size = Vector2( 512, 140 )
 scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Buttons" type="VBoxContainer" parent="SelectionBoard/ScrollContainer"]
 margin_right = 512.0
@@ -356,82 +845,13 @@ custom_constants/separation = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -920.0
 margin_top = -35.0
-margin_right = 0.0
+margin_right = -920.0
 margin_bottom = 0.0
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 6 )
-text = "MENU_LABEL_BACK"
-custom_click = "res://assets/sounds/ui/click2.wav"
-
-[node name="OptionsMenu" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="OptionsMenu"]
-anchor_right = 1.0
-margin_bottom = 58.0
-grow_horizontal = 2
-grow_vertical = 2
-custom_fonts/font = ExtResource( 3 )
-text = "MENU_OPTIONS"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 6 )]
-margin_top = -133.5
-margin_bottom = 133.5
-
-[node name="LoadGameMenu" type="Control" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = -216.0
-margin_right = 256.0
-margin_bottom = 216.0
-
-[node name="Title" type="Label" parent="LoadGameMenu"]
-anchor_right = 1.0
-margin_top = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-custom_fonts/font = ExtResource( 3 )
-text = "MENU_IO_LOAD_GAME"
-align = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="LoadGameMenu"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 183.0
-margin_bottom = -49.0
-scroll_horizontal_enabled = false
-
-[node name="Saves" type="VBoxContainer" parent="LoadGameMenu/ScrollContainer"]
-margin_right = 512.0
-rect_min_size = Vector2( 512, 0 )
-
-[node name="Back" parent="LoadGameMenu" instance=ExtResource( 4 )]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -35.0
-margin_right = 0.0
-margin_bottom = 0.0
-custom_fonts/font = ExtResource( 5 )
-shortcut_in_tooltip = false
-shortcut = SubResource( 8 )
+shortcut = SubResource( 13 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -439,6 +859,31 @@ custom_click = "res://assets/sounds/ui/click2.wav"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="BoardSettings"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -364.0
+margin_top = -249.0
+margin_right = 364.0
+margin_bottom = -191.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+text = "MENU_LABEL_BOARD_SETTINGS"
+align = 1
+percent_visible = 0.369268
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Options" type="VBoxContainer" parent="BoardSettings"]
 anchor_left = 0.5
@@ -446,10 +891,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -255.0
-margin_top = -200.0
+margin_top = -136.0
 margin_right = 255.0
-margin_bottom = 100.0
+margin_bottom = 164.002
 custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CakeCost" type="Control" parent="BoardSettings/Options"]
 margin_right = 510.0
@@ -531,40 +979,50 @@ grow_horizontal = 0
 text = "DIFFICULTY_NORMAL"
 items = [ "DIFFICULTY_EASY", null, false, 0, null, "DIFFICULTY_NORMAL", null, false, 1, null, "DIFFICULTY_HARD", null, false, 2, null ]
 selected = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Spacer" type="Control" parent="BoardSettings/Options"]
+[node name="Spacer" type="Label" parent="BoardSettings/Options"]
 margin_top = 150.0
 margin_right = 510.0
-margin_bottom = 210.0
-rect_min_size = Vector2( 0, 60 )
+margin_bottom = 243.0
+text = "
 
-[node name="Award" type="VBoxContainer" parent="BoardSettings/Options"]
-margin_top = 220.0
+"
+
+[node name="Award" type="Control" parent="BoardSettings/Options"]
+margin_top = 253.0
 margin_right = 510.0
-margin_bottom = 286.0
+margin_bottom = 253.0
 
 [node name="LabelAward" type="Label" parent="BoardSettings/Options/Award"]
-margin_right = 510.0
-margin_bottom = 29.0
+margin_top = -74.0
+margin_right = 295.0
+margin_bottom = -45.0
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_REWARD_SYSTEM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AwardType" parent="BoardSettings/Options/Award" instance=ExtResource( 7 )]
-margin_top = 33.0
+margin_left = 303.0
+margin_top = -72.5
 margin_right = 510.0
-margin_bottom = 66.0
+margin_bottom = -41.5
 
 [node name="Start" parent="BoardSettings" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 484.0
-margin_top = -229.0
+margin_top = -246.5
 margin_right = -486.0
-margin_bottom = -196.0
+margin_bottom = -213.5
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 8 )
+shortcut = SubResource( 15 )
 text = "MENU_LABEL_PLAY"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -573,12 +1031,96 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 384.0
-margin_top = -179.0
+margin_top = -196.5
 margin_right = -386.0
-margin_bottom = -146.0
+margin_bottom = -163.5
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 8 )
+shortcut = SubResource( 15 )
+text = "MENU_LABEL_BACK"
+custom_click = "res://assets/sounds/ui/click2.wav"
+
+[node name="OptionsMenu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="OptionsMenu"]
+anchor_right = 1.0
+margin_top = 100.0
+margin_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+text = "MENU_OPTIONS"
+align = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsMenu" parent="OptionsMenu" instance=ExtResource( 6 )]
+margin_left = -1018.0
+margin_top = -133.5
+margin_right = -1018.0
+margin_bottom = 133.5
+
+[node name="LoadGameMenu" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -216.0
+margin_right = 256.0
+margin_bottom = 216.0
+
+[node name="Title" type="Label" parent="LoadGameMenu"]
+anchor_right = 1.0
+margin_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+text = "MENU_IO_LOAD_GAME"
+align = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LoadGameMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -913.0
+margin_top = 183.0
+margin_right = -898.0
+margin_bottom = -49.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Saves" type="VBoxContainer" parent="LoadGameMenu/ScrollContainer"]
+margin_right = 512.0
+rect_min_size = Vector2( 512, 0 )
+
+[node name="Back" parent="LoadGameMenu" instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -901.0
+margin_top = -35.0
+margin_right = -901.0
+margin_bottom = 9.15527e-05
+custom_fonts/font = ExtResource( 5 )
+shortcut_in_tooltip = false
+shortcut = SubResource( 15 )
 text = "MENU_LABEL_BACK"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -586,25 +1128,28 @@ custom_click = "res://assets/sounds/ui/click2.wav"
 visible = false
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 264.0
+margin_right = 333.0
 margin_bottom = 136.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Name" type="LineEdit" parent="PlayerInfo1"]
-margin_right = 256.0
+margin_right = 325.0
 margin_bottom = 37.0
 custom_fonts/font = ExtResource( 5 )
 text = "Player 1"
 
 [node name="Character" type="Label" parent="PlayerInfo1"]
 margin_top = 41.0
-margin_right = 256.0
+margin_right = 325.0
 margin_bottom = 70.0
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_CHARACTER"
 
 [node name="Ready" type="Label" parent="PlayerInfo1"]
 margin_top = 74.0
-margin_right = 256.0
+margin_right = 325.0
 margin_bottom = 103.0
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
@@ -615,11 +1160,14 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -264.0
 margin_top = 8.0
-margin_right = -8.0
+margin_right = 61.0
 margin_bottom = 136.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Name" type="LineEdit" parent="PlayerInfo2"]
-margin_right = 256.0
+margin_right = 325.0
 margin_bottom = 37.0
 custom_fonts/font = ExtResource( 5 )
 text = "Player 2"
@@ -627,7 +1175,7 @@ align = 2
 
 [node name="Character" type="Label" parent="PlayerInfo2"]
 margin_top = 41.0
-margin_right = 256.0
+margin_right = 325.0
 margin_bottom = 70.0
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_CHARACTER"
@@ -635,7 +1183,7 @@ align = 2
 
 [node name="Ready" type="Label" parent="PlayerInfo2"]
 margin_top = 74.0
-margin_right = 256.0
+margin_right = 325.0
 margin_bottom = 103.0
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_LABEL_NOT_READY_ELLIPSIS"
@@ -724,11 +1272,13 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 bus = "Music"
+
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Screenshots" to="." method="_on_Screenshots_pressed"]
+[connection signal="animation_finished" from="MainMenu/ViewportContainer/Viewport/tux/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/One" to="." method="_select_player_amount" binds= [ 1 ]]
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Two" to="." method="_select_player_amount" binds= [ 2 ]]
 [connection signal="pressed" from="SelectionPlayers/Buttons/VScrollBar/Grid/Three" to="." method="_select_player_amount" binds= [ 3 ]]
@@ -736,7 +1286,7 @@ bus = "Music"
 [connection signal="pressed" from="SelectionPlayers/Buttons/Back" to="." method="_on_Amount_Of_Players_Back_pressed"]
 [connection signal="pressed" from="SelectionChar/Buttons/Back" to="." method="_on_SelectionChar_Back_pressed"]
 [connection signal="pressed" from="SelectionBoard/Back" to="." method="_on_Selection_Back_pressed"]
-[connection signal="quit" from="OptionsMenu/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
-[connection signal="pressed" from="LoadGameMenu/Back" to="." method="_on_LoadGame_Back_pressed"]
 [connection signal="pressed" from="BoardSettings/Start" to="." method="_on_BoardSettings_Start_pressed"]
 [connection signal="pressed" from="BoardSettings/Back" to="." method="_on_BoardSettings_Back_pressed"]
+[connection signal="quit" from="OptionsMenu/OptionsMenu" to="." method="_on_OptionsMenu_quit"]
+[connection signal="pressed" from="LoadGameMenu/Back" to="." method="_on_LoadGame_Back_pressed"]

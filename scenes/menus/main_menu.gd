@@ -99,13 +99,23 @@ func load_characters() -> void:
 #*** Options menu ***#
 
 func _on_Options_pressed() -> void:
-	$MainMenu.hide()
+	$Animation.play_backwards("MainMenu")
+	yield($Animation, "animation_finished")
+	$MainMenu/Buttons.hide()
+	$MainMenu/ViewportContainer.hide()
 	$OptionsMenu.show()
+	$Animation.play("OptionsMenu")
 	$OptionsMenu/OptionsMenu/Menu/Back.grab_focus()
 
 func _on_OptionsMenu_quit() -> void:
-	$MainMenu.show()
+	$OptionsMenu/OptionsMenu/Menu/Back.disabled = true
+	$Animation.play_backwards("OptionsMenu")
+	yield($Animation, "animation_finished")
 	$OptionsMenu.hide()
+	$MainMenu/Buttons.show()
+	$OptionsMenu/OptionsMenu/Menu/Back.disabled = false
+	$MainMenu/ViewportContainer.show()
+	$Animation.play("MainMenu")
 	$MainMenu/Buttons/Options.grab_focus()
 
 #*** Amount of players menu ***#
@@ -115,21 +125,32 @@ func _select_player_amount(players) -> void:
 	for i in range(1, human_players + 1):
 		get_node("PlayerInfo" + var2str(i)).show()
 
+	$Animation.play_backwards("SelectionPlayers")
+	yield($Animation, "animation_finished")
 	$SelectionPlayers.hide()
 	$SelectionChar.show()
+	$Animation.play("SelectionChar")
 	if $SelectionChar/Buttons/VScrollBar/Grid.get_child_count() > 0:
 		$SelectionChar/Buttons/VScrollBar/Grid.get_child(0).grab_focus()
 	else:
 		$SelectionChar/Buttons/Back.grab_focus()
 
 func _on_Play_pressed() -> void:
-	$MainMenu.hide()
+	$Animation.play_backwards("MainMenu")
+	yield($Animation, "animation_finished")
+	$MainMenu/Buttons.hide()
 	$SelectionPlayers.show()
+	$Animation.play("SelectionPlayers")
 	$SelectionPlayers/Buttons/VScrollBar/Grid/One.grab_focus()
 
 func _on_Amount_Of_Players_Back_pressed() -> void:
+	$SelectionPlayers/Buttons/Back.disabled = true
+	$Animation.play_backwards("SelectionPlayers")
+	yield($Animation, "animation_finished")
 	$SelectionPlayers.hide()
-	$MainMenu.show()
+	$MainMenu/Buttons.show()
+	$SelectionPlayers/Buttons/Back.disabled = false
+	$Animation.play("MainMenu")
 	$MainMenu/Buttons/Play.grab_focus()
 
 #*** Character selection menu ***#
@@ -173,8 +194,11 @@ func _on_character_select(target: Button) -> void:
 	if current_player > human_players:
 		prepare_player_states()
 
+		$Animation.play_backwards("SelectionChar")
+		yield($Animation, "animation_finished")
 		$SelectionChar.hide()
 		$SelectionBoard.show()
+		$Animation.play("SelectionBoard")
 		if $SelectionBoard/ScrollContainer/Buttons.get_child_count() > 0:
 			$SelectionBoard/ScrollContainer/Buttons.get_child(0).grab_focus()
 		else:
@@ -184,8 +208,13 @@ func _on_character_select(target: Button) -> void:
 			tr("MENU_LABEL_SELECT_CHARACTER_PLAYER_" + var2str(current_player))
 
 func _on_SelectionChar_Back_pressed() -> void:
+	$SelectionChar/Buttons/Back.disabled = true
+	$Animation.play_backwards("SelectionChar")
+	yield($Animation, "animation_finished")
 	$SelectionChar.hide()
 	$SelectionPlayers.show()
+	$SelectionChar/Buttons/Back.disabled = false
+	$Animation.play("SelectionPlayers")
 	$SelectionPlayers/Buttons/VScrollBar/Grid/One.grab_focus()
 
 	current_player = 1
@@ -208,8 +237,11 @@ func _on_SelectionChar_Back_pressed() -> void:
 func _on_board_select(target: Button) -> void:
 	board = board_loader.get_board_path(target.get_text())
 
+	$Animation.play_backwards("SelectionBoard")
+	yield($Animation, "animation_finished")
 	$SelectionBoard.hide()
 	$BoardSettings.show()
+	$Animation.play("BoardSettings")
 	$BoardSettings/Start.grab_focus()
 
 	var cake_cost: int = 30
@@ -233,7 +265,12 @@ func _on_board_select(target: Button) -> void:
 	$BoardSettings/Options/Turns/SpinBox.value = turns
 
 func _on_Selection_Back_pressed() -> void:
+	$SelectionBoard/Back.disabled = true
+	$Animation.play_backwards("SelectionBoard")
+	yield($Animation, "animation_finished")
 	$SelectionBoard.hide()
+	$SelectionBoard/Back.disabled = false
+	$Animation.play("SelectionChar")
 	current_player = 1;
 	$SelectionChar/Title.text = tr("MENU_LABEL_SELECT_CHARACTER_PLAYER_1")
 
@@ -272,8 +309,11 @@ func _on_Load_pressed() -> void:
 
 		$LoadGameMenu/ScrollContainer/Saves.add_child(savegame_entry)
 
-	$MainMenu.hide()
+	$Animation.play_backwards("MainMenu")
+	yield($Animation, "animation_finished")
+	$MainMenu/Buttons.hide()
 	$LoadGameMenu.show()
+	$Animation.play("LoadGameMenu")
 	if $LoadGameMenu/ScrollContainer/Saves.get_child_count() > 0:
 			$LoadGameMenu/ScrollContainer/Saves.\
 					get_child(0).get_child(0).grab_focus()
@@ -304,16 +344,26 @@ func _on_LoadGame_Back_pressed() -> void:
 	for i in $LoadGameMenu/ScrollContainer/Saves.get_children():
 		i.queue_free()
 
+	$LoadGameMenu/Back.disabled = true
+	$Animation.play_backwards("LoadGameMenu")
+	yield($Animation, "animation_finished")
 	$LoadGameMenu.hide()
-	$MainMenu.show()
+	$MainMenu/Buttons.show()
+	$LoadGameMenu/Back.disabled = false
+	$Animation.play("MainMenu")
 	$MainMenu/Buttons/Load.grab_focus()
 
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_BoardSettings_Back_pressed():
+	$BoardSettings/Back.disabled = true
+	$Animation.play_backwards("BoardSettings")
+	yield($Animation, "animation_finished")
 	$BoardSettings.hide()
 	$SelectionBoard.show()
+	$BoardSettings/Back.disabled = false
+	$Animation.play("SelectionBoard")
 
 	if $SelectionBoard/ScrollContainer/Buttons.get_child_count() > 0:
 		$SelectionBoard/ScrollContainer/Buttons.get_child(0).grab_focus()
@@ -332,3 +382,9 @@ func _on_BoardSettings_Start_pressed():
 
 func _on_Screenshots_pressed():
 	OS.shell_open("file://{0}/screenshots".format([OS.get_user_data_dir()]))
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	yield(get_tree().create_timer(5), "timeout")
+	$MainMenu/ViewportContainer/Viewport/tux/AnimationPlayer.play()
+	$MainMenu/ViewportContainer/Viewport/tux/AnimationPlayer2.play()
