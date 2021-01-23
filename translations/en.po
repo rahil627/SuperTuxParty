@@ -265,6 +265,9 @@ msgstr "Select a character for player 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Select amount of players"
 
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr "Board Settings"
+
 msgid "MENU_LABEL_TITLE"
 msgstr "Super Tux Party"
 

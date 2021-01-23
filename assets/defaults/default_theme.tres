@@ -3,13 +3,13 @@
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/NotoSans/NotoSans-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/defaults/theme_icons/Off.svg" type="Texture" id=4]
-[ext_resource path="res://assets/defaults/theme_icons/Selected.svg" type="Texture" id=5]
-[ext_resource path="res://assets/defaults/theme_icons/On.svg" type="Texture" id=6]
-[ext_resource path="res://assets/defaults/theme_icons/NotSelected.svg" type="Texture" id=7]
+[ext_resource path="res://assets/defaults/theme_icons/On.svg" type="Texture" id=4]
+[ext_resource path="res://assets/defaults/theme_icons/NotSelected.svg" type="Texture" id=5]
+[ext_resource path="res://assets/defaults/theme_icons/Selected.svg" type="Texture" id=6]
+[ext_resource path="res://assets/defaults/theme_icons/Graper.svg" type="Texture" id=7]
 [ext_resource path="res://assets/defaults/theme_icons/GraberPress.svg" type="Texture" id=8]
-[ext_resource path="res://assets/defaults/theme_icons/Graper.svg" type="Texture" id=9]
-[ext_resource path="res://assets/defaults/theme_icons/Scroll.svg" type="Texture" id=10]
+[ext_resource path="res://assets/defaults/theme_icons/Scroll.svg" type="Texture" id=9]
+[ext_resource path="res://assets/defaults/theme_icons/Off.svg" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.592773, 0.211291, 0.211291, 1 )
@@ -5712,7 +5712,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id=851]
-bg_color = Color( 0.27451, 0.27451, 0.27451, 1 )
+bg_color = Color( 0.886275, 0.321569, 0.321569, 1 )
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -5819,7 +5819,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxTexture" id=861]
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 37, 113 )
 
 [sub_resource type="StyleBoxTexture" id=862]
@@ -5831,7 +5831,7 @@ texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 37, 113 )
 
 [sub_resource type="StyleBoxTexture" id=864]
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 15, 330 )
 
 [resource]
@@ -5859,10 +5859,10 @@ CheckBox/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 CheckBox/constants/check_vadjust = 0
 CheckBox/constants/hseparation = 4
 CheckBox/fonts/font = null
-CheckBox/icons/checked = ExtResource( 5 )
+CheckBox/icons/checked = ExtResource( 6 )
 CheckBox/icons/radio_checked = null
 CheckBox/icons/radio_unchecked = null
-CheckBox/icons/unchecked = ExtResource( 7 )
+CheckBox/icons/unchecked = ExtResource( 5 )
 CheckBox/styles/disabled = null
 CheckBox/styles/focus = null
 CheckBox/styles/hover = null
@@ -5876,8 +5876,8 @@ CheckButton/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = ExtResource( 4 )
-CheckButton/icons/on = ExtResource( 6 )
+CheckButton/icons/off = ExtResource( 10 )
+CheckButton/icons/on = ExtResource( 4 )
 CheckButton/styles/disabled = null
 CheckButton/styles/focus = null
 CheckButton/styles/hover = null
