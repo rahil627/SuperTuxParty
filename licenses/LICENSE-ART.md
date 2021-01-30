@@ -827,7 +827,7 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 ## plugins/minigames/kernel_compiling/room
 ### room.blend | room.glb
 
-Copyright © Florian Kothmeier with shelves and desk models by Vytautas Butėnas
+Copyright © Florian Kothmeier with shelves, lamp and desk models by Vytautas Butėnas
 
 Book model by Clint Bellanger
 Retrieved from [OpenGameArt](https://opengameart.org/content/old-fashioned-book)
