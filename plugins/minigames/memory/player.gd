@@ -64,7 +64,7 @@ func random_card(variant: int) -> Array:
 	return places[randi() % len(places)]
 
 func _ready():
-	current_card().show_player(player_id)
+	current_card().show_player(self.name)
 
 func activate():
 	if current_card().faceup:
@@ -101,7 +101,7 @@ func _process(delta):
 		return
 
 	if is_ai and not cooldown:
-		current_card().hide_player(player_id)
+		current_card().hide_player(self.name)
 		var card = card_at(ai_target_row, ai_target_column)
 		var ally_node = get_node(ally)
 		var variant = -1
@@ -122,20 +122,20 @@ func _process(delta):
 		elif ai_target_column >= 0 and ai_target_column > column:
 			column += 1
 		else:
-			current_card().show_player(player_id)
+			current_card().show_player(self.name)
 			# FIXME: GDScript has no await-keyword yet
 			# Will likely be added for 4.0, refactor this then
 			var result = activate()
 			while result is GDScriptFunctionState:
 				result = yield(result,"completed")
-		current_card().show_player(player_id)
+		current_card().show_player(self.name)
 		cooldown = 0.25
 
 func _input(event: InputEvent):
 	if blocked or cooldown:
 		return
 
-	current_card().hide_player(player_id)
+	current_card().hide_player(self.name)
 
 	var beginning := 1
 	var end := 7
@@ -158,7 +158,7 @@ func _input(event: InputEvent):
 			row += 1
 			cooldown = 0.1
 		if event.is_action_pressed("player{0}_action1".format([player_id])):
-			current_card().show_player(player_id)
+			current_card().show_player(self.name)
 			# FIXME: GDScript has no await-keyword yet
 			# Will likely be added for 4.0, refactor this then
 			var result = activate()
@@ -166,4 +166,4 @@ func _input(event: InputEvent):
 				result = yield(result,"completed")
 			cooldown = 0.1
 
-	current_card().show_player(player_id)
+	current_card().show_player(self.name)

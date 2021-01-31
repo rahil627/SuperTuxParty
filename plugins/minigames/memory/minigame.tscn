@@ -145,6 +145,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 7 )
 
 [node name="ScoreOverlay" parent="." instance=ExtResource( 4 )]
+icon = null
+startscore = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )

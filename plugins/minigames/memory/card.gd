@@ -28,7 +28,6 @@ func flip_up(color: Color = Color.white):
 	return $AnimationPlayer
 
 func flip_down():
-	faceup = false
 	$AnimationPlayer.play("flip_down")
 
 	return $AnimationPlayer
@@ -39,8 +38,12 @@ func is_animation_running() -> bool:
 func animation_player() -> AnimationPlayer:
 	return $AnimationPlayer as AnimationPlayer
 
-func show_player(player_id: int):
-	get_node("Player{0}".format([player_id])).show()
+func show_player(name: String):
+	get_node(name).show()
 
-func hide_player(player_id: int):
-	get_node("Player{0}".format([player_id])).hide()
+func hide_player(name: String):
+	get_node(name).hide()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "flip_down":
+		faceup = false
