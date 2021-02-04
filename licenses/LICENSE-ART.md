@@ -149,13 +149,13 @@ License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ### indicator.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### splash_background.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -204,14 +204,14 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### arrow_keep.png
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/board_logic/node/material
 ### tile_blue_col.png | tile_red_col.png | tile_yellow_col.png | tile_green_col.png
 
-Copyright © 2020 Florian Kothmeier 
+Copyright © 2020 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -241,21 +241,22 @@ License: [GPL 2.0](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ## scenes/menus
 ### stage.escn | stage.blend
-Copyright © 2020 Florian Kothmeier 
+
+Copyright © 2020 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/speech_dialog
 ### dialog_box.png | dialog_box_focus.png
 
-Copyright © 2019 Florian Kothmeier 
+Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## scenes/team_indicator
 ### indicator.png
 
-Copyright © 2019 Florian Kothmeier 
+Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -275,7 +276,7 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### dragon\*.escn
 
-Copyright © 2019 Florian Kothmeier 
+Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -307,7 +308,7 @@ License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/l
 ## plugins/characters/Tux
 ### tux_texture.png | tux.blend | tux.glb
 
-Copyright © 2010 durmieu 
+Copyright © 2010 durmieu
 
 Modified by Florian Kothmeier 2018
 
@@ -332,7 +333,7 @@ License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode
 ## plugins/characters/Green Tux
 ### tux_texture.png
 
-Copyright © 2010 durmieu 
+Copyright © 2010 durmieu
 
 Modified by Florian Kothmeier 2018
 
@@ -359,7 +360,7 @@ License: [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode
 ## plugins/characters/Beastie
 ### beastie_tex.png | beastie.blend | beastie.glb
 
-Copyright © 2010 durmieu 
+Copyright © 2010 durmieu
 
 Modified by Florian Kothmeier 2018
 
@@ -405,7 +406,7 @@ License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 ## plugins/items/cookie_steal_trap
 ### icon.png | icon.xcf
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -414,7 +415,7 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 ## plugins/items/dice
 ### icon.png | icon.xcf
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -427,7 +428,7 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### tux_texture.png
 
-Copyright © 2010 durmieu 
+Copyright © 2010 durmieu
 
 Modified by Florian Kothmeier 2018
 
@@ -446,7 +447,7 @@ License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 ## assets/icons
 ### icon.\* | icon-\*
 
-Copyright © 2018 Florian Kothmeier 
+Copyright © 2018 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -884,13 +885,13 @@ License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 ## assets/models/KDE Dragon
 ### dragon.blend
 
-Copyright © 2019 Florian Kothmeier 
+Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### eyes.png | Head.png | Scarf.png
 
-Copyright © 2019 Florian Kothmeier 
+Copyright © 2019 Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
@@ -1052,7 +1053,7 @@ License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
 ### tux_texture.png
 
-Copyright © 2010 durmieu 
+Copyright © 2010 durmieu
 
 Modified by Florian Kothmeier 2018
 
@@ -1069,7 +1070,7 @@ License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 ## assets/tux
 ### tux.glb
 
-Copyright © 2010 durmieu 
+Copyright © 2010 durmieu
 
 Modified by Florian Kothmeier 2018
 

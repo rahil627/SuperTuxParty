@@ -1,5 +1,7 @@
 # Releases
+
 ## Alpha Version - v0.8 - 2020-11-02
+
 ### New features
 
 - Screenshot key (Default: F2)
@@ -8,7 +10,7 @@
   - Find matching card pairs!
 - Added Sarah as the boards' host
   - Gives tutorial on first start, explaining the basic mechanics
-	- Can be skipped
+    - Can be skipped
   - Announces what happens on the board (e.g. the cake is bought and moves to another space)
 - Translation progress from our project on [Hosted Weblate](hosted.weblate.org/projects/super-tux-party)
   - Added Translation for Norwegian Bokmål (98% complete) to the game
@@ -21,8 +23,8 @@
   - New Harvest Food minigame background
   - Added furniture to Haunted Dreams minigame
   - Added a bowling alley theme to the Bowling minigame
-	- Boxes fall from the sky, stunning players hit, while also blocking the bowling ball
-	- Easier movement controls for the solo player
+    - Boxes fall from the sky, stunning players hit, while also blocking the bowling ball
+    - Easier movement controls for the solo player
   - Better and gamepad type agnostic control icons
   - Cell shaded everything
   - Hexagon board spaces
@@ -34,10 +36,10 @@
 - Fixed a bug that caused newly added human players to become AI players after leaving and starting a new game
 - The randomization algorithms avoids playing the same minigame multiple times in a row
   - Doesn't work between sessions
-- The main menu music now starts to play *after* the audio volume options are loaded
-
+- The main menu music now starts to play _after_ the audio volume options are loaded
 
 ## Alpha Version - v0.7 - 2020-04-01
+
 ### New features
 
 - Added loading screens
@@ -69,7 +71,9 @@
 - Fixed the board turns setting being ignored
 
 ## Alpha Version - v0.6 - 2019-10-29
+
 ### New features
+
 - New minigame: Haunted dreams
 - Barebone implementation of Nolok and GNU spaces
 - Added AI difficulty levels
@@ -80,6 +84,7 @@
 - Spaces can now be marked as invisible, which can be used to influence the walking path
 
 ### Improved / Changed
+
 - Added a 3D cake model
 - Improved water
 - Fixed a bug that caused the 2v2 rewardscreen to play the wrong animation if Team1 wins
@@ -88,7 +93,9 @@
 - Fixed a bug that caused the game to get stuck, when a board event from a green space was not handled
 
 ## Alpha Version - v0.5 - 2019-08-02
+
 ### New features
+
 - Support for localization in the minigame information screen
 - Support for localization in minigame descriptions
 - Translated minigames
@@ -98,6 +105,7 @@
   - The Escape from lava minigame
 
 ### Improved / Changed
+
 - Fix French language not selectable
 - Fixed the position of the minigame information screen to cover the full window
 - Improved icon quality
@@ -112,7 +120,9 @@
 - Fixed the descriptions in the main menu back buttons
 
 ## Alpha Version - v0.4 - 2019-06-08
+
 ### New features
+
 - Support for localization (except plugins)
   - Currently supported languages:
     - English
@@ -122,6 +132,7 @@
 - Team indicator in 2v2 minigames
 
 ### Improved / Changed
+
 - The main menu can now be navigated with keyboard/controller
 - The board overlay now shows the items of each player
 - Computer controlled characters now buy items in the shop
@@ -132,7 +143,9 @@
 Internally the project has switched to the new [Godot](https://godotengine.org) version 3.1
 
 ## Alpha Version - v0.3 - 2019-02-02
+
 ### New features
+
 - KDEValley, a new board
 - Escape from lava, a new minigame
 - New background for main menu
@@ -143,6 +156,7 @@ Internally the project has switched to the new [Godot](https://godotengine.org) 
 - Items can be bought in Shop Spaces (purple color)
 
 ### Improved / Changed
+
 - Each character can only be chosen once now
 - New GUI theme
 - Options can now be opened in-game
@@ -152,7 +166,9 @@ Internally the project has been restructured and switched to the
 [Git Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows).
 
 ## Alpha Version - v0.2 - 2018-10-31
+
 ### New features
+
 - Godette, Godot's unofficial mascot, as a new playable character, !53
 - Animations for all characters, !25
 - Bowling minigame, one player tries to hit the other 3 players, !63
@@ -164,12 +180,14 @@ Internally the project has been restructured and switched to the
 - Games can now be saved, !33
 
 ### Improved
+
 - Options are now saved, !54
 - Fixed a memory leak, !29
 - Improved mesh and texture for ice in Knock Off minigame, !30, !34
 - Hurdle minigame now has powerups and different hurdles, !38
 
 ## Demo Version - v0.1 - 2018-09-01
+
 - 3 playable characters
 - 2 minigames
 - 2 reward systems, winner takes all and a linear one
