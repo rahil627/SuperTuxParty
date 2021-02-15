@@ -37,6 +37,10 @@ run/main_scene="res://scenes/menus/main_menu.tscn"
 config/project_settings_override="user://render_settings.godot"
 config/icon="res://assets/icons/icon-smallest.png"
 
+[audio]
+
+default_bus_layout="res://assets/defaults/default_bus_layout.tres"
+
 [autoload]
 
 Utility="*res://scripts/utility.gd"
@@ -60,7 +64,6 @@ window/size/width=1280
 window/size/height=720
 window/dpi/allow_hidpi=true
 window/vsync/use_vsync=false
-window/stretch/mode="2d"
 
 [editor_plugins]
 
