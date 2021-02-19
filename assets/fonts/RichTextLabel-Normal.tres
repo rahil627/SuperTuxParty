@@ -1,7 +1,7 @@
 [gd_resource type="DynamicFont" load_steps=3 format=2]
 
 [ext_resource path="res://assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/fonts/NotoSans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Fallback/LiberationSans-Regular.ttf" type="DynamicFontData" id=2]
 
 [resource]
 size = 15
