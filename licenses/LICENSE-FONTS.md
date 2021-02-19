@@ -20,9 +20,9 @@ This license is copied below, and is also available with a FAQ at:
 
 See assets/fonts/OFL for full license.
 
-## assets/fonts/NotoSans/
+## assets/fonts/Fallback/
 ### *.ttf
-Copyright (c) Google
-Retrieved from [Google fonts](https://fonts.google.com/specimen/Noto+Sans)
+(c) 2010 Google Corporation. Copyright (c) 2012 Red Hat, Inc.
+Retrieved from [https://github.com/liberationfonts/liberation-fonts](https://github.com/liberationfonts/liberation-fonts)
 
 Licensed: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
