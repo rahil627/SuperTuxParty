@@ -490,14 +490,6 @@ Retrieved from [FreeSound](https://freesound.org/people/Splashdust/sounds/84322/
 
 License: [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-### 342751__rhodesmas__coins-purchase-3.wav
-
-Public Domain by rhodesmas
-
-Retrieved from [FreeSound](https://freesound.org/people/rhodesmas/sounds/342751/)
-
-License: [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/legalcode)
-
 ## plugins/minigames/memory/cards
 ### card_\*.png
 
@@ -811,18 +803,46 @@ Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-### panel.blend | panel.escn
+### tilesetOpenGameBackground.png
+Copyright © PauR
+
+Retrieved form [OpenGameArt](https://opengameart.org/content/large-nature-background)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/kernel_compiling/screen
+### screen.blend | screen.glb | progress.blend | progress.glb | fill.png
 
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## plugins/minigames/kernel_compiling/battery
-### battery.blend | tex_empty.png | tex_full.png
+### laptop.blend | laptop.glb
 
-Copyright © Florian Kothmeier
+Copyright © Clint Bellanger
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/laptop)
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+## plugins/minigames/kernel_compiling/room
+### room.blend | room.glb
+
+Copyright © Florian Kothmeier with shelves, lamp and desk models by Vytautas Butėnas
+
+Book model by Clint Bellanger
+Retrieved from [OpenGameArt](https://opengameart.org/content/old-fashioned-book)
+Book model License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### book3.png
+
+Copyright © RayB2
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/old-fashioned-book)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
 ## plugins/minigames/kernel_compiling/background
 ### background.blend | background.jpg
@@ -830,42 +850,6 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 Copyright © Florian Kothmeier
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-## plugins/minigames/kernel_compiling/background/[4K]Concrete16
-### \*.jpg
-
-Public Domain by StruffelProductions
-
-Retrived from [CC0 Textures](https://cc0textures.com/home)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-## plugins/minigames/kernel_compiling/background/[4K]Fabric04
-### \*.jpg
-
-Public Domain by StruffelProductions
-
-Retrived from [CC0 Textures](https://cc0textures.com/home)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-## plugins/minigames/kernel_compiling/[4K]Plastic04
-### \*.jpg
-
-Public Domain by StruffelProductions
-
-Retrived from [CC0 Textures](https://cc0textures.com/home)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
-
-## plugins/minigames/kernel_compiling/[4K]Paint01
-### \*.jpg
-
-Public Domain by StruffelProductions
-
-Retrived from [CC0 Textures](https://cc0textures.com/home)
-
-License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ## assets/models/screen
 ### screen.blend | screen.escn
@@ -973,7 +957,14 @@ License: [MIT](https://github.com/Maujoe/godot-flow-map-shader/blob/master/LICEN
 ### painted_wall.png
 Public domain by XCVG
 
-Retrieved from [OpnGameArt](https://opengameart.org/content/wall/paint/and/colors)
+Retrieved from [OpnGameArt](https://opengameart.org/content/wall-paint-and-colors)
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+### pt_white.png
+Public domain by XCVG
+
+Retrieved from [OpnGameArt](https://opengameart.org/content/wall-paint-and-colors)
 
 License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
@@ -1000,6 +991,11 @@ Copyright © Florian Kothmeier
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ### metal.png
+Copyright © Florian Kothmeier
+
+License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
+### wrong.png
 Copyright © Florian Kothmeier
 
 License: [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)

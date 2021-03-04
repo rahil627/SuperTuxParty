@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://plugins/characters/Beastie/beastie.glb" type="PackedScene" id=1]
 [ext_resource path="res://scripts/character.gd" type="Script" id=2]
@@ -78,55 +78,56 @@ animation = "run-loop"
 animation = "sad-loop"
 
 [sub_resource type="AnimationNodeAnimation" id=12]
-animation = "stun-begin"
+animation = "sit"
 
 [sub_resource type="AnimationNodeAnimation" id=13]
+animation = "stun-begin"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "stun-end"
 
-[sub_resource type="AnimationNodeAdd2" id=14]
-
-[sub_resource type="AnimationNodeAnimation" id=15]
-animation = "stun"
+[sub_resource type="AnimationNodeAdd2" id=15]
 
 [sub_resource type="AnimationNodeAnimation" id=16]
+animation = "stun"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "stun-loop"
 
-[sub_resource type="AnimationNodeBlendTree" id=17]
+[sub_resource type="AnimationNodeBlendTree" id=18]
 graph_offset = Vector2( -200, 142.5 )
-nodes/Add2/node = SubResource( 14 )
+nodes/Add2/node = SubResource( 15 )
 nodes/Add2/position = Vector2( 80, 140 )
-nodes/Animation/node = SubResource( 16 )
+nodes/Animation/node = SubResource( 17 )
 nodes/Animation/position = Vector2( -120, 160 )
-"nodes/Animation 2/node" = SubResource( 15 )
+"nodes/Animation 2/node" = SubResource( 16 )
 "nodes/Animation 2/position" = Vector2( -120, 280 )
 node_connections = [ "output", 0, "Add2", "Add2", 0, "Animation", "Add2", 1, "Animation 2" ]
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "stun_sprite_invisible"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "stun_sprite_visible"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=21]
 animation = "walk-loop"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 
@@ -137,14 +138,14 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=31]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=32]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=33]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=34]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
@@ -156,7 +157,13 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 
-[sub_resource type="AnimationNodeStateMachine" id=41]
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachine" id=44]
 states/happy/node = SubResource( 5 )
 states/happy/position = Vector2( 662, -7.14 )
 states/idle/node = SubResource( 6 )
@@ -171,23 +178,25 @@ states/run/node = SubResource( 10 )
 states/run/position = Vector2( 151, 243.86 )
 states/sad/node = SubResource( 11 )
 states/sad/position = Vector2( 522, -62.14 )
-states/stun/node = SubResource( 17 )
+states/sit/node = SubResource( 12 )
+states/sit/position = Vector2( 532.686, 81.117 )
+states/stun/node = SubResource( 18 )
 states/stun/position = Vector2( 796, 260 )
-states/stun-begin/node = SubResource( 12 )
+states/stun-begin/node = SubResource( 13 )
 states/stun-begin/position = Vector2( 642, 260 )
-states/stun-end/node = SubResource( 13 )
+states/stun-end/node = SubResource( 14 )
 states/stun-end/position = Vector2( 508, 157 )
-states/stun_sprite_invisible/node = SubResource( 18 )
+states/stun_sprite_invisible/node = SubResource( 19 )
 states/stun_sprite_invisible/position = Vector2( 771, 157 )
-states/stun_sprite_visible/node = SubResource( 19 )
+states/stun_sprite_visible/node = SubResource( 20 )
 states/stun_sprite_visible/position = Vector2( 428, 260 )
-states/walk/node = SubResource( 20 )
+states/walk/node = SubResource( 21 )
 states/walk/position = Vector2( 37, 165.86 )
-transitions = [ "stun-end", "idle", SubResource( 21 ), "stun", "stun_sprite_invisible", SubResource( 22 ), "stun_sprite_invisible", "stun-end", SubResource( 23 ), "idle", "stun_sprite_visible", SubResource( 24 ), "stun_sprite_visible", "stun-begin", SubResource( 25 ), "stun-begin", "stun", SubResource( 26 ), "idle", "sad", SubResource( 27 ), "sad", "idle", SubResource( 28 ), "idle", "happy", SubResource( 29 ), "happy", "idle", SubResource( 30 ), "idle", "punch", SubResource( 31 ), "punch", "idle", SubResource( 32 ), "idle", "kick", SubResource( 33 ), "kick", "idle", SubResource( 34 ), "idle", "jump", SubResource( 35 ), "jump", "idle", SubResource( 36 ), "idle", "walk", SubResource( 37 ), "walk", "idle", SubResource( 38 ), "idle", "run", SubResource( 39 ), "run", "idle", SubResource( 40 ) ]
+transitions = [ "stun-end", "idle", SubResource( 22 ), "stun", "stun_sprite_invisible", SubResource( 23 ), "stun_sprite_invisible", "stun-end", SubResource( 24 ), "idle", "stun_sprite_visible", SubResource( 25 ), "stun_sprite_visible", "stun-begin", SubResource( 26 ), "stun-begin", "stun", SubResource( 27 ), "idle", "sad", SubResource( 28 ), "sad", "idle", SubResource( 29 ), "idle", "happy", SubResource( 30 ), "happy", "idle", SubResource( 31 ), "idle", "punch", SubResource( 32 ), "punch", "idle", SubResource( 33 ), "idle", "kick", SubResource( 34 ), "kick", "idle", SubResource( 35 ), "idle", "jump", SubResource( 36 ), "jump", "idle", SubResource( 37 ), "idle", "walk", SubResource( 38 ), "walk", "idle", SubResource( 39 ), "idle", "run", SubResource( 40 ), "run", "idle", SubResource( 41 ), "idle", "sit", SubResource( 42 ), "sit", "idle", SubResource( 43 ) ]
 start_node = "idle"
-graph_offset = Vector2( -375.314, 18.117 )
+graph_offset = Vector2( -238.314, -65.883 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=42]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=45]
 
 [node name="beastie" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -201,7 +210,7 @@ transform = Transform( 0.296262, 0, 0, 0, 0.296262, 0, 0, 0, 0.296262, -0.038, 0
 bones/5/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.991418, -0.0341035, 0.126205, -2.70165e-08, 0.965375, 0.260866, -0.130732, -0.258627, 0.95709, -5.27037e-15, 1, -4.42111e-08 )
+transform = Transform( 0.991418, -0.0341035, 0.126205, -2.7075e-08, 0.965375, 0.260866, -0.130732, -0.258627, 0.95709, -7.3798e-15, 1, -4.42111e-08 )
 bone_name = "head"
 
 [node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton/BoneAttachment" index="0"]
@@ -221,8 +230,8 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.55
 shape = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
-tree_root = SubResource( 41 )
+tree_root = SubResource( 44 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 42 )
+parameters/playback = SubResource( 45 )
 parameters/stun/Add2/add_amount = 0
