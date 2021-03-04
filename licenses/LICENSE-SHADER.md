@@ -15,3 +15,10 @@ License: [MIT](https://github.com/GDQuest/godot-demos/blob/master/LICENSE)
 Copyright SuperTuxParty contributors
 
 License [GPL v3.0 or later](http://www.gnu.org/licenses/gpl-3.0.txt)
+
+## plugins/minigames/kernel_compiling/screen/progress.shader
+
+Copyright Florian Kothmeier
+
+License [GPL v3.0 or later](http://www.gnu.org/licenses/gpl-3.0.txt)
+

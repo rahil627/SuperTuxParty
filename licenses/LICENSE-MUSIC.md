@@ -57,6 +57,31 @@ Retrieved from [Open Game Art](https://opengameart.org/content/skeleton-waltz-th
 
 License [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
+### Iamcompiling_master.ogg
+
+Copyright © franzopow
+
+License [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+## assets/sounds
+### correct.wav
+
+Public Domain by rhodesmas
+
+Retrieved from [FreeSound](https://freesound.org/people/rhodesmas/sounds/342751/)
+
+License: [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/legalcode)
+
+### wrong.wav
+
+Public Domain by Jacco118
+
+Volume increased by Florian Kothmeier
+
+Retrieved from [FreeSound](https://freesound.org/people/Jacco18/sounds/419023/)
+
+License: [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/legalcode)
+
 ## assets/sounds/ui
 ### click1.wav | click2.wav | rollover2.wav
 
