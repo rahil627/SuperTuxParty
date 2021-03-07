@@ -5,19 +5,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Esperanto <https://hosted.weblate.org/projects/super-tux-"
-"party/super-tux-party/eo/>\n"
+"PO-Revision-Date: 2021-02-17 19:50+0000\n"
+"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/"
+"super-tux-party/super-tux-party/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.5\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr "Aĉeti kukon kontraŭ %d biskvitoj"
+msgstr "Aĉeti kukon kontraŭ {amount} biskvitoj"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr ""
@@ -169,9 +169,6 @@ msgstr ""
 msgid "MENU_LABEL_CONTINUE"
 msgstr ""
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr ""
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr ""
 
@@ -229,7 +226,6 @@ msgstr ""
 msgid "MENU_LABEL_PLAYER4"
 msgstr ""
 
-#, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
@@ -269,7 +265,7 @@ msgstr ""
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr ""
 
-msgid "MENU_LABEL_TITLE"
+msgid "MENU_LABEL_BOARD_SETTINGS"
 msgstr ""
 
 msgid "MENU_LABEL_TRY"
@@ -303,6 +299,9 @@ msgid "MENU_OPTIONS_FRAME_CAP"
 msgstr ""
 
 msgid "MENU_OPTIONS_FULLSCREEN"
+msgstr ""
+
+msgid "MENU_OPTIONS_MSAA"
 msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
@@ -528,4 +527,43 @@ msgid "SHOP_LABEL_DESCRIPTION"
 msgstr ""
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
 msgstr ""

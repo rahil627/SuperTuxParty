@@ -169,9 +169,6 @@ msgstr "Hahmo:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Jatka"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Kuvaus"
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Poistu työpöydälle"
 
@@ -268,8 +265,8 @@ msgstr "Valitse hahmo pelaajalle 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Valitse pelaajien määrä"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr ""
 
 msgid "MENU_LABEL_TRY"
 msgstr "Kokeile"
@@ -303,6 +300,9 @@ msgstr "Frame Cap"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Kokoruutu"
+
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Kieli"
@@ -548,6 +548,51 @@ msgstr ""
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Kuvaus"
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Axis -"

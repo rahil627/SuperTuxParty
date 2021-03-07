@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-08-30 19:36+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2021-01-20 01:32+0000\n"
+"Last-Translator: Márcia Costa <marciacostta.00@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2.1-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Compre um bolo por {amount} biscoitos"
@@ -140,10 +140,10 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "Cima"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "Tirar screenshot"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Abrir o menu de desenvolvimento"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Insira o nome do jogo á gravar:"
@@ -168,9 +168,6 @@ msgstr "Personagem:"
 
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Continuar"
-
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Descrição"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Sair para o ambiente de trabalho"
@@ -268,8 +265,8 @@ msgstr "Selecione a personagem para o jogador 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Selecione a quantidade de jogadores"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr ""
 
 msgid "MENU_LABEL_TRY"
 msgstr "Tentar"
@@ -281,10 +278,10 @@ msgid "MENU_LABEL_XBOX"
 msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Créditos"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "captura de ecrã"
 
 msgid "MENU_OPTIONS"
 msgstr "Opções"
@@ -304,6 +301,9 @@ msgstr "Limite de Frames"
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Ecrã inteiro"
 
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
+
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Idoima"
 
@@ -317,7 +317,7 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Música"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr "Mude ao Desfocar a Janela"
+msgstr "Silenciar quando o foco da janela for perdido"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
 msgstr "Predefinição do Sistema"
@@ -353,32 +353,30 @@ msgid "DIFFICULTY_HARD"
 msgstr "Difícil"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "GNU ação"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Visual"
+msgstr "qualidade gráfica"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Visual"
+msgstr "alta"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr "Áudio"
+msgstr "médio"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Áudio"
+msgstr "baixo"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
-msgstr ""
+msgstr "A alteração da qualidade gráfica só tem efeito após reiniciar"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Sei que todos vocês lutaram muito para ganhar, mas agora o jogo acabou e "
+"precisamos de um vencedor. E o vencedor é…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
 msgstr ""
@@ -393,145 +391,222 @@ msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Bolos"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Bolachas"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr ""
+msgstr "Olá, precisa de ajuda? Deixe-me ver o que posso fazer por si hoje …"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"É um minijogo a solo! Mostre-me suas habilidades e eu te darei uma [color = "
+"# dd44ff] {recompensa} [/ color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "minijogo a solo"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Vamos jogar juntos! Tenho a certeza que vai ser divertido"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "minijogo coop"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Muito bem. Aqui está o teu prémio!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Isso não funcionou. Talvez na próxima vez."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "Você fez isso. Eu vou esperar pela próxima vez."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"Embora não tenha conseguido, praticaste o teu trabalho em equipa. Tenho "
+"certeza que da próxima vez vai correr bem!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "Nolok ação"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "É a minha vez! Eu sei exatamento o que fazer…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Eu te desafio para um minijogo! Se poderes derrotar me, podes ficar com tuas "
+"coisas. Senão vou levar um dos teus bolos …"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "minijogo a solo"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Eu contra todos vocês? Ainda achas que tens uma chance contra mim?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "minijogo coop"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "Fique grato por ter te poupado!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "Ansioso para vencer te novamente!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "Da próxima vez não vais ganhar."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "Haha, que vitória fácil."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"Haha, lá vai [color = # 00aaff] {montante} [/ cor] de seus cookies. Tenho "
+"certeza de que [cor = # dd44ff] {jogador} [/ cor] tem uma utilidade para eles"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "Perdeste as tuas bolachas"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"Talvez você deva abrandar um pouco. Vamos ver como você se sai com [cor = # "
+"00aaff] {montante} [/ cor] menos movimento para os próximos [cor = # dd44ff] "
+"{duração} [/ cor] jogadas"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr ""
+msgstr "morrer amaldiçoado"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
 msgstr ""
+"Parece que é a primeira vez que jogas. Queres que eu explique as regras?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"O jogo é jogado por turnos. Durante a tua vez, lanças um dado e moves o "
+"número mostrado para frente."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
+"A moeda são as bolachas. Você ganha bolachas ao vencer minijogos. Com as "
+"bolachas podes comprar itens ao passar pelas lojas."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
+"Para ganhar, precisas coletar o máximo de bolos. As bolachas serão usadas "
+"como um desempate. Você pode comprar bolos em locais especiais do tabuleiro. "
+"Se comprares um, o bolo irá para outro local."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
+"Existem diferentes tipos de espaços em que podes pousar: os espaços azuis "
+"fornecem bolachas, enquanto os espaços vermelhos recebem as bolachas."
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
+"Espaços verdes iniciam eventos específicos do tabuleiro. Os espaços de "
+"batalha permitem que desafies outro jogador para um minijogo de duelo."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"Depois que cada jogador tiver a sua vez, um minijogo será jogado. Existem "
+"três sabores diferentes de minijogos:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-msgstr ""
+msgstr "Gratuito para todos, onde todos competem com todos pela vitória."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "Dois contra dois, onde jogas em equipas de dois."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"E um contra três, onde um compete com o resto. O jogador solo recebe um "
+"bônus para equilibrar as coisas."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Minijogos especiais serão jogados quando um jogador pousar em um espaço GNU "
+"ou NOLOK. Minijogos GNU são bons, enquanto minijogos NOLOK são ruins para "
+"ti. Portanto, é melhor ficar longe do último!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "É isso, agora tu estás pronto para começar! Diverte-te!"
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr ""
+msgstr "Aqui está o bolo, vem buscar!"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
-msgstr ""
+msgstr "Queres comprar um bolo?"
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "Quantos bolos queres comprar?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
+"Muito bem, [cor = # 00aaff] {jogador} [/ cor]. Isso é [cor = # dd44ff] "
+"{montante} [/ cor] bolo (s) para ti."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
-msgstr ""
+msgstr "Sinto muito, mas não tens bolachas suficientes para comprar um bolo."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Loja de itens"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Descrição do item"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr "Sem descrição"
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Descrição"
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Eixo -"

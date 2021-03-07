@@ -169,9 +169,6 @@ msgstr "Personagem:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Continuar"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Descrição"
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Sair para o ambiente de trabalho"
 
@@ -268,8 +265,8 @@ msgstr "Selecione a personagem para o jogador 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Selecione a quantidade de jogadores"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr ""
 
 msgid "MENU_LABEL_TRY"
 msgstr "Tentar"
@@ -303,6 +300,9 @@ msgstr "Limite de Frames"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Ecrã inteiro"
+
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Idoima"
@@ -528,3 +528,48 @@ msgstr ""
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Descrição"

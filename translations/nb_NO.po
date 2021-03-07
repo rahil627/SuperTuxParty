@@ -5,16 +5,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-16 02:26+0000\n"
+"PO-Revision-Date: 2021-02-28 04:50+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/super-"
-"tux-party/super-tux-party/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"super-tux-party/super-tux-party/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.5\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Kjøp en kake for {amount} kjeks"
@@ -172,9 +172,6 @@ msgstr "Karakter:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Fortsett"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Beskrivelse"
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Avslutt til skrivebord"
 
@@ -271,8 +268,8 @@ msgstr "Velg en karakter for spiller 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Velg antall spillere"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr ""
 
 msgid "MENU_LABEL_TRY"
 msgstr "Prøv"
@@ -287,7 +284,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Æreshenvisninger"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr "Vis skjermavbildninger"
+msgstr "Skjermavbildninger"
 
 msgid "MENU_OPTIONS"
 msgstr "Innstillinger"
@@ -306,6 +303,9 @@ msgstr "Rammetaktsbegrensning"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Fullskjermsvisning"
+
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Språk"
@@ -562,14 +562,61 @@ msgstr ""
 msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "Du har ikke nok kjeks til å kjøpe en kake."
 
+#, fuzzy
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Butikk"
 
+#, fuzzy
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Enhetsbeskrivelse"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr "Ingen beskrivelse"
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Beskrivelse"
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Akse -"

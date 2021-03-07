@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-14 21:26+0000\n"
+"PO-Revision-Date: 2021-03-07 11:47+0000\n"
 "Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.5.1\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Kaufe einen Kuchen für {amount} Kekse"
@@ -169,9 +169,6 @@ msgstr "Charakter:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Fortsetzen"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Beschreibung"
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Zurück zum Desktop"
 
@@ -268,8 +265,8 @@ msgstr "Wähle einen Charakter für Spieler 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Spieleranzahl auswählen"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr "Spielbrett Optionen"
 
 msgid "MENU_LABEL_TRY"
 msgstr "Versuchen"
@@ -284,7 +281,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Danksagungen"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr "Bildschirmfotos anzeigen"
+msgstr "Bildschirmfotos"
 
 msgid "MENU_OPTIONS"
 msgstr "Optionen"
@@ -303,6 +300,9 @@ msgstr "Bildwiederholungsrate"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Vollbild"
+
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Sprache"
@@ -566,13 +566,58 @@ msgstr ""
 "Es tut mir Leid, aber du hast nicht genug Kekse um einen Kuchen zu kaufen."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Item Shop"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Item Beschreibung"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr "Keine Beschreibung"
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Beschreibung"
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Achse -"
@@ -639,3 +684,6 @@ msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD_START"
 #~ msgstr "Gamepad Start"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"

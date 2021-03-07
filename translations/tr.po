@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-24 18:26+0000\n"
-"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"PO-Revision-Date: 2020-12-30 22:29+0000\n"
+"Last-Translator: Ömer Akgöz <omerakgoz34@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/tr/>\n"
 "Language: tr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "{amount} kurabiye karşılığında bir pasta satın al"
@@ -26,7 +26,7 @@ msgid "CONTEXT_LABEL_DUEL_SELECT"
 msgstr "Rakip Seç:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr "Bitiş!"
+msgstr "Bitti!"
 
 msgid "CONTEXT_LABEL_GO"
 msgstr "Başla!"
@@ -149,7 +149,7 @@ msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Oyun kayıt adını gir:"
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr "Oyunu Yükle"
+msgstr "Kayıtlı Oyun"
 
 msgid "MENU_IO_SAVE"
 msgstr "Kaydet"
@@ -169,11 +169,8 @@ msgstr "Karakter:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Devam Et"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Açıklama"
-
 msgid "MENU_LABEL_DESKTOP"
-msgstr "Masaüstüne Çıkış"
+msgstr "Oyunu Kapat"
 
 msgid "MENU_LABEL_LINEAR"
 msgstr "Doğrusal"
@@ -236,13 +233,13 @@ msgid "MENU_LABEL_PRESS_ANY_KEY"
 msgstr "Herhangi bir tuşa bas"
 
 msgid "MENU_LABEL_QUIT"
-msgstr "Çıkış"
+msgstr "Çık"
 
 msgid "MENU_LABEL_READY"
 msgstr "Hazır!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr "Devam Ettir"
+msgstr "Devam Et"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "Ana Menüye Geri Dön"
@@ -266,10 +263,10 @@ msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
 msgstr "Oyuncu 4 için bir karakter seç"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr "Oyuncu miktarını seç"
+msgstr "Oyuncu sayısını seç"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr ""
 
 msgid "MENU_LABEL_TRY"
 msgstr "Dene"
@@ -284,7 +281,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Emeği geçenler"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr "Ekran görüntülerini göster"
+msgstr "Ekran görüntüleri"
 
 msgid "MENU_OPTIONS"
 msgstr "Seçenekler"
@@ -299,10 +296,13 @@ msgid "MENU_OPTIONS_EFFECTS"
 msgstr "Efektler"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr "Çerçeve Sınırı"
+msgstr "FPS Limiti"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
-msgstr "Tam ekran"
+msgstr "Tam Ekran"
+
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Dil"
@@ -320,13 +320,13 @@ msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
 msgstr "Pencere odağı kaybolduğunda sesi kapat"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr "Sistem Öntanımlı Değeri"
+msgstr "Sistem Varsayılanı"
 
 msgid "MENU_OPTIONS_VISUAL"
 msgstr "Görsel"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "Dikey Eşzamanlama"
+msgstr "Dikey Senkronizasyon"
 
 msgid "DIALOG_YES"
 msgstr "Evet"
@@ -369,7 +369,7 @@ msgstr "Düşük"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr ""
-"Grafik kalitesinin değiştirilmesi yalnızca yeniden başlatmadan sonra etkili "
+"Grafik kalitesinin değiştirilmesi yalnızca yeniden başlattıktan sonra etkili "
 "olur"
 
 msgid "CONTEXT_SPEAKER_SARA"
@@ -518,13 +518,13 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
-"Yeşil alanlar tahtaya özgü olayları başlatır. Savaş alanları başka bir "
-"oyuncuya küçük bir düello oyunda meydan okuma imkanı verir."
+"Yeşil alanlar tahtaya özgü olayları başlatır. Savaş alanları ise başka bir "
+"oyuncuya karşı düello mini oyununda meydan okuma imkanı verir."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
-"Her oyuncu sırasını aldıktan sonra küçük bir oyun oynanacaktır. Üç farklı "
-"küçük oyun çeşidi vardır:"
+"Her oyuncu kendi sırasını oynadıktan sonra bir mini oyun oynanacaktır. Üç "
+"farklı mini oyun çeşidi vardır:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
 msgstr ""
@@ -565,13 +565,58 @@ msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "Üzgünüm ama pasta alacak kadar kurabiyen yok."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Eşya Mağazası"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Eşya açıklaması"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr "Açıklama yok"
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Açıklama"
 
 #~ msgid "MENU_CONTROLS_GAMEPAD"
 #~ msgstr "Oyun Kumandası"

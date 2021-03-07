@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-14 21:26+0000\n"
+"PO-Revision-Date: 2020-12-28 19:29+0000\n"
 "Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ru/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Купить торт на {amount} печенек"
@@ -169,9 +169,6 @@ msgstr "Персонаж:"
 msgid "MENU_LABEL_CONTINUE"
 msgstr "Продолжить игру"
 
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "Описание"
-
 msgid "MENU_LABEL_DESKTOP"
 msgstr "Выйти на рабочий стол"
 
@@ -268,8 +265,8 @@ msgstr "Выберите персонажа для игрока 4"
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Выбрать количество игроков"
 
-msgid "MENU_LABEL_TITLE"
-msgstr "Super Tux Party"
+msgid "MENU_LABEL_BOARD_SETTINGS"
+msgstr ""
 
 msgid "MENU_LABEL_TRY"
 msgstr "Попробовать"
@@ -284,7 +281,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Титры"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr "Показать скриншоты"
+msgstr "Скриншоты"
 
 msgid "MENU_OPTIONS"
 msgstr "Настройки"
@@ -303,6 +300,9 @@ msgstr "Ограничение кадров"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Во весь экран"
+
+msgid "MENU_OPTIONS_MSAA"
+msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Язык"
@@ -359,13 +359,13 @@ msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
 msgstr "Качество графики"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "Высокие"
+msgstr "Высокое"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr "Средние"
+msgstr "Среднее"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "Низкие"
+msgstr "Низкое"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
 msgstr "Изменение качества графики вступает в силу только после перезагрузки"
@@ -562,13 +562,58 @@ msgid "CONTEXT_CAKE_CANT_AFFORD"
 msgstr "Извините, но у вас недостаточно печенья, чтобы купить торт."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Магазин предметов"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Описание предмета"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr "Нет описания"
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "Описание"
 
 #~ msgid "MENU_CONTROLS_AXIS_MINUS"
 #~ msgstr "Ось -"

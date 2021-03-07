@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-12 20:26+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2021-02-28 04:50+0000\n"
+"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/he/>\n"
 "Language: he\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.5\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "רכישת עוגה תמורת {amount} עוגיות"
@@ -23,7 +23,7 @@ msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr "פרס בדו־קרב:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr "נא לבחור יריב:"
+msgstr "נא לבחור יריב/ה:"
 
 msgid "CONTEXT_LABEL_FINISH"
 msgstr "סיום!"
@@ -35,22 +35,22 @@ msgid "CONTEXT_LABEL_PLAYER_ROLLED"
 msgstr "{name} הטיל/ה בקובייה {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr "מוכן/ה?"
+msgstr "מוכנים?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr "להטיל!"
+msgstr "לשחק!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "תור {name}!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "מי שינצח יגנוב עוגה אחת"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "מי שינצח יגנוב 10 עוגיות"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "סיבוב {turn}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "נגד"
@@ -59,10 +59,10 @@ msgid "CONTEXT_LABEL_YOUR_TURN"
 msgstr "זה התור שלך!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr "אין לך מספיק עוגיות כדי לקנות את זה"
+msgstr "אין לך מספיק עוגיות לקנייה"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "אין לך מקום פנוי במלאי"
 
 msgid "MENU_CONTROLS_ACTION_1"
 msgstr "פעולה 1"
@@ -77,7 +77,7 @@ msgid "MENU_CONTROLS_ACTION_4"
 msgstr "פעולה 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "ציר לא ידוע {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr ""
@@ -140,16 +140,16 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "למעלה"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "תצלום המסך"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "פתיחת תפריט מפתחים"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "נא להזין שם למשחק השמור:"
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr "טעינת משחק שמור"
+msgstr "טעינת משחק"
 
 msgid "MENU_IO_SAVE"
 msgstr "שמירה"
@@ -167,25 +167,22 @@ msgid "MENU_LABEL_CHARACTER"
 msgstr "דמות:"
 
 msgid "MENU_LABEL_CONTINUE"
-msgstr "המשך"
-
-msgid "MENU_LABEL_DESCRIPTION"
-msgstr "תיאור"
+msgstr "להמשך"
 
 msgid "MENU_LABEL_DESKTOP"
 msgstr "יציאה לשולחן העבודה"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "לינארי"
 
 msgid "MENU_LABEL_NEW_GAME"
 msgstr "משחק חדש"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr "לא מוכן/ה…"
+msgstr "לא מוכנים…"
 
 msgid "MENU_LABEL_NUMBERS"
 msgstr "מספרים"
@@ -212,10 +209,10 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "מושהה"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "השהיה כאשר אין התמקדות בחלון"
 
 msgid "MENU_LABEL_PLAY"
-msgstr "התחלה"
+msgstr "למשחק"
 
 msgid "MENU_LABEL_PLAYER1"
 msgstr "שחקן/ית1"
@@ -229,21 +226,20 @@ msgstr "שחקן/ית3"
 msgid "MENU_LABEL_PLAYER4"
 msgstr "שחקן/ית4"
 
-#, fuzzy
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
-msgstr "יש ללחוץ על מקש כלשהו"
+msgstr "נא ללחוץ על מקש מסוים"
 
 msgid "MENU_LABEL_QUIT"
 msgstr "יציאה"
 
 msgid "MENU_LABEL_READY"
-msgstr "מוכן/ה!"
+msgstr "מוכנים!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "המשך"
 
 msgid "MENU_LABEL_RETURN_MENU"
 msgstr "חזרה לתפריט הראשי"
@@ -252,64 +248,67 @@ msgid "MENU_LABEL_REWARD_SYSTEM"
 msgstr "מערכת תגמול:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr "יש לבחור לוח:"
+msgstr "נא לבחור לוח:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr "יש לבחור דמות עבור שחקן/ית 1"
+msgstr "נא לבחור דמות עבור שחקן/ית 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr "יש לבחור דמות עבור שחקן/ית 2"
+msgstr "נא לבחור דמות עבור שחקן/ית 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr "יש לבחור דמות עבור שחקן/ית 3"
+msgstr "נא לבחור דמות עבור שחקן/ית 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr "יש לבחור דמות עבור שחקן/ית 4"
+msgstr "נא לבחור דמות עבור שחקן/ית 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr "יש לבחור את כמות השחקנים"
+msgstr "נא לבחור את כמות השחקנים"
 
-msgid "MENU_LABEL_TITLE"
+msgid "MENU_LABEL_BOARD_SETTINGS"
 msgstr ""
 
 msgid "MENU_LABEL_TRY"
-msgstr "לנסות"
+msgstr "התנסות"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "מי שינצח ייקח הכול"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr "שבחים"
+msgstr "תודות"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "צילומי מסך"
 
 msgid "MENU_OPTIONS"
 msgstr "אפשרויות"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "שמע"
 
 msgid "MENU_OPTIONS_CONTROLS"
 msgstr "מקשים"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "אפקטים"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "מכסת פריימים"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "מסך מלא"
 
-msgid "MENU_OPTIONS_LANGUAGE"
+msgid "MENU_OPTIONS_MSAA"
 msgstr ""
 
+msgid "MENU_OPTIONS_LANGUAGE"
+msgstr "שפה"
+
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "אפשרויות ראשיות"
 
 msgid "MENU_OPTIONS_MISC"
 msgstr "שונות"
@@ -318,220 +317,295 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "מוזיקה"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "השתקה כאשר אין התמקדות בחלון"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "ברירת המחדל של המערכת"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "חזות"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "Vsync"
+msgstr "סנכרון אנכי (VSync)"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "כן"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "לא"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "עלות העוגה:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "סיבובים:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "רמת הבינה המלאכותית:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "קלה"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "רגילה"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "קשה"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "הפעולה של גנו"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "משחק שונות"
+msgstr "איכות הגרפיקה"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr "משחק שונות"
+msgstr "גבוהה"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "בינונית"
 
-#, fuzzy
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr "משחק שונות"
+msgstr "נמוכה"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
-msgstr ""
+msgstr "שינוי איכות הגרפיקה נכנס לתוקף רק לאחר הפעלה מחדש"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "שרה"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"אני יודעת שכולכם נלחמתם קשה כדי לנצח, אבל עכשיו המשחק נגמר ואנו זקוקים "
+"למנצחח/ת. והמנצח/ת הוא/היא…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color] וגם [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] וגם [color=#00ff88]{2}"
+"[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], [color=#00ff88]{2}[/"
+"color] וגם [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "עוגות"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "עוגיות"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "גנו"
 
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr ""
+msgstr "שלום לך, רוצה קצת עזרה? רק רגע, אראה מה אוכל לעשות בשבילך היום…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"זה משחקון ליחיד! תרא/י לי את הכישורים שלך ואתן לך "
+"[color=#dd44ff]{reward}[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "משחקון ליחיד"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "הבה נשחק יחדיו! אני בטוח שזה יהיה כיף"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "משחקון קבוצתי"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "כל הכבוד. הנה הפרס שלך!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "לא הצלחת. אולי בפעם הבאה."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "עשית את זה. אני מצפה לפעם הבאה."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"למרות שלא עשית את זה, חיזקת את העבודה שלך בצוות. אני בטוח שבפעם הבאה זה "
+"יצליח לך!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "נוֹלוֹק"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "הפעולה של נולוק"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "עכשיו תורי! אני יודע בדיוק מה לעשות…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"אני מזמן אותך למשחקון! אם תוכל/י להביס אותי, אשאיר לך את הדברים שלך. אם לא "
+"אקח לך אחת מהעוגות…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "משחקון ליחיד"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "אני נגד כולכם? אתם מעיזים לחשוב על להתייצב נגדי בכלל?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "משחקון קבוצתי"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "כדאי לך להיות אסיר/ת על שחסתי עליך!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "מצפה להביס אותך שוב!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "בפעם הבאה אני אנצח."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "חה־חה, איזה ניצחון קל."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"חה־חה, היו שלום ל־[color=#00aaff]{amount}[/color] מהעוגיות שלך/ אני בטוח "
+"של־[color=#dd44ff]{player}[/color] היה שימוש עבורן"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "איבוד העוגיות"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"כדאי לך להאט קצת. נראה איך תתמודד/י עם [color=#00aaff]{amount}[/color] "
+"תנועות פחות ב־[color=#dd44ff]{duration}[/color] הזריקות הבאות"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr ""
+msgstr "קללה ארורה"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
-msgstr ""
+msgstr "נראה שזהו המשחק הראשון שלך. רוצה שאסביר לך את החוקים?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"המשחק מתנהל בתורות. במהלך כל תור, מטילים קובייה ומתקדמים לפי המספר שהיא מראה."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
+"המטבעות הם עוגיות. אפשר להרוויח עוגיות בעזרת ניצחון במשחקונים. עם עוגיות "
+"אפשר לקנות פריטים כאשר מגיעים לחנויות."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
+"כדי לנצח, יש לאסוף הכי הרבה עוגות. העוגיות ישמשו כשוברי־שוויון. אפשר לקנות "
+"עוגות במקומות מיוחדים על הלוח. כאשר קונים אחת, העוגה תעבור למקום אחר."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
+"ישנם סוגים שונים של מקומות בהם אפשר לנחות: מקומות בצבע כחול מעניקים עוגיות, "
+"בעוד מקומות בצבע אדום גוזלים עוגיות."
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
+"כאשר מגיעים למקומות בצבע ירוק, קורים דברים מסוימים בלוח. כאשר מגיעים למקום "
+"דו־קרב, מזמנים שחקנים אחרים להתחרות נגדנו במשחקון."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"אחרי שהתורות של כל השחקנים הסתיימו, יהיה משחקון. ישנם שלושה סוגים של "
+"משחקונים:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
-msgstr ""
+msgstr "תחרות חופשית, בה כולם מתחרים עם כולם עד לניצחון."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "שניים נגד שניים, בו משחקים בזוגות."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"ו־\"אחד נגד שלושה\", בו אחד מתחרה נגד השאר. השחקן האחד מקבל בונוס כדי לשמור "
+"על ההגינות."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"כאשר שחקנים נוחתים על המקומות של גנו או של נולוק, יהיו משחקונים. המשחקונים "
+"של גנו הם טובים, בעוד המשחקונים של נולוק רעים בשבילכם. אז מוטב להתרחק מהם!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "זה הכול, עכשיו אתם מוכנים! תעשו חיים!"
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr ""
+msgstr "הינה העוגה, בואו וקחו אותה!"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
-msgstr ""
+msgstr "האם ברצונך לקנות עוגה?"
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "כמה עוגות ברצונך לקנות?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
+"כל הכבוד, [color=#00aaff]{player}[/color]. הינה "
+"[color=#dd44ff]{amount}[/color] עוגה/ות בשבילך."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
-msgstr ""
+msgstr "אני מצטערת אבל אין לך מספיק עוגיות כדי לקנות עוגה."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "חנות פריטים"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "תיאור הפריט"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
+msgstr "אין תיאור"
+
+msgid "REWARDSCREEN_MINIGAME_RESULTS"
 msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_WINNER"
+msgstr ""
+
+msgid "REWARDSCREEN_MINIGAME_REWARD"
+msgstr ""
+
+msgid "REWARDSCREEN_PRESS_BUTTON"
+msgstr ""
+
+msgid "MINIGAME_ACTION_MOVEMENT"
+msgstr ""
+
+msgid "MINIGAME_TYPE_FFA"
+msgstr ""
+
+msgid "MINIGAME_TYPE_2v2"
+msgstr ""
+
+msgid "MINIGAME_TYPE_1v3"
+msgstr ""
+
+msgid "MINIGAME_TYPE_DUEL"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_GNU_SOLO"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_COOP"
+msgstr ""
+
+msgid "MINIGAME_TYPE_NOLOK_SOLO"
+msgstr ""
+
+#~ msgid "MENU_LABEL_TITLE"
+#~ msgstr "Super Tux Party"
+
+#~ msgid "MENU_LABEL_DESCRIPTION"
+#~ msgstr "תיאור"
 
 #~ msgid "MENU_CONTROLS_GAMEPAD"
 #~ msgstr "ג'ויסטיק"
