@@ -7,7 +7,8 @@
 [ext_resource path="res://assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/fonts/IBM-Plex-Sans/IBMPlexSans-Medium.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://assets/fonts/Fallback/LiberationSans-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/fonts/Liberation-Sans/LiberationSans-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/fonts/Amiri/Amiri-Bold.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -29,6 +30,7 @@ font_data = ExtResource( 6 )
 size = 40
 font_data = ExtResource( 7 )
 fallback/0 = ExtResource( 8 )
+fallback/1 = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 30

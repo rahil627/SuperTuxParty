@@ -20,9 +20,18 @@ This license is copied below, and is also available with a FAQ at:
 
 See assets/fonts/OFL for full license.
 
-## assets/fonts/Fallback/
+## assets/fonts/Liberation-Sans/
 ### *.ttf
 (c) 2010 Google Corporation. Copyright (c) 2012 Red Hat, Inc.
-Retrieved from [https://github.com/liberationfonts/liberation-fonts](https://github.com/liberationfonts/liberation-fonts)
+Retrieved from [GitHub](https://github.com/liberationfonts/liberation-fonts)
 
-Licensed: [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
+Licensed: [http://scripts.sil.org/OFL](http://scripts.sil.org/OFL)
+
+See assets/fonts/OFL for full license.
+
+## assets/fonts/Amiri/
+### *.ttf
+(c) Copyright 2010-2020 The Amiri Project Authors
+Retrieved from [The official font website](https://www.amirifont.org/)
+
+Licensed: [http://scripts.sil.org/OFL](http://scripts.sil.org/OFL)

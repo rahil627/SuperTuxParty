@@ -1,9 +1,11 @@
 [gd_resource type="DynamicFont" load_steps=3 format=2]
 
 [ext_resource path="res://assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/fonts/Fallback/LiberationSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Liberation-Sans/LiberationSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Amiri-Regular.ttf" type="DynamicFontData" id=3]
 
 [resource]
 size = 15
 font_data = ExtResource( 1 )
 fallback/0 = ExtResource( 2 )
+fallback/1 = ExtResource( 3 )
