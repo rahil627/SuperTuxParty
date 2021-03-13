@@ -76,28 +76,28 @@ axis = 1
 texture = ExtResource( 4 )
 
 [node name="Player2" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, -1.8 )
-visible = false
-pixel_size = 0.0013
-axis = 1
-
-[node name="Sprite3D" type="Sprite3D" parent="Player2"]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, -0.1, 0 )
-pixel_size = 0.009
-axis = 1
-texture = ExtResource( 5 )
-
-[node name="Player3" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.2, 1.8 )
 visible = false
 pixel_size = 0.0013
 axis = 1
 
-[node name="Sprite3D" type="Sprite3D" parent="Player3"]
+[node name="Sprite3D" type="Sprite3D" parent="Player2"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, -0.1, 0 )
 pixel_size = 0.009
 axis = 1
 texture = ExtResource( 4 )
+
+[node name="Player3" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, -1.8 )
+visible = false
+pixel_size = 0.0013
+axis = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="Player3"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, -0.1, 0 )
+pixel_size = 0.009
+axis = 1
+texture = ExtResource( 5 )
 
 [node name="Player4" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, -1.8 )
@@ -126,3 +126,4 @@ texture = ExtResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/flip_down = SubResource( 1 )
 anims/flip_up = SubResource( 2 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

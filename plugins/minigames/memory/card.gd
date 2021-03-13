@@ -9,16 +9,16 @@ func set_variant(value: int):
 
 	$Front.texture = load("res://plugins/minigames/memory/cards/card_{0}.png".format([value]))
 
-func load_icon(node: Sprite3D, index: int):
-	var texture = PluginSystem.character_loader.load_character_icon(Global.players[index].character)
+func load_icon(node: Sprite3D, player_id: int):
+	var texture = PluginSystem.character_loader.load_character_icon(Global.players[player_id - 1].character)
 	node.texture = texture
 	node.pixel_size = min(1.28 / texture.get_width(), 1.28 / texture.get_height())
 
 func _ready():
-	load_icon($Player1, 0)
-	load_icon($Player2, 1)
-	load_icon($Player3, 2)
-	load_icon($Player4, 3)
+	load_icon($Player1, Global.minigame_state.minigame_teams[0][0])
+	load_icon($Player2, Global.minigame_state.minigame_teams[0][1])
+	load_icon($Player3, Global.minigame_state.minigame_teams[1][0])
+	load_icon($Player4, Global.minigame_state.minigame_teams[1][1])
 
 func flip_up(color: Color = Color.white):
 	faceup = true
@@ -28,7 +28,6 @@ func flip_up(color: Color = Color.white):
 	return $AnimationPlayer
 
 func flip_down():
-	faceup = false
 	$AnimationPlayer.play("flip_down")
 
 	return $AnimationPlayer
@@ -39,8 +38,12 @@ func is_animation_running() -> bool:
 func animation_player() -> AnimationPlayer:
 	return $AnimationPlayer as AnimationPlayer
 
-func show_player(player_id: int):
-	get_node("Player{0}".format([player_id])).show()
+func show_player(name: String):
+	get_node(name).show()
 
-func hide_player(player_id: int):
-	get_node("Player{0}".format([player_id])).hide()
+func hide_player(name: String):
+	get_node(name).hide()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "flip_down":
+		faceup = false
