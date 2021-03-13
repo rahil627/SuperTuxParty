@@ -86,7 +86,7 @@ func _ready() -> void:
 
 	# Initialize GUI.
 	if player_turn <= Global.amount_of_players:
-		$Screen/Turn.text = tr("CONTEXT_LABEL_TURN_NUM").format({"turn": Global.turn})
+		$Screen/Turn.text = tr("CONTEXT_LABEL_TURN_NUM").format({"turn": Global.turn, "total": Global.overrides.max_turns})
 		$Screen/Dice.text = tr("CONTEXT_LABEL_ROLL_PLAYER").format(
 				{"name": players[player_turn - 1].player_name})
 

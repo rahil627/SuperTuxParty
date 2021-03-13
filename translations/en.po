@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Winner steals 10 cookies"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Turn {turn}"
+msgstr "Turn {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "VS."
