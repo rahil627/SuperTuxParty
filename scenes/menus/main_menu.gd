@@ -384,7 +384,7 @@ func _on_Screenshots_pressed():
 	OS.shell_open("file://{0}/screenshots".format([OS.get_user_data_dir()]))
 
 
-func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+func _on_AnimationPlayer_animation_finished(_anim_name: String) -> void:
 	yield(get_tree().create_timer(5), "timeout")
 	$MainMenu/ViewportContainer/Viewport/tux/AnimationPlayer.play()
 	$MainMenu/ViewportContainer/Viewport/tux/AnimationPlayer2.play()

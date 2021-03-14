@@ -336,6 +336,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [ Vector2( -901, 397 ) ]
 }
+tracks/16/type = "value"
+tracks/16/path = NodePath("MainMenu/TextureRect:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0.19, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "OptionsMenu"
@@ -660,6 +672,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_SELECT_NUM_PLAYERS"
 align = 1
 valign = 1
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -667,7 +680,9 @@ __meta__ = {
 [node name="Buttons" type="VBoxContainer" parent="SelectionPlayers"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -900.0
 margin_top = 200.0
+margin_right = -900.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -756,6 +771,7 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
 align = 1
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -763,7 +779,9 @@ __meta__ = {
 [node name="Buttons" type="VBoxContainer" parent="SelectionChar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -900.0
 margin_top = 200.0
+margin_right = -900.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -857,10 +875,14 @@ custom_click = "res://assets/sounds/ui/click2.wav"
 
 [node name="BoardSettings" type="Control" parent="."]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1.0
-margin_right = -1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -880,7 +902,7 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_LABEL_BOARD_SETTINGS"
 align = 1
-percent_visible = 0.369268
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -891,9 +913,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -255.0
-margin_top = -136.0
+margin_top = -659.0
 margin_right = 255.0
-margin_bottom = 164.002
+margin_bottom = -358.998
 custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1017,9 +1039,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 484.0
-margin_top = -246.5
+margin_top = 3.5
 margin_right = -486.0
-margin_bottom = -213.5
+margin_bottom = 36.5
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 15 )
@@ -1031,9 +1053,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 384.0
-margin_top = -196.5
+margin_top = 53.5
 margin_right = -386.0
-margin_bottom = -163.5
+margin_bottom = 86.5
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 15 )
@@ -1272,7 +1294,6 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 bus = "Music"
-
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
