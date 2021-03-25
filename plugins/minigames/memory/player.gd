@@ -12,12 +12,19 @@ onready var right_side := column > 4
 
 export var ally: NodePath
 
+# If the player is currently flipping up a card
+# Is true for the entire duration, the card is held open
 var blocked := false
+# The duration the card has been held open
+var holding_card := 0.0
+
 var points := 0 setget set_points
 
 var ai_target_row := -1
 var ai_target_column := -1
 
+# Small penalty when flipping up nonmatching pairs
+# Includes the time for the flip down animation to complete
 var cooldown := 0.0
 onready var team := 0 if player_id in Global.minigame_state.minigame_teams[0] else 1
 
@@ -72,6 +79,7 @@ func activate():
 
 	$Flip.play()
 	blocked = true
+	holding_card = 0.0
 	var ally_node = get_node(ally)
 	# Make the other player choose a new card (when it's an AI)
 	ally_node.ai_target_row = -1
@@ -97,7 +105,19 @@ func activate():
 
 func _process(delta):
 	cooldown = max(0, cooldown - delta)
+
+	# Flip the card facedown when holding for > 5 seconds
+	# Prevents deadlock when flipping up the last card pair
+	if blocked and not get_node(ally).blocked and holding_card > 5.0:
+		blocked = false
+		cooldown = 1.0
+		current_card().flip_down()
+		ai_target_column = -1
+		ai_target_row = -1
+		return
+
 	if blocked:
+		holding_card += delta
 		return
 
 	if is_ai and not cooldown:

@@ -1,6 +1,7 @@
 extends Spatial
 
 var started := false
+var finished := false
 
 func card_at(row: int, column: int) -> Node:
 	return get_node("Row{0}/{1}".format([row, column]))
@@ -75,15 +76,26 @@ func _process(_delta):
 	if not started:
 		return
 	
-	var facedown := 0
+	var unmatched := 0
+	var players = [$Player1, $Player2, $Player3, $Player4]
+	for player in players:
+		# If the player is holding a card open, then it's not yet matched
+		# But it also isn't facedown anymore
+		if player.blocked:
+			unmatched += 1
 	for row in range(1, 5):
 		for column in range(1, 8):
 			if column == 4:
 				continue
 			var card = card_at(row, column)
-			if not card.faceup:
-				facedown += 1
-	if not facedown:
-		var team1 = $Player1.points + $Player2.points
-		var team2 = $Player3.points + $Player4.points
-		Global.minigame_team_win_by_points([team1, team2])
+			if not card.faceup or card.is_animation_running():
+				unmatched += 1
+	if not unmatched and not finished:
+		$Timer.start()
+		finished = true
+
+func _on_Timer_timeout():
+	var team1 = $Player1.points + $Player2.points
+	var team2 = $Player3.points + $Player4.points
+	Global.minigame_team_win_by_points([team1, team2])
+
