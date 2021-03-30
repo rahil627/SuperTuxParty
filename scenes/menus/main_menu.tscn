@@ -1022,7 +1022,6 @@ margin_right = -486.0
 margin_bottom = -213.5
 custom_fonts/font = ExtResource( 5 )
 shortcut_in_tooltip = false
-shortcut = SubResource( 15 )
 text = "MENU_LABEL_PLAY"
 custom_click = "res://assets/sounds/ui/click2.wav"
 
@@ -1272,7 +1271,6 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 bus = "Music"
-
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/Load" to="." method="_on_Load_pressed"]
