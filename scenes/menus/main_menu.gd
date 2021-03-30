@@ -30,8 +30,9 @@ func _ready() -> void:
 	if Global.quit_to_menu:
 		Global.quit_to_menu = false
 
-		$MainMenu.visible = false
-		$SelectionBoard.visible = true
+		$MainMenu.hide()
+		$SelectionBoard.show()
+		$Animation.play("SelectionBoard")
 		if $SelectionBoard/ScrollContainer/Buttons.get_child_count() > 0:
 			$SelectionBoard/ScrollContainer/Buttons.get_child(0).grab_focus()
 		else:
