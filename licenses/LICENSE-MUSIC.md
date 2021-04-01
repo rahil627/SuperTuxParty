@@ -82,6 +82,12 @@ Retrieved from [FreeSound](https://freesound.org/people/Jacco18/sounds/419023/)
 
 License: [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/legalcode)
 
+### step-fx.ogg
+
+Copyright © franzopow
+
+License [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
 ## assets/sounds/ui
 ### click1.wav | click2.wav | rollover2.wav
 
