@@ -73,7 +73,10 @@ func _ready() -> void:
 	players = get_tree().get_nodes_in_group("players")
 	for p in players:
 		p.player_id = i
+		# Update the "spaces to walk" counter
 		p.connect("walking_step", self, "animation_step", [p.player_id])
+		# Play a short fx when passing a step
+		p.connect("walking_step", self, "play_space_step_sfx", [p.player_id])
 		i += 1
 		if p.space == null and Global.new_game:
 			p.space = get_node(start_node)
@@ -740,6 +743,10 @@ func animation_step(space: NodeBoard, player_id: int) -> void:
 		$Screen/Stepcounter.text = var2str(step_count)
 	else:
 		$Screen/Stepcounter.text = ""
+
+func play_space_step_sfx(space: NodeBoard, player_id: int) -> void:
+	if player_id == player_turn and space.is_visible_space():
+		$StepFX.play()
 
 func _process(delta: float) -> void:
 	if camera_focus != null:

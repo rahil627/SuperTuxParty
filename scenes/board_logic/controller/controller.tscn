@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/defaults/default_theme.tres" type="Theme" id=2]
@@ -11,13 +11,14 @@
 [ext_resource path="res://scenes/board_logic/controller/debug.gd" type="Script" id=9]
 [ext_resource path="res://scenes/menus/pause_menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/fonts/Liberation-Sans/LiberationSans-Bold.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://assets/fonts/Amiri/Amiri-Bold.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://scenes/board_logic/controller/minigameinformationscreen.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/board_logic/controller/duelselection.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/board_logic/controller/itemselection.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/board_logic/controller/shop.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/speech_dialog/speech_dialog.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/board_logic/controller/selectspacehelper.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/fonts/Amiri/Amiri-Bold.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://assets/sounds/step-fx.ogg" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -1345,6 +1346,10 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 current = true
 
 [node name="SelectSpaceHelper" parent="." instance=ExtResource( 17 )]
+
+[node name="StepFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -5.0
 [connection signal="pressed" from="Screen/Debug/Row1/Skip" to="Screen/Debug" method="_on_Skip_pressed"]
 [connection signal="pressed" from="Screen/Debug/Row1/AddCookies" to="Screen/Debug" method="_on_AddCookies_pressed"]
 [connection signal="pressed" from="Screen/Debug/Row1/AddCake" to="Screen/Debug" method="_on_AddCake_pressed"]
