@@ -34,7 +34,7 @@ func load_controls():
 				"JoypadAxis":
 					event = InputEventJoypadMotion.new()
 					event.axis = int(entry[2])
-					event.axis_value = int(entry[3])
+					event.axis_value = sign(float(entry[3]))
 				"JoypadButton":
 					event = InputEventJoypadButton.new()
 					event.button_index = int(entry[2])
@@ -59,15 +59,15 @@ func save_controls():
 		var event = InputMap.get_action_list(action_name)[0]
 		
 		# Each entry is as follows [0: "device (int)", 1: "type (string)", ...]
-		var value = var2str(event.device)
+		var value = str(event.device)
 		if event is InputEventKey:
-			value += " Keyboard " + var2str(event.scancode)
+			value += " Keyboard " + str(event.scancode)
 		elif event is InputEventMouseButton:
-			value += " Mouse " + var2str(event.button_index)
+			value += " Mouse " + str(event.button_index)
 		elif event is InputEventJoypadMotion:
-			value += " JoypadAxis " + var2str(event.axis) + " " + var2str(event.axis_value)
+			value += " JoypadAxis " + str(event.axis) + " " + str(sign(event.axis_value))
 		elif event is InputEventJoypadButton:
-			value += " JoypadButton " + var2str(event.button_index)
+			value += " JoypadButton " + str(event.button_index)
 		
 		config.set_value("input", action_name, value)
 	config.save(USER_CONFIG_FILE)
