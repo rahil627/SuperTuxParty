@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://plugins/minigames/forest_run/minigame.gd" type="Script" id=1]
 [ext_resource path="res://plugins/minigames/forest_run/player.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://plugins/minigames/dungeon_parkour/Dungeon Arena/Pole02.tscn" type="PackedScene" id=9]
 [ext_resource path="res://plugins/minigames/forest_run/Forest Arena/Catapult.tscn" type="PackedScene" id=10]
 [ext_resource path="res://plugins/minigames/forest_run/Avgvst - Mushrooms.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=12]
 
 [sub_resource type="Environment" id=1]
 background_color = Color( 0.0392157, 0.0470588, 0.0588235, 1 )
@@ -1061,6 +1062,7 @@ nodes = [ NodePath("../Waypoint9") ]
 
 [node name="Waypoint9" parent="Ground" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 121, 0, -28 )
+nodes = [  ]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
@@ -1123,5 +1125,24 @@ hit_height = 0.25
 stream = ExtResource( 11 )
 autoplay = true
 bus = "Music"
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 40.0
+autostart = true
+
+[node name="Remaining" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 58.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="fire_catapults"]
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

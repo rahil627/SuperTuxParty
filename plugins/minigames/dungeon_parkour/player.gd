@@ -36,7 +36,7 @@ func calc_movement(previous: float, next: float) -> float:
 	else:
 		return previous * 0.9
 
-func _process(delta):
+func _physics_process(delta):
 	ai_rand_start -= delta
 	if ai_rand_start > 0:
 		return
