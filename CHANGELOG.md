@@ -1,6 +1,6 @@
 # Releases
 
-## Alpha Version - v0.8 - 2021-04-11
+## Alpha Version - v0.9 - 2021-04-19
 
 ### Improved / Changed
 - Redesigned the minigame end screen
