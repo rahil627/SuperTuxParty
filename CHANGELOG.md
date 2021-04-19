@@ -1,5 +1,38 @@
 # Releases
 
+## Alpha Version - v0.8 - 2021-04-11
+
+### Improved / Changed
+- Redesigned the minigame end screen
+- New cake design
+- Enabled hidpi support
+- Add a timer for Dungeon Parkour and Forest Run
+- Fix AI getting stuck in Escape from Lava minigame
+- Minigame QoL changes:
+	- Decreased the time for plant selection in "Harvest Food" minigame from 10 seconds to 8 seconds
+	- Spawn less Bombs in "Boat Rally" minigame
+	- Added pre-start countdown in "Escape from Lava", "Harvest Food" and "Hurdle" minigames
+	- Updated minigame screenshots
+	- Provide better default keybindings
+- Fixed Beastie's and Godette's character model clipping into the ground
+- Screenshot creation on Windows works now
+- New Main Menu design and animations
+- New Pre-minigame screen
+- UI theme improvements
+- Credits menu now properly obeys the theme
+- Fixed "Harvest Food" minigame listing the ability to jump, while the minigame doesn't allow it
+- Show the controls to flip a card in the "Memory" minigame
+- Reworked the "Kernel compiling minigame"
+	- The visual style now matches the desired cartoony look
+	- In the 2v2 version, team players now fill the same bar instead of seperate bars
+- Player icons now show up correctly in the "Memory" minigame
+- Fixed some buggy behavior when flipping a card faceup in the "Memory" minigame
+- The "Memory" minigame now does not return instantly to the minigame end screen, but gives you a bit of time to look at the stats
+- Use Liberation Sans instead of Noto Sans as fallback font
+- Show the total number of turns on the board
+- The Background music on the test board loops now
+- The game now plays a sound when you pass a space on the board
+
 ## Alpha Version - v0.8 - 2020-11-02
 
 ### New features

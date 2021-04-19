@@ -1,6 +1,7 @@
-image: ioribranford/godot-docker:3.2.2
+image: ioribranford/godot-docker:3.2.3
 
 .job_template: &build_base
+  interruptible: true
   artifacts:
     expire_in: 1 week
     paths:
