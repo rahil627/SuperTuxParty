@@ -331,6 +331,9 @@ msgstr "Visual"
 msgid "MENU_OPTIONS_VSYNC"
 msgstr "VSync"
 
+msgid "MENU_OPTIONS_FXAA"
+msgstr "FXAA"
+
 msgid "DIALOG_YES"
 msgstr "Yes"
 
