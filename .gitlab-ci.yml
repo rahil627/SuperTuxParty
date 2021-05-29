@@ -1,4 +1,4 @@
-image: ioribranford/godot-docker:3.2.3
+image: ioribranford/godot-docker:3.3.2
 
 .job_template: &build_base
   interruptible: true
@@ -53,6 +53,7 @@ build:sources:
     - tags
 
 license_test:
+  interruptible: true
   image: python:latest
   stage: build_and_test
   before_script:

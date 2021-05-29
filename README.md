@@ -26,7 +26,7 @@ You can download SuperTuxParty from [Itch.io](https://anti.itch.io/super-tux-par
 ## Engine
 
 SuperTuxParty is built with the [Godot Engine](https://godotengine.org/).
-The stable version, 3.2.2, is used.
+The latest stable version, 3.3.2, is used.
 
 ## Issues
 
