@@ -1,8 +1,7 @@
-[gd_resource type="Theme" load_steps=875 format=2]
+[gd_resource type="Theme" load_steps=876 format=2]
 
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/Fallback/LiberationSans-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/fonts/Amiri/Amiri-Bold.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/fonts/Boogaloo-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/defaults/theme_icons/On.svg" type="Texture" id=4]
 [ext_resource path="res://assets/defaults/theme_icons/NotSelected.svg" type="Texture" id=5]
@@ -11,6 +10,7 @@
 [ext_resource path="res://assets/defaults/theme_icons/GraberPress.svg" type="Texture" id=8]
 [ext_resource path="res://assets/defaults/theme_icons/Scroll.svg" type="Texture" id=9]
 [ext_resource path="res://assets/defaults/theme_icons/Off.svg" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/Amiri/Amiri-Bold.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.592773, 0.211291, 0.211291, 1 )

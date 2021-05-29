@@ -30,9 +30,9 @@ __meta__ = {
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 265.0
-margin_top = 215.0
+margin_top = 197.0
 margin_right = 1015.0
-margin_bottom = 505.0
+margin_bottom = 522.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 750, 0 )
@@ -43,7 +43,7 @@ __meta__ = {
 
 [node name="TabContainer" type="TabContainer" parent="Menu"]
 margin_right = 750.0
-margin_bottom = 255.0
+margin_bottom = 290.0
 custom_fonts/font = ExtResource( 3 )
 tab_align = 0
 script = ExtResource( 4 )
@@ -94,19 +94,26 @@ custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS_VSYNC"
 flat = true
 
-[node name="Anti_Aliasing" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
+[node name="FXAA" parent="Menu/TabContainer/Visual" instance=ExtResource( 7 )]
 margin_top = 103.0
 margin_right = 734.0
-margin_bottom = 132.0
+margin_bottom = 134.0
+text = "MENU_OPTIONS_FXAA"
+flat = true
 
-[node name="Label" type="Label" parent="Menu/TabContainer/Visual/Anti_Aliasing"]
+[node name="MSAA" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
+margin_top = 138.0
+margin_right = 734.0
+margin_bottom = 167.0
+
+[node name="Label" type="Label" parent="Menu/TabContainer/Visual/MSAA"]
 margin_right = 698.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "MENU_OPTIONS_MSAA"
 
-[node name="OptionButton" parent="Menu/TabContainer/Visual/Anti_Aliasing" instance=ExtResource( 5 )]
+[node name="OptionButton" parent="Menu/TabContainer/Visual/MSAA" instance=ExtResource( 5 )]
 margin_left = 702.0
 margin_right = 734.0
 margin_bottom = 29.0
@@ -118,9 +125,9 @@ items = [ "Off", null, false, 0, null, "2x MSAA", null, false, 1, null, "4x MSAA
 selected = 0
 
 [node name="FrameCap" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
-margin_top = 136.0
+margin_top = 171.0
 margin_right = 734.0
-margin_bottom = 165.0
+margin_bottom = 200.0
 
 [node name="Label" type="Label" parent="Menu/TabContainer/Visual/FrameCap"]
 margin_right = 700.0
@@ -141,9 +148,9 @@ items = [ "30", null, false, 0, null, "60", null, false, 1, null, "120", null, f
 selected = 1
 
 [node name="Quality" type="HBoxContainer" parent="Menu/TabContainer/Visual"]
-margin_top = 169.0
+margin_top = 204.0
 margin_right = 734.0
-margin_bottom = 200.0
+margin_bottom = 235.0
 
 [node name="Label" type="Label" parent="Menu/TabContainer/Visual/Quality"]
 margin_top = 1.0
@@ -374,9 +381,9 @@ rect_min_size = Vector2( 734, 360 )
 bbcode_enabled = true
 
 [node name="Back" parent="Menu" instance=ExtResource( 11 )]
-margin_top = 259.0
+margin_top = 294.0
 margin_right = 750.0
-margin_bottom = 290.0
+margin_bottom = 325.0
 custom_fonts/font = ExtResource( 3 )
 shortcut_in_tooltip = false
 shortcut = SubResource( 2 )
@@ -403,12 +410,13 @@ margin_bottom = 401.0
 [connection signal="item_selected" from="Menu/TabContainer/Visual/Language/OptionButton" to="." method="_on_Language_item_selected"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/Fullscreen" to="." method="_on_Fullscreen_toggled"]
 [connection signal="toggled" from="Menu/TabContainer/Visual/VSync" to="." method="_on_VSync_toggled"]
-[connection signal="item_selected" from="Menu/TabContainer/Visual/Anti_Aliasing/OptionButton" to="." method="_on_MSAA_item_selected"]
+[connection signal="toggled" from="Menu/TabContainer/Visual/FXAA" to="." method="_on_FXAA_toggled"]
+[connection signal="item_selected" from="Menu/TabContainer/Visual/MSAA/OptionButton" to="." method="_on_MSAA_item_selected"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/FrameCap/OptionButton" to="." method="_on_FrameCap_item_selected"]
 [connection signal="button_down" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_cancel_sound"]
 [connection signal="item_focused" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_select_with_arg"]
-[connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click_with_arg"]
 [connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="." method="_on_GraphicQuality_item_selected"]
+[connection signal="item_selected" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click_with_arg"]
 [connection signal="pressed" from="Menu/TabContainer/Visual/Quality/OptionButton" to="Menu/TabContainer/Visual/Quality/OptionButton" method="_click"]
 [connection signal="toggled" from="Menu/TabContainer/Audio/Master/CheckBox" to="." method="_on_bus_toggled" binds= [ 0 ]]
 [connection signal="value_changed" from="Menu/TabContainer/Audio/MasterVolume" to="." method="_on_volume_changed" binds= [ 0 ]]

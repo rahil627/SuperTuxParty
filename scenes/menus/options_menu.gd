@@ -40,6 +40,12 @@ func _on_VSync_toggled(button_pressed):
 	
 	save_option("visual", "vsync", button_pressed)
 
+
+func _on_FXAA_toggled(button_pressed):
+	get_viewport().set_use_fxaa(button_pressed)
+	
+	save_option("visual", "fxaa", button_pressed)
+
 func _on_Language_item_selected(ID):
 	var locales = ProjectSettings.get("locale/locale_filter")[1]
 	var option_meta = $Menu/TabContainer/Visual/Language/OptionButton.get_item_metadata(ID)
@@ -145,6 +151,9 @@ func load_options():
 	OS.window_fullscreen = get_option_value_safely("visual", "fullscreen", false)
 	$Menu/TabContainer/Visual/Fullscreen.pressed = OS.window_fullscreen
 	
+	var fxaa = get_option_value_safely("visual", "fxaa", false)
+	$Menu/TabContainer/Visual/FXAA.pressed = fxaa
+	
 	OS.vsync_enabled = get_option_value_safely("visual", "vsync", false)
 	$Menu/TabContainer/Visual/VSync.pressed = OS.vsync_enabled
 	
@@ -153,7 +162,7 @@ func load_options():
 	$Menu/TabContainer/Visual/FrameCap/OptionButton.select(frame_id)
 	
 	var msaa = get_option_value_safely("visual", "msaa", 0)
-	$Menu/TabContainer/Visual/Anti_Aliasing/OptionButton.select(msaa)
+	$Menu/TabContainer/Visual/MSAA/OptionButton.select(msaa)
 	
 	var quality = get_option_value_safely("visual", "quality", 0)
 	$Menu/TabContainer/Visual/Quality/OptionButton.select(quality)
@@ -325,3 +334,6 @@ func _on_TabContainer_tab_selected(tab):
 func _on_Credits_meta_clicked(meta):
 	OS.shell_open(meta) # Open links in the credits
 	
+
+
+
