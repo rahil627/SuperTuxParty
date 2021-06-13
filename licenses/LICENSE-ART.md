@@ -404,20 +404,25 @@ Copyright © 2020 Paulius Danelius
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
 ## plugins/items/cookie_steal_trap
-### icon.png | icon.xcf
+### icon.png | icon.xcf | material.png | material.xcf
 
-Copyright © 2018 Florian Kothmeier
+Public domain by Vytautas Butėnas
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
-
-### material.png | material.xcf
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
 ## plugins/items/dice
-### icon.png | icon.xcf
+### icon.png | icon.xcf | dice.blend
 
-Copyright © 2018 Florian Kothmeier
+Public domain by Vytautas Butėnas
 
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
+
+## plugins/items/lucky_seven
+### icon.png | icon.xcf | lucky_seven.blend
+
+Public domain by Vytautas Butėnas
+
+License: [CC0](https://creativecommons.org/licenses/zero/1.0/legalcode)
 
 ## assets/icons/blender
 ### icon.blend
