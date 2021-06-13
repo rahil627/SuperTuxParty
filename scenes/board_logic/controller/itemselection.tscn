@@ -1,47 +1,71 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/board_logic/controller/itemselection.gd" type="Script" id=1]
 [ext_resource path="res://assets/shaders/outline.shader" type="Shader" id=2]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
-shader_param/enable_shader = false
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.498039 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/width = 16.0
+shader_param/outline_color = Color( 0.352941, 0.788235, 0.866667, 1 )
 shader_param/enable_shader = false
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
-shader_param/width = 5.0
-shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/width = 16.0
+shader_param/outline_color = Color( 0.352941, 0.788235, 0.866667, 1 )
 shader_param/enable_shader = false
 
-[node name="ItemSelection" type="Control"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 1 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/width = 16.0
+shader_param/outline_color = Color( 0.352941, 0.788235, 0.866667, 1 )
+shader_param/enable_shader = false
 
-[node name="Item1" type="TextureButton" parent="."]
-material = SubResource( 1 )
+[node name="ItemSelection" type="ItemList"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -264.0
+margin_left = -320.0
+margin_top = -90.4719
+margin_right = 320.0
+margin_bottom = 89.5281
+custom_styles/bg = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item1" type="TextureButton" parent="."]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -224.0
 margin_top = -64.0
-margin_right = -136.0
-margin_bottom = 64.0
+margin_right = -96.0
+margin_bottom = 63.9999
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Item2" type="TextureButton" parent="."]
-material = SubResource( 2 )
+material = SubResource( 3 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -52,16 +76,22 @@ margin_right = 64.0
 margin_bottom = 64.0
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Item3" type="TextureButton" parent="."]
-material = SubResource( 3 )
+material = SubResource( 4 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 136.0
-margin_top = -64.0
-margin_right = 264.0
-margin_bottom = 64.0
+margin_left = 100.495
+margin_top = -68.4949
+margin_right = 228.495
+margin_bottom = 59.5051
 expand = true
 stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}

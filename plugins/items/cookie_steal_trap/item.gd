@@ -4,7 +4,7 @@ func _init().(TYPES.PLACABLE, "Cookie Steal Trap") -> void:
 	is_consumed = true
 
 	can_be_bought = true
-	item_cost = 2
+	item_cost = 5
 
 func get_description() -> String:
 	return "Place this trap on a space to rob cookies from the player who lands on it"
