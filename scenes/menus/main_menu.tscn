@@ -565,30 +565,30 @@ __meta__ = {
 }
 
 [node name="Play" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_right = 200.0
+margin_right = 202.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 200, 40 )
 text = "MENU_LABEL_NEW_GAME"
 clip_text = true
 
 [node name="Load" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_left = 204.0
-margin_right = 463.0
+margin_left = 206.0
+margin_right = 567.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 200, 40 )
 text = "MENU_IO_LOAD_GAME"
 
 [node name="Options" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
 margin_top = 44.0
-margin_right = 200.0
+margin_right = 202.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 200, 40 )
 text = "MENU_OPTIONS"
 
 [node name="Screenshots" parent="MainMenu/Buttons" instance=ExtResource( 4 )]
-margin_left = 204.0
+margin_left = 206.0
 margin_top = 44.0
-margin_right = 463.0
+margin_right = 567.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 200, 40 )
 text = "MENU_LABEL_SCREENSHOTS"
@@ -1179,9 +1179,9 @@ text = "MENU_LABEL_NOT_READY_ELLIPSIS"
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -264.0
+margin_left = -333.0
 margin_top = 8.0
-margin_right = 61.0
+margin_right = -8.0
 margin_bottom = 136.0
 __meta__ = {
 "_edit_use_anchors_": false
