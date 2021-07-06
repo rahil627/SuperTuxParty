@@ -7,9 +7,6 @@ var current_player := 1
 # Path to the characters used on game start.
 var characters := []
 
-# Player names.
-var names := []
-
 var board_loader
 var character_loader
 
@@ -157,27 +154,17 @@ func _on_Amount_Of_Players_Back_pressed() -> void:
 #*** Character selection menu ***#
 
 func prepare_player_states() -> void:
-	names.clear()
-
 	var possible_characters: Array = character_loader.get_loaded_characters()
 	var num_characters: int = possible_characters.size()
 	if num_characters >= Global.amount_of_players:
-		for i in characters:
-			if i == null:
-				break
+		for i in range(0, human_players):
+			possible_characters.remove(possible_characters.find(characters[i]))
 
-			possible_characters.remove(possible_characters.find(i))
-
-	for i in range(1, Global.amount_of_players + 1):
-		if i < current_player:
-			names.push_back(
-					get_node("PlayerInfo" + var2str(i)).get_node("Name").text)
-		else:
-			var idx: int = randi() % possible_characters.size()
-			characters[i - 1] = possible_characters[idx]
-			if num_characters >= Global.amount_of_players:
-				possible_characters.remove(idx)
-			names.push_back("%s Bot" % characters[i - 1])
+	for i in range(human_players, Global.amount_of_players):
+		var idx: int = randi() % possible_characters.size()
+		characters[i] = possible_characters[idx]
+		if num_characters >= Global.amount_of_players:
+			possible_characters.remove(idx)
 
 func _on_character_select(target: Button) -> void:
 	get_node("PlayerInfo" + str(current_player) + "/Character").text =\
@@ -376,6 +363,13 @@ func _on_BoardSettings_Start_pressed():
 	Global.overrides.max_turns = int($BoardSettings/Options/Turns/SpinBox.value)
 	Global.overrides.ai_difficulty = $BoardSettings/Options/Difficulty/OptionButton.get_selected_id()
 	Global.overrides.award = $BoardSettings/Options/Award/AwardType.selected
+
+	var names = []
+	for i in range(1, Global.amount_of_players + 1):
+		if i <= human_players:
+			names.push_back(get_node("PlayerInfo{0}/Name".format([i])).text)
+		else:
+			names.push_back("{0} Bot".format([characters[i - 1]]))
 
 	Global.new_game = true
 	Global.new_savegame()
