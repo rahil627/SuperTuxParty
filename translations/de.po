@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2021-03-07 11:47+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2021-05-22 11:32+0000\n"
+"Last-Translator: Benjamin Weis <benjamin.weis@gmx.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/de/>\n"
 "Language: de\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Kaufe einen Kuchen für {amount} Kekse"
@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Der Gewinner stiehlt 10 Kekse"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Zug {turn}"
+msgstr "Zug {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "VS."
@@ -356,7 +356,7 @@ msgid "CONTEXT_GNU_ACTION_TYPE"
 msgstr "GNU Ereignis"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr "Graphik-Qualität"
+msgstr "Grafikqualität"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
 msgstr "Hoch"
@@ -575,19 +575,19 @@ msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr "Keine Beschreibung"
 
 msgid "REWARDSCREEN_MINIGAME_RESULTS"
-msgstr ""
+msgstr "Minispiel-Ergebnisse"
 
 msgid "REWARDSCREEN_MINIGAME_WINNER"
-msgstr ""
+msgstr "Sieger!"
 
 msgid "REWARDSCREEN_MINIGAME_REWARD"
-msgstr ""
+msgstr "Belohnung:"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
-msgstr ""
+msgstr "Drücken"
 
 msgid "MINIGAME_ACTION_MOVEMENT"
-msgstr ""
+msgstr "Bewegen"
 
 msgid "MINIGAME_TYPE_FFA"
 msgstr ""

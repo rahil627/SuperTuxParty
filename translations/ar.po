@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2021-11-26 18:51+0000\n"
+"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ar/>\n"
 "Language: ar\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.10-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr ""
@@ -53,7 +53,7 @@ msgid "CONTEXT_LABEL_TURN_NUM"
 msgstr ""
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "ضد"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
 msgstr ""
@@ -188,16 +188,16 @@ msgid "MENU_LABEL_NUMBERS"
 msgstr ""
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "١"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "٢"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "٣"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "٤"
 
 msgid "MENU_LABEL_OK"
 msgstr "موافق"
@@ -306,7 +306,7 @@ msgid "MENU_OPTIONS_MSAA"
 msgstr ""
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "اللغة"
 
 msgid "MENU_OPTIONS_MASTER"
 msgstr ""
@@ -327,13 +327,13 @@ msgid "MENU_OPTIONS_VISUAL"
 msgstr ""
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "تزامن اللقطات مع الشاشة V-sync"
+msgstr "تزامن اللقطات مع الشاشة VSync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "نعم"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "لا"
 
 msgid "MENU_LABEL_CAKE_COST"
 msgstr ""
@@ -393,13 +393,13 @@ msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "كعكات"
 
 msgid "CONTEXT_LABEL_COOKIES"
 msgstr ""
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "جنو"
 
 msgid "CONTEXT_GNU_EVENT_START"
 msgstr ""
@@ -429,7 +429,7 @@ msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "نولوك"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
 msgstr ""

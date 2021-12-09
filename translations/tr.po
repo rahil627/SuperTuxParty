@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-12-30 22:29+0000\n"
-"Last-Translator: Ömer Akgöz <omerakgoz34@gmail.com>\n"
+"PO-Revision-Date: 2021-09-23 16:36+0000\n"
+"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/tr/>\n"
 "Language: tr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "{amount} kurabiye karşılığında bir pasta satın al"
@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Kazanan 10 kurabiye çalar"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Sıra {turn}"
+msgstr "Sıra {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "karşı"
@@ -266,7 +266,7 @@ msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Oyuncu sayısını seç"
 
 msgid "MENU_LABEL_BOARD_SETTINGS"
-msgstr ""
+msgstr "Tahta Ayarları"
 
 msgid "MENU_LABEL_TRY"
 msgstr "Dene"
@@ -302,7 +302,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Tam Ekran"
 
 msgid "MENU_OPTIONS_MSAA"
-msgstr ""
+msgstr "Çok örnekli kenar yumuşatma (MSAA)"
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Dil"
@@ -519,12 +519,12 @@ msgstr ""
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
 "Yeşil alanlar tahtaya özgü olayları başlatır. Savaş alanları ise başka bir "
-"oyuncuya karşı düello mini oyununda meydan okuma imkanı verir."
+"oyuncuya karşı düello küçük oyununda meydan okuma imkanı verir."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
-"Her oyuncu kendi sırasını oynadıktan sonra bir mini oyun oynanacaktır. Üç "
-"farklı mini oyun çeşidi vardır:"
+"Her oyuncu kendi sırasını oynadıktan sonra bir küçük oyun oynanacaktır. Üç "
+"farklı küçük oyun çeşidi vardır:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
 msgstr ""
@@ -574,43 +574,43 @@ msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr "Açıklama yok"
 
 msgid "REWARDSCREEN_MINIGAME_RESULTS"
-msgstr ""
+msgstr "Küçük Oyun Sonuçları"
 
 msgid "REWARDSCREEN_MINIGAME_WINNER"
-msgstr ""
+msgstr "Kazanan!"
 
 msgid "REWARDSCREEN_MINIGAME_REWARD"
-msgstr ""
+msgstr "Ödül:"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
-msgstr ""
+msgstr "Bas"
 
 msgid "MINIGAME_ACTION_MOVEMENT"
-msgstr ""
+msgstr "Hareket Et"
 
 msgid "MINIGAME_TYPE_FFA"
-msgstr ""
+msgstr "Herkese açık küçük oyun"
 
 msgid "MINIGAME_TYPE_2v2"
-msgstr ""
+msgstr "İkiye karşı iki küçük oyun"
 
 msgid "MINIGAME_TYPE_1v3"
-msgstr ""
+msgstr "Bire karşı üç küçük oyun"
 
 msgid "MINIGAME_TYPE_DUEL"
-msgstr ""
+msgstr "Düello küçük oyunu"
 
 msgid "MINIGAME_TYPE_GNU_COOP"
-msgstr ""
+msgstr "GNU ortaklaşa küçük oyun"
 
 msgid "MINIGAME_TYPE_GNU_SOLO"
-msgstr ""
+msgstr "GNU tek kişilik küçük oyun"
 
 msgid "MINIGAME_TYPE_NOLOK_COOP"
-msgstr ""
+msgstr "Nolok ortaklaşa küçük oyun"
 
 msgid "MINIGAME_TYPE_NOLOK_SOLO"
-msgstr ""
+msgstr "Nolok tek kişilik küçük oyun"
 
 #~ msgid "MENU_LABEL_TITLE"
 #~ msgstr "Super Tux Party"
@@ -620,3 +620,9 @@ msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD"
 #~ msgstr "Oyun Kumandası"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"
+
+msgid "MENU_OPTIONS_FXAA"
+msgstr "FXAA"

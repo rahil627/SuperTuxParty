@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-10-14 21:26+0000\n"
+"PO-Revision-Date: 2021-07-30 16:32+0000\n"
 "Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/super-tux-party/"
 "minigamesbowling/ru/>\n"
@@ -14,13 +14,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.7.2-dev\n"
 
 msgid "BOWLING_FINISH_MSG"
 msgstr "Финиш!"
 
 msgid "MINIGAME_ACTION_THROW"
-msgstr "Бросай мяч - только один игрок"
+msgstr "Бросай мяч"
 
 msgid "MINIGAME_DESCRIPTION"
 msgstr ""
@@ -47,3 +47,6 @@ msgstr "Двигаться вверх"
 
 msgid "MINIGAME_ACTION_JUMP"
 msgstr "Прыжок"
+
+msgid "MINIGAME_ACTION_MOVE"
+msgstr "Двигаться"

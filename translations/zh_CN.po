@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-03-31 00:09+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2021-03-31 06:26+0000\n"
+"Last-Translator: Liu Tao <lyuutau@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr ""
@@ -86,16 +86,16 @@ msgid "MENU_CONTROLS_MOUSE"
 msgstr "鼠标"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "鼠标键"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "鼠标左键"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "鼠标中键"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "鼠标右键"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
 msgstr ""
@@ -110,22 +110,22 @@ msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
 msgstr ""
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "左扳机"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "左扳机 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "左扳机 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "右扳机"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "右扳机 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "右扳机 3"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "下"
@@ -140,13 +140,13 @@ msgid "MENU_CONTROLS_DIR_UP"
 msgstr "上"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "截图"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "打开开发者菜单"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "输入保存游戏名称："
 
 msgid "MENU_IO_LOAD_GAME"
 msgstr "载入游戏"
@@ -179,7 +179,7 @@ msgid "MENU_LABEL_NEW_GAME"
 msgstr "新游戏"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "任天堂 DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
 msgstr ""

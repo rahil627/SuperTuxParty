@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-12-15 11:29+0000\n"
-"Last-Translator: joaooliva <joaooliva@protonmail.com>\n"
+"PO-Revision-Date: 2021-12-09 18:50+0000\n"
+"Last-Translator: jak3z <jose_renato06@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4-dev\n"
+"X-Generator: Weblate 4.10-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Compre um bolo por {amount} biscoitos"
@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Vencedor rouba 10 biscoitos"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Rodada {turn}"
+msgstr "Rodada {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "VS."
@@ -77,7 +77,7 @@ msgid "MENU_CONTROLS_ACTION_4"
 msgstr "Ação 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "Eixo esconhecido {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
 msgstr "Botão do gamepad {button}"
@@ -200,7 +200,7 @@ msgid "MENU_LABEL_NUM_4"
 msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr "Ok"
+msgstr "OK"
 
 msgid "MENU_LABEL_PAUSE"
 msgstr "Pausar"
@@ -209,22 +209,22 @@ msgid "MENU_LABEL_PAUSED"
 msgstr "Pausado"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr "Pausar ao Desfocar a Janela"
+msgstr "Pausar quando o foco da janela for perdido"
 
 msgid "MENU_LABEL_PLAY"
 msgstr "Jogar"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Jogador1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Jogador2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Jogador3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Jogador4"
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
@@ -251,22 +251,22 @@ msgid "MENU_LABEL_SELECT_BOARD"
 msgstr "Selecione o tabuleiro:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr "Selecione a personagem para o Jogador 1"
+msgstr "Selecione um personagem para o jogador 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr "Selecione a personagem para o Jogador 2"
+msgstr "Selecione um personagem para o jogador 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr "Selecione a personagem para o Jogador 3"
+msgstr "Selecione um personagem para o jogador 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr "Selecione a personagem para o Jogador 4"
+msgstr "Selecione um personagem para o jogador 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Selecione o número de jogadores"
 
 msgid "MENU_LABEL_BOARD_SETTINGS"
-msgstr ""
+msgstr "Configurações do Tabuleiro"
 
 msgid "MENU_LABEL_TRY"
 msgstr "Tentar"
@@ -278,10 +278,10 @@ msgid "MENU_LABEL_XBOX"
 msgstr "XBOX"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Créditos"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "Capturas de tela"
 
 msgid "MENU_OPTIONS"
 msgstr "Opções"
@@ -317,7 +317,7 @@ msgid "MENU_OPTIONS_MUSIC"
 msgstr "Música"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr "Mude ao Desfocar a Janela"
+msgstr "Silenciar quando o foco da janela for perdido"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
 msgstr "Padrão do Sistema"
@@ -326,7 +326,7 @@ msgid "MENU_OPTIONS_VISUAL"
 msgstr "Visual"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr "Vsync"
+msgstr "VSync"
 
 msgid "DIALOG_YES"
 msgstr "Sim"
@@ -372,52 +372,60 @@ msgstr ""
 "Alterações na qualidade do gráfico só entrará em vigor após a reinicialização"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Sei que todos vocês lutaram muito para vencer, mas agora o jogo acabou e "
+"precisamos de um vencedor. E o vencedor é…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color] e [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] e "
+"[color=#00ff88]{2}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], "
+"[color=#00ff88]{2}[/color] e [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Bolos"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Biscoitos"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr ""
+msgstr "Ei, precisa de ajuda? Deixa eu ver, o que eu posso fazer por você hoje…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"É um minijogo solo! Me mostre suas habilidades e eu vou te dar uma "
+"[color=#dd44ff]{recompensa}[/color]"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "Minijogo Solo"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Vamos jogar juntos! Tenho certeza que vai ser divertido"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "Minijogo Cooperativo"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Bom trabalho. Aqui está sua recompensa!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Isso não funcionou. Talvez na próxima."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
 msgstr ""
@@ -643,3 +651,6 @@ msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD_START"
 #~ msgstr "Controle Começar"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-04-30 12:11+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2021-09-21 16:37+0000\n"
+"Last-Translator: Sergio Varela <sergitroll9@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/super-tux-party/"
 "minigamesknock_off/es/>\n"
 "Language: es\n"
@@ -14,10 +14,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 msgid "KNOCK_OFF_PLAYER_WINS_MSG"
-msgstr "{player} gano!"
+msgstr "¡{player} gano!"
 
 msgid "KNOCK_OFF_TEAM_WINS_MSG"
-msgstr "Equipo {team} gana!"
+msgstr "¡Equipo {team} gana!"
+
+msgid "MINIGAME_ACTION_RIGHT"
+msgstr "Moverse hacia la derecha"
+
+msgid "MINIGAME_ACTION_LEFT"
+msgstr "Moverse hacia la izquierda"
+
+msgid "MINIGAME_ACTION_DOWN"
+msgstr "Moverse hacia abajo"
+
+msgid "MINIGAME_ACTION_UP"
+msgstr "Moverse hacia arriba"
+
+msgid "MINIGAME_DESCRIPTION"
+msgstr ""
+"Cada jugador intenta derribar a todos los oponentes del iceberg.\n"
+"¡El último jugador que quede en pie gana!"
+
+msgid "MINIGAME_NAME"
+msgstr "Knock Off"
+
+msgid "MINIGAME_ACTION_MOVE"
+msgstr "Moverse"

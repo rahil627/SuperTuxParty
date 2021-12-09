@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2021-02-28 04:50+0000\n"
-"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
+"PO-Revision-Date: 2021-10-05 18:04+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/he/>\n"
 "Language: he\n"
@@ -14,10 +14,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.5\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
-msgstr "רכישת עוגה תמורת {amount} עוגיות"
+msgstr "קניית עוגה תמורת {amount} עוגיות"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
 msgstr "פרס בדו־קרב:"
@@ -44,13 +44,13 @@ msgid "CONTEXT_LABEL_ROLL_PLAYER"
 msgstr "תור {name}!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr "מי שינצח יגנוב עוגה אחת"
+msgstr "המנצח/ת לוקח/ת עוגה 1"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr "מי שינצח יגנוב 10 עוגיות"
+msgstr "המנצח/ת לוקח/ת 10 עוגיות"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "סיבוב {turn}"
+msgstr "סיבוב {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "נגד"
@@ -80,7 +80,7 @@ msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
 msgstr "ציר לא ידוע {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "לחצן {button} במשטח המשחק"
 
 msgid "MENU_CONTROLS_MOUSE"
 msgstr "עכבר"
@@ -98,34 +98,34 @@ msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
 msgstr "הלחצן הימני בעכבר"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "לחצן גלילה למטה"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "לחצן גלילה שמאלה"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "לחצן גלילה ימינה"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "לחצן גלילה למעלה"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "גורם מפעיל שמאל"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "גורם מפעיל שמאל 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "גורם מפעיל שמאל 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "גורם מפעיל ימין"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "גורם מפעיל ימין 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "גורם מפעיל ימין 3"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
 msgstr "למטה"
@@ -179,7 +179,7 @@ msgid "MENU_LABEL_NEW_GAME"
 msgstr "משחק חדש"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr "Nintendo DS"
+msgstr "‏Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
 msgstr "לא מוכנים…"
@@ -227,7 +227,7 @@ msgid "MENU_LABEL_PLAYER4"
 msgstr "שחקן/ית4"
 
 msgid "MENU_LABEL_PLAYSTATION"
-msgstr "PlayStation"
+msgstr "‏PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
 msgstr "נא ללחוץ על מקש מסוים"
@@ -245,7 +245,7 @@ msgid "MENU_LABEL_RETURN_MENU"
 msgstr "חזרה לתפריט הראשי"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr "מערכת תגמול:"
+msgstr "מערכת מתן פרסים:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
 msgstr "נא לבחור לוח:"
@@ -266,7 +266,7 @@ msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "נא לבחור את כמות השחקנים"
 
 msgid "MENU_LABEL_BOARD_SETTINGS"
-msgstr ""
+msgstr "הגדרות הלוח"
 
 msgid "MENU_LABEL_TRY"
 msgstr "התנסות"
@@ -302,7 +302,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "מסך מלא"
 
 msgid "MENU_OPTIONS_MSAA"
-msgstr ""
+msgstr "החלקת עקומות מרובת דגימות (MSAA)"
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "שפה"
@@ -415,13 +415,13 @@ msgid "CONTEXT_GNU_MINIGAME_SOLO"
 msgstr "משחקון ליחיד"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr "הבה נשחק יחדיו! אני בטוח שזה יהיה כיף"
+msgstr "בואו נשחק יחדיו! אני בטוח שזה יהיה כיף"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
 msgstr "משחקון קבוצתי"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr "כל הכבוד. הנה הפרס שלך!"
+msgstr "כל הכבוד. הינה הפרס שלך!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
 msgstr "לא הצלחת. אולי בפעם הבאה."
@@ -458,7 +458,7 @@ msgid "CONTEXT_NOLOK_MINIGAME_COOP"
 msgstr "משחקון קבוצתי"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr "כדאי לך להיות אסיר/ת על שחסתי עליך!"
+msgstr "כדאי לך להודות לי מקרב לב על שחסתי עליך!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
 msgstr "מצפה להביס אותך שוב!"
@@ -471,11 +471,11 @@ msgstr "חה־חה, איזה ניצחון קל."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
-"חה־חה, היו שלום ל־[color=#00aaff]{amount}[/color] מהעוגיות שלך/ אני בטוח "
-"של־[color=#dd44ff]{player}[/color] היה שימוש עבורן"
+"חה־חה, היו שלום ל־[color=#00aaff]{amount}[/color] מהעוגיות שלך. אני בטוח "
+"של[color=#dd44ff]{player}[/color] יש שימוש עבורן"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr "איבוד העוגיות"
+msgstr "הפסדת עוגיות"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
@@ -494,13 +494,13 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
-"המטבעות הם עוגיות. אפשר להרוויח עוגיות בעזרת ניצחון במשחקונים. עם עוגיות "
-"אפשר לקנות פריטים כאשר מגיעים לחנויות."
+"המטבעות הם עוגיות. מרוויחים עוגיות כאשר מנצחים במשחקונים. עם עוגיות אפשר "
+"לקנות פריטים כאשר מגיעים לחנויות."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
-"כדי לנצח, יש לאסוף הכי הרבה עוגות. העוגיות ישמשו כשוברי־שוויון. אפשר לקנות "
-"עוגות במקומות מיוחדים על הלוח. כאשר קונים אחת, העוגה תעבור למקום אחר."
+"כדי לנצח, יש להשיג הכי הרבה עוגות. העוגיות ישמשו כשוברי־שוויון. אפשר לקנות "
+"עוגות במקומות מיוחדים על הלוח. אם קונים אחת, העוגה תעבור למקום אחר."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
@@ -551,7 +551,7 @@ msgstr ""
 "[color=#dd44ff]{amount}[/color] עוגה/ות בשבילך."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
-msgstr "אני מצטערת אבל אין לך מספיק עוגיות כדי לקנות עוגה."
+msgstr "אני מצטערת אבל אין לך מספיק עוגיות לקניית עוגה."
 
 msgid "SHOP_LABEL_TITLE"
 msgstr "חנות פריטים"
@@ -563,43 +563,43 @@ msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr "אין תיאור"
 
 msgid "REWARDSCREEN_MINIGAME_RESULTS"
-msgstr ""
+msgstr "תוצאות המשחקון"
 
 msgid "REWARDSCREEN_MINIGAME_WINNER"
-msgstr ""
+msgstr "מנצח/ת!"
 
 msgid "REWARDSCREEN_MINIGAME_REWARD"
-msgstr ""
+msgstr "פרס:"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
-msgstr ""
+msgstr "נא ללחוץ על"
 
 msgid "MINIGAME_ACTION_MOVEMENT"
-msgstr ""
+msgstr "תזוזה"
 
 msgid "MINIGAME_TYPE_FFA"
-msgstr ""
+msgstr "משחקון תחרות חופשית"
 
 msgid "MINIGAME_TYPE_2v2"
-msgstr ""
+msgstr "משחקון שניים נגד שניים"
 
 msgid "MINIGAME_TYPE_1v3"
-msgstr ""
+msgstr "משחקון אחד נגד שלושה"
 
 msgid "MINIGAME_TYPE_DUEL"
-msgstr ""
+msgstr "משחקון זוגי"
 
 msgid "MINIGAME_TYPE_GNU_COOP"
-msgstr ""
+msgstr "המשחקון הקבוצתי של גנו"
 
 msgid "MINIGAME_TYPE_GNU_SOLO"
-msgstr ""
+msgstr "המשחקון ליחיד של גנו"
 
 msgid "MINIGAME_TYPE_NOLOK_COOP"
-msgstr ""
+msgstr "המשחק הקבוצתי של נולוק"
 
 msgid "MINIGAME_TYPE_NOLOK_SOLO"
-msgstr ""
+msgstr "המשחקון ליחיד של נולוק"
 
 #~ msgid "MENU_LABEL_TITLE"
 #~ msgstr "Super Tux Party"
@@ -609,3 +609,9 @@ msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD"
 #~ msgstr "ג'ויסטיק"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"
+
+msgid "MENU_OPTIONS_FXAA"
+msgstr "FXAA"

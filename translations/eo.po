@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2021-02-17 19:50+0000\n"
-"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
+"PO-Revision-Date: 2021-10-01 00:39+0000\n"
+"Last-Translator: phlostically <phlostically@mailinator.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/"
 "super-tux-party/super-tux-party/eo/>\n"
 "Language: eo\n"
@@ -14,556 +14,602 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Aĉeti kukon kontraŭ {amount} biskvitoj"
 
 msgid "CONTEXT_LABEL_DUEL_REWARD"
-msgstr ""
+msgstr "Rekompenco de duelo:"
 
 msgid "CONTEXT_LABEL_DUEL_SELECT"
-msgstr ""
+msgstr "Elektu kontraŭulon:"
 
 msgid "CONTEXT_LABEL_FINISH"
-msgstr ""
+msgstr "Finu!"
 
 msgid "CONTEXT_LABEL_GO"
-msgstr ""
+msgstr "Ek!"
 
 msgid "CONTEXT_LABEL_PLAYER_ROLLED"
-msgstr ""
+msgstr "La ĵetkubo de {name} montras {value}:"
 
 msgid "CONTEXT_LABEL_READY_QUESTION"
-msgstr ""
+msgstr "Ĉu preta?"
 
 msgid "CONTEXT_LABEL_ROLL"
-msgstr ""
+msgstr "Ĵetu!"
 
 msgid "CONTEXT_LABEL_ROLL_PLAYER"
-msgstr ""
+msgstr "Ĵetu {name}!"
 
 msgid "CONTEXT_LABEL_STEAL_ONE_CAKE"
-msgstr ""
+msgstr "Gajninto ŝtelas 1 kukon"
 
 msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
-msgstr ""
+msgstr "Gajninto ŝtelas 10 kuketojn"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr ""
+msgstr "Movo {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
-msgstr ""
+msgstr "kontraŭ"
 
 msgid "CONTEXT_LABEL_YOUR_TURN"
-msgstr ""
+msgstr "Jen via vico!"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_COOKIES"
-msgstr ""
+msgstr "Vi ne havas sufiĉe da kuketoj por aĉeti tiun"
 
 msgid "CONTEXT_NOTIFICATION_NOT_ENOUGH_SPACE"
-msgstr ""
+msgstr "Mankas spaco en via varujo"
 
 msgid "MENU_CONTROLS_ACTION_1"
-msgstr ""
+msgstr "Ago 1"
 
 msgid "MENU_CONTROLS_ACTION_2"
-msgstr ""
+msgstr "Ago 2"
 
 msgid "MENU_CONTROLS_ACTION_3"
-msgstr ""
+msgstr "Ago 3"
 
 msgid "MENU_CONTROLS_ACTION_4"
-msgstr ""
+msgstr "Ago 4"
 
 msgid "MENU_CONTROLS_UNKNOWN_GAMEPAD_AXIS"
-msgstr ""
+msgstr "Nekonata akso {axis}"
 
 msgid "MENU_CONTROLS_GENERIC_GAMEPAD_BUTTON"
-msgstr ""
+msgstr "Ludregila butono {button}"
 
 msgid "MENU_CONTROLS_MOUSE"
-msgstr ""
+msgstr "Muso"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON"
-msgstr ""
+msgstr "Musbutono"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_LEFT"
-msgstr ""
+msgstr "Maldekstra musbutono"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_MIDDLE"
-msgstr ""
+msgstr "Meza musbutono"
 
 msgid "MENU_CONTROLS_MOUSE_BUTTON_RIGHT"
-msgstr ""
+msgstr "Dekstra musbutono"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_DOWN"
-msgstr ""
+msgstr "Malsuprenturno de musrado"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_LEFT"
-msgstr ""
+msgstr "Maldekstrenturno de musrado"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_RIGHT"
-msgstr ""
+msgstr "Dekstrenturno de musrado"
 
 msgid "MENU_CONTROLS_MOUSE_WHEEL_UP"
-msgstr ""
+msgstr "Suprenturno de musrado"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT"
-msgstr ""
+msgstr "Maldekstra ekagilo"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_2"
-msgstr ""
+msgstr "Maldekstra ekagilo 2"
 
 msgid "MENU_CONTROLS_TRIGGER_LEFT_3"
-msgstr ""
+msgstr "Maldekstra ekagilo 3"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT"
-msgstr ""
+msgstr "Dekstra ekagilo"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_2"
-msgstr ""
+msgstr "Dekstra ekagilo 2"
 
 msgid "MENU_CONTROLS_TRIGGER_RIGHT_3"
-msgstr ""
+msgstr "Dekstra ekagilo 3"
 
 msgid "MENU_CONTROLS_DIR_DOWN"
-msgstr ""
+msgstr "Malsupren"
 
 msgid "MENU_CONTROLS_DIR_LEFT"
-msgstr ""
+msgstr "Maldekstren"
 
 msgid "MENU_CONTROLS_DIR_RIGHT"
-msgstr ""
+msgstr "Dekstren"
 
 msgid "MENU_CONTROLS_DIR_UP"
-msgstr ""
+msgstr "Supren"
 
 msgid "MENU_CONTROLS_SCREENSHOT"
-msgstr ""
+msgstr "Fari ekrankopion"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Malfermi menuon por programistoj"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
-msgstr ""
+msgstr "Tajpu la nomon de la konservaĵo:"
 
 msgid "MENU_IO_LOAD_GAME"
-msgstr ""
+msgstr "Ŝargi ludon"
 
 msgid "MENU_IO_SAVE"
-msgstr ""
+msgstr "Konservi"
 
 msgid "MENU_IO_SAVE_GAME"
-msgstr ""
+msgstr "Konservi ludon"
 
 msgid "MENU_LABEL_BACK"
-msgstr ""
+msgstr "Reen"
 
 msgid "MENU_LABEL_CANCEL"
-msgstr ""
+msgstr "Nuligi"
 
 msgid "MENU_LABEL_CHARACTER"
-msgstr ""
+msgstr "Avataro:"
 
 msgid "MENU_LABEL_CONTINUE"
-msgstr ""
+msgstr "Daŭrigi"
 
 msgid "MENU_LABEL_DESKTOP"
-msgstr ""
+msgstr "Eliri al la Labortablo"
 
 msgid "MENU_LABEL_LINEAR"
-msgstr ""
+msgstr "Linia"
 
 msgid "MENU_LABEL_NEW_GAME"
-msgstr ""
+msgstr "Nova Ludo"
 
 msgid "MENU_LABEL_NINTENDO_DS"
-msgstr ""
+msgstr "Nintendo DS"
 
 msgid "MENU_LABEL_NOT_READY_ELLIPSIS"
-msgstr ""
+msgstr "Ne preta…"
 
 msgid "MENU_LABEL_NUMBERS"
-msgstr ""
+msgstr "Nombroj"
 
 msgid "MENU_LABEL_NUM_1"
-msgstr ""
+msgstr "1"
 
 msgid "MENU_LABEL_NUM_2"
-msgstr ""
+msgstr "2"
 
 msgid "MENU_LABEL_NUM_3"
-msgstr ""
+msgstr "3"
 
 msgid "MENU_LABEL_NUM_4"
-msgstr ""
+msgstr "4"
 
 msgid "MENU_LABEL_OK"
-msgstr ""
+msgstr "Bone"
 
 msgid "MENU_LABEL_PAUSE"
-msgstr ""
+msgstr "Paŭzigi"
 
 msgid "MENU_LABEL_PAUSED"
-msgstr ""
+msgstr "Paŭzinta"
 
 msgid "MENU_LABEL_PAUSE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Paŭzigi kiam fenestra fokuso perdiĝas"
 
 msgid "MENU_LABEL_PLAY"
-msgstr ""
+msgstr "Ludi"
 
 msgid "MENU_LABEL_PLAYER1"
-msgstr ""
+msgstr "Ludanto1"
 
 msgid "MENU_LABEL_PLAYER2"
-msgstr ""
+msgstr "Ludanto2"
 
 msgid "MENU_LABEL_PLAYER3"
-msgstr ""
+msgstr "Ludanto3"
 
 msgid "MENU_LABEL_PLAYER4"
-msgstr ""
+msgstr "Ludanto4"
 
 msgid "MENU_LABEL_PLAYSTATION"
 msgstr "PlayStation"
 
 msgid "MENU_LABEL_PRESS_ANY_KEY"
-msgstr ""
+msgstr "Premu ajnan klavon"
 
 msgid "MENU_LABEL_QUIT"
-msgstr ""
+msgstr "Forlasi"
 
 msgid "MENU_LABEL_READY"
-msgstr ""
+msgstr "Preta!"
 
 msgid "MENU_LABEL_RESUME"
-msgstr ""
+msgstr "Rekomenci"
 
 msgid "MENU_LABEL_RETURN_MENU"
-msgstr ""
+msgstr "Reen al la ĉefmenuo"
 
 msgid "MENU_LABEL_REWARD_SYSTEM"
-msgstr ""
+msgstr "Rekompencosistemo:"
 
 msgid "MENU_LABEL_SELECT_BOARD"
-msgstr ""
+msgstr "Elektu tabulon:"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_1"
-msgstr ""
+msgstr "Elektu avataron por ludanto 1"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_2"
-msgstr ""
+msgstr "Elektu avataron por ludanto 2"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_3"
-msgstr ""
+msgstr "Elektu avataron por ludanto 3"
 
 msgid "MENU_LABEL_SELECT_CHARACTER_PLAYER_4"
-msgstr ""
+msgstr "Elektu avataron por ludanto 4"
 
 msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
-msgstr ""
+msgstr "Elektu la nombro de ludantoj"
 
 msgid "MENU_LABEL_BOARD_SETTINGS"
-msgstr ""
+msgstr "Agordoj pri la tabulo"
 
 msgid "MENU_LABEL_TRY"
-msgstr ""
+msgstr "Provi"
 
 msgid "MENU_LABEL_WINNER_TAKES_ALL"
-msgstr ""
+msgstr "Gajninto prenas ĉiom"
 
 msgid "MENU_LABEL_XBOX"
-msgstr ""
+msgstr "Xbox"
 
 msgid "MENU_LABEL_CREDITS"
-msgstr ""
+msgstr "Dankoj"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr ""
+msgstr "Ekrankopioj"
 
 msgid "MENU_OPTIONS"
-msgstr ""
+msgstr "Opcioj"
 
 msgid "MENU_OPTIONS_AUDIO"
-msgstr ""
+msgstr "Sono"
 
 msgid "MENU_OPTIONS_CONTROLS"
-msgstr ""
+msgstr "Regiloj"
 
 msgid "MENU_OPTIONS_EFFECTS"
-msgstr ""
+msgstr "Efektoj"
 
 msgid "MENU_OPTIONS_FRAME_CAP"
-msgstr ""
+msgstr "Maksimuma bildrapido"
 
 msgid "MENU_OPTIONS_FULLSCREEN"
-msgstr ""
+msgstr "Plenekrane"
 
 msgid "MENU_OPTIONS_MSAA"
-msgstr ""
+msgstr "Plursampla glatigo (MSAA)"
 
 msgid "MENU_OPTIONS_LANGUAGE"
-msgstr ""
+msgstr "Lingvo"
 
 msgid "MENU_OPTIONS_MASTER"
-msgstr ""
+msgstr "Ĉeflaŭto"
 
 msgid "MENU_OPTIONS_MISC"
-msgstr ""
+msgstr "Diversaj"
 
 msgid "MENU_OPTIONS_MUSIC"
-msgstr ""
+msgstr "Muziko"
 
 msgid "MENU_OPTIONS_MUTE_ON_WINDOW_UNFOCUS"
-msgstr ""
+msgstr "Silentigi kiam fenestra fokuso perdiĝas"
 
 msgid "MENU_OPTIONS_SYSTEM_DEFAULT"
-msgstr ""
+msgstr "Sistema implicitaĵo"
 
 msgid "MENU_OPTIONS_VISUAL"
-msgstr ""
+msgstr "Vida"
 
 msgid "MENU_OPTIONS_VSYNC"
-msgstr ""
+msgstr "VSync"
 
 msgid "DIALOG_YES"
-msgstr ""
+msgstr "Jes"
 
 msgid "DIALOG_NO"
-msgstr ""
+msgstr "Ne"
 
 msgid "MENU_LABEL_CAKE_COST"
-msgstr ""
+msgstr "Kosto de kuko:"
 
 msgid "MENU_LABEL_TURNS"
-msgstr ""
+msgstr "Movoj:"
 
 msgid "AI_DIFFICULTY"
-msgstr ""
+msgstr "Facilo de artefarita intelekto:"
 
 msgid "DIFFICULTY_EASY"
-msgstr ""
+msgstr "Facila"
 
 msgid "DIFFICULTY_NORMAL"
-msgstr ""
+msgstr "Ordinara"
 
 msgid "DIFFICULTY_HARD"
-msgstr ""
+msgstr "Malfacila"
 
 msgid "CONTEXT_GNU_ACTION_TYPE"
-msgstr ""
+msgstr "Ago de GNU"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY"
-msgstr ""
+msgstr "Grafika kvalito"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_HIGH"
-msgstr ""
+msgstr "Bona"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_MEDIUM"
-msgstr ""
+msgstr "Ordinara"
 
 msgid "MENU_OPTIONS_GRAPHIC_QUALITY_LOW"
-msgstr ""
+msgstr "Malbona"
 
 msgid "MENU_GRAPHIC_QUALITY_REBOOT_NOTICE"
-msgstr ""
+msgstr "Ŝanĝo de la grafika kvalito efektivos nur post relanĉo"
 
 msgid "CONTEXT_SPEAKER_SARA"
-msgstr ""
+msgstr "Sara"
 
 msgid "CONTEXT_WINNER_ANNOUNCEMENT"
 msgstr ""
+"Mi scias, ke vi ĉiuj forte bataladis por gajni, sed nun la ludo finiĝis, kaj "
+"ni bezonas gajninton. Kaj ĉi tiu gajninto estas…"
 
 msgid "CONTEXT_WINNER_REVEAL_ONE_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_TWO_PLAYER"
-msgstr ""
+msgstr "[color=#ff3300]{0}[/color] kaj [color=#33ff00]{1}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_THREE_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color] kaj "
+"[color=#00ff88]{2}[/color]!"
 
 msgid "CONTEXT_WINNER_REVEAL_FOUR_PLAYER"
 msgstr ""
+"[color=#ff3300]{0}[/color], [color=#33ff00]{1}[/color], "
+"[color=#00ff88]{2}[/color] kaj [color=#ffff33]{3}[/color]!"
 
 msgid "CONTEXT_LABEL_CAKES"
-msgstr ""
+msgstr "Kukoj"
 
 msgid "CONTEXT_LABEL_COOKIES"
-msgstr ""
+msgstr "Kuketoj"
 
 msgid "CONTEXT_GNU_NAME"
-msgstr ""
+msgstr "GNU"
 
 msgid "CONTEXT_GNU_EVENT_START"
-msgstr ""
+msgstr "Saluton, ĉu vi bezonas helpon? Nu, kion mi povas fari por vi hodiaŭ…"
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Jen unuopa ludeto! Montru al mi viajn kapablojn, kaj [koloro = # "
+"dd44ff]{rekompenco}[/ koloro] estos via rekompenco."
 
 msgid "CONTEXT_GNU_MINIGAME_SOLO"
-msgstr ""
+msgstr "Unuopa ludeto"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Ni ludu kune! Mi certas, ke tio estos amuza!"
 
 msgid "CONTEXT_GNU_MINIGAME_COOP"
-msgstr ""
+msgstr "Kunlabora ludeto"
 
 msgid "CONTEXT_GNU_SOLO_VICTORY"
-msgstr ""
+msgstr "Bonege. Jen via rekompenco!"
 
 msgid "CONTEXT_GNU_SOLO_LOSS"
-msgstr ""
+msgstr "Nu, eble la venontan fojon vi estos pli sukcesaj."
 
 msgid "CONTEXT_GNU_COOP_VICTORY"
-msgstr ""
+msgstr "Bonege! Mi esperas, ke mi reĝuos vian kapablon la venontan fojon."
 
 msgid "CONTEXT_GNU_COOP_LOSS"
 msgstr ""
+"Kvankam vi ne sukcesis, vi ekzercis vian teaman kunlaboradon. Mi certas, ke "
+"venontfoje vi sukcesos!"
 
 msgid "CONTEXT_NOLOK_NAME"
-msgstr ""
+msgstr "Nolok"
 
 msgid "CONTEXT_NOLOK_ACTION_TYPE"
-msgstr ""
+msgstr "Ago de Nolok"
 
 msgid "CONTEXT_NOLOK_EVENT_START"
-msgstr ""
+msgstr "Estas mia vico! Mi scias precize kion fari…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO_MODERATION"
 msgstr ""
+"Mi elvokas vin al ludeto! Se vi venkos min, vi konservos viajn varojn. Se "
+"ne, mi prenos unu el viaj kukoj…"
 
 msgid "CONTEXT_NOLOK_MINIGAME_SOLO"
-msgstr ""
+msgstr "Unuopa ludeto"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP_MODERATION"
-msgstr ""
+msgstr "Mi kontraŭ vi ĉiuj? Ĉu vi eĉ pensas, ke vi havas ŝancon kontraŭ mi?"
 
 msgid "CONTEXT_NOLOK_MINIGAME_COOP"
-msgstr ""
+msgstr "Kunlabora ludeto"
 
 msgid "CONTEXT_NOLOK_SOLO_VICTORY"
-msgstr ""
+msgstr "Estu dankema, ke mi indulgis vin!"
 
 msgid "CONTEXT_NOLOK_SOLO_LOSS"
-msgstr ""
+msgstr "Ĝis mia regajno kontraŭ vi!"
 
 msgid "CONTEXT_NOLOK_COOP_VICTORY"
-msgstr ""
+msgstr "La venontan fojon vi ne gajnos."
 
 msgid "CONTEXT_NOLOK_COOP_LOSS"
-msgstr ""
+msgstr "Ha ha, kiel facila gajno!"
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES_MODERATION"
 msgstr ""
+"Ha ha, jen for [color=#00aaff]{amount}[/color] el viaj kuketoj. Mi certas, "
+"ke [color=#dd44ff]{player}[/color] trovos la kuketo(j)n utila(j)."
 
 msgid "CONTEXT_NOLOK_LOSE_COOKIES"
-msgstr ""
+msgstr "Perdu viajn kuketojn"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER_MODERATION"
 msgstr ""
+"Eble vi iom malrapidu. Ni vidu kiel vi fartas je "
+"[color=#00aaff]{amount}[/color] malpli da paŝoj dum la sekvaj "
+"[color=#dd44ff]{duration}[/color] ĵetoj!"
 
 msgid "CONTEXT_NOLOK_ROLL_MODIFIER"
-msgstr ""
+msgstr "Malbenita ĵetkubo"
 
 msgid "CONTEXT_SHOW_TUTORIAL"
-msgstr ""
+msgstr "Ŝajnas, ke vi estas novico. Ĉu vi volas, ke mi klarigu la regulojn?"
 
 msgid "CONTEXT_TUTORIAL_DICE"
 msgstr ""
+"La ludo estas ludata laŭvice. Dum via vico, vi ĵetas ĵetkubon kaj movas vin "
+"antaŭen tiom da paŝoj, kiom la ĵetkubo montras."
 
 msgid "CONTEXT_TUTORIAL_COOKIES"
 msgstr ""
+"La valuto estas kuketoj. Vi ricevas kuketojn gajnante ludetojn. Per kuketoj "
+"vi povas aĉeti varojn ĉe butikaj spacoj."
 
 msgid "CONTEXT_TUTORIAL_CAKES"
 msgstr ""
+"Por gajni, vi devas kolekti la plej multajn kukojn. Se pluraj havas la saman "
+"plej multan nombron de kukoj, do gajnos tiu inter ili, kiu havas la plej "
+"multajn kuketojn. Vi povas aĉeti kukojn ĉe specialaj spacoj sur la tabulo. "
+"Se vi aĉetos kukon, la kuko moviĝos aliloken."
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
+"Estas diversaj specoj de spacoj, sur kiujn vi povas iri. Bluaj spacoj donas "
+"al vi kuketojn, dum ruĝaj spacoj prenas viajn kuketojn."
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
+"Verdaj spacoj komencas specifajn eventojn. Batalaj spacoj permesas al vi "
+"elvoki alian ludanton al duela ludeto."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"Post kiam ĉiu ludanto havos sian vicon, vi ĉiuj ludos ludeton. Jen tri "
+"specoj de ludetoj:"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
 msgstr ""
+"Ludeto de ĉiu kontraŭ ĉiu alia, je kiu ĉiu ludanto konkuras kontraŭ ĉiuj "
+"aliaj ludantoj."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "Duo kontraŭ duo, je kiu vi ludas duope."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"Kaj unuo kontraŭ trio, je kiu unu ludanto sola ludas kontraŭ la resto. La "
+"sola ludanto ricevas avantaĝon por egaligi la ŝancojn."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Specialaj ludetoj komenciĝos, kiam ludanto iras sur spacon de GNU aŭ Nolok. "
+"GNU-ludetoj estas bonaj, dum Nolok-ludetoj estas malbonaj por vi. Do pli "
+"bone restu for de la ĉi-lastaj!"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "Bonege, nun vi pretas eki! Amuziĝu!"
 
 msgid "CONTEXT_CAKE_PLACED"
-msgstr ""
+msgstr "Jen la kuko, venu preni ĝin!"
 
 msgid "CONTEXT_CAKE_WANT_BUY"
-msgstr ""
+msgstr "Ĉu vi volas aĉeti kukon?"
 
 msgid "CONTEXT_CAKE_BUY_AMOUNT"
-msgstr ""
+msgstr "Kiom da kukoj vi volas aĉeti?"
 
 msgid "CONTEXT_CAKE_COLLECTED"
 msgstr ""
+"Bonege, [color=#00aaff]{player}[/color]. Jen [color=#dd44ff]{amount}[/color] "
+"kuko(j) por vi."
 
 msgid "CONTEXT_CAKE_CANT_AFFORD"
-msgstr ""
+msgstr "Bedaŭrinde, vi ne havas sufiĉe da kuketoj por aĉeti kukon."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Butiko"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Priskribo de varo"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
-msgstr ""
+msgstr "Sen priskribo"
 
 msgid "REWARDSCREEN_MINIGAME_RESULTS"
-msgstr ""
+msgstr "Rezultoj de ludeto"
 
 msgid "REWARDSCREEN_MINIGAME_WINNER"
-msgstr ""
+msgstr "Gajninto!"
 
 msgid "REWARDSCREEN_MINIGAME_REWARD"
-msgstr ""
+msgstr "Rekompenco:"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
-msgstr ""
+msgstr "Premu"
 
 msgid "MINIGAME_ACTION_MOVEMENT"
-msgstr ""
+msgstr "Movi sin"
 
 msgid "MINIGAME_TYPE_FFA"
-msgstr ""
+msgstr "Ludeto de ĉiu kontraŭ ĉiu alia"
 
 msgid "MINIGAME_TYPE_2v2"
-msgstr ""
+msgstr "Ludeto por duo kontraŭ duo"
 
 msgid "MINIGAME_TYPE_1v3"
-msgstr ""
+msgstr "Ludeto por unuo kontraŭ trio"
 
 msgid "MINIGAME_TYPE_DUEL"
-msgstr ""
+msgstr "Duela ludeto"
 
 msgid "MINIGAME_TYPE_GNU_COOP"
-msgstr ""
+msgstr "Kunlabora ludeto de GNU"
 
 msgid "MINIGAME_TYPE_GNU_SOLO"
-msgstr ""
+msgstr "Unuopa ludeto de GNU"
 
 msgid "MINIGAME_TYPE_NOLOK_COOP"
-msgstr ""
+msgstr "Kunlabora ludeto de Nolok"
 
 msgid "MINIGAME_TYPE_NOLOK_SOLO"
-msgstr ""
+msgstr "Unuopa ludeto de Nolok"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"
+
+msgid "MENU_OPTIONS_FXAA"
+msgstr "FXAA"

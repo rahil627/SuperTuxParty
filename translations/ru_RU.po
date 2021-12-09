@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2020-12-28 19:29+0000\n"
+"PO-Revision-Date: 2021-08-06 09:34+0000\n"
 "Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/ru/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Купить торт на {amount} печенек"
@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Победитель украл 10 печенья"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Поверните {turn}"
+msgstr "Поверните {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "против"
@@ -266,7 +266,7 @@ msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Выбрать количество игроков"
 
 msgid "MENU_LABEL_BOARD_SETTINGS"
-msgstr ""
+msgstr "Настройки доски"
 
 msgid "MENU_LABEL_TRY"
 msgstr "Попробовать"
@@ -302,7 +302,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Во весь экран"
 
 msgid "MENU_OPTIONS_MSAA"
-msgstr ""
+msgstr "Многовыборочное сглаживание (MSAA)"
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Язык"
@@ -571,43 +571,44 @@ msgid "SHOP_ITEM_NO_DESCRIPTION"
 msgstr "Нет описания"
 
 msgid "REWARDSCREEN_MINIGAME_RESULTS"
-msgstr ""
+msgstr "Результаты мини-игры"
 
 msgid "REWARDSCREEN_MINIGAME_WINNER"
-msgstr ""
+msgstr "Победитель!"
 
 msgid "REWARDSCREEN_MINIGAME_REWARD"
-msgstr ""
+msgstr "Награда:"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
-msgstr ""
+msgstr "Нажмите"
 
 msgid "MINIGAME_ACTION_MOVEMENT"
-msgstr ""
+msgstr "Двигаться"
 
+#, fuzzy
 msgid "MINIGAME_TYPE_FFA"
-msgstr ""
+msgstr "Бесплатно для всех мини-игр"
 
 msgid "MINIGAME_TYPE_2v2"
-msgstr ""
+msgstr "Мини-игра «Два на два»"
 
 msgid "MINIGAME_TYPE_1v3"
-msgstr ""
+msgstr "Мини-игра «Один на троих»"
 
 msgid "MINIGAME_TYPE_DUEL"
-msgstr ""
+msgstr "Мини-игра «Дуэль»"
 
 msgid "MINIGAME_TYPE_GNU_COOP"
-msgstr ""
+msgstr "Мини-игра «GNU кооператив»"
 
 msgid "MINIGAME_TYPE_GNU_SOLO"
-msgstr ""
+msgstr "Одиночная GNU мини-игра"
 
 msgid "MINIGAME_TYPE_NOLOK_COOP"
-msgstr ""
+msgstr "Мини-игра \"Nolok кооператив\""
 
 msgid "MINIGAME_TYPE_NOLOK_SOLO"
-msgstr ""
+msgstr "Одиночная Nolok мини-игра"
 
 #~ msgid "MENU_LABEL_TITLE"
 #~ msgstr "Super Tux Party"
@@ -683,3 +684,6 @@ msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD_START"
 #~ msgstr "Кнопка гейпада Start"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"

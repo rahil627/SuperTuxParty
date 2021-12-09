@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"PO-Revision-Date: 2021-01-18 14:32+0000\n"
-"Last-Translator: Florian Kothmeier <floriankothmeier@web.de>\n"
+"PO-Revision-Date: 2021-04-21 16:29+0000\n"
+"Last-Translator: Baptiste H <baptiste.huchon@bechamail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/super-tux-party/"
 "super-tux-party/fr/>\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 msgid "CONTEXT_LABEL_BUY_CAKE"
 msgstr "Acheter un gâteau pour {amount} biscuits"
@@ -50,7 +50,7 @@ msgid "CONTEXT_LABEL_STEAL_TEN_COOKIES"
 msgstr "Le vainqueur vole 10 biscuits"
 
 msgid "CONTEXT_LABEL_TURN_NUM"
-msgstr "Tour {turn}"
+msgstr "Tour {turn}/{total}"
 
 msgid "CONTEXT_LABEL_VS"
 msgstr "contre"
@@ -143,7 +143,7 @@ msgid "MENU_CONTROLS_SCREENSHOT"
 msgstr "Faire une capture d'écran"
 
 msgid "MENU_CONTROLS_DEV_MENU"
-msgstr ""
+msgstr "Ouvrir le menu développeur"
 
 msgid "MENU_IO_ENTER_SAVEGAME_NAME"
 msgstr "Nom de la sauvegarde :"
@@ -266,7 +266,7 @@ msgid "MENU_LABEL_SELECT_NUM_PLAYERS"
 msgstr "Sélectionner le nombre de joueurs"
 
 msgid "MENU_LABEL_BOARD_SETTINGS"
-msgstr ""
+msgstr "Paramètres de la carte"
 
 msgid "MENU_LABEL_TRY"
 msgstr "Essayer"
@@ -281,7 +281,7 @@ msgid "MENU_LABEL_CREDITS"
 msgstr "Remerciements"
 
 msgid "MENU_LABEL_SCREENSHOTS"
-msgstr "Afficher les captures d'écrans"
+msgstr "Captures d'écrans"
 
 msgid "MENU_OPTIONS"
 msgstr "Options"
@@ -302,7 +302,7 @@ msgid "MENU_OPTIONS_FULLSCREEN"
 msgstr "Plein écran"
 
 msgid "MENU_OPTIONS_MSAA"
-msgstr ""
+msgstr "Anti-aliasing multi-échantillons (MSAA)"
 
 msgid "MENU_OPTIONS_LANGUAGE"
 msgstr "Langue"
@@ -515,6 +515,9 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_SPACES_NORMAL"
 msgstr ""
+"Il existe différents types d'espaces sur lesquels vous pouvez atterrir : les "
+"espaces bleus vous donnent des cookies, tandis que les espaces rouges "
+"prennent vos cookies."
 
 msgid "CONTEXT_TUTORIAL_SPACES_SPECIAL"
 msgstr ""
@@ -524,21 +527,29 @@ msgstr ""
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES"
 msgstr ""
+"Une fois que chaque joueur a eu son tour, un mini-jeu sera joué. Il existe "
+"trois types différentes de mini-jeux :"
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_FFA"
 msgstr ""
+"Libre pour tous, où tout le monde rivalise avec tout le monde pour gagner."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_2V2"
-msgstr ""
+msgstr "Deux contre deux, où vous jouez en équipes de deux."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_1V3"
 msgstr ""
+"Et un contre trois, où l'un est en concurrence avec les autres. Le joueur "
+"solo obtient un bonus pour égaliser les choses."
 
 msgid "CONTEXT_TUTORIAL_MINIGAMES_SPECIAL"
 msgstr ""
+"Des mini-jeux spéciaux seront joués lorsqu'un joueur atterrit sur un espace "
+"GNU ou NOLOK. Les mini-jeux GNU sont bons, tandis que les mini-jeux NOLOK "
+"sont mauvais pour vous. Alors mieux vaut rester à l'écart de ce dernier !"
 
 msgid "CONTEXT_TUTORIAL_END"
-msgstr ""
+msgstr "Voilà, maintenant vous êtes prêt à partir ! Amusez-vous bien !"
 
 msgid "CONTEXT_CAKE_PLACED"
 msgstr "Voici le gâteau, venez le récupérer !"
@@ -559,52 +570,52 @@ msgstr ""
 "Je m'excuse, mais vous n'avez pas assez de biscuits pour acheter un gâteau."
 
 msgid "SHOP_LABEL_TITLE"
-msgstr ""
+msgstr "Boutique d'objets"
 
 msgid "SHOP_LABEL_DESCRIPTION"
-msgstr ""
+msgstr "Description de l'objet"
 
 msgid "SHOP_ITEM_NO_DESCRIPTION"
-msgstr ""
+msgstr "Pas de description"
 
 msgid "REWARDSCREEN_MINIGAME_RESULTS"
-msgstr ""
+msgstr "Résultats du mini-jeu"
 
 msgid "REWARDSCREEN_MINIGAME_WINNER"
-msgstr ""
+msgstr "Gagnant(e) !"
 
 msgid "REWARDSCREEN_MINIGAME_REWARD"
-msgstr ""
+msgstr "Récompense :"
 
 msgid "REWARDSCREEN_PRESS_BUTTON"
-msgstr ""
+msgstr "Appuyez"
 
 msgid "MINIGAME_ACTION_MOVEMENT"
-msgstr ""
+msgstr "Se déplacer"
 
 msgid "MINIGAME_TYPE_FFA"
-msgstr ""
+msgstr "Mini-jeux libre pour tous"
 
 msgid "MINIGAME_TYPE_2v2"
-msgstr ""
+msgstr "Mini-jeu deux contre deux"
 
 msgid "MINIGAME_TYPE_1v3"
-msgstr ""
+msgstr "Mini-jeu un contre trois"
 
 msgid "MINIGAME_TYPE_DUEL"
-msgstr ""
+msgstr "Mini-jeu de duel"
 
 msgid "MINIGAME_TYPE_GNU_COOP"
-msgstr ""
+msgstr "Mini-jeu GNU Coop"
 
 msgid "MINIGAME_TYPE_GNU_SOLO"
-msgstr ""
+msgstr "Mini-jeu GNU Solo"
 
 msgid "MINIGAME_TYPE_NOLOK_COOP"
-msgstr ""
+msgstr "Mini-jeu Nolok Coop"
 
 msgid "MINIGAME_TYPE_NOLOK_SOLO"
-msgstr ""
+msgstr "Mini-jeu Nolok Solo"
 
 #~ msgid "MENU_LABEL_TITLE"
 #~ msgstr "Super Tux Party"
@@ -680,3 +691,6 @@ msgstr ""
 
 #~ msgid "MENU_CONTROLS_GAMEPAD_START"
 #~ msgstr "Bouton de manette Start"
+
+msgid "MENU_LABEL_TITLE"
+msgstr "Super Tux Party"
