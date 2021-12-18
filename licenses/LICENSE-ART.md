@@ -702,6 +702,22 @@ Copyright © Florian Kothmeier
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
 ## plugins/minigames/hurdle
+### racetrack_crowd.png | racetrack_wall.png
+
+Copyright © 2008 thomas oppl
+
+Retrieved from [Super Tux Kart SVN](https://svn.code.sf.net/p/supertuxkart/code/media/trunk/arenas/arena_stadium/)
+
+License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
+
+### 01tizeta_cem512.jpg
+
+Copyright © Tiziana
+
+Retrieved from [Open Game Art](https://opengameart.org/content/white-asphalt-tilling-alt-512px)
+
+License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
+
 ### green_point_park_2k.hdr
 
 Copyright © 2016 Greg Zaal
@@ -731,8 +747,8 @@ Copyright © Jakob Sinclair
 
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/legalcode)
 
-## plugins/minigames/hurdle/hurdles/normal_hurdle
-### hurdle_model.escn | hurdle.blend
+## plugins/minigames/hurdle/hurdle
+### hurdle.glb | hurdle.blend
 
 Copyright © Jakob Sinclair
 

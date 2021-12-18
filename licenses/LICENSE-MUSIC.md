@@ -64,6 +64,14 @@ Copyright © franzopow
 License [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 ## assets/sounds
+### jump.wav
+
+Copyright © jobromedia
+
+Retrieved from [OpenGameArt](https://opengameart.org/content/jbm-sound-effects-pack-1)
+
+License [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode)
+
 ### correct.wav
 
 Public Domain by rhodesmas
