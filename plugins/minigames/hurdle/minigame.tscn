@@ -1,41 +1,56 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://plugins/minigames/hurdle/hurdle_game.gd" type="Script" id=1]
-[ext_resource path="res://plugins/minigames/hurdle/green_point_park_2k.hdr" type="Texture" id=2]
+[ext_resource path="res://plugins/minigames/hurdle/minigame.gd" type="Script" id=1]
+[ext_resource path="res://plugins/minigames/hurdle/hurdle/hurdle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/title_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://plugins/minigames/hurdle/player_hurdle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://plugins/minigames/hurdle/ground/ground_model.escn" type="PackedScene" id=5]
-[ext_resource path="res://plugins/minigames/hurdle/ground/ground.shader" type="Shader" id=6]
-[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_col.jpg" type="Texture" id=7]
-[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_nrm.jpg" type="Texture" id=8]
-[ext_resource path="res://plugins/minigames/hurdle/ground/asphalt_rgh.jpg" type="Texture" id=9]
+[ext_resource path="res://plugins/minigames/hurdle/curve.tres" type="Curve3D" id=5]
+[ext_resource path="res://assets/textures/rock/rock_05_col.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/lava.png" type="Texture" id=7]
+[ext_resource path="res://plugins/minigames/hurdle/ground/conveyor_belt.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/countdown/countdown.tscn" type="PackedScene" id=10]
 
 [sub_resource type="PanoramaSky" id=1]
-panorama = ExtResource( 2 )
 
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.1
+ambient_light_sky_contribution = 0.0
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 2, 1, 10 )
+[sub_resource type="PlaneMesh" id=3]
+size = Vector2( 6, 20 )
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 6 )
-shader_param/albedo = Color( 1, 1, 1, 1 )
-shader_param/metallic = 0.04
-shader_param/metallic_texture_channel = Plane( 0.333333, 0.333333, 0.333333, 0 )
-shader_param/roughness = 1.0
-shader_param/roughness_texture_channel = Plane( 0.333333, 0.333333, 0.333333, 0 )
-shader_param/specular = 0.5
-shader_param/normal_scale = 1.0
-shader_param/uv_scale = Vector3( 2, 0.5, 1 )
-shader_param/speed = 0.2
-shader_param/delta_time = 0.0
-shader_param/texture_albedo = ExtResource( 7 )
-shader_param/texture_roughness = ExtResource( 9 )
-shader_param/texture_normal = ExtResource( 8 )
+[sub_resource type="Shader" id=4]
+code = "shader_type spatial;
+render_mode shadows_disabled;
+
+uniform sampler2D tex;
+
+void fragment() {
+	ALBEDO = texture(tex, UV * vec2(6, 20) * 0.1 + vec2(0, TIME * 0.1)).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/tex = ExtResource( 7 )
+
+[sub_resource type="PlaneMesh" id=6]
+size = Vector2( 20, 20 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_unshaded = true
+albedo_texture = ExtResource( 6 )
+uv1_scale = Vector3( 4, 4, 1 )
+
+[sub_resource type="PlaneMesh" id=8]
+size = Vector2( 6.2, 20 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_unshaded = true
+albedo_texture = ExtResource( 6 )
+uv1_scale = Vector3( 2.581, 4, 1 )
 
 [node name="Root" type="Spatial"]
 script = ExtResource( 1 )
@@ -44,7 +59,7 @@ script = ExtResource( 1 )
 environment = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Environment"]
-transform = Transform( -4.37114e-08, 0.499999, -0.866025, 0, 0.866024, 0.5, 0.999999, 2.18557e-08, -3.78552e-08, -3.4, 3, 4.4 )
+transform = Transform( -1, 6.69697e-08, -5.61943e-08, 0, 0.642787, 0.766045, 8.74228e-08, 0.766044, -0.642788, 0, 6, -5 )
 
 [node name="Screen" type="Control" parent="Environment"]
 anchor_right = 1.0
@@ -61,8 +76,12 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Label" parent="Environment/Screen"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -40.0
@@ -78,49 +97,97 @@ __meta__ = {
 }
 
 [node name="Player1" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
 
 [node name="Player3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0 )
 
 [node name="Player4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4 )
-
-[node name="Ground" type="StaticBody" parent="."]
-
-[node name="Plane" type="CollisionShape" parent="Ground"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6.5 )
-shape = SubResource( 3 )
-
-[node name="Mesh" parent="Ground" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6.5 )
-
-[node name="Cube" parent="Ground/Mesh" index="0"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 10, -0.014739, -0.0251255, -0.000205994 )
-material/0 = SubResource( 4 )
-
-[node name="Hurdle1" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 13 )
-
-[node name="Hurdle2" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 14 )
-
-[node name="Hurdle3" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 15 )
-
-[node name="Hurdle4" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
-transform = Transform( 0.642788, 0.627507, -0.439385, 0, 0.573576, 0.819152, 0.766044, -0.526541, 0.368688, -6, 4, 3 )
-light_energy = 0.35
+transform = Transform( 0.01756, 0.80884, -0.587767, 0.0375027, 0.586911, 0.808783, 0.999142, -0.0362451, -0.0200275, -6, 4, 3 )
+light_energy = 0.8
 shadow_enabled = true
 
 [node name="Countdown" parent="." instance=ExtResource( 10 )]
 margin_top = 1.18921
 margin_bottom = 1.18921
 
-[editable path="Ground/Mesh"]
+[node name="conveyor_belt" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.6, 0 )
+
+[node name="Hurdle" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9998 )
+curve = NodePath("../Path")
+
+[node name="Hurdle2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.9998 )
+curve = NodePath("../Path")
+
+[node name="Hurdle3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.9998 )
+curve = NodePath("../Path")
+
+[node name="Hurdle10" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -1, -2.00251 )
+curve = NodePath("../Path")
+
+[node name="Hurdle11" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -2, -1, -2.00251 )
+curve = NodePath("../Path")
+
+[node name="Hurdle12" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 2, -1, -2.00251 )
+curve = NodePath("../Path")
+
+[node name="Hurdle4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.955 )
+curve = NodePath("../Path")
+
+[node name="Hurdle5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.955 )
+curve = NodePath("../Path")
+
+[node name="Hurdle6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1.955 )
+curve = NodePath("../Path")
+
+[node name="Hurdle7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -1, 2.6 )
+curve = NodePath("../Path")
+
+[node name="Hurdle8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -2, -1, 2.6 )
+curve = NodePath("../Path")
+
+[node name="Hurdle9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 2, -1, 2.6 )
+curve = NodePath("../Path")
+
+[node name="Path" type="Path" parent="."]
+transform = Transform( -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, 0, -0.5, 0 )
+curve = ExtResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -3.1, 0, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 3.1, 0, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 10 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )

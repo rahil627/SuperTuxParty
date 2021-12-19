@@ -1,97 +1,112 @@
-extends KinematicBody
+extends RigidBody
 
-const GRAVITY = 15 # Acceleration of gravity
-const GRAVITY_DIR = Vector3(0, -1, 0) # Direction of gravity
-const JUMP_MAX = 10
-const JUMP_VECTOR = Vector3(0, 5, 0)
-const ACCELERATION_DIR = Vector3(0, 0, 1)
+const JUMP_VELOCITY := 16.5
+const BASE_SPEED := 4.0
+const PLATFORM_SPEED := 3.0
 
-var player_id = 1
-var jump = JUMP_MAX
-var movement = Vector3()
-var is_ai = false
+export(NodePath) var path
+
+enum State {
+	IDLE,
+	RUNNING,
+	JUMP,
+	STUNNED
+}
+
+var player_id
+var is_ai
 var ai_difficulty
-var stop = false
 
-var playing_jump_animation = false
+# The current animation state
+var state: int = State.IDLE
 
-var next_jump_randomness = 0
+# The players movement speed
+var speed := BASE_SPEED
 
-var acceleration = 0
-var disable_jump = 0 # Disables the player to jump for x seconds
-var disable_jump_immunity = 0 # While this is on, the player will no longer be penalized when hitting a hurdle
+# Regulates whether the player can jump
+# Is reset when the ground is touched
+var on_floor := true
 
-var collision_disabled = 0
 
-var visibility_material;
+var ai_direction := 0.0
+var ai_direction_change := 0.0
+
+var perm_rotation := Vector3()
 
 func _ready():
-	$Model.play_animation("run")
-	
-	visibility_material = load("res://plugins/minigames/hurdle/visibility.tres").duplicate()
-	
-	Utility.apply_nextpass_material(visibility_material, $Model)
+	$Model.play_animation("idle")
+	state = State.IDLE
 
-func _physics_process(delta):
-	if disable_jump == 0 and jump > 0 and stop == false:
-		if not is_ai and Input.is_action_pressed("player" + var2str(player_id) + "_action1") :
-			movement = JUMP_VECTOR
-		elif is_ai and collision_disabled <= 0:
-			for hurdle in get_tree().get_nodes_in_group("hurdles"):
-				var dir = hurdle.translation - self.translation
-				if dir.length() < 2.5 + next_jump_randomness and dir.angle_to(Vector3(0, 0, 1)) < PI/2 and abs(dir.x) < 0.5:
-					movement = JUMP_VECTOR
-					match ai_difficulty:
-						Global.Difficulty.EASY:
-							next_jump_randomness = randf() * 2.0 - 0.75
-						Global.Difficulty.HARD:
-							next_jump_randomness = randf() - 0.5
-						_:
-							next_jump_randomness = randf() * 1.5 - 0.5
-	if stop:
-		acceleration = -6
-	
-	
-	move_and_slide(acceleration * ACCELERATION_DIR, Vector3(0.0, 1.0, 0.0))
-	acceleration = max(0, acceleration - delta)
-	if translation.z > 6:
-		translation.z = 6
-	
-	movement += GRAVITY * GRAVITY_DIR * delta
-	
-	if movement.y > 0.01 and jump < JUMP_MAX and not playing_jump_animation:
+func face_direction(dir: Vector3, state: PhysicsDirectBodyState):
+	if dir.length_squared() > 0.01:
+		state.transform = state.transform.looking_at(self.translation - dir, Vector3.UP)
+
+func jump():
+	if on_floor:
+		$AudioStreamPlayer.play()
+		linear_velocity.y = JUMP_VELOCITY
+		on_floor = false
 		$Model.play_animation("jump")
-		playing_jump_animation = true
-	
-	move_and_slide(movement, Vector3(0.0, 1.0, 0.0))
-	jump -= 1
-	
-	disable_jump = max(0, disable_jump - delta)
-	disable_jump_immunity = max(0, disable_jump_immunity - delta)
-	collision_disabled -= delta
-	if collision_disabled <= 0:
-		set_collision_mask_bit(1, true)
-	
-	visibility_material.set_shader_param("time_invisible", collision_disabled)
-	
-	for i in range(get_slide_count()):
-		var collision = get_slide_collision(i)
-		
-		# Check if it we hit a hurdle and if we did not land on top of it
-		# Makes the player unable to move for a short duration
-		# This prevents some weird jumps, like you just hit the hurdle and you saved yourself through jumping mid air
-		if disable_jump_immunity == 0 and collision.collider.is_in_group("hurdles") and collision.normal.angle_to(Vector3(0, 1, 0)) > deg2rad(20):
-			disable_jump = 0.25
-			disable_jump_immunity = 1.0
-			$Model.freeze_animation()
-	
-	if is_on_floor():
-		if playing_jump_animation:
-			$Model.play_animation("run")
-			playing_jump_animation = false
-		movement = Vector3()
-		jump = JUMP_MAX
+		self.state = State.JUMP
+		return true
+	return false
 
-func disable_collision(duration):
-	collision_disabled = duration
-	set_collision_mask_bit(1, false)
+func process_ai(state: PhysicsDirectBodyState):
+	ai_direction_change -= state.step
+	if ai_direction_change <= 0.0:
+		ai_direction = -sign(self.translation.z)
+		ai_direction_change += 0.5 + (randf() - 0.5) * 0.1
+	if abs(translation.z) > 1.0 and sign(translation.z) == sign(ai_direction):
+		ai_direction = 0.0
+	var dir = Vector3()
+	dir = Vector3(0, 0, ai_direction)
+	var v =  speed * dir.normalized() + PLATFORM_SPEED * Vector3(0, 0, get_parent().direction)
+	state.linear_velocity.x = v.x 
+	state.linear_velocity.z = v.z
+	state.linear_velocity += dir * speed
+	face_direction(dir, state)
+	
+	for hurdle in get_tree().get_nodes_in_group("hurdles"):
+		if (hurdle.translation - self.translation).length_squared() <= 1.0:
+			jump()
+
+func process_player(state: PhysicsDirectBodyState):
+	var dir = Vector3(0, 0, 0)
+	dir.z += Input.get_action_strength("player{0}_up".format([player_id]))
+	dir.z -= Input.get_action_strength("player{0}_down".format([player_id]))
+	
+	var v =  speed * dir.normalized()
+	if on_floor:
+		v += PLATFORM_SPEED * Vector3(0, 0, get_parent().direction)
+	state.linear_velocity.x = v.x
+	state.linear_velocity.z = v.z
+	face_direction(dir, state)
+	
+	if Input.is_action_pressed("player{0}_action1".format([player_id])):
+		jump()
+
+	if self.state == State.IDLE and dir.length_squared() > 0.01:
+		$Model.play_animation("run")
+		self.state = State.RUNNING
+	elif self.state == State.RUNNING and dir.length_squared() <= 0.01:
+		$Model.play_animation("idle")
+		self.state = State.IDLE
+
+func _integrate_forces(state: PhysicsDirectBodyState) -> void:#(delta: float):
+	if is_ai:
+		process_ai(state)
+	else:
+		process_player(state)
+
+	if on_floor and self.state == State.JUMP:
+		$Model.play_animation("idle")
+		self.state = State.IDLE
+
+
+func _on_Player_body_entered(body: Node) -> void:
+	if body.is_in_group("ground"):
+		on_floor = true
+
+func _on_Player_body_exited(body: Node) -> void:
+	if body.is_in_group("ground"):
+		on_floor = false

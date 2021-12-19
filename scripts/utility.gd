@@ -1,18 +1,52 @@
 extends Node
 
+func _nextpass_apply_mesh(material: Material, mesh: Mesh) -> void:
+	for i in range(mesh.get_surface_count()):
+		var mat: Material = mesh.surface_get_material(i)
+		if not mat:
+			continue
+		while not mat.next_pass in [null, material]:
+			mat = mat.next_pass
+		mat.next_pass = material
+
 func apply_nextpass_material(material: Material, node: Node) -> void:
 	if node is MeshInstance:
-		var mat: Material = (node as MeshInstance).get_surface_material(0)
-		var i := 0
-		while mat != null:
-			while mat.next_pass != null:
+		_nextpass_apply_mesh(material, node.mesh)
+		for i in range(node.get_surface_material_count()):
+			var mat: Material = node.get_surface_material(i)
+			if not mat:
+				continue
+			while not mat.next_pass in [null, material]:
 				mat = mat.next_pass
 			mat.next_pass = material
-			i += 1
-			mat = (node as MeshInstance).get_surface_material(i)
 
 	for child in node.get_children():
 		apply_nextpass_material(material, child)
+
+func _nextpass_remove_mesh(material: Material, mesh: Mesh) -> void:
+	for i in range(mesh.get_surface_count()):
+		var mat: Material = mesh.surface_get_material(i)
+		if not mat:
+			continue
+		while not mat.next_pass in [null, material]:
+			mat = mat.next_pass
+		if mat.next_pass == material:
+			mat.next_pass = material.next_pass
+
+func remove_nextpass_material(material: Material, node: Node) -> void:
+	if node is MeshInstance:
+		_nextpass_remove_mesh(material, node.mesh)
+		for i in range(node.get_surface_material_count()):
+			var mat: Material = node.get_surface_material(i)
+			if not mat:
+				continue
+			while not mat.next_pass in [null, material]:
+				mat = mat.next_pass
+			if mat.next_pass == material:
+				mat.next_pass = material.next_pass
+
+	for child in node.get_children():
+		remove_nextpass_material(material, child)
 
 func _shape_to_aabb(s: Shape) -> AABB:
 	if s is BoxShape:
